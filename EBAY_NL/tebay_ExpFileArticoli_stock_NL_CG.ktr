@@ -1,0 +1,2026 @@
+<transformation>
+  <info>
+    <name>tebay_ExpFileArticoli_stock_NL_CG</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;EBAY_NL</directory>
+    <parameters>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>0</sleep_time_empty>
+    <sleep_time_full>0</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>admin</created_user>
+  <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2016&#x2f;11&#x2f;05 18&#x3a;01&#x3a;48.737</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>LINKY</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>LINKY</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>AUTO</from><to>Add constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>Calculator</to><enabled>Y</enabled> </hop>
+  <hop> <from>MOTO SCOOTER</from><to>Add constants 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 2</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>Append streams</to><enabled>Y</enabled> </hop>
+  <hop> <from>ACCOPPIATE</from><to>Add constants 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 2 2</from><to>Calculator 2 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams</from><to>Append streams 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2 2</from><to>Append streams 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>CERCHI LEGA REPLICA</from><to>Add constants 2 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 2 3</from><to>Calculator 2 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2 3</from><to>Append streams 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 3</from><to>Append streams 3 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>CATENE</from><to>Add constants 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants 4</from><to>Calculator 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 4</from><to>Append streams 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 3 2</from><to>Append streams 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Append streams 4</from><to>articoli NL</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>ACCOPPIATE</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;GEKOPPELD MOTORBANDEN&#x27;&#x29; &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;NL&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xd;&#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;NL&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where product_in_stock &#x3e; 0 and  pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;NL&#x27; and &#xd;&#xa;--codiceN&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and &#x28;a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;  or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e;linky_ebay_report.prezzo&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>73</xloc>
+      <yloc>277</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>AUTO</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;BANDEN TYRE&#x27;&#x29; &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;WINTER&#x27;&#x29; else &#x27;&#x27; end,1,80&#x29;&#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;NL&#x27; as siteid&#xd;&#xa;,&#x27;Italy&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;NL&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;NL&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and &#x28;a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;  or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e;linky_ebay_report.prezzo&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>63</xloc>
+      <yloc>97</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>t_header</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_secondo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Articolo&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_finespecifica</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Load index&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diameter&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_footer</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerAuto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>237</xloc>
+      <yloc>97</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>t_header</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_secondo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_finespecifica</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Load index&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diameter&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_footer</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerMoto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>242</xloc>
+      <yloc>188</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>t_header</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_secondo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_finespecifica</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Karakteristieken&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Karakteristieken&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_footer</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerMoto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e; is voor eet paar en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>247</xloc>
+      <yloc>277</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2 3</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>t_header</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_secondo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_finespecifica</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Numero fori&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Larghezza cerchio&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Offset&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Interasse&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diametro&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_footer</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerCerchi&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>246</xloc>
+      <yloc>362</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 4</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <name>t_header</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_secondo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;Groep overeenkomt met de grootte van banden&#x3a;&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_finespecifica</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>-</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Dikte mesh&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Radius&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_footer</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerAuto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e; is voor eet paar en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>251</xloc>
+      <yloc>445</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>Calculator</head_name>
+<tail_name>Calculator 2</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>551</xloc>
+      <yloc>106</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams 3</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>Append streams</head_name>
+<tail_name>Calculator 2 2</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>549</xloc>
+      <yloc>196</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams 3 2</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>Append streams 3</head_name>
+<tail_name>Calculator 2 3</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>550</xloc>
+      <yloc>314</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Append streams 4</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<head_name>Append streams 3 2</head_name>
+<tail_name>Calculator 4</tail_name>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>546</xloc>
+      <yloc>450</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CATENE</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT distinct&#xd;&#xa; codicevar as product_sku&#xd;&#xa;, substring&#x28;var.short_desc &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm SPESSORE&#x27; else &#x27;&#x27; end, 1,76&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;NL&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xd;&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;NL&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;var.siteid&#x3d;&#x27;NL&#x27; and &#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29; &#xd;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and &#x28;e.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;  or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e;linky_ebay_report.prezzo&#x29;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>77</xloc>
+      <yloc>445</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>CERCHI LEGA REPLICA</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;LICHTMETALEN VELGEN &#x27; &#x2b; short_desc,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;NL&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;NL&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;NL&#x27; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and &#x28;a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;  or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e;linky_ebay_report.prezzo&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>72</xloc>
+      <yloc>362</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>d1</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>t_header</field_a>
+<field_b>Titolo</field_b>
+<field_c>t_secondo</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d2</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d1</field_a>
+<field_b>t_marca</field_b>
+<field_c>Marca</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d3</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d2</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_raggio</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d4</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d3</field_a>
+<field_b>diametro</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d5</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d4</field_a>
+<field_b>t_larghezza</field_b>
+<field_c>larghezza</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d6</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d5</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_icarico</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d7</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d6</field_a>
+<field_b>icarico</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d8</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d7</field_a>
+<field_b>t_spalla</field_b>
+<field_c>spalla</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d9</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d8</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_ivelocita</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d10</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d9</field_a>
+<field_b>ivel</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>descrizione</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d10</field_a>
+<field_b>t_footer</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>375</xloc>
+      <yloc>100</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>d1</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>t_header</field_a>
+<field_b>Titolo</field_b>
+<field_c>t_secondo</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d2</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d1</field_a>
+<field_b>t_marca</field_b>
+<field_c>Marca</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d3</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d2</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_raggio</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d4</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d3</field_a>
+<field_b>diametro</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d5</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d4</field_a>
+<field_b>t_larghezza</field_b>
+<field_c>larghezza</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d6</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d5</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_icarico</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d7</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d6</field_a>
+<field_b>icarico</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d8</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d7</field_a>
+<field_b>t_spalla</field_b>
+<field_c>spalla</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d9</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d8</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_ivelocita</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d10</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d9</field_a>
+<field_b>ivel</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>descrizione</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d10</field_a>
+<field_b>t_footer</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>371</xloc>
+      <yloc>188</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>d1</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>t_header</field_a>
+<field_b>Titolo</field_b>
+<field_c>t_secondo</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d2</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d1</field_a>
+<field_b>t_marca</field_b>
+<field_c>Marca</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d3</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d2</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_raggio</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d4</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d3</field_a>
+<field_b>diametro</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d5</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d4</field_a>
+<field_b>t_larghezza</field_b>
+<field_c>larghezza</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d6</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d5</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_icarico</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d7</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d6</field_a>
+<field_b>icarico</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d8</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d7</field_a>
+<field_b>t_spalla</field_b>
+<field_c>spalla</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d9</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d8</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_ivelocita</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d10</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d9</field_a>
+<field_b>ivel</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>descrizione</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d4</field_a>
+<field_b>t_footer</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>376</xloc>
+      <yloc>277</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2 3</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>d1</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>t_header</field_a>
+<field_b>Titolo</field_b>
+<field_c>t_secondo</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d2</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d1</field_a>
+<field_b>t_marca</field_b>
+<field_c>Marca</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d3</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d2</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_raggio</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d4</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d3</field_a>
+<field_b>diametro</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d5</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d4</field_a>
+<field_b>t_larghezza</field_b>
+<field_c>larghezza</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d6</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d5</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_icarico</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d7</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d6</field_a>
+<field_b>icarico</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d8</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d7</field_a>
+<field_b>t_spalla</field_b>
+<field_c>spalla</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d9</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d8</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_ivelocita</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d10</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d9</field_a>
+<field_b>offset</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>descrizione</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d10</field_a>
+<field_b>t_footer</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>375</xloc>
+      <yloc>362</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 4</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>d1</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>t_header</field_a>
+<field_b>Titolo</field_b>
+<field_c>t_secondo</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d2</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d1</field_a>
+<field_b>t_marca</field_b>
+<field_c>Marca</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d3</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d2</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_raggio</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d4</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d3</field_a>
+<field_b>diametro</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d5</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d4</field_a>
+<field_b>t_larghezza</field_b>
+<field_c>larghezza</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d6</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d5</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d7</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>d6</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d8</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d6</field_a>
+<field_b>t_spalla</field_b>
+<field_c>spalla</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d9</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d8</field_a>
+<field_b>t_finespecifica</field_b>
+<field_c>t_ivelocita</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>d10</field_name>
+<calc_type>ADD3</calc_type>
+<field_a>d9</field_a>
+<field_b>ivel</field_b>
+<field_c>t_finespecifica</field_c>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+       <calculation><field_name>descrizione</field_name>
+<calc_type>ADD</calc_type>
+<field_a>d10</field_a>
+<field_b>t_footer</field_b>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>389</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>MOTO SCOOTER</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;MOTORBANDEN&#x27;&#x29;  &#x2b;  &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;NL&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;NL&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;NL&#x27; and &#xd;&#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and &#x28;a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;  or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e;linky_ebay_report.prezzo&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>68</xloc>
+      <yloc>188</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>articoli NL</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator>&#x7c;</separator>
+    <enclosure/>
+    <enclosure_forced>Y</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_stock_nl</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>N</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>product_sku</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>siteid</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>product_price</name>
+        <type>Number</type>
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>15</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+        <type>BigNumber</type>
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>5</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>category_path</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>689</xloc>
+      <yloc>451</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>
