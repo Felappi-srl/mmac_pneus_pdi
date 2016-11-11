@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_load_fintyre_dis_2017</name>
+    <name>t_fintyre_load_metrics</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;FINTYRE</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;FINTYRE</directory>
     <parameters>
     </parameters>
     <log>
@@ -47,8 +47,8 @@
       <maxdiff>0.0</maxdiff>
     </maxdate>
     <size_rowset>10000</size_rowset>
-    <sleep_time_empty>0</sleep_time_empty>
-    <sleep_time_full>0</sleep_time_full>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
@@ -65,48 +65,47 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
+  <created_user/>
+  <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;06.812</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;11 13&#x3a;51&#x3a;36.603</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;11 16&#x3a;11&#x3a;38.938</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <name>LINKY_2017</name>
+    <server>&#x24;&#x7b;DB_HOST_LINKY_2017&#x7d;</server>
+    <type>MYSQL</type>
     <access>Native</access>
-    <database>LINKY</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <database>&#x24;&#x7b;DB_DB_LINKY_2017&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;DB_USER_LINKY_2017&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_LINKY_2017&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
-  <hop> <from>Select values</from><to>Add constants</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
-  <hop> <from>Text file input 2</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>Somma</to><enabled>Y</enabled> </hop>
-  <hop> <from>Somma</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add constants</from><to>Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>linky_partner_eval_values</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input</from><to>Sort rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Sort rows</from><to>Somma</to><enabled>Y</enabled> </hop>
+  <hop> <from>Somma</from><to>Add constants</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -132,92 +131,23 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>prezzo</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>50</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>448</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>144</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
-<send_false_to>Somma</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>CODART</leftvalue>
-   <function>IS NULL</function>
-   <rightvalue/>
-   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>144</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>CODART</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>TOTALE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>336</xloc>
-      <yloc>80</yloc>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -237,7 +167,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f;TOTALE&#x3d;SERIATE&#x2b;CEVA&#x2b;MIRANO&#x2b;TRENTO&#x2b;NOVARA&#x2b;ALESSANDRIA&#x2b;BOLOGNA&#x2b;SORIANO&#x3b;&#xd;&#xa;TOTALE&#x3d;SERIATE&#x3b;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;TOTALE&#x3d;SERIATE&#x2b;CEVA&#x2b;MIRANO&#x2b;TRENTO&#x2b;NOVARA&#x2b;ALESSANDRIA&#x2b;BOLOGNA&#x2b;SORIANO&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>TOTALE</name>
         <rename>TOTALE</rename>
         <type>Integer</type>
@@ -246,14 +176,48 @@
         <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>240</xloc>
-      <yloc>80</yloc>
+      <xloc>288</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Text file input 2</name>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>Y</unique_rows>
+    <fields>
+      <field>
+        <name>CODART</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>176</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file input</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -290,7 +254,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;fintyre&#x24;&#x7b;file.separator&#x7d;FINTYRE_DISPONIBILITA.TXT</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;fintyre&#x5c;FINTYRE_DISPONIBILITA.TXT</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -325,7 +289,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>17</position>
+        <position>18</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -340,7 +304,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>19</position>
+        <position>20</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -355,7 +319,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>21</position>
+        <position>22</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -370,7 +334,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>23</position>
+        <position>24</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -385,7 +349,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>25</position>
+        <position>26</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -400,7 +364,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>27</position>
+        <position>28</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -415,7 +379,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>29</position>
+        <position>30</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -430,7 +394,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>31</position>
+        <position>32</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -445,7 +409,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>33</position>
+        <position>34</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -460,7 +424,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>35</position>
+        <position>36</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -475,7 +439,7 @@
         <group/>
         <nullif/>
         <ifnull/>
-        <position>37</position>
+        <position>38</position>
         <length>2</length>
         <precision>-1</precision>
         <trim_type>both</trim_type>
@@ -509,15 +473,15 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>32</xloc>
-      <yloc>80</yloc>
+      <xloc>48</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Update</name>
-    <type>Update</type>
+    <name>linky_partner_eval_values</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -526,36 +490,45 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>LINKY</connection>
-    <skip_lookup>Y</skip_lookup>
-    <commit>100</commit>
-    <use_batch>N</use_batch>
-    <error_ignored>N</error_ignored>
-    <ignore_flag_field/>
-    <lookup>
-      <schema/>
-      <table>linky_integro_articoli</table>
-      <key>
-        <name>CODART</name>
-        <field>PRODUCTCODE</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-        </key>
-      <key>
-        <name>partner</name>
-        <field>PARTNER</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-        </key>
-      <value>
-        <name>GIACENZA</name>
-        <rename>TOTALE</rename>
-        </value>
-      </lookup>
+    <connection>LINKY_2017</connection>
+    <schema/>
+    <table>linky_partner_eval_values</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>ipcode</column_name>
+          <stream_name>CODART</stream_name>
+        </field>
+        <field>
+          <column_name>partner</column_name>
+          <stream_name>partner</stream_name>
+        </field>
+        <field>
+          <column_name>qta</column_name>
+          <stream_name>TOTALE</stream_name>
+        </field>
+        <field>
+          <column_name>prezzo</column_name>
+          <stream_name>prezzo</stream_name>
+        </field>
+    </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>592</xloc>
-      <yloc>80</yloc>
+      <xloc>624</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
