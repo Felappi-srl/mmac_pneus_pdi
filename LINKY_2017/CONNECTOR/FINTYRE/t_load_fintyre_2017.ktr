@@ -68,12 +68,85 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;11 16&#x3a;11&#x3a;18.686</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;12 11&#x3a;39&#x3a;37.674</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>BRIXIA</name>
+    <server>&#x24;&#x7b;DB_HOST&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;DB_USER&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>BRIXIA_ODOO</name>
+    <server>&#x24;&#x7b;ODOO_HOST&#x7d;</server>
+    <type>OpenERPDatabaseMeta</type>
+    <access>Plugin</access>
+    <database>&#x24;&#x7b;ODOO_DB&#x7d;</database>
+    <port>8069</port>
+    <username>&#x24;&#x7b;ODOO_USER&#x7d;</username>
+    <password>&#x24;&#x7b;ODOO_PWD&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>8069</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CONNECTOR</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>CONNECTOR</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>LINKY_2017</name>
     <server>&#x24;&#x7b;DB_HOST_LINKY_2017&#x7d;</server>
@@ -102,19 +175,16 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Get System Info</from><to>Calculator</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>Select values</from><to>Add constants</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows</from><to>Dummy &#x28;do nothing&#x29;</to><enabled>Y</enabled> </hop>
   <hop> <from>Text file input</from><to>Filter rows</to><enabled>Y</enabled> </hop>
-  <hop> <from>Filter rows</from><to>prezzonetto</to><enabled>Y</enabled> </hop>
-  <hop> <from>prezzonetto</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Add constants</from><to>Stagione</to><enabled>Y</enabled> </hop>
-  <hop> <from>Stagione</from><to>Value Mapper</to><enabled>Y</enabled> </hop>
+  <hop> <from>Add constants</from><to>Stagione &#x2f; Prezzo</to><enabled>Y</enabled> </hop>
+  <hop> <from>Stagione &#x2f; Prezzo</from><to>Value Mapper</to><enabled>Y</enabled> </hop>
   <hop> <from>Value Mapper</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows 2</from><to>Get System Info</to><enabled>Y</enabled> </hop>
   <hop> <from>Filter rows 2</from><to>Dummy &#x28;do nothing&#x29; 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Add constants</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get System Info</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -155,41 +225,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>480</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-       <calculation><field_name>Prezzonetto2</field_name>
-<calc_type>ADD</calc_type>
-<field_a>Prezzonetto</field_a>
-<field_b>sconto</field_b>
-<field_c/>
-<value_type>Number</value_type>
-<value_length>15</value_length>
-<value_precision>4</value_precision>
-<remove>N</remove>
-<conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
-<decimal_symbol>.</decimal_symbol>
-<grouping_symbol>,</grouping_symbol>
-<currency_symbol/>
-</calculation>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1024</xloc>
-      <yloc>80</yloc>
+      <xloc>362</xloc>
+      <yloc>82</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -207,8 +244,8 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>144</xloc>
-      <yloc>208</yloc>
+      <xloc>146</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -226,7 +263,7 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
+      <xloc>690</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
       </GUI>
@@ -244,7 +281,7 @@
            <schema_name/>
            </partitioning>
 <send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
-<send_false_to>prezzonetto</send_false_to>
+<send_false_to>Replace in string</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -315,7 +352,7 @@
     </compare>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>800</xloc>
+      <xloc>690</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
@@ -340,8 +377,8 @@
       </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>928</xloc>
-      <yloc>80</yloc>
+      <xloc>811</xloc>
+      <yloc>81</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -358,7 +395,7 @@
            <schema_name/>
            </partitioning>
     <connection>LINKY_2017</connection>
-    <commit>1</commit>
+    <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
@@ -442,7 +479,7 @@
       </value>
       <value>
         <name>PREZZOSCONTATO</name>
-        <rename>Prezzonetto2</rename>
+        <rename>PREZZONETTO</rename>
         <update>Y</update>
       </value>
       <value>
@@ -498,8 +535,8 @@
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1024</xloc>
-      <yloc>208</yloc>
+      <xloc>924</xloc>
+      <yloc>83</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -530,110 +567,14 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>320</xloc>
-      <yloc>80</yloc>
+      <xloc>272</xloc>
+      <yloc>82</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>CODART</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>descrizione</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>IPCODE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>EAN</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>MARCA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SETTORE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>LARGHEZZA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>SEZIONE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CERCHIO</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CARICO</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>VELOCITA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>STAGIONE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>RFT</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>CONSUMO</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>FRENATA</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>DB</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>RUMORE</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PREZZO</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>PREZZONETTO</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Stagione</name>
+    <name>Stagione &#x2f; Prezzo</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -647,7 +588,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;n &#x3d; SETTORE.indexOf&#x28;&#x27;SUMMER&#x27;&#x29;&#x3b;&#xd;&#xa;if &#x28;n&#x3e;0&#x29;&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	var w &#x3d; SETTORE.indexOf&#x28;&#x27;WINTER&#x27;&#x29;&#x3b;&#xd;&#xa;	if &#x28;w&#x3e;0&#x29;&#x7b;&#xd;&#xa;		STAGIONEOK&#x3d;&#x27;INVERNO&#x27;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		var s4 &#x3d; SETTORE.indexOf&#x28;&#x27;ALL SEASON&#x27;&#x29;&#x3b;&#xd;&#xa;		if &#x28;s4&#x3e;0&#x29;&#x7b;&#xd;&#xa;			STAGIONEOK&#x3d;&#x27;4 STAGIONI&#x27;&#x3b;&#xd;&#xa;		&#x7d;else&#x7b;&#xd;&#xa;			STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;		&#x7d;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;RUMORE&#x21;&#x3d;&#x27;N&#x27; &#x26;&#x26; RUMORE&#x21;&#x3d;&#x27;&#x27; &#x29;&#x7b;&#xd;&#xa;	codice_rumore&#x3d;DB &#x2b; &#x27;_&#x27; &#x2b; RUMORE&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	codice_rumore&#x3d;&#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;n &#x3d; SETTORE.indexOf&#x28;&#x27;SUMMER&#x27;&#x29;&#x3b;&#xd;&#xa;if &#x28;n&#x3e;0&#x29;&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	var w &#x3d; SETTORE.indexOf&#x28;&#x27;WINTER&#x27;&#x29;&#x3b;&#xd;&#xa;	if &#x28;w&#x3e;0&#x29;&#x7b;&#xd;&#xa;		STAGIONEOK&#x3d;&#x27;INVERNO&#x27;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		var s4 &#x3d; SETTORE.indexOf&#x28;&#x27;ALL SEASON&#x27;&#x29;&#x3b;&#xd;&#xa;		if &#x28;s4&#x3e;0&#x29;&#x7b;&#xd;&#xa;			STAGIONEOK&#x3d;&#x27;4 STAGIONI&#x27;&#x3b;&#xd;&#xa;		&#x7d;else&#x7b;&#xd;&#xa;			STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;		&#x7d;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;RUMORE&#x21;&#x3d;&#x27;N&#x27; &#x26;&#x26; RUMORE&#x21;&#x3d;&#x27;&#x27; &#x29;&#x7b;&#xd;&#xa;	codice_rumore&#x3d;DB &#x2b; &#x27;_&#x27; &#x2b; RUMORE&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	codice_rumore&#x3d;&#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xa;PREZZONETTO&#x3d;&#x28;PREZZO&#x2f;100&#x29; &#x2b; 2&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>n</name>
         <rename>n</rename>
         <type>Integer</type>
@@ -666,10 +607,16 @@
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
+      </field>      <field>        <name>PREZZONETTO</name>
+        <rename>PREZZONETTO</rename>
+        <type>Number</type>
+        <length>10</length>
+        <precision>2</precision>
+        <replace>N</replace>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>560</xloc>
-      <yloc>80</yloc>
+      <xloc>456</xloc>
+      <yloc>82</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -1190,37 +1137,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>704</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>prezzonetto</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;PREZZONETTO&#x3d;PREZZO&#x2f;100&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>PREZZONETTO</name>
-        <rename>PREZZONETTO</rename>
-        <type>Number</type>
-        <length>10</length>
-        <precision>2</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>240</xloc>
+      <xloc>577</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
