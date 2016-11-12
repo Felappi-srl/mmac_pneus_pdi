@@ -68,7 +68,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;12 11&#x3a;40&#x3a;12.145</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;12 16&#x3a;03&#x3a;51.284</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -612,12 +612,6 @@
       <key>
         <name>CODART</name>
         <field>PRODUCTCODE</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-        </key>
-      <key>
-        <name>partner</name>
-        <field>PARTNER</field>
         <condition>&#x3d;</condition>
         <name2/>
         </key>
