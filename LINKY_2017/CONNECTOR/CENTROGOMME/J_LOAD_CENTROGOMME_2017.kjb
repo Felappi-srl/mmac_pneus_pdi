@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;12 15&#x3a;47&#x3a;00.571</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;12 16&#x3a;16&#x3a;19.828</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -237,7 +237,7 @@
       <name>Azzero giacenze</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_cg set giacenza&#x3d;0, listino&#x3d;0, prezzoscontato&#x3d;0 where partner&#x3d;&#x27;CG&#x27;</sql>
+      <sql>update linky_integro_articoli_cg set giacenza&#x3d;0, listino&#x3d;0, prezzoscontato&#x3d;0</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
