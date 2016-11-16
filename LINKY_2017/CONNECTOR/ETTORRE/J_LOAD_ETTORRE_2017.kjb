@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;13&#x3a;55.342</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;16&#x3a;47.804</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -451,7 +451,7 @@
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
+      <connection>LINKY_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
