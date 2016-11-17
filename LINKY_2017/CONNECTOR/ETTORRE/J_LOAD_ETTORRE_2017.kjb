@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;16&#x3a;47.804</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 10&#x3a;08&#x3a;14.653</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -439,8 +439,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>619</xloc>
-      <yloc>222</yloc>
+      <xloc>690</xloc>
+      <yloc>223</yloc>
     </entry>
     <entry>
       <name>SQL</name>
@@ -455,8 +455,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>747</xloc>
-      <yloc>222</yloc>
+      <xloc>818</xloc>
+      <yloc>223</yloc>
     </entry>
     <entry>
       <name>File &#x3e; 0</name>
@@ -483,7 +483,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>459</xloc>
+      <xloc>389</xloc>
       <yloc>46</yloc>
     </entry>
     <entry>
@@ -499,8 +499,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>874</xloc>
-      <yloc>126</yloc>
+      <xloc>945</xloc>
+      <yloc>127</yloc>
     </entry>
     <entry>
       <name>t_ettorre_load_metrics_2017</name>
@@ -535,8 +535,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>556</xloc>
-      <yloc>46</yloc>
+      <xloc>627</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>Scrivi nel log</name>
@@ -548,8 +548,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>779</xloc>
-      <yloc>46</yloc>
+      <xloc>850</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>DUMMY</name>
@@ -568,7 +568,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>459</xloc>
+      <xloc>389</xloc>
       <yloc>126</yloc>
     </entry>
     <entry>
@@ -614,8 +614,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>667</xloc>
-      <yloc>46</yloc>
+      <xloc>738</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>Valutazione semplice</name>
@@ -636,8 +636,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>875</xloc>
-      <yloc>46</yloc>
+      <xloc>946</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>t_load_ettorre_2017</name>
@@ -672,8 +672,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>875</xloc>
-      <yloc>222</yloc>
+      <xloc>946</xloc>
+      <yloc>223</yloc>
     </entry>
     <entry>
       <name>Mail OK</name>
@@ -712,7 +712,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>459</xloc>
+      <xloc>389</xloc>
       <yloc>222</yloc>
     </entry>
     <entry>
@@ -742,7 +742,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>347</xloc>
+      <xloc>277</xloc>
       <yloc>46</yloc>
     </entry>
     <entry>
@@ -757,23 +757,30 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>225</xloc>
+      <xloc>155</xloc>
       <yloc>46</yloc>
+    </entry>
+    <entry>
+      <name>Del metrics</name>
+      <description/>
+      <type>SQL</type>
+      <sql>delete from linky_partner_eval_values where partner&#x3d;&#x27;ETT&#x27;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>504</xloc>
+      <yloc>47</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>SQL</from>
       <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>File &#x3e; 0</from>
-      <to>t_ettorre_load_metrics_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -891,6 +898,24 @@
     <hop>
       <from>Imposta variabili</from>
       <to>Preleva file con SFTP</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>File &#x3e; 0</from>
+      <to>Del metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Del metrics</from>
+      <to>t_ettorre_load_metrics_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

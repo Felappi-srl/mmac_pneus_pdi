@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_ettorre_load_metrics_2017</name>
+    <name>t_tg_load_metrics</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;ETTORRE</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TAGLIABUE</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user/>
-    <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;06.894</created_date>
+    <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;07.229</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2016&#x2f;11&#x2f;17 10&#x3a;08&#x3a;09.474</modified_date>
+    <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;33&#x3a;44.973</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -547,18 +547,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CSV file input</from>
-      <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
+      <from>CSV file input 2</from>
       <to>Sort rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -581,7 +571,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>ETT</nullif>
+        <nullif>TG</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -595,14 +585,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>320</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>CSV file input</name>
+    <name>CSV file input 2</name>
     <type>CsvInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -612,7 +602,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;ettorre&#x24;&#x7b;file.separator&#x7d;ETTORRE.CSV</filename>
+    <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;tagliabue&#x24;&#x7b;file.separator&#x7d;FELAPPI.CSV</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -627,7 +617,7 @@
     <encoding/>
     <fields>
       <field>
-        <name>ARTICOLO</name>
+        <name>cod.articolo</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -635,10 +625,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>IPCODE</name>
+        <name>descr.marca</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -646,10 +636,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>DESCRIZIONE</name>
+        <name>mis</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -657,10 +647,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>CONSUMO</name>
+        <name>serie</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -668,10 +658,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>ADERENZA</name>
+        <name>calet</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -679,10 +669,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>RUMOROSITA</name>
+        <name>ind.car</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -690,10 +680,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>MARCA</name>
+        <name>I.V</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -701,10 +691,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>MISURA</name>
+        <name>disegno</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -712,10 +702,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>C</name>
+        <name>descr.LINEA</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -723,10 +713,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>CARICO</name>
+        <name>descr.settore</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -734,10 +724,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>VELOCITA</name>
+        <name>Giacenza</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -745,98 +735,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>MODELLO</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>XL</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>SALVACERCHIO</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>4S</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>OMOLOGAZIONE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>COD_EQUIPAGG</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>STAGIONE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>DISP</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>PREZZO</name>
+        <name>Prezzo_scontato</name>
         <type>Number</type>
         <format/>
         <currency/>
@@ -844,10 +746,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>DOT</name>
+        <name>barcode</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -855,10 +757,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>RFT</name>
+        <name>IpCode</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -866,10 +768,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>SOTTOTIPO</name>
+        <name>Classe Energetica</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -877,10 +779,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>BARCODE</name>
+        <name>Aderenza bagnato</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -888,7 +790,84 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>BarraRum.</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Rumorosita&#x27;</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>cat. PFU.</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Desc1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Desc2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Desc3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>runflat</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
       </field>
     </fields>
     <cluster_schema/>
@@ -900,66 +879,6 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>Sort rows</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>IPCODE</leftvalue>
- <function>IS NOT NULL</function>
- <rightvalue/>
- </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1001,7 +920,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
+      <xloc>176</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1021,8 +940,8 @@
     <connection>LINKY_2017</connection>
     <schema/>
     <table>linky_partner_eval_values</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
+    <commit>1</commit>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -1046,11 +965,11 @@
         </field>
         <field>
           <column_name>qta</column_name>
-          <stream_name>DISP</stream_name>
+          <stream_name>Giacenza</stream_name>
         </field>
         <field>
           <column_name>prezzo</column_name>
-          <stream_name>PREZZO</stream_name>
+          <stream_name>Prezzo_scontato</stream_name>
         </field>
     </fields>
     <cluster_schema/>
@@ -1061,7 +980,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>448</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>

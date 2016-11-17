@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_load_bernaerts</name>
+    <name>t_load_tagliabue_2017</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;BERNAERTS</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TAGLIABUE</directory>
     <parameters>
     </parameters>
     <log>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2016&#x2f;11&#x2f;16 17&#x3a;16&#x3a;57.135</modified_date>
+    <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;34&#x3a;08.070</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -563,6 +563,11 @@
   </connection>
   <order>
     <hop>
+      <from>Get System Info</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Select values</from>
       <to>Add constants</to>
       <enabled>Y</enabled>
@@ -588,6 +593,21 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Calculator</from>
+      <to>Rumore</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Rumore</from>
+      <to>Quarto Spazio</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Quarto Spazio</from>
+      <to>Modified Java Script Value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Modified Java Script Value</from>
       <to>Formula</to>
       <enabled>Y</enabled>
@@ -604,22 +624,57 @@
     </hop>
     <hop>
       <from>Filter rows</from>
+      <to>Solo catene</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Solo catene</from>
       <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get System Info</from>
-      <to>SETTORE</to>
+      <from>Catene</from>
+      <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>SETTORE</from>
-      <to>Rumore</to>
+      <from>Solo catene</from>
+      <to>Sort rows 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Rumore</from>
-      <to>Modified Java Script Value</to>
+      <from>Sort rows</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 2</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Join</from>
+      <to>Larghezza</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Larghezza</from>
+      <to>Modified Java Script Value 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value 2</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2</from>
+      <to>Insert Catene</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -642,7 +697,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>BER</nullif>
+        <nullif>TG</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -668,8 +723,47 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>438</xloc>
       <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>partner</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>TG</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -685,7 +779,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;BERNAERTS&#x24;&#x7b;file.separator&#x7d;PneusCenter_stocklist.csv</filename>
+    <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;tagliabue&#x24;&#x7b;file.separator&#x7d;FELAPPI.CSV</filename>
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
@@ -700,7 +794,7 @@
     <encoding/>
     <fields>
       <field>
-        <name>EAN</name>
+        <name>cod.articolo</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -708,10 +802,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>TYRE SIZE</name>
+        <name>descr.marca</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -719,10 +813,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>LOADSPEEDINDEX</name>
+        <name>mis</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -730,10 +824,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>RUN FLAT</name>
+        <name>serie</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -741,10 +835,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>BRAND</name>
+        <name>calet</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -752,10 +846,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>MODEL</name>
+        <name>ind.car</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -763,10 +857,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>LABEL</name>
+        <name>I.V</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -774,10 +868,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>AMOUNT</name>
+        <name>disegno</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -785,21 +879,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>PRICE</name>
-        <type>Number</type>
-        <format/>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>SEASON</name>
+        <name>descr.LINEA</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -807,10 +890,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>TYPE</name>
+        <name>descr.settore</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -818,10 +901,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>ITEM CODE</name>
+        <name>disponib.</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -829,10 +912,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>ROLL RES</name>
+        <name>listxcat30</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -840,10 +923,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>WET GRIP</name>
+        <name>barcode</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -851,10 +934,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>NOISE EM</name>
+        <name>art.for.</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -862,10 +945,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>SOUND W</name>
+        <name>Classe Energetica</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -873,10 +956,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>WIDTH</name>
+        <name>Aderenza bagnato</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -884,10 +967,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>HEIGHT</name>
+        <name>BarraRum.</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -895,10 +978,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>RIM SIZE</name>
+        <name>Rumorosita&#x27;</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -906,10 +989,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>LOAD</name>
+        <name>cat. PFU.</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -917,10 +1000,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>SPEED</name>
+        <name>Desc1</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -928,10 +1011,10 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
       </field>
       <field>
-        <name>IPCODE</name>
+        <name>Desc2</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -939,7 +1022,29 @@
         <group/>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Desc3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>runflat</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
       </field>
     </fields>
     <cluster_schema/>
@@ -957,6 +1062,119 @@
     </step>
 
   <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>Prezzonetto</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>listxcat30</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>15</value_length>
+      <value_precision>4</value_precision>
+      <remove>N</remove>
+      <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol>,</grouping_symbol>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Catene</name>
+    <type>CsvInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <filename>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tagliabue&#x5c;catene&#x5c;513ImportNuoveEntita.csv</filename>
+    <filename_field/>
+    <rownum_field/>
+    <include_filename>N</include_filename>
+    <separator>&#x3b;</separator>
+    <enclosure/>
+    <header>Y</header>
+    <buffer_size>50000</buffer_size>
+    <lazy_conversion>Y</lazy_conversion>
+    <add_filename_result>N</add_filename_result>
+    <parallel>N</parallel>
+    <newline_possible>N</newline_possible>
+    <encoding/>
+    <fields>
+      <field>
+        <name>Tipo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+      </field>
+      <field>
+        <name>Valore</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+      <field>
+        <name>Codice</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>CodStagione</name>
     <type>ValueMapper</type>
     <description/>
@@ -967,12 +1185,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>SEASON</field_to_use>
+    <field_to_use>descr.LINEA</field_to_use>
     <target_field>codstagione</target_field>
-    <non_match_default/>
+    <non_match_default>ESTATE</non_match_default>
     <fields>
       <field>
-        <source_value>SUMMER</source_value>
+        <source_value>ESTIVO</source_value>
         <target_value>E</target_value>
       </field>
       <field>
@@ -982,10 +1200,6 @@
       <field>
         <source_value>INVERNO</source_value>
         <target_value>I</target_value>
-      </field>
-      <field>
-        <source_value>ESTATE</source_value>
-        <target_value>E</target_value>
       </field>
     </fields>
     <cluster_schema/>
@@ -1021,8 +1235,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1039,17 +1253,31 @@
       <schema_name/>
     </partitioning>
 <send_true_to>Select values</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+<send_false_to>Solo catene</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <conditions>
   <condition>
    <negated>N</negated>
-   <leftvalue>IPCODE</leftvalue>
+   <leftvalue>art.for.</leftvalue>
    <function>IS NOT NULL</function>
    <rightvalue/>
    <value><name>constant</name><type>String</type><text>&#x3c;null&#x3e;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>listxcat30</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>serie</leftvalue>
+   <function>IS NOT NULL</function>
+   <rightvalue/>
+   </condition>
   </conditions>
  </condition>
     </compare>
@@ -1079,14 +1307,14 @@
       <schema_name/>
     </partitioning>
        <formula><field_name>CodiceRum</field_name>
-<formula_string>SUBSTITUTE&#x28;&#x5b;SOUND W&#x5d;&#x3b;&#x22;dB&#x22;&#x3b;&#x22;&#x22;&#x29;&#x26;&#x22;_&#x22;&#x26;&#x5b;NOISE EM&#x5d;</formula_string>
+<formula_string>&#x5b;Rumorosita&#x27;&#x5d;&#x26;&#x22;_&#x22;&#x26;&#x5b;BarraRum.&#x5d;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
 <replace_field/>
 </formula>
        <formula><field_name>DescrizioneRumore</field_name>
-<formula_string>&#x5b;SOUND W&#x5d;&#x26; &#x22; &#x22;&#x26;&#x5b;ParentesiRumore&#x5d;</formula_string>
+<formula_string>&#x5b;Rumorosita&#x27;&#x5d;&#x26;&#x22;DB &#x22;&#x26;&#x5b;ParentesiRumore&#x5d;</formula_string>
 <value_type>String</value_type>
 <value_length>-1</value_length>
 <value_precision>-1</value_precision>
@@ -1100,8 +1328,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
-      <yloc>144</yloc>
+      <xloc>528</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1149,13 +1377,13 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY_2017</connection>
-    <commit>100</commit>
+    <commit>1</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>linky_integro_articoli_ber</table>
+      <table>linky_integro_articoli_tg</table>
       <key>
-        <name>IPCODE</name>
+        <name>art.for.</name>
         <field>IpCode</field>
         <condition>&#x3d;</condition>
         <name2/>
@@ -1167,12 +1395,112 @@
       </value>
       <value>
         <name>PREZZOSCONTATO</name>
-        <rename>PrezzoAggiunto</rename>
+        <rename>Prezzonetto</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>IPCODE</name>
+        <rename>art.for.</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>MARCA</name>
+        <rename>descr.marca</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>PRODUCTCODE</name>
+        <rename>cod.articolo</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>EAN</name>
+        <rename>barcode</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>STAGIONE</name>
+        <rename>descr.LINEA</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>DESCRIZIONE</name>
+        <rename>Descrizionecorretta</rename>
         <update>Y</update>
       </value>
       <value>
         <name>SETTORE</name>
         <rename>SETTOREOK</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>LARGHEZZA</name>
+        <rename>mis</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CODICELARGHEZZA</name>
+        <rename>mis</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CODICESERIE</name>
+        <rename>serie</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>SERIE</name>
+        <rename>serie</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CODICECERCHIO</name>
+        <rename>calet</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CERCHIO</name>
+        <rename>calet</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ICARICO</name>
+        <rename>ind.car</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>GIACENZA</name>
+        <rename>disponib.</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEVEL</name>
+        <rename>I.V</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>VEL</name>
+        <rename>I.V</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CODICEROTOLAMENTO</name>
+        <rename>Classe Energetica</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ROTOLAMENTO</name>
+        <rename>Classe Energetica</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CODICEADERENZA</name>
+        <rename>Aderenza bagnato</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>ADERENZA</name>
+        <rename>Aderenza bagnato</rename>
         <update>N</update>
       </value>
       <value>
@@ -1188,106 +1516,121 @@
       <value>
         <name>CODICESTAGIONE</name>
         <rename>codstagione</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>IPCODE</name>
-        <rename>IPCODE</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>DESCRIZIONE</name>
-        <rename>DESCOK</rename>
         <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Insert Catene</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY_2017</connection>
+    <commit>1</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>linky_integro_catene</table>
+      <key>
+        <name>Codice</name>
+        <field>IPCODE</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>Valore</name>
+        <field>MISURACOMPLETA</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>partner</name>
+        <field>PARTNER</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>PARTNER</name>
+        <rename>partner</rename>
+        <update>N</update>
       </value>
       <value>
         <name>MARCA</name>
-        <rename>BRAND</rename>
+        <rename>descr.marca</rename>
         <update>N</update>
       </value>
       <value>
-        <name>CODICELARGHEZZA</name>
-        <rename>WIDTH</rename>
+        <name>PRODUCTCODE</name>
+        <rename>cod.articolo</rename>
         <update>N</update>
-      </value>
-      <value>
-        <name>LARGHEZZA</name>
-        <rename>WIDTH</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICESERIE</name>
-        <rename>HEIGHT</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>SERIE</name>
-        <rename>HEIGHT</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICECERCHIO</name>
-        <rename>RIM SIZE</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CERCHIO</name>
-        <rename>RIM SIZE</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICEVEL</name>
-        <rename>SPEED</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>VEL</name>
-        <rename>SPEED</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ICARICO</name>
-        <rename>LOAD</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>LISTINO</name>
-        <rename>PrezzoAggiunto</rename>
-        <update>Y</update>
       </value>
       <value>
         <name>EAN</name>
-        <rename>EAN</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICEROTOLAMENTO</name>
-        <rename>ROLL RES</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ROTOLAMENTO</name>
-        <rename>ROLL RES</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICEADERENZA</name>
-        <rename>WET GRIP</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ADERENZA</name>
-        <rename>WET GRIP</rename>
+        <rename>barcode</rename>
         <update>N</update>
       </value>
       <value>
         <name>GIACENZA</name>
-        <rename>AMOUNT</rename>
+        <rename>disponib.</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>STAGIONE</name>
-        <rename>SEASON</rename>
+        <name>IPCODE</name>
+        <rename>Codice</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>DESCRIZIONE</name>
+        <rename>Desc1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LARGHEZZA</name>
+        <rename>Larghezza</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>CERCHIO</name>
+        <rename>raggio</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>SERIE</name>
+        <rename>spalla</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>LISTINO</name>
+        <rename>listxcat30</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>MISURACOMPLETA</name>
+        <rename>Valore</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>SETTORE</name>
+        <rename>descr.settore</rename>
         <update>N</update>
       </value>
     </lookup>
@@ -1299,8 +1642,75 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>144</yloc>
+      <xloc>640</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Larghezza</name>
+    <type>StringCut</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Valore</in_stream_name>
+        <out_stream_name>Larghezza</out_stream_name>
+        <cut_from>0</cut_from>
+        <cut_to>3</cut_to>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>INNER</join_type>
+<step1>Sort rows</step1>
+<step2>Select values 2</step2>
+    <keys_1>
+      <key>Codice</key>
+    </keys_1>
+    <keys_2>
+      <key>cod.articolo</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1320,22 +1730,10 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;SETTOREOK&#x3d;SETTORE.replace&#x28;&#x22;CONVENZIONALE&#x22;,&#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;SCOOTER F.L.&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;SCOOTER RADIALE&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;CICLOMOTORE&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;TRASP.LEGGERO&#x22;,&#x22;TRASPORTO LEGGERO&#x22;&#x29;&#x3b;&#xd;&#xa;if &#x28;RUNFLAT&#x3d;&#x3d;&#x27;1&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;RUN FLAT&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;n &#x3d; TYRESIZE.indexOf&#x28;&#x27;XL&#x27;&#x29;&#x3b;&#xd;&#xa;if &#x28;n&#x3e;-1&#x29; &#x7b;&#xd;&#xa;  DESCOK&#x3d;MODEL &#x2b; &#x27; XL&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;  DESCOK&#x3d;MODEL&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;PrezzoAggiunto &#x3d; prezzonetto &#x2b; 5&#x3b;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;SETTOREOK&#x3d;SETTORE.replace&#x28;&#x22;CONVENZIONALE&#x22;,&#x22;&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;SCOOTER F.L.&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;SCOOTER RADIALE&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;CICLOMOTORE&#x22;,&#x22;SCOOTER&#x22;&#x29;&#x3b;&#xd;&#xa;SETTOREOK&#x3d;SETTOREOK.replace&#x28;&#x22;TRASP.LEGGERO&#x22;,&#x22;TRASPORTO LEGGERO&#x22;&#x29;&#x3b;&#xd;&#xa;if &#x28;runflat&#x3d;&#x3d;&#x27;R&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;RUN FLAT&#x27;&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>SETTOREOK</name>
         <rename>SETTOREOK</rename>
         <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>DESCOK</name>
-        <rename>DESCOK</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>PrezzoAggiunto</name>
-        <rename>PrezzoAggiunto</rename>
-        <type>Number</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
@@ -1347,8 +1745,92 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>144</yloc>
+      <xloc>640</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;var n &#x3d; Valore.length&#x3b;&#xd;&#xa;&#xd;&#xa;spalla &#x3d; Valore.substr&#x28;3,n-5&#x29;&#x3b;&#xd;&#xa;raggio &#x3d; Valore.substr&#x28;n-2,2&#x29;&#x3b;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>raggio</name>
+        <rename>raggio</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>spalla</name>
+        <rename>spalla</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Quarto Spazio</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;  var pos &#x3d; 0&#x3b;&#xd;&#xa;  var num &#x3d; -1&#x3b;&#xd;&#xa;  var i &#x3d; -1&#x3b;&#xd;&#xa;  var graf &#x3d; Desc1&#x3b;&#xd;&#xa;  var posizioni&#x3d; &#x5b;&#x5d;&#x3b;&#xd;&#xa;   &#xd;&#xa;  &#x2f;&#x2f; Search the string and counts the number of e&#x27;s&#xd;&#xa;  while &#x28;pos &#x21;&#x3d; -1&#x29; &#x7b;&#xd;&#xa;    pos &#x3d; graf.indexOf&#x28;&#x22; &#x22;, i &#x2b; 1&#x29;&#x3b;&#xd;&#xa;    num &#x2b;&#x3d; 1&#x3b;&#xd;&#xa;    posizioni.push&#x28;pos&#x29;&#x3b;&#xd;&#xa;    i &#x3d; pos&#x3b;&#xd;&#xa;  &#x7d;&#xd;&#xa;PosizioneSpazio &#x3d; posizioni&#x5b;3&#x5d;&#x3b;&#xd;&#xa;if &#x28;PosizioneSpazio &#x3e; 0&#x29; &#x7b;&#xd;&#xa;  Descrizionecorretta &#x3d; Desc1.substring&#x28;PosizioneSpazio &#x2b;1,100&#x29;&#x3b;&#xd;&#xa; Descrizionecorretta&#x3d;Descrizionecorretta.trim&#x28;&#x29;&#x3b;&#xd;&#xa;&#x7d;else &#x7b;&#xd;&#xa;  Descrizionecorretta &#x3d; Desc1&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>PosizioneSpazio</name>
+        <rename>PosizioneSpazio</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>Descrizionecorretta</name>
+        <rename>Descrizionecorretta</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1364,7 +1846,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>NOISE EM</field_to_use>
+    <field_to_use>BarraRum.</field_to_use>
     <target_field>ParentesiRumore</target_field>
     <non_match_default>&#x29;</non_match_default>
     <fields>
@@ -1397,70 +1879,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>818</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>SETTORE</name>
-    <type>ValueMapper</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <field_to_use>TYPE</field_to_use>
-    <target_field>SETTORE</target_field>
-    <non_match_default>VETTURA</non_match_default>
-    <fields>
-      <field>
-        <source_value>PKW</source_value>
-        <target_value>VETTURA</target_value>
-      </field>
-      <field>
-        <source_value>LKW</source_value>
-        <target_value>TRASPORTO LEGGERO</target_value>
-      </field>
-      <field>
-        <source_value>LT</source_value>
-        <target_value>TRASPORTO LEGGERO</target_value>
-      </field>
-      <field>
-        <source_value>4x4</source_value>
-        <target_value>FUORI STRADA</target_value>
-      </field>
-      <field>
-        <source_value>4X4</source_value>
-        <target_value>FUORI STRADA</target_value>
-      </field>
-      <field>
-        <source_value>PCR</source_value>
-        <target_value>VETTURA</target_value>
-      </field>
-      <field>
-        <source_value>LLKW</source_value>
-        <target_value>TRASPORTO LEGGERO</target_value>
-      </field>
-      <field>
-        <source_value>UHP</source_value>
-        <target_value>VETTURA</target_value>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>816</xloc>
-      <yloc>32</yloc>
+      <xloc>832</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1476,35 +1896,62 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>EAN</name>
-      </field>      <field>        <name>TYRE SIZE</name>
-        <rename>TYRESIZE</rename>
-      </field>      <field>        <name>LOADSPEEDINDEX</name>
-      </field>      <field>        <name>RUN FLAT</name>
-        <rename>RUNFLAT</rename>
-      </field>      <field>        <name>BRAND</name>
-      </field>      <field>        <name>MODEL</name>
-      </field>      <field>        <name>LABEL</name>
-      </field>      <field>        <name>AMOUNT</name>
-      </field>      <field>        <name>PRICE</name>
-      </field>      <field>        <name>SEASON</name>
-      </field>      <field>        <name>TYPE</name>
-      </field>      <field>        <name>ITEM CODE</name>
-      </field>      <field>        <name>ROLL RES</name>
-      </field>      <field>        <name>WET GRIP</name>
-      </field>      <field>        <name>NOISE EM</name>
-      </field>      <field>        <name>SOUND W</name>
-      </field>      <field>        <name>WIDTH</name>
-      </field>      <field>        <name>HEIGHT</name>
-      </field>      <field>        <name>RIM SIZE</name>
-      </field>      <field>        <name>LOAD</name>
-      </field>      <field>        <name>SPEED</name>
-      </field>      <field>        <name>IPCODE</name>
+    <fields>      <field>        <name>cod.articolo</name>
+      </field>      <field>        <name>descr.marca</name>
+      </field>      <field>        <name>mis</name>
+      </field>      <field>        <name>serie</name>
+      </field>      <field>        <name>calet</name>
+      </field>      <field>        <name>ind.car</name>
+      </field>      <field>        <name>I.V</name>
+      </field>      <field>        <name>disegno</name>
+      </field>      <field>        <name>descr.LINEA</name>
+      </field>      <field>        <name>descr.settore</name>
+      </field>      <field>        <name>disponib.</name>
+      </field>      <field>        <name>listxcat30</name>
+      </field>      <field>        <name>barcode</name>
+      </field>      <field>        <name>art.for.</name>
+      </field>      <field>        <name>Classe Energetica</name>
+      </field>      <field>        <name>Aderenza bagnato</name>
+      </field>      <field>        <name>BarraRum.</name>
+      </field>      <field>        <name>Rumorosita&#x27;</name>
+      </field>      <field>        <name>cat. PFU.</name>
+      </field>      <field>        <name>Desc1</name>
+      </field>      <field>        <name>runflat</name>
       </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>PRICE</name>
-        <rename>prezzonetto</rename>
+      <meta>        <name>listxcat30</name>
+        <rename>listxcat30</rename>
         <type>Number</type>
         <length>15</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>calet</name>
+        <rename>calet</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>descr.settore</name>
+        <rename>SETTORE</rename>
+        <type>String</type>
+        <length>-2</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -1524,8 +1971,196 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
+      <xloc>317</xloc>
       <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>cod.articolo</name>
+      </field>      <field>        <name>descr.marca</name>
+      </field>      <field>        <name>descr.settore</name>
+      </field>      <field>        <name>disponib.</name>
+      </field>      <field>        <name>listxcat30</name>
+      </field>      <field>        <name>barcode</name>
+      </field>      <field>        <name>Desc1</name>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>disponib.</name>
+        <rename>disponib.</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>listxcat30</name>
+        <rename>listxcat30</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Solo catene</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Sort rows 2</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <operator>AND</operator>
+   <leftvalue>descr.settore</leftvalue>
+   <function>&#x3d;</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>CATENE</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>Codice</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>2</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 2</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>cod.articolo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>2</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1541,12 +2176,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>SEASON</field_to_use>
+    <field_to_use>descr.LINEA</field_to_use>
     <target_field/>
-    <non_match_default/>
+    <non_match_default>ESTATE</non_match_default>
     <fields>
       <field>
-        <source_value>SUMMER</source_value>
+        <source_value>ESTIVO</source_value>
         <target_value>ESTATE</target_value>
       </field>
       <field>
