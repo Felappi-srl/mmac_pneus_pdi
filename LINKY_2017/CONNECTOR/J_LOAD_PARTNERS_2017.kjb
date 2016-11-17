@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2016&#x2f;11&#x2f;17 09&#x3a;50&#x3a;37.278</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 14&#x3a;00&#x3a;32.755</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 14&#x3a;09&#x3a;59.689</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -462,7 +462,7 @@
       <minutes>0</minutes>
       <weekDay>1</weekDay>
       <DayOfMonth>1</DayOfMonth>
-      <parallel>Y</parallel>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>299</xloc>
