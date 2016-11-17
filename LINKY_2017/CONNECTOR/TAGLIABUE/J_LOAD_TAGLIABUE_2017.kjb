@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;40&#x3a;21.054</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;52&#x3a;36.616</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -439,8 +439,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>534</xloc>
-      <yloc>223</yloc>
+      <xloc>616</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>File &#x3e; 0</name>
@@ -467,8 +467,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>310</xloc>
-      <yloc>51</yloc>
+      <xloc>392</xloc>
+      <yloc>52</yloc>
     </entry>
     <entry>
       <name>Azzero giacenze</name>
@@ -483,8 +483,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>838</xloc>
-      <yloc>128</yloc>
+      <xloc>920</xloc>
+      <yloc>129</yloc>
     </entry>
     <entry>
       <name>t_tg_load_metrics</name>
@@ -519,8 +519,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>518</xloc>
-      <yloc>48</yloc>
+      <xloc>600</xloc>
+      <yloc>49</yloc>
     </entry>
     <entry>
       <name>Scrivi nel log</name>
@@ -532,8 +532,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>742</xloc>
-      <yloc>47</yloc>
+      <xloc>824</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>DUMMY</name>
@@ -552,8 +552,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>310</xloc>
-      <yloc>131</yloc>
+      <xloc>392</xloc>
+      <yloc>132</yloc>
     </entry>
     <entry>
       <name>t_getrowcount</name>
@@ -598,8 +598,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>630</xloc>
-      <yloc>47</yloc>
+      <xloc>712</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>Valutazione semplice</name>
@@ -620,8 +620,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>838</xloc>
-      <yloc>47</yloc>
+      <xloc>920</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>t_load_tagliabue_2017</name>
@@ -656,8 +656,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>838</xloc>
-      <yloc>223</yloc>
+      <xloc>920</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>Mail OK</name>
@@ -696,8 +696,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>310</xloc>
-      <yloc>227</yloc>
+      <xloc>392</xloc>
+      <yloc>228</yloc>
     </entry>
     <entry>
       <name>Preleva file con SFTP 2</name>
@@ -726,8 +726,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>175</xloc>
-      <yloc>51</yloc>
+      <xloc>257</xloc>
+      <yloc>52</yloc>
     </entry>
     <entry>
       <name>SQL 2</name>
@@ -742,8 +742,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>742</xloc>
-      <yloc>223</yloc>
+      <xloc>824</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>CATEGORIA</name>
@@ -758,8 +758,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>630</xloc>
-      <yloc>223</yloc>
+      <xloc>712</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>Del metrics</name>
@@ -774,8 +774,23 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>409</xloc>
-      <yloc>51</yloc>
+      <xloc>491</xloc>
+      <yloc>52</yloc>
+    </entry>
+    <entry>
+      <name>Imposta variabili</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>142</xloc>
+      <yloc>49</yloc>
     </entry>
   </entries>
   <hops>
@@ -861,15 +876,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Preleva file con SFTP 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>Preleva file con SFTP 2</from>
       <to>File &#x3e; 0</to>
       <from_nr>0</from_nr>
@@ -917,6 +923,24 @@
     <hop>
       <from>Del metrics</from>
       <to>t_tg_load_metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Imposta variabili</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Imposta variabili</from>
+      <to>Preleva file con SFTP 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

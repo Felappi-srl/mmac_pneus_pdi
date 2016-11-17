@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2016&#x2f;11&#x2f;17 09&#x3a;50&#x3a;37.278</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;28&#x3a;13.685</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;52&#x3a;48.298</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -403,8 +403,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>77</xloc>
-      <yloc>43</yloc>
+      <xloc>26</xloc>
+      <yloc>42</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -413,8 +413,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>620</xloc>
-      <yloc>44</yloc>
+      <xloc>746</xloc>
+      <yloc>38</yloc>
     </entry>
     <entry>
       <name>J_LOAD_BERNAERTS_2017</name>
@@ -445,8 +445,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>315</xloc>
-      <yloc>45</yloc>
+      <xloc>441</xloc>
+      <yloc>39</yloc>
     </entry>
     <entry>
       <name>DUMMY</name>
@@ -465,8 +465,8 @@
       <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>173</xloc>
-      <yloc>44</yloc>
+      <xloc>299</xloc>
+      <yloc>38</yloc>
     </entry>
     <entry>
       <name>DUMMY 2</name>
@@ -485,8 +485,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>451</xloc>
-      <yloc>44</yloc>
+      <xloc>577</xloc>
+      <yloc>38</yloc>
     </entry>
     <entry>
       <name>J_LOAD_CENTROGOMME_2017</name>
@@ -517,8 +517,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
-      <yloc>130</yloc>
+      <xloc>446</xloc>
+      <yloc>124</yloc>
     </entry>
     <entry>
       <name>J_LOAD_DELDO_2017</name>
@@ -549,8 +549,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>322</xloc>
-      <yloc>214</yloc>
+      <xloc>448</xloc>
+      <yloc>208</yloc>
     </entry>
     <entry>
       <name>J_LOAD_ETTORRE_2017</name>
@@ -581,8 +581,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>324</xloc>
-      <yloc>294</yloc>
+      <xloc>450</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>J_LOAD_FINTYRE_2017</name>
@@ -613,8 +613,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>329</xloc>
-      <yloc>386</yloc>
+      <xloc>455</xloc>
+      <yloc>380</yloc>
     </entry>
     <entry>
       <name>J_LOAD_TAGLIABUE_2017</name>
@@ -645,8 +645,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>329</xloc>
-      <yloc>470</yloc>
+      <xloc>455</xloc>
+      <yloc>464</yloc>
     </entry>
     <entry>
       <name>J_LOAD_UNIVERGOMME_2017</name>
@@ -677,20 +677,26 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>485</xloc>
-      <yloc>467</yloc>
+      <xloc>611</xloc>
+      <yloc>461</yloc>
+    </entry>
+    <entry>
+      <name>Imposta variabili</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>152</xloc>
+      <yloc>43</yloc>
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>START</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>DUMMY</from>
       <to>J_LOAD_BERNAERTS_2017</to>
@@ -825,6 +831,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Imposta variabili</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Imposta variabili</from>
+      <to>DUMMY</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
