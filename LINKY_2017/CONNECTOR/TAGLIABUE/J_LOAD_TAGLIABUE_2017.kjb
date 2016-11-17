@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;16 16&#x3a;32&#x3a;19.192</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;35&#x3a;08.518</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -467,8 +467,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>422</xloc>
-      <yloc>47</yloc>
+      <xloc>310</xloc>
+      <yloc>51</yloc>
     </entry>
     <entry>
       <name>Azzero giacenze</name>
@@ -552,8 +552,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>422</xloc>
-      <yloc>127</yloc>
+      <xloc>310</xloc>
+      <yloc>131</yloc>
     </entry>
     <entry>
       <name>t_getrowcount</name>
@@ -696,8 +696,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>422</xloc>
-      <yloc>223</yloc>
+      <xloc>310</xloc>
+      <yloc>227</yloc>
     </entry>
     <entry>
       <name>Preleva file con SFTP 2</name>
@@ -726,8 +726,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>310</xloc>
-      <yloc>47</yloc>
+      <xloc>175</xloc>
+      <yloc>51</yloc>
     </entry>
     <entry>
       <name>SQL 2</name>
@@ -761,17 +761,24 @@
       <xloc>630</xloc>
       <yloc>223</yloc>
     </entry>
+    <entry>
+      <name>Del metrics</name>
+      <description/>
+      <type>SQL</type>
+      <sql>delete from linky_partner_eval_values where partner&#x3d;&#x27;TG&#x27;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>409</xloc>
+      <yloc>51</yloc>
+    </entry>
   </entries>
   <hops>
-    <hop>
-      <from>File &#x3e; 0</from>
-      <to>t_tg_load_metrics</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>File &#x3e; 0</from>
       <to>DUMMY</to>
@@ -897,6 +904,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File &#x3e; 0</from>
+      <to>Del metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Del metrics</from>
+      <to>t_tg_load_metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
