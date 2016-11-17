@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;35&#x3a;08.518</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 11&#x3a;40&#x3a;21.054</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -452,7 +452,7 @@
       <Result_field_includesubfolders/>
       <fields>
         <field>
-          <source_filefolder>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tagliabue&#x5c;FELAPPI.CSV</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;tagliabue&#x24;&#x7b;file.separator&#x7d;FELAPPI.CSV</source_filefolder>
           <wildcard/>
           <include_subFolders>N</include_subFolders>
         </field>
@@ -708,14 +708,14 @@
       <username>bitnami</username>
       <password>Encrypted </password>
       <sftpdirectory>&#x2f;opt&#x2f;bitnami&#x2f;apps&#x2f;pneus&#x2f;ftpd&#x2f;67599tb&#x2f;</sftpdirectory>
-      <targetdirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tagliabue</targetdirectory>
+      <targetdirectory>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;tagliabue</targetdirectory>
       <wildcard>FELAPPI.CSV</wildcard>
       <remove>N</remove>
       <isaddresult>Y</isaddresult>
       <createtargetfolder>N</createtargetfolder>
       <copyprevious>N</copyprevious>
       <usekeyfilename>Y</usekeyfilename>
-      <keyfilename>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;pneus.pem</keyfilename>
+      <keyfilename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;pneus.pem</keyfilename>
       <keyfilepass>Encrypted </keyfilepass>
       <compression>none</compression>
       <proxyType/>
