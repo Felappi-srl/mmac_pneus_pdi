@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2016&#x2f;11&#x2f;17 09&#x3a;50&#x3a;37.278</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 13&#x3a;55&#x3a;53.505</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 14&#x3a;00&#x3a;32.755</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -403,8 +403,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>26</xloc>
-      <yloc>42</yloc>
+      <xloc>25</xloc>
+      <yloc>36</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -693,7 +693,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>152</xloc>
-      <yloc>43</yloc>
+      <yloc>38</yloc>
     </entry>
     <entry>
       <name>J_LOAD_YOKOHAMA_2017</name>
@@ -788,7 +788,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>594</xloc>
+      <xloc>603</xloc>
       <yloc>234</yloc>
     </entry>
   </entries>
@@ -835,8 +835,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>DUMMY</from>
@@ -853,8 +853,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>DUMMY</from>
@@ -871,8 +871,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>DUMMY</from>
@@ -889,8 +889,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>DUMMY</from>
@@ -916,8 +916,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>START</from>
@@ -952,8 +952,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>J_LOAD_CST_2017</from>
