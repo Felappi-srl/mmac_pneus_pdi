@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;16 17&#x3a;16&#x3a;58.393</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 14&#x3a;23&#x3a;15.825</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -519,8 +519,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>587</xloc>
-      <yloc>48</yloc>
+      <xloc>678</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>Scrivi nel log</name>
@@ -598,8 +598,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>715</xloc>
-      <yloc>48</yloc>
+      <xloc>806</xloc>
+      <yloc>47</yloc>
     </entry>
     <entry>
       <name>Valutazione semplice</name>
@@ -809,17 +809,24 @@
       <xloc>136</xloc>
       <yloc>47</yloc>
     </entry>
+    <entry>
+      <name>Del metrics</name>
+      <description/>
+      <type>SQL</type>
+      <sql>delete from linky_partner_eval_values where partner&#x3d;&#x27;UNI&#x27;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>561</xloc>
+      <yloc>46</yloc>
+    </entry>
   </entries>
   <hops>
-    <hop>
-      <from>File &#x3e; 0</from>
-      <to>t_uni_load_metrics</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>File &#x3e; 0</from>
       <to>DUMMY</to>
@@ -958,6 +965,24 @@
     <hop>
       <from>Imposta variabili</from>
       <to>t_get_filename</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>File &#x3e; 0</from>
+      <to>Del metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Del metrics</from>
+      <to>t_uni_load_metrics</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
