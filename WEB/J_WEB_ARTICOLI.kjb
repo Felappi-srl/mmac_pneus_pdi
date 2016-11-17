@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;49.220</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;10&#x2f;20 14&#x3a;10&#x3a;38.047</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;16 09&#x3a;54&#x3a;40.952</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -347,7 +347,7 @@
       <name>Carica file con SFTP</name>
       <description/>
       <type>SFTPPUT</type>
-      <servername>neworigin.pneus-center.it</servername>
+      <servername>www.pneus-center.it</servername>
       <serverport>22</serverport>
       <username>bitnami</username>
       <password>Encrypted </password>
@@ -459,7 +459,7 @@
       <name>DeleteArticle</name>
       <description/>
       <type>HTTP</type>
-      <url>http&#x3a;&#x2f;&#x2f;neworigin.pneus-center.it&#x2f;administrator&#x2f;components&#x2f;com_csvi&#x2f;helpers&#x2f;cron.php&#x3f;username&#x3d;cronuser&#x26;passwd&#x3d;6felappi&#x26;template_id&#x3d;15</url>
+      <url>http&#x3a;&#x2f;&#x2f;www.pneus-center.it&#x2f;administrator&#x2f;components&#x2f;com_csvi&#x2f;helpers&#x2f;cron.php&#x3f;username&#x3d;cronuser&#x26;passwd&#x3d;6felappi&#x26;template_id&#x3d;15</url>
       <targetfilename>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;log&#x5c;delete.log</targetfilename>
       <file_appended>N</file_appended>
       <date_time_added>N</date_time_added>
