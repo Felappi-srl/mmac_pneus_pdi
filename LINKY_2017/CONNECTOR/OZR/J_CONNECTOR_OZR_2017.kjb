@@ -1,14 +1,14 @@
 <job>
-  <name>J_LOAD_TECKLOGISTIC_2017</name>
+  <name>J_CONNECTOR_OZR_2017</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TECKLOGISTIC</directory>
-  <created_user/>
-  <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;09.184</created_date>
+  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;OZR</directory>
+  <created_user>admin</created_user>
+  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;03.403</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 15&#x3a;24&#x3a;44.991</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;17 15&#x3a;35&#x3a;15.892</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -403,8 +403,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>83</xloc>
-      <yloc>93</yloc>
+      <xloc>76</xloc>
+      <yloc>73</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -413,18 +413,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>756</xloc>
-      <yloc>93</yloc>
+      <xloc>736</xloc>
+      <yloc>381</yloc>
     </entry>
     <entry>
-      <name>t_load_magazzino</name>
+      <name>t_update_stock_ozr</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_load_magazzino</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TECKLOGISTIC</directory>
+      <transname>t_update_stock_ozr</transname>
+      <directory>&#x2f;LINKY&#x2f;OZR</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -449,88 +449,106 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>515</xloc>
-      <yloc>93</yloc>
+      <xloc>541</xloc>
+      <yloc>76</yloc>
     </entry>
     <entry>
-      <name>Preleva file con FTP</name>
+      <name>File &#x3e; 0</name>
       <description/>
-      <type>FTP</type>
-      <port>21</port>
-      <servername>ftp.tecklogistic.com</servername>
-      <username>tecklogistic-clienti.com</username>
-      <password>Encrypted 2be98afbc0fc499c9a716a93d8cc2fe8f</password>
-      <ftpdirectory>&#x2f;</ftpdirectory>
-      <targetdirectory>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;tecklogistic</targetdirectory>
-      <wildcard>.&#x2a;&#x5c;.txt</wildcard>
-      <binary>N</binary>
-      <timeout>0</timeout>
-      <remove>N</remove>
-      <only_new>N</only_new>
-      <active>N</active>
-      <control_encoding>ISO-8859-1</control_encoding>
-      <movefiles>N</movefiles>
-      <movetodirectory/>
-      <adddate>N</adddate>
-      <addtime>N</addtime>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <AddDateBeforeExtension>N</AddDateBeforeExtension>
-      <isaddresult>Y</isaddresult>
-      <createmovefolder>N</createmovefolder>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
-      <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
-      <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
-      <socksproxy_password>Encrypted </socksproxy_password>
-      <ifFileExists>ifFileExistsSkip</ifFileExists>
-      <nr_limit>10</nr_limit>
-      <success_condition>success_if_no_errors</success_condition>
+      <type>EVAL_FILES_METRICS</type>
+      <result_filenames_wildcard/>
+      <Result_field_file/>
+      <Result_field_wildcard/>
+      <Result_field_includesubfolders/>
+      <fields>
+        <field>
+          <source_filefolder>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;ozr&#x5c;_stock.csv</source_filefolder>
+          <wildcard/>
+          <include_subFolders>N</include_subFolders>
+        </field>
+      </fields>
+      <comparevalue>5</comparevalue>
+      <minvalue/>
+      <maxvalue/>
+      <successnumbercondition>greater</successnumbercondition>
+      <source_files>files</source_files>
+      <evaluation_type>size</evaluation_type>
+      <scale>kbytes</scale>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>319</xloc>
-      <yloc>93</yloc>
+      <xloc>185</xloc>
+      <yloc>76</yloc>
     </entry>
     <entry>
-      <name>SQL</name>
+      <name>Azzero giacenze</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_TECK set giacenza&#x3d;0</sql>
+      <sql>update linky_articoli_ozr set giacenza&#x3d;0</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
+      <connection>CONNECTOR</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>423</xloc>
-      <yloc>93</yloc>
+      <xloc>373</xloc>
+      <yloc>189</yloc>
     </entry>
     <entry>
-      <name>Imposta variabili</name>
+      <name>Elimino articoli obsoleti</name>
       <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-      </fields>
+      <type>SQL</type>
+      <sql>DELETE linky_articoli_ozr WHERE GIACENZA&#x3d;0 AND PREZZO IS NULL</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>206</xloc>
-      <yloc>89</yloc>
+      <xloc>732</xloc>
+      <yloc>72</yloc>
+    </entry>
+    <entry>
+      <name>CATEGORIA</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_articoli_OZR set&#xd;&#xa;categoria &#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,AU-43953&#x27;&#xd;&#xa;-- categoria &#x3d; case raggio&#xd;&#xa;--	when 13 then &#x27;IT-149595, DE-9888, NL-28648, FR-123964, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 14 then &#x27;IT-149596, DE-9888, NL-28648, FR-123965, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 15 then &#x27;IT-149597, DE-9888, NL-28648, FR-123966, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 16 then &#x27;IT-149598, DE-9888, NL-28648, FR-123967, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 17 then &#x27;IT-149599, DE-9888, NL-28648, FR-123968, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 18 then &#x27;IT-149600, DE-9888, NL-28648, FR-123969, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 19 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 20 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 21 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 22 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--end&#xd;&#xa;--where categoria is null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>736</xloc>
+      <yloc>158</yloc>
+    </entry>
+    <entry>
+      <name>GIACENZA 0 No IMMAGINI</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_articoli_OZR set&#xd;&#xa;giacenza&#x3d;0&#xd;&#xa;where &#xd;&#xa;IMMAGINE IS NULL or immagine &#x3d; &#x27;&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>739</xloc>
+      <yloc>259</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>t_load_magazzino</from>
-      <to>Successo</to>
+      <from>Azzero giacenze</from>
+      <to>t_update_stock_ozr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -538,26 +556,26 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Preleva file con FTP</from>
-      <to>SQL</to>
+      <from>File &#x3e; 0</from>
+      <to>Azzero giacenze</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL</from>
-      <to>t_load_magazzino</to>
+      <from>File &#x3e; 0</from>
+      <to>t_update_stock_ozr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>START</from>
-      <to>Imposta variabili</to>
+      <to>File &#x3e; 0</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -565,8 +583,35 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Imposta variabili</from>
-      <to>Preleva file con FTP</to>
+      <from>t_update_stock_ozr</from>
+      <to>Elimino articoli obsoleti</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Elimino articoli obsoleti</from>
+      <to>CATEGORIA</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>CATEGORIA</from>
+      <to>GIACENZA 0 No IMMAGINI</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>GIACENZA 0 No IMMAGINI</from>
+      <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
