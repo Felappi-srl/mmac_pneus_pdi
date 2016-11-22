@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;09.302</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 14&#x3a;38&#x3a;23.718</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;22 10&#x3a;31&#x3a;12.659</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -456,7 +456,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_WSP set giacenza&#x3d;0</sql>
+      <sql>update linky_articoli_wsp set giacenza&#x3d;0</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
