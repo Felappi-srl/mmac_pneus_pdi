@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 10&#x3a;08&#x3a;14.653</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;28 13&#x3a;32&#x3a;55.647</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -900,7 +900,7 @@
       <to>Preleva file con SFTP</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
