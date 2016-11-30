@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;11 11&#x3a;23&#x3a;10.034</modified_date>
+  <modified_date>2016&#x2f;11&#x2f;30 08&#x3a;24&#x3a;46.571</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -762,7 +762,7 @@
       <to>J_ebay_exec_stock_all_CG</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
