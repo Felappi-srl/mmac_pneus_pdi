@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;10&#x2f;13 13&#x3a;38&#x3a;53.267</modified_date>
+  <modified_date>2016&#x2f;12&#x2f;07 14&#x3a;31&#x3a;05.141</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -417,7 +417,7 @@
       <name>Marca GOOD YEAR</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set MARCA&#x3d;&#x27;GOODYEAR&#x27; where MARCA&#x3d;&#x27;GOOD YEAR&#x27;&#x3b;&#xd;&#xa;update linky_integro_articoli set &#xd;&#xa;codicevel&#x3d;replace&#x28;replace&#x28;codicevel,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;, vel&#x3d;replace&#x28;replace&#x28;codicevel,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;&#x3b;</sql>
+      <sql>update linky_integro_articoli set MARCA&#x3d;&#x27;GOODYEAR&#x27; where MARCA&#x3d;&#x27;GOOD YEAR&#x27;&#x3b;&#xd;&#xa;update linky_integro_articoli set MARCA&#x3d;&#x27;BFGOODRICH&#x27; where MARCA&#x3d;&#x27;GOODRICH&#x27;&#x3b;&#xd;&#xa;update linky_integro_articoli set &#xd;&#xa;codicevel&#x3d;replace&#x28;replace&#x28;codicevel,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;, vel&#x3d;replace&#x28;replace&#x28;codicevel,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
