@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;03.403</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;22 11&#x3a;18&#x3a;09.691</modified_date>
+  <modified_date>2016&#x2f;12&#x2f;15 11&#x3a;54&#x3a;09.312</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -462,7 +462,7 @@
       <Result_field_includesubfolders/>
       <fields>
         <field>
-          <source_filefolder>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;ozr&#x24;&#x7b;file.separator&#x7d;_stock.csv</source_filefolder>
+          <source_filefolder>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;ozr&#x24;&#x7b;file.separator&#x7d;_stock.CSV</source_filefolder>
           <wildcard/>
           <include_subFolders>N</include_subFolders>
         </field>
