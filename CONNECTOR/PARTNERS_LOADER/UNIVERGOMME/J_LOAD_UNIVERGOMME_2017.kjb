@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;12&#x2f;07 14&#x3a;31&#x3a;05.141</modified_date>
+  <modified_date>2016&#x2f;12&#x2f;21 09&#x3a;58&#x3a;20.185</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -378,7 +378,7 @@
       <servername>ftp.univergomma.it</servername>
       <username>C002193</username>
       <password>Encrypted 2be98afc86aa7f2d4f249fb348cc2fe8c</password>
-      <ftpdirectory>&#x2f;C002193</ftpdirectory>
+      <ftpdirectory>&#x2f;</ftpdirectory>
       <targetdirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;univergomma</targetdirectory>
       <wildcard>&#x24;&#x7b;FILENAME_TODAY&#x7d;</wildcard>
       <binary>N</binary>
