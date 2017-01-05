@@ -1,14 +1,14 @@
 <job>
-  <name>J_LOAD_TOYO_2017</name>
+  <name>J_MAK_AGGIORNAMENTO_CATALOGO</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TOYO</directory>
+  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MAK</directory>
   <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
+  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.210</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;01&#x2f;04 12&#x3a;32&#x3a;12.699</modified_date>
+  <modified_date>2017&#x2f;01&#x2f;05 13&#x3a;05&#x3a;21.904</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -85,32 +85,6 @@
     </attributes>
   </connection>
   <connection>
-    <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>LINKY</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>LINKY_2017</name>
     <server>&#x24;&#x7b;DB_HOST_LINKY_2017&#x7d;</server>
     <type>MYSQL</type>
@@ -132,6 +106,30 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>LINKY_ODOO</name>
+    <server>&#x24;&#x7b;DB_HOST_ODOO&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -430,7 +428,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>48</xloc>
-      <yloc>48</yloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -439,14 +437,50 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>607</xloc>
-      <yloc>219</yloc>
+      <xloc>48</xloc>
+      <yloc>160</yloc>
+    </entry>
+    <entry>
+      <name>t_mak_aggiornamento_catalogo</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_mak_aggiornamento_catalogo</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MAK</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>291</xloc>
+      <yloc>34</yloc>
     </entry>
     <entry>
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_ty set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680&#x27;&#xd;&#xa;where&#xd;&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;</sql>
+      <sql>update linky_articoli_mak set numerofori&#x3d;substring&#x28;pcd,1,1&#x29;, interasse &#x3d; substring&#x28;pcd,3,10&#x29;&#xd;&#xa;where pcd is not null&#x3b;&#xd;&#xa;update linky_articoli_mak&#xd;&#xa;set canale &#x3d;&#xd;&#xa;case when charindex&#x28;&#x27;J&#x27;,canale&#x29;&#x3e;0 THEN&#xd;&#xa;substring&#x28;canale,1,charindex&#x28;&#x27;J&#x27;,canale&#x29;-1&#x29;&#xd;&#xa;else CANALE end&#xd;&#xa;where charindex&#x28;&#x27;J&#x27;,canale&#x29;&#x3e;0&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -455,42 +489,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>735</xloc>
-      <yloc>219</yloc>
+      <xloc>560</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
-      <name>File &#x3e; 0</name>
-      <description/>
-      <type>EVAL_FILES_METRICS</type>
-      <result_filenames_wildcard/>
-      <Result_field_file/>
-      <Result_field_wildcard/>
-      <Result_field_includesubfolders/>
-      <fields>
-        <field>
-          <source_filefolder>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;toyo&#x24;&#x7b;file.separator&#x7d;ArtCli.csv</source_filefolder>
-          <wildcard/>
-          <include_subFolders>N</include_subFolders>
-        </field>
-      </fields>
-      <comparevalue>5</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successnumbercondition>greater</successnumbercondition>
-      <source_files>files</source_files>
-      <evaluation_type>size</evaluation_type>
-      <scale>kbytes</scale>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>345</xloc>
-      <yloc>48</yloc>
-    </entry>
-    <entry>
-      <name>Azzero giacenze</name>
+      <name>Aggiorno immagini e categoria</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_ty set giacenza&#x3d;0 </sql>
+      <sql>update noimg&#xd;&#xa;set noimg.IMMAGINE&#x3d; img.immagine,&#xd;&#xa;noimg.CATEGORIA&#x3d;img.CATEGORIA&#xd;&#xa;from linky_articoli_MAK as noimg &#xd;&#xa;inner join linky_articoli_MAK as img&#xd;&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;where &#xd;&#xa;noimg.IMMAGINE is null and img.IMMAGINE is not null</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -499,251 +505,56 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>863</xloc>
-      <yloc>123</yloc>
+      <xloc>560</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
-      <name>t_toyo_load_metrics</name>
+      <name>ISECE per tutti</name>
       <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_toyo_load_metrics</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TOYO</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
+      <type>SQL</type>
+      <sql>--update noimg&#xd;&#xa;--set noimg.isECE&#x3d; img.isECE&#xd;&#xa;--from linky_articoli_MAK as noimg &#xd;&#xa;--inner join linky_articoli_MAK as img&#xd;&#xa;--on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;--where &#xd;&#xa;--noimg.isECE is null and img.isECE is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>543</xloc>
-      <yloc>43</yloc>
+      <xloc>432</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
-      <name>Scrivi nel log</name>
+      <name>ISNAD per tutti</name>
       <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>Numero righe&#x3a; &#x24;&#x7b;errore&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject>Metriche</logsubject>
+      <type>SQL</type>
+      <sql>--update noimg&#xd;&#xa;--set noimg.isNAD&#x3d; img.isNAD&#xd;&#xa;--from linky_articoli_MAK as noimg &#xd;&#xa;--inner join linky_articoli_MAK as img&#xd;&#xa;--on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;--where &#xd;&#xa;--noimg.isNAD is null and img.isNAD is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>767</xloc>
-      <yloc>43</yloc>
+      <xloc>208</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
-      <name>DUMMY</name>
+      <name>sISTEMO pcd</name>
       <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
+      <type>SQL</type>
+      <sql>update linky_articoli_MAK set pcd&#x3d;replace&#x28;pcd,&#x27; &#x27; ,&#x27;&#x27;&#x29;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>345</xloc>
-      <yloc>128</yloc>
-    </entry>
-    <entry>
-      <name>t_getrowcount</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_getrowcount</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-        <parameter>
-          <name>partner</name>
-          <stream_name/>
-          <value>TY</value>
-        </parameter>
-        <parameter>
-          <name>numrowmin</name>
-          <stream_name/>
-          <value>500</value>
-        </parameter>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>655</xloc>
-      <yloc>43</yloc>
-    </entry>
-    <entry>
-      <name>Valutazione semplice</name>
-      <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname/>
-      <variablename>errore</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue/>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>863</xloc>
-      <yloc>43</yloc>
-    </entry>
-    <entry>
-      <name>t_load_toyo_2017</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_load_toyo_2017</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;TOYO</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>863</xloc>
-      <yloc>219</yloc>
-    </entry>
-    <entry>
-      <name>Mail OK</name>
-      <description/>
-      <type>MAIL</type>
-      <server>smtp.easyname.eu</server>
-      <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
-      <destinationCc/>
-      <destinationBCc/>
-      <replyto>conti&#x40;mmac.pro</replyto>
-      <replytoname>PNEUS JOBS</replytoname>
-      <subject>&#x5b;PNEUS&#x5d; - TOYO</subject>
-      <include_date>N</include_date>
-      <contact_person/>
-      <contact_phone/>
-      <comment>Il file presenta errori nei dati&#xd;&#xa;Prezzi a 0&#xd;&#xa;Qta a 0&#xd;&#xa;Numero righe insufficiente</comment>
-      <include_files>N</include_files>
-      <zip_files>N</zip_files>
-      <zip_name/>
-      <use_auth>Y</use_auth>
-      <use_secure_auth>Y</use_secure_auth>
-      <auth_user>40778mail1</auth_user>
-      <auth_password>Encrypted 2be98affe0bcbb096a216bd73d69bf88a</auth_password>
-      <only_comment>N</only_comment>
-      <use_HTML>N</use_HTML>
-      <use_Priority>N</use_Priority>
-      <encoding>UTF-8</encoding>
-      <priority>normal</priority>
-      <importance>normal</importance>
-      <sensitivity>normal</sensitivity>
-      <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses/>
-      <filetypes>      </filetypes>      <embeddedimages>
-      </embeddedimages>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>345</xloc>
-      <yloc>224</yloc>
-    </entry>
-    <entry>
-      <name>FTP Toyo</name>
-      <description/>
-      <type>SFTP</type>
-      <servername>www.pneus-center.it</servername>
-      <serverport>22</serverport>
-      <username>bitnami</username>
-      <password>Encrypted </password>
-      <sftpdirectory>&#x2f;opt&#x2f;bitnami&#x2f;apps&#x2f;pneus&#x2f;ftpd&#x2f;</sftpdirectory>
-      <targetdirectory>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;toyo</targetdirectory>
-      <wildcard>ArtCli.csv</wildcard>
-      <remove>N</remove>
-      <isaddresult>Y</isaddresult>
-      <createtargetfolder>N</createtargetfolder>
-      <copyprevious>N</copyprevious>
-      <usekeyfilename>Y</usekeyfilename>
-      <keyfilename>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;pneus.pem</keyfilename>
-      <keyfilepass>Encrypted </keyfilepass>
-      <compression>none</compression>
-      <proxyType/>
-      <proxyHost/>
-      <proxyPort/>
-      <proxyUsername/>
-      <proxyPassword>Encrypted </proxyPassword>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>233</xloc>
-      <yloc>48</yloc>
+      <xloc>432</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>Imposta variabili</name>
@@ -757,134 +568,64 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>132</xloc>
-      <yloc>50</yloc>
-    </entry>
-    <entry>
-      <name>Del metrics</name>
-      <description/>
-      <type>SQL</type>
-      <sql>delete from linky_partner_eval_values where partner&#x3d;&#x27;TY&#x27;&#x3b;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>434</xloc>
-      <yloc>45</yloc>
+      <xloc>149</xloc>
+      <yloc>33</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>SQL</from>
+      <to>Aggiorno immagini e categoria</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Aggiorno immagini e categoria</from>
+      <to>ISECE per tutti</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>ISECE per tutti</from>
+      <to>ISNAD per tutti</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>ISNAD per tutti</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>File &#x3e; 0</from>
-      <to>DUMMY</to>
+      <from>t_mak_aggiornamento_catalogo</from>
+      <to>sISTEMO pcd</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_toyo_load_metrics</from>
-      <to>t_getrowcount</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_getrowcount</from>
-      <to>Scrivi nel log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Scrivi nel log</from>
-      <to>Valutazione semplice</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Valutazione semplice</from>
-      <to>Azzero giacenze</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Valutazione semplice</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Azzero giacenze</from>
-      <to>t_load_toyo_2017</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_load_toyo_2017</from>
+      <from>sISTEMO pcd</from>
       <to>SQL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>DUMMY</from>
-      <to>Mail OK</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Mail OK</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>FTP Toyo</from>
-      <to>File &#x3e; 0</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>START</from>
@@ -897,25 +638,7 @@
     </hop>
     <hop>
       <from>Imposta variabili</from>
-      <to>FTP Toyo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>File &#x3e; 0</from>
-      <to>Del metrics</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Del metrics</from>
-      <to>t_toyo_load_metrics</to>
+      <to>t_mak_aggiornamento_catalogo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
