@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;03 10&#x3a;35&#x3a;09.586</modified_date>
+  <modified_date>2017&#x2f;01&#x2f;11 11&#x3a;32&#x3a;30.950</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -188,7 +188,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>304</xloc>
       <yloc>224</yloc>
       </entry>
     <entry>
@@ -219,7 +219,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
+      <xloc>416</xloc>
       <yloc>224</yloc>
       </entry>
     <entry>
@@ -820,6 +820,22 @@
       <xloc>400</xloc>
       <yloc>336</yloc>
       </entry>
+    <entry>
+      <name>Compila Etichetta PNEUS</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update L1 set &#xd;&#xa;l1.CODICEROTOLAMENTO &#x3d; l2.CODICEROTOLAMENTO&#xd;&#xa;,l1.ROTOLAMENTO &#x3d; l2.ROTOLAMENTO&#xd;&#xa;,l1.CODICEADERENZA &#x3d; l2.CODICEADERENZA&#xd;&#xa;,l1.ADERENZA &#x3d; l2.ADERENZA&#xd;&#xa;,l1.CODICERUMOROSITA &#x3d; l2.CODICERUMOROSITA&#xd;&#xa;,l1.RUMOROSITA &#x3d; l2.RUMOROSITA&#xd;&#xa;--select &#xd;&#xa;--l2.CODICEROTOLAMENTO&#xd;&#xa;from linky_tyre24 as L1&#xd;&#xa;inner join linky_tyre24 as L2&#xd;&#xa;on l1.EANCODE&#x3d;l2.EANCODE and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and l1.MARCA&#x3d;l2.MARCA &#xd;&#xa;and l1.CODICEROTOLAMENTO is null and l2.CODICEROTOLAMENTO is not null&#xd;&#xa;and l1.CODICEADERENZA is null and l2.CODICEADERENZA is not null&#xd;&#xa;and l1.LARGHEZZA&#x3d;l2.LARGHEZZA&#xd;&#xa;and l1.serie&#x3d;l2.serie&#xd;&#xa;and l1.CODICECERCHIO&#x3d;l2.CODICECERCHIO&#xd;&#xa;and L1.PARTNER&#x3d;&#x27;PN&#x27; and l2.PARTNER&#x3c;&#x3e;&#x27;PN&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>224</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -857,15 +873,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_sistema_ipcode_tyre24</from>
-      <to>t_exp_tyre24</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>t_UPD_MOMO_to_TYRE24</from>
@@ -1028,6 +1035,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_sistema_ipcode_tyre24</from>
+      <to>Compila Etichetta PNEUS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila Etichetta PNEUS</from>
+      <to>t_exp_tyre24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

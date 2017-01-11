@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;12&#x2f;22 08&#x3a;11&#x3a;30.743</modified_date>
+  <modified_date>2016&#x2f;12&#x2f;29 16&#x3a;18&#x3a;03.554</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -503,7 +503,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Mail OK</to>
+      <to>Preleva file con SFTP 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

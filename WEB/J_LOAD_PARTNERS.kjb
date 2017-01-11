@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;52&#x3a;37.028</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;30 08&#x3a;56&#x3a;36.562</modified_date>
+  <modified_date>2017&#x2f;01&#x2f;04 10&#x3a;40&#x3a;21.663</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -87,7 +87,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>448</yloc>
+      <yloc>528</yloc>
       </entry>
     <entry>
       <name>J_LOAD_CENTROGOMME</name>
@@ -543,7 +543,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>80</xloc>
-      <yloc>368</yloc>
+      <yloc>448</yloc>
       </entry>
     <entry>
       <name>t_write_log errore</name>
@@ -787,6 +787,22 @@
       <xloc>400</xloc>
       <yloc>48</yloc>
       </entry>
+    <entry>
+      <name>Compila EAN</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update L1&#xd;&#xa;set l1.ean &#x3d; l2.ean&#xd;&#xa;from linky_integro_articoli as L1&#xd;&#xa;inner join linky_integro_articoli as L2&#xd;&#xa;on l1.IPCODE&#x3d;l2.IPCODE and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and l1.MARCA&#x3d;l2.MARCA and l1.EAN is null and l2.EAN is not null&#xd;&#xa;and l1.LARGHEZZA&#x3d;l2.LARGHEZZA&#xd;&#xa;and l1.serie&#x3d;l2.serie&#xd;&#xa;and l1.CODICECERCHIO&#x3d;l2.CODICECERCHIO</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>80</xloc>
+      <yloc>368</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -869,15 +885,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>J_BESTPRICE</from>
-      <to>t_write_log fine</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>t_write_log fine</from>
@@ -1080,6 +1087,24 @@
     <hop>
       <from>AGGIORNA GIACENZE 2</from>
       <to>J_LOAD_CENTROGOMME</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_BESTPRICE</from>
+      <to>Compila EAN</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila EAN</from>
+      <to>t_write_log fine</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

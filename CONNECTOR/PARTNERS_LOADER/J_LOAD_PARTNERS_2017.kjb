@@ -8,9 +8,36 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;30 08&#x3a;58&#x3a;25.175</modified_date>
+  <modified_date>2017&#x2f;01&#x2f;11 11&#x3a;22&#x3a;55.490</modified_date>
     <parameters>
     </parameters>
+  <connection>
+    <name>LINKY_2017</name>
+    <server>&#x24;&#x7b;DB_HOST_LINKY_2017&#x7d;</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB_LINKY_2017&#x7d;</database>
+    <port>3306</port>
+    <username>&#x24;&#x7b;DB_USER_LINKY_2017&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_LINKY_2017&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -60,7 +87,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>672</xloc>
       <yloc>272</yloc>
       </entry>
     <entry>
@@ -92,7 +119,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>448</xloc>
       <yloc>48</yloc>
       </entry>
     <entry>
@@ -124,7 +151,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>608</xloc>
       <yloc>48</yloc>
       </entry>
     <entry>
@@ -156,7 +183,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>736</xloc>
       <yloc>48</yloc>
       </entry>
     <entry>
@@ -188,7 +215,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
+      <xloc>880</xloc>
       <yloc>48</yloc>
       </entry>
     <entry>
@@ -220,7 +247,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>880</xloc>
       <yloc>160</yloc>
       </entry>
     <entry>
@@ -252,7 +279,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>704</xloc>
       <yloc>160</yloc>
       </entry>
     <entry>
@@ -284,7 +311,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>464</xloc>
       <yloc>160</yloc>
       </entry>
     <entry>
@@ -316,8 +343,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>272</yloc>
+      <xloc>192</xloc>
+      <yloc>160</yloc>
       </entry>
     <entry>
       <name>J_LOAD_FINTYRE_2017</name>
@@ -348,7 +375,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>192</xloc>
       <yloc>272</yloc>
       </entry>
     <entry>
@@ -416,8 +443,40 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>272</xloc>
       <yloc>48</yloc>
+      </entry>
+    <entry>
+      <name>Compila EAN</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update L1&#xd;&#xa;set l1.ean &#x3d; l2.ean&#xd;&#xa;from linky_integro_articoli as L1&#xd;&#xa;inner join linky_integro_articoli as L2&#xd;&#xa;on l1.IPCODE&#x3d;l2.IPCODE and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and l1.MARCA&#x3d;l2.MARCA and l1.EAN is null and l2.EAN is not null&#xd;&#xa;and l1.LARGHEZZA&#x3d;l2.LARGHEZZA&#xd;&#xa;and l1.serie&#x3d;l2.serie&#xd;&#xa;and l1.CODICECERCHIO&#x3d;l2.CODICECERCHIO</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
+      <yloc>272</yloc>
+      </entry>
+    <entry>
+      <name>Compila Etichetta</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update L1 set &#xd;&#xa;l1.CODICEROTOLAMENTO &#x3d; l2.CODICEROTOLAMENTO&#xd;&#xa;,l1.ROTOLAMENTO &#x3d; l2.ROTOLAMENTO&#xd;&#xa;,l1.CODICEADERENZA &#x3d; l2.CODICEADERENZA&#xd;&#xa;,l1.ADERENZA &#x3d; l2.ADERENZA&#xd;&#xa;,l1.CODICERUMOROSITA &#x3d; l2.CODICERUMOROSITA&#xd;&#xa;,l1.RUMOROSITA &#x3d; l2.RUMOROSITA&#xd;&#xa;from linky_integro_articoli as L1&#xd;&#xa;inner join linky_integro_articoli as L2&#xd;&#xa;on l1.IPCODE&#x3d;l2.IPCODE and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and l1.MARCA&#x3d;l2.MARCA &#xd;&#xa;and l1.CODICEROTOLAMENTO is null and l2.CODICEROTOLAMENTO is not null&#xd;&#xa;and l1.CODICEADERENZA is null and l2.CODICEADERENZA is not null&#xd;&#xa;and l1.LARGHEZZA&#x3d;l2.LARGHEZZA&#xd;&#xa;and l1.serie&#x3d;l2.serie&#xd;&#xa;and l1.CODICECERCHIO&#x3d;l2.CODICECERCHIO</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>528</xloc>
+      <yloc>272</yloc>
       </entry>
   </entries>
   <hops>
@@ -494,15 +553,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_FINTYRE_2017</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
       <to>AGGIORNA GIACENZE</to>
       <from_nr>0</from_nr>
@@ -523,6 +573,33 @@
     <hop>
       <from>AGGIORNA GIACENZE 2</from>
       <to>J_LOAD_CENTROGOMME_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_FINTYRE_2017</from>
+      <to>Compila EAN</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila EAN</from>
+      <to>Compila Etichetta</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila Etichetta</from>
+      <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
