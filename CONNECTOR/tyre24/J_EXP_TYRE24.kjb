@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;01&#x2f;11 11&#x3a;32&#x3a;30.950</modified_date>
+  <modified_date>2017&#x2f;02&#x2f;02 12&#x3a;26&#x3a;46.457</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -188,7 +188,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>288</xloc>
       <yloc>224</yloc>
       </entry>
     <entry>
@@ -450,7 +450,7 @@
       <password>Encrypted 2be98afc86aa7f2e4881eb9218b80fce4</password>
       <remoteDirectory/>
       <localDirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;</localDirectory>
-      <wildcard>cpreifen.csv</wildcard>
+      <wildcard>adtyres.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
       <remove>N</remove>

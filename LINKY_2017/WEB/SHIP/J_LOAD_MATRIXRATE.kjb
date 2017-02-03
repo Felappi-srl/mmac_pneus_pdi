@@ -1,42 +1,16 @@
 <job>
-  <name>JImportaArticoliALL_DE</name>
+  <name>J_LOAD_MATRIXRATE</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#x2f;EBAY_DE</directory>
-  <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;58.067</created_date>
-  <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;02&#x2f;03 14&#x3a;02&#x3a;15.161</modified_date>
+  <directory>&#x2f;LINKY_2017&#x2f;WEB&#x2f;SHIP</directory>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;01&#x2f;04 11&#x3a;18&#x3a;00.693</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;01&#x2f;11 14&#x3a;08&#x3a;42.982</modified_date>
     <parameters>
     </parameters>
-  <connection>
-    <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>LINKY</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -76,110 +50,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>54</xloc>
-      <yloc>47</yloc>
-      </entry>
-    <entry>
-      <name>tebay_importaArticoli_DE</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>tebay_importaArticoli_DE</transname>
-      <directory>&#x2f;EBAY_DE</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>234</xloc>
-      <yloc>47</yloc>
-      </entry>
-    <entry>
-      <name>tebay_importaAccoppiate_DE</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>tebay_importaAccoppiate_DE</transname>
-      <directory>&#x2f;EBAY_DE</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>517</xloc>
-      <yloc>47</yloc>
-      </entry>
-    <entry>
-      <name>tebay_importaCerchi_DE</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>tebay_importaCerchi_DE</transname>
-      <directory>&#x2f;EBAY_DE</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>684</xloc>
-      <yloc>47</yloc>
+      <xloc>66</xloc>
+      <yloc>43</yloc>
       </entry>
     <entry>
       <name>Successo</name>
@@ -188,30 +60,72 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>873</xloc>
-      <yloc>47</yloc>
+      <xloc>707</xloc>
+      <yloc>41</yloc>
       </entry>
     <entry>
-      <name>UPD_STOCK_PRICE</name>
+      <name>t_linky_2017_web_pneumatici_exp</name>
       <description/>
-      <type>SQL</type>
-      <sql>UPDATE  L&#xd;&#xa;SET &#xd;&#xa;l.prezzo&#x3d;MZANAART.ArtCosLor , &#xd;&#xa;l.prezzolistino&#x3d;ArtCosLor , &#xd;&#xa;l.product_publish&#x3d;&#x27;Y&#x27;,&#xd;&#xa;l.product_in_stock&#x3d;	CASE WHEN ARTCOSSC1 &#x3e; 0 THEN ARTCOSSC1 ELSE ARTCOSSC2 END , &#xd;&#xa;l.product_available&#x3d;&#x27;12234563&#x27; , &#xd;&#xa;l.pubblicato&#x3d;	&#x27;Y&#x27;,&#xd;&#xa;l.eancode &#x3d; substring&#x28;rtrim&#x28;ltrim&#x28;MZANAART.ArtCodfor&#x29;&#x29;,1,13&#x29;,&#xd;&#xa;l.codca2&#x3d; replace&#x28;MSTIPPRO.TprCod,&#x27;S&#x27;,&#x27;4&#x27;&#x29;&#xd;&#xa;FROM &#xd;&#xa;LINKY.DBO.LINKY_EBAYARTICOLI L inner join&#xd;&#xa;PNEU.PNEU.dbo.MZANAART on l.codice&#x3d;MZANAART.ArtCodice and l.partner is null&#xd;&#xa;LEFT OUTER JOIN PNEU.PNEU.dbo.MSTIPPRO ON MZANAART.ArtTipPro &#x3d; MSTIPPRO.TprCod&#xd;&#xa;WHERE &#xd;&#xa;cast&#x28;MZANAART.Artnote3 as varchar&#x28;max&#x29;&#x29;&#x3c;&#x3e;&#x27;&#x27; and&#xd;&#xa;artblocco in &#x28;&#x27;T&#x27;,&#x27;E&#x27;&#x29; and siteid&#x3c;&#x3e;&#x27;Italy&#x27;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_pneumatici_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>416</xloc>
+      <yloc>48</yloc>
+      </entry>
+    <entry>
+      <name>Imposta variabili</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+      </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>357</xloc>
-      <yloc>47</yloc>
+      <xloc>189</xloc>
+      <yloc>43</yloc>
       </entry>
   </entries>
   <hops>
     <hop>
+      <from>t_linky_2017_web_pneumatici_exp</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
-      <to>tebay_importaArticoli_DE</to>
+      <to>Imposta variabili</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -219,40 +133,13 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>tebay_importaAccoppiate_DE</from>
-      <to>tebay_importaCerchi_DE</to>
+      <from>Imposta variabili</from>
+      <to>t_linky_2017_web_pneumatici_exp</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>tebay_importaArticoli_DE</from>
-      <to>UPD_STOCK_PRICE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>UPD_STOCK_PRICE</from>
-      <to>tebay_importaAccoppiate_DE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>tebay_importaCerchi_DE</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

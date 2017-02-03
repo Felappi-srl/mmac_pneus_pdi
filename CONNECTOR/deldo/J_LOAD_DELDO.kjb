@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.977</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;02&#x2f;22 12&#x3a;06&#x3a;33.460</modified_date>
+  <modified_date>2017&#x2f;02&#x2f;03 14&#x3a;30&#x3a;02.451</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -157,7 +157,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set settore&#x3d;&#xd;&#xa;REPLACE&#x28;replace&#x28;SETTORE,&#x27;FUORI STRADA&#x27;,&#x27;FUORISTRADA&#x27;&#x29;&#xd;&#xa;,&#x27;T.L.&#x27;, &#x27;TRASPORTO LEGGERO&#x27;&#x29;, icarico&#x3d;ltrim&#x28;rtrim&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;icarico,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;H&#x27;,&#x27;&#x27;&#x29;,&#x27;W&#x27;,&#x27;&#x27;&#x29;&#x29;&#x29;</sql>
+      <sql>update linky_integro_articoli set settore&#x3d;&#xd;&#xa;REPLACE&#x28;replace&#x28;SETTORE,&#x27;FUORI STRADA&#x27;,&#x27;FUORISTRADA&#x27;&#x29;&#xd;&#xa;,&#x27;T.L.&#x27;, &#x27;TRASPORTO LEGGERO&#x27;&#x29;, icarico&#x3d;ltrim&#x28;rtrim&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;icarico,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;H&#x27;,&#x27;&#x27;&#x29;,&#x27;W&#x27;,&#x27;&#x27;&#x29;&#x29;&#x29;,&#xd;&#xa; MARCA&#x3d;replace&#x28;MARCA,&#x27;ATLAS FS&#x27;,&#x27;ATLAS&#x27;&#x29;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
