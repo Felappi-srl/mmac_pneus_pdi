@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_UPD_CG_to_TYRE24</name>
+    <name>t_imp_ebay_cert_app_mak</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+    <directory>&#x2f;LINKY&#x2f;MAK&#x2f;APPLICAZIONI</directory>
     <parameters>
     </parameters>
     <log>
@@ -66,14 +66,39 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;19.940</created_date>
+  <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;08 18&#x3a;29&#x3a;45.093</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;08 17&#x3a;01&#x3a;49.995</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>CONNECTOR</name>
+    <server>localhost</server>
+    <type>MSSQL</type>
+    <access>Native</access>
+    <database>CONNECTOR</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>LINKY</name>
     <server>localhost</server>
@@ -101,194 +126,21 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Table input</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>ARTICOLI</from><to>Update</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Insert &#x2f; Update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>LINKY</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>linky_tyre24</table>
-      <key>
-        <name>codice</name>
-        <field>IPCODE</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>marca</name>
-        <field>MARCA</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>MARCA</name>
-        <rename>marca</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>DESCRIZIONE</name>
-        <rename>DESCRIZIONE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICEROTOLAMENTO</name>
-        <rename>CODICEROTOLAMENTO</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ROTOLAMENTO</name>
-        <rename>ROTOLAMENTO</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICEADERENZA</name>
-        <rename>CODICEADERENZA</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ADERENZA</name>
-        <rename>ADERENZA</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICERUMOROSITA</name>
-        <rename>CODICERUMOROSITA</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>RUMOROSITA</name>
-        <rename>RUMOROSITA</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>IPCODE</name>
-        <rename>ipcodE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>PREZZOSCONTATO</name>
-        <rename>prezzo</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>LISTINO</name>
-        <rename>prezzoLISTINO</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>GIACENZA</name>
-        <rename>product_in_stock</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICESERIE</name>
-        <rename>CODCA3</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>SERIE</name>
-        <rename>DESCA3</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICECERCHIO</name>
-        <rename>CODCA1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CERCHIO</name>
-        <rename>DESCA1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICESTAGIONE</name>
-        <rename>CODCA2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>STAGIONE</name>
-        <rename>DESCA2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICELARGHEZZA</name>
-        <rename>CODCA4</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>LARGHEZZA</name>
-        <rename>DESCA4</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICEVEL</name>
-        <rename>CODCA5</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>VEL</name>
-        <rename>DESCA5</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>ICARICO</name>
-        <rename>CODCA6</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>SETTORE</name>
-        <rename>SETTORE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>PARTNER</name>
-        <rename>partner</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EANCODE</name>
-        <rename>EAN</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>PREZZORIFERIMENTO</name>
-        <rename>prezzoriferimento</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>392</xloc>
-      <yloc>59</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table input</name>
+    <name>ARTICOLI</name>
     <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>LINKY</connection>
-    <sql>select &#xd;&#xa;partner&#xd;&#xa;, ipcodE&#xd;&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzo&#xd;&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzoLISTINO&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE&#xd;&#xa; AS Category_Path&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa;  &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE as Full_Category_path&#xd;&#xa;, marca&#xd;&#xa;, ipcode as codice&#xd;&#xa;, &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,DESCRIZIONE,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS SHORT_DESC&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27;  &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS DESCRIZIONE&#xd;&#xa;, &#x27;EUR&#x27; as currency&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as fullimg&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;resized&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as resimg&#xd;&#xa;, case when giacenza &#x3c;&#x3e;0 then &#x27;Y&#x27; else &#x27;N&#x27; end as Publish&#xd;&#xa;, 21 as iva&#xd;&#xa;,  giacenza  as product_in_stock&#xd;&#xa;, 12234563 product_available&#xd;&#xa;, &#x27;N&#x27; as product_special&#xd;&#xa;, CODICECERCHIO AS CODCA1&#xd;&#xa;, CODICECERCHIO AS DESCA1&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;N&#x27; ELSE &#x27;E&#x27; END AS CODCA2&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; ELSE &#x27;ESTIVE&#x27; END AS DESCA2&#xd;&#xa;, SERIE AS CODCA3&#xd;&#xa;, &#x27;SERIE &#x27; &#x2b; SERIE AS DESCA3&#xd;&#xa;, LARGHEZZA AS CODCA4&#xd;&#xa;, LARGHEZZA AS DESCA4&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; AS CODCA5&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b;&#x27;&#x3a; &#x27; &#x2b;SUBSTRING&#x28;VEL,2,4&#x29; &#x2b; &#x27; Km&#x2f;h&#x27; AS DESCA5&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS CODCA6&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS DESCA6,&#xd;&#xa;CODICEROTOLAMENTO,&#xd;&#xa;ROTOLAMENTO,&#xd;&#xa;CODICEADERENZA	,&#xd;&#xa;ADERENZA	,&#xd;&#xa;CODICERUMOROSITA,&#xd;&#xa;RUMOROSITA,&#xd;&#xa;REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; AS SETTORE,&#xd;&#xa;--case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else &#xd;&#xa;substring&#x28;EAN,1,13&#x29; &#xd;&#xa;--end &#xd;&#xa;as ean&#xd;&#xa;,prezzoscontato as prezzoriferimento&#xd;&#xa;from linky_integro_articoli&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;--and partner not in &#x28;&#x27;TG&#x27;&#x29;&#xd;&#xa;and giacenza&#x3e;0 and prezzoscontato&#x3e;0&#xd;&#xa;--and ipcode&#x3d;&#x27;T428730&#x27;&#xd;&#xa;order by ipcode, prezzoscontato desc</sql>
+    <connection>CONNECTOR</connection>
+    <sql>select distinct &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, partnumber as codicevar&#xd;&#xa;,case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;1 &#xd;&#xa;and prezzo is not null&#xd;&#xa;and istuv is not null&#xd;&#xa;order by partnumber</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -296,8 +148,53 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>124</xloc>
-      <yloc>59</yloc>
+      <xloc>66</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Update</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <skip_lookup>Y</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema/>
+      <table>linky_ebay_var_app</table>
+      <key>
+        <name>codice</name>
+        <field>codice</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
+      <key>
+        <name>codicevar</name>
+        <field>codicevar</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
+      <value>
+        <name>urlcertificato</name>
+        <rename>urlcertificato</rename>
+        </value>
+      </lookup>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.757</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;10 16&#x3a;28&#x3a;43.302</modified_date>
+  <modified_date>2017&#x2f;02&#x2f;14 17&#x3a;11&#x3a;28.187</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -168,7 +168,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>192</xloc>
       <yloc>432</yloc>
       </entry>
     <entry>
@@ -216,14 +216,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>544</xloc>
       <yloc>432</yloc>
       </entry>
     <entry>
       <name>TOGLIE C</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set  cerchio&#x3d;rtrim&#x28;replace&#x28;cerchio,&#x27;C&#x27;,&#x27;&#x27;&#x29;&#x29;</sql>
+      <sql>update linky_integro_articoli set  cerchio&#x3d;rtrim&#x28;replace&#x28;cerchio,&#x27;C&#x27;,&#x27;&#x27;&#x29;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set codiceserie&#x3d;&#x27;12.50&#x27;,serie&#x3d;&#x27;12.50&#x27; where serie&#x3d;&#x27;1250&#x27;&#x3b;&#xd;&#xa;update linky_integro_articoli set codiceserie&#x3d;&#x27;10.50&#x27;,serie&#x3d;&#x27;10.50&#x27; where serie&#x3d;&#x27;1050&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -232,7 +232,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>432</xloc>
       <yloc>432</yloc>
       </entry>
     <entry>
@@ -475,6 +475,22 @@
       <xloc>672</xloc>
       <yloc>432</yloc>
       </entry>
+    <entry>
+      <name>Compila Etichetta Felappi</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update L1 set &#xd;&#xa;l1.CODICEROTOLAMENTO &#x3d; l2.CODICEROTOLAMENTO&#xd;&#xa;,l1.ROTOLAMENTO &#x3d; l2.ROTOLAMENTO&#xd;&#xa;,l1.CODICEADERENZA &#x3d; l2.CODICEADERENZA&#xd;&#xa;,l1.ADERENZA &#x3d; l2.ADERENZA&#xd;&#xa;,l1.CODICERUMOROSITA &#x3d; l2.CODICERUMOROSITA&#xd;&#xa;,l1.RUMOROSITA &#x3d; l2.RUMOROSITA&#xd;&#xa;from linky_ebayarticoli as L1&#xd;&#xa;inner join linky_ebayarticoli as L2&#xd;&#xa;on rtrim&#x28;l1.eancode&#x29;&#x3d;l2.eancode &#xd;&#xa;--and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and rtrim&#x28;l1.MARCA&#x29;&#x3d;l2.MARCA &#xd;&#xa;and l1.CODICEROTOLAMENTO is null and l2.CODICEROTOLAMENTO is not null&#xd;&#xa;and l1.CODICEADERENZA is null and l2.CODICEADERENZA is not null&#xd;&#xa;and rtrim&#x28;l1.codca4&#x29;&#x3d;l2.codca4&#xd;&#xa;and rtrim&#x28;l1.codca1&#x29;&#x3d;l2.codca1&#xd;&#xa;and l1.Partner is null&#xd;&#xa;and l2.Partner is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>T</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>432</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -498,15 +514,6 @@
     <hop>
       <from>BESTPRICE 0 dove giacenza 0</from>
       <to>TOGLIE C</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>TOGLIE C</from>
-      <to>t_UPD_LINKY_ARTICOLI</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -692,6 +699,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>TOGLIE C</from>
+      <to>Compila Etichetta Felappi</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila Etichetta Felappi</from>
+      <to>t_UPD_LINKY_ARTICOLI</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

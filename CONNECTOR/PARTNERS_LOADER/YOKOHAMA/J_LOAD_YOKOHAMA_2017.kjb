@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;10&#x2f;13 12&#x3a;41&#x3a;31.203</modified_date>
+  <modified_date>2017&#x2f;02&#x2f;28 08&#x3a;37&#x3a;47.269</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -249,7 +249,7 @@
             <value>YOKO</value>
             </parameter>            <parameter>            <name>numrowmin</name>
             <stream_name/>
-            <value>1500</value>
+            <value>1000</value>
             </parameter>      </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>

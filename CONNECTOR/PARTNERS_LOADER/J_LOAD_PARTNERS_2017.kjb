@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;01&#x2f;11 11&#x3a;22&#x3a;55.490</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;08 18&#x3a;23&#x3a;42.893</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -87,7 +87,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
+      <xloc>880</xloc>
       <yloc>272</yloc>
       </entry>
     <entry>
@@ -311,38 +311,6 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>160</yloc>
-      </entry>
-    <entry>
-      <name>J_LOAD_BERNAERTS</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>J_LOAD_BERNAERTS</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;BERNAERTS</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
       <xloc>192</xloc>
       <yloc>160</yloc>
       </entry>
@@ -478,6 +446,22 @@
       <xloc>528</xloc>
       <yloc>272</yloc>
       </entry>
+    <entry>
+      <name>SISTEMA MARCHI</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>272</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -535,24 +519,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_ETTORRE_2017</from>
-      <to>J_LOAD_BERNAERTS</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>J_LOAD_BERNAERTS</from>
-      <to>J_LOAD_FINTYRE_2017</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>START</from>
       <to>AGGIORNA GIACENZE</to>
       <from_nr>0</from_nr>
@@ -599,12 +565,30 @@
     </hop>
     <hop>
       <from>Compila Etichetta</from>
+      <to>SISTEMA MARCHI</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SISTEMA MARCHI</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_ETTORRE_2017</from>
+      <to>J_LOAD_FINTYRE_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

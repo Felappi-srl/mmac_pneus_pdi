@@ -68,7 +68,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;07&#x2f;15 16&#x3a;16&#x3a;36.630</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;02 16&#x3a;14&#x3a;22.246</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -295,7 +295,7 @@
       <value>
         <name>EAN</name>
         <rename>EAN</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>IPCODE</name>
@@ -315,7 +315,7 @@
       <value>
         <name>LISTINO</name>
         <rename>Listino</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>VEL</name>
@@ -620,7 +620,7 @@
     </fields>
     <sheets>
       <sheet>
-        <name>Foglio1</name>
+        <name>Query1</name>
         <startrow>0</startrow>
         <startcol>0</startcol>
         </sheet>

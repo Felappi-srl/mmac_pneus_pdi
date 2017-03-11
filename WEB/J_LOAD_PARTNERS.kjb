@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;52&#x3a;37.028</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;01&#x2f;04 10&#x3a;40&#x3a;21.663</modified_date>
+  <modified_date>2017&#x2f;02&#x2f;14 17&#x3a;07&#x3a;40.556</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -310,8 +310,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>208</yloc>
+      <xloc>224</xloc>
+      <yloc>128</yloc>
       </entry>
     <entry>
       <name>J_LOAD_TOYO</name>
@@ -803,6 +803,22 @@
       <xloc>80</xloc>
       <yloc>368</yloc>
       </entry>
+    <entry>
+      <name>SISTEMA MARCHI</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>112</xloc>
+      <yloc>128</yloc>
+      </entry>
   </entries>
   <hops>
     <hop>
@@ -844,15 +860,6 @@
     <hop>
       <from>Sistemo VALORI</from>
       <to>J_BESTPRICE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Sistemo INTEGRO</from>
-      <to>Sistemo VALORI</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1105,6 +1112,24 @@
     <hop>
       <from>Compila EAN</from>
       <to>t_write_log fine</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Sistemo INTEGRO</from>
+      <to>SISTEMA MARCHI</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SISTEMA MARCHI</from>
+      <to>Sistemo VALORI</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
