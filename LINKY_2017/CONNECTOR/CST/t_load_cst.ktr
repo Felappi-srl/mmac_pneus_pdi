@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2016&#x2f;11&#x2f;17 13&#x3a;40&#x3a;09.593</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;14 14&#x3a;45&#x3a;12.251</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -556,6 +556,30 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>LINKY_ODOO</name>
+    <server>&#x24;&#x7b;DB_HOST_ODOO&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -777,10 +801,16 @@
     <ignore_flag_field/>
     <lookup>
       <schema/>
-      <table>linky_integro_articoli_cst</table>
+      <table>linky_integro_articoli</table>
       <key>
         <name>Articolo</name>
         <field>IPCODE</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
+      <key>
+        <name>partner</name>
+        <field>PARTNER</field>
         <condition>&#x3d;</condition>
         <name2/>
         </key>

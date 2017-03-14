@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;16 17&#x3a;16&#x3a;55.021</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;14 14&#x3a;20&#x3a;57.437</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -132,6 +132,30 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>LINKY_ODOO</name>
+    <server>&#x24;&#x7b;DB_HOST_ODOO&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -510,7 +534,7 @@
       <name>Azzero giacenze</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_ber set giacenza&#x3d;0&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_integro_articoli set giacenza&#x3d;0 where partner&#x3d;&#x27;BER&#x27;&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -556,7 +580,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_ber &#xd;&#xa;set settore &#x3d; replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;settore,&#x27;SCOOTER CONVENZIONALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;SCOOTER F.L.&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xd;&#xa;,&#x27;SCOOTER RADIALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;CICLOMOTORE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;TRASP.LEGGERO&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#xd;&#xa;--where partner&#x3d;&#x27;TG&#x27;</sql>
+      <sql>update linky_integro_articoli&#xd;&#xa;set settore &#x3d; replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;settore,&#x27;SCOOTER CONVENZIONALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;SCOOTER F.L.&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xd;&#xa;,&#x27;SCOOTER RADIALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;CICLOMOTORE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;TRASP.LEGGERO&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#xd;&#xa;--where partner&#x3d;&#x27;TG&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -572,7 +596,7 @@
       <name>CATEGORIA</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_ber set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;</sql>
+      <sql>update linky_integro_articoli set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

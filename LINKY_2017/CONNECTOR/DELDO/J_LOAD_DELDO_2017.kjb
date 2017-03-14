@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.977</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2016&#x2f;11&#x2f;17 10&#x3a;44&#x3a;06.836</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;14 14&#x3a;24&#x3a;01.071</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -132,6 +132,30 @@
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>LINKY_ODOO</name>
+    <server>&#x24;&#x7b;DB_HOST_ODOO&#x7d;</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
+    <port>5432</port>
+    <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
+    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
@@ -512,7 +536,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_del set settore&#x3d;&#xd;&#xa;REPLACE&#x28;replace&#x28;SETTORE,&#x27;FUORI STRADA&#x27;,&#x27;FUORISTRADA&#x27;&#x29;&#xd;&#xa;,&#x27;T.L.&#x27;, &#x27;TRASPORTO LEGGERO&#x27;&#x29;, icarico&#x3d;ltrim&#x28;rtrim&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;icarico,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;H&#x27;,&#x27;&#x27;&#x29;,&#x27;W&#x27;,&#x27;&#x27;&#x29;&#x29;&#x29;</sql>
+      <sql>update linky_integro_articoli set settore&#x3d;&#xd;&#xa;REPLACE&#x28;replace&#x28;SETTORE,&#x27;FUORI STRADA&#x27;,&#x27;FUORISTRADA&#x27;&#x29;&#xd;&#xa;,&#x27;T.L.&#x27;, &#x27;TRASPORTO LEGGERO&#x27;&#x29;, icarico&#x3d;ltrim&#x28;rtrim&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;icarico,&#x27;&#x29;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x28;&#x27;,&#x27;&#x27;&#x29;,&#x27;H&#x27;,&#x27;&#x27;&#x29;,&#x27;W&#x27;,&#x27;&#x27;&#x29;&#x29;&#x29;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -556,7 +580,7 @@
       <name>Azzero giacenze</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_del set giacenza&#x3d;0 </sql>
+      <sql>update linky_integro_articoli set giacenza&#x3d;0 &#xa;where partner&#x3d;&#x27;DEL&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -572,7 +596,7 @@
       <name>SQL 2</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_del set rumorosita&#x3d;substring&#x28;CODICERUMOROSITA,1,instr&#x28;CODICERUMOROSITA,&#x27;_&#x27;&#x29;-1&#x29; &#x2b; &#x27;DB&#x27; &#x2b; &#x27; &#x27; &#x2b; &#xd;&#xa;case substring&#x28;CODICERUMOROSITA,instr&#x28;CODICERUMOROSITA,&#x27;_&#x27;&#x29;&#x2b;1,1&#x29;&#xd;&#xa;when &#x27;1&#x27; then &#x27;&#x29;&#x27;&#xd;&#xa;when &#x27;2&#x27; then &#x27;&#x29;&#x29;&#x27;&#xd;&#xa;when &#x27;3&#x27; then &#x27;&#x29;&#x29;&#x29;&#x27;&#xd;&#xa;end&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_integro_articoli set rumorosita&#x3d;substring&#x28;CODICERUMOROSITA,1,instr&#x28;CODICERUMOROSITA,&#x27;_&#x27;&#x29;-1&#x29; &#x2b; &#x27;DB&#x27; &#x2b; &#x27; &#x27; &#x2b; &#xd;&#xa;case substring&#x28;CODICERUMOROSITA,instr&#x28;CODICERUMOROSITA,&#x27;_&#x27;&#x29;&#x2b;1,1&#x29;&#xd;&#xa;when &#x27;1&#x27; then &#x27;&#x29;&#x27;&#xd;&#xa;when &#x27;2&#x27; then &#x27;&#x29;&#x29;&#x27;&#xd;&#xa;when &#x27;3&#x27; then &#x27;&#x29;&#x29;&#x29;&#x27;&#xd;&#xa;end&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -588,7 +612,7 @@
       <name>ABBASSO PREZZO WANIL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli_del set &#xd;&#xa;PREZZOSCONTATO&#x3d;PREZZOSCONTATO - &#x28;PREZZOSCONTATO&#x2f;100&#x2a;5&#x29;&#xd;&#xa;where  MARCA&#x3d;&#x27;WANLI&#x27; and giacenza &#x3e;0</sql>
+      <sql>update linky_integro_articoli set &#xd;&#xa;PREZZOSCONTATO&#x3d;PREZZOSCONTATO - &#x28;PREZZOSCONTATO&#x2f;100&#x2a;5&#x29;&#xd;&#xa;where  MARCA&#x3d;&#x27;WANLI&#x27; and giacenza &#x3e;0&#xa;and partner&#x3d;&#x27;DEL&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
