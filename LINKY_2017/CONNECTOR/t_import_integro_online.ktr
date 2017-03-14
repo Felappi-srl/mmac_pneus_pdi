@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_cerchi_exp</name>
+    <name>t_import_integro_online</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
+    <created_date>2017&#x2f;03&#x2f;14 15&#x3a;05&#x3a;35.540</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;14 15&#x3a;01&#x3a;47.878</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2017&#x2f;03&#x2f;14 15&#x3a;15&#x3a;23.991</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -587,19 +587,14 @@
   </connection>
   <order>
     <hop>
-      <from>Cerchi</from>
-      <to>Replace in string</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Replace in string</from>
-      <to>cerchi.txt</to>
+      <from>Text file input</from>
+      <to>Insert &#x2f; Update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Cerchi</name>
-    <type>TableInput</type>
+    <name>Text file input</name>
+    <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -608,93 +603,93 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LINKY_2017</connection>
-    <sql>SELECT DISTINCT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xa;&#x27;MAK&#x27; as MARCA,&#xa;linky_articoli_mak.FINISHING,&#xa;linky_articoli_mak.RAGGIO,&#xa;linky_articoli_mak.CANALE,&#xa;linky_articoli_mak.NUMEROFORI,&#xa;linky_articoli_mak.OFFSET,&#xa;linky_articoli_mak.INTERASSE,&#xa;linky_articoli_mak.CB,&#xa;linky_articoli_mak.EANCODE,&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;MOMO&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;CANALE,&#xa;NUMEROFORI,&#xa;OFFSET,&#xa;INTERASSE,&#xa;CB,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>95</xloc>
-      <yloc>65</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>cerchi.txt</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <separator>&#x7c;</separator>
+    <accept_filenames>N</accept_filenames>
+    <passing_through_fields>N</passing_through_fields>
+    <accept_field/>
+    <accept_stepname/>
+    <separator>&#x7c;&#x7c;</separator>
     <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <enclosure_breaks>N</enclosure_breaks>
+    <escapechar/>
     <header>Y</header>
+    <nr_headerlines>1</nr_headerlines>
     <footer>N</footer>
+    <nr_footerlines>1</nr_footerlines>
+    <line_wrapped>N</line_wrapped>
+    <nr_wraps>1</nr_wraps>
+    <layout_paged>N</layout_paged>
+    <nr_lines_per_page>80</nr_lines_per_page>
+    <nr_lines_doc_header>0</nr_lines_doc_header>
+    <noempty>Y</noempty>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <rownumByFile>N</rownumByFile>
+    <rownum_field/>
     <format>DOS</format>
-    <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
+    <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;cerchi</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;linky_integro_articoli.txt</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <type>CSV</type>
+      <compression>None</compression>
     </file>
+    <filters>
+    </filters>
     <fields>
       <field>
-        <name>SKU</name>
+        <name>IPCODE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>MODELLO</name>
+        <name>DESCRIZIONE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICEMARCA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
         <name>MARCA</name>
@@ -704,105 +699,327 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>FINISHING</name>
+        <name>CODICESETTORE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>RAGGIO</name>
+        <name>SETTORE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>CANALE</name>
+        <name>CODICELARGHEZZA</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>NUMEROFORI</name>
+        <name>LARGHEZZA</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>OFFSET</name>
+        <name>CODICESERIE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>INTERASSE</name>
+        <name>SERIE</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>CB</name>
+        <name>CODICECERCHIO</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
-        <name>EANCODE</name>
+        <name>CERCHIO</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICEVEL</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>VEL</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICESTAGIONE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>STAGIONE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LISTINO</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SC1</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SC2</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SC3</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SC4</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SC5</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PREZZOSCONTATO</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal>,</decimal>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>both</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>GIACENZA</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PARTNER</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
       <field>
         <name>IMMAGINE</name>
@@ -812,11 +1029,234 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <ifnull/>
+        <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>TITOLOALTERNATIVO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>DATAINSERIMENTO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ICARICO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EBAYCAT</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICEROTOLAMENTO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ROTOLAMENTO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICEADERENZA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ADERENZA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CODICERUMOROSITA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>RUMOROSITA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EAN</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PRODUCTCODE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BESTPRICE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
       </field>
     </fields>
+    <limit>0</limit>
+    <error_ignored>N</error_ignored>
+    <skip_bad_files>N</skip_bad_files>
+    <file_error_field/>
+    <file_error_message_field/>
+    <error_line_skipped>N</error_line_skipped>
+    <error_count_field/>
+    <error_fields_field/>
+    <error_text_field/>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <date_format_lenient>Y</date_format_lenient>
+    <date_format_locale>it_IT</date_format_locale>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -825,15 +1265,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>508</xloc>
-      <yloc>65</yloc>
+      <xloc>89</xloc>
+      <yloc>105</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
+    <name>Insert &#x2f; Update</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -842,30 +1282,220 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>C.R. </replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>&#xd8;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
+    <connection>LINKY_2017</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>linky_integro_articoli</table>
+      <key>
+        <name>IPCODE</name>
+        <field>IPCODE</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>PARTNER</name>
+        <field>PARTNER</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>IPCODE</name>
+        <rename>IPCODE</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>DESCRIZIONE</name>
+        <rename>DESCRIZIONE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEMARCA</name>
+        <rename>CODICEMARCA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>MARCA</name>
+        <rename>MARCA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICESETTORE</name>
+        <rename>CODICESETTORE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SETTORE</name>
+        <rename>SETTORE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICELARGHEZZA</name>
+        <rename>CODICELARGHEZZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LARGHEZZA</name>
+        <rename>LARGHEZZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICESERIE</name>
+        <rename>CODICESERIE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SERIE</name>
+        <rename>SERIE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICECERCHIO</name>
+        <rename>CODICECERCHIO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CERCHIO</name>
+        <rename>CERCHIO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEVEL</name>
+        <rename>CODICEVEL</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VEL</name>
+        <rename>VEL</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICESTAGIONE</name>
+        <rename>CODICESTAGIONE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>STAGIONE</name>
+        <rename>STAGIONE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LISTINO</name>
+        <rename>LISTINO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SC1</name>
+        <rename>SC1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SC2</name>
+        <rename>SC2</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SC3</name>
+        <rename>SC3</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SC4</name>
+        <rename>SC4</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SC5</name>
+        <rename>SC5</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PREZZOSCONTATO</name>
+        <rename>PREZZOSCONTATO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>GIACENZA</name>
+        <rename>GIACENZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PARTNER</name>
+        <rename>PARTNER</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>IMMAGINE</name>
+        <rename>IMMAGINE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>TITOLOALTERNATIVO</name>
+        <rename>TITOLOALTERNATIVO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>DATAINSERIMENTO</name>
+        <rename>DATAINSERIMENTO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ICARICO</name>
+        <rename>ICARICO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EBAYCAT</name>
+        <rename>EBAYCAT</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEROTOLAMENTO</name>
+        <rename>CODICEROTOLAMENTO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ROTOLAMENTO</name>
+        <rename>ROTOLAMENTO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEADERENZA</name>
+        <rename>CODICEADERENZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ADERENZA</name>
+        <rename>ADERENZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICERUMOROSITA</name>
+        <rename>CODICERUMOROSITA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>RUMOROSITA</name>
+        <rename>RUMOROSITA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EAN</name>
+        <rename>EAN</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PRODUCTCODE</name>
+        <rename>PRODUCTCODE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>BESTPRICE</name>
+        <rename>BESTPRICE</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -874,8 +1504,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>227</xloc>
-      <yloc>62</yloc>
+      <xloc>323</xloc>
+      <yloc>108</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
