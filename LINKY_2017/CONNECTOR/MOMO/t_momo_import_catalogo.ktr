@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>ImportazioneIniziale_Momo</name>
+    <name>t_momo_import_catalogo</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;Momo</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MOMO</directory>
     <parameters>
     </parameters>
     <log>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;16.243</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;58&#x3a;04.422</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;10&#x3a;35.273</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -683,12 +683,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>CONNECTOR</connection>
+    <connection>LINKY_2017</connection>
     <commit>1</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>linky_articoli_MOMO</table>
+      <table>linky_articoli_momo</table>
       <key>
         <name>Marca auto</name>
         <field>MARCAAUTO</field>
@@ -806,6 +806,26 @@
         <rename>CODICE EAN</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>misura1</name>
+        <rename>Pneumatico_1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura2</name>
+        <rename>Pneumatico_2</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura3</name>
+        <rename>Pneumatico_3</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura4</name>
+        <rename>Pneumatico_4</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -848,7 +868,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;momo&#x5c;ListaApplicazioniRuoteItalia2016.xlsx</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;momo&#x24;&#x7b;file.separator&#x7d;ListaApplicazioniRuoteItalia2016.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>

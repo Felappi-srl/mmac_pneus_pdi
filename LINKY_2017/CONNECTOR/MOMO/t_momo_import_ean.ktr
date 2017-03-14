@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>ImportazioneIniziale_Momo</name>
+    <name>t_momo_import_ean</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;Momo</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MOMO</directory>
     <parameters>
     </parameters>
     <log>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;16.243</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;58&#x3a;04.422</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;10&#x3a;51.461</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -587,23 +587,8 @@
   </connection>
   <order>
     <hop>
-      <from>Split Fields</from>
-      <to>Split Fields 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Split Fields 2</from>
-      <to>Insert &#x2f; Update</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Microsoft Excel Input</from>
       <to>Filter rows</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Filter rows</from>
-      <to>Split Fields</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -611,7 +596,127 @@
       <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>ISNAD</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ISNAD</from>
+      <to>NAD</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NAD</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ISNAD</from>
+      <to>Calculator 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator 2</from>
+      <to>ECE</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ECE</from>
+      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <to>Update</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>isNAD</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Destinazione</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>isECE</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Destinazione</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step>
     <name>Dummy &#x28;do nothing&#x29;</name>
     <type>Dummy</type>
@@ -638,6 +743,70 @@
     </step>
 
   <step>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>ECE</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>isNAD</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -648,12 +817,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Split Fields</send_true_to>
+<send_true_to>ISNAD</send_true_to>
 <send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
- <leftvalue>Codice</leftvalue>
+ <leftvalue>Nr.</leftvalue>
  <function>IS NOT NULL</function>
  <rightvalue/>
  </condition>
@@ -673,8 +842,8 @@
     </step>
 
   <step>
-    <name>Insert &#x2f; Update</name>
-    <type>InsertUpdate</type>
+    <name>ISNAD</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -683,130 +852,16 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>CONNECTOR</connection>
-    <commit>1</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>linky_articoli_MOMO</table>
-      <key>
-        <name>Marca auto</name>
-        <field>MARCAAUTO</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Modello</name>
-        <field>MODELLOAUTO</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Tipo Veicolo</name>
-        <field>TIPOAUTO</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Mod. Anno</name>
-        <field>ANNOAUTO</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Nome ruota</name>
-        <field>WHEELMODEL</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Colore</name>
-        <field>FINISHING</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>Codice</name>
-        <field>PARTNUMBER</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>MARCAAUTO</name>
-        <rename>Marca auto</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>MODELLOAUTO</name>
-        <rename>Modello</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>TIPOAUTO</name>
-        <rename>Tipo Veicolo</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>PARTNUMBER</name>
-        <rename>Codice</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ANNOAUTO</name>
-        <rename>Mod. Anno</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>WHEELMODEL</name>
-        <rename>Nome ruota</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>FINISHING</name>
-        <rename>Colore</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>OFFSET</name>
-        <rename>ET</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CANALE</name>
-        <rename>Canale</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>RAGGIO</name>
-        <rename>Raggio</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>NUMEROFORI</name>
-        <rename>Fori</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>INTERASSE</name>
-        <rename>Interasse</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CB</name>
-        <rename>Centraggio</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CENTRAGGIO</name>
-        <rename>Centraggio</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>EANCODE</name>
-        <rename>CODICE EAN</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+<send_true_to>NAD</send_true_to>
+<send_false_to>Calculator 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Destinazione</leftvalue>
+ <function>CONTAINS</function>
+ <rightvalue/>
+ <value><name>constant</name><type>String</type><text>NAD</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -815,7 +870,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>256</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -848,7 +903,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;momo&#x5c;ListaApplicazioniRuoteItalia2016.xlsx</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;momo&#x24;&#x7b;file.separator&#x7d;File codici EAN ruote ECE e NAD.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -856,11 +911,11 @@
     </file>
     <fields>
       <field>
-        <name>Marca auto</name>
+        <name>Nr.</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -868,23 +923,11 @@
         <group/>
       </field>
       <field>
-        <name>Modello</name>
+        <name>Destinazione</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Tipo Veicolo</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -892,11 +935,11 @@
         <group/>
       </field>
       <field>
-        <name>Nr. Omologazione</name>
+        <name>Descrizione Estesa</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -904,11 +947,11 @@
         <group/>
       </field>
       <field>
-        <name>Range Potenza KW</name>
+        <name>Fori-asse Code</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -916,11 +959,11 @@
         <group/>
       </field>
       <field>
-        <name>Mod. Anno</name>
+        <name>Misura Codice</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -928,11 +971,11 @@
         <group/>
       </field>
       <field>
-        <name>PCD&#xa;Vettura</name>
+        <name>Offset Code</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -940,11 +983,11 @@
         <group/>
       </field>
       <field>
-        <name>Tipo di&#xa;OMOLOGAZIONE</name>
+        <name>Foro bullone</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -952,11 +995,11 @@
         <group/>
       </field>
       <field>
-        <name>Nr&#xa;OMOLOGAZIONE</name>
+        <name>Foro di centraggio</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -964,191 +1007,11 @@
         <group/>
       </field>
       <field>
-        <name>Nome ruota</name>
+        <name>Codice a Barre</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Colore</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Misura</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Codice</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>CODICE EAN</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Interasse</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>ET</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Centraggio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Codice Anello</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Codice Bulloneria</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Coppia serraggio&#xa; &#x5b;Nm&#x5d;</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Note</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_1</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_2</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_3</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_4</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -1158,8 +1021,8 @@
     </fields>
     <sheets>
       <sheet>
-        <name>Applicazione Italia</name>
-        <startrow>3</startrow>
+        <name>Foglio2</name>
+        <startrow>2</startrow>
         <startcol>0</startcol>
         </sheet>
     </sheets>
@@ -1196,8 +1059,8 @@
     </step>
 
   <step>
-    <name>Split Fields</name>
-    <type>FieldSplitter</type>
+    <name>NAD</name>
+    <type>Constant</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1206,36 +1069,21 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>Misura</splitfield>
-   <delimiter>x</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>Canale</name>
-        <id/>
-        <idrem>N</idrem>
+    <fields>
+      <field>
+        <name>isECE</name>
         <type>String</type>
-        <format>&#x23;</format>
-        <group/>
-        <decimal/>
+        <format/>
         <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>      <field>        <name>Raggio</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format>&#x23;</format>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1243,15 +1091,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>352</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split Fields 2</name>
-    <type>FieldSplitter</type>
+    <name>Update</name>
+    <type>Update</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1260,36 +1108,35 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>Interasse</splitfield>
-   <delimiter>x</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>Fori</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format>&#x23;</format>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>      <field>        <name>Interasse</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format>&#x23;</format>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+    <connection>LINKY_2017</connection>
+    <skip_lookup>Y</skip_lookup>
+    <commit>1</commit>
+    <use_batch>Y</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema/>
+      <table>linky_articoli_momo</table>
+      <key>
+        <name>Nr.</name>
+        <field>PARTNUMBER</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
+      <value>
+        <name>EANCODE</name>
+        <rename>Codice a Barre</rename>
+        </value>
+      <value>
+        <name>isECE</name>
+        <rename>isECE</rename>
+        </value>
+      <value>
+        <name>isNAD</name>
+        <rename>isNAD</rename>
+        </value>
+      </lookup>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1297,8 +1144,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>64</yloc>
+      <xloc>608</xloc>
+      <yloc>170</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

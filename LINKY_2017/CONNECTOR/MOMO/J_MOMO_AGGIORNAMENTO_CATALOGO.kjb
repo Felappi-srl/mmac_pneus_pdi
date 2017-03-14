@@ -1,14 +1,14 @@
 <job>
-  <name>J_SQLtoMYSQL_ALLINEAMENTO</name>
+  <name>J_MOMO_AGGIORNAMENTO_CATALOGO</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
-  <created_user>-</created_user>
-  <created_date>2017&#x2f;03&#x2f;14 16&#x3a;38&#x3a;34.457</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;54&#x3a;11.111</modified_date>
+  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MOMO</directory>
+  <created_user>admin</created_user>
+  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.210</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;11&#x3a;02.162</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -453,8 +453,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>62</xloc>
-      <yloc>62</yloc>
+      <xloc>48</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -463,18 +463,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>568</xloc>
-      <yloc>60</yloc>
+      <xloc>256</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
-      <name>t_sqltomysql_mak</name>
+      <name>t_momo_import_catalogo</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_sqltomysql_mak</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
+      <transname>t_momo_import_catalogo</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MOMO</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -499,14 +499,98 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>200</xloc>
-      <yloc>60</yloc>
+      <xloc>192</xloc>
+      <yloc>32</yloc>
+    </entry>
+    <entry>
+      <name>Aggiorno immagini e categoria</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update  linky_articoli_momo as noimg &#xa;inner join linky_articoli_momo as img&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xa;set noimg.IMMAGINE&#x3d; img.immagine,&#xa;noimg.CATEGORIA&#x3d;img.CATEGORIA&#xa;where &#xa;noimg.IMMAGINE is null and img.IMMAGINE is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>608</xloc>
+      <yloc>32</yloc>
+    </entry>
+    <entry>
+      <name>ISECE per tutti</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update &#xa; linky_articoli_momo as noimg &#xa;inner join linky_articoli_momo as img&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xa;set noimg.isECE&#x3d; img.isECE&#xa;where &#xa;noimg.isECE is null and img.isECE is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>608</xloc>
+      <yloc>224</yloc>
+    </entry>
+    <entry>
+      <name>ISNAD per tutti</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update &#xa; linky_articoli_momo as noimg &#xa;inner join linky_articoli_momo as img&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xa;set noimg.isNAD&#x3d; img.isNAD&#xa;where &#xa;noimg.isNAD is null and img.isNAD is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>224</yloc>
+    </entry>
+    <entry>
+      <name>t_momo_import_ean</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_momo_import_ean</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MOMO</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>336</xloc>
+      <yloc>32</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>START</from>
-      <to>t_sqltomysql_mak</to>
+      <from>Aggiorno immagini e categoria</from>
+      <to>ISECE per tutti</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -514,8 +598,44 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_sqltomysql_mak</from>
+      <from>ISECE per tutti</from>
+      <to>ISNAD per tutti</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>ISNAD per tutti</from>
       <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>t_momo_import_catalogo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_momo_import_catalogo</from>
+      <to>t_momo_import_ean</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_momo_import_ean</from>
+      <to>Aggiorno immagini e categoria</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
