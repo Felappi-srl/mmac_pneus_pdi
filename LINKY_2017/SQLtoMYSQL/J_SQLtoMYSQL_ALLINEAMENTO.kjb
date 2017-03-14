@@ -1,14 +1,14 @@
 <job>
-  <name>J_MAK_AGGIORNAMENTO_CATALOGO</name>
+  <name>J_SQLtoMYSQL_ALLINEAMENTO</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MAK</directory>
-  <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.210</created_date>
-  <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;52&#x3a;15.010</modified_date>
+  <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;03&#x2f;14 16&#x3a;38&#x3a;34.457</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;39&#x3a;57.481</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -453,8 +453,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>32</yloc>
+      <xloc>62</xloc>
+      <yloc>62</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -463,18 +463,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>160</yloc>
+      <xloc>568</xloc>
+      <yloc>60</yloc>
     </entry>
     <entry>
-      <name>t_mak_aggiornamento_catalogo</name>
+      <name>t_sqltomysql_mak</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_mak_aggiornamento_catalogo</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;MAK</directory>
+      <transname>t_sqltomysql_mak</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -499,109 +499,14 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>291</xloc>
-      <yloc>34</yloc>
-    </entry>
-    <entry>
-      <name>SQL</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update linky_articoli_mak set numerofori&#x3d;substring&#x28;pcd,1,1&#x29;, interasse &#x3d; substring&#x28;pcd,3,10&#x29;&#xd;&#xa;where pcd is not null&#x3b;&#xd;&#xa;update linky_articoli_mak&#xd;&#xa;set canale &#x3d;&#xd;&#xa;case when charindex&#x28;&#x27;J&#x27;,canale&#x29;&#x3e;0 THEN&#xd;&#xa;substring&#x28;canale,1,charindex&#x28;&#x27;J&#x27;,canale&#x29;-1&#x29;&#xd;&#xa;else CANALE end&#xd;&#xa;where charindex&#x28;&#x27;J&#x27;,canale&#x29;&#x3e;0&#x3b;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>32</yloc>
-    </entry>
-    <entry>
-      <name>Aggiorno immagini e categoria</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update &#xa; linky_articoli_mak as noimg &#xa;inner join linky_articoli_mak as img&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xa;set noimg.IMMAGINE&#x3d; img.immagine,&#xa;noimg.CATEGORIA&#x3d;img.CATEGORIA&#xa;where &#xa;noimg.IMMAGINE is null and img.IMMAGINE is not null</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>160</yloc>
-    </entry>
-    <entry>
-      <name>ISECE per tutti</name>
-      <description/>
-      <type>SQL</type>
-      <sql>--update noimg&#xd;&#xa;--set noimg.isECE&#x3d; img.isECE&#xd;&#xa;--from linky_articoli_MAK as noimg &#xd;&#xa;--inner join linky_articoli_MAK as img&#xd;&#xa;--on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;--where &#xd;&#xa;--noimg.isECE is null and img.isECE is not null</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>160</yloc>
-    </entry>
-    <entry>
-      <name>ISNAD per tutti</name>
-      <description/>
-      <type>SQL</type>
-      <sql>--update noimg&#xd;&#xa;--set noimg.isNAD&#x3d; img.isNAD&#xd;&#xa;--from linky_articoli_MAK as noimg &#xd;&#xa;--inner join linky_articoli_MAK as img&#xd;&#xa;--on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;--where &#xd;&#xa;--noimg.isNAD is null and img.isNAD is not null</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>160</yloc>
-    </entry>
-    <entry>
-      <name>sISTEMO pcd</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update linky_articoli_mak set pcd&#x3d;replace&#x28;pcd,&#x27; &#x27; ,&#x27;&#x27;&#x29;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY_2017</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>32</yloc>
-    </entry>
-    <entry>
-      <name>Imposta variabili</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>149</xloc>
-      <yloc>33</yloc>
+      <xloc>200</xloc>
+      <yloc>60</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>SQL</from>
-      <to>Aggiorno immagini e categoria</to>
+      <from>START</from>
+      <to>t_sqltomysql_mak</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -609,67 +514,13 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Aggiorno immagini e categoria</from>
-      <to>ISECE per tutti</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>ISECE per tutti</from>
-      <to>ISNAD per tutti</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>ISNAD per tutti</from>
+      <from>t_sqltomysql_mak</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_mak_aggiornamento_catalogo</from>
-      <to>sISTEMO pcd</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>sISTEMO pcd</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>START</from>
-      <to>Imposta variabili</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Imposta variabili</from>
-      <to>t_mak_aggiornamento_catalogo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
