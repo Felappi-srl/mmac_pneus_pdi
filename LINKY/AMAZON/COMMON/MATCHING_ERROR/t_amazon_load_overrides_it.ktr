@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_UPD_MAK_to_TYRE24</name>
+    <name>t_amazon_load_overrides_it</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+    <directory>&#x2f;LINKY&#x2f;AMAZON&#x2f;COMMON&#x2f;MATCHING_ERROR</directory>
     <parameters>
     </parameters>
     <log>
@@ -47,8 +47,8 @@
       <maxdiff>0.0</maxdiff>
     </maxdate>
     <size_rowset>10000</size_rowset>
-    <sleep_time_empty>0</sleep_time_empty>
-    <sleep_time_full>0</sleep_time_full>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
@@ -65,40 +65,15 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-  <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;20.220</created_date>
-  <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 13&#x3a;40&#x3a;35.536</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;03&#x2f;11 11&#x3a;02&#x3a;59.106</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;03&#x2f;11 11&#x3a;11&#x3a;36.887</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
-  <connection>
-    <name>CONNECTOR</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>CONNECTOR</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
   <connection>
     <name>LINKY</name>
     <server>localhost</server>
@@ -126,34 +101,12 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>ARTICOLI</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value</from><to>Split Fields 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Value Mapper</to><enabled>Y</enabled> </hop>
+  <hop> <from>Split Fields 2</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Tabella errori</from><to>Modified Java Script Value</to><enabled>Y</enabled> </hop>
+  <hop> <from>Value Mapper</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>ARTICOLI</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CONNECTOR</connection>
-    <sql>select distinct&#xd;&#xa;  &#x27;MAK&#x27; as partner&#xd;&#xa;, partnumber as ipcode&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzopubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x29;&#x2a;0.69&#x29;&#x2b;6&#x29;&#x29; AS prezzo&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzopubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x29;&#x2a;0.69&#x29;&#x2b;6&#x29;&#x29; AS prezzolistino&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS category_path&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x7c;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS full_category_path&#xd;&#xa;,  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA MAK  &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset&#x29; as nome&#xd;&#xa;, upper&#x28; &#x27;CERCHIO IN LEGA MAK MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as short_desc&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA MAK MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as descrizione&#xd;&#xa;, &#x27;EUR&#x27; as currency_id&#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image &#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image &#xd;&#xa;	,&#x27;Y&#x27; AS product_publish&#xd;&#xa;	,&#x27;22&#x27; AS iva, &#xd;&#xa;case when&#xd;&#xa;	coalesce&#x28;GIACENZA,0&#x29;&#xd;&#xa; &#x3c; coalesce&#x28;GIACENZAinterna,0&#x29;&#xd;&#xa;then coalesce&#x28;GIACENZAinterna,0&#x29; else coalesce&#x28;GIACENZA,0&#x29; end&#xd;&#xa;&#xd;&#xa;AS product_in_stock,  &#xd;&#xa;&#x27;12234563&#x27; as product_available,&#xd;&#xa;	&#x27;N&#x27; AS product_special ,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca2, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca2, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS codca3, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS desca3, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca4, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;case when isnumeric&#x28;eancode&#x29;&#x3d;1 then eancode else &#x27;&#x27; end as eancode,&#xd;&#xa;&#x27;VETTURA&#x27; as settore&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27;  and prezzo is not null&#xd;&#xa;--and WHEELMODEL like &#x27;&#x25;ACCIAIO&#x25;&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;000601&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;F8080MUQM42GD2&#x27;&#xd;&#xa;and case when&#xd;&#xa;	coalesce&#x28;GIACENZA,0&#x29;&#xd;&#xa; &#x3c; coalesce&#x28;GIACENZAinterna,0&#x29;&#xd;&#xa;then coalesce&#x28;GIACENZAinterna,0&#x29; else coalesce&#x28;GIACENZA,0&#x29; end &#x3e;0 &#xd;&#xa;and canale is not null&#xd;&#xa;order by partnumber,eancode</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>126</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Insert &#x2f; Update</name>
     <type>InsertUpdate</type>
@@ -170,118 +123,262 @@
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>linky_tyre24</table>
+      <table>linky_amazon_overrides</table>
       <key>
-        <name>codice</name>
-        <field>IPCODE</field>
+        <name>sku</name>
+        <field>SKU</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>campo</name>
+        <field>SPECIFICA</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>siteid</name>
+        <field>siteid</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
-        <name>DESCRIZIONE</name>
-        <rename>descrizione</rename>
+        <name>SITEID</name>
+        <rename>siteid</rename>
         <update>N</update>
       </value>
       <value>
-        <name>PREZZOSCONTATO</name>
-        <rename>prezzo</rename>
+        <name>SKU</name>
+        <rename>sku</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>SPECIFICA</name>
+        <rename>campo</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>VALOREMERCHANT</name>
+        <rename>ValoreMerchant</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>LISTINO</name>
-        <rename>prezzolistino</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>GIACENZA</name>
-        <rename>product_in_stock</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>CODICESERIE</name>
-        <rename>codca3</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>SERIE</name>
-        <rename>desca3</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICECERCHIO</name>
-        <rename>codca1</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CERCHIO</name>
-        <rename>desca1</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICESTAGIONE</name>
-        <rename>codca2</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>STAGIONE</name>
-        <rename>desca2</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICELARGHEZZA</name>
-        <rename>codca4</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>LARGHEZZA</name>
-        <rename>desca4</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>CODICEVEL</name>
-        <rename>codca5</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>VEL</name>
-        <rename>desca5</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>ICARICO</name>
-        <rename>codca6</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>MARCA</name>
-        <rename>Marchio</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>IPCODE</name>
-        <rename>Codice</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>PARTNER</name>
-        <rename>PARTNER</rename>
-        <update>N</update>
-      </value>
-      <value>
-        <name>SETTORE</name>
-        <rename>SETTORE</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EANCODE</name>
-        <rename>EANCODE</rename>
+        <name>VALORE</name>
+        <rename>ValoreAmazon</rename>
         <update>Y</update>
       </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>397</xloc>
-      <yloc>143</yloc>
+      <xloc>800</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;var n &#x3d; tipoerrore.indexOf&#x28;&#x27;seguenti&#x3a; &#x27;&#x29;&#x3b;&#xd;&#xa;var chiusura &#x3d;tipoerrore.indexOf&#x28;&#x27;&#x5c;&#x27;&#x29;&#x27;,n&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;var tmp_testo_errore &#x3d; tipoerrore.substr&#x28;n&#x2b;10,chiusura-n-10&#x29;&#x3b;&#xd;&#xa;var npar&#x3d;tmp_testo_errore.indexOf&#x28;&#x27;&#x28;&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;campo &#x3d; tmp_testo_errore.substr&#x28;0,npar-1&#x29;&#x3b;&#xd;&#xa;valori  &#x3d; tmp_testo_errore.substr&#x28;npar&#x2b;1,100&#x29;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>campo</name>
+        <rename>campo</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>valori</name>
+        <rename>valori</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>ValoreAmazon</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>Amazon&#x3a;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ValoreMerchant</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>Venditore&#x3a;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ValoreAmazon</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x27;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ValoreMerchant</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>&#x27;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>592</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>valori</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>ValoreMerchant</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>ValoreAmazon</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>480</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Tabella errori</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>LINKY</connection>
+    <sql>select sku,tipoerrore,siteid from linky_amazon_errors&#xd;&#xa;where errorcode in&#x28;8541,8542&#x29; and siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;and tipoerrore not like &#x27;&#x25;item_id value&#x25;&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Value Mapper</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <field_to_use>campo</field_to_use>
+    <target_field/>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>model_number</source_value>
+        <target_value>modelnumber</target_value>
+      </field>
+      <field>
+        <source_value>model_name</source_value>
+        <target_value>modelname</target_value>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
