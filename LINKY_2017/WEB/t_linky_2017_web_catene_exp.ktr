@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_cerchi_exp</name>
+    <name>t_linky_2017_web_catene_exp</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;14 15&#x3a;42&#x3a;04.425</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;14 16&#x3a;12&#x3a;58.970</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -587,18 +587,59 @@
   </connection>
   <order>
     <hop>
-      <from>Cerchi</from>
-      <to>Replace in string</to>
+      <from>Catene</from>
+      <to>Split Fields</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Replace in string</from>
-      <to>cerchi.txt</to>
+      <from>Split Fields</from>
+      <to>Etichetta</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Etichetta</from>
+      <to>pneumatici.txt</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Cerchi</name>
+    <name>Etichetta</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;if &#x28;CODICEROTOLAMENTO &#x26;&#x26; CODICEADERENZA &#x26;&#x26; DECIBEL &#x26;&#x26; RUMORE&#x29;&#x7b;&#xa;	URLETICHETTA &#x3d; &#x27;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; CODICEROTOLAMENTO &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; CODICEADERENZA &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; RUMORE &#x2b; &#x27;&#x26;decibels&#x3d;&#x27; &#x2b; DECIBEL &#x2b; &#x27;&#x26;width&#x3d;300&#x27;&#x3b;&#xa;&#x7d;else&#x7b;&#xa;	URLETICHETTA&#x3d;&#x27;&#x27;&#x3b;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>URLETICHETTA</name>
+        <rename>URLETICHETTA</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>322</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Catene</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -609,7 +650,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY_2017</connection>
-    <sql>SELECT DISTINCT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xa;&#x27;MAK&#x27; as MARCA,&#xa;linky_articoli_mak.FINISHING,&#xa;linky_articoli_mak.RAGGIO,&#xa;linky_articoli_mak.CANALE,&#xa;linky_articoli_mak.NUMEROFORI,&#xa;linky_articoli_mak.OFFSET,&#xa;linky_articoli_mak.INTERASSE,&#xa;linky_articoli_mak.CB,&#xa;linky_articoli_mak.EANCODE,&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;MOMO&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;CANALE,&#xa;NUMEROFORI,&#xa;OFFSET,&#xa;INTERASSE,&#xa;CB,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0</sql>
+    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE,&#xa;linky_integro_articoli.MARCA AS BRAND,&#xa;coalesce&#x28;linky_integro_articoli.TITOLOALTERNATIVO, DESCRIZIONE&#x29; AS TITOLO,&#xa;linky_integro_articoli.CODICECERCHIO AS RAGGIO,&#xa;linky_integro_articoli.SERIE AS SPALLA,&#xa;linky_integro_articoli.LARGHEZZA,&#xa;linky_integro_articoli.ICARICO,&#xa;linky_integro_articoli.VEL,&#xa;linky_integro_articoli.SETTORE,&#xa;linky_integro_articoli.CODICEROTOLAMENTO,&#xa;linky_integro_articoli.CODICEADERENZA,&#xa;linky_integro_articoli.CODICERUMOROSITA,&#xa;linky_integro_articoli.EAN,&#xa;concat&#x28;linky_integro_articoli.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;FROM&#xa;linky_integro_articoli&#xa;where GIACENZA&#x3e;0 and PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -630,7 +671,61 @@
     </step>
 
   <step>
-    <name>cerchi.txt</name>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>CODICERUMOROSITA</splitfield>
+   <delimiter>_</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>DECIBEL</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>RUMORE</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>66</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>pneumatici.txt</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -654,7 +749,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;cerchi</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;pneumatici</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -673,7 +768,7 @@
     </file>
     <fields>
       <field>
-        <name>SKU</name>
+        <name>IPCODE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -685,7 +780,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>MODELLO</name>
+        <name>BRAND</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -697,19 +792,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>MARCA</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>FINISHING</name>
+        <name>TITOLO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -733,7 +816,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>CANALE</name>
+        <name>SPALLA</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -745,7 +828,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>NUMEROFORI</name>
+        <name>LARGHEZZA</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -757,7 +840,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>OFFSET</name>
+        <name>ICARICO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -769,7 +852,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>INTERASSE</name>
+        <name>VEL</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -781,7 +864,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>CB</name>
+        <name>SETTORE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -793,7 +876,55 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>EANCODE</name>
+        <name>CODICEROTOLAMENTO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CODICEADERENZA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>RUMORE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>DECIBEL</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>EAN</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -816,54 +947,17 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>387</xloc>
-      <yloc>61</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
       <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>C.R. </replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>&#xd8;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
+        <name>URLETICHETTA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
     <cluster_schema/>
@@ -874,8 +968,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>227</xloc>
-      <yloc>62</yloc>
+      <xloc>508</xloc>
+      <yloc>65</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
