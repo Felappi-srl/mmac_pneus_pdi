@@ -1,6 +1,6 @@
   <connection>
     <name>CONNECTOR</name>
-    <server>localhost</server>
+    <server>192.168.1.11</server>
     <type>MSSQL</type>
     <access>Native</access>
     <database>CONNECTOR</database>

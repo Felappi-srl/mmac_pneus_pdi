@@ -1,14 +1,14 @@
 <job>
-  <name>J_SQLtoMYSQL_ALLINEAMENTO</name>
+  <name>J_OZR_AGGIORNAMENTO_CATALOGO</name>
   <description/>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
-  <created_user>-</created_user>
-  <created_date>2017&#x2f;03&#x2f;14 16&#x3a;38&#x3a;34.457</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;17&#x3a;41.300</modified_date>
+  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;OZR</directory>
+  <created_user>admin</created_user>
+  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.647</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2017&#x2f;03&#x2f;14 18&#x3a;05&#x3a;24.369</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -453,8 +453,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>62</xloc>
-      <yloc>62</yloc>
+      <xloc>31</xloc>
+      <yloc>43</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -463,18 +463,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>568</xloc>
-      <yloc>60</yloc>
+      <xloc>906</xloc>
+      <yloc>51</yloc>
     </entry>
     <entry>
-      <name>t_sqltomysql_mak</name>
+      <name>t_msw_import</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_sqltomysql_mak</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
+      <transname>t_msw_import</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;OZR</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -499,33 +499,34 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>296</xloc>
-      <yloc>62</yloc>
+      <xloc>244</xloc>
+      <yloc>43</yloc>
     </entry>
     <entry>
-      <name>Imposta variabili</name>
+      <name>SQL</name>
       <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-      </fields>
+      <type>SQL</type>
+      <sql>update linky_articoli_ozr set &#xd;&#xa;canale&#x3d;&#xd;&#xa;case when charindex&#x28;&#x27;x&#x27;,canale&#x29; &#x3e; 0 then&#xd;&#xa;replace&#x28;substring&#x28;canale,1,charindex&#x28;&#x27;x&#x27;,canale&#x29;-1&#x29;,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;else replace&#x28;canale,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;end&#xd;&#xa;&#xd;&#xa;,&#xd;&#xa;pcd&#x3d;replace&#x28;pcd,&#x27;,00&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,giacenza&#x3d;replace&#x28;giacenza,&#x27;&#x3e; &#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;, categoria &#x3d; case raggio&#xd;&#xa;	when 13 then &#x27;IT-149595, DE-9888, NL-28648, FR-123964, UK-28648&#x27;&#xd;&#xa;	when 14 then &#x27;IT-149596, DE-9888, NL-28648, FR-123965, UK-28648&#x27;&#xd;&#xa;	when 15 then &#x27;IT-149597, DE-9888, NL-28648, FR-123966, UK-28648&#x27;&#xd;&#xa;	when 16 then &#x27;IT-149598, DE-9888, NL-28648, FR-123967, UK-28648&#x27;&#xd;&#xa;	when 17 then &#x27;IT-149599, DE-9888, NL-28648, FR-123968, UK-28648&#x27;&#xd;&#xa;	when 18 then &#x27;IT-149600, DE-9888, NL-28648, FR-123969, UK-28648&#x27;&#xd;&#xa;	when 19 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 20 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 21 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 22 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;end&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>178</xloc>
-      <yloc>59</yloc>
+      <xloc>688</xloc>
+      <yloc>46</yloc>
     </entry>
     <entry>
-      <name>t_sqltomysql_momo</name>
+      <name>t_sparco_import</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_sqltomysql_momo</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;SQLtoMYSQL</directory>
+      <transname>t_sparco_import</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;OZR</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -550,14 +551,109 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>415</xloc>
-      <yloc>56</yloc>
+      <xloc>412</xloc>
+      <yloc>42</yloc>
+    </entry>
+    <entry>
+      <name>t_ozr_import</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ozr_import</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;OZR</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>579</xloc>
+      <yloc>41</yloc>
+    </entry>
+    <entry>
+      <name>OUT_PROD</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_articoli_ozr set out_prod&#x3d;1&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>116</xloc>
+      <yloc>44</yloc>
+    </entry>
+    <entry>
+      <name>Aggiorno immagini e categoria</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update noimg&#xd;&#xa;set noimg.IMMAGINE&#x3d; img.immagine,&#xd;&#xa;noimg.CATEGORIA&#x3d;img.CATEGORIA&#xd;&#xa;from linky_articoli_OZR as noimg &#xd;&#xa;inner join linky_articoli_ozr as img&#xd;&#xa;on noimg.PARTNUMBER&#x3d;img.PARTNUMBER&#xd;&#xa;where &#xd;&#xa;noimg.IMMAGINE is null and img.IMMAGINE is not null</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>46</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
+      <from>t_msw_import</from>
+      <to>t_sparco_import</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_sparco_import</from>
+      <to>t_ozr_import</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ozr_import</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
-      <to>Imposta variabili</to>
+      <to>OUT_PROD</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -565,8 +661,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Imposta variabili</from>
-      <to>t_sqltomysql_mak</to>
+      <from>OUT_PROD</from>
+      <to>t_msw_import</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -574,8 +670,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_sqltomysql_mak</from>
-      <to>t_sqltomysql_momo</to>
+      <from>SQL</from>
+      <to>Aggiorno immagini e categoria</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -583,7 +679,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_sqltomysql_momo</from>
+      <from>Aggiorno immagini e categoria</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
