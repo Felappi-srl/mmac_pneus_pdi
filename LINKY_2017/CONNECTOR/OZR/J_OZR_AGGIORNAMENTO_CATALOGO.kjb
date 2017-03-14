@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.647</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 18&#x3a;05&#x3a;24.369</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;14 18&#x3a;12&#x3a;02.615</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -499,8 +499,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>244</xloc>
-      <yloc>43</yloc>
+      <xloc>329</xloc>
+      <yloc>45</yloc>
     </entry>
     <entry>
       <name>SQL</name>
@@ -603,8 +603,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>116</xloc>
-      <yloc>44</yloc>
+      <xloc>237</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>Aggiorno immagini e categoria</name>
@@ -621,6 +621,21 @@
       <nr>0</nr>
       <xloc>784</xloc>
       <yloc>46</yloc>
+    </entry>
+    <entry>
+      <name>Imposta variabili</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>141</xloc>
+      <yloc>42</yloc>
     </entry>
   </entries>
   <hops>
@@ -652,15 +667,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>OUT_PROD</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>OUT_PROD</from>
       <to>t_msw_import</to>
       <from_nr>0</from_nr>
@@ -681,6 +687,24 @@
     <hop>
       <from>Aggiorno immagini e categoria</from>
       <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Imposta variabili</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Imposta variabili</from>
+      <to>OUT_PROD</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
