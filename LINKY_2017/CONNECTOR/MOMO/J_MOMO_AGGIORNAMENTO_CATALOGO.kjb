@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.210</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;11&#x3a;02.162</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;14 17&#x3a;12&#x3a;29.404</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -499,8 +499,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>32</yloc>
+      <xloc>259</xloc>
+      <yloc>31</yloc>
     </entry>
     <entry>
       <name>Aggiorno immagini e categoria</name>
@@ -583,8 +583,23 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>32</yloc>
+      <xloc>431</xloc>
+      <yloc>33</yloc>
+    </entry>
+    <entry>
+      <name>Imposta variabili</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <replacevars>Y</replacevars>
+      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>143</xloc>
+      <yloc>30</yloc>
     </entry>
   </entries>
   <hops>
@@ -616,15 +631,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>t_momo_import_catalogo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_momo_import_catalogo</from>
       <to>t_momo_import_ean</to>
       <from_nr>0</from_nr>
@@ -641,6 +647,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Imposta variabili</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Imposta variabili</from>
+      <to>t_momo_import_catalogo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
