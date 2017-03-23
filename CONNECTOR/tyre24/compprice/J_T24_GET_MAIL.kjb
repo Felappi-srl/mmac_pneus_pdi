@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;11 09&#x3a;43&#x3a;06.924</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;16 13&#x3a;39&#x3a;57.590</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -192,7 +192,7 @@
       <name>Nostro prezzo Posizione 1</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d; comp.NOSTROPREZZO&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d; comp.NOSTROPREZZO&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and parnter&#x3c;&#x3e;&#x27;PN&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
