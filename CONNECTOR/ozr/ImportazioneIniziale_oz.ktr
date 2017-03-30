@@ -68,7 +68,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;18.707</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;02&#x2f;02 11&#x3a;36&#x3a;07.949</modified_date>
+  <modified_date>2017&#x2f;03&#x2f;23 14&#x3a;28&#x3a;13.573</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -76,7 +76,7 @@
   </notepads>
   <connection>
     <name>CONNECTOR</name>
-    <server>localhost</server>
+    <server>192.168.1.11</server>
     <type>MSSQL</type>
     <access>Native</access>
     <database>CONNECTOR</database>
@@ -102,15 +102,17 @@
   <order>
   <hop> <from>stock</from><to>stock_</to><enabled>Y</enabled> </hop>
   <hop> <from>OZ</from><to>Select values</to><enabled>Y</enabled> </hop>
-  <hop> <from>stock_</from><to>Merge Join</to><enabled>Y</enabled> </hop>
   <hop> <from>Auto</from><to>Merge Join</to><enabled>Y</enabled> </hop>
-  <hop> <from>Calculator</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   <hop> <from>Merge Join</from><to>Add constants</to><enabled>Y</enabled> </hop>
   <hop> <from>Add constants</from><to>Calculator</to><enabled>Y</enabled> </hop>
-  <hop> <from>PCD</from><to>Auto</to><enabled>Y</enabled> </hop>
   <hop> <from>Select values</from><to>Formula</to><enabled>Y</enabled> </hop>
   <hop> <from>Formula</from><to>Replace in string</to><enabled>Y</enabled> </hop>
-  <hop> <from>Replace in string</from><to>PCD</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Auto</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator 2</from><to>PCD</to><enabled>Y</enabled> </hop>
+  <hop> <from>stock_</from><to>Calculator 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>PCD</from><to>Merge Join</to><enabled>Y</enabled> </hop>
+  <hop> <from>Calculator</from><to>Split Fields</to><enabled>Y</enabled> </hop>
+  <hop> <from>Split Fields</from><to>Insert &#x2f; Update</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -163,8 +165,8 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>423</xloc>
-      <yloc>83</yloc>
+      <xloc>544</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -230,8 +232,41 @@
 </calculation>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>525</xloc>
-      <yloc>83</yloc>
+      <xloc>640</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+       <calculation><field_name>pcdsplit</field_name>
+<calc_type>COPY_FIELD</calc_type>
+<field_a>pcd1</field_a>
+<field_b/>
+<field_c/>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<remove>N</remove>
+<conversion_mask/>
+<decimal_symbol/>
+<grouping_symbol/>
+<currency_symbol/>
+</calculation>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>320</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -377,7 +412,7 @@
       <value>
         <name>INTERASSE</name>
         <rename>interasse</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>BRAND</name>
@@ -394,11 +429,36 @@
         <rename>out_prod</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>misura1</name>
+        <rename>Mis1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura2</name>
+        <rename>Mis2</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura3</name>
+        <rename>Mis3</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura4</name>
+        <rename>Mis4</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>misura5</name>
+        <rename>Mis5</rename>
+        <update>Y</update>
+      </value>
     </lookup>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>681</xloc>
-      <yloc>83</yloc>
+      <xloc>800</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -416,7 +476,7 @@
            </partitioning>
 <join_type>INNER</join_type>
 <step1>Auto</step1>
-<step2>stock_</step2>
+<step2>PCD</step2>
     <keys_1>
       <key>Part.Number</key>
     </keys_1>
@@ -425,8 +485,8 @@
     </keys_2>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>348</xloc>
-      <yloc>82</yloc>
+      <xloc>464</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -958,7 +1018,7 @@
         <group/>
       </field>
       <field>
-        <name>Tyres Cod-F&#x26;R-Fit&#x26;Go-Tyres Notes</name>
+        <name>Misure</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2162,7 +2222,7 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-   <splitfield>Car PCD</splitfield>
+   <splitfield>pcdsplit</splitfield>
    <delimiter>x</delimiter>
    <enclosure/>
     <fields>      <field>        <name>fori</name>
@@ -2181,10 +2241,10 @@
       </field>      <field>        <name>interasse</name>
         <id/>
         <idrem>N</idrem>
-        <type>String</type>
-        <format/>
+        <type>Number</type>
+        <format>&#x23;</format>
         <group/>
-        <decimal/>
+        <decimal>,</decimal>
         <currency/>
         <length>-1</length>
         <precision>-1</precision>
@@ -2193,8 +2253,8 @@
         <trimtype>both</trimtype>
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>408</xloc>
-      <yloc>192</yloc>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -2279,6 +2339,10 @@
         <length>-2</length>
         <precision>-2</precision>
       </field>      <field>        <name>Size</name>
+        <rename/>
+        <length>-2</length>
+        <precision>-2</precision>
+      </field>      <field>        <name>Misure</name>
         <rename/>
         <length>-2</length>
         <precision>-2</precision>
@@ -2614,6 +2678,93 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>228</xloc>
       <yloc>83</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <splitfield>Misure</splitfield>
+   <delimiter>,</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Mis1</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>Mis2</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>Mis3</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>Mis4</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>Mis5</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>704</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
