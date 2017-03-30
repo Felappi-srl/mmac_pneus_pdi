@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_giacenze_exp</name>
+    <name>t_linky_2017_web_ruotinicerchi_exp</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;30 13&#x3a;03&#x3a;44.192</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;30 13&#x3a;08&#x3a;53.092</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -587,13 +587,23 @@
   </connection>
   <order>
     <hop>
-      <from>TUTTO</from>
-      <to>giacenze.txt</to>
+      <from>Auto</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ruotini</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge Join</from>
+      <to>autoruotini.txt</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>TUTTO</name>
+    <name>Auto</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -603,8 +613,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LINKY_2017</connection>
-    <sql>SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_ozr&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_teck&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_wsp&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;UNION ALL&#xa;SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;GIACENZA,&#xa;PREZZOSCONTATO AS PREZZO&#xa;FROM&#xa;linky_integro_articoli&#xa;where GIACENZA&#x3e;0 and PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xa;union all &#xa;SELECT distinct &#xa;IPCODE AS SKU,&#xa;GIACENZA,&#xa;PREZZOSCONTATO AS PREZZO&#xa;FROM&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;&#xa;where PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
+    <connection>LINKY_ODOO</connection>
+    <sql>SELECT&#xa;mmac_carfit_pmodel.codint,&#xa;mmac_carfit_model.ktype as idauto&#xa;FROM&#xa;mmac_carfit_model&#xa;JOIN mmac_carfit_pmodel_rel&#xa;ON mmac_carfit_model.id &#x3d; mmac_carfit_pmodel_rel.mmodel_id &#xa;JOIN mmac_carfit_pmodel&#xa;ON mmac_carfit_pmodel_rel.pmodel_id &#x3d; mmac_carfit_pmodel.id&#xa;where codint is not null&#xa;order by mmac_carfit_pmodel.codint</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -618,14 +628,80 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>95</xloc>
-      <yloc>65</yloc>
+      <xloc>50</xloc>
+      <yloc>35</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>giacenze.txt</name>
+    <name>ruotini</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT&#xa;ipcode as SKU,&#xa;CODICEAUTO&#xa;FROM&#xa;linky_integro_ruotini&#xa;order by CODICEAUTO</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>195</xloc>
+      <yloc>166</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Merge Join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>INNER</join_type>
+<step1>Auto</step1>
+<step2>ruotini</step2>
+    <keys_1>
+      <key>codint</key>
+    </keys_1>
+    <keys_2>
+      <key>CODICEAUTO</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>195</xloc>
+      <yloc>34</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>autoruotini.txt</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -649,7 +725,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;giacenze</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;autoruotini</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -668,31 +744,19 @@
     </file>
     <fields>
       <field>
+        <name>idauto</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
         <name>SKU</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>GIACENZA</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PREZZO</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -712,8 +776,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>508</xloc>
-      <yloc>65</yloc>
+      <xloc>380</xloc>
+      <yloc>33</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

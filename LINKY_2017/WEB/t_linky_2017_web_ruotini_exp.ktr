@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_giacenze_exp</name>
+    <name>t_linky_2017_web_ruotini_exp</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;30 13&#x3a;03&#x3a;44.192</modified_date>
+    <modified_date>2017&#x2f;03&#x2f;30 13&#x3a;01&#x3a;16.675</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -587,13 +587,13 @@
   </connection>
   <order>
     <hop>
-      <from>TUTTO</from>
-      <to>giacenze.txt</to>
+      <from>Cerchi</from>
+      <to>ruotini.txt</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>TUTTO</name>
+    <name>Cerchi</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -603,8 +603,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LINKY_2017</connection>
-    <sql>SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_ozr&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_teck&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_wsp&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;UNION ALL&#xa;SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;GIACENZA,&#xa;PREZZOSCONTATO AS PREZZO&#xa;FROM&#xa;linky_integro_articoli&#xa;where GIACENZA&#x3e;0 and PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xa;union all &#xa;SELECT distinct &#xa;IPCODE AS SKU,&#xa;GIACENZA,&#xa;PREZZOSCONTATO AS PREZZO&#xa;FROM&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;&#xa;where PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
+    <connection>LINKY</connection>
+    <sql>SELECT&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.IPCODE,&#xa;&#x27;RUOTINO DI SCORTA&#x27; as DESCRIZIONE,&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.MARCA,&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.LARGHEZZA,&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.SERIE,&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.CERCHIO as RAGGIO,&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;.IMMAGINE&#xa;FROM&#xa;dbo.&#x5b;linky_integro_ruotini&#x5d;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -625,7 +625,7 @@
     </step>
 
   <step>
-    <name>giacenze.txt</name>
+    <name>ruotini.txt</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -649,7 +649,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;giacenze</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;ruotini</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -668,7 +668,7 @@
     </file>
     <fields>
       <field>
-        <name>SKU</name>
+        <name>IPCODE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -680,7 +680,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>GIACENZA</name>
+        <name>DESCRIZIONE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -692,7 +692,55 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>PREZZO</name>
+        <name>MARCA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>LARGHEZZA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>SERIE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>RAGGIO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>IMMAGINE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -712,8 +760,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>508</xloc>
-      <yloc>65</yloc>
+      <xloc>290</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
