@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;04 11&#x3a;48&#x3a;08.062</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;11 14&#x3a;30&#x3a;09.220</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -447,7 +447,7 @@
       <name>Nostro prezzo Posizione 1 IT</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.BESTPRICE&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; RICARICO&#x29;&#x3b;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; RICARICO&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -567,7 +567,7 @@
       <name>Nostro prezzo Posizione 1 MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.BESTPRICE&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.BESTPRICE&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

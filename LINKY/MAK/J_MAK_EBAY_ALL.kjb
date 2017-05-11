@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;04&#x2f;21 11&#x3a;19&#x3a;49.356</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;11 13&#x3a;42&#x3a;17.240</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -950,7 +950,7 @@
       <name>ECE</name>
       <description/>
       <type>SQL</type>
-      <sql>update var&#xd;&#xa;set var.isece &#x3d; case when mak.isece is not null or mak.isnad is not null then &#x27;1&#x27; else 0 end,&#xd;&#xa; var.isTUV &#x3d; case when mak.isTUV is not null or mak.isece is not null then &#x27;1&#x27; else 0 end&#xd;&#xa;from linky_ebay_var as var&#xd;&#xa;inner join connector.dbo.linky_articoli_mak as mak on var.codice &#x3d; mak.partnumber &#xd;&#xa;and var.codicevar &#x3d; substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;mak.partnumber &#x2b; mak.marcaauto &#x2b; coalesce&#x28;mak.modelloauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;mak.annoauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;mak.tipoauto,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;  ,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,1,46&#x29; and replace&#x28;mak.annoauto,&#x27; &#x27;,&#x27;&#x27;&#x29; &#x3d; replace&#x28;var.annoauto,&#x27; &#x27;,&#x27;&#x27;&#x29;</sql>
+      <sql>update var&#xd;&#xa;set var.isece &#x3d; case when mak.isece is not null or mak.isnad is not null then &#x27;1&#x27; else 0 end,&#xd;&#xa; var.isTUV &#x3d; case when mak.isTUV is not null or mak.isece is not null then &#x27;1&#x27; else 0 end,&#xd;&#xa;var.out_prod &#x3d; mak.out_prod&#xd;&#xa;from linky_ebay_var as var&#xd;&#xa;inner join connector.dbo.linky_articoli_mak as mak on var.codice &#x3d; mak.partnumber &#xd;&#xa;and var.codicevar &#x3d; substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;mak.partnumber &#x2b; mak.marcaauto &#x2b; coalesce&#x28;mak.modelloauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;mak.annoauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;mak.tipoauto,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;  ,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,1,46&#x29; and replace&#x28;mak.annoauto,&#x27; &#x27;,&#x27;&#x27;&#x29; &#x3d; replace&#x28;var.annoauto,&#x27; &#x27;,&#x27;&#x27;&#x29;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

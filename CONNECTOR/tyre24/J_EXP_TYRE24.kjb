@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;04 13&#x3a;59&#x3a;31.609</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;11 14&#x3a;48&#x3a;33.664</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -1620,8 +1620,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>t_exp_tyre24</from>
