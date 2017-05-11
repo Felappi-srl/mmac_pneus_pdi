@@ -6,7 +6,7 @@
     <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
     <port>5432</port>
     <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
-    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>

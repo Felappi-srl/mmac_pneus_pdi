@@ -1,14 +1,14 @@
 <job>
   <name>J_LOAD_PARTNERS</name>
-    <description/>
-    <extended_description/>
-    <job_version/>
-    <job_status>0</job_status>
+  <description/>
+  <extended_description/>
+  <job_version/>
+  <job_status>0</job_status>
   <directory>&#x2f;WEB</directory>
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;52&#x3a;37.028</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;02&#x2f;14 17&#x3a;07&#x3a;40.556</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;04 16&#x3a;08&#x3a;31.290</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -39,23 +39,276 @@
   </connection>
     <slaveservers>
     </slaveservers>
-<job-log-table><connection/>
-<schema/>
-<table/>
-<size_limit_lines/>
-<interval/>
-<timeout_days/>
-<field><id>ID_JOB</id><enabled>Y</enabled><name>ID_JOB</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>JOBNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>START_JOB_ENTRY</id><enabled>N</enabled><name>START_JOB_ENTRY</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></job-log-table>
-<jobentry-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>JOBNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>JOBENTRYNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>RESULT</id><enabled>Y</enabled><name>RESULT</name></field><field><id>NR_RESULT_ROWS</id><enabled>Y</enabled><name>NR_RESULT_ROWS</name></field><field><id>NR_RESULT_FILES</id><enabled>Y</enabled><name>NR_RESULT_FILES</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field><field><id>COPY_NR</id><enabled>N</enabled><name>COPY_NR</name></field></jobentry-log-table>
-<channel-log-table><connection/>
-<schema/>
-<table/>
-<timeout_days/>
-<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+      <job-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_JOB</id>
+          <enabled>Y</enabled>
+          <name>ID_JOB</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>JOBNAME</id>
+          <enabled>Y</enabled>
+          <name>JOBNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>START_JOB_ENTRY</id>
+          <enabled>N</enabled>
+          <name>START_JOB_ENTRY</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </job-log-table>
+      <jobentry-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>JOBNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>JOBENTRYNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>RESULT</id>
+          <enabled>Y</enabled>
+          <name>RESULT</name>
+        </field>
+        <field>
+          <id>NR_RESULT_ROWS</id>
+          <enabled>Y</enabled>
+          <name>NR_RESULT_ROWS</name>
+        </field>
+        <field>
+          <id>NR_RESULT_FILES</id>
+          <enabled>Y</enabled>
+          <name>NR_RESULT_FILES</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>COPY_NR</id>
+          <enabled>N</enabled>
+          <name>COPY_NR</name>
+        </field>
+      </jobentry-log-table>
+      <channel-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
    <pass_batchid>N</pass_batchid>
    <shared_objects_file/>
   <entries>
@@ -78,7 +331,7 @@
       <nr>0</nr>
       <xloc>28</xloc>
       <yloc>51</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>Successo</name>
       <description/>
@@ -86,9 +339,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>528</yloc>
-      </entry>
+      <xloc>640</xloc>
+      <yloc>480</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_CENTROGOMME</name>
       <description/>
@@ -120,7 +373,7 @@
       <nr>0</nr>
       <xloc>528</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_DELDO</name>
       <description/>
@@ -152,15 +405,15 @@
       <nr>0</nr>
       <xloc>624</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
-      <name>J_BESTPRICE</name>
+      <name>J_BESTPRICE_2017</name>
       <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
       <job_object_id/>
       <filename/>
-      <jobname>J_BESTPRICE</jobname>
+      <jobname>J_BESTPRICE_2017</jobname>
       <directory>&#x2f;CONNECTOR&#x2f;common</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -182,9 +435,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>288</yloc>
-      </entry>
+      <xloc>336</xloc>
+      <yloc>480</yloc>
+    </entry>
     <entry>
       <name>Sistemo VALORI</name>
       <description/>
@@ -198,9 +451,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>224</yloc>
-      </entry>
+      <xloc>224</xloc>
+      <yloc>480</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_YOKO</name>
       <description/>
@@ -232,7 +485,7 @@
       <nr>0</nr>
       <xloc>720</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_GOEGGEL</name>
       <description/>
@@ -264,7 +517,7 @@
       <nr>0</nr>
       <xloc>816</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_TAGLIABUE</name>
       <description/>
@@ -296,7 +549,7 @@
       <nr>0</nr>
       <xloc>912</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>Sistemo INTEGRO</name>
       <description/>
@@ -310,9 +563,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>128</yloc>
-      </entry>
+      <xloc>96</xloc>
+      <yloc>384</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_TOYO</name>
       <description/>
@@ -344,7 +597,7 @@
       <nr>0</nr>
       <xloc>912</xloc>
       <yloc>160</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_UNIVER</name>
       <description/>
@@ -376,7 +629,7 @@
       <nr>0</nr>
       <xloc>768</xloc>
       <yloc>240</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_CST</name>
       <description/>
@@ -406,9 +659,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
-      <yloc>176</yloc>
-      </entry>
+      <xloc>640</xloc>
+      <yloc>128</yloc>
+    </entry>
     <entry>
       <name>Set variables</name>
       <description/>
@@ -458,7 +711,7 @@
       <nr>0</nr>
       <xloc>96</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>t_write_log</name>
       <description/>
@@ -486,22 +739,30 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>jobid</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
-            </parameter>            <parameter>            <name>jobstatus</name>
-            <stream_name/>
-            <value>in esecuzione</value>
-            </parameter>            <parameter>            <name>jobtipoazione</name>
-            <stream_name/>
-            <value>start</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>jobid</name>
+          <stream_name/>
+          <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
+        </parameter>
+        <parameter>
+          <name>jobstatus</name>
+          <stream_name/>
+          <value>in esecuzione</value>
+        </parameter>
+        <parameter>
+          <name>jobtipoazione</name>
+          <stream_name/>
+          <value>start</value>
+        </parameter>
+      </parameters>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>176</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>t_write_log fine</name>
       <description/>
@@ -529,22 +790,30 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>jobid</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
-            </parameter>            <parameter>            <name>jobstatus</name>
-            <stream_name/>
-            <value>ok</value>
-            </parameter>            <parameter>            <name>jobtipoazione</name>
-            <stream_name/>
-            <value>fine</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>jobid</name>
+          <stream_name/>
+          <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
+        </parameter>
+        <parameter>
+          <name>jobstatus</name>
+          <stream_name/>
+          <value>ok</value>
+        </parameter>
+        <parameter>
+          <name>jobtipoazione</name>
+          <stream_name/>
+          <value>fine</value>
+        </parameter>
+      </parameters>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>448</yloc>
-      </entry>
+      <xloc>544</xloc>
+      <yloc>480</yloc>
+    </entry>
     <entry>
       <name>t_write_log errore</name>
       <description/>
@@ -572,25 +841,35 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-            <parameter>            <name>jobid</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
-            </parameter>            <parameter>            <name>jobstatus</name>
-            <stream_name/>
-            <value>failure</value>
-            </parameter>            <parameter>            <name>jobtipoazione</name>
-            <stream_name/>
-            <value>errore</value>
-            </parameter>            <parameter>            <name>jobstep</name>
-            <stream_name/>
-            <value>&#x24;&#x7b;jobstep&#x7d;</value>
-            </parameter>      </parameters>      <parallel>N</parallel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>jobid</name>
+          <stream_name/>
+          <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
+        </parameter>
+        <parameter>
+          <name>jobstatus</name>
+          <stream_name/>
+          <value>failure</value>
+        </parameter>
+        <parameter>
+          <name>jobtipoazione</name>
+          <stream_name/>
+          <value>errore</value>
+        </parameter>
+        <parameter>
+          <name>jobstep</name>
+          <stream_name/>
+          <value>&#x24;&#x7b;jobstep&#x7d;</value>
+        </parameter>
+      </parameters>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>480</xloc>
-      <yloc>480</yloc>
-      </entry>
+      <xloc>768</xloc>
+      <yloc>400</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_RUOTINI</name>
       <description/>
@@ -620,9 +899,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>192</yloc>
-      </entry>
+      <xloc>560</xloc>
+      <yloc>128</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_BERNAERTS</name>
       <description/>
@@ -654,7 +933,7 @@
       <nr>0</nr>
       <xloc>912</xloc>
       <yloc>240</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>J_LOAD_ETTORRE</name>
       <description/>
@@ -684,9 +963,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
-      <yloc>208</yloc>
-      </entry>
+      <xloc>464</xloc>
+      <yloc>128</yloc>
+    </entry>
     <entry>
       <name>J_LOAD_FINTYRE_2017</name>
       <description/>
@@ -716,9 +995,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
-      <yloc>208</yloc>
-      </entry>
+      <xloc>240</xloc>
+      <yloc>128</yloc>
+    </entry>
     <entry>
       <name>AGGIORNA GIACENZE</name>
       <description/>
@@ -746,13 +1025,15 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>272</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>AGGIORNA GIACENZE 2</name>
       <description/>
@@ -780,13 +1061,15 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <parallel>N</parallel>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>400</xloc>
       <yloc>48</yloc>
-      </entry>
+    </entry>
     <entry>
       <name>Compila EAN</name>
       <description/>
@@ -800,9 +1083,9 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>368</yloc>
-      </entry>
+      <xloc>448</xloc>
+      <yloc>480</yloc>
+    </entry>
     <entry>
       <name>SISTEMA MARCHI</name>
       <description/>
@@ -816,9 +1099,77 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>112</xloc>
+      <xloc>96</xloc>
+      <yloc>480</yloc>
+    </entry>
+    <entry>
+      <name>t_normalizza_ipcode</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_normalizza_ipcode</transname>
+      <directory>&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>96</xloc>
+      <yloc>288</yloc>
+    </entry>
+    <entry>
+      <name>J_LOAD_BRIDGESTONE_2017</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_LOAD_BRIDGESTONE_2017</jobname>
+      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;BRIDGESTONE</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>96</xloc>
       <yloc>128</yloc>
-      </entry>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -859,7 +1210,7 @@
     </hop>
     <hop>
       <from>Sistemo VALORI</from>
-      <to>J_BESTPRICE</to>
+      <to>J_BESTPRICE_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -993,7 +1344,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_BESTPRICE</from>
+      <from>J_BESTPRICE_2017</from>
       <to>t_write_log errore</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1017,7 +1368,7 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>J_LOAD_TOYO</from>
@@ -1049,15 +1400,6 @@
     <hop>
       <from>J_LOAD_ETTORRE</from>
       <to>J_LOAD_FINTYRE_2017</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>J_LOAD_FINTYRE_2017</from>
-      <to>Sistemo INTEGRO</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1101,7 +1443,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_BESTPRICE</from>
+      <from>J_BESTPRICE_2017</from>
       <to>Compila EAN</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1136,8 +1478,34 @@
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
+    <hop>
+      <from>t_normalizza_ipcode</from>
+      <to>Sistemo INTEGRO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_FINTYRE_2017</from>
+      <to>J_LOAD_BRIDGESTONE_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_BRIDGESTONE_2017</from>
+      <to>t_normalizza_ipcode</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
   </hops>
   <notepads>
   </notepads>
-
 </job>
