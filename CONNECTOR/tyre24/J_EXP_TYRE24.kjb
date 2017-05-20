@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;11 14&#x3a;48&#x3a;33.664</modified_date>
+  <modified_date>2017&#x2f;05&#x2f;18 12&#x3a;53&#x3a;09.471</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
-      <yloc>544</yloc>
+      <xloc>144</xloc>
+      <yloc>624</yloc>
     </entry>
     <entry>
       <name>t_UPD_CG_to_TYRE24</name>
@@ -478,8 +478,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
-      <yloc>208</yloc>
+      <xloc>928</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>SQL</name>
@@ -840,8 +840,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>896</xloc>
-      <yloc>368</yloc>
+      <xloc>864</xloc>
+      <yloc>592</yloc>
     </entry>
     <entry>
       <name>t_exp_mdtuning</name>
@@ -909,42 +909,6 @@
       <nr>0</nr>
       <xloc>768</xloc>
       <yloc>240</yloc>
-    </entry>
-    <entry>
-      <name>t_UPD_ALCAR_to_TYRE24</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_UPD_ALCAR_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>912</xloc>
-      <yloc>128</yloc>
     </entry>
     <entry>
       <name>t_write_log</name>
@@ -1045,8 +1009,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>544</yloc>
+      <xloc>304</xloc>
+      <yloc>624</yloc>
     </entry>
     <entry>
       <name>t_exp_tyresinstock</name>
@@ -1113,7 +1077,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>912</xloc>
-      <yloc>288</yloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>Compila Etichetta PNEUS</name>
@@ -1195,8 +1159,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>656</xloc>
-      <yloc>528</yloc>
+      <xloc>544</xloc>
+      <yloc>608</yloc>
     </entry>
     <entry>
       <name>J_T24_GET_MAIL</name>
@@ -1306,6 +1270,232 @@
       <xloc>656</xloc>
       <yloc>432</yloc>
     </entry>
+    <entry>
+      <name>FTP CPREIFEN 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>ftp.direct-pneus.fr</servername>
+      <serverport>21</serverport>
+      <username>directpn-163</username>
+      <password>Encrypted 2be98afc86aa7f2e4881eb9218b80fce4</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;</localDirectory>
+      <wildcard>adtyres.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>752</xloc>
+      <yloc>336</yloc>
+    </entry>
+    <entry>
+      <name>FTP MDTUNING 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>ftp.md-tuning.de</servername>
+      <serverport>21</serverport>
+      <username>felappi</username>
+      <password>Encrypted 2be98afc86aa783cbb944b466d38289c9</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <wildcard>mdtuning.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>880</xloc>
+      <yloc>224</yloc>
+    </entry>
+    <entry>
+      <name>FTP T24 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>ftp.tyre24.de</servername>
+      <serverport>21</serverport>
+      <username>ftp1185</username>
+      <password>Encrypted 2be98afc86aa7f2e4fe1d8c2586aa9ce2</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;</localDirectory>
+      <wildcard>tyre24.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>864</xloc>
+      <yloc>352</yloc>
+    </entry>
+    <entry>
+      <name>FTP tyresinstock 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>ftp.tyresinstock.com</servername>
+      <serverport>21</serverport>
+      <username>TM413171</username>
+      <password>Encrypted 2be98afc86aa7c0d6922c9c598f97bd8e</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <wildcard>tyresinstock.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>480</yloc>
+    </entry>
+    <entry>
+      <name>FTP TYRESYSTEM 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>ftp.tyresystem.de</servername>
+      <serverport>21</serverport>
+      <username>L2730</username>
+      <password>Encrypted 2be98afc86aa7f2e4cb79ce56f7cbf68b</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <wildcard>tyresystem.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>736</xloc>
+      <yloc>544</yloc>
+    </entry>
+    <entry>
+      <name>FTP reiwadirekt 2</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>daten.plusfakt.de</servername>
+      <serverport>21</serverport>
+      <username>felappi</username>
+      <password>Encrypted 2be98afc86aa7d682ae098f348fc1fe82</password>
+      <remoteDirectory/>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <wildcard>reiwadirekt.csv</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>544</yloc>
+    </entry>
+    <entry>
+      <name>Mail Error</name>
+      <description/>
+      <type>MAIL</type>
+      <server>smtp.easyname.eu</server>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
+      <replytoname>Procedure PNEUS</replytoname>
+      <subject>PNEUS T24 errore invio file</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Errore durante una procedura</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>40778mail1</auth_user>
+      <auth_password>Encrypted 2be98affe0bcbb096a216bd73d69bf88a</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>688</xloc>
+      <yloc>496</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1361,24 +1551,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_UPD_MAK_to_TYRE24</from>
-      <to>t_UPD_ALCAR_to_TYRE24</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_UPD_ALCAR_to_TYRE24</from>
-      <to>t_UPD_MOMO_to_TYRE24</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>START</from>
@@ -1575,11 +1747,92 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP MDTUNING</from>
+      <to>FTP T24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP T24</from>
+      <to>FTP tyresinstock</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP tyresinstock</from>
+      <to>FTP TYRESYSTEM</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP TYRESYSTEM</from>
+      <to>FTP reiwadirekt</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP reiwadirekt</from>
+      <to>t_write_log fine</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_exp_tyre24</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP CPREIFEN</from>
+      <to>FTP CPREIFEN 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP CPREIFEN 2</from>
+      <to>FTP MDTUNING</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>FTP MDTUNING</from>
+      <to>FTP MDTUNING 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP MDTUNING 2</from>
       <to>FTP T24</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1589,6 +1842,15 @@
     </hop>
     <hop>
       <from>FTP T24</from>
+      <to>FTP T24 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP T24 2</from>
       <to>FTP tyresinstock</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1598,6 +1860,15 @@
     </hop>
     <hop>
       <from>FTP tyresinstock</from>
+      <to>FTP tyresinstock 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP tyresinstock 2</from>
       <to>FTP TYRESYSTEM</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1607,6 +1878,15 @@
     </hop>
     <hop>
       <from>FTP TYRESYSTEM</from>
+      <to>FTP TYRESYSTEM 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP TYRESYSTEM 2</from>
       <to>FTP reiwadirekt</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1616,6 +1896,15 @@
     </hop>
     <hop>
       <from>FTP reiwadirekt</from>
+      <to>FTP reiwadirekt 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP reiwadirekt 2</from>
       <to>t_write_log fine</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1624,8 +1913,71 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_exp_tyre24</from>
-      <to>DUMMY 2</to>
+      <from>t_UPD_MAK_to_TYRE24</from>
+      <to>t_UPD_MOMO_to_TYRE24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP CPREIFEN 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP MDTUNING 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP T24 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP tyresinstock 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP TYRESYSTEM 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP reiwadirekt 2</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail Error</from>
+      <to>t_write_log fine</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
