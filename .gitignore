@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+CONNECTOR.kdb
+repository.log
+*.kdb
+CONNECTOR.kdb
+repository.log
