@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_exp_pneus_accoppiate_x_ebay_estero</name>
+    <name>t_exp_pneus_catene_x_web</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;20 12&#x3a;09&#x3a;25.548</modified_date>
+    <modified_date>2017&#x2f;05&#x2f;22 14&#x3a;36&#x3a;41.533</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -463,23 +463,48 @@
   </connection>
   <order>
     <hop>
-      <from>Split field to rows 2</from>
+      <from>ARTICOLI</from>
+      <to>Split field to rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split field to rows</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Fields</from>
       <to>Split Fields 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Accoppiate</from>
-      <to>Split field to rows 2</to>
+      <from>String operations</from>
+      <to>Calculator 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator 2</from>
+      <to>Split Fields</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Split Fields 2</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>Calculator</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Accoppiate</name>
+    <name>ARTICOLI</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -490,7 +515,7 @@
       <schema_name/>
     </partitioning>
     <connection>INPUT</connection>
-    <sql>SELECT MSGRUMER.GruDes AS Marchio, &#xa;	MZANAART.ArtCodice AS Codice, &#xa;	MZANAART.ArtDescri AS Nome, &#xa;	rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27;  &#x2b;rtrim&#x28;coalesce&#x28;MSFAM.FamDes,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27;&#x2b; rtrim&#x28;MSGRUMER.GruDes&#x29; AS short_desc, &#xa;	rtrim&#x28;MSGRUMER.GruDes&#x29; &#x2b;&#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27;  &#x2b;rtrim&#x28;coalesce&#x28;MSFAM.FamDes,&#x27;&#x27;&#x29;&#x29;  AS descrizione, &#xa;	&#x27;ACCOPPIATE MOTO&#x27;  AS category_path, &#xa;	&#x27;ACCOPPIATE MOTO&#x27;  &#x2b; &#x27;&#x7c;&#x27; &#x2b; &#x27;ACCOPPIATE MOTO&#x23;&#x27; &#x2b; rtrim&#x28;MSFAM.FamDes&#x29; AS full_category_path, &#xa;	MZANAART.ArtCosLor AS prezzo, &#xa;	ArtCosLor AS prezzolistino, &#xa;	&#x27;EUR&#x27; AS currency, &#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image, &#xd;&#xa;	&#x27;Y&#x27; AS product_publish, &#xa;	&#x27;21&#x27; AS iva, &#xa;	CASE WHEN ARTCOSSC1 &#x3e; 0 THEN ARTCOSSC1 ELSE ARTCOSSC2 END AS product_in_stock, &#xa;	&#x27;12234563&#x27; AS product_available, &#xa;	&#x27;N&#x27; AS product_special, &#xa;	MSFAM.FamCod AS codca1, &#xa;	MSFAM.FamDes AS desca1, &#xa;	MSTIPPRO.TprCod AS codca2, &#xa;	MSTIPPRO.TprDes AS desca2, &#xa;	MSSET.SetCod AS codca3, &#xa;	MSSET.SetDes AS desca3, &#xa;	MSREP.RepCod AS codca4, &#xa;	MSREP.RepDes AS desca4, &#xa;	MSSCAFFA.ScaCod AS codca5, &#xa;	MSSCAFFA.ScaDes AS desca5, &#xa;	MSVOCDOG.VodCod AS codca6, &#xa;	MSVOCDOG.VodDes AS desca6,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;replace&#x28;cast&#x28;MZANAART.Artnote3 as varchar&#x28;max&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29; as altreCatEbay,&#xd;&#xa;rtrim&#x28;ltrim&#x28;MZANAART.ArtCodfor&#x29;&#x29; AS eancode&#xa;FROM MZANAART INNER JOIN MSGRUMER ON MZANAART.ArtCodGru &#x3d; MSGRUMER.GruCod&#xa;	 LEFT OUTER JOIN MSCATOMO ON MZANAART.ArtCodCat &#x3d; MSCATOMO.CatMCod&#xa;	 LEFT OUTER JOIN MSFAM ON MZANAART.ArtCodFam &#x3d; MSFAM.FamCod&#xa;	 LEFT OUTER JOIN MSTIPPRO ON MZANAART.ArtTipPro &#x3d; MSTIPPRO.TprCod&#xa;	 LEFT OUTER JOIN MSSET ON MZANAART.ArtCodSet &#x3d; MSSET.SetCod&#xa;	 LEFT OUTER JOIN MSREP ON MSREP.RepCod &#x3d; MZANAART.ArtCodRep&#xa;	 LEFT OUTER JOIN MSSCAFFA ON MZANAART.ArtCodSca &#x3d; MSSCAFFA.ScaCod&#xa;	 LEFT OUTER JOIN MSVOCDOG ON MZANAART.ArtVocDog &#x3d; MSVOCDOG.VodCod&#xa;WHERE &#xd;&#xa;cast&#x28;MZANAART.Artnote3 as varchar&#x28;max&#x29;&#x29;&#x3c;&#x3e;&#x27;&#x27; and&#xa;--MZANAART.ARTCODICE &#x3d; &#x27;AC127018055COR3&#x27; and &#xa;MSCATOMO.CatMDes not like &#x27;CERCHI&#x25;&#x27; and&#xa;MZANAART.ArtDescri like &#x27;ACCOPPIATA&#x25;&#x27; and&#xd;&#xa;artblocco in &#x28;&#x27;T&#x27;,&#x27;E&#x27;&#x29; and ARTCODVDS &#x3e; 0</sql>
+    <sql>SELECT MSGRUMER.GruDes AS Marchio, &#xd;&#xa;	rtrim&#x28;ltrim&#x28;MZANAART.ArtCodice&#x29;&#x29; AS Cod, &#xd;&#xa;	MZANAART.ArtDescri AS Nome, &#xd;&#xa;	rtrim&#x28;MSGRUMER.GruDes&#x29; &#x2b;&#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtCodRep&#x29;  AS short ,&#xd;&#xa;	rtrim&#x28;MSGRUMER.GruDes&#x29; &#x2b;&#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtCodRep&#x29;  AS descr,   &#xd;&#xa;	MZANAART.ArtCosLor AS prezzo, &#xd;&#xa;	ArtCosLor AS prezzolistino, &#xd;&#xa;	&#x27;EUR&#x27; AS currency, &#xd;&#xa;	&#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image, &#xd;&#xa;	&#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image, &#xd;&#xa;	&#x27;Y&#x27; AS product_publish, &#xd;&#xa;	&#x27;21&#x27; AS iva, &#xd;&#xa;	CASE WHEN ARTCOSSC1 &#x3e; 0 THEN ARTCOSSC1 ELSE ARTCOSSC2 END AS product_in_stock, &#xd;&#xa;	&#x27;12234563&#x27; AS product_available, &#xd;&#xa;	&#x27;N&#x27; AS product_special, &#xd;&#xa;	MSFAM.FamCod AS codca5, &#xd;&#xa;	MSFAM.FamDes AS desca5, &#xd;&#xa;	MSTIPPRO.TprCod AS codca2, &#xd;&#xa;	MSTIPPRO.TprDes AS desca2, &#xd;&#xa;	MSSET.SetCod AS codca3, &#xd;&#xa;	MSSET.SetDes AS desca3, &#xd;&#xa;	MSREP.RepCod AS codca4, &#xd;&#xa;	MSREP.RepDes AS desca4, &#xd;&#xa;	MSSCAFFA.ScaCod AS codca1, &#xd;&#xa;	MSSCAFFA.ScaDes AS desca1, &#xd;&#xa;	MSVOCDOG.VodCod AS codca6, &#xd;&#xa;	MSVOCDOG.VodDes AS desca6,&#xd;&#xa;MZANAART.Artnote2 as classificazione,&#xd;&#xa;replace&#x28;cast&#x28;MZANAART.Artnote2 as varchar&#x28;max&#x29;&#x29; , &#x27;,&#x27;,&#x27;&#x3c;br&#x3e;&#x27;&#x29; as misurecompatibili,&#xd;&#xa;	getdate&#x28;&#x29; as news_from_Date&#xd;&#xa;   , dateadd&#x28;day, 30,getdate&#x28;&#x29;&#x29; as news_to_Date&#xd;&#xa;,substring&#x28;rtrim&#x28;ltrim&#x28;MZANAART.ArtCodfor&#x29;&#x29;,1,13&#x29; AS eancode&#xd;&#xa;&#xd;&#xa;FROM MZANAART INNER JOIN MSGRUMER ON MZANAART.ArtCodGru &#x3d; MSGRUMER.GruCod&#xd;&#xa;	 LEFT OUTER JOIN MSCATOMO ON MZANAART.ArtCodCat &#x3d; MSCATOMO.CatMCod&#xd;&#xa;	 LEFT OUTER JOIN MSFAM ON MZANAART.ArtCodFam &#x3d; MSFAM.FamCod&#xd;&#xa;	 LEFT OUTER JOIN MSTIPPRO ON MZANAART.ArtTipPro &#x3d; MSTIPPRO.TprCod&#xd;&#xa;	 LEFT OUTER JOIN MSSET ON MZANAART.ArtCodSet &#x3d; MSSET.SetCod&#xd;&#xa;	 LEFT OUTER JOIN MSREP ON MSREP.RepCod &#x3d; MZANAART.ArtCodRep&#xd;&#xa;	 LEFT OUTER JOIN MSSCAFFA ON MZANAART.ArtCodSca &#x3d; MSSCAFFA.ScaCod&#xd;&#xa;	 LEFT OUTER JOIN MSVOCDOG ON MZANAART.ArtVocDog &#x3d; MSVOCDOG.VodCod&#xd;&#xa;WHERE &#xd;&#xa;--MZANAART.ARTCODICE like &#x27;CATWEIM3&#x25;&#x27; and &#xd;&#xa;MSCATOMO.CatMDes  like &#x27;CAT&#x25;&#x27; and&#xd;&#xa;artblocco in &#x28;&#x27;T&#x27;,&#x27;W&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -504,15 +529,126 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>154</xloc>
-      <yloc>107</yloc>
+      <xloc>77</xloc>
+      <yloc>44</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split Fields 2</name>
-    <type>FieldSplitter</type>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>tmp_catene</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CATENE DA NEVE</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_sep1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>-</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_sep2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x23;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Raggio </nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_full</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CATENE DA NEVE&#x7c;CATENE DA NEVE&#x23;Raggio </nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_sep3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x7c;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tmp_nota</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;&#x3c;br&#x3e;Gruppo corrispondente alla misura di pneumatici&#x3a;&#x3c;br&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>506</xloc>
+      <yloc>135</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
     <description/>
     <distribute>N</distribute>
     <custom_distribution/>
@@ -521,10 +657,240 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>Categorie</splitfield>
+    <calculation>
+      <field_name>c1</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>Cod</field_a>
+      <field_b>Larghezza</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>Codice</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>c1</field_a>
+      <field_b>spalla</field_b>
+      <field_c>raggio</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>short_desc</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>short</field_a>
+      <field_b>desc2</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>descrizion1</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>descr</field_a>
+      <field_b>desc2</field_b>
+      <field_c>tmp_nota</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>descrizione</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>descrizion1</field_a>
+      <field_b>misurecompatibili</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>tmp_path1</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>tmp_catene</field_a>
+      <field_b>tmp_sep2</field_b>
+      <field_c>tmp_raggio</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>tmp_path2</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>tmp_path1</field_a>
+      <field_b>Raggio</field_b>
+      <field_c>tmp_sep2</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>tmp_path3</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>tmp_path2</field_a>
+      <field_b>Larghezza</field_b>
+      <field_c>tmp_sep1</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>category_path</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>tmp_path3</field_a>
+      <field_b>Spalla</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>tmp_category_path</field_name>
+      <calc_type>ADD3</calc_type>
+      <field_a>tmp_full</field_a>
+      <field_b>Raggio</field_b>
+      <field_c>tmp_sep3</field_c>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>Y</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>full_category_path</field_name>
+      <calc_type>ADD</calc_type>
+      <field_a>tmp_category_path</field_a>
+      <field_b>category_path</field_b>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>341</xloc>
+      <yloc>140</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Calculator 2</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>desc2</field_name>
+      <calc_type>COPY_FIELD</calc_type>
+      <field_a>Classi</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>511</xloc>
+      <yloc>43</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>Classi</splitfield>
    <delimiter>-</delimiter>
    <enclosure/>
-    <fields>      <field>        <name>SiteID</name>
+    <fields>      <field>        <name>Tempor</name>
         <id/>
         <idrem>N</idrem>
         <type>String</type>
@@ -537,7 +903,7 @@
         <nullif/>
         <ifnull/>
         <trimtype>both</trimtype>
-      </field>      <field>        <name>EbayCat</name>
+      </field>      <field>        <name>Raggio</name>
         <id/>
         <idrem>N</idrem>
         <type>String</type>
@@ -558,14 +924,68 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>554</xloc>
-      <yloc>107</yloc>
+      <xloc>629</xloc>
+      <yloc>47</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split field to rows 2</name>
+    <name>Split Fields 2</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>Tempor</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>Larghezza</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>Spalla</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull>-</ifnull>
+        <trimtype>both</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>627</xloc>
+      <yloc>139</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split field to rows</name>
     <type>SplitFieldToRows3</type>
     <description/>
     <distribute>Y</distribute>
@@ -575,9 +995,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>altreCatEbay</splitfield>
+   <splitfield>classificazione</splitfield>
    <delimiter>,</delimiter>
-   <newfield>Categorie</newfield>
+   <newfield>Classi</newfield>
    <rownum>N</rownum>
    <rownum_field/>
    <resetrownumber>Y</resetrownumber>
@@ -590,8 +1010,48 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>354</xloc>
-      <yloc>107</yloc>
+      <xloc>242</xloc>
+      <yloc>45</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Classi</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>394</xloc>
+      <yloc>43</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -607,7 +1067,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x3b;</separator>
+    <separator>&#x7c;</separator>
     <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -621,7 +1081,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;pneus&#x5c;pneus_ebay_estero_accoppiate</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;pneus&#x5c;pneus_web_catene</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -640,26 +1100,38 @@
     </file>
     <fields>
       <field>
-        <name>codice</name>
+        <name>Marchio</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>nome</name>
+        <name>Codice</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Nome</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -671,7 +1143,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -683,7 +1155,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -695,7 +1167,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -707,7 +1179,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -719,7 +1191,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -731,247 +1203,7 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_full_image</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_thumb_image</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_publish</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>iva</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_available</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_special</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca1</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca1</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca3</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca3</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca4</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca4</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>Marchio</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -983,55 +1215,283 @@
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>ebaycat</name>
+        <name>product_full_image</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>pubblicato</name>
+        <name>product_thumb_image</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>siteid</name>
+        <name>product_publish</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>EANCODE</name>
+        <name>iva</name>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>product_available</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>product_special</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>codca2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>desca2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>codca5</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>desca5</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>codca6</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>desca6</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Cod</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>news_from_Date</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>news_to_Date</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>eancode</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
@@ -1044,8 +1504,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>112</yloc>
+      <xloc>128</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
