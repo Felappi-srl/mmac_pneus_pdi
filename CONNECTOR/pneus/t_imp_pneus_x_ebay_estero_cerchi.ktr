@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>tweb_ImportaCatene</name>
+    <name>t_imp_pneus_x_ebay_estero_cerchi</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;WEB</directory>
+    <directory>&#x2f;CONNECTOR&#x2f;pneus</directory>
     <parameters>
     </parameters>
     <log>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;22 14&#x3a;49&#x3a;39.643</modified_date>
+    <modified_date>2017&#x2f;05&#x2f;22 11&#x3a;05&#x3a;18.522</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -463,18 +463,28 @@
   </connection>
   <order>
     <hop>
+      <from>Pneumatici</from>
+      <to>Replace in string</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Replace in string</from>
       <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Catene</from>
+      <from>Select values</from>
+      <to>Strings cut</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Strings cut</from>
       <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Replace in string</to>
+      <to>Insert &#x2f; Update</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -482,17 +492,67 @@
       <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Add constants</from>
-      <to>Insert &#x2f; Update</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
+  <step>
+    <name>Dummy &#x28;do nothing&#x29;</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Insert &#x2f; Update</send_true_to>
+<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>siteid</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>592</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step>
     <name>Insert &#x2f; Update</name>
     <type>InsertUpdate</type>
@@ -506,36 +566,31 @@
     </partitioning>
     <connection>LINKY</connection>
     <commit>1</commit>
-    <update_bypassed>N</update_bypassed>
+    <update_bypassed>Y</update_bypassed>
     <lookup>
       <schema/>
-      <table>linky_articoli</table>
+      <table>linky_ebayarticoli</table>
+      <key>
+        <name>siteid</name>
+        <field>siteID</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
       <key>
         <name>codice</name>
         <field>codice</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
-      <key>
-        <name>marchio</name>
-        <field>marca</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>marca</name>
-        <rename>Marchio</rename>
-        <update>N</update>
-      </value>
       <value>
         <name>codice</name>
         <rename>Codice</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>nome</name>
         <rename>Nome</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>short_desc</name>
@@ -545,7 +600,7 @@
       <value>
         <name>descrizione</name>
         <rename>descrizione</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>category_path</name>
@@ -568,19 +623,19 @@
         <update>Y</update>
       </value>
       <value>
-        <name>currency_id</name>
-        <rename>currency</rename>
-        <update>N</update>
-      </value>
-      <value>
         <name>product_full_image</name>
         <rename>product_full_image</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>product_thumb_image</name>
         <rename>product_thumb_image</rename>
-        <update>Y</update>
+        <update>N</update>
+      </value>
+      <value>
+        <name>product_publish</name>
+        <rename>product_publish</rename>
+        <update>N</update>
       </value>
       <value>
         <name>iva</name>
@@ -595,21 +650,21 @@
       <value>
         <name>product_available</name>
         <rename>product_available</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>product_special</name>
         <rename>product_special</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>codca1</name>
-        <rename>raggio</rename>
+        <rename>codca1</rename>
         <update>N</update>
       </value>
       <value>
         <name>desca1</name>
-        <rename>raggio</rename>
+        <rename>desca6</rename>
         <update>N</update>
       </value>
       <value>
@@ -624,22 +679,22 @@
       </value>
       <value>
         <name>codca3</name>
-        <rename>spalla</rename>
+        <rename>codca3</rename>
         <update>N</update>
       </value>
       <value>
         <name>desca3</name>
-        <rename>spalla</rename>
+        <rename>desca3</rename>
         <update>N</update>
       </value>
       <value>
         <name>codca4</name>
-        <rename>larghezza</rename>
+        <rename>codca4</rename>
         <update>N</update>
       </value>
       <value>
         <name>desca4</name>
-        <rename>larghezza</rename>
+        <rename>desca4</rename>
         <update>N</update>
       </value>
       <value>
@@ -663,29 +718,34 @@
         <update>N</update>
       </value>
       <value>
-        <name>CodPrincipale</name>
-        <rename>Cod</rename>
+        <name>marca</name>
+        <rename>Marchio</rename>
         <update>N</update>
       </value>
       <value>
-        <name>new_from_date</name>
-        <rename>news_from_Date</rename>
-        <update>Y</update>
+        <name>currency_id</name>
+        <rename>currency</rename>
+        <update>N</update>
       </value>
       <value>
-        <name>new_to_date</name>
-        <rename>news_to_Date</rename>
-        <update>Y</update>
+        <name>ebaycat</name>
+        <rename>ebaycat</rename>
+        <update>N</update>
       </value>
       <value>
-        <name>ean</name>
+        <name>pubblicato</name>
+        <rename>pubblicato</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>siteid</name>
+        <rename>siteid</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>EANCODE</name>
         <rename>eancode</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>product_publish</name>
-        <rename>pubblica</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
     </lookup>
     <cluster_schema/>
@@ -696,14 +756,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>48</yloc>
+      <xloc>720</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Catene</name>
+    <name>Pneumatici</name>
     <type>TextFileInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -717,7 +777,7 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>&#x7c;</separator>
+    <separator>&#x3b;</separator>
     <enclosure>&#x22;</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
@@ -740,7 +800,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_web_catene.txt</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_ebay_estero_cerchi.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -752,7 +812,7 @@
     </filters>
     <fields>
       <field>
-        <name>Marchio</name>
+        <name>codice</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -767,22 +827,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>Codice</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Nome</name>
+        <name>nome</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -873,6 +918,306 @@
       </field>
       <field>
         <name>prezzolistino</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_full_image</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_thumb_image</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_publish</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>iva</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_available</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>product_special</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca1</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca2</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca4</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca4</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca5</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca5</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>codca6</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>desca6</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>Marchio</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -902,7 +1247,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>product_full_image</name>
+        <name>ebaycat</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -917,7 +1262,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>product_thumb_image</name>
+        <name>pubblicato</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -932,7 +1277,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>product_publish</name>
+        <name>siteid</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -947,292 +1292,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>iva</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>product_available</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>product_special</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>raggio</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>raggio</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>codca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>desca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>spalla</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>spalla</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>larghezza</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>larghezza</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>codca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>desca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>codca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>desca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>Cod</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>news_from_Date</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>news_to_Date</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>eancode</name>
+        <name>EANCODE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1280,8 +1340,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>48</yloc>
+      <xloc>128</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1332,6 +1392,17 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
+        <in_stream_name>ebaycat</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
         <in_stream_name>prezzo</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
@@ -1373,8 +1444,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>48</yloc>
+      <xloc>256</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1383,79 +1454,46 @@
     <name>Select values</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>Marchio</name>
-        <rename/>
-      </field>      <field>        <name>Codice</name>
-        <rename/>
-      </field>      <field>        <name>Nome</name>
-        <rename/>
+    <fields>      <field>        <name>codice</name>
+      </field>      <field>        <name>nome</name>
       </field>      <field>        <name>short_desc</name>
-        <rename/>
       </field>      <field>        <name>descrizione</name>
-        <rename/>
       </field>      <field>        <name>category_path</name>
-        <rename/>
       </field>      <field>        <name>full_category_path</name>
-        <rename/>
       </field>      <field>        <name>prezzo</name>
-        <rename/>
       </field>      <field>        <name>prezzolistino</name>
-        <rename/>
-      </field>      <field>        <name>currency</name>
-        <rename/>
       </field>      <field>        <name>product_full_image</name>
-        <rename/>
       </field>      <field>        <name>product_thumb_image</name>
-        <rename/>
       </field>      <field>        <name>product_publish</name>
-        <rename/>
       </field>      <field>        <name>iva</name>
-        <rename/>
       </field>      <field>        <name>product_in_stock</name>
-        <rename/>
       </field>      <field>        <name>product_available</name>
-        <rename/>
       </field>      <field>        <name>product_special</name>
-        <rename/>
-      </field>      <field>        <name>raggio</name>
-        <rename/>
-      </field>      <field>        <name>raggio_1</name>
-        <rename/>
+      </field>      <field>        <name>codca1</name>
+      </field>      <field>        <name>desca1</name>
       </field>      <field>        <name>codca2</name>
-        <rename/>
       </field>      <field>        <name>desca2</name>
-        <rename/>
-      </field>      <field>        <name>spalla</name>
-        <rename/>
-      </field>      <field>        <name>spalla_1</name>
-        <rename/>
-      </field>      <field>        <name>larghezza</name>
-        <rename/>
-      </field>      <field>        <name>larghezza_1</name>
-        <rename/>
+      </field>      <field>        <name>codca3</name>
+      </field>      <field>        <name>desca3</name>
+      </field>      <field>        <name>codca4</name>
+      </field>      <field>        <name>desca4</name>
       </field>      <field>        <name>codca5</name>
-        <rename/>
       </field>      <field>        <name>desca5</name>
-        <rename/>
       </field>      <field>        <name>codca6</name>
-        <rename/>
       </field>      <field>        <name>desca6</name>
-        <rename/>
-      </field>      <field>        <name>Cod</name>
-        <rename/>
-      </field>      <field>        <name>news_from_Date</name>
-        <rename/>
-      </field>      <field>        <name>news_to_Date</name>
-        <rename/>
-      </field>      <field>        <name>eancode</name>
-        <rename/>
+      </field>      <field>        <name>Marchio</name>
+      </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>pubblicato</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>EANCODE</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>prezzo</name>
         <rename>prezzo</rename>
@@ -1468,7 +1506,7 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
@@ -1483,7 +1521,7 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
@@ -1498,7 +1536,22 @@
         <date_format_timezone/>
         <lenient_string_to_number>false</lenient_string_to_number>
         <encoding/>
-        <decimal_symbol>.</decimal_symbol>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>ebaycat</name>
+        <rename>ebaycat</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
@@ -1510,101 +1563,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>384</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
       <xloc>368</xloc>
-      <yloc>224</yloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>Replace in string</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>Codice</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>Marchio</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>product_in_stock</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>prezzo</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  </conditions>
- </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Add constants</name>
-    <type>Constant</type>
+    <name>Strings cut</name>
+    <type>StringCut</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1615,16 +1582,10 @@
     </partitioning>
     <fields>
       <field>
-        <name>pubblica</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>Y</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
+        <in_stream_name>EANCODE</in_stream_name>
+        <out_stream_name/>
+        <cut_from>0</cut_from>
+        <cut_to>13</cut_to>
       </field>
     </fields>
     <cluster_schema/>
@@ -1635,8 +1596,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>48</yloc>
+      <xloc>480</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
