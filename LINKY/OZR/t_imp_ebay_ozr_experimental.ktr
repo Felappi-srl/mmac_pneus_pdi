@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;04&#x2f;27 15&#x3a;33&#x3a;01.380</modified_date>
+    <modified_date>2017&#x2f;06&#x2f;01 12&#x3a;49&#x3a;14.396</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -451,6 +451,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -462,8 +463,8 @@
   </connection>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -473,10 +474,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -730,12 +731,12 @@
       <value>
         <name>codca3</name>
         <rename>codca3</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>desca3</name>
         <rename>desca3</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>codca4</name>

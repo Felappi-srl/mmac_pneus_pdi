@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;49.220</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;22 14&#x3a;50&#x3a;06.306</modified_date>
+  <modified_date>2017&#x2f;06&#x2f;01 10&#x3a;29&#x3a;33.015</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -587,7 +587,7 @@
       <copypreviousfiles>N</copypreviousfiles>
       <addFilenameResut>N</addFilenameResut>
       <usekeyfilename>Y</usekeyfilename>
-      <keyfilename>C&#x3a;&#x5c;linky&#x5c;pneus.pem.htm</keyfilename>
+      <keyfilename>C&#x3a;&#x5c;linky&#x5c;pneus.pem</keyfilename>
       <keyfilepass>Encrypted </keyfilepass>
       <compression>none</compression>
       <proxyType/>
@@ -713,42 +713,6 @@
       <nr>0</nr>
       <xloc>96</xloc>
       <yloc>448</yloc>
-    </entry>
-    <entry>
-      <name>t_unpublished</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_unpublished</transname>
-      <directory>&#x2f;WEB</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>336</yloc>
     </entry>
     <entry>
       <name>Azzera giacenze</name>
@@ -1007,57 +971,6 @@
       <yloc>224</yloc>
     </entry>
     <entry>
-      <name>t_write_log</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_write_log</transname>
-      <directory>&#x2f;UTILITIES</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-        <parameter>
-          <name>jobid</name>
-          <stream_name/>
-          <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
-        </parameter>
-        <parameter>
-          <name>jobstatus</name>
-          <stream_name/>
-          <value>in esecuzione</value>
-        </parameter>
-        <parameter>
-          <name>jobtipoazione</name>
-          <stream_name/>
-          <value>start</value>
-        </parameter>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>16</yloc>
-    </entry>
-    <entry>
       <name>t_write_log fine</name>
       <description/>
       <type>TRANS</type>
@@ -1209,7 +1122,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>704</xloc>
       <yloc>336</yloc>
     </entry>
   </entries>
@@ -1359,33 +1272,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_unpublished</from>
-      <to>J_ALCAR_WEB</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Set variables</from>
-      <to>t_write_log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_write_log</from>
-      <to>J_WEB_INVENTORY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>DeleteArticle</from>
       <to>t_write_log fine</to>
       <from_nr>0</from_nr>
@@ -1400,8 +1286,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>tweb_ImportaArticoli</from>
@@ -1440,17 +1326,26 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>tweb_ImportaRuotini_partners</from>
-      <to>t_unpublished</to>
+      <from>tweb_CaricaNomiImmagini</from>
+      <to>Azzera giacenze</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>J_WEB_INVENTORY</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>tweb_CaricaNomiImmagini</from>
-      <to>Azzera giacenze</to>
+      <from>tweb_ImportaRuotini_partners</from>
+      <to>J_ALCAR_WEB</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

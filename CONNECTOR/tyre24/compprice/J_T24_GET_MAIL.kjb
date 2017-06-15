@@ -8,13 +8,13 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;11 14&#x3a;30&#x3a;09.220</modified_date>
+  <modified_date>2017&#x2f;06&#x2f;08 10&#x3a;41&#x3a;49.568</modified_date>
     <parameters>
     </parameters>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -24,10 +24,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -339,13 +339,13 @@
       <nottermsendersearch>N</nottermsendersearch>
       <receipientsearch/>
       <nottermreceipientsearch>N</nottermreceipientsearch>
-      <subjectsearch>I&#x3a; Tyre24 - Classifiche attuali degli pneumatici</subjectsearch>
+      <subjectsearch>FWD&#x3a; Tyre24 - Classifiche attuali degli pneumatici</subjectsearch>
       <nottermsubjectsearch>N</nottermsubjectsearch>
       <bodysearch/>
       <nottermbodysearch>N</nottermbodysearch>
       <conditionreceiveddate>greater</conditionreceiveddate>
       <nottermreceiveddatesearch>N</nottermreceiveddatesearch>
-      <receiveddate1>2017-04-06 07&#x3a;40&#x3a;41</receiveddate1>
+      <receiveddate1>2017-06-05 07&#x3a;40&#x3a;41</receiveddate1>
       <receiveddate2/>
       <actiontype>get</actiontype>
       <movetoimapfolder>Tyre24</movetoimapfolder>
@@ -358,7 +358,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>224</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -447,7 +447,7 @@
       <name>Nostro prezzo Posizione 1 IT</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; RICARICO&#x29;&#x3b;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; RICARICO&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -567,7 +567,7 @@
       <name>Nostro prezzo Posizione 1 MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27; and t24.gapold&#x3d;linky_tyre24_params.gap&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27; and t24.gapold&#x3d;linky_tyre24_params.gap&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -599,7 +599,7 @@
       <name>SQL MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;9&#xd;&#xa;where prezzode &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24&#xd;&#xa;set prezzofr&#x3d;listino&#x2b;9&#xd;&#xa;where prezzofr &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;</sql>
+      <sql>update linky_tyre24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;9&#xd;&#xa;where prezzode &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24&#xd;&#xa;set prezzofr&#x3d;listino&#x2b;9&#xd;&#xa;where prezzofr &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.gapold &#x3d; linky_tyre24_params.gap&#xd;&#xa;from  linky_tyre24 as t24, linky_tyre24_params&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -635,27 +635,18 @@
       <include_subfolders>N</include_subfolders>
       <fields>
         <field>
-          <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;Competitor&#x5c;</name>
-          <filemask>.&#x2a;&#x5c;.&#x2a;</filemask>
+          <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;tyre24&#x5c;competitor</name>
+          <filemask>.&#x2a;&#x5c;.csv</filemask>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
+      <xloc>112</xloc>
       <yloc>48</yloc>
     </entry>
   </entries>
   <hops>
-    <hop>
-      <from>EMAIL IT</from>
-      <to>t_t24_get_compprice_cerchi_de</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
     <hop>
       <from>Azzero</from>
       <to>Nostro prezzo Posizione 1 IT</to>
@@ -756,6 +747,15 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>EMAIL IT</from>
+      <to>t_t24_get_compprice_cerchi_de</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>START</from>
       <to>Cancella i file</to>
       <from_nr>0</from_nr>
@@ -771,7 +771,7 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

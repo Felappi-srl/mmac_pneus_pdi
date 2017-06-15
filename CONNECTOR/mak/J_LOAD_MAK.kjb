@@ -8,13 +8,13 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.397</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;03&#x2f;30 14&#x3a;57&#x3a;44.699</modified_date>
+  <modified_date>2017&#x2f;06&#x2f;01 08&#x3a;36&#x3a;52.103</modified_date>
     <parameters>
     </parameters>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -27,6 +27,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -422,7 +423,7 @@
           <include_subFolders>N</include_subFolders>
         </field>
       </fields>
-      <comparevalue>5</comparevalue>
+      <comparevalue>200</comparevalue>
       <minvalue/>
       <maxvalue/>
       <successnumbercondition>greater</successnumbercondition>
@@ -569,6 +570,22 @@
       <xloc>704</xloc>
       <yloc>192</yloc>
     </entry>
+    <entry>
+      <name>Creo CODICEVAR</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_articoli_MAK&#xd;&#xa;set CODICEVAR &#x3d; substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;annoauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;tipoauto,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;  ,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,1,46&#x29;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>688</xloc>
+      <yloc>384</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -635,15 +652,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Elimino articoli obsoleti</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_load_lis_mak</from>
       <to>t_load_barcode_mak</to>
       <from_nr>0</from_nr>
@@ -655,6 +663,24 @@
     <hop>
       <from>t_load_barcode_mak</from>
       <to>Elimino articoli obsoleti</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Elimino articoli obsoleti</from>
+      <to>Creo CODICEVAR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Creo CODICEVAR</from>
+      <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

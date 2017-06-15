@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;52&#x3a;37.028</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;22 11&#x3a;31&#x3a;19.920</modified_date>
+  <modified_date>2017&#x2f;06&#x2f;15 10&#x3a;13&#x3a;10.734</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -371,7 +371,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>464</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -986,7 +986,7 @@
       <name>SISTEMA MARCHI</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;GT RADIAL&#x27; where&#xd;&#xa;marca in &#x28;&#x27;GT&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

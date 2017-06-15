@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;04 15&#x3a;58&#x3a;59.373</modified_date>
+    <modified_date>2017&#x2f;06&#x2f;01 14&#x3a;30&#x3a;33.938</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -448,10 +448,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -539,7 +539,7 @@
         <currency/>
         <decimal>.</decimal>
         <group>,</group>
-        <nullif>.51</nullif>
+        <nullif>.49</nullif>
         <length>5</length>
         <precision>2</precision>
         <set_empty_string>N</set_empty_string>
@@ -554,6 +554,46 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <calculation>
+      <field_name>PREZZOSCONTATO</field_name>
+      <calc_type>MULTIPLY</calc_type>
+      <field_a>GROSS_PRICE</field_a>
+      <field_b>sconto</field_b>
+      <field_c/>
+      <value_type>Number</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol>.</decimal_symbol>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2197,46 +2237,6 @@
     </remotesteps>
     <GUI>
       <xloc>48</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <calculation>
-      <field_name>PREZZOSCONTATO</field_name>
-      <calc_type>MULTIPLY</calc_type>
-      <field_a>GROSS_PRICE</field_a>
-      <field_b>sconto</field_b>
-      <field_c/>
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol>.</decimal_symbol>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>608</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
