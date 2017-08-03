@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;11 13&#x3a;22&#x3a;49.586</modified_date>
+    <modified_date>2017&#x2f;07&#x2f;14 08&#x3a;04&#x3a;43.963</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -448,10 +448,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -710,7 +710,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, CASE WHEN LEN&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc&#x29; &#x3e; 77 THEN&#xd;&#xa;&#xd;&#xa;    substring&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc,1,80&#x29;  &#xd;&#xa;ELSE&#xd;&#xa;  substring&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc,1,80&#x29;  &#xd;&#xa;&#xd;&#xa;END&#xd;&#xa;as Titolo&#xd;&#xa;,&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc as titolo_header&#xa;, ebaycat&#xa;,&#x27;Netherlands&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico&#x29;  as product_price&#xd;&#xa;,  product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; as annoauto&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice &#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;NL&#x27; &#x3d;rep.SITEID &#xd;&#xa;and e.product_in_stock&#x3c;&#x3e;rep.qty&#xd;&#xa;where &#xd;&#xa; &#x28;rep.qty&#x3c;&#x3e;e.product_in_stock&#xd;&#xa;   or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29; &#x3c;&#x3e; rep.prezzo&#x29; and&#xd;&#xa;product_in_stock &#x3e; 3  and&#xd;&#xa; PARTNER &#x3d;&#x27;MAK&#x27; AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;NL&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;, &#x27;CERCHI IN METALLO&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, CASE WHEN LEN&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc&#x29; &#x3e; 77 THEN&#xd;&#xa;&#xd;&#xa;    substring&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc,1,80&#x29;  &#xd;&#xa;ELSE&#xd;&#xa;  substring&#x28;&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc,1,80&#x29;  &#xd;&#xa;&#xd;&#xa;END&#xd;&#xa;as Titolo&#xd;&#xa;,&#x27;CERCHI IN LEGA MAK &#x27; &#x2b; var.short_desc as titolo_header&#xa;, ebaycat&#xa;,&#x27;Netherlands&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico&#x29;  as product_price&#xd;&#xa;,  product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; as annoauto&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice &#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;NL&#x27; &#x3d;rep.SITEID &#xd;&#xa;and e.product_in_stock&#x3c;&#x3e;rep.qty&#xd;&#xa;where &#xd;&#xa; &#x28;rep.qty&#x3c;&#x3e;e.product_in_stock&#xd;&#xa;   or dbo.linky_calc_endprice&#x28;partner,&#x27;NL&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico&#x29; &#x3c;&#x3e; rep.prezzo&#x29; and&#xd;&#xa;product_in_stock &#x3e; 3  and&#xd;&#xa; PARTNER &#x3d;&#x27;MAK&#x27; AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;NL&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;, &#x27;CERCHI IN METALLO&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

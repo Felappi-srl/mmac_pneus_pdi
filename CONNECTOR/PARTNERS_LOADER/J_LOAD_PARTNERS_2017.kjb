@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;06&#x2f;08 15&#x3a;54&#x3a;00.245</modified_date>
+  <modified_date>2017&#x2f;07&#x2f;27 09&#x3a;53&#x3a;34.614</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -711,7 +711,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>128</xloc>
+      <xloc>272</xloc>
       <yloc>272</yloc>
     </entry>
     <entry>
@@ -810,6 +810,38 @@
       <xloc>544</xloc>
       <yloc>48</yloc>
     </entry>
+    <entry>
+      <name>J_LOAD_PIRELLI_2017</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_LOAD_PIRELLI_2017</jobname>
+      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;PIRELLI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>128</xloc>
+      <yloc>272</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -894,15 +926,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_FINTYRE_2017</from>
-      <to>t_normalizza_ipcode</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_normalizza_ipcode</from>
       <to>Compila EAN</to>
       <from_nr>0</from_nr>
@@ -968,6 +991,24 @@
     <hop>
       <from>J_LOAD_TRW</from>
       <to>J_LOAD_TAGLIABUE_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_FINTYRE_2017</from>
+      <to>J_LOAD_PIRELLI_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_PIRELLI_2017</from>
+      <to>t_normalizza_ipcode</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

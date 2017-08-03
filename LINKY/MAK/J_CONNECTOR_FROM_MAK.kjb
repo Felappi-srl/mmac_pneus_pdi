@@ -8,13 +8,13 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;02.060</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;11 13&#x3a;18&#x3a;06.449</modified_date>
+  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;02&#x3a;35.055</modified_date>
     <parameters>
     </parameters>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -27,6 +27,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -329,7 +330,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>76</xloc>
-      <yloc>73</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>Successo</name>
@@ -375,7 +376,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>697</xloc>
-      <yloc>70</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>File &#x3e; 0</name>
@@ -403,7 +404,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>572</xloc>
-      <yloc>70</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>Azzero giacenze</name>
@@ -501,7 +502,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>201</xloc>
-      <yloc>73</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>LIS</name>
@@ -531,7 +532,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>326</xloc>
-      <yloc>73</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>CATEGORIA</name>
@@ -577,7 +578,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>455</xloc>
-      <yloc>73</yloc>
+      <yloc>64</yloc>
     </entry>
     <entry>
       <name>t_load_lis_pubblico_mak</name>
@@ -612,8 +613,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>820</xloc>
-      <yloc>155</yloc>
+      <xloc>816</xloc>
+      <yloc>176</yloc>
     </entry>
     <entry>
       <name>senza immagine</name>
@@ -628,7 +629,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>464</xloc>
       <yloc>304</yloc>
     </entry>
     <entry>
@@ -644,7 +645,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>320</xloc>
       <yloc>304</yloc>
     </entry>
   </entries>

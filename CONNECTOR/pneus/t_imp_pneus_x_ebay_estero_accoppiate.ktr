@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;27 08&#x3a;23&#x3a;33.505</modified_date>
+    <modified_date>2017&#x2f;07&#x2f;27 08&#x3a;38&#x3a;45.059</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -635,7 +635,7 @@
       <value>
         <name>product_publish</name>
         <rename>product_publish</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>iva</name>
@@ -735,7 +735,7 @@
       <value>
         <name>pubblicato</name>
         <rename>pubblicato</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>siteid</name>

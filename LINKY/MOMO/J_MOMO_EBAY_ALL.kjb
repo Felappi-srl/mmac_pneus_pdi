@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;06&#x2f;01 15&#x3a;31&#x3a;43.696</modified_date>
+  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;03&#x3a;05.363</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -441,8 +441,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>259</xloc>
-      <yloc>38</yloc>
+      <xloc>512</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_momo_it</name>
@@ -532,8 +532,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>399</xloc>
-      <yloc>31</yloc>
+      <xloc>320</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_imp_ebay_var_momo</name>
@@ -1049,29 +1049,11 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Set variables</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL</from>
-      <to>J_LOAD_MOMO</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_imp_ebay_momo</from>
       <to>t_imp_ebay_var_momo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1355,7 +1337,25 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
+      <from>Set variables</from>
+      <to>J_LOAD_MOMO</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>J_LOAD_MOMO</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
       <to>t_imp_ebay_momo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

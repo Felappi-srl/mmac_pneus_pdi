@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;20.220</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;18 17&#x3a;16&#x3a;43.702</modified_date>
+    <modified_date>2017&#x2f;06&#x2f;22 10&#x3a;01&#x3a;46.765</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -451,6 +451,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -462,8 +463,8 @@
   </connection>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -473,10 +474,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -505,7 +506,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select distinct&#xd;&#xa;  &#x27;ALC&#x27; as partner&#xd;&#xa;, partnumber as ipcode&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2b;15&#x29;&#x2a;1.10&#x29;&#x29;&#x29; AS prezzo&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2b;15&#x29;&#x2a;1.10&#x29;&#x29;&#x29; AS prezzolistino&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS category_path&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x7c;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS full_category_path&#xd;&#xa;,  BRAND as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA &#x27; &#x2b; brand &#x2b; &#x27; &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset&#x29; as nome&#xd;&#xa;, upper&#x28; &#x27;CERCHIO IN LEGA &#x27;&#x2b; brand  &#x2b;&#x27; MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as short_desc&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA &#x27;&#x2b; brand  &#x2b;&#x27; MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as descrizione&#xd;&#xa;, &#x27;EUR&#x27; as currency_id&#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image &#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image &#xd;&#xa;	,&#x27;Y&#x27; AS product_publish&#xd;&#xa;	,&#x27;22&#x27; AS iva, &#xd;&#xa;case when prezzo&#x3d;&#x27;0,00&#x27; then 0 else coalesce&#x28;GIACENZA,0&#x29; end AS product_in_stock, &#xd;&#xa;&#x27;12234563&#x27; as product_available,&#xd;&#xa;	&#x27;N&#x27; AS product_special ,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca2, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca2, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS codca3, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS desca3, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca4, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;eancode,&#xd;&#xa;&#x27;VETTURA&#x27; as settore&#xd;&#xa;from linky_articoli_alcar&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27;  and prezzo is not null&#xd;&#xa;--and WHEELMODEL like &#x27;&#x25;ACCIAIO&#x25;&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;000601&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;TRG62BP38&#x27;&#xd;&#xa;and giacenza&#x3e;0 and canale is not null&#xd;&#xa;order by partnumber</sql>
+    <sql>select distinct&#xd;&#xa;  &#x27;ALC&#x27; as partner&#xd;&#xa;, partnumber as ipcode&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2b;15&#x29;&#x2a;1.10&#x29;&#x29;&#x29; AS prezzo&#xd;&#xa;,	&#x28;&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2b;15&#x29;&#x2a;1.10&#x29;&#x29;&#x29; AS prezzolistino&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS category_path&#xd;&#xa;, &#x27;CERCHI IN LEGA&#x7c;CERCHI IN LEGA&#x23;&#x27; &#x2b; raggio &#x2b; &#x27; pollici&#x27; AS full_category_path&#xd;&#xa;,  BRAND as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA &#x27; &#x2b; brand &#x2b; &#x27; &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset&#x29; as nome&#xd;&#xa;, upper&#x28; &#x27;CERCHIO IN LEGA &#x27;&#x2b; brand  &#x2b;&#x27; MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as short_desc&#xd;&#xa;, upper&#x28;&#x27;CERCHIO IN LEGA &#x27;&#x2b; brand  &#x2b;&#x27; MODELLO &#x27; &#x2b; wheelmodel &#x2b; &#x27; &#x27; &#x2b; finishing &#x2b;&#x27; &#x27; &#x2b; replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b;&#x27;x&#x27; &#x2b; raggio &#x2b; &#x27; &#x27; &#x2b; numerofori &#x2b; &#x27;x&#x27; &#x2b; replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x2b; &#x27; ET &#x27; &#x2b; offset &#x2b; &#x27; &#x27; &#x2b; raggio &#x2b; &#x27; POLLICI&#x27;&#x29; as descrizione&#xd;&#xa;, &#x27;EUR&#x27; as currency_id&#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image &#xd;&#xa;,	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image &#xd;&#xa;	,&#x27;Y&#x27; AS product_publish&#xd;&#xa;	,&#x27;22&#x27; AS iva, &#xd;&#xa;case when prezzo&#x3d;&#x27;0,00&#x27; then 0 else coalesce&#x28;GIACENZA,0&#x29; end AS product_in_stock, &#xd;&#xa;&#x27;12234563&#x27; as product_available,&#xd;&#xa;	&#x27;N&#x27; AS product_special ,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca2, &#xd;&#xa;	replace&#x28;OFFSET,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca2, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS codca3, &#xd;&#xa;	cast&#x28;replace&#x28;replace&#x28;interasse,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;X &#x27;,&#x27;&#x27;&#x29; as numeric&#x28;4,0&#x29;&#x29; AS desca3, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS codca4, &#xd;&#xa;	replace&#x28;canale,&#x27;,&#x27;,&#x27;.&#x27;&#x29; AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;eancode,&#xd;&#xa;&#x27;VETTURA&#x27; as settore&#xd;&#xa;,cb, finishing&#xd;&#xa;from linky_articoli_alcar&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27;  and prezzo is not null&#xd;&#xa;--and WHEELMODEL like &#x27;&#x25;ACCIAIO&#x25;&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;000601&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;TRG62BP38&#x27;&#xd;&#xa;and giacenza&#x3e;0 and canale is not null&#xd;&#xa;order by partnumber</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -646,6 +647,16 @@
       <value>
         <name>EANCODE</name>
         <rename>EANCODE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CB</name>
+        <rename>cb</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>FINISHING</name>
+        <rename>finishing</rename>
         <update>Y</update>
       </value>
     </lookup>

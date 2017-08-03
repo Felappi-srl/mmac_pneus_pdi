@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;06&#x2f;08 10&#x3a;41&#x3a;49.568</modified_date>
+  <modified_date>2017&#x2f;06&#x2f;23 15&#x3a;09&#x3a;23.876</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -388,7 +388,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
+      <xloc>544</xloc>
       <yloc>224</yloc>
     </entry>
     <entry>
@@ -599,7 +599,7 @@
       <name>SQL MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;9&#xd;&#xa;where prezzode &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24&#xd;&#xa;set prezzofr&#x3d;listino&#x2b;9&#xd;&#xa;where prezzofr &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.gapold &#x3d; linky_tyre24_params.gap&#xd;&#xa;from  linky_tyre24 as t24, linky_tyre24_params&#x3b;</sql>
+      <sql>update linky_tyre24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;9&#xd;&#xa;where prezzode &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24&#xd;&#xa;set prezzofr&#x3d;listino&#x2b;9&#xd;&#xa;where prezzofr &#x3d;0&#xd;&#xa;and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.gapold &#x3d; linky_tyre24_params.gap&#xd;&#xa;from  linky_tyre24 as t24, linky_tyre24_params&#x3b;&#xd;&#xa;update linky_tyre24&#xd;&#xa;set prezzode&#x3d;listino&#xd;&#xa;where prezzode &#x3d;0&#xd;&#xa;and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -624,7 +624,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
+      <xloc>384</xloc>
       <yloc>224</yloc>
     </entry>
     <entry>
@@ -644,6 +644,22 @@
       <nr>0</nr>
       <xloc>112</xloc>
       <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>Overrides</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update t24&#xd;&#xa;set t24.PREZZODE&#x3d;overr.prezzo&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_prezzi_overrides as overr on t24.IPCODE &#x3d; overr.IPCODE and overr.siteid&#x3d;&#x27;DE&#x27; and overr.mkt&#x3d;&#x27;T24&#x27;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>192</xloc>
+      <yloc>224</yloc>
     </entry>
   </entries>
   <hops>
@@ -729,15 +745,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL MAK</from>
-      <to>Compila prezzo riferimento OLD</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Compila prezzo riferimento OLD</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
@@ -767,6 +774,24 @@
     <hop>
       <from>Cancella i file</from>
       <to>EMAIL IT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SQL MAK</from>
+      <to>Overrides</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Overrides</from>
+      <to>Compila prezzo riferimento OLD</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

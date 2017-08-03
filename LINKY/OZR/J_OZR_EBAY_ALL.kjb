@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;06&#x2f;01 17&#x3a;23&#x3a;15.976</modified_date>
+  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;04&#x3a;08.450</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -330,7 +330,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>29</xloc>
-      <yloc>38</yloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>Success</name>
@@ -390,7 +390,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>136</xloc>
-      <yloc>38</yloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_imp_ebay_ozr_experimental</name>
@@ -426,7 +426,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>597</xloc>
-      <yloc>37</yloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>SQL</name>
@@ -441,8 +441,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>259</xloc>
-      <yloc>38</yloc>
+      <xloc>448</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_ozr_it</name>
@@ -532,8 +532,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>412</xloc>
-      <yloc>37</yloc>
+      <xloc>256</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_imp_ebay_var_ozr</name>
@@ -1053,33 +1053,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Set variables</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL</from>
-      <to>J_CONNECTOR_FROM_OZR</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>J_CONNECTOR_FROM_OZR</from>
-      <to>t_imp_ebay_ozr_experimental</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_imp_ebay_ozr_experimental</from>
       <to>t_imp_ebay_var_ozr</to>
       <from_nr>0</from_nr>
@@ -1303,6 +1276,33 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>J_CONNECTOR_FROM_OZR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_CONNECTOR_FROM_OZR</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
+      <to>t_imp_ebay_ozr_experimental</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

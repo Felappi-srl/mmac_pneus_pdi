@@ -8,13 +8,13 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;04&#x2f;27 15&#x3a;05&#x3a;46.669</modified_date>
+  <modified_date>2017&#x2f;07&#x2f;12 16&#x3a;15&#x3a;47.600</modified_date>
     <parameters>
     </parameters>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -24,10 +24,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -329,8 +329,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>29</xloc>
-      <yloc>38</yloc>
+      <xloc>16</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>Success</name>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>736</xloc>
-      <yloc>256</yloc>
+      <xloc>752</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -389,8 +389,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>136</xloc>
-      <yloc>38</yloc>
+      <xloc>128</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_imp_ebay_ozr_experimental</name>
@@ -425,24 +425,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>597</xloc>
-      <yloc>37</yloc>
-    </entry>
-    <entry>
-      <name>SQL</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update linky_ebay set pubblicato&#x3d;&#x27;N&#x27;&#xd;&#xa;--, product_in_stock&#x3d;0 &#xd;&#xa;, lastupdate&#x3d;null&#xd;&#xa;where partner&#x3d;&#x27;OZR&#x27;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>239</xloc>
-      <yloc>34</yloc>
+      <xloc>816</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_it</name>
@@ -477,8 +461,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>810</xloc>
-      <yloc>135</yloc>
+      <xloc>816</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>J_CONNECTOR_FROM_OZR</name>
@@ -509,7 +493,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
+      <xloc>320</xloc>
       <yloc>32</yloc>
     </entry>
     <entry>
@@ -545,8 +529,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>642</xloc>
-      <yloc>138</yloc>
+      <xloc>656</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_nl</name>
@@ -581,8 +565,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>492</xloc>
-      <yloc>138</yloc>
+      <xloc>496</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>SQL 2</name>
@@ -597,8 +581,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>240</yloc>
+      <xloc>464</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>Mail OK</name>
@@ -637,8 +621,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>240</yloc>
+      <xloc>560</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_fr</name>
@@ -673,8 +657,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>312</xloc>
-      <yloc>138</yloc>
+      <xloc>320</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_es</name>
@@ -709,8 +693,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>120</xloc>
-      <yloc>137</yloc>
+      <xloc>128</xloc>
+      <yloc>224</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_aus</name>
@@ -745,8 +729,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>112</xloc>
-      <yloc>240</yloc>
+      <xloc>128</xloc>
+      <yloc>384</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_ozr_de</name>
@@ -781,8 +765,64 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>240</yloc>
+      <xloc>320</xloc>
+      <yloc>384</yloc>
+    </entry>
+    <entry>
+      <name>SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_ebay set pubblicato&#x3d;&#x27;N&#x27;, lastupdate&#x3d;null&#xd;&#xa;where partner&#x3d;&#x27;OZR&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>576</xloc>
+      <yloc>32</yloc>
+    </entry>
+    <entry>
+      <name>Mail ERRORE</name>
+      <description/>
+      <type>MAIL</type>
+      <server>smtp.easyname.eu</server>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
+      <replytoname>PNEUS jobs</replytoname>
+      <subject>OZR CONNECTOR ERROR</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>La procedura &#xe8; andata a buon fine</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>40778mail1</auth_user>
+      <auth_password>Encrypted 2be98affe0bcbb096a216bd73d69bf88a</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>144</yloc>
     </entry>
   </entries>
   <hops>
@@ -794,24 +834,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Set variables</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL</from>
-      <to>J_CONNECTOR_FROM_OZR</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>t_ebay_ExpFile_stock_ozr_uk</from>
@@ -868,15 +890,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_CONNECTOR_FROM_OZR</from>
-      <to>t_imp_ebay_ozr_experimental</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_ebay_ExpFile_stock_ozr_es</from>
       <to>t_ebay_ExpFile_stock_ozr_aus</to>
       <from_nr>0</from_nr>
@@ -911,6 +924,60 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_CONNECTOR_FROM_OZR</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>SQL</from>
+      <to>t_imp_ebay_ozr_experimental</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set variables</from>
+      <to>J_CONNECTOR_FROM_OZR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_CONNECTOR_FROM_OZR</from>
+      <to>Mail ERRORE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail ERRORE</from>
+      <to>Success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_imp_ebay_ozr_experimental</from>
+      <to>Mail ERRORE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
