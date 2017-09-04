@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_matrixrate</name>
+    <name>t_exp_matrixrate</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
+    <created_date>2017&#x2f;08&#x2f;24 13&#x3a;29&#x3a;05.106</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;08&#x2f;24 13&#x3a;14&#x3a;06.742</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2017&#x2f;08&#x2f;24 13&#x3a;40&#x3a;27.285</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -464,14 +464,24 @@
   </connection>
   <order>
     <hop>
-      <from>Microsoft Excel Input</from>
-      <to>Insert &#x2f; Update</to>
+      <from>Modified Java Script Value</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>matrixrate</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Shipping_rate</from>
+      <to>Modified Java Script Value</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Microsoft Excel Input</name>
-    <type>ExcelInput</type>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -480,116 +490,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;web&#x5c;Tariffario UE.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>county</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>pesoda</name>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;if &#x28;PESO&#x3d;&#x3d;&#x27;13&#x27;&#x29; &#x7b;&#xa;	PesoFrom &#x3d; 0&#x3b;&#xa;	PesoTo &#x3d; 13&#x3b;&#xa;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;26&#x27;&#x29;&#x7b;&#xa;	PesoFrom &#x3d; 13&#x3b;&#xa;	PesoTo &#x3d; 26&#x3b;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;39&#x27;&#x29;&#x7b;&#xa;	PesoFrom &#x3d; 26&#x3b;&#xa;	PesoTo &#x3d; 39&#x3b;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;52&#x27;&#x29;&#x7b;&#xa;	PesoFrom &#x3d; 39&#x3b;&#xa;	PesoTo &#x3d; 52&#x3b;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;65&#x27;&#x29;&#x7b;&#xa;	PesoFrom &#x3d; 52&#x3b;&#xa;	PesoTo &#x3d; 65&#x3b;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;78&#x27;&#x29;&#x7b;&#xa;	PesoFrom &#x3d; 65&#x3b;&#xa;	PesoTo &#x3d; 78&#x3b;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;91&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 78&#x3b;&#xd;&#xa;	PesoTo &#x3d; 91&#x3b;&#xd;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;104&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 91&#x3b;&#xd;&#xa;	PesoTo &#x3d; 104&#x3b;&#xd;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;117&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 104&#x3b;&#xd;&#xa;	PesoTo &#x3d; 117&#x3b;&#xd;&#xa;&#x7d;  else if &#x28;PESO&#x3d;&#x3d;&#x27;130&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 117&#x3b;&#xd;&#xa;	PesoTo &#x3d; 130&#x3b;&#xd;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;143&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 130&#x3b;&#xd;&#xa;	PesoTo &#x3d; 143&#x3b;&#xd;&#xa;&#x7d; else if &#x28;PESO&#x3d;&#x3d;&#x27;156&#x27;&#x29;&#x7b;&#xd;&#xa;	PesoFrom &#x3d; 143&#x3b;&#xd;&#xa;	PesoTo &#x3d; 9999&#x3b;&#xd;&#xa;&#x7d;else &#x7b;&#xa;	PesoFrom &#x3d; 156&#x3b;&#xa;	PesoTo &#x3d; 9999&#x3b;&#xa;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>PesoFrom</name>
+        <rename>PesoFrom</rename>
         <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>pesoa</name>
+        <length>5</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>PesoTo</name>
+        <rename>PesoTo</rename>
         <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>costo</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>servizio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Giusto</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema/>
+        <length>5</length>
+        <precision>2</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -597,15 +515,96 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>96</yloc>
+      <xloc>240</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Insert &#x2f; Update</name>
-    <type>InsertUpdate</type>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>Paese</name>
+      </field>      <field>        <name>Regione&#x2f;Stato</name>
+      </field>      <field>        <name>Citt&#xe0;</name>
+      </field>      <field>        <name>Zip&#x2f;Postal Code From</name>
+      </field>      <field>        <name>Zip&#x2f;Postal Code To</name>
+      </field>      <field>        <name>PesoFrom</name>
+      </field>      <field>        <name>PesoTo</name>
+      </field>      <field>        <name>Prezzo spedizione</name>
+      </field>      <field>        <name>TIPOSPEDIZIONE</name>
+        <rename>Delivery Type</rename>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>PesoFrom</name>
+        <rename>PesoFrom</rename>
+        <type>Number</type>
+        <length>5</length>
+        <precision>2</precision>
+        <conversion_mask>0.00</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>PesoTo</name>
+        <rename>PesoTo</rename>
+        <type>Number</type>
+        <length>5</length>
+        <precision>2</precision>
+        <conversion_mask>0.00</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>Prezzo spedizione</name>
+        <rename>Prezzo spedizione</rename>
+        <type>Number</type>
+        <length>5</length>
+        <precision>0</precision>
+        <conversion_mask>0.00</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Shipping_rate</name>
+    <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -615,50 +614,12 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <commit>1</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>shipping_rate</table>
-      <key>
-        <name>county</name>
-        <field>countrycode</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>pesoa</name>
-        <field>peso</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>servizio</name>
-        <field>tipospedizione</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>countrycode</name>
-        <rename>county</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>peso</name>
-        <rename>pesoa</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>tipospedizione</name>
-        <rename>servizio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>costo</name>
-        <rename>costo</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
+    <sql>SELECT&#xd;&#xa;  COUNTRYCODE as Paese&#xd;&#xa;, &#x27;&#x2a;&#x27; as &#x22;Regione&#x2f;Stato&#x22;&#xd;&#xa;, &#x27;&#x2a;&#x27; as &#x22;Citt&#xe0;&#x22;&#xd;&#xa;, &#x27;&#x2a;&#x27; as &#x22;Zip&#x2f;Postal Code From&#x22;&#xd;&#xa;, &#x27;&#x2a;&#x27; as &#x22;Zip&#x2f;Postal Code To&#x22;&#xd;&#xa;, PESO&#xd;&#xa;, TIPOSPEDIZIONE&#xd;&#xa;, costo as &#x22;Prezzo spedizione&#x22;&#xd;&#xa;,europe&#xd;&#xa;FROM shipping_rate</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -667,8 +628,174 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>96</yloc>
+      <xloc>96</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>matrixrate</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>,</separator>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;exp&#x5c;matrixrate</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>Paese</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Regione&#x2f;Stato</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Citt&#xe0;</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Zip&#x2f;Postal Code From</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>Zip&#x2f;Postal Code To</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>PesoFrom</name>
+        <type>Number</type>
+        <format>0.00</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>.</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>PesoTo</name>
+        <type>Number</type>
+        <format>0.00</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>.</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>2</precision>
+      </field>
+      <field>
+        <name>Prezzo spedizione</name>
+        <type>Number</type>
+        <format>0.00</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>5</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>Delivery Type</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

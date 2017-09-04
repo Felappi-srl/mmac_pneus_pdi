@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;27 09&#x3a;51&#x3a;57.607</modified_date>
+  <modified_date>2017&#x2f;08&#x2f;03 12&#x3a;06&#x3a;31.184</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -483,7 +483,7 @@
       <yloc>288</yloc>
     </entry>
     <entry>
-      <name>Preleva yokohama</name>
+      <name>Preleva pirelli</name>
       <description/>
       <type>SFTP</type>
       <servername>www.pneus-center.it</servername>
@@ -552,7 +552,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Preleva yokohama</to>
+      <to>Preleva pirelli</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -560,7 +560,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Preleva yokohama</from>
+      <from>Preleva pirelli</from>
       <to>File &#x3e; 0</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -569,7 +569,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Preleva yokohama</from>
+      <from>Preleva pirelli</from>
       <to>DUMMY</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

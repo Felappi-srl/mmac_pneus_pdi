@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;06&#x2f;29 15&#x3a;02&#x3a;29.958</modified_date>
+  <modified_date>2017&#x2f;08&#x2f;31 11&#x3a;05&#x3a;40.853</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -341,42 +341,6 @@
       <nr>0</nr>
       <xloc>48</xloc>
       <yloc>448</yloc>
-    </entry>
-    <entry>
-      <name>t_UPD_CG_to_TYRE24</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_UPD_CG_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>496</xloc>
-      <yloc>48</yloc>
     </entry>
     <entry>
       <name>t_UPD_PNEUS_to_TYRE24</name>
@@ -1109,7 +1073,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
+      <xloc>240</xloc>
       <yloc>224</yloc>
     </entry>
     <entry>
@@ -1484,6 +1448,38 @@
       <xloc>320</xloc>
       <yloc>128</yloc>
     </entry>
+    <entry>
+      <name>J_UPD_PARTNERS_to_TYRE24</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_UPD_PARTNERS_to_TYRE24</jobname>
+      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
+      <yloc>48</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1498,15 +1494,6 @@
     <hop>
       <from>t_UPD_ALC_to_TYRE24</from>
       <to>t_sistema_ipcode_tyre24</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_UPD_CG_to_TYRE24</from>
-      <to>t_UPD_OZ_to_TYRE24</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1541,15 +1528,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_PARTNERS_2017</from>
-      <to>t_UPD_CG_to_TYRE24</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_sistema_ipcode_tyre24</from>
       <to>Compila Etichetta PNEUS</to>
       <from_nr>0</from_nr>
@@ -1565,7 +1543,7 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>J_T24_GET_MAIL</from>
@@ -1865,6 +1843,15 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>J_IMP_PREZZI_OVERRIDES</from>
+      <to>t_UPD_ALC_to_TYRE24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
       <from>t_UPD_PNEUS_to_TYRE24</from>
       <to>J_IMP_PREZZI_OVERRIDES</to>
       <from_nr>0</from_nr>
@@ -1874,8 +1861,17 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_IMP_PREZZI_OVERRIDES</from>
-      <to>t_UPD_ALC_to_TYRE24</to>
+      <from>J_LOAD_PARTNERS_2017</from>
+      <to>J_UPD_PARTNERS_to_TYRE24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_UPD_PARTNERS_to_TYRE24</from>
+      <to>t_UPD_OZ_to_TYRE24</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_linky_2017_web_matrixrate</name>
+    <name>t_UPD_CG_to_TYRE24_scooter-moto</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;WEB&#x2f;SHIP</directory>
+    <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
     <parameters>
     </parameters>
     <log>
@@ -408,8 +408,8 @@
       <maxdiff>0.0</maxdiff>
     </maxdate>
     <size_rowset>10000</size_rowset>
-    <sleep_time_empty>50</sleep_time_empty>
-    <sleep_time_full>50</sleep_time_full>
+    <sleep_time_empty>0</sleep_time_empty>
+    <sleep_time_full>0</sleep_time_full>
     <unique_connections>N</unique_connections>
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
@@ -426,183 +426,48 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user>-</created_user>
-    <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
-    <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;08&#x2f;24 13&#x3a;14&#x3a;06.742</modified_date>
+    <created_user>admin</created_user>
+    <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;19.940</created_date>
+    <modified_user>admin</modified_user>
+    <modified_date>2017&#x2f;08&#x2f;24 15&#x3a;24&#x3a;10.573</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>CONNECTOR_2017</name>
-    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
-    <type>MYSQL</type>
+    <name>LINKY</name>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
-    <database>connector_2017</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
+    <database>LINKY</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
     <hop>
-      <from>Microsoft Excel Input</from>
+      <from>Table input</from>
       <to>Insert &#x2f; Update</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name>Microsoft Excel Input</name>
-    <type>ExcelInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
-    <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;web&#x5c;Tariffario UE.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>county</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>pesoda</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>pesoa</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>costo</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>servizio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Giusto</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>64</xloc>
-      <yloc>96</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
   <step>
     <name>Insert &#x2f; Update</name>
     <type>InsertUpdate</type>
@@ -614,48 +479,157 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>CONNECTOR_2017</connection>
-    <commit>1</commit>
+    <connection>LINKY</connection>
+    <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>shipping_rate</table>
+      <table>linky_tyre24</table>
       <key>
-        <name>county</name>
-        <field>countrycode</field>
+        <name>IPCODE</name>
+        <field>IPCODE</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <key>
-        <name>pesoa</name>
-        <field>peso</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>servizio</name>
-        <field>tipospedizione</field>
+        <name>marca</name>
+        <field>MARCA</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
       <value>
-        <name>countrycode</name>
-        <rename>county</rename>
+        <name>MARCA</name>
+        <rename>marca</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>DESCRIZIONE</name>
+        <rename>DESCRIZIONE</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>peso</name>
-        <rename>pesoa</rename>
+        <name>CODICEROTOLAMENTO</name>
+        <rename>CODICEROTOLAMENTO</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>tipospedizione</name>
-        <rename>servizio</rename>
+        <name>ROTOLAMENTO</name>
+        <rename>ROTOLAMENTO</rename>
         <update>Y</update>
       </value>
       <value>
-        <name>costo</name>
-        <rename>costo</rename>
+        <name>CODICEADERENZA</name>
+        <rename>CODICEADERENZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ADERENZA</name>
+        <rename>ADERENZA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICERUMOROSITA</name>
+        <rename>CODICERUMOROSITA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>RUMOROSITA</name>
+        <rename>RUMOROSITA</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>IPCODE</name>
+        <rename>ipcodE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PREZZOSCONTATO</name>
+        <rename>prezzo</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LISTINO</name>
+        <rename>prezzoLISTINO</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>GIACENZA</name>
+        <rename>product_in_stock</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICESERIE</name>
+        <rename>CODCA3</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SERIE</name>
+        <rename>DESCA3</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICECERCHIO</name>
+        <rename>CODCA1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CERCHIO</name>
+        <rename>DESCA1</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICESTAGIONE</name>
+        <rename>CODCA2</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>STAGIONE</name>
+        <rename>DESCA2</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICELARGHEZZA</name>
+        <rename>CODCA4</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>LARGHEZZA</name>
+        <rename>DESCA4</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>CODICEVEL</name>
+        <rename>CODCA5</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>VEL</name>
+        <rename>DESCA5</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ICARICO</name>
+        <rename>CODCA6</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>SETTORE</name>
+        <rename>SETTORE</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PARTNER</name>
+        <rename>partner</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>EANCODE</name>
+        <rename>EAN</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>PREZZORIFERIMENTO</name>
+        <rename>prezzoriferimento</rename>
         <update>Y</update>
       </value>
     </lookup>
@@ -667,8 +641,40 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>96</yloc>
+      <xloc>392</xloc>
+      <yloc>59</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>select &#xd;&#xa;partner&#xd;&#xa;, ipcodESTD as IPCODE&#xd;&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzo&#xd;&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzoLISTINO&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE&#xd;&#xa; AS Category_Path&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa;  &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE as Full_Category_path&#xd;&#xa;, marca&#xd;&#xa;, ipcode as codice&#xd;&#xa;, &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,DESCRIZIONE,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,descrizione,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29; &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS SHORT_DESC&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29;  &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27;  &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS DESCRIZIONE&#xd;&#xa;, &#x27;EUR&#x27; as currency&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as fullimg&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;resized&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as resimg&#xd;&#xa;, case when giacenza &#x3c;&#x3e;0 then &#x27;Y&#x27; else &#x27;N&#x27; end as Publish&#xd;&#xa;, 21 as iva&#xd;&#xa;,  giacenza  as product_in_stock&#xd;&#xa;, 12234563 product_available&#xd;&#xa;, &#x27;N&#x27; as product_special&#xd;&#xa;, CODICECERCHIO AS CODCA1&#xd;&#xa;, CODICECERCHIO AS DESCA1&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;N&#x27; ELSE &#x27;E&#x27; END AS CODCA2&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; ELSE &#x27;ESTIVE&#x27; END AS DESCA2&#xd;&#xa;, SERIE AS CODCA3&#xd;&#xa;, &#x27;SERIE &#x27; &#x2b; SERIE AS DESCA3&#xd;&#xa;, LARGHEZZA AS CODCA4&#xd;&#xa;, LARGHEZZA AS DESCA4&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; AS CODCA5&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b;&#x27;&#x3a; &#x27; &#x2b;SUBSTRING&#x28;VEL,2,4&#x29; &#x2b; &#x27; Km&#x2f;h&#x27; AS DESCA5&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS CODCA6&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS DESCA6,&#xd;&#xa;CODICEROTOLAMENTO,&#xd;&#xa;ROTOLAMENTO,&#xd;&#xa;CODICEADERENZA	,&#xd;&#xa;ADERENZA	,&#xd;&#xa;CODICERUMOROSITA,&#xd;&#xa;RUMOROSITA,&#xd;&#xa;REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; AS SETTORE,&#xd;&#xa;--case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else &#xd;&#xa;substring&#x28;EAN,1,13&#x29; &#xd;&#xa;--end &#xd;&#xa;as ean&#xd;&#xa;,prezzoscontato as prezzoriferimento&#xd;&#xa;from linky_integro_articoli&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;--and partner not in &#x28;&#x27;TG&#x27;&#x29;&#xd;&#xa;and giacenza&#x3e;0 and prezzoscontato&#x3e;0&#xd;&#xa;and settore in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xd;&#xa;--and ipcode&#x3d;&#x27;1208417178&#x27;&#xd;&#xa;order by ipcodeSTD, prezzoscontato desc</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>124</xloc>
+      <yloc>59</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

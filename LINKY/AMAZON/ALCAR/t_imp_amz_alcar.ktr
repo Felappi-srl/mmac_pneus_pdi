@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;06&#x2f;08 15&#x3a;48&#x3a;07.894</modified_date>
+    <modified_date>2017&#x2f;08&#x2f;31 11&#x3a;08&#x3a;39.389</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -504,11 +504,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get System Info</from>
-      <to>Insert &#x2f; Update</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>ARTICOLI_ALC</from>
       <to>Merge Rows &#x28;diff&#x29;</to>
       <enabled>Y</enabled>
@@ -533,6 +528,16 @@
       <to>Merge Rows &#x28;diff&#x29;</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Get System Info</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Insert &#x2f; Update</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ARTICOLI_ALC</name>
@@ -546,7 +551,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>select distinct&#xd;&#xa; PARTNER&#xd;&#xa;,  marca as marchio&#xd;&#xa;,  codice&#xd;&#xa;,nome,&#xd;&#xa; prezzo, &#xd;&#xa; product_full_image ,&#xd;&#xa; cast&#x28;product_in_stock as numeric&#x28;9,0&#x29;&#x29; as product_in_stock, &#xd;&#xa; codca1, &#xd;&#xa; desca1, &#xd;&#xa; codca2, &#xd;&#xa; desca2, &#xd;&#xa; codca3, &#xd;&#xa; desca3, &#xd;&#xa; codca4, &#xd;&#xa; desca4, &#xd;&#xa; codca5, &#xd;&#xa; desca5, &#xd;&#xa; codca6, &#xd;&#xa; desca6,&#xd;&#xa; pubblicato,&#xd;&#xa;eancode,&#xd;&#xa;amzcat,&#xd;&#xa;eancode as tmp_eancode,&#xd;&#xa;&#x27;&#x27; as modelloauto&#xd;&#xa;from linky_amazon&#xd;&#xa;WHERE partner&#x3d;&#x27;ALCAR&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
+    <sql>select distinct&#xd;&#xa; PARTNER&#xd;&#xa;,  marca as marchio&#xd;&#xa;,  codice&#xd;&#xa;,nome,&#xd;&#xa; prezzo, &#xd;&#xa; product_full_image ,&#xd;&#xa; cast&#x28;product_in_stock as numeric&#x28;9,0&#x29;&#x29; as product_in_stock, &#xd;&#xa; codca1, &#xd;&#xa; desca1, &#xd;&#xa; codca2, &#xd;&#xa; desca2, &#xd;&#xa; codca3, &#xd;&#xa; desca3, &#xd;&#xa; codca4, &#xd;&#xa; desca4, &#xd;&#xa; codca5, &#xd;&#xa; desca5, &#xd;&#xa; codca6, &#xd;&#xa; desca6,&#xd;&#xa; pubblicato,&#xd;&#xa;cast&#x28;eancode as numeric&#x28;13&#x29;&#x29; as eancode,&#xd;&#xa;amzcat,&#xd;&#xa;cast&#x28;eancode as numeric&#x28;13&#x29;&#x29; as tmp_eancode,&#xd;&#xa;&#x27;&#x27; as modelloauto&#xd;&#xa;from linky_amazon&#xd;&#xa;WHERE partner&#x3d;&#x27;ALCAR&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -578,7 +583,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select distinct&#xd;&#xa;	&#x27;ALCAR&#x27; AS PARTNER&#xd;&#xa;, BRAND as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, &#xd;&#xa; &#x27;CERCHI IN LEGA &#x27; &#x2b; upper&#x28;COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;PCD,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;as nome&#xd;&#xa;,round&#x28;round&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2a;1.22&#x29;&#x2b;15&#x29;&#x2a;1.15,0&#x29;,2&#x29;&#xd;&#xa; AS prezzo, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image ,&#xd;&#xa;--	 cast&#x28;giacenza as numeric&#x28;9,0&#x29;&#x29; as product_in_stock, &#xd;&#xa;cast&#x28;giacenza as integer&#x29; as product_in_stock,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	OFFSET AS codca2, &#xd;&#xa;	OFFSET AS desca2, &#xd;&#xa;	INTERASSE AS codca3, &#xd;&#xa;	INTERASSE AS desca3, &#xd;&#xa;	CANALE AS codca4, &#xd;&#xa;	CANALE AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;	&#x27;Y&#x27; as pubblicato,&#xd;&#xa;eancode,&#xd;&#xa;2420869031 as amzcat&#xd;&#xa;from linky_articoli_alcar&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and GIACENZA &#x3e;7 &#xd;&#xa;and canale is not null and prezzo is not null&#xd;&#xa;and eancode is not null&#xd;&#xa;--and partnumber&#x3d;&#x27;TTDY2SA38&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
+    <sql>select distinct&#xd;&#xa;	&#x27;ALCAR&#x27; AS PARTNER&#xd;&#xa;, BRAND as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, &#xd;&#xa; &#x27;CERCHI IN LEGA &#x27; &#x2b; upper&#x28;COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;PCD,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;as nome&#xd;&#xa;,round&#x28;round&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzo,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x2a;1.22&#x29;&#x2b;15&#x29;&#x2a;1.15,0&#x29;,2&#x29;&#xd;&#xa; AS prezzo, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image ,&#xd;&#xa;--	 cast&#x28;giacenza as numeric&#x28;9,0&#x29;&#x29; as product_in_stock, &#xd;&#xa;cast&#x28;giacenza as integer&#x29; as product_in_stock,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	OFFSET AS codca2, &#xd;&#xa;	OFFSET AS desca2, &#xd;&#xa;	INTERASSE AS codca3, &#xd;&#xa;	INTERASSE AS desca3, &#xd;&#xa;	CANALE AS codca4, &#xd;&#xa;	CANALE AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;	&#x27;Y&#x27; as pubblicato,&#xd;&#xa;cast&#x28;eancode as numeric&#x28;13&#x29;&#x29; as eancode,&#xd;&#xa;2420869031 as amzcat&#xd;&#xa;from linky_articoli_alcar&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and GIACENZA &#x3e;7 &#xd;&#xa;and canale is not null and prezzo is not null&#xd;&#xa;and eancode is not null&#xd;&#xa;--and partnumber&#x3d;&#x27;TTDY2SA38&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -644,7 +649,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select oz.eancode as tmp_eancode,&#xd;&#xa;&#x27;COMPATIBILI CON&#x3a;&#x23;&#x23;&#x27; as modelloauto&#xd;&#xa;from linky_articoli_ALCAR oz&#xd;&#xa;order by oz.eancode&#xd;&#xa;</sql>
+    <sql>select cast&#x28;oz.eancode as numeric&#x28;13&#x29;&#x29; as tmp_eancode,&#xd;&#xa;&#x27;COMPATIBILI CON&#x3a;&#x23;&#x23;&#x27; as modelloauto&#xd;&#xa;from linky_articoli_ALCAR oz&#xd;&#xa;order by oz.eancode&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -976,6 +981,99 @@
     <GUI>
       <xloc>138</xloc>
       <yloc>62</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>PARTNER</name>
+        <rename/>
+      </field>      <field>        <name>marchio</name>
+        <rename/>
+      </field>      <field>        <name>codice</name>
+        <rename/>
+      </field>      <field>        <name>nome</name>
+        <rename/>
+      </field>      <field>        <name>prezzo</name>
+        <rename/>
+      </field>      <field>        <name>product_full_image</name>
+        <rename/>
+      </field>      <field>        <name>product_in_stock</name>
+        <rename/>
+      </field>      <field>        <name>codca1</name>
+        <rename/>
+      </field>      <field>        <name>desca1</name>
+        <rename/>
+      </field>      <field>        <name>codca2</name>
+        <rename/>
+      </field>      <field>        <name>desca2</name>
+        <rename/>
+      </field>      <field>        <name>codca3</name>
+        <rename/>
+      </field>      <field>        <name>desca3</name>
+        <rename/>
+      </field>      <field>        <name>codca4</name>
+        <rename/>
+      </field>      <field>        <name>desca4</name>
+        <rename/>
+      </field>      <field>        <name>codca5</name>
+        <rename/>
+      </field>      <field>        <name>desca5</name>
+        <rename/>
+      </field>      <field>        <name>codca6</name>
+        <rename/>
+      </field>      <field>        <name>desca6</name>
+        <rename/>
+      </field>      <field>        <name>pubblicato</name>
+        <rename/>
+      </field>      <field>        <name>eancode</name>
+        <rename/>
+      </field>      <field>        <name>amzcat</name>
+        <rename/>
+      </field>      <field>        <name>tmp_eancode</name>
+        <rename/>
+      </field>      <field>        <name>modelloauto</name>
+        <rename/>
+      </field>      <field>        <name>flagfield</name>
+        <rename/>
+      </field>      <field>        <name>LastUpdate</name>
+        <rename/>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>eancode</name>
+        <rename>eancode</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

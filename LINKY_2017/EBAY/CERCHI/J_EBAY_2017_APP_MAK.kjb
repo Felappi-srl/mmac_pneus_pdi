@@ -1,39 +1,40 @@
 <job>
-  <name>J_LOAD_TAGLIABUE_2017</name>
-  <description/>
+  <name>J_EBAY_2017_APP_MAK</name>
+  <description>Job principale per la gestione dell&#x27;aggiornamento prodotti sul web</description>
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;TAGLIABUE</directory>
+  <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
   <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
+  <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;08&#x2f;03 17&#x3a;08&#x3a;15.091</modified_date>
+  <modified_date>2017&#x2f;08&#x2f;31 16&#x3a;06&#x3a;39.992</modified_date>
     <parameters>
     </parameters>
   <connection>
-    <name>LINKY</name>
-    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
-    <type>MSSQLNATIVE</type>
+    <name>CONNECTOR_2017</name>
+    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MYSQL</type>
     <access>Native</access>
-    <database>LINKY</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <database>connector_2017</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
@@ -329,209 +330,162 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>48</yloc>
+      <xloc>29</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
-      <name>Successo</name>
+      <name>Success</name>
       <description/>
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>224</yloc>
+      <xloc>640</xloc>
+      <yloc>368</yloc>
     </entry>
     <entry>
-      <name>File &#x3e; 0</name>
+      <name>Set variables</name>
       <description/>
-      <type>EVAL_FILES_METRICS</type>
-      <result_filenames_wildcard/>
-      <Result_field_file/>
-      <Result_field_wildcard/>
-      <Result_field_includesubfolders/>
+      <type>SET_VARIABLES</type>
+      <replacevars>N</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <source_filefolder>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tagliabue&#x5c;FELAPPI.CSV</source_filefolder>
-          <wildcard/>
-          <include_subFolders>N</include_subFolders>
+          <variable_name>rootpath</variable_name>
+          <variable_value>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>fotopath</variable_name>
+          <variable_value>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;immagini&#x5c;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>trasfpath</variable_name>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>fototrasferite</variable_name>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferite&#x2f;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>trasfpathres</variable_name>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;resized&#x2f;JPEG&#x2f;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>trasfok</variable_name>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;ok&#x2f;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>fototrasferiteres</variable_name>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferite&#x2f;resized&#x2f;JPEG&#x2f;</variable_value>
+          <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
-      <comparevalue>5</comparevalue>
-      <minvalue/>
-      <maxvalue/>
-      <successnumbercondition>greater</successnumbercondition>
-      <source_files>files</source_files>
-      <evaluation_type>size</evaluation_type>
-      <scale>kbytes</scale>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>48</yloc>
+      <xloc>136</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
-      <name>Azzero giacenze</name>
+      <name>t_ebay_2017_imp_mak</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_2017_imp_mak</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>597</xloc>
+      <yloc>32</yloc>
+    </entry>
+    <entry>
+      <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set giacenza&#x3d;0 where partner&#x3d;&#x27;TG&#x27;&#x3b;&#xd;&#xa;update linky_integro_catene set giacenza&#x3d;0 where partner&#x3d;&#x27;TG&#x27;&#x3b;</sql>
+      <sql>update ebay_cerchi set pubblicato&#x3d;&#x27;N&#x27; where partner&#x3d;&#x27;MAK&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>128</yloc>
-    </entry>
-    <entry>
-      <name>t_tg_load_metrics</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_tg_load_metrics</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;TAGLIABUE</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>48</yloc>
-    </entry>
-    <entry>
-      <name>Scrivi nel log</name>
-      <description/>
-      <type>WRITE_TO_LOG</type>
-      <logmessage>Numero righe&#x3a; &#x24;&#x7b;errore&#x7d;</logmessage>
-      <loglevel>Basic</loglevel>
-      <logsubject>Metriche</logsubject>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>48</yloc>
-    </entry>
-    <entry>
-      <name>DUMMY</name>
-      <description/>
-      <type>SPECIAL</type>
-      <start>N</start>
-      <dummy>Y</dummy>
-      <repeat>N</repeat>
-      <schedulerType>0</schedulerType>
-      <intervalSeconds>0</intervalSeconds>
-      <intervalMinutes>60</intervalMinutes>
-      <hour>12</hour>
-      <minutes>0</minutes>
-      <weekDay>1</weekDay>
-      <DayOfMonth>1</DayOfMonth>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>128</yloc>
-    </entry>
-    <entry>
-      <name>t_getrowcount</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_getrowcount</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-        <parameter>
-          <name>partner</name>
-          <stream_name/>
-          <value>TG</value>
-        </parameter>
-        <parameter>
-          <name>numrowmin</name>
-          <stream_name/>
-          <value>7000</value>
-        </parameter>
-      </parameters>
+      <connection>CONNECTOR_2017</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>464</xloc>
-      <yloc>48</yloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
-      <name>Valutazione semplice</name>
+      <name>J_CONNECTOR_FROM_MAK</name>
       <description/>
-      <type>SIMPLE_EVAL</type>
-      <valuetype>variable</valuetype>
-      <fieldname/>
-      <variablename>errore</variablename>
-      <fieldtype>boolean</fieldtype>
-      <mask/>
-      <comparevalue/>
-      <minvalue/>
-      <maxvalue/>
-      <successcondition>equal</successcondition>
-      <successnumbercondition>equal</successnumbercondition>
-      <successbooleancondition>false</successbooleancondition>
-      <successwhenvarset>N</successwhenvarset>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_CONNECTOR_FROM_MAK</jobname>
+      <directory>&#x2f;LINKY&#x2f;MAK</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>48</yloc>
+      <xloc>304</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
-      <name>t_load_tagliabue_2017</name>
+      <name>t_ebay_2017_imp_app_mak</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_load_tagliabue_2017</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;TAGLIABUE</directory>
+      <transname>t_ebay_2017_imp_app_mak</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -556,8 +510,143 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>224</yloc>
+      <xloc>811</xloc>
+      <yloc>32</yloc>
+    </entry>
+    <entry>
+      <name>t_ebay_ExpFile_app_mak_de</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_ExpFile_app_mak_de</transname>
+      <directory>&#x2f;LINKY&#x2f;MAK&#x2f;APPLICAZIONI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>640</xloc>
+      <yloc>272</yloc>
+    </entry>
+    <entry>
+      <name>t_ebay_ExpFile_appktype_mak_uk</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_ExpFile_appktype_mak_uk</transname>
+      <directory>&#x2f;LINKY&#x2f;MAK&#x2f;APPLICAZIONI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>272</yloc>
+    </entry>
+    <entry>
+      <name>Ebay MAK UK</name>
+      <description/>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe linky_action&#x3d;ADD newapp ebay_mak_uk  batch</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>176</xloc>
+      <yloc>272</yloc>
+    </entry>
+    <entry>
+      <name>Mail Error</name>
+      <description/>
+      <type>MAIL</type>
+      <server>smtp.easyname.eu</server>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
+      <replytoname>Procedure PNEUS</replytoname>
+      <subject>PNEUS EBAY NEW MAK error</subject>
+      <include_date>N</include_date>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Errore durante una procedura</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name/>
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>40778mail1</auth_user>
+      <auth_password>Encrypted 2be98afc86aa79388890ba77fcd91a7d3</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>384</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>Mail OK</name>
@@ -569,12 +658,12 @@
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>
-      <replytoname>PNEUS JOBS</replytoname>
-      <subject>&#x5b;PNEUS&#x5d; - TAGLIABUE</subject>
+      <replytoname>PNEUS jobs</replytoname>
+      <subject>11 - OK EBAY NEW MAK</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>Il file di Tagliabue presenta errori nei dati&#xd;&#xa;Prezzi a 0&#xd;&#xa;Qta a 0&#xd;&#xa;Numero righe insufficiente</comment>
+      <comment>La procedura &#xe8; andata a buon fine</comment>
       <include_files>N</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -596,94 +685,73 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>224</yloc>
+      <xloc>448</xloc>
+      <yloc>368</yloc>
     </entry>
     <entry>
-      <name>Preleva file con SFTP 2</name>
+      <name>t_ebay_desc_app_mak</name>
       <description/>
-      <type>SFTP</type>
-      <servername>www.pneus-center.it</servername>
-      <serverport>22</serverport>
-      <username>bitnami</username>
-      <password>Encrypted </password>
-      <sftpdirectory>&#x2f;opt&#x2f;bitnami&#x2f;apps&#x2f;pneus&#x2f;ftpd&#x2f;67599tb&#x2f;</sftpdirectory>
-      <targetdirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tagliabue</targetdirectory>
-      <wildcard>FELAPPI.CSV</wildcard>
-      <remove>N</remove>
-      <isaddresult>Y</isaddresult>
-      <createtargetfolder>N</createtargetfolder>
-      <copyprevious>N</copyprevious>
-      <usekeyfilename>Y</usekeyfilename>
-      <keyfilename>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;pneus.pem</keyfilename>
-      <keyfilepass>Encrypted </keyfilepass>
-      <compression>none</compression>
-      <proxyType/>
-      <proxyHost/>
-      <proxyPort/>
-      <proxyUsername/>
-      <proxyPassword>Encrypted </proxyPassword>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_desc_app_mak</transname>
+      <directory>&#x2f;LINKY&#x2f;MAK&#x2f;APPLICAZIONI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>48</yloc>
+      <xloc>816</xloc>
+      <yloc>272</yloc>
     </entry>
     <entry>
-      <name>SQL 2</name>
+      <name>Ebay MAK DE</name>
       <description/>
-      <type>SQL</type>
-      <sql>update linky_integro_articoli &#xd;&#xa;set settore &#x3d; replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;settore,&#x27;SCOOTER CONVENZIONALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;SCOOTER F.L.&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xd;&#xa;,&#x27;SCOOTER RADIALE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;CICLOMOTORE&#x27;,&#x27;SCOOTER&#x27;&#x29;,&#x27;TRASP.LEGGERO&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#xd;&#xa;--where partner&#x3d;&#x27;TG&#x27;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe linky_action&#x3d;ADD newapp ebay_mak_de  batch</script>
+      <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
-      <yloc>224</yloc>
-    </entry>
-    <entry>
-      <name>CATEGORIA</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update linky_integro_articoli set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680, AU-66471&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_catene set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-40278,DE-40278, NL-40278, FR-18329, UK-9885, ES-40278, US-180090, AU-33746&#x27;&#x3b;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>224</yloc>
+      <xloc>176</xloc>
+      <yloc>368</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>File &#x3e; 0</from>
-      <to>t_tg_load_metrics</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>File &#x3e; 0</from>
-      <to>DUMMY</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_tg_load_metrics</from>
-      <to>t_getrowcount</to>
+      <from>START</from>
+      <to>Set variables</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -691,17 +759,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_getrowcount</from>
-      <to>Scrivi nel log</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Scrivi nel log</from>
-      <to>Valutazione semplice</to>
+      <from>t_ebay_2017_imp_mak</from>
+      <to>t_ebay_2017_imp_app_mak</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -709,17 +768,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Valutazione semplice</from>
-      <to>Azzero giacenze</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Valutazione semplice</from>
-      <to>DUMMY</to>
+      <from>Set variables</from>
+      <to>Mail Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -727,8 +777,53 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Azzero giacenze</from>
-      <to>t_load_tagliabue_2017</to>
+      <from>SQL</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_CONNECTOR_FROM_MAK</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_2017_imp_mak</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_2017_imp_app_mak</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_app_mak_de</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail OK</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -736,7 +831,43 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>DUMMY</from>
+      <from>t_ebay_desc_app_mak</from>
+      <to>t_ebay_ExpFile_app_mak_de</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_app_mak_de</from>
+      <to>t_ebay_ExpFile_appktype_mak_uk</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_appktype_mak_uk</from>
+      <to>Ebay MAK UK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay MAK UK</from>
+      <to>Ebay MAK DE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay MAK DE</from>
       <to>Mail OK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -745,8 +876,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Mail OK</from>
-      <to>Successo</to>
+      <from>Set variables</from>
+      <to>J_CONNECTOR_FROM_MAK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -754,26 +885,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>Preleva file con SFTP 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Preleva file con SFTP 2</from>
-      <to>File &#x3e; 0</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_load_tagliabue_2017</from>
-      <to>SQL 2</to>
+      <from>J_CONNECTOR_FROM_MAK</from>
+      <to>SQL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -781,8 +894,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL 2</from>
-      <to>CATEGORIA</to>
+      <from>SQL</from>
+      <to>t_ebay_2017_imp_mak</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -790,11 +903,11 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>CATEGORIA</from>
-      <to>Successo</to>
+      <from>t_ebay_2017_imp_app_mak</from>
+      <to>t_ebay_desc_app_mak</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>

@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;52&#x3a;37.028</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;27 09&#x3a;54&#x3a;59.074</modified_date>
+  <modified_date>2017&#x2f;08&#x2f;03 17&#x3a;06&#x3a;58.432</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -1095,8 +1095,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>96</xloc>
-      <yloc>192</yloc>
+      <xloc>224</xloc>
+      <yloc>112</yloc>
     </entry>
   </entries>
   <hops>
@@ -1344,15 +1344,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_FINTYRE_2017</from>
-      <to>J_LOAD_BRIDGESTONE_2017</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_write_log</from>
       <to>J_IMP_PNEUS</to>
       <from_nr>0</from_nr>
@@ -1390,6 +1381,15 @@
     </hop>
     <hop>
       <from>J_LOAD_BRIDGESTONE_2017</from>
+      <to>t_normalizza_ipcode</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>J_LOAD_FINTYRE_2017</from>
       <to>J_LOAD_PIRELLI_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1399,7 +1399,7 @@
     </hop>
     <hop>
       <from>J_LOAD_PIRELLI_2017</from>
-      <to>t_normalizza_ipcode</to>
+      <to>J_LOAD_BRIDGESTONE_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
