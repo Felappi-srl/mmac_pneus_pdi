@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;09&#x2f;13 09&#x3a;17&#x3a;20.279</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;09&#x2f;13 11&#x3a;26&#x3a;11.942</modified_date>
+    <modified_date>2017&#x2f;09&#x2f;13 12&#x3a;28&#x3a;57.678</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -608,7 +608,7 @@
       </field>
       <field>
         <source_value/>
-        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_it_0</target_value>
+        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_de_0</target_value>
       </field>
     </fields>
     <cluster_schema/>
@@ -709,7 +709,7 @@
       </field>
       <field>
         <source_value/>
-        <target_value>IT&#x7c;Italy&#x7c;IT</target_value>
+        <target_value>DE&#x7c;Italy&#x7c;DE</target_value>
       </field>
     </fields>
     <cluster_schema/>

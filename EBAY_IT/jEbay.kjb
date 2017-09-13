@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;09&#x2f;13 10&#x3a;53&#x3a;50.146</modified_date>
+  <modified_date>2017&#x2f;09&#x2f;13 14&#x3a;37&#x3a;36.268</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>981</xloc>
-      <yloc>352</yloc>
+      <xloc>880</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -1197,7 +1197,7 @@
       <to>EBAY IT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1206,7 +1206,7 @@
       <to>EBAY AUS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
