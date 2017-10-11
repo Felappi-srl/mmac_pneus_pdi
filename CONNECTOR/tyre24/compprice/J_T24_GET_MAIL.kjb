@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;09&#x2f;06 14&#x3a;25&#x3a;29.421</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;11 09&#x3a;15&#x3a;12.665</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -440,14 +440,30 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>800</xloc>
+      <xloc>1024</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
-      <name>Nostro prezzo Posizione 1 IT</name>
+      <name>Nostro prezzo Posizione 1 IT e DE</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29;&#x3b;</sql>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29;&#x3b;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1024</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>PREZZO &#x3c;&#x3e;1 IT e DE</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO &#x2b;10 else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27; and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -460,10 +476,10 @@
       <yloc>144</yloc>
     </entry>
     <entry>
-      <name>PREZZO &#x3c;&#x3e;1 IT</name>
+      <name>SQL IT e DE ancora a zero</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27;</sql>
+      <sql>update linky_tyre24 set prezzoit&#x3d;listino where prezzoit &#x3d;0&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;listino&#x2b;10 where prezzode &#x3d;0&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -472,23 +488,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>144</yloc>
-    </entry>
-    <entry>
-      <name>SQL IT ancora a zero</name>
-      <description/>
-      <type>SQL</type>
-      <sql>update linky_tyre24 set prezzoit&#x3d;listino where prezzoit &#x3d;0&#x3b;&#xd;&#xa;</sql>
-      <useVariableSubstitution>F</useVariableSubstitution>
-      <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
-      <sendOneStatement>F</sendOneStatement>
-      <connection>LINKY</connection>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>448</xloc>
       <yloc>144</yloc>
     </entry>
     <entry>
@@ -524,7 +524,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>752</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -560,7 +560,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>912</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -599,7 +599,7 @@
       <name>COMPILO FR e DE</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24 set prezzode&#x3d;listino&#x2b;9 where prezzode &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;listino where prezzode &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino&#x2b;9 where prezzofr &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino where prezzofr &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update t24 set t24.gapold &#x3d; linky_tyre24_params.gap from  linky_tyre24 as t24, linky_tyre24_params&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_tyre24 set prezzode&#x3d;listino&#x2b;9 where prezzode &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;listino&#x2b;10 where prezzode &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino&#x2b;9 where prezzofr &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino where prezzofr &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update t24 set t24.gapold &#x3d; linky_tyre24_params.gap from  linky_tyre24 as t24, linky_tyre24_params&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -662,10 +662,10 @@
       <yloc>224</yloc>
     </entry>
     <entry>
-      <name>PREZZO &#x3d; 1 da aggiornare</name>
+      <name>PREZZO &#x3d; 1 da aggiornare IT e DE</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set prezzoit&#x3d;listino&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;</sql>
+      <sql>update t24&#xd;&#xa;set prezzoit&#x3d;listino&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;10&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -674,14 +674,50 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>640</xloc>
       <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_de</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_de</transname>
+      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>560</xloc>
+      <yloc>48</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
       <from>Azzero</from>
-      <to>Nostro prezzo Posizione 1 IT</to>
+      <to>Nostro prezzo Posizione 1 IT e DE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -689,8 +725,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Nostro prezzo Posizione 1 IT</from>
-      <to>PREZZO &#x3c;&#x3e;1 IT</to>
+      <from>Nostro prezzo Posizione 1 IT e DE</from>
+      <to>PREZZO &#x3c;&#x3e;1 IT e DE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -700,15 +736,6 @@
     <hop>
       <from>t_t24_get_compprice_cerchi_fr</from>
       <to>Azzero</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_t24_get_compprice_cerchi_de</from>
-      <to>t_t24_get_compprice</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -743,7 +770,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>SQL IT ancora a zero</from>
+      <from>SQL IT e DE ancora a zero</from>
       <to>Nostro prezzo Posizione 1 MAK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -806,8 +833,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>PREZZO &#x3c;&#x3e;1 IT</from>
-      <to>PREZZO &#x3d; 1 da aggiornare</to>
+      <from>PREZZO &#x3c;&#x3e;1 IT e DE</from>
+      <to>PREZZO &#x3d; 1 da aggiornare IT e DE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -815,8 +842,26 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>PREZZO &#x3d; 1 da aggiornare</from>
-      <to>SQL IT ancora a zero</to>
+      <from>PREZZO &#x3d; 1 da aggiornare IT e DE</from>
+      <to>SQL IT e DE ancora a zero</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_de</from>
+      <to>t_t24_get_compprice_de</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_de</from>
+      <to>t_t24_get_compprice</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

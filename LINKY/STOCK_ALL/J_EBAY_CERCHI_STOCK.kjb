@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;37&#x3a;53.599</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;08&#x2f;03 16&#x3a;12&#x3a;10.716</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;09 08&#x3a;39&#x3a;58.142</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -602,8 +602,8 @@
       <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1072</xloc>
-      <yloc>176</yloc>
+      <xloc>1344</xloc>
+      <yloc>320</yloc>
     </entry>
     <entry>
       <name>MAK 0 IT</name>
@@ -1136,20 +1136,31 @@
       <xloc>1072</xloc>
       <yloc>48</yloc>
     </entry>
+    <entry>
+      <name>DUMMY 2</name>
+      <description/>
+      <type>SPECIAL</type>
+      <start>N</start>
+      <dummy>Y</dummy>
+      <repeat>N</repeat>
+      <schedulerType>0</schedulerType>
+      <intervalSeconds>0</intervalSeconds>
+      <intervalMinutes>60</intervalMinutes>
+      <hour>12</hour>
+      <minutes>0</minutes>
+      <weekDay>1</weekDay>
+      <DayOfMonth>1</DayOfMonth>
+      <parallel>Y</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1088</xloc>
+      <yloc>256</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
       <from>J_OZR_EBAY_STOCK_ALL</from>
       <to>J_TECK_EBAY_STOCK_ALL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>J_WSP_EBAY_STOCK_ALL</from>
-      <to>Ebay MAK IT</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1204,15 +1215,6 @@
     <hop>
       <from>Ebay MAK NL</from>
       <to>Ebay MAK ES</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>J_WSP_EBAY_STOCK_ALL</from>
-      <to>MAK 0 US</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1361,15 +1363,6 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>J_WSP_EBAY_STOCK_ALL</from>
-      <to>t_write_log errore</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -1590,11 +1583,29 @@
     </hop>
     <hop>
       <from>J_MAK_EBAY_STOCK_APP_ALL</from>
-      <to>J_WSP_EBAY_STOCK_ALL</to>
+      <to>DUMMY 2</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>Ebay MAK IT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>MAK 0 US</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>

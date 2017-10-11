@@ -427,43 +427,18 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017&#x2f;05&#x2f;04 09&#x3a;43&#x3a;10.274</created_date>
+    <created_date>2017&#x2f;10&#x2f;11 09&#x3a;53&#x3a;50.243</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;04 10&#x3a;14&#x3a;04.028</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;11 10&#x3a;01&#x3a;37.826</modified_date>
     <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>CONNECTOR</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -473,10 +448,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -488,73 +463,16 @@
   </connection>
   <order>
     <hop>
-      <from>Table input</from>
-      <to>Stream lookup</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Da MAK</from>
-      <to>Stream lookup</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Stream lookup</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Dummy &#x28;do nothing&#x29;</from>
-      <to>Non essite in MAK</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Non essite in MAK</from>
-      <to>NO</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Non essite in MAK</from>
-      <to>SI</to>
+      <from>CATENE</from>
+      <to>articoli</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Da MAK</name>
+    <name>CATENE</name>
     <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>CONNECTOR</connection>
-    <sql>SELECT&#xd;&#xa;  MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, TIPOAUTO&#xd;&#xa;, PARTNUMBER&#xd;&#xa;, replace&#x28;ANNOAUTO, &#x27; &#x27;,&#x27;&#x27;&#x29; as annoauto&#xd;&#xa;, WHEELMODEL&#xd;&#xa;, FINISHING&#xd;&#xa;, OUT_PROD&#xd;&#xa;FROM linky_articoli_MAK&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>240</xloc>
-      <yloc>144</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -562,7 +480,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT&#xd;&#xa;  linky_ebay_var.siteID&#xd;&#xa;, linky_ebay_var.codice&#xd;&#xa;, linky_ebay_var.codicevar&#xd;&#xa;, linky_ebay_var.nome&#xd;&#xa;, linky_ebay_var.MARCAAUTO&#xd;&#xa;, linky_ebay_var.MODELLOAUTO&#xd;&#xa;, replace&#x28;linky_ebay_var.ANNOAUTO,&#x27; &#x27;,&#x27;&#x27;&#x29; as annoauto&#xd;&#xa;, linky_ebay_var.OUT_PROD&#xd;&#xa;FROM linky_ebay_var&#xd;&#xa;inner join linky_ebay on linky_ebay_var.codice &#x3d; linky_ebay.codice&#xd;&#xa;and linky_ebay.partner&#x3d;&#x27;MAK&#x27;&#xd;&#xa;and linky_ebay.product_in_stock&#x3e;0&#xd;&#xa;</sql>
+    <sql>SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;,&#x27;US&#x27; as siteid&#xd;&#xa;,&#x27;Italy&#x27; as country&#xd;&#xa;FROM linky_ebayarticoli e &#xd;&#xa;inner join linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and &#x27;US&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xa;category_path  in &#x28;&#x27;CATENE DA NEVE&#x27;&#x29;&#xd;&#xa;and &#x28;e.siteid&#x3d;&#x27;US&#x27;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -577,14 +495,14 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>32</yloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Stream lookup</name>
-    <type>StreamLookup</type>
+    <name>articoli</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -593,35 +511,87 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <from>Da MAK</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>codice</name>
-        <field>PARTNUMBER</field>
-      </key>
-      <key>
-        <name>ANNOAUTO</name>
-        <field>ANNOAUTO</field>
-      </key>
-      <key>
-        <name>MARCAAUTO</name>
-        <field>MARCAAUTO</field>
-      </key>
-      <key>
-        <name>MODELLOAUTO</name>
-        <field>MODELLOAUTO</field>
-      </key>
-      <value>
-        <name>PARTNUMBER</name>
-        <rename>CHECK</rename>
-        <default/>
+    <separator>&#x7c;</separator>
+    <enclosure/>
+    <enclosure_forced>Y</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_stock_us_0</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>csv</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>N</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>product_sku</name>
         <type>String</type>
-      </value>
-    </lookup>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>siteid</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>country</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>siteid</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -630,118 +600,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Non essite in MAK</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<send_true_to>NO</send_true_to>
-<send_false_to>SI</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>CHECK</leftvalue>
- <function>IS NULL</function>
- <rightvalue/>
- </condition>
-    </compare>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>NO</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>SI</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>672</xloc>
-      <yloc>32</yloc>
+      <xloc>416</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

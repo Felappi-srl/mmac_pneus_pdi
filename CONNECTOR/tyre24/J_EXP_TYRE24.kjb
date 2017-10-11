@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;09&#x2f;06 14&#x3a;25&#x3a;50.651</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;11 09&#x3a;35&#x3a;30.148</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,7 +339,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
+      <xloc>64</xloc>
       <yloc>448</yloc>
     </entry>
     <entry>

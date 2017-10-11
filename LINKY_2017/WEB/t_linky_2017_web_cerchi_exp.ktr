@@ -429,64 +429,16 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;03&#x2f;30 12&#x3a;30&#x3a;10.162</modified_date>
+    <modified_date>2017&#x2f;09&#x2f;19 15&#x3a;02&#x3a;13.390</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>BRIXIA</name>
-    <server>&#x24;&#x7b;DB_HOST&#x7d;</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>&#x24;&#x7b;DB_DB&#x7d;</database>
-    <port>5432</port>
-    <username>&#x24;&#x7b;DB_USER&#x7d;</username>
-    <password>&#x24;&#x7b;DB_PWD&#x7d;</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>BRIXIA_ODOO</name>
-    <server>&#x24;&#x7b;ODOO_HOST&#x7d;</server>
-    <type>OpenERPDatabaseMeta</type>
-    <access>Plugin</access>
-    <database>&#x24;&#x7b;ODOO_DB&#x7d;</database>
-    <port>8069</port>
-    <username>&#x24;&#x7b;ODOO_USER&#x7d;</username>
-    <password>&#x24;&#x7b;ODOO_PWD&#x7d;</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>8069</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -499,98 +451,17 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>LINKY</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
-    <access>Native</access>
-    <database>LINKY</database>
-    <port>1433</port>
-    <username>sa</username>
-    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>LINKY_2017</name>
-    <server>&#x24;&#x7b;DB_HOST_LINKY_2017&#x7d;</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>&#x24;&#x7b;DB_DB_LINKY_2017&#x7d;</database>
-    <port>3306</port>
-    <username>&#x24;&#x7b;DB_USER_LINKY_2017&#x7d;</username>
-    <password>&#x24;&#x7b;DB_PWD_LINKY_2017&#x7d;</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>LINKY_ODOO</name>
-    <server>&#x24;&#x7b;DB_HOST_ODOO&#x7d;</server>
-    <type>POSTGRESQL</type>
-    <access>Native</access>
-    <database>&#x24;&#x7b;DB_DB_ODOO&#x7d;</database>
-    <port>5432</port>
-    <username>&#x24;&#x7b;DB_USER_ODOO&#x7d;</username>
-    <password>&#x24;&#x7b;DB_PWD_ODOO&#x7d;</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>5432</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>Cerchi</from>
-      <to>Replace in string</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Replace in string</from>
       <to>Modified Java Script Value</to>
@@ -599,6 +470,41 @@
     <hop>
       <from>Modified Java Script Value</from>
       <to>cerchi.txt</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Modified Java Script Value 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value 2</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Replace in string</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -613,8 +519,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LINKY_2017</connection>
-    <sql>SELECT DISTINCT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xa;&#x27;MAK&#x27; as MARCA,&#xa;linky_articoli_mak.FINISHING,&#xa;linky_articoli_mak.RAGGIO,&#xa;linky_articoli_mak.CANALE,&#xa;linky_articoli_mak.NUMEROFORI,&#xa;linky_articoli_mak.OFFSET,&#xa;linky_articoli_mak.INTERASSE,&#xa;linky_articoli_mak.CB,&#xa;linky_articoli_mak.EANCODE,&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when linky_articoli_mak.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;GIACENZA&#x3e;0 and PREZZO&#x3e;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;MOMO&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;CANALE,&#xa;NUMEROFORI,&#xa;OFFSET,&#xa;INTERASSE,&#xa;CB,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, &#x27;LEGA&#x27; as TIPOLOGIA&#xa;&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;immagine is not null&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;OZR&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;CANALE,&#xa;NUMEROFORI,&#xa;OFFSET,&#xa;INTERASSE,&#xa;CB,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, &#x27;LEGA&#x27; as TIPOLOGIA&#xa;&#xa;FROM&#xa;linky_articoli_ozr&#xa;WHERE&#xa;immagine is not null&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;modello as MODELLO,&#xa;&#x27;WSP&#x27; as MARCA,&#xa;FINISHING,&#xa;diametro as RAGGIO,&#xa;larghezza as CANALE,&#xa;bolt as NUMEROFORI,&#xa;ET as OFFSET,&#xa;pcd as INTERASSE,&#xa;hub as CB,&#xa;&#x27;&#x27; as EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, &#x27;LEGA&#x27; as TIPOLOGIA&#xa;&#xa;FROM&#xa;linky_articoli_wsp&#xa;WHERE&#xa;immagine is not null&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;ALCAR&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;CANALE,&#xa;NUMEROFORI,&#xa;OFFSET,&#xa;INTERASSE,&#xa;CB,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, &#x27;LEGA&#x27; as TIPOLOGIA&#xa;&#xa;FROM&#xa;linky_articoli_alcar&#xa;&#xa;WHERE&#xa;immagine is not null&#xa;</sql>
+    <connection>CONNECTOR</connection>
+    <sql>SELECT DISTINCT&#xd;&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MAK&#x27; as MARCA,&#xd;&#xa;linky_articoli_mak.FINISHING,&#xd;&#xa;linky_articoli_mak.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_mak.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_mak.EANCODE,&#xd;&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when linky_articoli_mak.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MOMO&#x27; as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -664,8 +570,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>342</xloc>
-      <yloc>63</yloc>
+      <xloc>960</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -682,61 +588,6 @@
       <schema_name/>
     </partitioning>
     <fields>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>C.R. </replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>&#xd8;</replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>INTERASSE</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>,</replace_string>
-        <replace_by_string>.</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>CANALE</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>,</replace_string>
-        <replace_by_string>.</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>CB</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>,</replace_string>
-        <replace_by_string>.</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
       <field>
         <in_stream_name>CANALE</in_stream_name>
         <out_stream_name/>
@@ -757,8 +608,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>227</xloc>
-      <yloc>62</yloc>
+      <xloc>800</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -971,8 +822,304 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>494</xloc>
-      <yloc>61</yloc>
+      <xloc>1104</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;cb&#x3e;200&#x29;&#x7b;&#xd;&#xa;	cb_ok&#x3d;cb&#x2f;10&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	cb_ok&#x3d;cb&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>cb_ok</name>
+        <rename>cb_ok</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>SKU</name>
+        <rename/>
+      </field>      <field>        <name>MODELLO</name>
+        <rename/>
+      </field>      <field>        <name>MARCA</name>
+        <rename/>
+      </field>      <field>        <name>FINISHING</name>
+        <rename/>
+      </field>      <field>        <name>RAGGIO</name>
+        <rename/>
+      </field>      <field>        <name>CANALE</name>
+        <rename/>
+      </field>      <field>        <name>NUMEROFORI</name>
+        <rename/>
+      </field>      <field>        <name>OFFSET</name>
+        <rename/>
+      </field>      <field>        <name>INTERASSE</name>
+        <rename/>
+      </field>      <field>        <name>cb</name>
+        <rename/>
+      </field>      <field>        <name>EANCODE</name>
+        <rename/>
+      </field>      <field>        <name>IMMAGINE</name>
+        <rename/>
+      </field>      <field>        <name>TIPOLOGIA</name>
+        <rename/>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>cb</name>
+        <rename>cb</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>0.00</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>SKU</name>
+        <rename/>
+      </field>      <field>        <name>MODELLO</name>
+        <rename/>
+      </field>      <field>        <name>MARCA</name>
+        <rename/>
+      </field>      <field>        <name>FINISHING</name>
+        <rename/>
+      </field>      <field>        <name>RAGGIO</name>
+        <rename/>
+      </field>      <field>        <name>CANALE</name>
+        <rename/>
+      </field>      <field>        <name>NUMEROFORI</name>
+        <rename/>
+      </field>      <field>        <name>OFFSET</name>
+        <rename/>
+      </field>      <field>        <name>INTERASSE</name>
+        <rename/>
+      </field>      <field>        <name>EANCODE</name>
+        <rename/>
+      </field>      <field>        <name>IMMAGINE</name>
+        <rename/>
+      </field>      <field>        <name>TIPOLOGIA</name>
+        <rename/>
+      </field>      <field>        <name>cb_ok</name>
+        <rename/>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>cb_ok</name>
+        <rename>CB</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>0.00</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>SKU</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>SKU</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>FINISHING</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>MODELLO</in_stream_name>
+        <out_stream_name/>
+        <trim_type>none</trim_type>
+        <lower_upper>upper</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

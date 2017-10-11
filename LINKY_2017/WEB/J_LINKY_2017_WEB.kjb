@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;01&#x2f;04 11&#x3a;18&#x3a;00.693</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;06 12&#x3a;31&#x3a;15.243</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;11 08&#x3a;49&#x3a;57.186</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -313,8 +313,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>48</yloc>
+      <xloc>800</xloc>
+      <yloc>240</yloc>
     </entry>
     <entry>
       <name>t_linky_2017_web_pneumatici_exp</name>
@@ -349,8 +349,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>48</yloc>
+      <xloc>336</xloc>
+      <yloc>43</yloc>
     </entry>
     <entry>
       <name>Imposta variabili</name>
@@ -366,6 +366,222 @@
       <nr>0</nr>
       <xloc>189</xloc>
       <yloc>43</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_cerchi_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_cerchi_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
+      <yloc>43</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_auto_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_auto_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>704</xloc>
+      <yloc>43</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_autocerchi_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_autocerchi_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>912</xloc>
+      <yloc>43</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_giacenze_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_giacenze_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>912</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_autopneumatici_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_autopneumatici_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>704</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_ruotini_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_ruotini_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>496</xloc>
+      <yloc>128</yloc>
     </entry>
     <entry>
       <name>t_linky_2017_web_ruotinicerchi_exp</name>
@@ -400,8 +616,142 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
+      <xloc>288</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>Carica file con FTP</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>46.166.139.99</servername>
+      <serverport>21</serverport>
+      <username>tyreo_images</username>
+      <password>Encrypted 2be98afc86aa7f2e4f329bb21cd99e98d</password>
+      <remoteDirectory>&#x2f;interscambio_matrix</remoteDirectory>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;exp</localDirectory>
+      <wildcard>.&#x2a;&#x5c;.txt</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>368</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_catene_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_catene_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>80</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>t_linky_2017_web_autocatene_exp</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_linky_2017_web_autocatene_exp</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>80</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>Carica file con FTP PROD</name>
+      <description/>
+      <type>FTP_PUT</type>
+      <servername>www.tyreo.com</servername>
+      <serverport>21</serverport>
+      <username>tyreo_images</username>
+      <password>Encrypted 2be98afc86aa7f2e4f329bb21cd99e98d</password>
+      <remoteDirectory>&#x2f;interscambio_matrix</remoteDirectory>
+      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;exp</localDirectory>
+      <wildcard>.&#x2a;&#x5c;.txt</wildcard>
+      <binary>N</binary>
+      <timeout>0</timeout>
+      <remove>N</remove>
+      <only_new>N</only_new>
+      <active>N</active>
+      <control_encoding>ISO-8859-1</control_encoding>
+      <proxy_host/>
+      <proxy_port/>
+      <proxy_username/>
+      <proxy_password>Encrypted </proxy_password>
+      <socksproxy_host/>
+      <socksproxy_port>1080</socksproxy_port>
+      <socksproxy_username/>
+      <socksproxy_password>Encrypted </socksproxy_password>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
       <xloc>560</xloc>
-      <yloc>48</yloc>
+      <yloc>240</yloc>
     </entry>
   </entries>
   <hops>
@@ -425,6 +775,60 @@
     </hop>
     <hop>
       <from>t_linky_2017_web_pneumatici_exp</from>
+      <to>t_linky_2017_web_cerchi_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_cerchi_exp</from>
+      <to>t_linky_2017_web_auto_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_auto_exp</from>
+      <to>t_linky_2017_web_autocerchi_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_autocerchi_exp</from>
+      <to>t_linky_2017_web_giacenze_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_giacenze_exp</from>
+      <to>t_linky_2017_web_autopneumatici_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_autopneumatici_exp</from>
+      <to>t_linky_2017_web_ruotini_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_ruotini_exp</from>
       <to>t_linky_2017_web_ruotinicerchi_exp</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -434,6 +838,42 @@
     </hop>
     <hop>
       <from>t_linky_2017_web_ruotinicerchi_exp</from>
+      <to>t_linky_2017_web_catene_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_catene_exp</from>
+      <to>t_linky_2017_web_autocatene_exp</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_linky_2017_web_autocatene_exp</from>
+      <to>Carica file con FTP</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Carica file con FTP</from>
+      <to>Carica file con FTP PROD</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Carica file con FTP PROD</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
