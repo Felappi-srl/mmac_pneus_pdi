@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;27 09&#x3a;53&#x3a;34.614</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;12 11&#x3a;56&#x3a;46.255</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,7 +339,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>416</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -634,7 +634,7 @@
       <name>SISTEMA MARCHI</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;GT RADIAL&#x27; where&#xd;&#xa;marca in &#x28;&#x27;GT&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_integro_articoli set marca &#x3d; &#x27;ACCELERA EP&#x27; where&#xd;&#xa;marca in &#x28;&#x27;EP TYRES&#x27;,&#x27;EP-TYRES&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;SUPERIA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;SUPERIA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;TRISTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;TRISTAR FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;CST&#x27; where&#xd;&#xa;marca in &#x28;&#x27;CHENG SHIN&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;GT RADIAL&#x27; where&#xd;&#xa;marca in &#x28;&#x27;GT&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;BLACKLION&#x27; where&#xd;&#xa;marca in &#x28;&#x27;BLACK LION&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;DELI TYRE&#x27; where&#xd;&#xa;marca in &#x28;&#x27;DELI-TYRE&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;DOUBLESTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;DOUBLE STAR&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;FORTUNA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;FORTUNA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;IMPERIAL&#x27; where&#xd;&#xa;marca in &#x28;&#x27;IMPERIAL FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;KINGSTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;KING TYRE&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;KINGSTAR&#x27; where&#xd;&#xa;marca in &#x28;&#x27;KINGSTIRE&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;MINERVA&#x27; where&#xd;&#xa;marca in &#x28;&#x27;MINVERVA FS&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;THREE A&#x27; where&#xd;&#xa;marca in &#x28;&#x27;THREE-A&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_articoli set marca &#x3d; &#x27;WESTLAKE&#x27; where&#xd;&#xa;marca in &#x28;&#x27;WEST LAKE&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -917,15 +917,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>SPALLA</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_normalizza_ipcode</from>
       <to>Compila EAN</to>
       <from_nr>0</from_nr>
@@ -1014,6 +1005,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SPALLA</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;16.243</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;04&#x2f;06 08&#x3a;59&#x3a;37.448</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;18 16&#x3a;12&#x3a;01.904</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -451,6 +451,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -575,7 +576,7 @@
       <schema/>
       <table>linky_articoli_MOMO</table>
       <key>
-        <name>Marca auto</name>
+        <name>Costruttore</name>
         <field>MARCAAUTO</field>
         <condition>&#x3d;</condition>
         <name2/>
@@ -606,7 +607,7 @@
       </key>
       <value>
         <name>MARCAAUTO</name>
-        <rename>Marca auto</rename>
+        <rename>Costruttore</rename>
         <update>N</update>
       </value>
       <value>
@@ -761,7 +762,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;momo&#x5c;Lista Applicazioni Italia Mar17.xlsx</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;momo&#x5c;Lista Applicazioni Italia Settembre 2017_EAN.XLSX</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -769,11 +770,11 @@
     </file>
     <fields>
       <field>
-        <name>Marca auto</name>
+        <name>Costruttore</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -785,9 +786,9 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format>&#x23;</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
@@ -797,7 +798,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -805,11 +806,11 @@
         <group/>
       </field>
       <field>
-        <name>Nr. Omologazione</name>
+        <name>Omologazione EU</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -821,43 +822,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Mod. Anno</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>CB Vettura</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>PCD&#xa;Vettura</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -869,7 +834,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -877,11 +842,23 @@
         <group/>
       </field>
       <field>
-        <name>Nome ruota</name>
+        <name>EAN</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Modello Ruota</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -893,7 +870,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -901,11 +878,11 @@
         <group/>
       </field>
       <field>
-        <name>Colore</name>
+        <name>Finitura</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -913,11 +890,11 @@
         <group/>
       </field>
       <field>
-        <name>PCD Ruota</name>
+        <name>PCD</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -929,19 +906,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format>&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>CODICE EAN</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -949,11 +914,11 @@
         <group/>
       </field>
       <field>
-        <name>CB</name>
+        <name>Diam. Foro Centraggio</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -961,11 +926,11 @@
         <group/>
       </field>
       <field>
-        <name>Centraggio</name>
+        <name>Anello</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -973,11 +938,11 @@
         <group/>
       </field>
       <field>
-        <name>Codice Anello</name>
+        <name>Bulloneria</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -985,11 +950,11 @@
         <group/>
       </field>
       <field>
-        <name>Codice Bulloneria</name>
+        <name>Kit Nr&#xa;&#x28;set bulloneria &#x2b; anello centraggio per ruota&#x29;</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -997,13 +962,13 @@
         <group/>
       </field>
       <field>
-        <name>Note</name>
+        <name>Notes</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format>&#x23;</format>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
@@ -1013,7 +978,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -1025,7 +990,7 @@
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -1033,11 +998,11 @@
         <group/>
       </field>
       <field>
-        <name>Pneumatico_1</name>
+        <name>Asse</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -1045,59 +1010,11 @@
         <group/>
       </field>
       <field>
-        <name>Pneumatico_2</name>
+        <name>Pneumatico</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_3</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_4</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_5</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico_6</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>both</trim_type>
+        <trim_type>none</trim_type>
         <repeat>N</repeat>
         <format/>
         <currency/>
@@ -1107,7 +1024,7 @@
     </fields>
     <sheets>
       <sheet>
-        <name>Lista</name>
+        <name>Applicazione Italia</name>
         <startrow>3</startrow>
         <startcol>0</startcol>
         </sheet>
@@ -1199,10 +1116,32 @@
     </partitioning>
     <fields>
       <field>
-        <in_stream_name>CB</in_stream_name>
+        <in_stream_name>Diam. Foro Centraggio</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string> </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ET</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> </replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ET</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.0</replace_string>
         <replace_by_string/>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
@@ -1289,7 +1228,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>PCD Ruota</splitfield>
+   <splitfield>PCD</splitfield>
    <delimiter>x</delimiter>
    <enclosure/>
     <fields>      <field>        <name>Fori</name>

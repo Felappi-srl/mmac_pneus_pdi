@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;19.643</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;11 08&#x3a;27&#x3a;39.466</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;18 15&#x3a;12&#x3a;36.243</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -871,8 +871,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>64</yloc>
+      <xloc>608</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -913,71 +913,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>260</xloc>
-      <yloc>76</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Table input</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>LINKY</connection>
-    <sql>SELECT&#xd;&#xa;  ipcode as ipcodeperunivoco,&#xd;&#xa;  CODICETYRE as ipcode&#xd;&#xa;--, partner&#xd;&#xa;, DESCRIZIONE&#xd;&#xa;, MARCA&#xd;&#xa;, SETTORE&#xd;&#xa;, CODICELARGHEZZA&#xd;&#xa;, LARGHEZZA&#xd;&#xa;, CODICESERIE&#xd;&#xa;, SERIE&#xd;&#xa;, CODICECERCHIO&#xd;&#xa;, CERCHIO&#xd;&#xa;, CODICEVEL&#xd;&#xa;, VEL&#xd;&#xa;, CODICESTAGIONE&#xd;&#xa;, STAGIONE&#xd;&#xa;, LISTINO&#xd;&#xa;, GIACENZA&#xd;&#xa;, ICARICO&#xd;&#xa;, CODICEROTOLAMENTO&#xd;&#xa;, ROTOLAMENTO&#xd;&#xa;, CODICEADERENZA&#xd;&#xa;, ADERENZA&#xd;&#xa;, CODICERUMOROSITA&#xd;&#xa;, case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;OZR&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then &#x27;ALU&#x27; else &#xd;&#xa;RUMOROSITA end RUMOROSITA&#xd;&#xa;, case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else  EANCODE end as EANCODE&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_BELGIO&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_FRANCIA&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_OLANDA&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_GERMANIA&#xd;&#xa;FROM linky_tyre24 where giacenza &#x3e;0 and listino &#x3e;15&#xd;&#xa;--and ipcode&#x3d;&#x27;71517&#x27;&#xd;&#xa;--and partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;&#x29;&#xd;&#xa;and partner in &#x28;&#x27;CG&#x27;,&#x27;DEL&#x27;,&#x27;MAK&#x27;,&#x27;YOKO&#x27;,&#x27;TG&#x27;,&#x27;TY&#x27;,&#x27;MOMO&#x27;,&#x27;OZR&#x27;,&#x27;UNI&#x27;,&#x27;ALC&#x27;,&#x27;GO&#x27;,&#x27;BER&#x27;,&#x27;ETT&#x27;,&#x27;FIN&#x27;,&#x27;TRW&#x27;&#x29;&#xd;&#xa;and not &#x28;marca &#x3d;&#x27;BRIDGESTONE&#x27; and SETTORE &#x3d;&#x27;MOTO&#x27;&#x29; and listino is not null&#xd;&#xa;union all&#xd;&#xa;SELECT&#xd;&#xa;  ipcode as ipcodeperunivoco,&#xd;&#xa;  CODICETYRE as ipcode&#xd;&#xa;--, partner&#xd;&#xa;, DESCRIZIONE&#xd;&#xa;, MARCA&#xd;&#xa;, SETTORE&#xd;&#xa;, CODICELARGHEZZA&#xd;&#xa;, LARGHEZZA&#xd;&#xa;, CODICESERIE&#xd;&#xa;, SERIE&#xd;&#xa;, CODICECERCHIO&#xd;&#xa;, CERCHIO&#xd;&#xa;, CODICEVEL&#xd;&#xa;, VEL&#xd;&#xa;, CODICESTAGIONE&#xd;&#xa;, STAGIONE&#xd;&#xa;, LISTINO&#xd;&#xa;, GIACENZA&#xd;&#xa;, ICARICO&#xd;&#xa;, CODICEROTOLAMENTO&#xd;&#xa;, ROTOLAMENTO&#xd;&#xa;, CODICEADERENZA&#xd;&#xa;, ADERENZA&#xd;&#xa;, CODICERUMOROSITA&#xd;&#xa;, RUMOROSITA&#xd;&#xa;,  EANCODE&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_BELGIO&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_FRANCIA&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_OLANDA&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_GERMANIA&#xd;&#xa;FROM linky_tyre24 where giacenza &#x3e;0  and listino &#x3e;15&#xd;&#xa;--and partner in &#x28;&#x27;DEL&#x27;,&#x27;CG&#x27;,&#x27;TG&#x27;&#x29;&#xd;&#xa;and partner in &#x28;&#x27;PN&#x27;&#x29;&#xd;&#xa;--and ipcode&#x3d;&#x27;71517&#x27;&#xd;&#xa;and eancode is not null and listino is not null&#xd;&#xa;&#xd;&#xa;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
-      <yloc>76</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Unique rows</name>
-    <type>Unique</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <count_rows>N</count_rows>
-      <count_field/>
-      <reject_duplicate_row>N</reject_duplicate_row>
-      <error_description/>
-    <fields>      <field>        <name>ipcodeperunivoco</name>
-        <case_insensitive>N</case_insensitive>
-        </field>      </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>356</xloc>
-      <yloc>76</yloc>
+      <xloc>256</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1302,8 +1239,71 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>64</yloc>
+      <xloc>496</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Table input</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT&#xd;&#xa;  ipcode as ipcodeperunivoco,&#xd;&#xa;  CODICETYRE as ipcode&#xd;&#xa;--, partner&#xd;&#xa;, DESCRIZIONE&#xd;&#xa;, MARCA&#xd;&#xa;, SETTORE&#xd;&#xa;, CODICELARGHEZZA&#xd;&#xa;, LARGHEZZA&#xd;&#xa;, CODICESERIE&#xd;&#xa;, SERIE&#xd;&#xa;, CODICECERCHIO&#xd;&#xa;, CERCHIO&#xd;&#xa;, CODICEVEL&#xd;&#xa;, VEL&#xd;&#xa;, CODICESTAGIONE&#xd;&#xa;, STAGIONE&#xd;&#xa;, LISTINO&#xd;&#xa;, GIACENZA&#xd;&#xa;, ICARICO&#xd;&#xa;, CODICEROTOLAMENTO&#xd;&#xa;, ROTOLAMENTO&#xd;&#xa;, CODICEADERENZA&#xd;&#xa;, ADERENZA&#xd;&#xa;, CODICERUMOROSITA&#xd;&#xa;, case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;OZR&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then &#x27;ALU&#x27; else &#xd;&#xa;RUMOROSITA end RUMOROSITA&#xd;&#xa;, case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else  EANCODE end as EANCODE&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_BELGIO&#xd;&#xa;, case when partner&#x3d;&#x27;MAK&#x27; then PREZZOFR else&#xd;&#xa;	LISTINO &#x2b;case when partner in &#x28;&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end end as LISTINO_FRANCIA&#xd;&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_OLANDA&#xd;&#xa;, case when partner&#x3d;&#x27;MAK&#x27; then PREZZODE else&#xd;&#xa;case when marca&#x3d;&#x27;OZ Racing&#x27; then 0 else&#xd;&#xa;LISTINO &#x2b;case when partner in &#x28;&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end end end as LISTINO_GERMANIA&#xd;&#xa;FROM linky_tyre24 where giacenza &#x3e;0 and listino &#x3e;15&#xd;&#xa;--and ipcode&#x3d;&#x27;71517&#x27;&#xd;&#xa;--and partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;&#x29;&#xd;&#xa;and partner in &#x28;&#x27;CG&#x27;,&#x27;DEL&#x27;,&#x27;MAK&#x27;,&#x27;YOKO&#x27;,&#x27;TG&#x27;,&#x27;TY&#x27;,&#x27;MOMO&#x27;,&#x27;OZR&#x27;,&#x27;UNI&#x27;,&#x27;ALC&#x27;,&#x27;GO&#x27;,&#x27;BER&#x27;,&#x27;ETT&#x27;,&#x27;FIN&#x27;,&#x27;TRW&#x27;&#x29;&#xd;&#xa;and not &#x28;marca &#x3d;&#x27;BRIDGESTONE&#x27; and SETTORE &#x3d;&#x27;MOTO&#x27;&#x29; and listino is not null&#xd;&#xa;union all&#xd;&#xa;SELECT&#xd;&#xa;  ipcode as ipcodeperunivoco,&#xd;&#xa;  CODICETYRE as ipcode&#xd;&#xa;--, partner&#xd;&#xa;, DESCRIZIONE&#xd;&#xa;, MARCA&#xd;&#xa;, SETTORE&#xd;&#xa;, CODICELARGHEZZA&#xd;&#xa;, LARGHEZZA&#xd;&#xa;, CODICESERIE&#xd;&#xa;, SERIE&#xd;&#xa;, CODICECERCHIO&#xd;&#xa;, CERCHIO&#xd;&#xa;, CODICEVEL&#xd;&#xa;, VEL&#xd;&#xa;, CODICESTAGIONE&#xd;&#xa;, STAGIONE&#xd;&#xa;, LISTINO&#xd;&#xa;, GIACENZA&#xd;&#xa;, ICARICO&#xd;&#xa;, CODICEROTOLAMENTO&#xd;&#xa;, ROTOLAMENTO&#xd;&#xa;, CODICEADERENZA&#xd;&#xa;, ADERENZA&#xd;&#xa;, CODICERUMOROSITA&#xd;&#xa;, RUMOROSITA&#xd;&#xa;,  EANCODE&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_BELGIO&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_FRANCIA&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_OLANDA&#xd;&#xa;, LISTINO &#x2b;10 as LISTINO_GERMANIA&#xd;&#xa;FROM linky_tyre24 where giacenza &#x3e;0  and listino &#x3e;15&#xd;&#xa;--and partner in &#x28;&#x27;DEL&#x27;,&#x27;CG&#x27;,&#x27;TG&#x27;&#x29;&#xd;&#xa;and partner in &#x28;&#x27;PN&#x27;&#x29;&#xd;&#xa;--and ipcode&#x3d;&#x27;71517&#x27;&#xd;&#xa;and eancode is not null and listino is not null&#xd;&#xa;&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>144</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>ipcodeperunivoco</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

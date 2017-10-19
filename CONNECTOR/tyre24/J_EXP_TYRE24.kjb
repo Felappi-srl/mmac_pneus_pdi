@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;11 09&#x3a;35&#x3a;30.148</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;18 15&#x3a;17&#x3a;45.909</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -671,7 +671,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>448</xloc>
-      <yloc>288</yloc>
+      <yloc>272</yloc>
     </entry>
     <entry>
       <name>t_UPD_OZ_to_TYRE24</name>
@@ -742,7 +742,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
+      <xloc>448</xloc>
       <yloc>352</yloc>
     </entry>
     <entry>
@@ -927,7 +927,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>560</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -1010,8 +1010,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
-      <yloc>432</yloc>
+      <xloc>416</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>FTP reiwadirekt</name>
@@ -1186,7 +1186,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>688</xloc>
-      <yloc>192</yloc>
+      <yloc>208</yloc>
     </entry>
     <entry>
       <name>FTP innoting</name>
@@ -1413,8 +1413,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>192</yloc>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>J_IMP_PREZZI_OVERRIDES</name>
