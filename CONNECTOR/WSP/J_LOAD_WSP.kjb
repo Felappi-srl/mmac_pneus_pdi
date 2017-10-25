@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;09.302</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;25 13&#x3a;38&#x3a;25.105</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;25 16&#x3a;06&#x3a;24.089</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -398,7 +398,7 @@
       <name>CAt EBAY</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_WSP set categoria&#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953&#x27;</sql>
+      <sql>update linky_articoli_WSP set categoria&#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953,CH-179679,IE-179679&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

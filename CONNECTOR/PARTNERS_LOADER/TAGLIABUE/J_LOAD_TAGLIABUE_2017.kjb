@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.523</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;08&#x2f;03 17&#x3a;08&#x3a;15.091</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;25 15&#x3a;23&#x3a;02.244</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -649,7 +649,7 @@
       <name>CATEGORIA</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680, AU-66471&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_catene set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-40278,DE-40278, NL-40278, FR-18329, UK-9885, ES-40278, US-180090, AU-33746&#x27;&#x3b;</sql>
+      <sql>update linky_integro_articoli set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-9891, NL-9891, FR-179680, UK-9891, ES-179680, AU-66471, CH-179680,IE-179680&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_catene set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-40278,DE-40278, NL-40278, FR-18329, UK-9885, ES-40278, US-180090, AU-33746,CH-40278,IE-40278&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
