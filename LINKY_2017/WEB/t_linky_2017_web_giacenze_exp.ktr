@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;11 15&#x3a;42&#x3a;58.166</modified_date>
+    <modified_date>2017&#x2f;10&#x2f;25 09&#x3a;26&#x3a;07.850</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -609,16 +609,65 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Append pneus accssori</from>
-      <to>giacenze.txt</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select accessori</from>
       <to>Append pneus accssori</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Append pneus accssori</from>
+      <to>Dummy &#x28;do nothing&#x29; 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 3</from>
+      <to>giacenze.txt</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 3</from>
+      <to>giacenze.txt virgola</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>GIACENZA</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>100</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step>
     <name>Append catene</name>
     <type>Append</type>
@@ -695,6 +744,33 @@
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Append pneus accssori</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<head_name>Append pneus catene</head_name>
+<tail_name>Select accessori</tail_name>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1355,7 +1431,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where GIACENZA&#x3e;0 and listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
+    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;,LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where GIACENZA&#x3e;0 and listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1517,6 +1593,152 @@
     <GUI>
       <xloc>832</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Microsoft Excel Input</name>
+    <type>ExcelInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <header>Y</header>
+    <noempty>Y</noempty>
+    <stoponempty>N</stoponempty>
+    <filefield/>
+    <sheetfield/>
+    <sheetrownumfield/>
+    <rownumfield/>
+    <sheetfield/>
+    <filefield/>
+    <limit>0</limit>
+    <encoding/>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <accept_filenames>N</accept_filenames>
+    <accept_field/>
+    <accept_stepname/>
+    <file>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;MAK ACCESSORIES &#x26; SPARE PARTS with price 2017.xlsx</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>SKU</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>DESCRIZIONE</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>DIAMETRO</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>NOTE</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>PREZZO</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>TIPOLOGIA</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+    </fields>
+    <sheets>
+      <sheet>
+        <name>Foglio da usare per eurostep</name>
+        <startrow>0</startrow>
+        <startcol>0</startcol>
+        </sheet>
+    </sheets>
+    <strict_types>N</strict_types>
+    <error_ignored>N</error_ignored>
+    <error_line_skipped>N</error_line_skipped>
+    <bad_line_files_destination_directory/>
+    <bad_line_files_extension>warning</bad_line_files_extension>
+    <error_line_files_destination_directory/>
+    <error_line_files_extension>error</error_line_files_extension>
+    <line_number_files_destination_directory/>
+    <line_number_files_extension>line</line_number_files_extension>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <spreadsheet_type>POI</spreadsheet_type>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2280,6 +2502,35 @@
     </step>
 
   <step>
+    <name>Select accessori</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>SKU</name>
+      </field>      <field>        <name>GIACENZA</name>
+      </field>      <field>        <name>PREZZO</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Select catene</name>
     <type>SelectValues</type>
     <description/>
@@ -2353,9 +2604,7 @@
     <fields>      <field>        <name>Codice</name>
         <rename>SKU</rename>
       </field>      <field>        <name>product_in_stock</name>
-        <rename/>
       </field>      <field>        <name>prezzo</name>
-        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>product_in_stock</name>
         <rename>GIACENZA</rename>
@@ -2781,15 +3030,40 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1152</xloc>
+      <xloc>1248</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Microsoft Excel Input</name>
-    <type>ExcelInput</type>
+    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>giacenze.txt virgola</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2798,164 +3072,73 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <separator>,</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
-    <noempty>Y</noempty>
-    <stoponempty>N</stoponempty>
-    <filefield/>
-    <sheetfield/>
-    <sheetrownumfield/>
-    <rownumfield/>
-    <sheetfield/>
-    <filefield/>
-    <limit>0</limit>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <accept_filenames>N</accept_filenames>
-    <accept_field/>
-    <accept_stepname/>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;MAK ACCESSORIES &#x26; SPARE PARTS with price 2017.xlsx</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;giacenzeprezzi</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
     </file>
     <fields>
       <field>
         <name>SKU</name>
         <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
         <format/>
         <currency/>
         <decimal/>
         <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <name>DESCRIZIONE</name>
+        <name>GIACENZA</name>
         <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-      </field>
-      <field>
-        <name>DIAMETRO</name>
-        <type>Number</type>
+        <nullif/>
+        <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>NOTE</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
       </field>
       <field>
         <name>PREZZO</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>TIPOLOGIA</name>
         <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-      </field>
-    </fields>
-    <sheets>
-      <sheet>
-        <name>Foglio da usare per eurostep</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-    </sheets>
-    <strict_types>N</strict_types>
-    <error_ignored>N</error_ignored>
-    <error_line_skipped>N</error_line_skipped>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <spreadsheet_type>POI</spreadsheet_type>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1008</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Add constants</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>GIACENZA</name>
-        <type>Integer</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>100</nullif>
+        <nullif/>
+        <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
       </field>
     </fields>
     <cluster_schema/>
@@ -2966,67 +3149,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Select accessori</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      <field>        <name>SKU</name>
-        <rename/>
-      </field>      <field>        <name>GIACENZA</name>
-        <rename/>
-      </field>      <field>        <name>PREZZO</name>
-        <rename/>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1008</xloc>
+      <xloc>1248</xloc>
       <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Append pneus accssori</name>
-    <type>Append</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-<head_name>Append pneus catene</head_name>
-<tail_name>Select accessori</tail_name>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1008</xloc>
-      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
