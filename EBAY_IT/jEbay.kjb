@@ -1,15 +1,15 @@
 <job>
   <name>jEbay</name>
-  <description>Job principale per la gestione dell'aggiornamento prodotti sul web</description>
-  <extended_description />
-  <job_version />
+  <description>Job principale per la gestione dell&#x27;aggiornamento prodotti sul web</description>
+  <extended_description/>
+  <job_version/>
   <job_status>0</job_status>
-  <directory>/EBAY_IT</directory>
+  <directory>&#x2f;EBAY_IT</directory>
   <created_user>admin</created_user>
-  <created_date>2012/07/27 16:26:47.630</created_date>
+  <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017/10/11 12:05:54.071</modified_date>
-  <parameters>
+  <modified_date>2017&#x2f;10&#x2f;19 09&#x3a;23&#x3a;03.769</modified_date>
+    <parameters>
     </parameters>
   <connection>
     <name>LINKY</name>
@@ -20,334 +20,301 @@
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQLUseIntegratedSecurity</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1433</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
-  <slaveservers>
+    <slaveservers>
     </slaveservers>
-  <job-log-table>
-    <connection />
-    <schema />
-    <table />
-    <size_limit_lines />
-    <interval />
-    <timeout_days />
-    <field>
-      <id>ID_JOB</id>
-      <enabled>Y</enabled>
-      <name>ID_JOB</name>
-    </field>
-    <field>
-      <id>CHANNEL_ID</id>
-      <enabled>Y</enabled>
-      <name>CHANNEL_ID</name>
-    </field>
-    <field>
-      <id>JOBNAME</id>
-      <enabled>Y</enabled>
-      <name>JOBNAME</name>
-    </field>
-    <field>
-      <id>STATUS</id>
-      <enabled>Y</enabled>
-      <name>STATUS</name>
-    </field>
-    <field>
-      <id>LINES_READ</id>
-      <enabled>Y</enabled>
-      <name>LINES_READ</name>
-    </field>
-    <field>
-      <id>LINES_WRITTEN</id>
-      <enabled>Y</enabled>
-      <name>LINES_WRITTEN</name>
-    </field>
-    <field>
-      <id>LINES_UPDATED</id>
-      <enabled>Y</enabled>
-      <name>LINES_UPDATED</name>
-    </field>
-    <field>
-      <id>LINES_INPUT</id>
-      <enabled>Y</enabled>
-      <name>LINES_INPUT</name>
-    </field>
-    <field>
-      <id>LINES_OUTPUT</id>
-      <enabled>Y</enabled>
-      <name>LINES_OUTPUT</name>
-    </field>
-    <field>
-      <id>LINES_REJECTED</id>
-      <enabled>Y</enabled>
-      <name>LINES_REJECTED</name>
-    </field>
-    <field>
-      <id>ERRORS</id>
-      <enabled>Y</enabled>
-      <name>ERRORS</name>
-    </field>
-    <field>
-      <id>STARTDATE</id>
-      <enabled>Y</enabled>
-      <name>STARTDATE</name>
-    </field>
-    <field>
-      <id>ENDDATE</id>
-      <enabled>Y</enabled>
-      <name>ENDDATE</name>
-    </field>
-    <field>
-      <id>LOGDATE</id>
-      <enabled>Y</enabled>
-      <name>LOGDATE</name>
-    </field>
-    <field>
-      <id>DEPDATE</id>
-      <enabled>Y</enabled>
-      <name>DEPDATE</name>
-    </field>
-    <field>
-      <id>REPLAYDATE</id>
-      <enabled>Y</enabled>
-      <name>REPLAYDATE</name>
-    </field>
-    <field>
-      <id>LOG_FIELD</id>
-      <enabled>Y</enabled>
-      <name>LOG_FIELD</name>
-    </field>
-    <field>
-      <id>EXECUTING_SERVER</id>
-      <enabled>N</enabled>
-      <name>EXECUTING_SERVER</name>
-    </field>
-    <field>
-      <id>EXECUTING_USER</id>
-      <enabled>N</enabled>
-      <name>EXECUTING_USER</name>
-    </field>
-    <field>
-      <id>START_JOB_ENTRY</id>
-      <enabled>N</enabled>
-      <name>START_JOB_ENTRY</name>
-    </field>
-    <field>
-      <id>CLIENT</id>
-      <enabled>N</enabled>
-      <name>CLIENT</name>
-    </field>
-  </job-log-table>
-  <jobentry-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
-    <field>
-      <id>ID_BATCH</id>
-      <enabled>Y</enabled>
-      <name>ID_BATCH</name>
-    </field>
-    <field>
-      <id>CHANNEL_ID</id>
-      <enabled>Y</enabled>
-      <name>CHANNEL_ID</name>
-    </field>
-    <field>
-      <id>LOG_DATE</id>
-      <enabled>Y</enabled>
-      <name>LOG_DATE</name>
-    </field>
-    <field>
-      <id>JOBNAME</id>
-      <enabled>Y</enabled>
-      <name>TRANSNAME</name>
-    </field>
-    <field>
-      <id>JOBENTRYNAME</id>
-      <enabled>Y</enabled>
-      <name>STEPNAME</name>
-    </field>
-    <field>
-      <id>LINES_READ</id>
-      <enabled>Y</enabled>
-      <name>LINES_READ</name>
-    </field>
-    <field>
-      <id>LINES_WRITTEN</id>
-      <enabled>Y</enabled>
-      <name>LINES_WRITTEN</name>
-    </field>
-    <field>
-      <id>LINES_UPDATED</id>
-      <enabled>Y</enabled>
-      <name>LINES_UPDATED</name>
-    </field>
-    <field>
-      <id>LINES_INPUT</id>
-      <enabled>Y</enabled>
-      <name>LINES_INPUT</name>
-    </field>
-    <field>
-      <id>LINES_OUTPUT</id>
-      <enabled>Y</enabled>
-      <name>LINES_OUTPUT</name>
-    </field>
-    <field>
-      <id>LINES_REJECTED</id>
-      <enabled>Y</enabled>
-      <name>LINES_REJECTED</name>
-    </field>
-    <field>
-      <id>ERRORS</id>
-      <enabled>Y</enabled>
-      <name>ERRORS</name>
-    </field>
-    <field>
-      <id>RESULT</id>
-      <enabled>Y</enabled>
-      <name>RESULT</name>
-    </field>
-    <field>
-      <id>NR_RESULT_ROWS</id>
-      <enabled>Y</enabled>
-      <name>NR_RESULT_ROWS</name>
-    </field>
-    <field>
-      <id>NR_RESULT_FILES</id>
-      <enabled>Y</enabled>
-      <name>NR_RESULT_FILES</name>
-    </field>
-    <field>
-      <id>LOG_FIELD</id>
-      <enabled>N</enabled>
-      <name>LOG_FIELD</name>
-    </field>
-    <field>
-      <id>COPY_NR</id>
-      <enabled>N</enabled>
-      <name>COPY_NR</name>
-    </field>
-  </jobentry-log-table>
-  <channel-log-table>
-    <connection />
-    <schema />
-    <table />
-    <timeout_days />
-    <field>
-      <id>ID_BATCH</id>
-      <enabled>Y</enabled>
-      <name>ID_BATCH</name>
-    </field>
-    <field>
-      <id>CHANNEL_ID</id>
-      <enabled>Y</enabled>
-      <name>CHANNEL_ID</name>
-    </field>
-    <field>
-      <id>LOG_DATE</id>
-      <enabled>Y</enabled>
-      <name>LOG_DATE</name>
-    </field>
-    <field>
-      <id>LOGGING_OBJECT_TYPE</id>
-      <enabled>Y</enabled>
-      <name>LOGGING_OBJECT_TYPE</name>
-    </field>
-    <field>
-      <id>OBJECT_NAME</id>
-      <enabled>Y</enabled>
-      <name>OBJECT_NAME</name>
-    </field>
-    <field>
-      <id>OBJECT_COPY</id>
-      <enabled>Y</enabled>
-      <name>OBJECT_COPY</name>
-    </field>
-    <field>
-      <id>REPOSITORY_DIRECTORY</id>
-      <enabled>Y</enabled>
-      <name>REPOSITORY_DIRECTORY</name>
-    </field>
-    <field>
-      <id>FILENAME</id>
-      <enabled>Y</enabled>
-      <name>FILENAME</name>
-    </field>
-    <field>
-      <id>OBJECT_ID</id>
-      <enabled>Y</enabled>
-      <name>OBJECT_ID</name>
-    </field>
-    <field>
-      <id>OBJECT_REVISION</id>
-      <enabled>Y</enabled>
-      <name>OBJECT_REVISION</name>
-    </field>
-    <field>
-      <id>PARENT_CHANNEL_ID</id>
-      <enabled>Y</enabled>
-      <name>PARENT_CHANNEL_ID</name>
-    </field>
-    <field>
-      <id>ROOT_CHANNEL_ID</id>
-      <enabled>Y</enabled>
-      <name>ROOT_CHANNEL_ID</name>
-    </field>
-  </channel-log-table>
-  <pass_batchid>N</pass_batchid>
-  <shared_objects_file />
+      <job-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
+        <field>
+          <id>ID_JOB</id>
+          <enabled>Y</enabled>
+          <name>ID_JOB</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>JOBNAME</id>
+          <enabled>Y</enabled>
+          <name>JOBNAME</name>
+        </field>
+        <field>
+          <id>STATUS</id>
+          <enabled>Y</enabled>
+          <name>STATUS</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>STARTDATE</id>
+          <enabled>Y</enabled>
+          <name>STARTDATE</name>
+        </field>
+        <field>
+          <id>ENDDATE</id>
+          <enabled>Y</enabled>
+          <name>ENDDATE</name>
+        </field>
+        <field>
+          <id>LOGDATE</id>
+          <enabled>Y</enabled>
+          <name>LOGDATE</name>
+        </field>
+        <field>
+          <id>DEPDATE</id>
+          <enabled>Y</enabled>
+          <name>DEPDATE</name>
+        </field>
+        <field>
+          <id>REPLAYDATE</id>
+          <enabled>Y</enabled>
+          <name>REPLAYDATE</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>Y</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>EXECUTING_SERVER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_SERVER</name>
+        </field>
+        <field>
+          <id>EXECUTING_USER</id>
+          <enabled>N</enabled>
+          <name>EXECUTING_USER</name>
+        </field>
+        <field>
+          <id>START_JOB_ENTRY</id>
+          <enabled>N</enabled>
+          <name>START_JOB_ENTRY</name>
+        </field>
+        <field>
+          <id>CLIENT</id>
+          <enabled>N</enabled>
+          <name>CLIENT</name>
+        </field>
+      </job-log-table>
+      <jobentry-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>JOBNAME</id>
+          <enabled>Y</enabled>
+          <name>TRANSNAME</name>
+        </field>
+        <field>
+          <id>JOBENTRYNAME</id>
+          <enabled>Y</enabled>
+          <name>STEPNAME</name>
+        </field>
+        <field>
+          <id>LINES_READ</id>
+          <enabled>Y</enabled>
+          <name>LINES_READ</name>
+        </field>
+        <field>
+          <id>LINES_WRITTEN</id>
+          <enabled>Y</enabled>
+          <name>LINES_WRITTEN</name>
+        </field>
+        <field>
+          <id>LINES_UPDATED</id>
+          <enabled>Y</enabled>
+          <name>LINES_UPDATED</name>
+        </field>
+        <field>
+          <id>LINES_INPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_INPUT</name>
+        </field>
+        <field>
+          <id>LINES_OUTPUT</id>
+          <enabled>Y</enabled>
+          <name>LINES_OUTPUT</name>
+        </field>
+        <field>
+          <id>LINES_REJECTED</id>
+          <enabled>Y</enabled>
+          <name>LINES_REJECTED</name>
+        </field>
+        <field>
+          <id>ERRORS</id>
+          <enabled>Y</enabled>
+          <name>ERRORS</name>
+        </field>
+        <field>
+          <id>RESULT</id>
+          <enabled>Y</enabled>
+          <name>RESULT</name>
+        </field>
+        <field>
+          <id>NR_RESULT_ROWS</id>
+          <enabled>Y</enabled>
+          <name>NR_RESULT_ROWS</name>
+        </field>
+        <field>
+          <id>NR_RESULT_FILES</id>
+          <enabled>Y</enabled>
+          <name>NR_RESULT_FILES</name>
+        </field>
+        <field>
+          <id>LOG_FIELD</id>
+          <enabled>N</enabled>
+          <name>LOG_FIELD</name>
+        </field>
+        <field>
+          <id>COPY_NR</id>
+          <enabled>N</enabled>
+          <name>COPY_NR</name>
+        </field>
+      </jobentry-log-table>
+      <channel-log-table>
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
+        <field>
+          <id>ID_BATCH</id>
+          <enabled>Y</enabled>
+          <name>ID_BATCH</name>
+        </field>
+        <field>
+          <id>CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>LOG_DATE</id>
+          <enabled>Y</enabled>
+          <name>LOG_DATE</name>
+        </field>
+        <field>
+          <id>LOGGING_OBJECT_TYPE</id>
+          <enabled>Y</enabled>
+          <name>LOGGING_OBJECT_TYPE</name>
+        </field>
+        <field>
+          <id>OBJECT_NAME</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_NAME</name>
+        </field>
+        <field>
+          <id>OBJECT_COPY</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_COPY</name>
+        </field>
+        <field>
+          <id>REPOSITORY_DIRECTORY</id>
+          <enabled>Y</enabled>
+          <name>REPOSITORY_DIRECTORY</name>
+        </field>
+        <field>
+          <id>FILENAME</id>
+          <enabled>Y</enabled>
+          <name>FILENAME</name>
+        </field>
+        <field>
+          <id>OBJECT_ID</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_ID</name>
+        </field>
+        <field>
+          <id>OBJECT_REVISION</id>
+          <enabled>Y</enabled>
+          <name>OBJECT_REVISION</name>
+        </field>
+        <field>
+          <id>PARENT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>PARENT_CHANNEL_ID</name>
+        </field>
+        <field>
+          <id>ROOT_CHANNEL_ID</id>
+          <enabled>Y</enabled>
+          <name>ROOT_CHANNEL_ID</name>
+        </field>
+      </channel-log-table>
+   <pass_batchid>N</pass_batchid>
+   <shared_objects_file/>
   <entries>
     <entry>
       <name>START</name>
-      <description />
+      <description/>
       <type>SPECIAL</type>
       <start>Y</start>
       <dummy>N</dummy>
@@ -367,7 +334,7 @@
     </entry>
     <entry>
       <name>Success</name>
-      <description />
+      <description/>
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -377,45 +344,45 @@
     </entry>
     <entry>
       <name>Set variables</name>
-      <description />
+      <description/>
       <type>SET_VARIABLES</type>
       <replacevars>N</replacevars>
-      <filename />
+      <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
           <variable_name>rootpath</variable_name>
-          <variable_value>c:\linky\pneus\</variable_value>
+          <variable_value>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>fotopath</variable_name>
-          <variable_value>c:\linky\pneus\immagini\</variable_value>
+          <variable_value>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;immagini&#x5c;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>trasfpath</variable_name>
-          <variable_value>/linky/pneus/immagini/trasferimenti/</variable_value>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>fototrasferite</variable_name>
-          <variable_value>/linky/pneus/immagini/trasferite/</variable_value>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferite&#x2f;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>trasfpathres</variable_name>
-          <variable_value>/linky/pneus/immagini/trasferimenti/resized/JPEG/</variable_value>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;resized&#x2f;JPEG&#x2f;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>trasfok</variable_name>
-          <variable_value>/linky/pneus/immagini/trasferimenti/ok/</variable_value>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferimenti&#x2f;ok&#x2f;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
         <field>
           <variable_name>fototrasferiteres</variable_name>
-          <variable_value>/linky/pneus/immagini/trasferite/resized/JPEG/</variable_value>
+          <variable_value>&#x2f;linky&#x2f;pneus&#x2f;immagini&#x2f;trasferite&#x2f;resized&#x2f;JPEG&#x2f;</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
@@ -427,32 +394,31 @@
     </entry>
     <entry>
       <name>tweb_CaricaNomiImmagini</name>
-      <description />
+      <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id />
-      <filename />
+      <trans_object_id/>
+      <filename/>
       <transname>tweb_CaricaNomiImmagini</transname>
-      <directory>/WEB</directory>
+      <directory>&#x2f;WEB</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -464,20 +430,20 @@
     </entry>
     <entry>
       <name>EBAY IT</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_it batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_it batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -487,12 +453,12 @@
     </entry>
     <entry>
       <name>SQL</name>
-      <description />
+      <description/>
       <type>SQL</type>
-      <sql>update linky_ebayarticoli set pubblicato='N'</sql>
+      <sql>update linky_ebayarticoli set pubblicato&#x3d;&#x27;N&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename />
+      <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -503,20 +469,20 @@
     </entry>
     <entry>
       <name>EBAY DE</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_de batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_de batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -526,32 +492,31 @@
     </entry>
     <entry>
       <name>t_ebay_InsertArticoli_CG</name>
-      <description />
+      <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id />
-      <filename />
+      <trans_object_id/>
+      <filename/>
       <transname>t_ebay_InsertArticoli_CG</transname>
-      <directory>/CONNECTOR/centrogomme</directory>
+      <directory>&#x2f;CONNECTOR&#x2f;centrogomme</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name />
+      <slave_server_name/>
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
-      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -563,20 +528,20 @@
     </entry>
     <entry>
       <name>EBAY NL</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_nl batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_nl batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -586,20 +551,20 @@
     </entry>
     <entry>
       <name>EBAY UK</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_uk batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_uk batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -609,12 +574,12 @@
     </entry>
     <entry>
       <name>PARTNERS Stock 0</name>
-      <description />
+      <description/>
       <type>SQL</type>
-      <sql>update linky_ebayarticoli set product_in_stock=0 where partner in (select codicepartner from linky_partners where tipo='PNEUMATICI')</sql>
+      <sql>update linky_ebayarticoli set product_in_stock&#x3d;0 where partner in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;PNEUMATICI&#x27;&#x29;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename />
+      <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -625,60 +590,12 @@
     </entry>
     <entry>
       <name>CG Update stock</name>
-      <description />
+      <description/>
       <type>SQL</type>
-      <sql>UPDATE  L
-SET 
-l.prezzo=prezzoscontato, 
-l.prezzolistino=prezzoscontato , 
-l.category_path=settore , 
-l.product_publish='Y',
-l.product_in_stock=	giacenza , 
-l.product_available='12234563' , 
-l.pubblicato=	'Y',
-l.product_full_image= 'http://s3-eu-west-1.amazonaws.com/cdn.pneus-center.it/web/foto/' + ltrim(rtrim(lower(cast(immagine as varchar(max))))) + '.jpg' ,
-l.product_thumb_image= 'http://s3-eu-west-1.amazonaws.com/cdn.pneus-center.it/web/foto/resized/' + ltrim(rtrim(lower(cast(immagine as varchar(max))))) + '.jpg'
-,l.nome= 'GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,linky_integro_articoli.DESCRIZIONE,'')
-,l.short_desc= ' GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,'') + ' ' 
-  + LARGHEZZA + '/' + SERIE +
-case when rtrim(SETTORE) in  ('SCOOTER','MOTO') then
-	case when rtrim(coalesce(VEL,'')) = 'W' then
-	' ZR' else
-	' R' end
-	else
- ' R' 
-end + CODICECERCHIO + ' ' + ltrim(coalesce(replace(icarico,',0',''),'')) + replace(rtrim(substring(VEL,1,2)),'Z','W') + ' ' + linky_integro_articoli.marca
-,l.descrizione= linky_integro_articoli.marca + ' GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,'') + ' ' 
-  + LARGHEZZA + '/' + SERIE +
-case when rtrim(SETTORE) in  ('SCOOTER','MOTO') then
-	case when rtrim(coalesce(VEL,'')) = 'W' then
-	' ZR' else
-	' R' end
-	else
- ' R' 
-end + CODICECERCHIO + ' ' + ltrim(coalesce(replace(icarico,',0',''),'')) + replace(rtrim(substring(VEL,1,2)),'Z','W') 
-,l.codca2=CASE WHEN STAGIONE='INVERNO' THEN 'N'
- WHEN STAGIONE='4 STAGIONI' THEN '4' 
-ELSE 'E' END 
-, l.desca2=CASE WHEN CODICESTAGIONE='I' THEN 'INVERNALI' 
- WHEN CODICESTAGIONE='4' THEN '4 STAGIONI'
-ELSE 'ESTIVE' END ,
-L.CODICERUMOROSITA = linky_integro_articoli.CODICERUMOROSITA
-FROM 
-LINKY.DBO.LINKY_EBAYARTICOLI L inner join
-linky_integro_articoli on 
-	l.codice=linky_integro_articoli.ipcodESTD
-	and l.marca=linky_integro_articoli.marca 
-	and l.partner in (select codicepartner from linky_partners where tipo='PNEUMATICI')
-	and linky_integro_articoli.IMMAGINE IS NOT NULL 
-	and linky_integro_articoli.immagine &lt;&gt; '' 
-	and linky_integro_articoli.ebaycat&lt;&gt;''
-	and bestprice=1 
--- inserita regola che determina il fatto che il prezzo di acquisto non può essre più basso di 20eur
-and prezzoscontato > 20</sql>
+      <sql>UPDATE  L&#xa;SET &#xa;l.prezzo&#x3d;prezzoscontato, &#xa;l.prezzolistino&#x3d;prezzoscontato , &#xa;l.category_path&#x3d;settore , &#xa;l.product_publish&#x3d;&#x27;Y&#x27;,&#xa;l.product_in_stock&#x3d;	giacenza , &#xa;l.product_available&#x3d;&#x27;12234563&#x27; , &#xa;l.pubblicato&#x3d;	&#x27;Y&#x27;,&#xa;l.product_full_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; ,&#xa;l.product_thumb_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27;&#xa;,l.nome&#x3d; &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,linky_integro_articoli.DESCRIZIONE,&#x27;&#x27;&#x29;&#xa;,l.short_desc&#x3d; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;	&#x27; ZR&#x27; else&#xa;	&#x27; R&#x27; end&#xa;	else&#xa; &#x27; R&#x27; &#xa;end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; linky_integro_articoli.marca&#xa;,l.descrizione&#x3d; linky_integro_articoli.marca &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;	&#x27; ZR&#x27; else&#xa;	&#x27; R&#x27; end&#xa;	else&#xa; &#x27; R&#x27; &#xa;end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#xa;,l.codca2&#x3d;CASE WHEN STAGIONE&#x3d;&#x27;INVERNO&#x27; THEN &#x27;N&#x27;&#xa; WHEN STAGIONE&#x3d;&#x27;4 STAGIONI&#x27; THEN &#x27;4&#x27; &#xa;ELSE &#x27;E&#x27; END &#xa;, l.desca2&#x3d;CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; &#xa; WHEN CODICESTAGIONE&#x3d;&#x27;4&#x27; THEN &#x27;4 STAGIONI&#x27;&#xa;ELSE &#x27;ESTIVE&#x27; END ,&#xa;L.CODICERUMOROSITA &#x3d; linky_integro_articoli.CODICERUMOROSITA&#xa;FROM &#xa;LINKY.DBO.LINKY_EBAYARTICOLI L inner join&#xa;linky_integro_articoli on &#xa;	l.codice&#x3d;linky_integro_articoli.ipcodESTD&#xa;	and l.marca&#x3d;linky_integro_articoli.marca &#xa;	and l.partner in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xa;	and linky_integro_articoli.IMMAGINE IS NOT NULL &#xa;	and linky_integro_articoli.immagine &#x3c;&#x3e; &#x27;&#x27; &#xa;	and linky_integro_articoli.ebaycat&#x3c;&#x3e;&#x27;&#x27;&#xa;	and bestprice&#x3d;1 &#xa;-- inserita regola che determina il fatto che il prezzo di acquisto non pu&#xf2; essre pi&#xf9; basso di 20eur&#xa;and prezzoscontato &#x3e; 20</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename />
+      <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -689,23 +606,23 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>Mail Error</name>
-      <description />
+      <description/>
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
-      <port />
-      <destination>alesconti@gmail.com lufelappi@libero.it</destination>
-      <destinationCc />
-      <destinationBCc />
-      <replyto>conti@mmac.pro</replyto>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
       <replytoname>PNEUS jobs</replytoname>
       <subject>PNEUS NEW EBAY error</subject>
       <include_date>N</include_date>
-      <contact_person />
-      <contact_phone />
-      <comment>Errore durante l'esecusione della procedura NEW EBAY</comment>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Errore durante l&#x27;esecusione della procedura NEW EBAY</comment>
       <include_files>N</include_files>
       <zip_files>N</zip_files>
-      <zip_name />
+      <zip_name/>
       <use_auth>Y</use_auth>
       <use_secure_auth>Y</use_secure_auth>
       <auth_user>40778mail1</auth_user>
@@ -718,9 +635,8 @@ and prezzoscontato > 20</sql>
       <importance>normal</importance>
       <sensitivity>normal</sensitivity>
       <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses />
-      <filetypes>      </filetypes>
-      <embeddedimages>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
       </embeddedimages>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -730,23 +646,23 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>Mail Error 2</name>
-      <description />
+      <description/>
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
-      <port />
-      <destination>alesconti@gmail.com lufelappi@libero.it</destination>
-      <destinationCc />
-      <destinationBCc />
-      <replyto>conti@mmac.pro</replyto>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
       <replytoname>PNEUS jobs</replytoname>
       <subject>PNEUS NEW EBAY error</subject>
       <include_date>N</include_date>
-      <contact_person />
-      <contact_phone />
-      <comment>Errore durante l'esecusione della procedura NEW EBAY</comment>
+      <contact_person/>
+      <contact_phone/>
+      <comment>Errore durante l&#x27;esecusione della procedura NEW EBAY</comment>
       <include_files>N</include_files>
       <zip_files>N</zip_files>
-      <zip_name />
+      <zip_name/>
       <use_auth>Y</use_auth>
       <use_secure_auth>Y</use_secure_auth>
       <auth_user>40778mail1</auth_user>
@@ -759,9 +675,8 @@ and prezzoscontato > 20</sql>
       <importance>normal</importance>
       <sensitivity>normal</sensitivity>
       <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses />
-      <filetypes>      </filetypes>
-      <embeddedimages>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
       </embeddedimages>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -771,23 +686,23 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>Mail OK</name>
-      <description />
+      <description/>
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
-      <port />
-      <destination>alesconti@gmail.com lufelappi@libero.it</destination>
-      <destinationCc />
-      <destinationBCc />
-      <replyto>conti@mmac.pro</replyto>
+      <port/>
+      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destinationCc/>
+      <destinationBCc/>
+      <replyto>conti&#x40;mmac.pro</replyto>
       <replytoname>PNEUS jobs</replytoname>
       <subject>10 - OK NEW EBAY</subject>
       <include_date>N</include_date>
-      <contact_person />
-      <contact_phone />
-      <comment>La procedura è andata a buon fine</comment>
+      <contact_person/>
+      <contact_phone/>
+      <comment>La procedura &#xe8; andata a buon fine</comment>
       <include_files>N</include_files>
       <zip_files>N</zip_files>
-      <zip_name />
+      <zip_name/>
       <use_auth>Y</use_auth>
       <use_secure_auth>Y</use_secure_auth>
       <auth_user>40778mail1</auth_user>
@@ -800,9 +715,8 @@ and prezzoscontato > 20</sql>
       <importance>normal</importance>
       <sensitivity>normal</sensitivity>
       <secureconnectiontype>SSL</secureconnectiontype>
-      <replyToAddresses />
-      <filetypes>      </filetypes>
-      <embeddedimages>
+      <replyToAddresses/>
+      <filetypes>      </filetypes>      <embeddedimages>
       </embeddedimages>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -812,20 +726,20 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>EBAY FR</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_fr batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_fr batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -835,20 +749,20 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>EBAY ES</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_es batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_es batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -858,20 +772,20 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>EBAY US</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_us batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_us batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -881,32 +795,30 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>j_exp_all_ebay</name>
-      <description />
+      <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id />
-      <filename />
+      <job_object_id/>
+      <filename/>
       <jobname>j_exp_all_ebay</jobname>
-      <directory>/EBAY_IT</directory>
+      <directory>&#x2f;EBAY_IT</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -915,32 +827,30 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>J_BESTPRICE_2017</name>
-      <description />
+      <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id />
-      <filename />
+      <job_object_id/>
+      <filename/>
       <jobname>J_BESTPRICE_2017</jobname>
-      <directory>/CONNECTOR/common</directory>
+      <directory>&#x2f;CONNECTOR&#x2f;common</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -949,20 +859,20 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>EBAY AUS</name>
-      <description />
+      <description/>
       <type>SHELL</type>
-      <filename />
-      <work_directory />
+      <filename/>
+      <work_directory/>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
+      <logfile/>
       <set_append_logfile>N</set_append_logfile>
-      <logext />
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>c:\linky\pneus\sd_ebay_pneuss_job.exe crea ebay_aus batch</script>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_aus batch</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -972,19 +882,12 @@ and prezzoscontato > 20</sql>
     </entry>
     <entry>
       <name>CATEGORIA EBAY CG</name>
-      <description />
+      <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set
-ebaycat ='IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471'
-where
-settore in ('VETTURA','FUORISTRADA','TRASPORTO LEGGERO','RUN FLAT');
-update linky_integro_articoli set
-ebaycat ='IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313'
-where
-settore in ('MOTO','SCOOTER');</sql>
+      <sql>update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471&#x27;&#xa;where&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29;&#x3b;&#xa;update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313&#x27;&#xa;where&#xa;settore in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename />
+      <sqlfilename/>
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -995,32 +898,30 @@ settore in ('MOTO','SCOOTER');</sql>
     </entry>
     <entry>
       <name>J_imp_ebay_all_catene_partners</name>
-      <description />
+      <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id />
-      <filename />
+      <job_object_id/>
+      <filename/>
       <jobname>J_imp_ebay_all_catene_partners</jobname>
-      <directory>/EBAY_IT</directory>
+      <directory>&#x2f;EBAY_IT</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -1029,32 +930,30 @@ settore in ('MOTO','SCOOTER');</sql>
     </entry>
     <entry>
       <name>J_imp_ebay_all_ruotini_partners</name>
-      <description />
+      <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id />
-      <filename />
+      <job_object_id/>
+      <filename/>
       <jobname>J_imp_ebay_all_ruotini_partners</jobname>
-      <directory>/EBAY_IT</directory>
+      <directory>&#x2f;EBAY_IT</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -1063,32 +962,30 @@ settore in ('MOTO','SCOOTER');</sql>
     </entry>
     <entry>
       <name>J_IMP_PNEUS</name>
-      <description />
+      <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id />
-      <filename />
+      <job_object_id/>
+      <filename/>
       <jobname>J_IMP_PNEUS</jobname>
-      <directory>/CONNECTOR/pneus</directory>
+      <directory>&#x2f;CONNECTOR&#x2f;pneus</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile />
-      <logext />
+      <logfile/>
+      <logext/>
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name />
+      <slave_server_name/>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <set_append_logfile>N</set_append_logfile>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>

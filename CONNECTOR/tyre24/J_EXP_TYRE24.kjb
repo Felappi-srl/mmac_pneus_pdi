@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;18 15&#x3a;17&#x3a;45.909</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;19 10&#x3a;05&#x3a;36.156</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -1077,42 +1077,6 @@
       <yloc>224</yloc>
     </entry>
     <entry>
-      <name>t_exp_quotagomme</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_exp_quotagomme</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>368</xloc>
-      <yloc>496</yloc>
-    </entry>
-    <entry>
       <name>DUMMY</name>
       <description/>
       <type>SPECIAL</type>
@@ -1317,37 +1281,6 @@
       <nr>0</nr>
       <xloc>720</xloc>
       <yloc>128</yloc>
-    </entry>
-    <entry>
-      <name>FTP quotagomme</name>
-      <description/>
-      <type>FTP_PUT</type>
-      <servername>ftp.quotagomme.it</servername>
-      <serverport>21</serverport>
-      <username>felappi</username>
-      <password>Encrypted 2be98afc86aa7f2e4b83cbc71ddbafcce</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
-      <wildcard>quotagomme.csv</wildcard>
-      <binary>N</binary>
-      <timeout>0</timeout>
-      <remove>N</remove>
-      <only_new>N</only_new>
-      <active>N</active>
-      <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
-      <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
-      <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
-      <socksproxy_password>Encrypted </socksproxy_password>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>592</yloc>
     </entry>
     <entry>
       <name>ROTYRE</name>
@@ -1609,24 +1542,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>DUMMY</from>
-      <to>t_exp_quotagomme</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_exp_quotagomme</from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_exp_reiwadirekt</from>
       <to>DUMMY 2</to>
       <from_nr>0</from_nr>
@@ -1798,24 +1713,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>FTP innoting wheels</from>
-      <to>FTP quotagomme</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>FTP quotagomme</from>
-      <to>ROTYRE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>ROTYRE</from>
       <to>J_EXP_PNEUMATICI100</to>
       <from_nr>0</from_nr>
@@ -1872,6 +1769,15 @@
     <hop>
       <from>J_UPD_PARTNERS_to_TYRE24</from>
       <to>t_UPD_OZ_to_TYRE24</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>FTP innoting wheels</from>
+      <to>ROTYRE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
