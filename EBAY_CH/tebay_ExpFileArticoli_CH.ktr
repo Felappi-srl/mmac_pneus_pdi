@@ -429,17 +429,17 @@
     <created_user>admin</created_user>
     <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/09/15 11:23:55.139</modified_date>
+    <modified_date>2017/09/15 12:15:07.143</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
       <note>link originale di export:
-C:\linky\pneus\ebay\ebay_IE</note>
+C:\linky\pneus\ebay\ebay_CH</note>
       <xloc>1120</xloc>
       <yloc>176</yloc>
-      <width>182</width>
+      <width>189</width>
       <heigth>42</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
@@ -564,7 +564,7 @@ C:\linky\pneus\ebay\ebay_IE</note>
     </hop>
     <hop>
       <from>Prezzo</from>
-      <to>articoli IE</to>
+      <to>articoli CH</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -735,11 +735,11 @@ C:\linky\pneus\ebay\ebay_IE</note>
 , substring(replace(short_desc,'ACCOPPIATA GOMME','TIRE SET') + 
 case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
 , ebaycat
-,'Ireland' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
+, dbo.linky_calc_endprice(partner,'CH',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
 , product_in_stock as product_in_stock
 , case when codca1 is not null then desca1 else '' end as diametro
 , case when codca3 is not null then codca3 else '' end as spalla
@@ -758,11 +758,11 @@ else 'ACCOPPIATE MOTO' end as category_path
 , partner
 ,eancode
 FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where linky_ebay_report.SKU is null and
  product_in_stock > 0 and  
 pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
+linky_ebayarticoli.siteid='CH' and 
 --codiceN' and
 category_path  in ('ACCOPPIATE MOTO')
 </sql>
@@ -802,11 +802,11 @@ category_path  in ('ACCOPPIATE MOTO')
 case when codca2 in ('X','N','R') then ' ' + REPLACE(desca2,'INVERNALI','WINTER') else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
 as Titolo
 , ebaycat
-,'Ireland' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, dbo.linky_calc_endprice(partner,'CH',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
 , product_in_stock as product_in_stock
 , case when codca1 is not null then codca1 else '' end as diametro
 , case when codca3 is not null then codca3 else '' end as spalla
@@ -831,11 +831,11 @@ end as energy
 , partner
 ,eancode
 FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where linky_ebay_report.SKU is null and
  product_in_stock > 0 and 
 pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
+linky_ebayarticoli.siteid='CH' and 
 -- codca2='R' and 
 --codice='1840235VWRA3XL' and
 1=2 and
@@ -962,7 +962,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1096,7 +1096,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1230,7 +1230,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1364,7 +1364,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1498,7 +1498,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1632,7 +1632,7 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
         <currency />
         <decimal />
         <group />
-        <nullif>EUR</nullif>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1810,11 +1810,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
 , substring(replace(replace(rtrim(var.short_desc),'CATENE DA NEVE','SNOW TIRE CHAINS'),'CATENE NEVE','SNOW TIRE CHAINS') +  case when codca5 is not null then ' ' + ltrim(rtrim(desca5)) + ' mm THICKNESS' else '' end , 1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
 as Titolo
 , 180090 as ebaycat
-,'Ireland' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, dbo.linky_calc_endprice(partner,'CH',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
 , product_in_stock as product_in_stock
 , case when codca1 is not null then codca1 else '' end as diametro
 , case when codca3 is not null then codca3 else '' end as spalla
@@ -1832,11 +1832,11 @@ as Titolo
 , partner
 ,eancode
 FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
-LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where linky_ebay_report.SKU is null and
  product_in_stock > 0 and 
 pubblicato='Y' and
-var.siteid='IE' and 
+var.siteid='CH' and 
 -- codca2='R' and 
 --e.codice='CATWEIM90GRF30' and
 category_path in ( 'CATENE DA NEVE')
@@ -1875,12 +1875,12 @@ category_path in ( 'CATENE DA NEVE')
  codice as product_sku
 , substring('ALLOY WHEEL ' + short_desc,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
 , ebaycat
-,'Ireland' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
 --,prezzolistino
-, dbo.linky_calc_endprice('FEL','IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, dbo.linky_calc_endprice('FEL','CH',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
 , product_in_stock as product_in_stock
 , case when codca1 is not null then codca1 else '' end as diametro
 , case when codca3 is not null then codca3 else '' end as spalla
@@ -1898,12 +1898,12 @@ category_path in ( 'CATENE DA NEVE')
 , partner
 ,eancode
 FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where 
 --linky_ebay_report.SKU is null and
 product_in_stock > 0 and 
 --pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
+linky_ebayarticoli.siteid='CH' and 
 --codice='1840235VWRA3XL' and
 category_path  in ('CERCHI IN LEGA')
 </sql>
@@ -2452,8 +2452,8 @@ caratteristiche = t_marca + Marca + t_finespecifica +
 , substring(replace(short_desc,'GOMME PNEUMATICI','TYRES')  +  + 
 case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
 , ebaycat
-,'Ireland' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
 , dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
@@ -2474,11 +2474,11 @@ case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SU
 , partner
 ,eancode
 FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where linky_ebay_report.SKU is null and
  product_in_stock > 0 and 
 pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
+linky_ebayarticoli.siteid='CH' and 
 --codca2 ='N' and
 --codice='1840235VWRA3XL' and
 category_path  in ('SCOOTER','MOTO')
@@ -2558,11 +2558,11 @@ and 1=2</sql>
 case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
 as Titolo
 , ebaycat
-,'IRELAND' as siteid
-,'IE' as country
+,'Switzerland' as siteid
+,'CH' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
-, dbo.linky_calc_endprice(partner,'IE','RUOTINI','',prezzolistino)  as product_price
+, dbo.linky_calc_endprice(partner,'CH','RUOTINI','',prezzolistino)  as product_price
 , product_in_stock as product_in_stock
 , case when desca1 is not null then desca1 else '' end as diametro
 , case when desca3 is not null then desca3 else '' end as spalla
@@ -2587,11 +2587,11 @@ end as energy
 , partner,
 eancode
 FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'CH'= linky_ebay_report.SITEID
 where linky_ebay_report.SKU is null and
 product_in_stock > 0 and 
 pubblicato='Y' and
- linky_ebayarticoli.siteid='IE' and 
+ linky_ebayarticoli.siteid='CH' and 
 -- codca2='R' and 
 --codice like '1598990%' and
 --codicerotolamento is not null and
@@ -3471,7 +3471,7 @@ FROM linky_valute
     </GUI>
   </step>
   <step>
-    <name>articoli IE</name>
+    <name>articoli CH</name>
     <type>TextFileOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -3495,7 +3495,7 @@ FROM linky_valute
     <fileNameField />
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${PNEUS_STARTUP}EBAY${file.separator}export${file.separator}INSERZIONI${file.separator}eBay_product_IE</name>
+      <name>${PNEUS_STARTUP}EBAY${file.separator}export${file.separator}INSERZIONI${file.separator}eBay_product_CH</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
