@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;02.060</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;02&#x3a;35.055</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;25 15&#x3a;30&#x3a;12.595</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -538,7 +538,7 @@
       <name>CATEGORIA</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_mak set&#xd;&#xa;categoria &#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953&#x27;&#xd;&#xa;-- categoria &#x3d; case raggio&#xd;&#xa;--	when 13 then &#x27;IT-149595, DE-9888, NL-28648, FR-123964, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 14 then &#x27;IT-149596, DE-9888, NL-28648, FR-123965, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 15 then &#x27;IT-149597, DE-9888, NL-28648, FR-123966, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 16 then &#x27;IT-149598, DE-9888, NL-28648, FR-123967, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 17 then &#x27;IT-149599, DE-9888, NL-28648, FR-123968, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 18 then &#x27;IT-149600, DE-9888, NL-28648, FR-123969, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 19 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 20 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 21 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--	when 22 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648, ES-179679&#x27;&#xd;&#xa;--end&#xd;&#xa;--where categoria is null</sql>
+      <sql>update linky_articoli_mak set&#xd;&#xa;categoria &#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953,CH-IT-179679,IE-179679&#x27;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

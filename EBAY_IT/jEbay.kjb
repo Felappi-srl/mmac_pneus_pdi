@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;19 09&#x3a;23&#x3a;03.769</modified_date>
+  <modified_date>2017&#x2f;10&#x2f;25 17&#x3a;19&#x3a;16.338</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -426,7 +426,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>496</xloc>
-      <yloc>16</yloc>
+      <yloc>22</yloc>
     </entry>
     <entry>
       <name>EBAY IT</name>
@@ -523,8 +523,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
-      <yloc>176</yloc>
+      <xloc>784</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>EBAY NL</name>
@@ -585,7 +585,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
+      <xloc>1088</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -854,7 +854,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
+      <xloc>1088</xloc>
       <yloc>128</yloc>
     </entry>
     <entry>
@@ -884,7 +884,7 @@
       <name>CATEGORIA EBAY CG</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471&#x27;&#xa;where&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29;&#x3b;&#xa;update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313&#x27;&#xa;where&#xa;settore in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#x3b;</sql>
+      <sql>update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471, CH-179680, IE-179680&#x27;&#xa;where&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29;&#x3b;&#xa;update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313&#x27;&#xa;where&#xa;settore in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -893,8 +893,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
-      <yloc>16</yloc>
+      <xloc>1088</xloc>
+      <yloc>32</yloc>
     </entry>
     <entry>
       <name>J_imp_ebay_all_catene_partners</name>
@@ -990,7 +990,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>656</xloc>
-      <yloc>16</yloc>
+      <yloc>22</yloc>
     </entry>
   </entries>
   <hops>
@@ -1260,7 +1260,7 @@
       <to>j_exp_all_ebay</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
