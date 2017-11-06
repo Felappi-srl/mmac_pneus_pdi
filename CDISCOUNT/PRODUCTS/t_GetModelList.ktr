@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017/09/19 11:02:15.265</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017/09/20 12:33:37.189</modified_date>
+    <modified_date>2017/10/25 17:52:52.761</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -625,7 +625,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>Basic RmVsYXBzMTAtYXBpOjEyM0BAQUJD</nullif>
+        <nullif>Basic RmVsYXBzMTAtYXBpOkZlbGExNjgxIT8=</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>

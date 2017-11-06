@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017/07/06 13:48:34.726</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017/09/21 17:27:35.750</modified_date>
+    <modified_date>2017/11/02 18:11:38.858</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -533,11 +533,17 @@
       <schema_name />
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT TOP 2 
-IPCODE, DESCRIZIONE, MARCA, SETTORE, LISTINO, GIACENZA, IMMAGINE, EAN, COALESCE (TITOLOALTERNATIVO, MARCA + ' ' + DESCRIZIONE, '') AS TITLE,
+    <sql>SELECT TOP 2
+art.IPCODE, art.DESCRIZIONE, art.MARCA, art.SETTORE, art.LISTINO, art.GIACENZA, art.IMMAGINE, RTRIM (LTRIM(art.EAN)) AS EAN, COALESCE (art.TITOLOALTERNATIVO, art.MARCA + ' ' + art.DESCRIZIONE, '') AS TITLE,
 1 AS gruppo
-FROM linky_integro_articoli 
-WHERE BESTPRICE = '1' and LISTINO>0 and EAN IS NOT NULL;</sql>
+FROM linky_integro_articoli AS art
+LEFT JOIN linky_cd_report AS cds ON art.IPCODE = cds.ipcode
+WHERE 
+cds.ipcode IS NULL and art.BESTPRICE = '1' and art.LISTINO>0 and art.LISTINO IS NOT NULL and LEN (RTRIM (LTRIM(art.EAN))) > 12 
+and art.EAN &lt;&gt; '3528700087192'  
+and art.EAN &lt;&gt; '8019227010954'
+ORDER BY art.EAN DESC;
+</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -551,8 +557,47 @@ WHERE BESTPRICE = '1' and LISTINO>0 and EAN IS NOT NULL;</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
+      <xloc>32</xloc>
       <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Articoli 2</name>
+    <type>TableInput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT TOP 2
+IPCODE, DESCRIZIONE, MARCA, SETTORE, LISTINO, GIACENZA, IMMAGINE, EAN, COALESCE (TITOLOALTERNATIVO, MARCA + ' ' + DESCRIZIONE, '') AS TITLE,
+1 AS gruppo
+FROM linky_integro_articoli 
+WHERE 
+BESTPRICE = '1' and LISTINO>0 and LISTINO IS NOT NULL and LEN (RTRIM (LTRIM(EAN))) > 12 
+and EAN &lt;&gt; '3528700087192'  
+and EAN &lt;&gt; '8019227010954'
+ORDER BY EAN ASC;</sql>
+    <limit>0</limit>
+    <lookup />
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -622,23 +667,20 @@ WHERE BESTPRICE = '1' and LISTINO>0 and EAN IS NOT NULL;</sql>
 
 Product = 
 '&lt;Product   ' +
-'  BrandName="' + MARCA + '" ' +
-'  SellerProductFamily ="" ' +
-'  SellerProductColorName = ""' + 
-'  Size ="" ' +
-'  Description="' + DESCRIZIONE + '"   ' +
-'  LongLabel="' + TITLE + '" ' +
-'  Model="' + IPCODE +'"  ' +
+'  BrandName="&lt;![CDATA[' + MARCA + ']] >" ' +
+'  Description="&lt;![CDATA[' + DESCRIZIONE + ']] >"   ' +
+'  LongLabel="&lt;![CDATA[' + TITLE + ']] >" ' +
+'  Model="SOUMISSION CREATION PRODUITS_MK"  ' +
 '  ProductKind="Standard" ' +
 '  CategoryCode="' + idcat + '" ' +
-'  SellerProductId="' + IPCODE + '"  ' +
-'  ShortLabel="' + TITLE + '" ' +
-'  EncodedMarketingDescription="' + TITLE + '">' +
+'  SellerProductId="&lt;![CDATA[' + IPCODE + ']] >"  ' +
+'  ShortLabel=&lt;![CDATA[' + TITLE + ']] > ' +
+'  EncodedMarketingDescription="&lt;![CDATA[' + TITLE + ']] >">' +
 '        &lt;Product.EanList>' +
 '          &lt;ProductEan Ean="' + EAN + '"/>' +
 '        &lt;/Product.EanList>' +
 '        &lt;Product.Pictures>' +
-'          &lt;ProductImage Uri="' + IMMAGINE + '"/>' +
+'          &lt;ProductImage Uri="&lt;![CDATA[' + IMMAGINE + ']] >"/>' +
 '        &lt;/Product.Pictures>' +
 '&lt;/Product>';
 
