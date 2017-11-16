@@ -407,7 +407,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>10000</size_rowset>
+    <size_rowset>100000</size_rowset>
     <sleep_time_empty>50</sleep_time_empty>
     <sleep_time_full>50</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -429,8 +429,8 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;08&#x2f;31 15&#x3a;38&#x3a;24.306</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;08&#x2f;31 16&#x3a;02&#x3a;41.205</modified_date>
-    <key_for_session_key/>
+    <modified_date>2017&#x2f;11&#x2f;13 20&#x3a;52&#x3a;03.435</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -527,7 +527,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xd;&#xa;connector_2017.carfit_masterauto_ebayauto_rel.codiceauto,&#xd;&#xa;connector_2017.carfit_masterauto_ebayauto_rel.ktype,&#xd;&#xa;connector_2017.carfit_masterauto_ebayauto_rel.siteid&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_masterauto_ebayauto_rel&#xd;&#xa;order by connector_2017.carfit_masterauto_ebayauto_rel.codiceauto</sql>
+    <sql>SELECT&#xd;&#xa;carfit_masterauto_ebayauto_rel.codiceauto,&#xd;&#xa;carfit_masterauto_ebayauto_rel.ktype,&#xd;&#xa;carfit_masterauto_ebayauto_rel.siteid,&#xd;&#xa;upper&#x28;carfit_master_auto.marca&#x29; as marca,&#xd;&#xa;upper&#x28;carfit_master_auto.modello&#x29; as modello&#xd;&#xa;FROM&#xd;&#xa;carfit_masterauto_ebayauto_rel inner join carfit_master_auto on carfit_masterauto_ebayauto_rel.codiceauto &#x3d; carfit_master_auto.codiceauto&#xd;&#xa;order by carfit_masterauto_ebayauto_rel.codiceauto</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -580,6 +580,61 @@
     </step>
 
   <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <all_rows>N</all_rows>
+      <ignore_aggregate>N</ignore_aggregate>
+      <field_ignore/>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>grp</prefix>
+      <add_linenr>N</add_linenr>
+      <linenr_fieldname/>
+      <give_back_row>N</give_back_row>
+      <group>
+        <field>
+          <name>PARTNUMBER</name>
+        </field>
+        <field>
+          <name>marca</name>
+        </field>
+        <field>
+          <name>modello</name>
+        </field>
+        <field>
+          <name>siteid</name>
+        </field>
+      </group>
+      <fields>
+        <field>
+          <aggregate>elenco_auto</aggregate>
+          <subject>ktype</subject>
+          <type>CONCAT_COMMA</type>
+          <valuefield/>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>496</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
     <description/>
@@ -607,7 +662,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>272</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
@@ -641,6 +696,22 @@
         <presorted>N</presorted>
       </field>
       <field>
+        <name>marca</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>modello</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
         <name>siteid</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
@@ -657,56 +728,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <all_rows>N</all_rows>
-      <ignore_aggregate>N</ignore_aggregate>
-      <field_ignore/>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>grp</prefix>
-      <add_linenr>N</add_linenr>
-      <linenr_fieldname/>
-      <give_back_row>N</give_back_row>
-      <group>
-        <field>
-          <name>PARTNUMBER</name>
-        </field>
-        <field>
-          <name>siteid</name>
-        </field>
-      </group>
-      <fields>
-        <field>
-          <aggregate>elenco_auto</aggregate>
-          <subject>ktype</subject>
-          <type>CONCAT_COMMA</type>
-          <valuefield/>
-        </field>
-      </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
+      <xloc>384</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
@@ -744,6 +766,18 @@
         <condition>&#x3d;</condition>
         <name2/>
         </key>
+      <key>
+        <name>marca</name>
+        <field>marcaauto</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
+      <key>
+        <name>modello</name>
+        <field>modelloauto</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+        </key>
       <value>
         <name>auto</name>
         <rename>elenco_auto</rename>
@@ -757,7 +791,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>720</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>

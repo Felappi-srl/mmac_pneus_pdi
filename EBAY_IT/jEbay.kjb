@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;25 17&#x3a;19&#x3a;16.338</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;15 16&#x3a;20&#x3a;57.406</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,7 +339,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>1104</xloc>
       <yloc>336</yloc>
     </entry>
     <entry>
@@ -487,7 +487,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
+      <xloc>304</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -546,7 +546,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>320</xloc>
+      <xloc>192</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -569,7 +569,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>416</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -681,7 +681,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
+      <xloc>256</xloc>
       <yloc>352</yloc>
     </entry>
     <entry>
@@ -721,7 +721,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>1104</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -744,7 +744,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>544</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -767,7 +767,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
+      <xloc>656</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -790,7 +790,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>176</xloc>
+      <xloc>1008</xloc>
       <yloc>416</yloc>
     </entry>
     <entry>
@@ -992,6 +992,68 @@
       <xloc>656</xloc>
       <yloc>22</yloc>
     </entry>
+    <entry>
+      <name>EBAY CH</name>
+      <description/>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_ch batch</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>416</yloc>
+    </entry>
+    <entry>
+      <name>EBAY IE</name>
+      <description/>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe crea ebay_ie batch</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>880</xloc>
+      <yloc>416</yloc>
+    </entry>
+    <entry>
+      <name>CATEGORIA EBAY CG 2</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;21665&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;21665&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;62247&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>640</xloc>
+      <yloc>256</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1033,15 +1095,6 @@
     <hop>
       <from>PARTNERS Stock 0</from>
       <to>t_ebay_InsertArticoli_CG</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_ebay_InsertArticoli_CG</from>
-      <to>CG Update stock</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1139,15 +1192,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>EBAY ES</from>
-      <to>Mail OK</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>j_exp_all_ebay</from>
       <to>Mail Error 2</to>
       <from_nr>0</from_nr>
@@ -1166,15 +1210,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>EBAY AUS</from>
-      <to>EBAY US</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>CATEGORIA EBAY CG</from>
       <to>J_BESTPRICE_2017</to>
       <from_nr>0</from_nr>
@@ -1182,15 +1217,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>EBAY US</from>
-      <to>EBAY NL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>j_exp_all_ebay</from>
@@ -1260,7 +1286,7 @@
       <to>j_exp_all_ebay</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1285,6 +1311,69 @@
     <hop>
       <from>J_IMP_PNEUS</from>
       <to>CATEGORIA EBAY CG</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY ES</from>
+      <to>EBAY CH</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY CH</from>
+      <to>EBAY IE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_InsertArticoli_CG</from>
+      <to>CATEGORIA EBAY CG 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>CATEGORIA EBAY CG 2</from>
+      <to>CG Update stock</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY AUS</from>
+      <to>EBAY NL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY IE</from>
+      <to>EBAY US</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY US</from>
+      <to>Mail OK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

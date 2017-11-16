@@ -8,13 +8,13 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.647</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;05&#x2f;18 09&#x3a;19&#x3a;45.709</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;15 12&#x3a;04&#x3a;01.579</modified_date>
     <parameters>
     </parameters>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -27,6 +27,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -338,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>906</xloc>
-      <yloc>51</yloc>
+      <xloc>976</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>ImportazioneIniziale_msw</name>
@@ -381,7 +382,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_ozr set &#xd;&#xa;&#xd;&#xa;&#xd;&#xa;canale&#x3d;&#xd;&#xa;case when charindex&#x28;&#x27;x&#x27;,canale&#x29; &#x3e; 0 then&#xd;&#xa;replace&#x28;substring&#x28;canale,1,charindex&#x28;&#x27;x&#x27;,canale&#x29;-1&#x29;,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;else replace&#x28;canale,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;end&#xd;&#xa;&#xd;&#xa;,&#xd;&#xa;pcd&#x3d;replace&#x28;pcd,&#x27;,00&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,giacenza&#x3d;replace&#x28;giacenza,&#x27;&#x3e; &#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;, categoria &#x3d; case raggio&#xd;&#xa;	when 13 then &#x27;IT-149595, DE-9888, NL-28648, FR-123964, UK-28648&#x27;&#xd;&#xa;	when 14 then &#x27;IT-149596, DE-9888, NL-28648, FR-123965, UK-28648&#x27;&#xd;&#xa;	when 15 then &#x27;IT-149597, DE-9888, NL-28648, FR-123966, UK-28648&#x27;&#xd;&#xa;	when 16 then &#x27;IT-149598, DE-9888, NL-28648, FR-123967, UK-28648&#x27;&#xd;&#xa;	when 17 then &#x27;IT-149599, DE-9888, NL-28648, FR-123968, UK-28648&#x27;&#xd;&#xa;	when 18 then &#x27;IT-149600, DE-9888, NL-28648, FR-123969, UK-28648&#x27;&#xd;&#xa;	when 19 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 20 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 21 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;	when 22 then &#x27;IT-72249, DE-9888, NL-28648, FR-73621, UK-28648&#x27;&#xd;&#xa;end&#xd;&#xa;</sql>
+      <sql>update linky_articoli_ozr set &#xd;&#xa;&#xd;&#xa;&#xd;&#xa;canale&#x3d;&#xd;&#xa;case when charindex&#x28;&#x27;x&#x27;,canale&#x29; &#x3e; 0 then&#xd;&#xa;replace&#x28;substring&#x28;canale,1,charindex&#x28;&#x27;x&#x27;,canale&#x29;-1&#x29;,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;else replace&#x28;canale,&#x27;&#xbd;&#x27;,&#x27;,5&#x27;&#x29;&#xd;&#xa;end&#xd;&#xa;&#xd;&#xa;,&#xd;&#xa;pcd&#x3d;replace&#x28;pcd,&#x27;,00&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,giacenza&#x3d;replace&#x28;giacenza,&#x27;&#x3e; &#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;, categoria &#x3d; &#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,AU-43953,CH-179679,IE-179679&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -391,7 +392,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>688</xloc>
-      <yloc>51</yloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>ImportazioneIniziale_sparco</name>
@@ -462,8 +463,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>579</xloc>
-      <yloc>51</yloc>
+      <xloc>576</xloc>
+      <yloc>48</yloc>
     </entry>
     <entry>
       <name>OUT_PROD</name>
@@ -494,8 +495,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>51</yloc>
+      <xloc>832</xloc>
+      <yloc>48</yloc>
     </entry>
   </entries>
   <hops>

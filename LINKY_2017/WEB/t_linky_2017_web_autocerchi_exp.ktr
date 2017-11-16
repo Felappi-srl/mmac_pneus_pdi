@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;09&#x2f;19 15&#x3a;42&#x3a;12.896</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;15 15&#x3a;05&#x3a;42.632</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -489,16 +489,6 @@
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>Auto</from>
-      <to>Merge Join</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Cerchi</from>
-      <to>Merge Join</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Merge Join</from>
       <to>Modified Java Script Value</to>
@@ -584,6 +574,26 @@
       <to>autocerchi.txt</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Cerchi</from>
+      <to>sortCerchi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sortCerchi</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Auto</from>
+      <to>sortAuto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sortAuto</from>
+      <to>Merge Join</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Append streams</name>
@@ -651,7 +661,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xd;&#xa;codiceauto as idauto&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_master_auto</sql>
+    <sql>SELECT&#xd;&#xa;codiceauto as idauto&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_master_auto&#xd;&#xa;-- where codiceauto&#x3d;&#x27;0440.0200.0010&#x27;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -665,8 +675,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>50</xloc>
-      <yloc>35</yloc>
+      <xloc>16</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -683,7 +693,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.CERTIFICATO,&#xa;linky_articoli_mak.CODICEAUTO,&#xa;case when isece is not null then &#x27;1&#x27; else 0 end as isece,&#xa;case when isnad is not null then &#x27;1&#x27; else 0 end as isnad,&#xa;case when istuv is not null then &#x27;1&#x27; else 0 end as istuv,&#xa;isece as ececert,&#xa;isnad as nadcert,&#xa;istuv as tuvcert&#xa;-- case when isece is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x7c;&#x7c; replace&#x28;isece,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x7c;&#x7c; &#x27;.pdf&#x27; else &#x27;&#x27; end as ececert&#xa;-- case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV ,&#xa;-- case when isNAD is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;ISNAD,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertNAD&#xa;FROM&#xa;linky_articoli_mak&#xa;where replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xa;order by linky_articoli_mak.CODICEAUTO</sql>
+    <sql>SELECT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.CERTIFICATO,&#xa;linky_articoli_mak.CODICEAUTO,&#xa;case when isece is not null then &#x27;1&#x27; else 0 end as isece,&#xa;case when isnad is not null then &#x27;1&#x27; else 0 end as isnad,&#xa;case when istuv is not null then &#x27;1&#x27; else 0 end as istuv,&#xa;isece as ececert,&#xa;isnad as nadcert,&#xa;istuv as tuvcert,&#xd;&#xa;RAGGIO&#xa;-- case when isece is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x7c;&#x7c; replace&#x28;isece,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x7c;&#x7c; &#x27;.pdf&#x27; else &#x27;&#x27; end as ececert&#xa;-- case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV ,&#xa;-- case when isNAD is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;ISNAD,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertNAD&#xa;FROM&#xa;linky_articoli_mak&#xa;where replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xa;-- and partnumber&#x3d;&#x27;F7070OABM42VK&#x27;&#xd;&#xa;-- and linky_articoli_mak.CODICEAUTO&#x3d;&#x27;0440.0200.0010&#x27;&#xd;&#xa;order by linky_articoli_mak.CODICEAUTO,linky_articoli_mak.PARTNUMBER&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -697,8 +707,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>128</yloc>
+      <xloc>80</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -715,7 +725,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MARCAAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MODELLOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.TIPOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.ANNOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.PARTNUMBER,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV,&#xa;&#x27;&#x27; as ececerturl,&#xa;&#x27;&#x27; as nadcerturl,&#xa;&#x27;&#x27; as tuvcerturl&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; </sql>
+    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MARCAAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MODELLOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.TIPOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.ANNOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.PARTNUMBER,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV,&#xa;&#x27;&#x27; as ececerturl,&#xa;&#x27;&#x27; as nadcerturl,&#xa;&#x27;&#x27; as tuvcerturl,&#xd;&#xa;raggio&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -747,7 +757,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>	SELECT&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MARCAAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MODELLOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.TIPOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.ANNOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.PARTNUMBER,&#xa;	&#x27;0&#x27; as isECE,&#xa;	&#x27;1&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;	&#x27;&#x27; as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl&#xa;	FROM&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0</sql>
+    <sql>	SELECT&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MARCAAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MODELLOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.TIPOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.ANNOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.PARTNUMBER,&#xa;	&#x27;0&#x27; as isECE,&#xa;	&#x27;1&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;	&#x27;&#x27; as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl,&#xd;&#xa;RAGGIO&#xa;	FROM&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -793,7 +803,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>224</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -811,13 +821,13 @@
       <schema_name/>
     </partitioning>
 <join_type>INNER</join_type>
-<step1>Auto</step1>
-<step2>Cerchi</step2>
+<step1>sortCerchi</step1>
+<step2>sortAuto</step2>
     <keys_1>
-      <key>idauto</key>
+      <key>CODICEAUTO</key>
     </keys_1>
     <keys_2>
-      <key>CODICEAUTO</key>
+      <key>idauto</key>
     </keys_2>
     <cluster_schema/>
     <remotesteps>
@@ -1009,17 +1019,13 @@
       </field>      <field>        <name>PARTNUMBER</name>
         <rename>SKU</rename>
       </field>      <field>        <name>isECE</name>
-        <rename/>
       </field>      <field>        <name>isNAD</name>
-        <rename/>
       </field>      <field>        <name>isTUV</name>
-        <rename/>
       </field>      <field>        <name>ececerturl</name>
-        <rename/>
       </field>      <field>        <name>nadcerturl</name>
-        <rename/>
       </field>      <field>        <name>tuvcerturl</name>
-        <rename/>
+      </field>      <field>        <name>raggio</name>
+        <rename>RAGGIO</rename>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>isECE</name>
         <rename>isECE</rename>
@@ -1092,21 +1098,14 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>idauto</name>
-        <rename/>
       </field>      <field>        <name>SKU</name>
-        <rename/>
       </field>      <field>        <name>isece</name>
-        <rename/>
       </field>      <field>        <name>isnad</name>
-        <rename/>
       </field>      <field>        <name>istuv</name>
-        <rename/>
       </field>      <field>        <name>ececerturl</name>
-        <rename/>
       </field>      <field>        <name>nadcerturl</name>
-        <rename/>
       </field>      <field>        <name>tuvcerturl</name>
-        <rename/>
+      </field>      <field>        <name>RAGGIO</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>isece</name>
         <rename>isece</rename>
@@ -1188,6 +1187,7 @@
       </field>      <field>        <name>ececerturl</name>
       </field>      <field>        <name>nadcerturl</name>
       </field>      <field>        <name>tuvcerturl</name>
+      </field>      <field>        <name>RAGGIO</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1198,7 +1198,7 @@
     </remotesteps>
     <GUI>
       <xloc>688</xloc>
-      <yloc>192</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1263,7 +1263,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>320</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1606,6 +1606,18 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>RAGGIO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1616,6 +1628,98 @@
     </remotesteps>
     <GUI>
       <xloc>832</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>sortCerchi</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CODICEAUTO</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>SKU</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>96</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>sortAuto</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>idauto</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>

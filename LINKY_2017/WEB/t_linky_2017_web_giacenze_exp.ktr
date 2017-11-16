@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;25 09&#x3a;26&#x3a;07.850</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;16 10&#x3a;00&#x3a;19.599</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -489,28 +489,13 @@
   </connection>
   <order>
     <hop>
-      <from>CERCHI</from>
-      <to>Select cerchi</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select cerchi</from>
       <to>Append pneumatici</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Pneumatici</from>
-      <to>Select pneu</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select pneu</from>
       <to>Append pneumatici</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Catene partners</from>
-      <to>Select catene</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -521,11 +506,6 @@
     <hop>
       <from>Append pneumatici</from>
       <to>Append catene</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Pneumatici PNEUS</from>
-      <to>Filter rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -554,11 +534,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Catene 2</from>
-      <to>Replace in string 2 2 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Filter rows 2</from>
       <to>Dummy &#x28;do nothing&#x29;</to>
       <enabled>Y</enabled>
@@ -566,11 +541,6 @@
     <hop>
       <from>Filter rows 2</from>
       <to>Dummy &#x28;do nothing&#x29; 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Replace in string 2 2 2</from>
-      <to>Select values 2 2 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -599,11 +569,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Add constants</from>
-      <to>Select accessori</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Append pneus catene</from>
       <to>Append pneus accssori</to>
       <enabled>Y</enabled>
@@ -620,12 +585,117 @@
     </hop>
     <hop>
       <from>Dummy &#x28;do nothing&#x29; 3</from>
-      <to>giacenze.txt</to>
+      <to>giacenze.txt virgola</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Dummy &#x28;do nothing&#x29; 3</from>
-      <to>giacenze.txt virgola</to>
+      <from>CERCHI</from>
+      <to>Lookup cerchi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup cerchi</from>
+      <to>Select cerchi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Pneumatici</from>
+      <to>Lookup pneumatici</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup pneumatici</from>
+      <to>Filter rows 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 3</from>
+      <to>Zeropneu</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 3</from>
+      <to>Diversipneu</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Diversipneu</from>
+      <to>Select pneu</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Catene partners</from>
+      <to>Lookup catene</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 3 2</from>
+      <to>ZeroCatene</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup catene</from>
+      <to>Filter rows 3 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 3 2</from>
+      <to>Select catene</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Pneumatici PNEUS</from>
+      <to>Lookup pneumatici 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>Lookup accessori</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 4</from>
+      <to>ZeroAccessori</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup accessori</from>
+      <to>Filter rows 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows 4</from>
+      <to>Select accessori</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Lookup pneumatici 2</from>
+      <to>Modified Java Script Value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string 2 2 2</from>
+      <to>Modified Java Script Value 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value 2</from>
+      <to>Select values 2 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Catene 2</from>
+      <to>catene pneus</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>catene pneus</from>
+      <to>Replace in string 2 2 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -663,7 +733,7 @@
     </remotesteps>
     <GUI>
       <xloc>960</xloc>
-      <yloc>272</yloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -716,7 +786,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>528</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -743,7 +813,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>288</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -815,7 +885,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_mak&#xa;WHERE&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;GIACENZA,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_momo&#xa;WHERE&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as giacenza,&#xa;PREZZO&#xa;FROM&#xa;linky_articoli_ozr&#xa;WHERE&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0</sql>
+    <sql>SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZOpubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MOMO&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#xd;&#xa;as giacenza,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;OZR&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0 &#xd;&#xa;union all&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;coalesce&#x28;GIACENZA,0&#x29; as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;ACCIAIO&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;and WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -850,7 +920,7 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>&#x3b;</separator>
+    <separator>&#x7c;</separator>
     <enclosure>&#x22;</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
@@ -873,7 +943,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_ebay_catene.txt</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_web_catene.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1095,7 +1165,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>product_in_stock</name>
+        <name>tmp_product_in_stock</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1320,7 +1390,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>ebaycat</name>
+        <name>cod</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1335,7 +1405,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>pubblicato</name>
+        <name>newfrom</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1350,7 +1420,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>siteid</name>
+        <name>nwto</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1366,6 +1436,21 @@
       </field>
       <field>
         <name>eancode3</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <ifnull/>
+        <position>-1</position>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>artblocco</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1413,8 +1498,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>400</yloc>
+      <xloc>656</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1431,7 +1516,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;,LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where GIACENZA&#x3e;0 and listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null</sql>
+    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_catene.IPCODE,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;inner join linky_magento_report on linky_integro_catene.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1446,7 +1531,32 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>272</yloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Diversipneu</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1502,6 +1612,31 @@
     </step>
 
   <step>
+    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1088</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -1512,15 +1647,15 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Zero</send_true_to>
-<send_false_to>Replace in string</send_false_to>
+<send_true_to>Replace in string</send_true_to>
+<send_false_to>Zero</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
  <leftvalue>product_in_stock</leftvalue>
- <function>&#x3d;</function>
- <rightvalue/>
- <value><name>constant</name><type>String</type><text> 0,0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>tmp_giacenza</rightvalue>
+ </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -1530,7 +1665,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>528</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1569,13 +1704,6 @@
   <condition>
    <negated>N</negated>
    <operator>AND</operator>
-   <leftvalue>pubblicato</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
    <leftvalue>product_in_stock</leftvalue>
    <function>&#x3c;&#x3e;</function>
    <rightvalue/>
@@ -1593,6 +1721,357 @@
     <GUI>
       <xloc>832</xloc>
       <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 3</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Diversipneu</send_true_to>
+<send_false_to>Zeropneu</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>GIACENZA</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>tmp_giacenza</rightvalue>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 3 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Select catene</send_true_to>
+<send_false_to>ZeroCatene</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>LISTINO</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>tmp_giacenza</rightvalue>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 4</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Select accessori</send_true_to>
+<send_false_to>ZeroAccessori</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>GIACENZA</leftvalue>
+ <function>&#x3c;&#x3e;</function>
+ <rightvalue>tmp_giacenza</rightvalue>
+ </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Lookup accessori</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>SKU</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Lookup catene</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>IPCODE</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Lookup cerchi</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>SKU</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>prezzo</name>
+        <rename>tmp_prezzo</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>112</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Lookup pneumatici</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>SKU</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>48</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Lookup pneumatici 2</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>Codice</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1738,7 +2217,7 @@
     </remotesteps>
     <GUI>
       <xloc>960</xloc>
-      <yloc>368</yloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1755,7 +2234,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xa;FROM&#xa;linky_integro_articoli&#xa;where GIACENZA&#x3e;0 and PREZZOSCONTATO&#x3e;0&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xa;</sql>
+    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;linky_integro_articoli.GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xa;FROM&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode and linky_integro_articoli.giacenza &#x3c;&#x3e; linky_magento_report.giacenza&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;--PREZZOSCONTATO&#x3e;0&#xa;--and &#xd;&#xa;IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;and bestprice&#x3d;1&#xd;&#xa;--and linky_integro_articoli.IPCODE&#x3d;&#x27;1817100OLD&#x27;&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_articoli.IPCODE AS SKU,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xd;&#xa;FROM&#xd;&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1769,8 +2248,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>272</yloc>
+      <xloc>48</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1813,7 +2292,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_ebay_pneumatici.txt</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneus&#x5c;pneus_web_pneumatici.txt</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -2035,18 +2514,18 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>product_in_stock</name>
-        <type>String</type>
+        <name>tmp_product_in_stock</name>
+        <type>Integer</type>
         <format/>
         <currency/>
-        <decimal/>
+        <decimal>,</decimal>
         <group/>
         <nullif/>
         <ifnull/>
         <position>-1</position>
         <length>-1</length>
         <precision>-1</precision>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <repeat>N</repeat>
       </field>
       <field>
@@ -2290,7 +2769,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>siteid</name>
+        <name>eancode</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -2305,7 +2784,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>eancode</name>
+        <name>artblocco</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -2353,8 +2832,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
-      <yloc>416</yloc>
+      <xloc>336</xloc>
+      <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2382,17 +2861,6 @@
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
-      <field>
-        <in_stream_name>product_in_stock</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string> </replace_string>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -2402,7 +2870,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>528</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2443,7 +2911,7 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
-        <in_stream_name>product_in_stock</in_stream_name>
+        <in_stream_name>tmp_product_in_stock</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string> </replace_string>
@@ -2476,7 +2944,7 @@
         <case_sensitive>no</case_sensitive>
       </field>
       <field>
-        <in_stream_name>product_in_stock</in_stream_name>
+        <in_stream_name>tmp_product_in_stock</in_stream_name>
         <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string>,</replace_string>
@@ -2496,7 +2964,7 @@
     </remotesteps>
     <GUI>
       <xloc>720</xloc>
-      <yloc>320</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2703,7 +3171,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
+      <xloc>192</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2762,8 +3230,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>160</yloc>
+      <xloc>192</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2822,7 +3290,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>528</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2840,38 +3308,65 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>Marchio</name>
+        <rename/>
       </field>      <field>        <name>Codice</name>
+        <rename/>
       </field>      <field>        <name>Nome</name>
+        <rename/>
       </field>      <field>        <name>short_desc</name>
+        <rename/>
       </field>      <field>        <name>descrizione</name>
+        <rename/>
       </field>      <field>        <name>category_path</name>
+        <rename/>
       </field>      <field>        <name>full_category_path</name>
+        <rename/>
       </field>      <field>        <name>prezzo</name>
+        <rename/>
       </field>      <field>        <name>prezzolistino</name>
+        <rename/>
       </field>      <field>        <name>currency</name>
+        <rename/>
       </field>      <field>        <name>product_full_image</name>
+        <rename/>
       </field>      <field>        <name>product_thumb_image</name>
+        <rename/>
       </field>      <field>        <name>product_publish</name>
+        <rename/>
       </field>      <field>        <name>iva</name>
+        <rename/>
       </field>      <field>        <name>product_in_stock</name>
+        <rename/>
       </field>      <field>        <name>product_available</name>
+        <rename/>
       </field>      <field>        <name>product_special</name>
+        <rename/>
       </field>      <field>        <name>codca1</name>
+        <rename/>
       </field>      <field>        <name>desca1</name>
+        <rename/>
       </field>      <field>        <name>codca2</name>
+        <rename/>
       </field>      <field>        <name>desca2</name>
+        <rename/>
       </field>      <field>        <name>codca3</name>
+        <rename/>
       </field>      <field>        <name>desca3</name>
+        <rename/>
       </field>      <field>        <name>codca4</name>
+        <rename/>
       </field>      <field>        <name>desca4</name>
+        <rename/>
       </field>      <field>        <name>codca5</name>
+        <rename/>
       </field>      <field>        <name>desca5</name>
+        <rename/>
       </field>      <field>        <name>codca6</name>
+        <rename/>
       </field>      <field>        <name>desca6</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>pubblicato</name>
-      </field>      <field>        <name>siteid</name>
+        <rename/>
       </field>      <field>        <name>eancode3</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>prezzo</name>
         <rename>prezzo</rename>
@@ -2936,111 +3431,17 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>640</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>giacenze.txt</name>
-    <type>TextFileOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <separator>&#x7c;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>UTF-8</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;giacenze</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>SKU</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>GIACENZA</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>PREZZO</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1248</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <name>ZeroAccessori</name>
     <type>Dummy</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -3056,7 +3457,57 @@
     </remotesteps>
     <GUI>
       <xloc>1088</xloc>
-      <yloc>48</yloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>ZeroCatene</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Zeropneu</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -3073,7 +3524,7 @@
       <schema_name/>
     </partitioning>
     <separator>,</separator>
-    <enclosure>&#x22;</enclosure>
+    <enclosure/>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
@@ -3086,11 +3537,11 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;giacenzeprezzi</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;stock_full</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
-      <extention>txt</extention>
+      <extention>csv</extention>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
@@ -3149,8 +3600,128 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1248</xloc>
-      <yloc>160</yloc>
+      <xloc>1232</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;artblocco&#x29;&#x7b;&#xd;&#xa;	product_in_stock&#x3d;tmp_product_in_stock&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	product_in_stock&#x3d;0&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>product_in_stock</name>
+        <rename>product_in_stock</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>416</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;artblocco&#x29;&#x7b;&#xd;&#xa;	product_in_stock&#x3d;tmp_product_in_stock&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	product_in_stock&#x3d;&#x27;0&#x27;&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>product_in_stock</name>
+        <rename>product_in_stock</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>catene pneus</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_magento_report</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>Y</eat_row_on_failure>
+      <key>
+        <name>Codice</name>
+        <field>ipcode</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>giacenza</name>
+        <rename>tmp_giacenza</rename>
+        <default/>
+        <type>Number</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

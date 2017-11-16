@@ -1,22 +1,22 @@
 <transformation>
   <info>
-    <name>tebay_ExpFileArticoli_IE</name>
-    <description />
-    <extended_description />
-    <trans_version />
+    <name>tebay_ExpFileArticoli_CH</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>/EBAY_US</directory>
+    <directory>&#x2f;EBAY_US</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection />
-        <schema />
-        <table />
-        <size_limit_lines />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +41,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +125,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection />
-        <schema />
-        <table />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +207,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +273,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +349,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +401,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection />
-      <table />
-      <field />
+      <connection/>
+      <table/>
+      <field/>
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +414,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file />
+    <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -427,20 +427,19 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012/07/27 16:26:43.730</created_date>
+    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/09/15 12:15:04.498</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2017&#x2f;11&#x2f;09 09&#x3a;36&#x3a;20.017</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>link originale di export:
-C:\linky\pneus\ebay\ebay_IE</note>
+      <note>link originale di export&#x3a;&#xa;C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_CH</note>
       <xloc>1120</xloc>
       <yloc>176</yloc>
-      <width>182</width>
-      <heigth>42</heigth>
+      <width>230</width>
+      <heigth>48</heigth>
       <fontname>.SF NS Text</fontname>
       <fontsize>13</fontsize>
       <fontbold>N</fontbold>
@@ -466,54 +465,21 @@ C:\linky\pneus\ebay\ebay_IE</note>
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQLUseIntegratedSecurity</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1433</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
@@ -564,7 +530,7 @@ C:\linky\pneus\ebay\ebay_IE</note>
     </hop>
     <hop>
       <from>Prezzo</from>
-      <to>articoli IE</to>
+      <to>articoli CH</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -721,57 +687,22 @@ C:\linky\pneus\ebay\ebay_IE</note>
   <step>
     <name>ACCOPPIATE</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codice as product_sku
-, substring(replace(short_desc,'ACCOPPIATA GOMME','TIRE SET') + 
-case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
-, ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then desca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then codca4 else '' end as larghezza
-, case when codca5 is not null then desca5 else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then codca2 else '' end as offset
-, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' 
-else 'ACCOPPIATE MOTO' end as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-,'' as energy
-, '' as rumorosita
-, '' as codicerotolamento
-, '' as codiceaderenza
-, partner
-,eancode
-FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where linky_ebay_report.SKU is null and
- product_in_stock > 0 and  
-pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
---codiceN' and
-category_path  in ('ACCOPPIATE MOTO')
-</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;rtrim&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;MOTORRADREIFEN &#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;CH&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;CH&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and  &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;CH&#x27; and &#xa;--codiceN&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -783,70 +714,27 @@ category_path  in ('ACCOPPIATE MOTO')
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>AUTO</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codice as product_sku
-, substring(replace(short_desc , 'GOMME PNEUMATICI','TYRES') + 
-case when codca2 in ('X','N','R') then ' ' + REPLACE(desca2,'INVERNALI','WINTER') else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
-as Titolo
-, ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then codca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then codca4 else '' end as larghezza
-, case when codca5 is not null then desca5 else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then codca2 else '' end as offset
-, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-, case when codicerotolamento is not null and len(codicerumorosita) > 2  then
-'&lt;p>&lt;img src="http://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
- codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
-substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
-'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
-else
-''
-end as energy
-, case when len(codicerumorosita) > 2 then substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) else '' end as rumorosita
-, codicerotolamento
-, codiceaderenza
-, partner
-,eancode
-FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where linky_ebay_report.SKU is null and
- product_in_stock > 0 and 
-pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
--- codca2='R' and 
---codice='1840235VWRA3XL' and
-1=2 and
-category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SCOOTER','MOTO', 'CATENE DA NEVE','RUOTINI','')
-</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;rtrim&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;REIFEN TYRE&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;WINTER&#x27;&#x29; else &#x27;&#x27; end&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;CH&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null and len&#x28;codicerumorosita&#x29; &#x3e; 2  then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, case when len&#x28;codicerumorosita&#x29; &#x3e; 2 then substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; else &#x27;&#x27; end as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;CH&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;CH&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN METALLO&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -858,99 +746,28 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_icarico</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Load index: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_larghezza</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;p>&lt;span>Tyre Width: &lt;/span>&lt;strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_ivelocita</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_spalla</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_marca</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_raggio</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -958,11 +775,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>currency</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -970,17 +787,89 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>PNEUMATICI</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Tragf&#xe4;higkeitsindex&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Geschwindigkeitsindex&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenquerschnitt&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Zollgr&#xf6;&#xdf;e&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -992,99 +881,28 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants 2</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_icarico</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Load index: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_larghezza</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Tyre Width: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_ivelocita</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_spalla</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_marca</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_raggio</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1092,11 +910,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>currency</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1104,17 +922,89 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>MOTO</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Tragf&#xe4;higkeitsindex&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Geschwindigkeitsindex&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenquerschnitt&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Zollgr&#xf6;&#xdf;e&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1126,99 +1016,28 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants 2 2</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_icarico</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Informations: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_larghezza</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Tyre Width: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_ivelocita</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_spalla</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_marca</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_raggio</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Measures: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1226,11 +1045,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>currency</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1238,17 +1057,89 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>ACCOPPIATE</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Charakteristik&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Geschwindigkeitsindex&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenquerschnitt&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Ma&#xdf;nahmen&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1260,99 +1151,28 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants 2 3</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_icarico</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Number of Studs: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_larghezza</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Wheel Width: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_ivelocita</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Offset:&lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_spalla</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Distance: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_marca</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Manufacturers: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_raggio</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1360,11 +1180,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>currency</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1372,17 +1192,89 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>CERCHI</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Lochzahl&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Felgenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Offset&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Abstand&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Zollgr&#xf6;&#xdf;e&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1394,99 +1286,28 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants 2 4</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_icarico</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Year: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_larghezza</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Width: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_ivelocita</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Model:&lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_spalla</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Section: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_marca</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Brand: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_raggio</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1494,11 +1315,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>currency</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1506,17 +1327,89 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>RUOTINI</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>t_icarico</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Baujahr&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_larghezza</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_ivelocita</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Model&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_spalla</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenquerschnitt&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_marca</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Marke&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>t_raggio</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Zollgr&#xf6;&#xdf;e&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1528,27 +1421,52 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Add constants 4</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;br></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;br&#x3e;</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>currency</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CHF</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+      <field>
+        <name>tipo</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>CATENE</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1556,10 +1474,10 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_icarico</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>-</nullif>
         <length>-1</length>
         <precision>-1</precision>
@@ -1568,11 +1486,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_larghezza</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Tyre width: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1580,11 +1498,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_ivelocita</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Thickness mesh:&lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Dicke mesh&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1592,11 +1510,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_spalla</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Section: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenquerschnitt&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1604,11 +1522,11 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_marca</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1616,41 +1534,17 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <field>
         <name>t_raggio</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Diameters: &lt;/strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>currency</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>EUR</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>tipo</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>CATENE</nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Radius&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1662,21 +1556,22 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Append streams</name>
     <type>Append</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <head_name>look Auto</head_name>
-    <tail_name>Look scooter</tail_name>
-    <cluster_schema />
+<head_name>look Auto</head_name>
+<tail_name>Look scooter</tail_name>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1688,21 +1583,22 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Append streams 3</name>
     <type>Append</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <head_name>Append streams</head_name>
-    <tail_name>Look accoppiate</tail_name>
-    <cluster_schema />
+<head_name>Append streams</head_name>
+<tail_name>Look accoppiate</tail_name>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1714,21 +1610,22 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Append streams 3 2</name>
     <type>Append</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <head_name>Append streams 3</head_name>
-    <tail_name>Look Cerchi</tail_name>
-    <cluster_schema />
+<head_name>Append streams 3</head_name>
+<tail_name>Look Cerchi</tail_name>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1740,21 +1637,22 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Append streams 4</name>
     <type>Append</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <head_name>Append streams 4 2</head_name>
-    <tail_name>Look catene</tail_name>
-    <cluster_schema />
+<head_name>Append streams 4 2</head_name>
+<tail_name>Look catene</tail_name>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1766,21 +1664,22 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Append streams 4 2</name>
     <type>Append</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <head_name>Append streams 3 2</head_name>
-    <tail_name>Look ruotini</tail_name>
-    <cluster_schema />
+<head_name>Append streams 3 2</head_name>
+<tail_name>Look ruotini</tail_name>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1792,61 +1691,27 @@ category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SC
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>CATENE</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codicevar as product_sku
-, substring(replace(replace(rtrim(var.short_desc),'CATENE DA NEVE','SNOW TIRE CHAINS'),'CATENE NEVE','SNOW TIRE CHAINS') +  case when codca5 is not null then ' ' + ltrim(rtrim(desca5)) + ' mm THICKNESS' else '' end , 1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
-as Titolo
-, 180090 as ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then codca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then codca4 else '' end as larghezza
-, case when codca5 is not null then rtrim(ltrim(desca5)) + ' mm' else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then codca2 else '' end as offset
-, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-,'' as energy
-, '' as rumorosita
-, '' as codicerotolamento
-, '' as codiceaderenza
-, partner
-,eancode
-FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
-LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where linky_ebay_report.SKU is null and
- product_in_stock > 0 and 
-pubblicato='Y' and
-var.siteid='IE' and 
--- codca2='R' and 
---e.codice='CATWEIM90GRF30' and
-category_path in ( 'CATENE DA NEVE')
-</sql>
+    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;var.short_desc&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;SCHNEEKETTEN&#x27;&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;SCHNEEKETTEN&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm DICKE&#x27; else &#x27;&#x27; end  , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xa;, 40278 as ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;CH&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and var.siteid&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;var.siteid&#x3d;&#x27;CH&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--e.codice&#x3d;&#x27;CATWEIM90GRF30&#x27; and&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xa;union all&#xd;&#xa;SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;e.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;SNOW CHAINS&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;SNOW CHAINS&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm THICKNESS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;Switzerland&#x27; as siteid&#xd;&#xa;,&#x27;CH&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 &#x3c;&#x3e;&#x27;0&#x27;then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;,&#x27;&#x27; as energy&#xd;&#xa;, &#x27;&#x27; as rumorosita&#xd;&#xa;, &#x27;&#x27; as codicerotolamento&#xd;&#xa;, &#x27;&#x27; as codiceaderenza&#xd;&#xa;, partner,&#xd;&#xa;eancode&#xd;&#xa;FROM linky_ebayarticoli e&#xd;&#xa;LEFT JOIN linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and e.siteid &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;e.siteid&#x3d;&#x27;CH&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xd;&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1858,61 +1723,27 @@ category_path in ( 'CATENE DA NEVE')
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>CERCHI LEGA REPLICA</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codice as product_sku
-, substring('ALLOY WHEEL ' + short_desc,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
-, ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
---,prezzolistino
-, dbo.linky_calc_endprice('FEL','IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then codca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then desca4 else '' end as larghezza
-, case when codca5 is not null then desca5 else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then DESca2 else '' end as offset
-, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-,'' as energy
-, '' as rumorosita
-, '' as codicerotolamento
-, '' as codiceaderenza
-, partner
-,eancode
-FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where 
---linky_ebay_report.SKU is null and
-product_in_stock > 0 and 
---pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
---codice='1840235VWRA3XL' and
-category_path  in ('CERCHI IN LEGA')
-</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;ALUFELGE &#x27; &#x2b; replace&#x28;replace&#x28;short_desc,&#x27;pollici&#x27;,&#x27;zoll&#x27;&#x29;,&#x27;modello&#x27;,&#x27;MODELL&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;--,prezzolistino&#xa;, dbo.linky_calc_endprice&#x28;&#x27;FEL&#x27;,&#x27;CH&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;CH&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where &#xa;--linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;--pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;CH&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1924,41 +1755,31 @@ category_path  in ('CERCHI IN LEGA')
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS Accoppiate</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-caratteristiche = t_marca + Marca + t_finespecifica +
-				t_raggio + diametro + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1970,46 +1791,31 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS auto</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-caratteristiche = t_marca + Marca + t_finespecifica +
-				t_larghezza + larghezza + t_finespecifica +
-				t_spalla + spalla + t_finespecifica +
-				t_raggio + diametro + t_finespecifica +
-				t_icarico + icarico + t_finespecifica +
-				t_ivelocita + ivel + t_finespecifica +
-				energy ;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica &#x2b;&#xa;				energy &#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2021,43 +1827,31 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS auto template</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-var tmp1 = TEMPLATE.replace('{{TITOLO}}',Titolo);
-var tmp2 = tmp1.replace('{{CARATTERISTICHE}}',caratteristiche);
-
-descrizione = tmp2;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>descrizione</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;var tmp1 &#x3d; TEMPLATE.replace&#x28;&#x27;&#x7b;&#x7b;TITOLO&#x7d;&#x7d;&#x27;,Titolo&#x29;&#x3b;&#xa;var tmp2 &#x3d; tmp1.replace&#x28;&#x27;&#x7b;&#x7b;CARATTERISTICHE&#x7d;&#x7d;&#x27;,caratteristiche&#x29;&#x3b;&#xa;&#xa;descrizione &#x3d; tmp2&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>descrizione</name>
         <rename>descrizione</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2069,45 +1863,31 @@ descrizione = tmp2;</jsScript_script>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS cerchi</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-caratteristiche = t_marca + Marca + t_finespecifica +
-				t_larghezza + larghezza + t_finespecifica +
-				t_spalla + spalla + t_finespecifica +
-				t_raggio + diametro + t_finespecifica +
-				t_icarico + icarico + t_finespecifica +
-				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2119,45 +1899,31 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS moto</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-caratteristiche = t_marca + Marca + t_finespecifica +
-				t_larghezza + larghezza + t_finespecifica +
-				t_spalla + spalla + t_finespecifica +
-				t_raggio + diametro + t_finespecifica +
-				t_icarico + icarico + t_finespecifica +
-				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2169,48 +1935,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look Cerchi</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2222,48 +1989,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look accoppiate</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2275,48 +2043,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look catene</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2328,48 +2097,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look ruotini</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2381,48 +2151,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look scooter</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2434,61 +2205,27 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>MOTO SCOOTER</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codice as product_sku
-, substring(replace(short_desc,'GOMME PNEUMATICI','TYRES')  +  + 
-case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
-, ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then codca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then codca4 else '' end as larghezza
-, case when codca5 is not null then desca5 else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then codca2 else '' end as offset
-, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-,'' as energy
-, '' as rumorosita
-, '' as codicerotolamento
-, '' as codiceaderenza
-, partner
-,eancode
-FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where linky_ebay_report.SKU is null and
- product_in_stock > 0 and 
-pubblicato='Y' and
-linky_ebayarticoli.siteid='IE' and 
---codca2 ='N' and
---codice='1840235VWRA3XL' and
-category_path  in ('SCOOTER','MOTO')
-and 1=2</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;rtrim&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;MOTORRADREIFEN &#x27;&#x29;  &#x2b;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IE&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;CH&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;CH&#x27; and &#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2500,34 +2237,35 @@ and 1=2</sql>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Prezzo</name>
     <type>Calculator</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <calculation>
       <field_name>PrezzoFinale</field_name>
       <calc_type>MULTIPLY</calc_type>
       <field_a>product_price</field_a>
       <field_b>Cambio</field_b>
-      <field_c />
+      <field_c/>
       <value_type>Number</value_type>
       <value_length>-1</value_length>
       <value_precision>0</value_precision>
       <remove>N</remove>
-      <conversion_mask>#</conversion_mask>
+      <conversion_mask>&#x23;</conversion_mask>
       <decimal_symbol>.</decimal_symbol>
       <grouping_symbol>,</grouping_symbol>
-      <currency_symbol />
+      <currency_symbol/>
     </calculation>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2539,70 +2277,27 @@ and 1=2</sql>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>RUOTINI</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct
- codice as product_sku
-, substring(replace(replace(short_desc,'RUOTINO DI SCORTA','SPARE WHEEL'),' PER ',' FOR ')  + 
-case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
-as Titolo
-, ebaycat
-,'Ireland' as siteid
-,'IE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, dbo.linky_calc_endprice(partner,'IE','RUOTINI','',prezzolistino)  as product_price
-, product_in_stock as product_in_stock
-, case when desca1 is not null then desca1 else '' end as diametro
-, case when desca3 is not null then desca3 else '' end as spalla
-, case when desca4 is not null then desca4 else '' end as larghezza
-, case when desca5 is not null then desca5 else '' end as ivel
-, case when desca6 is not null then desca6 else '' end as icarico
-, case when desca2 is not null then desca2 else '' end as offset
-, 'RUOTINI' as category_path
-,product_full_image
-, codca2 as tipoutilizzo
-, case when codicerotolamento is not null then
-'&lt;p>&lt;img src="http://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
- codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
-substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
-'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
-else
-''
-end as energy
-, substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) as rumorosita
-, codicerotolamento
-, codiceaderenza
-, partner,
-eancode
-FROM linky_ebayarticoli 
-LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IE'= linky_ebay_report.SITEID
-where linky_ebay_report.SKU is null and
-product_in_stock > 0 and 
-pubblicato='Y' and
- linky_ebayarticoli.siteid='IE' and 
--- codca2='R' and 
---codice like '1598990%' and
---codicerotolamento is not null and
-category_path = 'RUOTINI'
-</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;short_desc,&#x27;RUOTINO DI SCORTA&#x27;,&#x27;ERSATZRAD&#x27;&#x29;,&#x27; PER &#x27;,&#x27; F&#xdc;R &#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Switzerland&#x27; as siteid&#xa;,&#x27;CH&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;CH&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when desca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when desca3 is not null then desca3 else &#x27;&#x27; end as spalla&#xa;, case when desca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when desca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when desca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when desca2 is not null then desca2 else &#x27;&#x27; end as offset&#xa;, &#x27;RUOTINI&#x27; as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;CH&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa; linky_ebayarticoli.siteid&#x3d;&#x27;CH&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;1598990&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path &#x3d; &#x27;RUOTINI&#x27;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2614,17 +2309,18 @@ category_path = 'RUOTINI'
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>RecuperaCambio</name>
     <type>StreamLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <from>Valute</from>
     <input_sorted>N</input_sorted>
@@ -2639,11 +2335,11 @@ category_path = 'RUOTINI'
       <value>
         <name>Cambio</name>
         <rename>Cambio</rename>
-        <default />
+        <default/>
         <type>Number</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2655,43 +2351,31 @@ category_path = 'RUOTINI'
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Ruotini 2</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche = t_marca + offset + t_finespecifica +
-				t_larghezza + larghezza + t_finespecifica +
-				t_spalla + spalla + t_finespecifica +
-				t_raggio + diametro + t_finespecifica +
-				t_icarico + icarico + t_finespecifica +
-				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; offset &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2703,39 +2387,31 @@ category_path = 'RUOTINI'
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Ruotini 2 2</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche = t_marca + Marca + t_finespecifica +
-				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2747,103 +2423,48 @@ category_path = 'RUOTINI'
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2855,103 +2476,48 @@ category_path = 'RUOTINI'
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2963,103 +2529,48 @@ category_path = 'RUOTINI'
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values 2 2</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3071,103 +2582,48 @@ category_path = 'RUOTINI'
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values 3</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3179,103 +2635,48 @@ category_path = 'RUOTINI'
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values 3 2</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3287,103 +2688,48 @@ category_path = 'RUOTINI'
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Select values 3 2 2</name>
     <type>SelectValues</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>product_sku</name>
-      </field>
-      <field>
-        <name>Titolo</name>
-      </field>
-      <field>
-        <name>ebaycat</name>
-      </field>
-      <field>
-        <name>siteid</name>
-      </field>
-      <field>
-        <name>country</name>
-      </field>
-      <field>
-        <name>Type</name>
-      </field>
-      <field>
-        <name>Marca</name>
-      </field>
-      <field>
-        <name>product_price</name>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-      </field>
-      <field>
-        <name>diametro</name>
-      </field>
-      <field>
-        <name>spalla</name>
-      </field>
-      <field>
-        <name>larghezza</name>
-      </field>
-      <field>
-        <name>ivel</name>
-      </field>
-      <field>
-        <name>icarico</name>
-      </field>
-      <field>
-        <name>offset</name>
-      </field>
-      <field>
-        <name>category_path</name>
-      </field>
-      <field>
-        <name>product_full_image</name>
-      </field>
-      <field>
-        <name>tipoutilizzo</name>
-      </field>
-      <field>
-        <name>energy</name>
-      </field>
-      <field>
-        <name>rumorosita</name>
-      </field>
-      <field>
-        <name>codicerotolamento</name>
-      </field>
-      <field>
-        <name>codiceaderenza</name>
-      </field>
-      <field>
-        <name>partner</name>
-      </field>
-      <field>
-        <name>eancode</name>
-      </field>
-      <field>
-        <name>caratteristiche</name>
-      </field>
-      <field>
-        <name>tipo</name>
-      </field>
-      <field>
-        <name>currency</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <cluster_schema />
+    <fields>      <field>        <name>product_sku</name>
+      </field>      <field>        <name>Titolo</name>
+      </field>      <field>        <name>ebaycat</name>
+      </field>      <field>        <name>siteid</name>
+      </field>      <field>        <name>country</name>
+      </field>      <field>        <name>Type</name>
+      </field>      <field>        <name>Marca</name>
+      </field>      <field>        <name>product_price</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>diametro</name>
+      </field>      <field>        <name>spalla</name>
+      </field>      <field>        <name>larghezza</name>
+      </field>      <field>        <name>ivel</name>
+      </field>      <field>        <name>icarico</name>
+      </field>      <field>        <name>offset</name>
+      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>tipoutilizzo</name>
+      </field>      <field>        <name>energy</name>
+      </field>      <field>        <name>rumorosita</name>
+      </field>      <field>        <name>codicerotolamento</name>
+      </field>      <field>        <name>codiceaderenza</name>
+      </field>      <field>        <name>partner</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>caratteristiche</name>
+      </field>      <field>        <name>tipo</name>
+      </field>      <field>        <name>currency</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3395,34 +2741,35 @@ category_path = 'RUOTINI'
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>descrizione</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>crlf</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3434,30 +2781,27 @@ category_path = 'RUOTINI'
       <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Valute</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT
-  Valuta
-, Cambio
-FROM linky_valute
-</sql>
+    <sql>SELECT&#xa;  Valuta&#xa;, Cambio&#xa;FROM linky_valute&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3469,20 +2813,21 @@ FROM linky_valute
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
-    <name>articoli IE</name>
+    <name>articoli CH</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <separator>|</separator>
-    <enclosure />
+    <separator>&#x7c;</separator>
+    <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
@@ -3490,12 +2835,12 @@ FROM linky_valute
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>${PNEUS_STARTUP}EBAY${file.separator}export${file.separator}INSERZIONI${file.separator}eBay_product_IE</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_ch</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -3506,7 +2851,7 @@ FROM linky_valute
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -3516,11 +2861,11 @@ FROM linky_valute
       <field>
         <name>product_sku</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3528,11 +2873,11 @@ FROM linky_valute
       <field>
         <name>Titolo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3541,10 +2886,10 @@ FROM linky_valute
         <name>ebaycat</name>
         <type>Integer</type>
         <format>0</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3552,11 +2897,11 @@ FROM linky_valute
       <field>
         <name>siteid</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3564,11 +2909,11 @@ FROM linky_valute
       <field>
         <name>country</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3576,11 +2921,11 @@ FROM linky_valute
       <field>
         <name>Type</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3588,11 +2933,11 @@ FROM linky_valute
       <field>
         <name>Marca</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3600,11 +2945,11 @@ FROM linky_valute
       <field>
         <name>prezzofinale</name>
         <type>Number</type>
-        <format>#.#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>15</length>
         <precision>2</precision>
@@ -3612,11 +2957,11 @@ FROM linky_valute
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>#.#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>5</length>
         <precision>0</precision>
@@ -3624,11 +2969,11 @@ FROM linky_valute
       <field>
         <name>diametro</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3636,11 +2981,11 @@ FROM linky_valute
       <field>
         <name>spalla</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3648,11 +2993,11 @@ FROM linky_valute
       <field>
         <name>larghezza</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3660,11 +3005,11 @@ FROM linky_valute
       <field>
         <name>ivel</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3672,11 +3017,11 @@ FROM linky_valute
       <field>
         <name>icarico</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3684,11 +3029,11 @@ FROM linky_valute
       <field>
         <name>offset</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3696,11 +3041,11 @@ FROM linky_valute
       <field>
         <name>country</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3708,11 +3053,11 @@ FROM linky_valute
       <field>
         <name>category_path</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3720,11 +3065,11 @@ FROM linky_valute
       <field>
         <name>descrizione</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3732,11 +3077,11 @@ FROM linky_valute
       <field>
         <name>product_full_image</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3744,11 +3089,11 @@ FROM linky_valute
       <field>
         <name>tipoutilizzo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3756,11 +3101,11 @@ FROM linky_valute
       <field>
         <name>rumorosita</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3768,11 +3113,11 @@ FROM linky_valute
       <field>
         <name>codiceaderenza</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3780,11 +3125,11 @@ FROM linky_valute
       <field>
         <name>codicerotolamento</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3792,11 +3137,11 @@ FROM linky_valute
       <field>
         <name>partner</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -3804,17 +3149,17 @@ FROM linky_valute
       <field>
         <name>eancode</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3826,48 +3171,49 @@ FROM linky_valute
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>look Auto</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -3879,7 +3225,8 @@ FROM linky_valute
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

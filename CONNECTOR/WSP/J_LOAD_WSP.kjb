@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;09.302</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;25 16&#x3a;06&#x3a;24.089</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;15 13&#x3a;23&#x3a;01.780</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -435,7 +435,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
+      <xloc>208</xloc>
       <yloc>96</yloc>
     </entry>
   </entries>
@@ -465,7 +465,7 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>t_load_magazzino_wsp</from>

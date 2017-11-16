@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;37&#x3a;53.599</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;25 13&#x3a;43&#x3a;20.468</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;13 19&#x3a;20&#x3a;05.233</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -317,14 +317,14 @@
       <yloc>496</yloc>
     </entry>
     <entry>
-      <name>J_MAK_EBAY_STOCK_ALL</name>
+      <name>J_EBAY_2017_APP_STOCK_MAK</name>
       <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
       <job_object_id/>
       <filename/>
-      <jobname>J_MAK_EBAY_STOCK_ALL</jobname>
-      <directory>&#x2f;LINKY&#x2f;MAK</directory>
+      <jobname>J_EBAY_2017_APP_STOCK_MAK</jobname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -345,7 +345,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>304</xloc>
+      <xloc>480</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -377,7 +377,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>768</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -409,7 +409,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>928</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -1037,8 +1037,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1024</xloc>
-      <yloc>48</yloc>
+      <xloc>1232</xloc>
+      <yloc>160</yloc>
     </entry>
     <entry>
       <name>J_LOAD_RUOTINI</name>
@@ -1069,39 +1069,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>32</yloc>
-    </entry>
-    <entry>
-      <name>J_MAK_EBAY_STOCK_APP_ALL</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>J_MAK_EBAY_STOCK_APP_ALL</jobname>
-      <directory>&#x2f;LINKY&#x2f;MAK&#x2f;APPLICAZIONI</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>1184</xloc>
+      <xloc>640</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -1121,7 +1089,7 @@
       <parallel>Y</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
+      <xloc>1232</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -1153,7 +1121,71 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
+      <xloc>1232</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>J_MAK_EBAY_STOCK_ALL</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_MAK_EBAY_STOCK_ALL</jobname>
+      <directory>&#x2f;LINKY&#x2f;MAK</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>304</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>J_EBAY_2017_STOCK_APP_MAK</name>
+      <description/>
+      <type>JOB</type>
+      <specification_method>rep_name</specification_method>
+      <job_object_id/>
+      <filename/>
+      <jobname>J_EBAY_2017_STOCK_APP_MAK</jobname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Nothing</loglevel>
+      <slave_server_name/>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <expand_remote_job>N</expand_remote_job>
+      <create_parent_folder>N</create_parent_folder>
+      <pass_export>N</pass_export>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1088</xloc>
       <yloc>48</yloc>
     </entry>
   </entries>
@@ -1339,7 +1371,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_MAK_EBAY_STOCK_ALL</from>
+      <from>J_EBAY_2017_APP_STOCK_MAK</from>
       <to>t_write_log errore</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1528,15 +1560,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_write_log</from>
-      <to>J_MAK_EBAY_STOCK_ALL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>J_MOMO_EBAY_STOCK_ALL</from>
       <to>t_write_log errore</to>
       <from_nr>0</from_nr>
@@ -1546,7 +1569,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_MAK_EBAY_STOCK_ALL</from>
+      <from>J_EBAY_2017_APP_STOCK_MAK</from>
       <to>J_LOAD_RUOTINI</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1562,24 +1585,6 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>J_MOMO_EBAY_STOCK_ALL</from>
-      <to>J_MAK_EBAY_STOCK_APP_ALL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>J_MAK_EBAY_STOCK_APP_ALL</from>
-      <to>DUMMY 2</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>DUMMY 2</from>
@@ -1600,8 +1605,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_TECK_EBAY_STOCK_ALL</from>
-      <to>J_WSP_EBAY_STOCK_ALL</to>
+      <from>J_WSP_EBAY_STOCK_ALL</from>
+      <to>J_MOMO_EBAY_STOCK_ALL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1609,8 +1614,44 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_WSP_EBAY_STOCK_ALL</from>
-      <to>J_MOMO_EBAY_STOCK_ALL</to>
+      <from>J_MOMO_EBAY_STOCK_ALL</from>
+      <to>DUMMY 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_write_log</from>
+      <to>J_MAK_EBAY_STOCK_ALL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_MAK_EBAY_STOCK_ALL</from>
+      <to>J_EBAY_2017_APP_STOCK_MAK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_TECK_EBAY_STOCK_ALL</from>
+      <to>J_EBAY_2017_STOCK_APP_MAK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>J_EBAY_2017_STOCK_APP_MAK</from>
+      <to>J_WSP_EBAY_STOCK_ALL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

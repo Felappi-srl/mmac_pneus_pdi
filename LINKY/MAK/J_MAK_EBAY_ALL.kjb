@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;01&#x3a;37.417</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;11 08&#x3a;07&#x3a;01.465</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -443,65 +443,6 @@
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>32</yloc>
-    </entry>
-    <entry>
-      <name>t_ebay_ExpFile_mak_it</name>
-      <description/>
-      <type>TRANS</type>
-      <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
-      <transname>t_ebay_ExpFile_mak_it</transname>
-      <directory>&#x2f;LINKY&#x2f;MAK</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <clear_rows>N</clear_rows>
-      <clear_files>N</clear_files>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Basic</loglevel>
-      <cluster>N</cluster>
-      <slave_server_name/>
-      <set_append_logfile>N</set_append_logfile>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <create_parent_folder>N</create_parent_folder>
-      <logging_remote_work>N</logging_remote_work>
-      <parameters>
-        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>816</xloc>
-      <yloc>288</yloc>
-    </entry>
-    <entry>
-      <name>Ebay MAK IT</name>
-      <description/>
-      <type>SHELL</type>
-      <filename/>
-      <work_directory/>
-      <arg_from_previous>N</arg_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <set_append_logfile>N</set_append_logfile>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <insertScript>Y</insertScript>
-      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe linky_action&#x3d;ADD crea ebay_mak_it  batch</script>
-      <loglevel>Basic</loglevel>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>218</xloc>
-      <yloc>522</yloc>
     </entry>
     <entry>
       <name>J_CONNECTOR_FROM_MAK</name>
@@ -1058,15 +999,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>t_ebay_ExpFile_mak_it</from>
-      <to>t_ebay_ExpFile_mak_de</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_ebay_ExpFile_mak_de</from>
       <to>t_ebay_ExpFile_mak_uk</to>
       <from_nr>0</from_nr>
@@ -1131,15 +1063,6 @@
     </hop>
     <hop>
       <from>t_imp_ebay_var_mak</from>
-      <to>Mail Error</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_ebay_ExpFile_mak_it</from>
       <to>Mail Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1238,24 +1161,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Ebay MAK UK</from>
-      <to>Ebay MAK IT</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Ebay MAK IT</from>
-      <to>Ebay MAK DE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_ebay_ExpFile_mak_es</from>
       <to>Ebay MAK UK</to>
       <from_nr>0</from_nr>
@@ -1276,15 +1181,6 @@
     <hop>
       <from>ECE</from>
       <to>NOIMAGE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>NOIMAGE</from>
-      <to>t_ebay_ExpFile_mak_it</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1348,6 +1244,24 @@
     <hop>
       <from>SQL</from>
       <to>t_imp_ebay_mak_experimental</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay MAK UK</from>
+      <to>Ebay MAK DE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>NOIMAGE</from>
+      <to>t_ebay_ExpFile_mak_de</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
