@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_create_ProductsPackage</name>
+    <name>Estrai_IMG</name>
     <description />
     <extended_description />
     <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>/CDISCOUNT/PRODUCTS</directory>
+    <directory>/</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017/07/06 13:48:34.726</created_date>
+    <created_date>2017/09/27 16:07:22.950</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017/11/14 16:48:10.824</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2017/09/27 16:20:24.343</modified_date>
+    <key_for_session_key />
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -496,28 +496,8 @@
   </connection>
   <order>
     <hop>
-      <from>Group by</from>
-      <to>Package</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Package</from>
-      <to>Products.xml</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Articoli</from>
-      <to>Value Mapper</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Value Mapper</from>
-      <to>Modified Java Script Value</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Modified Java Script Value</from>
-      <to>Group by</to>
+      <to>IMG.xml</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -533,17 +513,9 @@
       <schema_name />
     </partitioning>
     <connection>LINKY</connection>
-    <sql>	SELECT
-art.IPCODE, RTRIM (LTRIM(art.DESCRIZIONE)) AS DESCRIZIONE, art.MARCA, art.SETTORE, art.LISTINO, art.GIACENZA, art.IMMAGINE, RTRIM (LTRIM(art.EAN)) AS EAN, RTRIM (LTRIM( COALESCE (art.TITOLOALTERNATIVO, art.MARCA + ' ' + art.DESCRIZIONE, ''))) AS TITLE,
-1 AS gruppo
-FROM linky_integro_articoli AS art
-LEFT JOIN linky_cd_report AS cds ON art.IPCODE = cds.ipcode
-WHERE 
-cds.ipcode IS NULL and art.BESTPRICE = '1' and art.LISTINO>0 and art.LISTINO IS NOT NULL and LEN (RTRIM (LTRIM(art.EAN))) > 12 
-and art.EAN &lt;&gt; '3528700087192'  
-and art.EAN &lt;&gt; '8019227010954'
-ORDER BY art.EAN DESC;
-</sql>
+    <sql>SELECT DISTINCT 
+IMMAGINE
+FROM linky_integro_articoli;</sql>
     <limit>0</limit>
     <lookup />
     <execute_each_row>N</execute_each_row>
@@ -557,251 +529,13 @@ ORDER BY art.EAN DESC;
       </output>
     </remotesteps>
     <GUI>
-      <xloc>32</xloc>
-      <yloc>48</yloc>
+      <xloc>208</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Articoli 2</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>LINKY</connection>
-    <sql>SELECT TOP 2
-IPCODE, DESCRIZIONE, MARCA, SETTORE, LISTINO, GIACENZA, IMMAGINE, EAN, COALESCE (TITOLOALTERNATIVO, MARCA + ' ' + DESCRIZIONE, '') AS TITLE,
-1 AS gruppo
-FROM linky_integro_articoli 
-WHERE 
-BESTPRICE = '1' and LISTINO>0 and LISTINO IS NOT NULL and LEN (RTRIM (LTRIM(EAN))) > 12 
-and EAN &lt;&gt; '3528700087192'  
-and EAN &lt;&gt; '8019227010954'
-ORDER BY EAN ASC;</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>32</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore />
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname />
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>gruppo</name>
-      </field>
-    </group>
-    <fields>
-      <field>
-        <aggregate>Prodotti</aggregate>
-        <subject>Product</subject>
-        <type>CONCAT_STRING</type>
-        <valuefield> </valuefield>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <compatible>Y</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-F1=TITLE;
-var bytes = Packages.org.apache.commons.codec.binary.Base64.decodeBase64( F1.getString().getBytes() );
-var decString = new Packages.java.lang.String( bytes );
-var encString = new Packages.java.lang.String( Packages.org.apache.commons.codec.binary.Base64.encodeBase64( F1.getBytes() ) );
-
-
-Product = 
-'&lt;Product   ' +
-'  BrandName="' + MARCA.getString() + '" ' +
-'  Description="' + DESCRIZIONE.getString() + '"   ' +
-'  LongLabel="' + TITLE.getString() + '" ' +
-'  Model="SOUMISSION CREATION PRODUITS_MK"  ' +
-'  ProductKind="Standard" ' +
-'  CategoryCode="' + idcat.getString() + '" ' +
-'  SellerProductId="' + IPCODE.getString() + '"  ' +
-'  ShortLabel="' + TITLE.getString() + '" ' +
-'  EncodedMarketingDescription="' + encString + '">' +
-'        &lt;Product.EanList>' +
-'          &lt;ProductEan Ean="' + EAN.getString() + '"/>' +
-'        &lt;/Product.EanList>' +
-'        &lt;Product.Pictures>' +
-'          &lt;ProductImage Uri="https://www.tyreo.com/media/imgsprod/' + IMMAGINE.getString() + '.jpg"/>' +
-'        &lt;/Product.Pictures>' +
-'&lt;/Product>';
-
-	  </jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>Product</name>
-        <rename>Product</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>decString</name>
-        <rename>decString</rename>
-        <type>String</type>
-        <length>8000</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>bytes</name>
-        <rename>bytes</rename>
-        <type>Binary</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>encString</name>
-        <rename>encString</rename>
-        <type>String</type>
-        <length>10000</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-      <field>
-        <name>F1</name>
-        <rename>F1</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Package</name>
-    <type>ScriptValueMod</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-var header='&lt;ProductPackage Name="test_Greg_DemandeDecreaProduit_API_Variant_SOJ144731" xmlns="clr-namespace:Cdiscount.Service.ProductIntegration.Pivot;assembly=Cdiscount.Service.ProductIntegration" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">' +
-'  &lt;ProductPackage.Products>' +
-'    &lt;ProductCollection Capacity="8">';
-
-var footer='	  &lt;/ProductCollection>' +
-'  &lt;/ProductPackage.Products>' +
-'&lt;/ProductPackage>';
-
-Package = header + Prodotti + footer;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>Package</name>
-        <rename>Package</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Products.xml</name>
+    <name>IMG.xml</name>
     <type>TextFileOutput</type>
     <description />
     <distribute>Y</distribute>
@@ -825,11 +559,11 @@ Package = header + Prodotti + footer;</jsScript_script>
     <fileNameField />
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${PNEUS_STARTUP}CDISCOUNT${file.separator}products${file.separator}ProductPackage${file.separator}Content${file.separator}Products</name>
+      <name>${PNEUS_STARTUP}TYREO${file.separator}IMG${file.separator}IMG_DB</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>xml</extention>
+      <extention>xls</extention>
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
@@ -844,7 +578,7 @@ Package = header + Prodotti + footer;</jsScript_script>
     </file>
     <fields>
       <field>
-        <name>Package</name>
+        <name>IMMAGINE</name>
         <type>String</type>
         <format />
         <currency />
@@ -864,185 +598,8 @@ Package = header + Prodotti + footer;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Value Mapper</name>
-    <type>ValueMapper</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <field_to_use>SETTORE</field_to_use>
-    <target_field>idcat</target_field>
-    <non_match_default>0S0B0101</non_match_default>
-    <fields>
-      <field>
-        <source_value>SCOOTER</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>FUORISTRADA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>ATV - GARDEN</source_value>
-        <target_value>''</target_value>
-      </field>
-      <field>
-        <source_value>VETTURA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>VETTURA FUORI LISTINO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MINICROSS</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MINITRASPORTO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>FUORISTRADAFUORISTRADAFUORISTRADA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>FUORISTRADAFUORISTRADA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>TRUCK</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>INDUSTRIALE</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MOVIMENTO TERRA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>CARRELLO INDUSTRIALE                    </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>CAMERE AGRICOLTURA                      </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>RUOTE IN FERRO                          </source_value>
-        <target_value>0S060H01</target_value>
-      </field>
-      <field>
-        <source_value>QUAD                                    </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>RUOTE IN LEGA                           </source_value>
-        <target_value>0S060H01</target_value>
-      </field>
-      <field>
-        <source_value>CAMERE SCOOTER                          </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>CAMERE AUTOCARRO                        </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>RUN FLAT</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>CAMERE VETTURA                          </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value />
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>4X4 FUORI LISTINO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>RICOSTRUZIONE                           </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>AUTOCARRO 17,5 19,5</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>AUTOCARRO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>CAMERE FUORI LISTINO                    </source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>TRASPORTO LEGGERO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>SCOOTER</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>TRASPORTO LEGGERO FUORI LISTINO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MOTO/SCOOTER NO ECO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>RUNFLAT</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MOTO FUORI LISTINO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>AGRICOLTURA</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>MOTO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-      <field>
-        <source_value>V</source_value>
-        <target_value>''</target_value>
-      </field>
-      <field>
-        <source_value>FUORISTRADA FUORI LISTINO</source_value>
-        <target_value>0S0B0101</target_value>
-      </field>
-    </fields>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>48</yloc>
+      <xloc>304</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

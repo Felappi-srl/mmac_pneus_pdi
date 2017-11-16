@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_ebay_2017_expfile_appktype_uk</name>
+    <name>t_ebay_2017_expfile_appktype_fr</name>
     <description />
     <extended_description />
     <trans_version />
@@ -429,12 +429,75 @@
     <created_user>admin</created_user>
     <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/11/16 12:18:58.516</modified_date>
+    <modified_date>2017/11/16 12:17:58.105</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>CONNECTOR_2017</name>
+    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>connector_2017</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
+        <attribute>500</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>LINKY</name>
     <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
@@ -496,48 +559,48 @@
   </connection>
   <order>
     <hop>
-      <from>Add constants 2 3</from>
-      <to>Formula</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>RecuperaCambio</from>
-      <to>Prezzo</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Valute</from>
-      <to>RecuperaCambio</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Formula</from>
-      <to>RecuperaCambio</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Prezzo</from>
-      <to>articoli</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Sort rows</from>
       <to>Unique rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CERCHI LEGA MAK</from>
+      <from>CERCHI LEGA</from>
       <to>Sort rows</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Add constants 2 3 2</from>
+      <to>JS cerchi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Unique rows</from>
-      <to>Add constants 2 3</to>
+      <to>Add constants 2 3 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>JS cerchi</from>
+      <to>Look Cerchi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>JS auto template</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Look Cerchi</from>
+      <to>JS auto template</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>articoli</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Add constants 2 3</name>
+    <name>Add constants 2 3 2</name>
     <type>Constant</type>
     <description />
     <distribute>Y</distribute>
@@ -549,73 +612,13 @@
     </partitioning>
     <fields>
       <field>
-        <name>t_marcaauto</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;p>&lt;span>Mark:&lt;/span>&lt;strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_modelloauto</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;p>&lt;span>Model:&lt;/span>&lt;strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_annoauto</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;p>&lt;span>Model year:&lt;/span>&lt;strong></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_header</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">About us&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacts&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Shipment&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Payments&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">For more informations, please contact &lt;span>+39 392/6472415&lt;/span> or &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central"></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>t_secondo</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;h2>&lt;span>Product &lt;/span>informations&lt;/h2>&lt;div id="descrizione"></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
         <name>t_finespecifica</name>
         <type>String</type>
         <format />
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;/strong>&lt;/p></nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -627,7 +630,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Number of Studs: &lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Entraxe (Nombre de trous): &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -639,7 +642,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Wheel Width: &lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Largeur: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -651,7 +654,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Offset:&lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Offset: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -663,7 +666,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Distance: &lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Ratio flanc: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -675,7 +678,7 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Manufacturers: &lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Fabricant de la jante: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -687,31 +690,19 @@
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;p>&lt;span>Diameter: &lt;/span>&lt;strong></nullif>
+        <nullif>&lt;strong>Diamètre de la jante: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
       <field>
-        <name>t_footer</name>
+        <name>tipo</name>
         <type>String</type>
         <format />
         <currency />
         <decimal />
         <group />
-        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerCerchi">&lt;p id="notaprezzo">&lt;strong>Price&lt;/strong>  refers to one piece and includes the cost of transport&lt;/p>&lt;h5>Please contact us before you buy&lt;/h5>&lt;p id="beforebuy">to verify the availability of the desired quantity.&lt;/p>&lt;h5>HAVE YOU NOT FOUND WHAT YOU WERE LOOKING FOR ?&lt;/h5>&lt;p id="notfound">Contact us, we are at your disposal!!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Shipping by courier, 3/4 work days&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Shipping informations:&lt;/h6>&lt;p>If the buyer is not at home at the time of delivery and the goods must be on deposit,any additional expense to the permanence of the goods deposited is charged to the buyer.&lt;/p>&lt;p>IT IS RACCOMENDED TO REQUEST INVOICE BEFORE ORDER THE GOODS, WRITING COMPANY DATA IN THE NOTES FIELD&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>currency</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>GBP</nullif>
+        <nullif>CERCHI</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -725,13 +716,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>48</yloc>
+      <xloc>368</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>CERCHI LEGA MAK</name>
+    <name>CERCHI LEGA</name>
     <type>TableInput</type>
     <description />
     <distribute>N</distribute>
@@ -741,17 +732,17 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>LINKY</connection>
+    <connection>CONNECTOR_2017</connection>
     <sql>SELECT distinct
- var.codicevar as product_sku
-, substring(var.nome,1,80) as Titolo
-, var.nome as titolo_header
+ e.codice as product_sku
+, substring((replace(var.nome, 'CERCHI IN LEGA ', 'JANTES ROUES ')),1,80) as Titolo
+, replace(var.nome, 'CERCHI IN LEGA ', 'JANTES ROUES ') as titolo_header
 , ebaycat
-,'UK' as siteid
-,'IT' as country
+,'France' as siteid
+,'FR' as country
 ,'FixedPriceItem' as Type
 ,  Marca 
-, linky_calc_endprice_2016(partner,'UK','CERCHI','',prezzopubblico,0)  as product_price
+, linky_calc_endprice_2016(partner,'FR','CERCHI','',prezzopubblico,0)  as product_price
 , product_in_stock as product_in_stock
 , case when codca1 is not null then codca1 else '' end as diametro
 , case when codca3 is not null then codca3 else '' end as spalla
@@ -764,7 +755,7 @@
 , '' as tipoutilizzo
 , partner,
 case when urlcertificato is not null then
-'&lt;p>&lt;a href="' + urlcertificato + '" target="_blank">Download certification&lt;/a>&lt;/p>'
+'&lt;p>&lt;a href="' + urlcertificato + '" target="_blank">Download le certificat&lt;/a>&lt;/p>'
 else
 ''
 end as urlcertificato,eancode,
@@ -775,10 +766,8 @@ where
  var.isece=1 
 and product_in_stock > 3 
 and prezzolistino > 10 
-and var.siteid='UK'  
+and var.siteid='FR'  
 and (out_prod&lt;&gt;'1' OR out_prod IS NULL)
--- and e.codice='F1021NNIB19WSX'
-and var.auto is not null
 </sql>
     <limit>0</limit>
     <lookup />
@@ -799,8 +788,8 @@ and var.auto is not null
     </GUI>
   </step>
   <step>
-    <name>Formula</name>
-    <type>Formula</type>
+    <name>JS auto template</name>
+    <type>ScriptValueMod</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -809,14 +798,30 @@ and var.auto is not null
       <method>none</method>
       <schema_name />
     </partitioning>
-    <formula>
-      <field_name>Descrizione</field_name>
-      <formula_string>[t_header]&amp;[Titolo_header]&amp;[t_secondo]&amp;[t_marca]&amp;[Marca]&amp;[t_finespecifica]&amp;[t_raggio]&amp;[diametro]&amp;[t_finespecifica]&amp;[t_larghezza]&amp;[larghezza]&amp;[t_finespecifica]&amp;[t_icarico]&amp;[icarico]&amp;[t_finespecifica]&amp;[t_spalla]&amp;[spalla]&amp;[t_finespecifica]&amp;[t_ivelocita]&amp;[offset]&amp;[t_finespecifica]&amp;[urlcertificato]&amp;[t_footer]</formula_string>
-      <value_type>String</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <replace_field />
-    </formula>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
+
+var tmp1 = TEMPLATE.replace('{{TITOLO}}',Titolo);
+var tmp2 = tmp1.replace('{{CARATTERISTICHE}}',caratteristiche);
+
+descrizione = tmp2;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>descrizione</name>
+        <rename>descrizione</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -825,53 +830,14 @@ and var.auto is not null
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
+      <xloc>656</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Prezzo</name>
-    <type>Calculator</type>
-    <description />
-    <distribute>N</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <calculation>
-      <field_name>PrezzoFinale</field_name>
-      <calc_type>MULTIPLY</calc_type>
-      <field_a>product_price</field_a>
-      <field_b>Cambio</field_b>
-      <field_c />
-      <value_type>Number</value_type>
-      <value_length>-1</value_length>
-      <value_precision>0</value_precision>
-      <remove>N</remove>
-      <conversion_mask>#</conversion_mask>
-      <decimal_symbol>.</decimal_symbol>
-      <grouping_symbol>,</grouping_symbol>
-      <currency_symbol />
-    </calculation>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>704</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>RecuperaCambio</name>
-    <type>StreamLookup</type>
+    <name>JS cerchi</name>
+    <type>ScriptValueMod</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -880,21 +846,83 @@ and var.auto is not null
       <method>none</method>
       <schema_name />
     </partitioning>
-    <from>Valute</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + offset + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
+        <rename>caratteristiche</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Look Cerchi</name>
+    <type>DBLookup</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>N</cache_load_all>
+    <cache_size>0</cache_size>
     <lookup>
+      <schema />
+      <table>linky_ebay_template</table>
+      <orderby />
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
       <key>
-        <name>Currency</name>
-        <field>Valuta</field>
+        <name>siteid</name>
+        <field>SITID</field>
+        <condition>=</condition>
+        <name2 />
+      </key>
+      <key>
+        <name>tipo</name>
+        <field>TIPO</field>
+        <condition>=</condition>
+        <name2 />
       </key>
       <value>
-        <name>Cambio</name>
-        <rename>Cambio</rename>
+        <name>TEMPLATE</name>
+        <rename>TEMPLATE</rename>
         <default />
-        <type>Number</type>
+        <type>String</type>
       </value>
     </lookup>
     <cluster_schema />
@@ -905,7 +933,7 @@ and var.auto is not null
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
+      <xloc>560</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -952,6 +980,45 @@ and var.auto is not null
     </GUI>
   </step>
   <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>descrizione</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>crlf</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Unique rows</name>
     <type>Unique</type>
     <description />
@@ -980,43 +1047,8 @@ and var.auto is not null
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>240</xloc>
       <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Valute</name>
-    <type>TableInput</type>
-    <description />
-    <distribute>Y</distribute>
-    <custom_distribution />
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name />
-    </partitioning>
-    <connection>LINKY</connection>
-    <sql>SELECT
-  Valuta
-, Cambio
-FROM linky_valute
-</sql>
-    <limit>0</limit>
-    <lookup />
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>608</xloc>
-      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1045,7 +1077,7 @@ FROM linky_valute
     <fileNameField />
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C:\linky\pneus\ebay\ebay_uk</name>
+      <name>C:\linky\pneus\ebay\ebay_app_FR</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -1148,7 +1180,7 @@ FROM linky_valute
         <precision>-1</precision>
       </field>
       <field>
-        <name>PrezzoFinale</name>
+        <name>product_price</name>
         <type>Number</type>
         <format>#.#</format>
         <currency />
@@ -1304,42 +1336,6 @@ FROM linky_valute
         <precision>-1</precision>
       </field>
       <field>
-        <name>MARCAAUTO</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>MODELLOAUTO</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>ANNOAUTO</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
         <name>partner</name>
         <type>String</type>
         <format />
@@ -1376,91 +1372,7 @@ FROM linky_valute
         <precision>-1</precision>
       </field>
       <field>
-        <name>CarMake</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>model</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>syear</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>variant</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>bodystyle</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>stype</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>engine</name>
-        <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>ktype</name>
+        <name>auto</name>
         <type>String</type>
         <format />
         <currency />
@@ -1480,8 +1392,8 @@ FROM linky_valute
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>48</yloc>
+      <xloc>528</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

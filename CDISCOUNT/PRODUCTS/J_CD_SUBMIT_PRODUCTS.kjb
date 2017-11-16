@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017/07/06 14:36:45.572</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017/11/06 10:34:37.921</modified_date>
+  <modified_date>2017/11/14 17:54:13.861</modified_date>
   <parameters>
     </parameters>
   <slaveservers>
@@ -303,7 +303,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>64</xloc>
+      <xloc>16</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -384,7 +384,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>736</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -447,14 +447,14 @@
       <adddate>N</adddate>
       <addtime>N</addtime>
       <SpecifyFormat>Y</SpecifyFormat>
-      <date_time_format>yyyy-dd-MM</date_time_format>
+      <date_time_format>yyyy-MM-dd</date_time_format>
       <createMoveToDirectory>N</createMoveToDirectory>
       <include_subfolders>Y</include_subfolders>
       <stored_source_path_depth>1</stored_source_path_depth>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>624</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -472,7 +472,62 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>400</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>t_CDS_GetOfferList</name>
+      <description />
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id />
+      <filename />
+      <transname>t_CDS_GetOfferList</transname>
+      <directory>/CDISCOUNT/PRODUCTS</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile />
+      <logext />
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name />
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration>Pentaho local</run_configuration>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>144</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>Cancella i file 2</name>
+      <description />
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>N</include_subfolders>
+      <fields>
+        <field>
+          <name>${PNEUS_STARTUP}CDISCOUNT${file.separator}products${file.separator}ProductPackage${file.separator}</name>
+          <filemask>.*\.zip</filemask>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
       <yloc>48</yloc>
     </entry>
   </entries>
@@ -496,15 +551,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>START</from>
-      <to>t_create_OfferPackage</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>File Zip</from>
       <to>Carica package</to>
       <from_nr>0</from_nr>
@@ -523,13 +569,40 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
+      <from>t_CDS_GetOfferList</from>
+      <to>t_create_OfferPackage</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>Cancella i file</from>
+      <to>Cancella i file 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Cancella i file 2</from>
       <to>File Zip</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>t_CDS_GetOfferList</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
