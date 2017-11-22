@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;07&#x2f;06 13&#x3a;48&#x3a;34.726</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;03 11&#x3a;52&#x3a;06.817</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;20 11&#x3a;22&#x3a;04.131</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -495,7 +495,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>select rtrim&#x28;ltrim&#x28;codice&#x29;&#x29; as ipcode,eancode as ean, 0 as giacenza, product_in_stock as giacenza_corretta, &#xd;&#xa;round&#x28;dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;,2&#x29; as PREZZOSCONTATO&#xd;&#xa;, 1 as gruppo&#xd;&#xa;from linky_ebayarticoli &#xd;&#xa;where &#xd;&#xa; product_in_stock&#x3e;0&#xd;&#xa;and prezzolistino&#x3e;0&#xd;&#xa;and eancode is not null &#xd;&#xa;and eancode&#x3c;&#x3e;&#x27;&#x27;&#xd;&#xa;--and eancode&#x3d;&#x27;4019238318388&#x27;&#xd;&#xa;and siteid&#x3d;&#x27;FR&#x27;</sql>
+    <sql>select rtrim&#x28;ltrim&#x28;codice&#x29;&#x29; as ipcode,eancode as ean, 0 as giacenza, product_in_stock as giacenza_corretta, &#xd;&#xa;round&#x28;dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;,2&#x29; as PREZZOSCONTATO&#xd;&#xa;, 1 as gruppo&#xd;&#xa;from linky_ebayarticoli &#xd;&#xa;where &#xd;&#xa; -- product_in_stock&#x3e;0&#xd;&#xa;-- and &#xd;&#xa;&#xd;&#xa;prezzolistino&#x3e;0&#xd;&#xa;and eancode is not null &#xd;&#xa;and eancode&#x3c;&#x3e;&#x27;&#x27;&#xd;&#xa;--and eancode&#x3d;&#x27;4019238318388&#x27;&#xd;&#xa;and siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;-- and codice &#x3d; &#x27;1845245YCROSSCL&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

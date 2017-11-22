@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;12 11&#x3a;56&#x3a;46.255</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;16 12&#x3a;09&#x3a;55.718</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -467,7 +467,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>976</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -499,7 +499,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>976</xloc>
       <yloc>160</yloc>
     </entry>
     <entry>
@@ -531,7 +531,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>704</xloc>
+      <xloc>784</xloc>
       <yloc>160</yloc>
     </entry>
     <entry>

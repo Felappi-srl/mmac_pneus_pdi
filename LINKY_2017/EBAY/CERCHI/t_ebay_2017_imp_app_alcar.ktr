@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_get_alcar_type_03</name>
+    <name>t_ebay_2017_imp_app_alcar</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;ALCAR</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
     <parameters>
     </parameters>
     <log>
@@ -408,8 +408,8 @@
       <maxdiff>0.0</maxdiff>
     </maxdate>
     <size_rowset>10000</size_rowset>
-    <sleep_time_empty>50</sleep_time_empty>
-    <sleep_time_full>50</sleep_time_full>
+    <sleep_time_empty>0</sleep_time_empty>
+    <sleep_time_full>0</sleep_time_full>
     <unique_connections>N</unique_connections>
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
@@ -426,411 +426,123 @@
     </slaveservers>
     <clusterschemas>
     </clusterschemas>
-    <created_user/>
-    <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;05.636</created_date>
+    <created_user>admin</created_user>
+    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;16 11&#x3a;10&#x3a;08.265</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;16 13&#x3a;58&#x3a;32.493</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>CONNECTOR</name>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>CONNECTOR</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>CONNECTOR_2017</name>
+    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>connector_2017</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
-      <from>Modified Java Script Value</from>
-      <to>HTTP Post</to>
+      <from>Split field to rows</from>
+      <to>Split Fields</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>HTTP Post</from>
-      <to>Get data from XML</to>
+      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get data from XML</from>
-      <to>Text file output</to>
+      <from>Table output</from>
+      <to>Dummy &#x28;do nothing&#x29; 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Text file input</from>
-      <to>Modified Java Script Value</to>
+      <from>Unique rows</from>
+      <to>Split field to rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Split Fields</from>
+      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ARTICOLI</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Unique rows</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Get data from XML</name>
-    <type>getXMLData</type>
+    <name>ARTICOLI</name>
+    <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <addresultfile>N</addresultfile>
-    <namespaceaware>N</namespaceaware>
-    <ignorecomments>N</ignorecomments>
-    <readurl>N</readurl>
-    <validating>N</validating>
-    <usetoken>N</usetoken>
-    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
-    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
-    <rownum_field/>
-    <encoding>UTF-8</encoding>
-    <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;alcar&#x5c;alcar_stock.xml</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-    </file>
-    <fields>
-      <field>
-        <name>BrandCode</name>
-        <xpath>BrandCode</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>TypeCode</name>
-        <xpath>TypeCode</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>TypeText</name>
-        <xpath>TypeText</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>BoltPattern</name>
-        <xpath>BoltPattern</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>BoltCircle</name>
-        <xpath>BoltCircle</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>CenterBore</name>
-        <xpath>CenterBore</xpath>
-        <element_type>node</element_type>
-        <result_type>valueof</result_type>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
+    <connection>CONNECTOR</connection>
+    <sql>select &#xd;&#xa;  brand as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;,1,46&#x29; as codievar&#xd;&#xa;,case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; replace&#x28;COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#xd;&#xa;	 &#x2b; &#x27; ET&#x27; &#x2b; COALESCE&#x28;offset,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29;&#x29; AS NOME&#xd;&#xa; ,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;, upper&#x28;marcaauto&#x29; as marca&#xd;&#xa;, upper&#x28;modelloauto&#x29; as modello &#xd;&#xa;from linky_articoli_alcar&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;1 &#xd;&#xa;and prezzo is not null</sql>
     <limit>0</limit>
-    <loopxpath>&#x2f;ACMTypeData_A2&#x2f;DataLine</loopxpath>
-    <IsInFields>Y</IsInFields>
-    <IsAFile>N</IsAFile>
-    <XmlField>result</XmlField>
-    <prunePath/>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>HTTP Post</name>
-    <type>HTTPPOST</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>3</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <postafile>N</postafile>
-    <encoding>UTF-8</encoding>
-    <url>https&#x3a;&#x2f;&#x2f;adhocedi.alcar-wheels.com</url>
-    <urlInField>N</urlInField>
-    <urlField/>
-    <requestEntity>body</requestEntity>
-    <httpLogin/>
-    <httpPassword>Encrypted </httpPassword>
-    <proxyHost/>
-    <proxyPort/>
-    <socketTimeout>10000</socketTimeout>
-    <connectionTimeout>10000</connectionTimeout>
-    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
-    <lookup>
-      <arg>
-        <name>Authorization</name>
-        <parameter>Authorization</parameter>
-        <header>Y</header>        </arg>
-      <arg>
-        <name>ContentType</name>
-        <parameter>Content-Type</parameter>
-        <header>Y</header>        </arg>
-      <arg>
-        <name>user_agent</name>
-        <parameter>user_agent</parameter>
-        <header>Y</header>        </arg>
-      </lookup>
-    <result>
-      <name>result</name>
-      <code/>
-      <response_time/>
-      <response_header/>
-      </result>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;Authorization &#x3d; &#x22; Basic ZmVsYXBwaTozNTQwMjYy&#x22;&#x3b;&#xd;&#xa;ContentType &#x3d; &#x22;application&#x2f;xml&#x3b; charset&#x3d;utf-8&#x22;&#x3b;&#xd;&#xa;user_agent &#x3d; &#x22;Lemon42 Adhoc-EDI Client&#x2f;1.0&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;body&#x3d;&#x27;&#x3c;&#x3f;xml version&#x3d;&#x22;1.0&#x22; encoding&#x3d;&#x22;UTF-8&#x22;&#x3f;&#x3e;&#x3c;&#x21;DOCTYPE ACMType_A2 SYSTEM &#x22;ACMType_A2.dtd&#x22;&#x3e;&#x3c;ACMType_A2&#x3e;&#x3c;DocumentID&#x3e;FEL-BRAND-01&#x3c;&#x2f;DocumentID&#x3e;&#x3c;BuyerParty&#x3e;&#x3c;PartyID&#x3e;4120023&#x3c;&#x2f;PartyID&#x3e;&#x3c;AgencyCode&#x3e;91&#x3c;&#x2f;AgencyCode&#x3e;&#x3c;&#x2f;BuyerParty&#x3e;&#x3c;BrandCode&#x3e;&#x27;&#x2b;BrandCode&#x2b;&#x27;&#x3c;&#x2f;BrandCode&#x3e;&#x3c;&#x2f;ACMType_A2&#x3e;&#x27;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>body</name>
-        <rename>body</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>orderlines</name>
-        <rename>orderlines</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>Authorization</name>
-        <rename>Authorization</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>ContentType</name>
-        <rename>ContentType</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>      <field>        <name>user_agent</name>
-        <rename>user_agent</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Text file input</name>
-    <type>TextFileInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <accept_filenames>N</accept_filenames>
-    <passing_through_fields>N</passing_through_fields>
-    <accept_field/>
-    <accept_stepname/>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_breaks>N</enclosure_breaks>
-    <escapechar/>
-    <header>Y</header>
-    <nr_headerlines>1</nr_headerlines>
-    <footer>N</footer>
-    <nr_footerlines>1</nr_footerlines>
-    <line_wrapped>N</line_wrapped>
-    <nr_wraps>1</nr_wraps>
-    <layout_paged>N</layout_paged>
-    <nr_lines_per_page>80</nr_lines_per_page>
-    <nr_lines_doc_header>0</nr_lines_doc_header>
-    <noempty>Y</noempty>
-    <include>N</include>
-    <include_field/>
-    <rownum>N</rownum>
-    <rownumByFile>N</rownumByFile>
-    <rownum_field/>
-    <format>DOS</format>
-    <encoding/>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;alcar&#x24;&#x7b;file.separator&#x7d;alcar_brands.txt</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <type>CSV</type>
-      <compression>None</compression>
-    </file>
-    <filters>
-    </filters>
-    <fields>
-      <field>
-        <name>BrandCode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>BrandText</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-    </fields>
-    <limit>0</limit>
-    <error_ignored>N</error_ignored>
-    <skip_bad_files>N</skip_bad_files>
-    <file_error_field/>
-    <file_error_message_field/>
-    <error_line_skipped>N</error_line_skipped>
-    <error_count_field/>
-    <error_fields_field/>
-    <error_text_field/>
-    <bad_line_files_destination_directory/>
-    <bad_line_files_extension>warning</bad_line_files_extension>
-    <error_line_files_destination_directory/>
-    <error_line_files_extension>error</error_line_files_extension>
-    <line_number_files_destination_directory/>
-    <line_number_files_extension>line</line_number_files_extension>
-    <date_format_lenient>Y</date_format_lenient>
-    <date_format_locale>it_IT</date_format_locale>
-    <shortFileFieldName/>
-    <pathFieldName/>
-    <hiddenFieldName/>
-    <lastModificationTimeFieldName/>
-    <uriNameFieldName/>
-    <rootUriNameFieldName/>
-    <extensionFieldName/>
-    <sizeFieldName/>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -840,14 +552,39 @@
     </remotesteps>
     <GUI>
       <xloc>64</xloc>
-      <yloc>32</yloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Text file output</name>
-    <type>TextFileOutput</type>
+    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -856,121 +593,46 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>Y</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding>windows-1252</encoding>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;alcar&#x24;&#x7b;file.separator&#x7d;alcar_types</name>
-      <is_command>N</is_command>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>BrandCode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>TypeCode</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>TypeText</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BoltPattern</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BoltCircle</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CenterBore</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>BrandText</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
+        <name>codievar</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
       </field>
     </fields>
     <cluster_schema/>
@@ -981,13 +643,226 @@
       </output>
     </remotesteps>
     <GUI>
+      <xloc>160</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>Categorie</splitfield>
+   <delimiter>-</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>SiteID</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>EbayCat</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Number</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split field to rows</name>
+    <type>SplitFieldToRows3</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>ALTREebaycat</splitfield>
+   <delimiter>,</delimiter>
+   <newfield>Categorie</newfield>
+   <rownum>N</rownum>
+   <rownum_field/>
+   <resetrownumber>Y</resetrownumber>
+   <delimiter_is_regex>N</delimiter_is_regex>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR_2017</connection>
+    <schema/>
+    <table>ebay_cerchi_app</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>codice</column_name>
+          <stream_name>codice</stream_name>
+        </field>
+        <field>
+          <column_name>nome</column_name>
+          <stream_name>NOME</stream_name>
+        </field>
+        <field>
+          <column_name>siteid</column_name>
+          <stream_name>SiteID</stream_name>
+        </field>
+        <field>
+          <column_name>ebaycat</column_name>
+          <stream_name>EbayCat</stream_name>
+        </field>
+        <field>
+          <column_name>isece</column_name>
+          <stream_name>isece</stream_name>
+        </field>
+        <field>
+          <column_name>urlcertificato</column_name>
+          <stream_name>urlcertificato</stream_name>
+        </field>
+        <field>
+          <column_name>istuv</column_name>
+          <stream_name>isTUV</stream_name>
+        </field>
+        <field>
+          <column_name>codicevar</column_name>
+          <stream_name>codievar</stream_name>
+        </field>
+        <field>
+          <column_name>marcaauto</column_name>
+          <stream_name>marca</stream_name>
+        </field>
+        <field>
+          <column_name>modelloauto</column_name>
+          <stream_name>modello</stream_name>
+        </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Unique rows</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>codievar</name>
+        <case_insensitive>N</case_insensitive>
+        </field>      </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
       <xloc>272</xloc>
-      <yloc>208</yloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step_error_handling>
+      <error>
+        <source_step>Table output</source_step>
+        <target_step>Dummy &#x28;do nothing&#x29; 3</target_step>
+        <is_enabled>Y</is_enabled>
+        <nr_valuename/>
+        <descriptions_valuename>errore</descriptions_valuename>
+        <fields_valuename/>
+        <codes_valuename/>
+        <max_errors>999999999999999999</max_errors>
+        <max_pct_errors/>
+        <min_pct_rows/>
+      </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
