@@ -1,15 +1,15 @@
 <job>
   <name>J_EXP_TYRE24</name>
-  <description/>
-  <extended_description/>
-  <job_version/>
+  <description />
+  <extended_description />
+  <job_version />
   <job_status>0</job_status>
-  <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+  <directory>/CONNECTOR/tyre24</directory>
   <created_user>admin</created_user>
-  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;57.847</created_date>
+  <created_date>2014/07/18 15:39:57.847</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;02 11&#x3a;50&#x3a;37.293</modified_date>
-    <parameters>
+  <modified_date>2017/11/22 11:07:46.516</modified_date>
+  <parameters>
     </parameters>
   <connection>
     <name>LINKY</name>
@@ -20,301 +20,334 @@
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
-    <slaveservers>
+  <slaveservers>
     </slaveservers>
-      <job-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
-        <field>
-          <id>ID_JOB</id>
-          <enabled>Y</enabled>
-          <name>ID_JOB</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>JOBNAME</id>
-          <enabled>Y</enabled>
-          <name>JOBNAME</name>
-        </field>
-        <field>
-          <id>STATUS</id>
-          <enabled>Y</enabled>
-          <name>STATUS</name>
-        </field>
-        <field>
-          <id>LINES_READ</id>
-          <enabled>Y</enabled>
-          <name>LINES_READ</name>
-        </field>
-        <field>
-          <id>LINES_WRITTEN</id>
-          <enabled>Y</enabled>
-          <name>LINES_WRITTEN</name>
-        </field>
-        <field>
-          <id>LINES_UPDATED</id>
-          <enabled>Y</enabled>
-          <name>LINES_UPDATED</name>
-        </field>
-        <field>
-          <id>LINES_INPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_INPUT</name>
-        </field>
-        <field>
-          <id>LINES_OUTPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_OUTPUT</name>
-        </field>
-        <field>
-          <id>LINES_REJECTED</id>
-          <enabled>Y</enabled>
-          <name>LINES_REJECTED</name>
-        </field>
-        <field>
-          <id>ERRORS</id>
-          <enabled>Y</enabled>
-          <name>ERRORS</name>
-        </field>
-        <field>
-          <id>STARTDATE</id>
-          <enabled>Y</enabled>
-          <name>STARTDATE</name>
-        </field>
-        <field>
-          <id>ENDDATE</id>
-          <enabled>Y</enabled>
-          <name>ENDDATE</name>
-        </field>
-        <field>
-          <id>LOGDATE</id>
-          <enabled>Y</enabled>
-          <name>LOGDATE</name>
-        </field>
-        <field>
-          <id>DEPDATE</id>
-          <enabled>Y</enabled>
-          <name>DEPDATE</name>
-        </field>
-        <field>
-          <id>REPLAYDATE</id>
-          <enabled>Y</enabled>
-          <name>REPLAYDATE</name>
-        </field>
-        <field>
-          <id>LOG_FIELD</id>
-          <enabled>Y</enabled>
-          <name>LOG_FIELD</name>
-        </field>
-        <field>
-          <id>EXECUTING_SERVER</id>
-          <enabled>N</enabled>
-          <name>EXECUTING_SERVER</name>
-        </field>
-        <field>
-          <id>EXECUTING_USER</id>
-          <enabled>N</enabled>
-          <name>EXECUTING_USER</name>
-        </field>
-        <field>
-          <id>START_JOB_ENTRY</id>
-          <enabled>N</enabled>
-          <name>START_JOB_ENTRY</name>
-        </field>
-        <field>
-          <id>CLIENT</id>
-          <enabled>N</enabled>
-          <name>CLIENT</name>
-        </field>
-      </job-log-table>
-      <jobentry-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
-        <field>
-          <id>ID_BATCH</id>
-          <enabled>Y</enabled>
-          <name>ID_BATCH</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>LOG_DATE</id>
-          <enabled>Y</enabled>
-          <name>LOG_DATE</name>
-        </field>
-        <field>
-          <id>JOBNAME</id>
-          <enabled>Y</enabled>
-          <name>TRANSNAME</name>
-        </field>
-        <field>
-          <id>JOBENTRYNAME</id>
-          <enabled>Y</enabled>
-          <name>STEPNAME</name>
-        </field>
-        <field>
-          <id>LINES_READ</id>
-          <enabled>Y</enabled>
-          <name>LINES_READ</name>
-        </field>
-        <field>
-          <id>LINES_WRITTEN</id>
-          <enabled>Y</enabled>
-          <name>LINES_WRITTEN</name>
-        </field>
-        <field>
-          <id>LINES_UPDATED</id>
-          <enabled>Y</enabled>
-          <name>LINES_UPDATED</name>
-        </field>
-        <field>
-          <id>LINES_INPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_INPUT</name>
-        </field>
-        <field>
-          <id>LINES_OUTPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_OUTPUT</name>
-        </field>
-        <field>
-          <id>LINES_REJECTED</id>
-          <enabled>Y</enabled>
-          <name>LINES_REJECTED</name>
-        </field>
-        <field>
-          <id>ERRORS</id>
-          <enabled>Y</enabled>
-          <name>ERRORS</name>
-        </field>
-        <field>
-          <id>RESULT</id>
-          <enabled>Y</enabled>
-          <name>RESULT</name>
-        </field>
-        <field>
-          <id>NR_RESULT_ROWS</id>
-          <enabled>Y</enabled>
-          <name>NR_RESULT_ROWS</name>
-        </field>
-        <field>
-          <id>NR_RESULT_FILES</id>
-          <enabled>Y</enabled>
-          <name>NR_RESULT_FILES</name>
-        </field>
-        <field>
-          <id>LOG_FIELD</id>
-          <enabled>N</enabled>
-          <name>LOG_FIELD</name>
-        </field>
-        <field>
-          <id>COPY_NR</id>
-          <enabled>N</enabled>
-          <name>COPY_NR</name>
-        </field>
-      </jobentry-log-table>
-      <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
-        <field>
-          <id>ID_BATCH</id>
-          <enabled>Y</enabled>
-          <name>ID_BATCH</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>LOG_DATE</id>
-          <enabled>Y</enabled>
-          <name>LOG_DATE</name>
-        </field>
-        <field>
-          <id>LOGGING_OBJECT_TYPE</id>
-          <enabled>Y</enabled>
-          <name>LOGGING_OBJECT_TYPE</name>
-        </field>
-        <field>
-          <id>OBJECT_NAME</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_NAME</name>
-        </field>
-        <field>
-          <id>OBJECT_COPY</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_COPY</name>
-        </field>
-        <field>
-          <id>REPOSITORY_DIRECTORY</id>
-          <enabled>Y</enabled>
-          <name>REPOSITORY_DIRECTORY</name>
-        </field>
-        <field>
-          <id>FILENAME</id>
-          <enabled>Y</enabled>
-          <name>FILENAME</name>
-        </field>
-        <field>
-          <id>OBJECT_ID</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_ID</name>
-        </field>
-        <field>
-          <id>OBJECT_REVISION</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_REVISION</name>
-        </field>
-        <field>
-          <id>PARENT_CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>PARENT_CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>ROOT_CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>ROOT_CHANNEL_ID</name>
-        </field>
-      </channel-log-table>
-   <pass_batchid>N</pass_batchid>
-   <shared_objects_file/>
+  <job-log-table>
+    <connection />
+    <schema />
+    <table />
+    <size_limit_lines />
+    <interval />
+    <timeout_days />
+    <field>
+      <id>ID_JOB</id>
+      <enabled>Y</enabled>
+      <name>ID_JOB</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>JOBNAME</id>
+      <enabled>Y</enabled>
+      <name>JOBNAME</name>
+    </field>
+    <field>
+      <id>STATUS</id>
+      <enabled>Y</enabled>
+      <name>STATUS</name>
+    </field>
+    <field>
+      <id>LINES_READ</id>
+      <enabled>Y</enabled>
+      <name>LINES_READ</name>
+    </field>
+    <field>
+      <id>LINES_WRITTEN</id>
+      <enabled>Y</enabled>
+      <name>LINES_WRITTEN</name>
+    </field>
+    <field>
+      <id>LINES_UPDATED</id>
+      <enabled>Y</enabled>
+      <name>LINES_UPDATED</name>
+    </field>
+    <field>
+      <id>LINES_INPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_INPUT</name>
+    </field>
+    <field>
+      <id>LINES_OUTPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_OUTPUT</name>
+    </field>
+    <field>
+      <id>LINES_REJECTED</id>
+      <enabled>Y</enabled>
+      <name>LINES_REJECTED</name>
+    </field>
+    <field>
+      <id>ERRORS</id>
+      <enabled>Y</enabled>
+      <name>ERRORS</name>
+    </field>
+    <field>
+      <id>STARTDATE</id>
+      <enabled>Y</enabled>
+      <name>STARTDATE</name>
+    </field>
+    <field>
+      <id>ENDDATE</id>
+      <enabled>Y</enabled>
+      <name>ENDDATE</name>
+    </field>
+    <field>
+      <id>LOGDATE</id>
+      <enabled>Y</enabled>
+      <name>LOGDATE</name>
+    </field>
+    <field>
+      <id>DEPDATE</id>
+      <enabled>Y</enabled>
+      <name>DEPDATE</name>
+    </field>
+    <field>
+      <id>REPLAYDATE</id>
+      <enabled>Y</enabled>
+      <name>REPLAYDATE</name>
+    </field>
+    <field>
+      <id>LOG_FIELD</id>
+      <enabled>Y</enabled>
+      <name>LOG_FIELD</name>
+    </field>
+    <field>
+      <id>EXECUTING_SERVER</id>
+      <enabled>N</enabled>
+      <name>EXECUTING_SERVER</name>
+    </field>
+    <field>
+      <id>EXECUTING_USER</id>
+      <enabled>N</enabled>
+      <name>EXECUTING_USER</name>
+    </field>
+    <field>
+      <id>START_JOB_ENTRY</id>
+      <enabled>N</enabled>
+      <name>START_JOB_ENTRY</name>
+    </field>
+    <field>
+      <id>CLIENT</id>
+      <enabled>N</enabled>
+      <name>CLIENT</name>
+    </field>
+  </job-log-table>
+  <jobentry-log-table>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
+    <field>
+      <id>ID_BATCH</id>
+      <enabled>Y</enabled>
+      <name>ID_BATCH</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>LOG_DATE</id>
+      <enabled>Y</enabled>
+      <name>LOG_DATE</name>
+    </field>
+    <field>
+      <id>JOBNAME</id>
+      <enabled>Y</enabled>
+      <name>TRANSNAME</name>
+    </field>
+    <field>
+      <id>JOBENTRYNAME</id>
+      <enabled>Y</enabled>
+      <name>STEPNAME</name>
+    </field>
+    <field>
+      <id>LINES_READ</id>
+      <enabled>Y</enabled>
+      <name>LINES_READ</name>
+    </field>
+    <field>
+      <id>LINES_WRITTEN</id>
+      <enabled>Y</enabled>
+      <name>LINES_WRITTEN</name>
+    </field>
+    <field>
+      <id>LINES_UPDATED</id>
+      <enabled>Y</enabled>
+      <name>LINES_UPDATED</name>
+    </field>
+    <field>
+      <id>LINES_INPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_INPUT</name>
+    </field>
+    <field>
+      <id>LINES_OUTPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_OUTPUT</name>
+    </field>
+    <field>
+      <id>LINES_REJECTED</id>
+      <enabled>Y</enabled>
+      <name>LINES_REJECTED</name>
+    </field>
+    <field>
+      <id>ERRORS</id>
+      <enabled>Y</enabled>
+      <name>ERRORS</name>
+    </field>
+    <field>
+      <id>RESULT</id>
+      <enabled>Y</enabled>
+      <name>RESULT</name>
+    </field>
+    <field>
+      <id>NR_RESULT_ROWS</id>
+      <enabled>Y</enabled>
+      <name>NR_RESULT_ROWS</name>
+    </field>
+    <field>
+      <id>NR_RESULT_FILES</id>
+      <enabled>Y</enabled>
+      <name>NR_RESULT_FILES</name>
+    </field>
+    <field>
+      <id>LOG_FIELD</id>
+      <enabled>N</enabled>
+      <name>LOG_FIELD</name>
+    </field>
+    <field>
+      <id>COPY_NR</id>
+      <enabled>N</enabled>
+      <name>COPY_NR</name>
+    </field>
+  </jobentry-log-table>
+  <channel-log-table>
+    <connection />
+    <schema />
+    <table />
+    <timeout_days />
+    <field>
+      <id>ID_BATCH</id>
+      <enabled>Y</enabled>
+      <name>ID_BATCH</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>LOG_DATE</id>
+      <enabled>Y</enabled>
+      <name>LOG_DATE</name>
+    </field>
+    <field>
+      <id>LOGGING_OBJECT_TYPE</id>
+      <enabled>Y</enabled>
+      <name>LOGGING_OBJECT_TYPE</name>
+    </field>
+    <field>
+      <id>OBJECT_NAME</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_NAME</name>
+    </field>
+    <field>
+      <id>OBJECT_COPY</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_COPY</name>
+    </field>
+    <field>
+      <id>REPOSITORY_DIRECTORY</id>
+      <enabled>Y</enabled>
+      <name>REPOSITORY_DIRECTORY</name>
+    </field>
+    <field>
+      <id>FILENAME</id>
+      <enabled>Y</enabled>
+      <name>FILENAME</name>
+    </field>
+    <field>
+      <id>OBJECT_ID</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_ID</name>
+    </field>
+    <field>
+      <id>OBJECT_REVISION</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_REVISION</name>
+    </field>
+    <field>
+      <id>PARENT_CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>PARENT_CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>ROOT_CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>ROOT_CHANNEL_ID</name>
+    </field>
+  </channel-log-table>
+  <pass_batchid>N</pass_batchid>
+  <shared_objects_file />
   <entries>
     <entry>
       <name>START</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
       <start>Y</start>
       <dummy>N</dummy>
@@ -334,7 +367,7 @@
     </entry>
     <entry>
       <name>Successo</name>
-      <description/>
+      <description />
       <type>SUCCESS</type>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -344,31 +377,32 @@
     </entry>
     <entry>
       <name>t_UPD_PNEUS_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_PNEUS_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -380,31 +414,32 @@
     </entry>
     <entry>
       <name>t_exp_tyre24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_tyre24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -416,14 +451,14 @@
     </entry>
     <entry>
       <name>FTP T24</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.tyre24.de</servername>
       <serverport>21</serverport>
       <username>ftp1185</username>
       <password>Encrypted 2be98afc86aa7f2e4fe1d8c2586aa9ce2</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\linky\pneus\connector\tyre24\</localDirectory>
       <wildcard>tyre24.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -431,28 +466,28 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
-      <socksproxy_port/>
-      <socksproxy_username/>
+      <socksproxy_host />
+      <socksproxy_port />
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>928</xloc>
+      <xloc>1024</xloc>
       <yloc>336</yloc>
     </entry>
     <entry>
       <name>SQL</name>
-      <description/>
+      <description />
       <type>SQL</type>
-      <sql>update linky_tyre24 set giacenza&#x3d;0</sql>
+      <sql>update linky_tyre24 set giacenza=0</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
+      <sqlfilename />
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -463,31 +498,32 @@
     </entry>
     <entry>
       <name>t_UPD_ALC_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_ALC_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -499,31 +535,32 @@
     </entry>
     <entry>
       <name>t_UPD_MAK_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_MAK_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -535,30 +572,32 @@
     </entry>
     <entry>
       <name>J_LOAD_PARTNERS_2017</name>
-      <description/>
+      <description />
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
+      <job_object_id />
+      <filename />
       <jobname>J_LOAD_PARTNERS_2017</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER</directory>
+      <directory>/CONNECTOR/PARTNERS_LOADER</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name/>
+      <slave_server_name />
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -567,31 +606,32 @@
     </entry>
     <entry>
       <name>t_sistema_ipcode_tyre24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_sistema_ipcode_tyre24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -603,31 +643,32 @@
     </entry>
     <entry>
       <name>t_UPD_MOMO_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_MOMO_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -639,31 +680,32 @@
     </entry>
     <entry>
       <name>t_exp_cpreifen</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_cpreifen</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -675,31 +717,32 @@
     </entry>
     <entry>
       <name>t_UPD_OZ_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_OZ_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -711,31 +754,32 @@
     </entry>
     <entry>
       <name>t_exp_tyresystem</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_tyresystem</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -747,14 +791,14 @@
     </entry>
     <entry>
       <name>FTP TYRESYSTEM</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.tyresystem.de</servername>
       <serverport>21</serverport>
       <username>L2730</username>
       <password>Encrypted 2be98afc86aa7f2e4cb79ce56f7cbf68b</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>tyresystem.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -762,47 +806,48 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
+      <xloc>960</xloc>
       <yloc>592</yloc>
     </entry>
     <entry>
       <name>t_exp_mdtuning</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_mdtuning</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -814,14 +859,14 @@
     </entry>
     <entry>
       <name>FTP MDTUNING</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.md-tuning.de</servername>
       <serverport>21</serverport>
       <username>felappi</username>
       <password>Encrypted 2be98afc86aa783cbb944b466d38289c9</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>mdtuning.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -829,62 +874,63 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
       <yloc>336</yloc>
     </entry>
     <entry>
       <name>t_write_log</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_write_log</transname>
-      <directory>&#x2f;UTILITIES</directory>
+      <directory>/UTILITIES</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
         <parameter>
           <name>jobid</name>
-          <stream_name/>
-          <value>&#x24;&#x7b;Internal.Job.Name&#x7d;</value>
+          <stream_name />
+          <value>${Internal.Job.Name}</value>
         </parameter>
         <parameter>
           <name>jobstatus</name>
-          <stream_name/>
+          <stream_name />
           <value>in esecuzione</value>
         </parameter>
         <parameter>
           <name>jobtipoazione</name>
-          <stream_name/>
+          <stream_name />
           <value>start</value>
         </parameter>
       </parameters>
@@ -896,31 +942,32 @@
     </entry>
     <entry>
       <name>t_exp_tyresinstock</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_tyresinstock</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -932,14 +979,14 @@
     </entry>
     <entry>
       <name>FTP tyresinstock</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.tyresinstock.com</servername>
       <serverport>21</serverport>
       <username>TM413171</username>
       <password>Encrypted 2be98afc86aa7c0d6922c9c598f97bd8e</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>tyresinstock.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -947,28 +994,46 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>912</xloc>
+      <xloc>1008</xloc>
       <yloc>496</yloc>
     </entry>
     <entry>
       <name>Compila Etichetta PNEUS</name>
-      <description/>
+      <description />
       <type>SQL</type>
-      <sql>update L1 set &#xd;&#xa;l1.CODICEROTOLAMENTO &#x3d; l2.CODICEROTOLAMENTO&#xd;&#xa;,l1.ROTOLAMENTO &#x3d; l2.ROTOLAMENTO&#xd;&#xa;,l1.CODICEADERENZA &#x3d; l2.CODICEADERENZA&#xd;&#xa;,l1.ADERENZA &#x3d; l2.ADERENZA&#xd;&#xa;,l1.CODICERUMOROSITA &#x3d; l2.CODICERUMOROSITA&#xd;&#xa;,l1.RUMOROSITA &#x3d; l2.RUMOROSITA&#xd;&#xa;--select &#xd;&#xa;--l2.CODICEROTOLAMENTO&#xd;&#xa;from linky_tyre24 as L1&#xd;&#xa;inner join linky_tyre24 as L2&#xd;&#xa;on l1.EANCODE&#x3d;l2.EANCODE and l1.PARTNER&#x3c;&#x3e;l2.PARTNER&#xd;&#xa;and l1.MARCA&#x3d;l2.MARCA &#xd;&#xa;and l1.CODICEROTOLAMENTO is null and l2.CODICEROTOLAMENTO is not null&#xd;&#xa;and l1.CODICEADERENZA is null and l2.CODICEADERENZA is not null&#xd;&#xa;and l1.LARGHEZZA&#x3d;l2.LARGHEZZA&#xd;&#xa;and l1.serie&#x3d;l2.serie&#xd;&#xa;and l1.CODICECERCHIO&#x3d;l2.CODICECERCHIO&#xd;&#xa;and L1.PARTNER&#x3d;&#x27;PN&#x27; and l2.PARTNER&#x3c;&#x3e;&#x27;PN&#x27;</sql>
+      <sql>update L1 set 
+l1.CODICEROTOLAMENTO = l2.CODICEROTOLAMENTO
+,l1.ROTOLAMENTO = l2.ROTOLAMENTO
+,l1.CODICEADERENZA = l2.CODICEADERENZA
+,l1.ADERENZA = l2.ADERENZA
+,l1.CODICERUMOROSITA = l2.CODICERUMOROSITA
+,l1.RUMOROSITA = l2.RUMOROSITA
+--select 
+--l2.CODICEROTOLAMENTO
+from linky_tyre24 as L1
+inner join linky_tyre24 as L2
+on l1.EANCODE=l2.EANCODE and l1.PARTNER&lt;&gt;l2.PARTNER
+and l1.MARCA=l2.MARCA 
+and l1.CODICEROTOLAMENTO is null and l2.CODICEROTOLAMENTO is not null
+and l1.CODICEADERENZA is null and l2.CODICEADERENZA is not null
+and l1.LARGHEZZA=l2.LARGHEZZA
+and l1.serie=l2.serie
+and l1.CODICECERCHIO=l2.CODICECERCHIO
+and L1.PARTNER='PN' and l2.PARTNER&lt;&gt;'PN'</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
-      <sqlfilename/>
+      <sqlfilename />
       <sendOneStatement>F</sendOneStatement>
       <connection>LINKY</connection>
       <parallel>N</parallel>
@@ -979,31 +1044,32 @@
     </entry>
     <entry>
       <name>t_exp_reiwadirekt</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_reiwadirekt</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -1015,14 +1081,14 @@
     </entry>
     <entry>
       <name>FTP reiwadirekt</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>daten.plusfakt.de</servername>
       <serverport>21</serverport>
       <username>felappi</username>
       <password>Encrypted 2be98afc86aa7d682ae098f348fc1fe82</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>reiwadirekt.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -1030,13 +1096,13 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -1046,30 +1112,32 @@
     </entry>
     <entry>
       <name>J_T24_GET_MAIL</name>
-      <description/>
+      <description />
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
+      <job_object_id />
+      <filename />
       <jobname>J_T24_GET_MAIL</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name/>
+      <slave_server_name />
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -1078,7 +1146,7 @@
     </entry>
     <entry>
       <name>DUMMY</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
       <start>N</start>
       <dummy>Y</dummy>
@@ -1098,7 +1166,7 @@
     </entry>
     <entry>
       <name>DUMMY 2</name>
-      <description/>
+      <description />
       <type>SPECIAL</type>
       <start>N</start>
       <dummy>Y</dummy>
@@ -1118,31 +1186,32 @@
     </entry>
     <entry>
       <name>t_exp_innoting</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_innoting</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -1154,14 +1223,14 @@
     </entry>
     <entry>
       <name>FTP innoting</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.ftp-innoting.net</servername>
       <serverport>21</serverport>
-      <username>pneus-center&#x40;ftp-innoting.net</username>
+      <username>pneus-center@ftp-innoting.net</username>
       <password>Encrypted 2be98afc86aa7f29df81fb627dca0a0f1</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>innoting_tyres.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -1169,13 +1238,13 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -1185,14 +1254,14 @@
     </entry>
     <entry>
       <name>FTP innoting wheels</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>ftp.ftp-innoting.net</servername>
       <serverport>21</serverport>
-      <username>pneus-center&#x40;ftp-innoting.net</username>
+      <username>pneus-center@ftp-innoting.net</username>
       <password>Encrypted 2be98afc86aa7f29df81fb627dca0a0f1</password>
-      <remoteDirectory/>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory />
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>innoting_wheels.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -1200,13 +1269,13 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -1216,30 +1285,32 @@
     </entry>
     <entry>
       <name>J_EXP_PNEUMATICI100</name>
-      <description/>
+      <description />
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
+      <job_object_id />
+      <filename />
       <jobname>J_EXP_PNEUMATICI100</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;pneumatici100</directory>
+      <directory>/CONNECTOR/pneumatici100</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name/>
+      <slave_server_name />
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -1248,31 +1319,32 @@
     </entry>
     <entry>
       <name>t_UPD_TRW_to_TYRE24</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_UPD_TRW_to_TYRE24</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -1284,14 +1356,14 @@
     </entry>
     <entry>
       <name>ROTYRE</name>
-      <description/>
+      <description />
       <type>FTP_PUT</type>
       <servername>94.242.250.124</servername>
       <serverport>21</serverport>
       <username>fel</username>
       <password>Encrypted 2be98afc86aa7f2e49816bb228d98fe85</password>
-      <remoteDirectory>&#x2f;stock</remoteDirectory>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24</localDirectory>
+      <remoteDirectory>/stock</remoteDirectory>
+      <localDirectory>C:\LINKY\pneus\connector\tyre24</localDirectory>
       <wildcard>rotyre.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
@@ -1299,13 +1371,13 @@
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
+      <proxy_host />
+      <proxy_port />
+      <proxy_username />
       <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
+      <socksproxy_host />
       <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
+      <socksproxy_username />
       <socksproxy_password>Encrypted </socksproxy_password>
       <parallel>N</parallel>
       <draw>Y</draw>
@@ -1315,31 +1387,32 @@
     </entry>
     <entry>
       <name>t_exp_rotyre</name>
-      <description/>
+      <description />
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
-      <trans_object_id/>
-      <filename/>
+      <trans_object_id />
+      <filename />
       <transname>t_exp_rotyre</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <clear_rows>N</clear_rows>
       <clear_files>N</clear_files>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Basic</loglevel>
       <cluster>N</cluster>
-      <slave_server_name/>
+      <slave_server_name />
       <set_append_logfile>N</set_append_logfile>
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration />
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
@@ -1351,30 +1424,32 @@
     </entry>
     <entry>
       <name>J_IMP_PREZZI_OVERRIDES</name>
-      <description/>
+      <description />
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
+      <job_object_id />
+      <filename />
       <jobname>J_IMP_PREZZI_OVERRIDES</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;pneus</directory>
+      <directory>/CONNECTOR/pneus</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name/>
+      <slave_server_name />
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -1383,35 +1458,107 @@
     </entry>
     <entry>
       <name>J_UPD_PARTNERS_to_TYRE24</name>
-      <description/>
+      <description />
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
+      <job_object_id />
+      <filename />
       <jobname>J_UPD_PARTNERS_to_TYRE24</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+      <directory>/CONNECTOR/tyre24</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
+      <logfile />
+      <logext />
       <add_date>N</add_date>
       <add_time>N</add_time>
       <loglevel>Nothing</loglevel>
-      <slave_server_name/>
+      <slave_server_name />
       <wait_until_finished>Y</wait_until_finished>
       <follow_abort_remote>N</follow_abort_remote>
       <expand_remote_job>N</expand_remote_job>
       <create_parent_folder>N</create_parent_folder>
       <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <set_append_logfile>N</set_append_logfile>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
       <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>Evaluate files metrics</name>
+      <description />
+      <type>EVAL_FILES_METRICS</type>
+      <result_filenames_wildcard />
+      <Result_field_file />
+      <Result_field_wildcard />
+      <Result_field_includesubfolders />
+      <fields>
+        <field>
+          <source_filefolder>C:\LINKY\PNEUS\connector\tyre24\tyre24.csv</source_filefolder>
+          <wildcard />
+          <include_subFolders>N</include_subFolders>
+        </field>
+      </fields>
+      <comparevalue>5.4</comparevalue>
+      <minvalue />
+      <maxvalue />
+      <successnumbercondition>smaller</successnumbercondition>
+      <source_files>files</source_files>
+      <evaluation_type>size</evaluation_type>
+      <scale>mbytes</scale>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>368</yloc>
+    </entry>
+    <entry>
+      <name>Mail Error</name>
+      <description />
+      <type>MAIL</type>
+      <server>smtp.easyname.eu</server>
+      <port />
+      <destination>alesconti@gmail.com lufelappi@libero.it</destination>
+      <destinationCc />
+      <destinationBCc />
+      <replyto>conti@mmac.pro</replyto>
+      <replytoname>PNEUS jobs</replytoname>
+      <subject>PNEUS file troppo piccolo</subject>
+      <include_date>N</include_date>
+      <contact_person />
+      <contact_phone />
+      <comment>La procedura si è fermata.
+Le dimensioni del file di Tyre24 sono inferiori a 5.4, controllare.</comment>
+      <include_files>N</include_files>
+      <zip_files>N</zip_files>
+      <zip_name />
+      <use_auth>Y</use_auth>
+      <use_secure_auth>Y</use_secure_auth>
+      <auth_user>40778mail1</auth_user>
+      <auth_password>Encrypted 2be98affe0bcbb096a216bd73d69bf88a</auth_password>
+      <only_comment>N</only_comment>
+      <use_HTML>N</use_HTML>
+      <use_Priority>N</use_Priority>
+      <encoding>UTF-8</encoding>
+      <priority>normal</priority>
+      <importance>normal</importance>
+      <sensitivity>normal</sensitivity>
+      <secureconnectiontype>SSL</secureconnectiontype>
+      <replyToAddresses />
+      <filetypes>      </filetypes>
+      <embeddedimages>
+      </embeddedimages>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>784</xloc>
+      <yloc>480</yloc>
     </entry>
   </entries>
   <hops>
@@ -1641,15 +1788,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>DUMMY 2</from>
-      <to>FTP MDTUNING</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>DUMMY</from>
       <to>t_exp_innoting</to>
       <from_nr>0</from_nr>
@@ -1778,6 +1916,42 @@
     <hop>
       <from>FTP innoting wheels</from>
       <to>ROTYRE</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>DUMMY 2</from>
+      <to>Evaluate files metrics</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate files metrics</from>
+      <to>FTP MDTUNING</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Evaluate files metrics</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Mail Error</from>
+      <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
