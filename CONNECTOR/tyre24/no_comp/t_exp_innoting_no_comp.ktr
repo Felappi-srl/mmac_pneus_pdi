@@ -1,22 +1,22 @@
 <transformation>
   <info>
     <name>t_exp_innoting_no_comp</name>
-    <description />
-    <extended_description />
-    <trans_version />
+    <description/>
+    <extended_description/>
+    <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>/CONNECTOR/tyre24/no_comp</directory>
+    <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;no_comp</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection />
-        <schema />
-        <table />
-        <size_limit_lines />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +41,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +125,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection />
-        <schema />
-        <table />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +207,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +273,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +349,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +401,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection />
-      <table />
-      <field />
+      <connection/>
+      <table/>
+      <field/>
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +414,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file />
+    <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2014/07/18 15:39:19.643</created_date>
+    <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;19.643</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/11/22 08:53:07.540</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2017&#x2f;11&#x2f;22 10&#x3a;05&#x3a;49.677</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -444,54 +444,21 @@
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQLUseIntegratedSecurity</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1433</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
@@ -539,21 +506,21 @@
   <step>
     <name>Sort rows</name>
     <type>SortRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>ipcodeperunivoco</name>
@@ -564,7 +531,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -576,25 +543,26 @@
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Sort rows 2</name>
     <type>SortRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>ipcodeperunivoco</name>
@@ -605,7 +573,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -617,27 +585,28 @@
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>ipcodeperunivoco</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -645,12 +614,12 @@
       </field>
       <field>
         <in_stream_name>ipcode</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -658,12 +627,12 @@
       </field>
       <field>
         <in_stream_name>DESCRIZIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -671,12 +640,12 @@
       </field>
       <field>
         <in_stream_name>MARCA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -684,12 +653,12 @@
       </field>
       <field>
         <in_stream_name>SETTORE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -697,12 +666,12 @@
       </field>
       <field>
         <in_stream_name>CODICELARGHEZZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -710,12 +679,12 @@
       </field>
       <field>
         <in_stream_name>LARGHEZZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -723,12 +692,12 @@
       </field>
       <field>
         <in_stream_name>CODICESERIE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -736,12 +705,12 @@
       </field>
       <field>
         <in_stream_name>SERIE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -749,12 +718,12 @@
       </field>
       <field>
         <in_stream_name>CODICECERCHIO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -762,12 +731,12 @@
       </field>
       <field>
         <in_stream_name>CERCHIO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -775,12 +744,12 @@
       </field>
       <field>
         <in_stream_name>CODICEVEL</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -788,12 +757,12 @@
       </field>
       <field>
         <in_stream_name>VEL</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -801,12 +770,12 @@
       </field>
       <field>
         <in_stream_name>CODICESTAGIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -814,12 +783,12 @@
       </field>
       <field>
         <in_stream_name>STAGIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -827,12 +796,12 @@
       </field>
       <field>
         <in_stream_name>ICARICO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -840,12 +809,12 @@
       </field>
       <field>
         <in_stream_name>CODICEROTOLAMENTO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -853,12 +822,12 @@
       </field>
       <field>
         <in_stream_name>ROTOLAMENTO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -866,12 +835,12 @@
       </field>
       <field>
         <in_stream_name>CODICEADERENZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -879,12 +848,12 @@
       </field>
       <field>
         <in_stream_name>ADERENZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -892,12 +861,12 @@
       </field>
       <field>
         <in_stream_name>CODICERUMOROSITA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -905,12 +874,12 @@
       </field>
       <field>
         <in_stream_name>RUMOROSITA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -918,19 +887,19 @@
       </field>
       <field>
         <in_stream_name>EANCODE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>crlf</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -942,27 +911,28 @@
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>String operations 2</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>ipcodeperunivoco</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -970,12 +940,12 @@
       </field>
       <field>
         <in_stream_name>ipcode</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -983,12 +953,12 @@
       </field>
       <field>
         <in_stream_name>DESCRIZIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -996,12 +966,12 @@
       </field>
       <field>
         <in_stream_name>MARCA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1009,12 +979,12 @@
       </field>
       <field>
         <in_stream_name>SETTORE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1022,12 +992,12 @@
       </field>
       <field>
         <in_stream_name>CODICELARGHEZZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1035,12 +1005,12 @@
       </field>
       <field>
         <in_stream_name>LARGHEZZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1048,12 +1018,12 @@
       </field>
       <field>
         <in_stream_name>CODICESERIE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1061,12 +1031,12 @@
       </field>
       <field>
         <in_stream_name>SERIE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1074,12 +1044,12 @@
       </field>
       <field>
         <in_stream_name>CODICECERCHIO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1087,12 +1057,12 @@
       </field>
       <field>
         <in_stream_name>CERCHIO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1100,12 +1070,12 @@
       </field>
       <field>
         <in_stream_name>CODICEVEL</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1113,12 +1083,12 @@
       </field>
       <field>
         <in_stream_name>VEL</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1126,12 +1096,12 @@
       </field>
       <field>
         <in_stream_name>CODICESTAGIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1139,12 +1109,12 @@
       </field>
       <field>
         <in_stream_name>STAGIONE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1152,12 +1122,12 @@
       </field>
       <field>
         <in_stream_name>ICARICO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1165,12 +1135,12 @@
       </field>
       <field>
         <in_stream_name>CODICEROTOLAMENTO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1178,12 +1148,12 @@
       </field>
       <field>
         <in_stream_name>ROTOLAMENTO</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1191,12 +1161,12 @@
       </field>
       <field>
         <in_stream_name>CODICEADERENZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1204,12 +1174,12 @@
       </field>
       <field>
         <in_stream_name>ADERENZA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1217,12 +1187,12 @@
       </field>
       <field>
         <in_stream_name>CODICERUMOROSITA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1230,12 +1200,12 @@
       </field>
       <field>
         <in_stream_name>RUMOROSITA</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
@@ -1243,19 +1213,19 @@
       </field>
       <field>
         <in_stream_name>EANCODE</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>crlf</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1267,101 +1237,27 @@
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Tyres</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT
-  ipcode as ipcodeperunivoco,
-  CODICETYRE as ipcode
---, partner
-, DESCRIZIONE
-, MARCA
-, SETTORE
-, CODICELARGHEZZA
-, LARGHEZZA
-, CODICESERIE
-, SERIE
-, CODICECERCHIO
-, CERCHIO
-, CODICEVEL
-, VEL
-, CODICESTAGIONE
-, STAGIONE
-, LISTINO
-, GIACENZA
-, ICARICO
-, CODICEROTOLAMENTO
-, ROTOLAMENTO
-, CODICEADERENZA
-, ADERENZA
-, CODICERUMOROSITA
-, case when partner in ('MAK','MOMO','OZR','ALC') then 'ALU' else 
-RUMOROSITA end RUMOROSITA
-,  EANCODE
-, LISTINO +case when partner in ('MAK','MOMO','ALC') then 13 else 10 end as LISTINO_BELGIO
-, PREZZOFR as LISTINO_FRANCIA
-, LISTINO +case when partner in ('MAK','MOMO','ALC') then 13 else 10 end as LISTINO_OLANDA
-, 
-case when marca='MSW' then 0 else
-PREZZODE end as LISTINO_GERMANIA
-FROM linky_tyre24 where giacenza >0 and listino >15
-and partner in (Select codicepartner from linky_partners where tipo='PNEUMATICI' and codicepartner&lt;&gt;'PN')
-and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null 
-union all
-SELECT
-  ipcode as ipcodeperunivoco,
-  CODICETYRE as ipcode
---, partner
-, DESCRIZIONE
-, MARCA
-, SETTORE
-, CODICELARGHEZZA
-, LARGHEZZA
-, CODICESERIE
-, SERIE
-, CODICECERCHIO
-, CERCHIO
-, CODICEVEL
-, VEL
-, CODICESTAGIONE
-, STAGIONE
-, LISTINO
-, GIACENZA
-, ICARICO
-, CODICEROTOLAMENTO
-, ROTOLAMENTO
-, CODICEADERENZA
-, ADERENZA
-, CODICERUMOROSITA
-, RUMOROSITA
-,  EANCODE
-, LISTINO +10 as LISTINO_BELGIO
-, LISTINO +10 as LISTINO_FRANCIA
-, LISTINO +10 as LISTINO_OLANDA
-, LISTINO +10 as LISTINO_GERMANIA
-FROM linky_tyre24 where giacenza >0  and listino >15
---and partner in ('DEL','CG','TG')
-and partner in ('PN')
---and ipcode='71517'
-and eancode is not null and listino is not null
-
-</sql>
+    <sql>SELECT&#xa;  ipcode as ipcodeperunivoco,&#xa;  CODICETYRE as ipcode&#xa;--, partner&#xa;, DESCRIZIONE&#xa;, MARCA&#xa;, SETTORE&#xa;, CODICELARGHEZZA&#xa;, LARGHEZZA&#xa;, CODICESERIE&#xa;, SERIE&#xa;, CODICECERCHIO&#xa;, CERCHIO&#xa;, CODICEVEL&#xa;, VEL&#xa;, CODICESTAGIONE&#xa;, STAGIONE&#xa;, LISTINO&#xa;, GIACENZA&#xa;, ICARICO&#xa;, CODICEROTOLAMENTO&#xa;, ROTOLAMENTO&#xa;, CODICEADERENZA&#xa;, ADERENZA&#xa;, CODICERUMOROSITA&#xa;, case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;OZR&#x27;,&#x27;ALC&#x27;&#x29; then &#x27;ALU&#x27; else &#xa;RUMOROSITA end RUMOROSITA&#xa;,  EANCODE&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;&#x29; then 13 else 10 end as LISTINO_BELGIO&#xa;, PREZZOFR as LISTINO_FRANCIA&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;&#x29; then 13 else 10 end as LISTINO_OLANDA&#xa;, &#xa;case when marca&#x3d;&#x27;MSW&#x27; then 0 else&#xa;PREZZODE - &#x28;PREZZODE&#x2f;100&#x2a;2&#x29; end as LISTINO_GERMANIA&#xa;FROM linky_tyre24 where giacenza &#x3e;0 and listino &#x3e;15&#xa;and partner in &#x28;Select codicepartner from linky_partners where tipo&#x3d;&#x27;PNEUMATICI&#x27; and codicepartner&#x3c;&#x3e;&#x27;PN&#x27;&#x29;&#xa;and not &#x28;marca &#x3d;&#x27;BRIDGESTONE&#x27; and SETTORE &#x3d;&#x27;MOTO&#x27;&#x29; and listino is not null &#xa;union all&#xa;SELECT&#xa;  ipcode as ipcodeperunivoco,&#xa;  CODICETYRE as ipcode&#xa;--, partner&#xa;, DESCRIZIONE&#xa;, MARCA&#xa;, SETTORE&#xa;, CODICELARGHEZZA&#xa;, LARGHEZZA&#xa;, CODICESERIE&#xa;, SERIE&#xa;, CODICECERCHIO&#xa;, CERCHIO&#xa;, CODICEVEL&#xa;, VEL&#xa;, CODICESTAGIONE&#xa;, STAGIONE&#xa;, LISTINO&#xa;, GIACENZA&#xa;, ICARICO&#xa;, CODICEROTOLAMENTO&#xa;, ROTOLAMENTO&#xa;, CODICEADERENZA&#xa;, ADERENZA&#xa;, CODICERUMOROSITA&#xa;, RUMOROSITA&#xa;,  EANCODE&#xa;, LISTINO &#x2b;10 as LISTINO_BELGIO&#xa;, LISTINO &#x2b;10 as LISTINO_FRANCIA&#xa;, LISTINO &#x2b;10 as LISTINO_OLANDA&#xa;, LISTINO &#x2b;10 as LISTINO_GERMANIA&#xa;FROM linky_tyre24 where giacenza &#x3e;0  and listino &#x3e;15&#xa;--and partner in &#x28;&#x27;DEL&#x27;,&#x27;CG&#x27;,&#x27;TG&#x27;&#x29;&#xa;and partner in &#x28;&#x27;PN&#x27;&#x29;&#xa;--and ipcode&#x3d;&#x27;71517&#x27;&#xa;and eancode is not null and listino is not null&#xa;&#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1373,29 +1269,26 @@ and eancode is not null and listino is not null
       <yloc>76</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Unique rows</name>
     <type>Unique</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <count_rows>N</count_rows>
-    <count_field />
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description />
-    <fields>
-      <field>
-        <name>ipcodeperunivoco</name>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>ipcodeperunivoco</name>
         <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema />
+        </field>      </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1407,29 +1300,26 @@ and eancode is not null and listino is not null
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Unique rows 2</name>
     <type>Unique</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <count_rows>N</count_rows>
-    <count_field />
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description />
-    <fields>
-      <field>
-        <name>ipcodeperunivoco</name>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>ipcodeperunivoco</name>
         <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema />
+        </field>      </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1441,101 +1331,27 @@ and eancode is not null and listino is not null
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Wheels</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>-- MAK MOMO
-SELECT
-  ipcode as ipcodeperunivoco,
-  CODICETYRE as ipcode
---, partner
-, DESCRIZIONE
-, MARCA
-, SETTORE
-, CODICELARGHEZZA
-, LARGHEZZA
-, CODICESERIE
-, SERIE
-, CODICECERCHIO
-, CERCHIO
-, CODICEVEL
-, VEL
-, CODICESTAGIONE
-, STAGIONE
-, LISTINO
-, GIACENZA
-, ICARICO
-, CODICEROTOLAMENTO
-, ROTOLAMENTO
-, CODICEADERENZA
-, ADERENZA
-, CODICERUMOROSITA
-, case when partner in ('MAK','MOMO','ALC','TRW') then 'ALU' else RUMOROSITA end RUMOROSITA
-, EANCODE
-, LISTINO +case when partner in ('MAK','MOMO','ALC','TRW') then 5 else 10 end as LISTINO_BELGIO
-, case when partner='MAK' then PREZZOFR else
-	LISTINO +case when partner in ('MOMO','ALC','TRW') then 5 else 10 end end as LISTINO_FRANCIA
-, LISTINO +case when partner in ('MAK','MOMO','ALC','TRW') then 5 else 10 end as LISTINO_OLANDA
-, case when partner='MAK' then PREZZODE else case when partner='OZR' then 0 else
-LISTINO + 5 end end as LISTINO_GERMANIA
-,CB, FINISHING
-FROM linky_tyre24 where giacenza >3 and listino >15
-and partner in ('MAK','MOMO','ALC','TRW')
-and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null 
-union all
--- OZR
-SELECT
-  ipcode as ipcodeperunivoco,
-  CODICETYRE as ipcode
---, partner
-, DESCRIZIONE
-, MARCA
-, SETTORE
-, CODICELARGHEZZA
-, LARGHEZZA
-, CODICESERIE
-, SERIE
-, CODICECERCHIO
-, CERCHIO
-, CODICEVEL
-, VEL
-, CODICESTAGIONE
-, STAGIONE
-, LISTINO
-, GIACENZA
-, ICARICO
-, CODICEROTOLAMENTO
-, ROTOLAMENTO
-, CODICEADERENZA
-, ADERENZA
-, CODICERUMOROSITA
-, case when partner in ('OZR') then 'ALU' else RUMOROSITA end RUMOROSITA
-,  EANCODE
-, LISTINO as LISTINO_BELGIO
-, LISTINO as LISTINO_FRANCIA
-, LISTINO as LISTINO_OLANDA
-, LISTINO as LISTINO_GERMANIA
-,CB, FINISHING
-FROM linky_tyre24 where giacenza >3 and listino >15
-and partner in ('OZR')
-and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null 
-</sql>
+    <sql>-- MAK MOMO&#xa;SELECT&#xa;  ipcode as ipcodeperunivoco,&#xa;  CODICETYRE as ipcode&#xa;--, partner&#xa;, DESCRIZIONE&#xa;, MARCA&#xa;, SETTORE&#xa;, CODICELARGHEZZA&#xa;, LARGHEZZA&#xa;, CODICESERIE&#xa;, SERIE&#xa;, CODICECERCHIO&#xa;, CERCHIO&#xa;, CODICEVEL&#xa;, VEL&#xa;, CODICESTAGIONE&#xa;, STAGIONE&#xa;, LISTINO&#xa;, GIACENZA&#xa;, ICARICO&#xa;, CODICEROTOLAMENTO&#xa;, ROTOLAMENTO&#xa;, CODICEADERENZA&#xa;, ADERENZA&#xa;, CODICERUMOROSITA&#xa;, case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then &#x27;ALU&#x27; else RUMOROSITA end RUMOROSITA&#xa;, EANCODE&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_BELGIO&#xa;, case when partner&#x3d;&#x27;MAK&#x27; then PREZZOFR else&#xa;	LISTINO &#x2b;case when partner in &#x28;&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end end as LISTINO_FRANCIA&#xa;, LISTINO &#x2b;case when partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29; then 5 else 10 end as LISTINO_OLANDA&#xa;, case when partner&#x3d;&#x27;MAK&#x27; then PREZZODE else case when partner&#x3d;&#x27;OZR&#x27; then 0 else&#xa;LISTINO &#x2b; 5 end end as LISTINO_GERMANIA&#xa;,CB, FINISHING&#xa;FROM linky_tyre24 where giacenza &#x3e;3 and listino &#x3e;15&#xa;and partner in &#x28;&#x27;MAK&#x27;,&#x27;MOMO&#x27;,&#x27;ALC&#x27;,&#x27;TRW&#x27;&#x29;&#xa;and not &#x28;marca &#x3d;&#x27;BRIDGESTONE&#x27; and SETTORE &#x3d;&#x27;MOTO&#x27;&#x29; and listino is not null &#xa;union all&#xa;-- OZR&#xa;SELECT&#xa;  ipcode as ipcodeperunivoco,&#xa;  CODICETYRE as ipcode&#xa;--, partner&#xa;, DESCRIZIONE&#xa;, MARCA&#xa;, SETTORE&#xa;, CODICELARGHEZZA&#xa;, LARGHEZZA&#xa;, CODICESERIE&#xa;, SERIE&#xa;, CODICECERCHIO&#xa;, CERCHIO&#xa;, CODICEVEL&#xa;, VEL&#xa;, CODICESTAGIONE&#xa;, STAGIONE&#xa;, LISTINO&#xa;, GIACENZA&#xa;, ICARICO&#xa;, CODICEROTOLAMENTO&#xa;, ROTOLAMENTO&#xa;, CODICEADERENZA&#xa;, ADERENZA&#xa;, CODICERUMOROSITA&#xa;, case when partner in &#x28;&#x27;OZR&#x27;&#x29; then &#x27;ALU&#x27; else RUMOROSITA end RUMOROSITA&#xa;,  EANCODE&#xa;, LISTINO as LISTINO_BELGIO&#xa;, LISTINO as LISTINO_FRANCIA&#xa;, LISTINO as LISTINO_OLANDA&#xa;, LISTINO as LISTINO_GERMANIA&#xa;,CB, FINISHING&#xa;FROM linky_tyre24 where giacenza &#x3e;3 and listino &#x3e;15&#xa;and partner in &#x28;&#x27;OZR&#x27;&#x29;&#xa;and not &#x28;marca &#x3d;&#x27;BRIDGESTONE&#x27; and SETTORE &#x3d;&#x27;MOTO&#x27;&#x29; and listino is not null &#xa;</sql>
     <limit>0</limit>
-    <lookup />
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1547,20 +1363,21 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>innoting_tyres</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
@@ -1568,12 +1385,12 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
     <format>DOS</format>
     <compression>None</compression>
     <encoding>windows-1252</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C:\linky\pneus\connector\tyre24\innoting_tyres</name>
+      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;innoting_tyres</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -1584,7 +1401,7 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -1594,11 +1411,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>IPCODE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1606,11 +1423,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>DESCRIZIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1618,11 +1435,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>MARCA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1630,11 +1447,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>SETTORE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1642,11 +1459,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICELARGHEZZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1654,11 +1471,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LARGHEZZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1666,11 +1483,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICESERIE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1678,11 +1495,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>SERIE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1690,11 +1507,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICECERCHIO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1702,11 +1519,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CERCHIO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1714,11 +1531,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEVEL</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1726,11 +1543,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>VEL</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1738,11 +1555,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICESTAGIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1750,11 +1567,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>STAGIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1762,11 +1579,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1775,10 +1592,10 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
         <name>GIACENZA</name>
         <type>Integer</type>
         <format>0</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1786,11 +1603,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ICARICO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1798,11 +1615,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEROTOLAMENTO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1810,11 +1627,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ROTOLAMENTO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1822,11 +1639,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEADERENZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1834,11 +1651,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ADERENZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1846,11 +1663,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICERUMOROSITA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1858,11 +1675,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>RUMOROSITA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1870,11 +1687,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>EANCODE</name>
         <type>Number</type>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1882,11 +1699,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_BELGIO</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1894,11 +1711,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_FRANCIA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1906,11 +1723,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_OLANDA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1918,17 +1735,17 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_GERMANIA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1940,20 +1757,21 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>innoting_wheels</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <separator>;</separator>
-    <enclosure>"</enclosure>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
@@ -1961,12 +1779,12 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
     <format>DOS</format>
     <compression>None</compression>
     <encoding>windows-1252</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C:\linky\pneus\connector\tyre24\innoting_wheels</name>
+      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;innoting_wheels</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -1977,7 +1795,7 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -1987,11 +1805,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>IPCODE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1999,11 +1817,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>DESCRIZIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2011,11 +1829,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>MARCA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2023,11 +1841,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>SETTORE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2035,11 +1853,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICELARGHEZZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2047,11 +1865,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LARGHEZZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2059,11 +1877,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICESERIE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2071,11 +1889,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>SERIE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2083,11 +1901,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICECERCHIO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2095,11 +1913,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CERCHIO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2107,11 +1925,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEVEL</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2119,11 +1937,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>VEL</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2131,11 +1949,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICESTAGIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2143,11 +1961,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>STAGIONE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2155,11 +1973,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2168,10 +1986,10 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
         <name>GIACENZA</name>
         <type>Integer</type>
         <format>0</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2179,11 +1997,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ICARICO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2191,11 +2009,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEROTOLAMENTO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2203,11 +2021,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ROTOLAMENTO</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2215,11 +2033,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICEADERENZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2227,11 +2045,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>ADERENZA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2239,11 +2057,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CODICERUMOROSITA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2251,11 +2069,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>RUMOROSITA</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2263,11 +2081,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>EANCODE</name>
         <type>Number</type>
-        <format>#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2275,11 +2093,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_BELGIO</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2287,11 +2105,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_FRANCIA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2299,11 +2117,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_OLANDA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2311,11 +2129,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>LISTINO_GERMANIA</name>
         <type>Number</type>
-        <format>0.#####</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>0.&#x23;&#x23;&#x23;&#x23;&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2323,11 +2141,11 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>CB</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2335,17 +2153,17 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <field>
         <name>FINISHING</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2357,7 +2175,8 @@ and not (marca ='BRIDGESTONE' and SETTORE ='MOTO') and listino is not null
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
