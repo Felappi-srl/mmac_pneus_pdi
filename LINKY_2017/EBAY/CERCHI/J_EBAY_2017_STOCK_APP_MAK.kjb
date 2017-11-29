@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;11 08&#x3a;33&#x3a;42.756</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;24 09&#x3a;56&#x3a;27.218</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -433,7 +433,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update ebay_cerchi set pubblicato&#x3d;&#x27;N&#x27; where partner&#x3d;&#x27;MAK&#x27;</sql>
+      <sql>update ebay_cerchi set pubblicato&#x3d;&#x27;N&#x27;, product_in_stock&#x3d;0 where partner&#x3d;&#x27;MAK&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>

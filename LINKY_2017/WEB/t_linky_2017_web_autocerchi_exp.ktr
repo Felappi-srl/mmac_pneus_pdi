@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;22 08&#x3a;30&#x3a;44.647</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;22 14&#x3a;10&#x3a;34.852</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -757,7 +757,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>	SELECT&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MARCAAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MODELLOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.TIPOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.ANNOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.PARTNUMBER,&#xa;	&#x27;0&#x27; as isECE,&#xa;	&#x27;1&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;	&#x27;&#x27; as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl,&#xd;&#xa;RAGGIO&#xa;	FROM&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0</sql>
+    <sql>	SELECT&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MARCAAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MODELLOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.TIPOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.annocompleto as ANNOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.PARTNUMBER,&#xa;	&#x27;0&#x27; as isECE,&#xa;	&#x27;1&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;	&#x27;&#x27; as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl,&#xd;&#xa;RAGGIO&#xa;	FROM&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;&#xd;&#xa;where&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -771,8 +771,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>464</yloc>
+      <xloc>592</xloc>
+      <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -900,13 +900,11 @@
     <keys_1>
       <key>marca</key>
       <key>modello</key>
-      <key>tipo</key>
       <key>anno</key>
     </keys_1>
     <keys_2>
       <key>MARCAAUTO</key>
       <key>MODELLOAUTO</key>
-      <key>TIPOAUTO</key>
       <key>ANNOAUTO</key>
     </keys_2>
     <cluster_schema/>
@@ -1098,14 +1096,23 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>idauto</name>
+        <rename/>
       </field>      <field>        <name>SKU</name>
+        <rename/>
       </field>      <field>        <name>isece</name>
+        <rename/>
       </field>      <field>        <name>isnad</name>
+        <rename/>
       </field>      <field>        <name>istuv</name>
+        <rename/>
       </field>      <field>        <name>ececerturl</name>
+        <rename/>
       </field>      <field>        <name>nadcerturl</name>
+        <rename/>
       </field>      <field>        <name>tuvcerturl</name>
+        <rename/>
       </field>      <field>        <name>RAGGIO</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>isece</name>
         <rename>isece</rename>
@@ -1177,17 +1184,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>id_auto</name>
+    <fields>      <field>        <name>codiceautom</name>
         <rename>idauto</rename>
       </field>      <field>        <name>PARTNUMBER</name>
         <rename>SKU</rename>
       </field>      <field>        <name>isECE</name>
+        <rename/>
       </field>      <field>        <name>isNAD</name>
+        <rename/>
       </field>      <field>        <name>isTUV</name>
+        <rename/>
       </field>      <field>        <name>ececerturl</name>
+        <rename/>
       </field>      <field>        <name>nadcerturl</name>
+        <rename/>
       </field>      <field>        <name>tuvcerturl</name>
+        <rename/>
       </field>      <field>        <name>RAGGIO</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -1198,7 +1212,7 @@
     </remotesteps>
     <GUI>
       <xloc>688</xloc>
-      <yloc>144</yloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1596,18 +1610,6 @@
       </field>
       <field>
         <name>tuvcerturl</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>RAGGIO</name>
         <type>String</type>
         <format/>
         <currency/>
