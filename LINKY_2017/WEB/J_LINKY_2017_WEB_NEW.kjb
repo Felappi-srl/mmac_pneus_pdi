@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2017&#x2f;01&#x2f;04 11&#x3a;18&#x3a;00.693</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;09 11&#x3a;56&#x3a;17.842</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;30 14&#x3a;23&#x3a;44.258</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -303,7 +303,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
+      <xloc>48</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -353,13 +353,13 @@
         <parameter>
           <name>where</name>
           <stream_name/>
-          <value> linky_magento_report.last_update is null and linky_integro_articoli.GIACENZA&#x3e;0 and linky_integro_articoli.PREZZOSCONTATO&#x3e;0 and bestprice&#x3d;1 and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null and </value>
+          <value> and linky_magento_report.last_update is null and linky_integro_articoli.GIACENZA&#x3e;0 and linky_integro_articoli.PREZZOSCONTATO&#x3e;0 and bestprice&#x3d;1 and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null </value>
         </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>592</xloc>
+      <xloc>480</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -374,7 +374,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>208</xloc>
+      <xloc>144</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -406,11 +406,36 @@
       <logging_remote_work>N</logging_remote_work>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
+        <parameter>
+          <name>inner_mak</name>
+          <stream_name/>
+          <value>left join linky.dbo.linky_magento_report on linky_articoli_mak.PARTNUMBER &#x3d; linky_magento_report.ipcode </value>
+        </parameter>
+        <parameter>
+          <name>inner_alcar</name>
+          <stream_name/>
+          <value>left join linky.dbo.linky_magento_report on linky_articoli_alcar.PARTNUMBER &#x3d; linky_magento_report.ipcode </value>
+        </parameter>
+        <parameter>
+          <name>inner_momo</name>
+          <stream_name/>
+          <value>left join linky.dbo.linky_magento_report on linky_articoli_momo.PARTNUMBER &#x3d; linky_magento_report.ipcode </value>
+        </parameter>
+        <parameter>
+          <name>inner_ozr</name>
+          <stream_name/>
+          <value>left join linky.dbo.linky_magento_report on linky_articoli_ozr.PARTNUMBER &#x3d; linky_magento_report.ipcode </value>
+        </parameter>
+        <parameter>
+          <name>where</name>
+          <stream_name/>
+          <value> linky_magento_report.last_update is null  and </value>
+        </parameter>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>656</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -446,7 +471,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>944</xloc>
+      <xloc>832</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -482,7 +507,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1136</xloc>
+      <xloc>1072</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -518,7 +543,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1136</xloc>
+      <xloc>1072</xloc>
       <yloc>160</yloc>
     </entry>
     <entry>
@@ -628,37 +653,6 @@
       <nr>0</nr>
       <xloc>432</xloc>
       <yloc>160</yloc>
-    </entry>
-    <entry>
-      <name>Carica file con FTP</name>
-      <description/>
-      <type>FTP_PUT</type>
-      <servername>46.166.139.99</servername>
-      <serverport>21</serverport>
-      <username>tyreo_images</username>
-      <password>Encrypted 2be98afc86aa7f2e4f329bb21cd99e98d</password>
-      <remoteDirectory>&#x2f;interscambio_matrix</remoteDirectory>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;exp</localDirectory>
-      <wildcard>.&#x2a;&#x5c;.txt</wildcard>
-      <binary>N</binary>
-      <timeout>0</timeout>
-      <remove>N</remove>
-      <only_new>N</only_new>
-      <active>N</active>
-      <control_encoding>ISO-8859-1</control_encoding>
-      <proxy_host/>
-      <proxy_port/>
-      <proxy_username/>
-      <proxy_password>Encrypted </proxy_password>
-      <socksproxy_host/>
-      <socksproxy_port>1080</socksproxy_port>
-      <socksproxy_username/>
-      <socksproxy_password>Encrypted </socksproxy_password>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>304</yloc>
     </entry>
     <entry>
       <name>t_linky_2017_web_catene_exp</name>
@@ -828,7 +822,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>288</xloc>
       <yloc>48</yloc>
     </entry>
   </entries>
@@ -924,26 +918,8 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Carica file con FTP</from>
-      <to>Carica file con FTP PROD</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>t_linky_2017_web_autocatene_exp</from>
       <to>t_load_accessori</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_load_accessori</from>
-      <to>Carica file con FTP</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -971,6 +947,15 @@
     <hop>
       <from>Carica file con FTP PROD</from>
       <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_load_accessori</from>
+      <to>Carica file con FTP PROD</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

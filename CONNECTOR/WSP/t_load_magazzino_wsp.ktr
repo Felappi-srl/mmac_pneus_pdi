@@ -429,7 +429,7 @@
     <created_user/>
     <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.542</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;15 11&#x3a;45&#x3a;44.740</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;30 12&#x3a;02&#x3a;40.829</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -558,6 +558,104 @@
     </remotesteps>
     <GUI>
       <xloc>544</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>DataStock</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>data_stock</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>stock_mm</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>stock_dd</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>stock_yyyy</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>864</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Get System Info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>today</name>
+        <type>system date &#x28;fixed&#x29;</type>
+        </field>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -953,6 +1051,209 @@
     </step>
 
   <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>code</name>
+      </field>      <field>        <name>size</name>
+      </field>      <field>        <name>description</name>
+      </field>      <field>        <name>widht</name>
+      </field>      <field>        <name>diameter</name>
+      </field>      <field>        <name>approval</name>
+      </field>      <field>        <name>cb</name>
+      </field>      <field>        <name>et</name>
+      </field>      <field>        <name>boltx</name>
+      </field>      <field>        <name>interasse</name>
+      </field>      <field>        <name>link_photo</name>
+      </field>      <field>        <name>weight</name>
+      </field>      <field>        <name>brand</name>
+      </field>      <field>        <name>codicemodello</name>
+      </field>      <field>        <name>modello</name>
+      </field>      <field>        <name>finishing</name>
+      </field>      <field>        <name>sd</name>
+      </field>      <field>        <name>prezzo</name>
+      </field>      <field>        <name>ean</name>
+      </field>      <field>        <name>prezzo2</name>
+      </field>      <field>        <name>costo</name>
+      </field>      <field>        <name>availability</name>
+      </field>      <field>        <name>data_stock</name>
+      </field>      <field>        <name>tmp1</name>
+      </field>      <field>        <name>tmp2</name>
+      </field>      <field>        <name>Ebaycat</name>
+      </field>      <field>        <name>tmp_desc</name>
+      </field>      <field>        <name>today</name>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>today</name>
+        <rename>today</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>MM&#x2f;dd&#x2f;yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>      <meta>        <name>data_stock</name>
+        <rename>data_stock</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>mm&#x2f;dd&#x2f;yyyy</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>code</name>
+      </field>      <field>        <name>size</name>
+      </field>      <field>        <name>description</name>
+      </field>      <field>        <name>widht</name>
+      </field>      <field>        <name>diameter</name>
+      </field>      <field>        <name>approval</name>
+      </field>      <field>        <name>cb</name>
+      </field>      <field>        <name>et</name>
+      </field>      <field>        <name>boltx</name>
+      </field>      <field>        <name>interasse</name>
+      </field>      <field>        <name>link_photo</name>
+      </field>      <field>        <name>weight</name>
+      </field>      <field>        <name>brand</name>
+      </field>      <field>        <name>codicemodello</name>
+      </field>      <field>        <name>modello</name>
+      </field>      <field>        <name>finishing</name>
+      </field>      <field>        <name>sd</name>
+      </field>      <field>        <name>prezzo</name>
+      </field>      <field>        <name>ean</name>
+      </field>      <field>        <name>prezzo2</name>
+      </field>      <field>        <name>costo</name>
+      </field>      <field>        <name>availability</name>
+      </field>      <field>        <name>Ebaycat</name>
+      </field>      <field>        <name>stock_ok</name>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>et</name>
+        <rename>et</rename>
+        <type>Number</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;.&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split Fields</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>stock</splitfield>
+   <delimiter> </delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>availability</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>data_stock</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>Date</type>
+        <format>dd&#x2f;mm&#x2f;yyyy</format>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>String operations</name>
     <type>StringOperations</type>
     <description/>
@@ -1065,6 +1366,73 @@
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Today</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>today</splitfield>
+   <delimiter>&#x2f;</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>tod_mm</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>tod_dd</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>      <field>        <name>tod_yyyy</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>none</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1585,426 +1953,6 @@
     <GUI>
       <xloc>48</xloc>
       <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Split Fields</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-   <splitfield>stock</splitfield>
-   <delimiter> </delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>availability</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>      <field>        <name>data_stock</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>Date</type>
-        <format>dd&#x2f;mm&#x2f;yyyy</format>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>448</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Get System Info</name>
-    <type>SystemInfo</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>today</name>
-        <type>system date &#x28;fixed&#x29;</type>
-        </field>
-      </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>656</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      <field>        <name>code</name>
-        <rename/>
-      </field>      <field>        <name>size</name>
-        <rename/>
-      </field>      <field>        <name>description</name>
-        <rename/>
-      </field>      <field>        <name>widht</name>
-        <rename/>
-      </field>      <field>        <name>diameter</name>
-        <rename/>
-      </field>      <field>        <name>approval</name>
-        <rename/>
-      </field>      <field>        <name>cb</name>
-        <rename/>
-      </field>      <field>        <name>et</name>
-        <rename/>
-      </field>      <field>        <name>boltx</name>
-        <rename/>
-      </field>      <field>        <name>interasse</name>
-        <rename/>
-      </field>      <field>        <name>link_photo</name>
-        <rename/>
-      </field>      <field>        <name>weight</name>
-        <rename/>
-      </field>      <field>        <name>brand</name>
-        <rename/>
-      </field>      <field>        <name>codicemodello</name>
-        <rename/>
-      </field>      <field>        <name>modello</name>
-        <rename/>
-      </field>      <field>        <name>finishing</name>
-        <rename/>
-      </field>      <field>        <name>sd</name>
-        <rename/>
-      </field>      <field>        <name>prezzo</name>
-        <rename/>
-      </field>      <field>        <name>ean</name>
-        <rename/>
-      </field>      <field>        <name>prezzo2</name>
-        <rename/>
-      </field>      <field>        <name>costo</name>
-        <rename/>
-      </field>      <field>        <name>availability</name>
-        <rename/>
-      </field>      <field>        <name>data_stock</name>
-        <rename/>
-      </field>      <field>        <name>tmp1</name>
-        <rename/>
-      </field>      <field>        <name>tmp2</name>
-        <rename/>
-      </field>      <field>        <name>Ebaycat</name>
-        <rename/>
-      </field>      <field>        <name>tmp_desc</name>
-        <rename/>
-      </field>      <field>        <name>today</name>
-        <rename/>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>today</name>
-        <rename>today</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>MM&#x2f;dd&#x2f;yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>      <meta>        <name>data_stock</name>
-        <rename>data_stock</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>mm&#x2f;dd&#x2f;yyyy</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>752</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>DataStock</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-   <splitfield>data_stock</splitfield>
-   <delimiter>&#x2f;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>stock_mm</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>      <field>        <name>stock_dd</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>      <field>        <name>stock_yyyy</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>864</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Today</name>
-    <type>FieldSplitter</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-   <splitfield>today</splitfield>
-   <delimiter>&#x2f;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>tod_mm</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>      <field>        <name>tod_dd</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>      <field>        <name>tod_yyyy</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>none</trimtype>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>960</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      <field>        <name>code</name>
-        <rename/>
-      </field>      <field>        <name>size</name>
-        <rename/>
-      </field>      <field>        <name>description</name>
-        <rename/>
-      </field>      <field>        <name>widht</name>
-        <rename/>
-      </field>      <field>        <name>diameter</name>
-        <rename/>
-      </field>      <field>        <name>approval</name>
-        <rename/>
-      </field>      <field>        <name>cb</name>
-        <rename/>
-      </field>      <field>        <name>et</name>
-        <rename/>
-      </field>      <field>        <name>boltx</name>
-        <rename/>
-      </field>      <field>        <name>interasse</name>
-        <rename/>
-      </field>      <field>        <name>link_photo</name>
-        <rename/>
-      </field>      <field>        <name>weight</name>
-        <rename/>
-      </field>      <field>        <name>brand</name>
-        <rename/>
-      </field>      <field>        <name>codicemodello</name>
-        <rename/>
-      </field>      <field>        <name>modello</name>
-        <rename/>
-      </field>      <field>        <name>finishing</name>
-        <rename/>
-      </field>      <field>        <name>sd</name>
-        <rename/>
-      </field>      <field>        <name>prezzo</name>
-        <rename/>
-      </field>      <field>        <name>ean</name>
-        <rename/>
-      </field>      <field>        <name>prezzo2</name>
-        <rename/>
-      </field>      <field>        <name>costo</name>
-        <rename/>
-      </field>      <field>        <name>availability</name>
-        <rename/>
-      </field>      <field>        <name>Ebaycat</name>
-        <rename/>
-      </field>      <field>        <name>stock_ok</name>
-        <rename/>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>et</name>
-        <rename>et</rename>
-        <type>Number</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>&#x23;.&#x23;</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>768</xloc>
-      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

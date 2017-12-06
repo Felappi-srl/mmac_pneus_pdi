@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;02 14&#x3a;57&#x3a;11.866</modified_date>
+    <modified_date>2017&#x2f;11&#x2f;29 11&#x3a;08&#x3a;51.390</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -537,7 +537,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;,1,46&#x29; as codievar&#xd;&#xa;,case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; replace&#x28;COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#xd;&#xa;	 &#x2b; &#x27; ET&#x27; &#x2b; COALESCE&#x28;offset,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29;&#x29; AS NOME&#xd;&#xa; ,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;, upper&#x28;marcaauto&#x29; as marca&#xd;&#xa;, upper&#x28;modelloauto&#x29; as modello &#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;1 &#xd;&#xa;and prezzo is not null</sql>
+    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;,1,46&#x29; as codievar&#xd;&#xa;,case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; replace&#x28;COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#xd;&#xa;	 &#x2b; &#x27; ET&#x27; &#x2b; COALESCE&#x28;offset,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29;&#x29; AS NOME&#xd;&#xa; ,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;, upper&#x28;marcaauto&#x29; as marca&#xd;&#xa;, upper&#x28;modelloauto&#x29; as modello &#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;3&#xd;&#xa;and prezzo is not null</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -603,6 +603,48 @@
     <GUI>
       <xloc>864</xloc>
       <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codievar</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -803,48 +845,6 @@
     </remotesteps>
     <GUI>
       <xloc>272</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>codievar</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>160</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>

@@ -1,16 +1,42 @@
 <job>
-  <name>J_LINKY_2017_WEB_GIACENZEPREZZI</name>
+  <name>J_LOAD_ALCAR_STOCK_FTP_2017</name>
   <description/>
-  <extended_description/>
+  <extended_description>Scarica i dati via FTP dal server ALCAR</extended_description>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
-  <created_user>-</created_user>
-  <created_date>2017&#x2f;01&#x2f;04 11&#x3a;18&#x3a;00.693</created_date>
-  <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;05 17&#x3a;49&#x3a;57.981</modified_date>
+  <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;ALCAR</directory>
+  <created_user>admin</created_user>
+  <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;56.303</created_date>
+  <modified_user>admin</modified_user>
+  <modified_date>2017&#x2f;11&#x2f;30 11&#x3a;15&#x3a;29.412</modified_date>
     <parameters>
     </parameters>
+  <connection>
+    <name>CONNECTOR</name>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
+    <access>Native</access>
+    <database>CONNECTOR</database>
+    <port>1433</port>
+    <username>sa</username>
+    <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
     <slaveservers>
     </slaveservers>
       <job-log-table>
@@ -303,7 +329,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
+      <xloc>46</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -313,33 +339,18 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1008</xloc>
+      <xloc>672</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
-      <name>Imposta variabili</name>
-      <description/>
-      <type>SET_VARIABLES</type>
-      <replacevars>Y</replacevars>
-      <filename>&#x24;&#x7b;MMAC_STARTUP&#x7d;mmac.properties</filename>
-      <file_variable_type>JVM</file_variable_type>
-      <fields>
-      </fields>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>208</xloc>
-      <yloc>48</yloc>
-    </entry>
-    <entry>
-      <name>t_linky_2017_web_giacenze_exp</name>
+      <name>t_get_alcar_stock_ftp_2017</name>
       <description/>
       <type>TRANS</type>
       <specification_method>rep_name</specification_method>
       <trans_object_id/>
       <filename/>
-      <transname>t_linky_2017_web_giacenze_exp</transname>
-      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+      <transname>t_get_alcar_stock_ftp_2017</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;ALCAR</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -364,58 +375,67 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
+      <xloc>416</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
-      <name>J_LINKY_2017_WEB_GETREPORT</name>
+      <name>SQL</name>
       <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>J_LINKY_2017_WEB_GETREPORT</jobname>
-      <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
+      <type>SQL</type>
+      <sql>update linky_articoli_alcar set giacenza&#x3d;0</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
+      <xloc>288</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
-      <name>Carica file con FTP giacenze</name>
+      <name>CATEGORIA</name>
       <description/>
-      <type>FTP_PUT</type>
-      <servername>www.tyreo.com</servername>
-      <serverport>21</serverport>
-      <username>prezzi_giacenze</username>
-      <password>Encrypted 2be98afc86aa7f2e4aa1cf851d4d7f98a</password>
-      <remoteDirectory>&#x2f;02_prezzi_giacenze</remoteDirectory>
-      <localDirectory>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;web&#x5c;exp</localDirectory>
-      <wildcard>stock_full.csv</wildcard>
+      <type>SQL</type>
+      <sql>update linky_articoli_alcar set&#xd;&#xa; categoria &#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953,CH-179679,IE-179679&#x27;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>528</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>Preleva file con FTP</name>
+      <description/>
+      <type>FTP</type>
+      <port>21</port>
+      <servername>ftp.alcar-wheels.com</servername>
+      <username>ALIT_4120023</username>
+      <password>Encrypted 2be98afc86aa7f2e4aa0399448c888eeb</password>
+      <ftpdirectory>&#x2f;</ftpdirectory>
+      <targetdirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;alcar</targetdirectory>
+      <wildcard>.&#x2a;&#x5c;.csv</wildcard>
       <binary>N</binary>
       <timeout>0</timeout>
       <remove>N</remove>
       <only_new>N</only_new>
       <active>N</active>
       <control_encoding>ISO-8859-1</control_encoding>
+      <movefiles>N</movefiles>
+      <movetodirectory/>
+      <adddate>N</adddate>
+      <addtime>N</addtime>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <AddDateBeforeExtension>N</AddDateBeforeExtension>
+      <isaddresult>Y</isaddresult>
+      <createmovefolder>N</createmovefolder>
       <proxy_host/>
       <proxy_port/>
       <proxy_username/>
@@ -424,44 +444,20 @@
       <socksproxy_port>1080</socksproxy_port>
       <socksproxy_username/>
       <socksproxy_password>Encrypted </socksproxy_password>
+      <ifFileExists>ifFileExistsSkip</ifFileExists>
+      <nr_limit>10</nr_limit>
+      <success_condition>success_if_no_errors</success_condition>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
+      <xloc>160</xloc>
       <yloc>48</yloc>
     </entry>
   </entries>
   <hops>
     <hop>
-      <from>START</from>
-      <to>Imposta variabili</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Imposta variabili</from>
-      <to>J_LINKY_2017_WEB_GETREPORT</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>Carica file con FTP giacenze</from>
+      <from>CATEGORIA</from>
       <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_linky_2017_web_giacenze_exp</from>
-      <to>Carica file con FTP giacenze</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -469,8 +465,35 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_LINKY_2017_WEB_GETREPORT</from>
-      <to>t_linky_2017_web_giacenze_exp</to>
+      <from>SQL</from>
+      <to>t_get_alcar_stock_ftp_2017</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>START</from>
+      <to>Preleva file con FTP</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Preleva file con FTP</from>
+      <to>SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_get_alcar_stock_ftp_2017</from>
+      <to>CATEGORIA</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

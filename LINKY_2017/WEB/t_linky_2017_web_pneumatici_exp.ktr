@@ -439,7 +439,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;22 14&#x3a;55&#x3a;24.592</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;04 10&#x3a;54&#x3a;30.281</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -472,11 +472,6 @@
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>Etichetta</from>
-      <to>Modified Java Script Value</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Modified Java Script Value</from>
       <to>AUTO</to>
@@ -515,11 +510,6 @@
     <hop>
       <from>Add constants</from>
       <to>Value Mapper</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Value Mapper</from>
-      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -580,6 +570,21 @@
     <hop>
       <from>Sort rows</from>
       <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Etichetta</from>
+      <to>Modified Java Script Value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Value Mapper</from>
+      <to>Diego_Pulisci cat Lapis</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Diego_Pulisci cat Lapis</from>
+      <to>Select values</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -858,7 +863,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
+      <xloc>192</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1291,6 +1296,13 @@
    <function>IS NULL</function>
    <rightvalue/>
    </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>category_path</leftvalue>
+   <function>IS NULL</function>
+   <rightvalue/>
+   </condition>
   </conditions>
  </condition>
     </compare>
@@ -1302,7 +1314,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>112</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1500,7 +1512,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE as SKU,&#xa;linky_integro_articoli.MARCA AS BRAND,&#xa;coalesce&#x28;linky_integro_articoli.TITOLOALTERNATIVO, DESCRIZIONE&#x29; AS TITOLO,&#xa;replace&#x28;replace&#x28;linky_integro_articoli.CODICECERCHIO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;VUOTA&#x27;,&#x27;&#x27;&#x29; AS RAGGIO,&#xa;replace&#x28;linky_integro_articoli.SERIE,&#x27;,5&#x27;,&#x27;.50&#x27;&#x29; AS SPALLA,&#xa;linky_integro_articoli.LARGHEZZA,&#xa;linky_integro_articoli.ICARICO,&#xa;linky_integro_articoli.VEL,&#xa;linky_integro_articoli.SETTORE,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28; RTRIM&#x28;LTRIM&#x28;linky_integro_articoli.CODICEROTOLAMENTO&#x29;&#x29;,&#x27;U&#x27;,&#x27;&#x27;&#x29;,&#x27;N&#x27;,&#x27;&#x27;&#x29;,&#x27;S&#x27;,&#x27;&#x27;&#x29;, &#x27;_&#x27;, &#x27;&#x27;&#x29; as CODICEROTOLAMENTO,&#xa;&#xd;&#xa;---- linky_integro_articoli.CODICEADERENZA,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28; RTRIM&#x28;LTRIM&#x28;linky_integro_articoli.CODICEROTOLAMENTO&#x29;&#x29;,&#x27;U&#x27;,&#x27;&#x27;&#x29;,&#x27;N&#x27;,&#x27;&#x27;&#x29;,&#x27;S&#x27;,&#x27;&#x27;&#x29;, &#x27;_&#x27;, &#x27;&#x27;&#x29; as CODICEADERENZA,&#xd;&#xa;&#xd;&#xa;--linky_integro_articoli.CODICERUMOROSITA&#xd;&#xa;-- correzione Diego alcuni Partner hanno invertiti il codice di rumorosit&#xe0;&#xd;&#xa;CASE&#xd;&#xa;WHEN SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,2,1&#x29; &#x3d; &#x27;_&#x27; &#xd;&#xa;THEN SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,3,2&#x29; &#x2b; &#x27;_&#x27; &#x2b; SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,1,1&#x29;&#xa;ELSE &#xd;&#xa;linky_integro_articoli.CODICERUMOROSITA&#xd;&#xa;END AS CODICERUMOROSITA,&#xd;&#xa;&#xd;&#xa;linky_integro_articoli.EAN,&#xa;--concat&#x28;linky_integro_articoli.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;linky_integro_articoli.IMMAGINE &#x2b; &#x27;.jpg&#x27; as IMMAGINE&#xa;,&#x27;NONE&#x27; as CLASSE&#xa;, STAGIONE&#xd;&#xa;, PESO&#xd;&#xa;, VOLUME&#xd;&#xa;, case when partner&#x3d;&#x27;DEL&#x27; then &#x27;48-72&#x27; else &#x27;24-48&#x27; end as DELIVERYTIME&#xd;&#xa;-- , PARTNER&#xa;FROM&#xa;linky_integro_articoli&#xd;&#xa;&#x24;&#x7b;innerjoin&#x7d;&#xa;--where &#xd;&#xa; &#x24;&#x7b;where&#x7d;&#xd;&#xa;-- GIACENZA&#x3e;0 and PREZZOSCONTATO&#x3e;0 and bestprice&#x3d;1 and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null and &#xd;&#xa;---- replace&#x28;linky_integro_articoli.CODICECERCHIO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; in  &#x28;select valorepermesso from linky_web_valori_permessi where campo&#x3d;&#x27;RAGGIO&#x27;&#x29;&#xa;---- and replace&#x28;linky_integro_articoli.SERIE,&#x27;,5&#x27;,&#x27;.50&#x27;&#x29; in  &#x28;select rtrim&#x28;valorepermesso&#x29; from linky_web_valori_permessi where campo&#x3d;&#x27;SPALLA&#x27;&#x29;&#xd;&#xa;---- and linky_integro_articoli.LARGHEZZA in  &#x28;select valorepermesso from linky_web_valori_permessi where campo&#x3d;&#x27;LARGHEZZA&#x27;&#x29;&#xd;&#xa;---- and replace&#x28;linky_integro_articoli.ICARICO,&#x27;,0&#x27;,&#x27;&#x27;&#x29; in  &#x28;select rtrim&#x28;valorepermesso&#x29; from linky_web_valori_permessi where campo&#x3d;&#x27;ICARICO&#x27;&#x29;&#xd;&#xa;---- and linky_integro_articoli.VEL in  &#x28;select valorepermesso from linky_web_valori_permessi where campo&#x3d;&#x27;IVEL&#x27;&#x29;&#xd;&#xa;-- linky_integro_articoli.IPCODE &#x3d; &#x27;0356139&#x27;&#xd;&#xa;&#xd;&#xa;order by linky_integro_articoli.IPCODE</sql>
+    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODESTD as SKU,&#xa;linky_integro_articoli.MARCA AS BRAND,&#xa;coalesce&#x28;linky_integro_articoli.TITOLOALTERNATIVO, DESCRIZIONE&#x29; AS TITOLO,&#xa;replace&#x28;replace&#x28;linky_integro_articoli.CODICECERCHIO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;VUOTA&#x27;,&#x27;&#x27;&#x29; AS RAGGIO,&#xa;replace&#x28;linky_integro_articoli.SERIE,&#x27;,5&#x27;,&#x27;.50&#x27;&#x29; AS SPALLA,&#xa;linky_integro_articoli.LARGHEZZA,&#xa;linky_integro_articoli.ICARICO,&#xa;linky_integro_articoli.VEL,&#xa;linky_integro_articoli.SETTORE,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28; RTRIM&#x28;LTRIM&#x28;linky_integro_articoli.CODICEROTOLAMENTO&#x29;&#x29;,&#x27;U&#x27;,&#x27;&#x27;&#x29;,&#x27;N&#x27;,&#x27;&#x27;&#x29;,&#x27;S&#x27;,&#x27;&#x27;&#x29;, &#x27;_&#x27;, &#x27;&#x27;&#x29; as CODICEROTOLAMENTO,&#xa;&#xd;&#xa;---- linky_integro_articoli.CODICEADERENZA,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28; RTRIM&#x28;LTRIM&#x28;linky_integro_articoli.CODICEROTOLAMENTO&#x29;&#x29;,&#x27;U&#x27;,&#x27;&#x27;&#x29;,&#x27;N&#x27;,&#x27;&#x27;&#x29;,&#x27;S&#x27;,&#x27;&#x27;&#x29;, &#x27;_&#x27;, &#x27;&#x27;&#x29; as CODICEADERENZA,&#xd;&#xa;&#xd;&#xa;--linky_integro_articoli.CODICERUMOROSITA&#xd;&#xa;-- correzione Diego alcuni Partner hanno invertiti il codice di rumorosit&#xe0;&#xd;&#xa;CASE&#xd;&#xa;WHEN SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,2,1&#x29; &#x3d; &#x27;_&#x27; &#xd;&#xa;THEN SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,3,2&#x29; &#x2b; &#x27;_&#x27; &#x2b; SUBSTRING &#x28;linky_integro_articoli.CODICERUMOROSITA,1,1&#x29;&#xa;ELSE &#xd;&#xa;linky_integro_articoli.CODICERUMOROSITA&#xd;&#xa;END AS CODICERUMOROSITA,&#xd;&#xa;&#xd;&#xa;linky_integro_articoli.EAN,&#xa;--concat&#x28;linky_integro_articoli.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;linky_integro_articoli.IMMAGINE &#x2b; &#x27;.jpg&#x27; as IMMAGINE&#xa;,&#x27;NONE&#x27; as CLASSE&#xa;, STAGIONE&#xd;&#xa;, PESO&#xd;&#xa;, VOLUME&#xd;&#xa;, case when partner&#x3d;&#x27;DEL&#x27; then &#x27;48-72&#x27; else &#x27;24-48&#x27; end as DELIVERYTIME&#xd;&#xa;-- , PARTNER&#xa;FROM&#xa;linky_integro_articoli&#xd;&#xa; &#x24;&#x7b;innerjoin&#x7d;&#xa;where &#xd;&#xa;1&#x3d;1&#xd;&#xa; &#x24;&#x7b;where&#x7d;&#xd;&#xa;and linky_integro_articoli.SETTORE is not null and linky_integro_articoli.SETTORE &#x3c;&#x3e;&#x27;&#x27;&#xd;&#xa;and linky_integro_articoli.IMMAGINE is not null and linky_integro_articoli.IMMAGINE&#x3c;&#x3e;&#x27;&#x27;&#xd;&#xa;-- and linky_integro_articoli.IPCODESTD&#x3d;&#x27;0451204000&#x27;&#xd;&#xa;order by linky_integro_articoli.IPCODESTD</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2098,7 +2110,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
+      <xloc>32</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2132,6 +2144,17 @@
         <out_stream_name/>
         <use_regex>no</use_regex>
         <replace_string>http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>IMMAGINE</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;</replace_string>
         <replace_by_string/>
         <set_empty_string>N</set_empty_string>
         <replace_field_by_string/>
@@ -2340,20 +2363,28 @@
         <rename>ICARICO</rename>
       </field>      <field>        <name>codca5</name>
         <rename>VEL</rename>
-      </field>      <field>        <name>category_path</name>
+      </field>      <field>        <name>tmp_CATEGORIA</name>
         <rename>SETTORE</rename>
       </field>      <field>        <name>CODICEROTOLAMENTO</name>
+        <rename/>
       </field>      <field>        <name>CODICEADERENZA</name>
+        <rename/>
       </field>      <field>        <name>CODICERUMOROSITA</name>
+        <rename/>
       </field>      <field>        <name>eancode</name>
         <rename>EAN</rename>
       </field>      <field>        <name>product_full_image</name>
         <rename>IMMAGINE</rename>
       </field>      <field>        <name>CLASSE</name>
+        <rename/>
       </field>      <field>        <name>STAGIONE</name>
+        <rename/>
       </field>      <field>        <name>PESO</name>
+        <rename/>
       </field>      <field>        <name>VOLUME</name>
+        <rename/>
       </field>      <field>        <name>DELIVERYTIME</name>
+        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>VOLUME</name>
         <rename>VOLUME</rename>
@@ -2551,7 +2582,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
+      <xloc>272</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2576,7 +2607,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>112</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2607,7 +2638,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;pneumatici</name>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;pneumatici_diego</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -2898,8 +2929,44 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
-      <yloc>320</yloc>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Diego_Pulisci cat Lapis</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xd;&#xa;if &#x28;category_path&#x29;&#x7b;&#xd;&#xa;var valore &#x3d; category_path&#x3b;&#xd;&#xa;var sett &#x3d; valore.split &#x28;&#x22;&#x23;&#x22;&#x29;&#x3b;&#xd;&#xa;var cat &#x3d; sett&#x5b;0&#x5d;&#x3b;&#xd;&#xa;&#xd;&#xa;tmp_CATEGORIA &#x3d; cat&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;tmp_CATEGORIA &#x3d; category_path&#x3b;&#xd;&#xa;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>tmp_CATEGORIA</name>
+        <rename>tmp_CATEGORIA</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>352</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

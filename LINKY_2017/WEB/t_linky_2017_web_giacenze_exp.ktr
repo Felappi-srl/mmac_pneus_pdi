@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;22 14&#x3a;31&#x3a;29.624</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;05 16&#x3a;59&#x3a;15.492</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -546,11 +546,6 @@
     <hop>
       <from>Select values 2 2 2</from>
       <to>Filter rows 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Dummy &#x28;do nothing&#x29; 2</from>
-      <to>Select catene pneus</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -698,6 +693,16 @@
       <to>Replace in string 2 2 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants 2</from>
+      <to>Select catene pneus</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Add constants</name>
@@ -723,6 +728,18 @@
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
+      <field>
+        <name>DISPATCHTIME</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Disponibilit&#xe0; immediata</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -734,6 +751,45 @@
     <GUI>
       <xloc>960</xloc>
       <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants 2</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>DISPATCHTIME</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>Disponibilit&#xe0; immediata</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -885,7 +941,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZOpubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MOMO&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#xd;&#xa;as giacenza,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;OZR&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0 &#xd;&#xa;union all&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;coalesce&#x28;GIACENZA,0&#x29; as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;ACCIAIO&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;and WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27;</sql>
+    <sql>SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZOpubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;,&#x27;Disponibilit&#xe0; immediata&#x27; as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MOMO&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;, &#x27;Disponibilit&#xe0; immediata&#x27; as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;union all &#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;replace&#x28;replace&#x28;GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; &#xd;&#xa;as giacenza,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;OZR&#x27;,&#x27;IT&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;, &#x27;Disponibile in 2 giorni&#x27;  as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0 &#xd;&#xa;union all&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;coalesce&#x28;GIACENZA,0&#x29; as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;&#x27;MAK&#x27;,&#x27;IT&#x27;,&#x27;ACCIAIO&#x27;,&#x27;&#x27;,cast&#x28;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as numeric&#x28;18,2&#x29;&#x29;&#x29; as prezzo&#xd;&#xa;, &#x27;Disponibilit&#xe0; immediata&#x27; as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_mak&#xd;&#xa;WHERE&#xd;&#xa;replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and OUT_PROD&#x3d;0&#xd;&#xa;and &#x28;isnad is not null or isece is not null&#x29;&#xd;&#xa;and WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1498,8 +1554,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>512</yloc>
+      <xloc>624</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1516,7 +1572,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_catene.IPCODE,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;inner join linky_magento_report on linky_integro_catene.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;</sql>
+    <sql>SELECT distinct &#xd;&#xa;IPCODE,&#xd;&#xa;GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;, &#x27;Disponibilit&#xe0; immediata&#x27; as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;listino&#x3e;0&#xd;&#xa;and IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_catene.IPCODE,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;CATENE DA NEVE&#x27; ,&#x27;&#x27;,LISTINO&#x29; as LISTINO&#xd;&#xa;, &#x27;Disponibilit&#xe0; immediata&#x27; as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_integro_catene&#xd;&#xa;inner join linky_magento_report on linky_integro_catene.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1581,7 +1637,7 @@
     </remotesteps>
     <GUI>
       <xloc>832</xloc>
-      <yloc>384</yloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1606,7 +1662,7 @@
     </remotesteps>
     <GUI>
       <xloc>832</xloc>
-      <yloc>144</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1720,7 +1776,7 @@
     </remotesteps>
     <GUI>
       <xloc>832</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2237,10 +2293,16 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;artblocco&#x29;&#x7b;&#xd;&#xa;	product_in_stock&#x3d;tmp_product_in_stock&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	product_in_stock&#x3d;0&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;artblocco&#x29;&#x7b;&#xd;&#xa;	product_in_stock&#x3d;tmp_product_in_stock&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	product_in_stock&#x3d;0&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;DISPATCHTIME&#x3d;&#x27;Disponibilit&#xe0; immediata&#x27;&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>product_in_stock</name>
         <rename>product_in_stock</rename>
         <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>DISPATCHTIME</name>
+        <rename>DISPATCHTIME</rename>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
@@ -2289,7 +2351,7 @@
     </remotesteps>
     <GUI>
       <xloc>720</xloc>
-      <yloc>320</yloc>
+      <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2306,7 +2368,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;linky_integro_articoli.GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xa;FROM&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode and linky_integro_articoli.giacenza &#x3c;&#x3e; linky_magento_report.giacenza&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;--PREZZOSCONTATO&#x3e;0&#xa;--and &#xd;&#xa;IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;and bestprice&#x3d;1&#xd;&#xa;--and linky_integro_articoli.IPCODE&#x3d;&#x27;1817100OLD&#x27;&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_articoli.IPCODE AS SKU,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xd;&#xa;FROM&#xd;&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;-- and marca&#x3d;&#x27;ANNAITE&#x27;&#xd;&#xa;&#xa;</sql>
+    <sql>SELECT distinct &#xa;linky_integro_articoli.IPCODE AS SKU,&#xa;linky_integro_articoli.GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xd;&#xa;, case when partner&#x3d;&#x27;DEL&#x27; then &#x27;Disponibile in 2 giorni&#x27; else &#x27;Disponibilit&#xe0; immediata&#x27; end as DISPATCHTIME&#xa;FROM&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode and linky_integro_articoli.giacenza &#x3c;&#x3e; linky_magento_report.giacenza&#xa;where &#xd;&#xa;--GIACENZA&#x3e;0 and &#xd;&#xa;--PREZZOSCONTATO&#x3e;0&#xa;--and &#xd;&#xa;IMMAGINE &#x3c;&#x3e;&#x27;&#x27; and IMMAGINE is not null&#xd;&#xa;and bestprice&#x3d;1&#xd;&#xa;--and linky_integro_articoli.IPCODE&#x3d;&#x27;1817100OLD&#x27;&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_articoli.IPCODE AS SKU,&#xd;&#xa;0 as GIACENZA,&#xd;&#xa;dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;, &#x27;PNEUMATICI&#x27;,&#x27;&#x27;,PREZZOSCONTATO&#x29;  as PREZZO&#xd;&#xa;,IMMAGINE&#xd;&#xa;, case when partner&#x3d;&#x27;DEL&#x27; then &#x27;Disponibile in 2 giorni&#x27; else &#x27;Disponibilit&#xe0; immediata&#x27; end as DISPATCHTIME&#xd;&#xa;&#xd;&#xa;FROM&#xd;&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;where &#xd;&#xa;&#x28;IMMAGINE is null or IMMAGINE &#x3d;&#x27;&#x27;&#x29;&#xd;&#xa;and linky_integro_articoli.IPCODE not in &#x28;select IPCODE from linky_integro_articoli where IMMAGINE is not null or IMMAGINE &#x3c;&#x3e;&#x27;&#x27;&#x29;&#xd;&#xa;union all&#xd;&#xa;SELECT distinct &#xd;&#xa;linky_integro_articoli.IPCODE AS SKU,&#xd;&#xa;linky_integro_articoli.giacenza as GIACENZA,&#xd;&#xa;-- linky_magento_report.giacenza,&#xd;&#xa;0  as PREZZO&#xd;&#xa;,IMMAGINE&#xd;&#xa;, case when partner&#x3d;&#x27;DEL&#x27; then &#x27;Disponibile in 2 giorni&#x27; else &#x27;Disponibilit&#xe0; immediata&#x27; end as DISPATCHTIME&#xd;&#xa;FROM&#xd;&#xa;linky_integro_articoli&#xd;&#xa;inner join linky_magento_report on linky_integro_articoli.ipcode &#x3d; linky_magento_report.ipcode &#xd;&#xa;and linky_integro_articoli.giacenza &#x3c;&#x3e; linky_magento_report.giacenza&#xd;&#xa;where &#xd;&#xa;linky_integro_articoli.giacenza&#x3d;0&#xd;&#xa;and linky_integro_articoli.IPCODE not in &#x28;select IPCODE from linky_integro_articoli where giacenza&#x3e;0&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -3036,7 +3098,7 @@
     </remotesteps>
     <GUI>
       <xloc>720</xloc>
-      <yloc>416</yloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -3055,6 +3117,7 @@
     <fields>      <field>        <name>SKU</name>
       </field>      <field>        <name>GIACENZA</name>
       </field>      <field>        <name>PREZZO</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -3085,6 +3148,7 @@
         <rename>SKU</rename>
       </field>      <field>        <name>GIACENZA</name>
       </field>      <field>        <name>LISTINO</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>GIACENZA</name>
         <rename>GIACENZA</rename>
@@ -3145,6 +3209,7 @@
         <rename>SKU</rename>
       </field>      <field>        <name>product_in_stock</name>
       </field>      <field>        <name>prezzo</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>product_in_stock</name>
         <rename>GIACENZA</rename>
@@ -3185,7 +3250,7 @@
     </remotesteps>
     <GUI>
       <xloc>704</xloc>
-      <yloc>144</yloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -3204,6 +3269,7 @@
     <fields>      <field>        <name>SKU</name>
       </field>      <field>        <name>GIACENZA</name>
       </field>      <field>        <name>PREZZO</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>GIACENZA</name>
         <rename>GIACENZA</rename>
@@ -3263,6 +3329,7 @@
     <fields>      <field>        <name>SKU</name>
       </field>      <field>        <name>GIACENZA</name>
       </field>      <field>        <name>PREZZO</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>GIACENZA</name>
         <rename>GIACENZA</rename>
@@ -3323,6 +3390,7 @@
         <rename>SKU</rename>
       </field>      <field>        <name>product_in_stock</name>
       </field>      <field>        <name>prezzo</name>
+      </field>      <field>        <name>DISPATCHTIME</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>product_in_stock</name>
         <rename>GIACENZA</rename>
@@ -3449,7 +3517,7 @@
     </remotesteps>
     <GUI>
       <xloc>720</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -3473,7 +3541,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>640</xloc>
+      <xloc>608</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3596,8 +3664,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>512</yloc>
+      <xloc>720</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -3671,6 +3739,18 @@
       </field>
       <field>
         <name>PREZZO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>DISPATCHTIME</name>
         <type>String</type>
         <format/>
         <currency/>

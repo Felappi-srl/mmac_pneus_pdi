@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;49.220</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;06 09&#x3a;33&#x3a;38.455</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;05 10&#x3a;17&#x3a;11.739</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -587,7 +587,7 @@
       <copypreviousfiles>N</copypreviousfiles>
       <addFilenameResut>N</addFilenameResut>
       <usekeyfilename>Y</usekeyfilename>
-      <keyfilename>C&#x3a;&#x5c;linky&#x5c;pneus.pem</keyfilename>
+      <keyfilename>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;pneus.pem</keyfilename>
       <keyfilepass>Encrypted </keyfilepass>
       <compression>none</compression>
       <proxyType/>
@@ -729,38 +729,6 @@
       <nr>0</nr>
       <xloc>656</xloc>
       <yloc>16</yloc>
-    </entry>
-    <entry>
-      <name>J_ALCAR_WEB</name>
-      <description/>
-      <type>JOB</type>
-      <specification_method>rep_name</specification_method>
-      <job_object_id/>
-      <filename/>
-      <jobname>J_ALCAR_WEB</jobname>
-      <directory>&#x2f;LINKY&#x2f;ALCAR</directory>
-      <arg_from_previous>N</arg_from_previous>
-      <params_from_previous>N</params_from_previous>
-      <exec_per_row>N</exec_per_row>
-      <set_logfile>N</set_logfile>
-      <logfile/>
-      <logext/>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <loglevel>Nothing</loglevel>
-      <slave_server_name/>
-      <wait_until_finished>Y</wait_until_finished>
-      <follow_abort_remote>N</follow_abort_remote>
-      <expand_remote_job>N</expand_remote_job>
-      <create_parent_folder>N</create_parent_folder>
-      <pass_export>N</pass_export>
-      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
-      </parameters>      <set_append_logfile>N</set_append_logfile>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>528</xloc>
-      <yloc>336</yloc>
     </entry>
     <entry>
       <name>J_MAK_WEB</name>
@@ -1236,15 +1204,6 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>J_ALCAR_WEB</from>
-      <to>J_WSP_WEB</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
       <from>J_WSP_WEB</from>
       <to>J_MAK_WEB</to>
       <from_nr>0</from_nr>
@@ -1345,7 +1304,7 @@
     </hop>
     <hop>
       <from>tweb_ImportaRuotini_partners</from>
-      <to>J_ALCAR_WEB</to>
+      <to>J_WSP_WEB</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

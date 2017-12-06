@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;16 12&#x3a;09&#x3a;55.718</modified_date>
+  <modified_date>2017&#x2f;11&#x2f;30 11&#x3a;45&#x3a;52.452</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -747,14 +747,14 @@
       <yloc>160</yloc>
     </entry>
     <entry>
-      <name>J_LOAD_ALCAR_STOCK_FTP</name>
+      <name>J_LOAD_ALCAR_STOCK_FTP_2017</name>
       <description/>
       <type>JOB</type>
       <specification_method>rep_name</specification_method>
       <job_object_id/>
       <filename/>
-      <jobname>J_LOAD_ALCAR_STOCK_FTP</jobname>
-      <directory>&#x2f;CONNECTOR&#x2f;ALCAR</directory>
+      <jobname>J_LOAD_ALCAR_STOCK_FTP_2017</jobname>
+      <directory>&#x2f;LINKY_2017&#x2f;CONNECTOR&#x2f;ALCAR</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -775,7 +775,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>576</xloc>
+      <xloc>592</xloc>
       <yloc>160</yloc>
     </entry>
     <entry>
@@ -945,7 +945,7 @@
     </hop>
     <hop>
       <from>J_LOAD_YOKOHAMA_2017</from>
-      <to>J_LOAD_ALCAR_STOCK_FTP</to>
+      <to>J_LOAD_ALCAR_STOCK_FTP_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -953,7 +953,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>J_LOAD_ALCAR_STOCK_FTP</from>
+      <from>J_LOAD_ALCAR_STOCK_FTP_2017</from>
       <to>J_LOAD_ETTORRE_2017</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
