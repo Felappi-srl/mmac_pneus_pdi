@@ -1,22 +1,22 @@
 <transformation>
   <info>
     <name>t_linky_2017_web_autopneumatici_exp</name>
-    <description/>
-    <extended_description/>
-    <trans_version/>
+    <description />
+    <extended_description />
+    <trans_version />
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY_2017&#x2f;WEB</directory>
+    <directory>/LINKY_2017/WEB</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <size_limit_lines />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +41,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject/>
+          <subject />
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +125,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <interval/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <interval />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +207,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +273,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +349,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
+        <connection />
+        <schema />
+        <table />
+        <timeout_days />
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +401,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection/>
-      <table/>
-      <field/>
+      <connection />
+      <table />
+      <field />
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +414,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file/>
+    <shared_objects_file />
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
+    <created_date>2017/01/04 11:19:33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;30 14&#x3a;05&#x3a;47.995</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2017/12/06 08:46:01.112</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -444,21 +444,54 @@
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <connection>
@@ -470,22 +503,58 @@
     <port>3306</port>
     <username>root</username>
     <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
     <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
+        <attribute>500</attribute>
+      </attribute>
+      <attribute>
+        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
+        <attribute>true</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
@@ -556,7 +625,7 @@
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -576,7 +645,7 @@
     </hop>
     <hop>
       <from>Filter rows 2</from>
-      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <to>Dummy (do nothing) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -621,7 +690,7 @@
     </hop>
     <hop>
       <from>Filter rows 3</from>
-      <to>Dummy &#x28;do nothing&#x29; 3</to>
+      <to>Dummy (do nothing) 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -688,17 +757,17 @@
   <step>
     <name>Append streams</name>
     <type>Append</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<head_name>Valori MAK</head_name>
-<tail_name>Valori MOMO</tail_name>
-    <cluster_schema/>
+    <head_name>Valori MAK</head_name>
+    <tail_name>Valori MOMO</tail_name>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -710,22 +779,21 @@
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 2</name>
     <type>Append</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<head_name>Append streams</head_name>
-<tail_name>Valori OZR</tail_name>
-    <cluster_schema/>
+    <head_name>Append streams</head_name>
+    <tail_name>Valori OZR</tail_name>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -737,27 +805,29 @@
       <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Auto</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xd;&#xa;codiceauto as idauto&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_master_auto</sql>
+    <sql>SELECT
+codiceauto as idauto
+FROM
+connector_2017.carfit_master_auto</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -769,27 +839,34 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Cerchi</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.CERTIFICATO,&#xa;linky_articoli_mak.CODICEAUTO,&#xa;coalesce&#x28;misura1,&#x27;&#x27;&#x29; &#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura2,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura3,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura4,&#x27;&#x27;&#x29; as misure&#xa;FROM&#xa;linky_articoli_mak&#xd;&#xa;where out_prod&#x3d;0&#xa;order by linky_articoli_mak.CODICEAUTO</sql>
+    <sql>SELECT
+linky_articoli_mak.PARTNUMBER as SKU,
+linky_articoli_mak.CERTIFICATO,
+linky_articoli_mak.CODICEAUTO,
+coalesce(misura1,'') +'||'+coalesce(misura2,'')+'||'+coalesce(misura3,'')+'||'+coalesce(misura4,'') as misure
+FROM
+linky_articoli_mak
+where out_prod=0
+order by linky_articoli_mak.CODICEAUTO</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -801,27 +878,34 @@
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Cerchi MOMO</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MARCAAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MODELLOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.TIPOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.ANNOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.PARTNUMBER,&#xa;coalesce&#x28;misura1,&#x27;&#x27;&#x29; &#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura2,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura3,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura4,&#x27;&#x27;&#x29; as misure&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;</sql>
+    <sql>SELECT
+dbo.[linky_articoli_MOMO].MARCAAUTO,
+dbo.[linky_articoli_MOMO].MODELLOAUTO,
+dbo.[linky_articoli_MOMO].TIPOAUTO,
+dbo.[linky_articoli_MOMO].ANNOAUTO,
+dbo.[linky_articoli_MOMO].PARTNUMBER,
+coalesce(misura1,'') +'||'+coalesce(misura2,'')+'||'+coalesce(misura3,'')+'||'+coalesce(misura4,'') as misure
+FROM
+dbo.[linky_articoli_MOMO]</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -833,27 +917,35 @@
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Cerchi OZR</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>	SELECT&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MARCAAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.MODELLOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.TIPOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.ANNOAUTO,&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;.PARTNUMBER,&#xa;coalesce&#x28;misura1,&#x27;&#x27;&#x29; &#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura2,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura3,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura4,&#x27;&#x27;&#x29;&#x2b;&#x27;&#x7c;&#x7c;&#x27;&#x2b;coalesce&#x28;misura5,&#x27;&#x27;&#x29; as misure&#xa;	FROM&#xa;	dbo.&#x5b;linky_articoli_OZR&#x5d;&#xd;&#xa;where out_prod&#x3d;0</sql>
+    <sql>	SELECT
+	dbo.[linky_articoli_OZR].MARCAAUTO,
+	dbo.[linky_articoli_OZR].MODELLOAUTO,
+	dbo.[linky_articoli_OZR].TIPOAUTO,
+	dbo.[linky_articoli_OZR].ANNOAUTO,
+	dbo.[linky_articoli_OZR].PARTNUMBER,
+coalesce(misura1,'') +'||'+coalesce(misura2,'')+'||'+coalesce(misura3,'')+'||'+coalesce(misura4,'')+'||'+coalesce(misura5,'') as misure
+	FROM
+	dbo.[linky_articoli_OZR]
+where out_prod=0</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -865,20 +957,19 @@
       <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
+    <name>Dummy (do nothing)</name>
     <type>Dummy</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -890,20 +981,19 @@
       <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <name>Dummy (do nothing) 2</name>
     <type>Dummy</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -915,20 +1005,19 @@
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <name>Dummy (do nothing) 3</name>
     <type>Dummy</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -940,30 +1029,29 @@
       <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<send_true_to>Split Fields</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <send_true_to>Split Fields</send_true_to>
+    <send_false_to>Dummy (do nothing)</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>misura</leftvalue>
- <function>IS NOT NULL</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>misura</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue />
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -975,30 +1063,29 @@
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows 2</name>
     <type>FilterRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<send_true_to>Split larghezza</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29; 2</send_false_to>
+    <send_true_to>Split larghezza</send_true_to>
+    <send_false_to>Dummy (do nothing) 2</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>misura</leftvalue>
- <function>IS NOT NULL</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>misura</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue />
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1010,30 +1097,29 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows 3</name>
     <type>FilterRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<send_true_to>Split Fields 2</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29; 3</send_false_to>
+    <send_true_to>Split Fields 2</send_true_to>
+    <send_false_to>Dummy (do nothing) 3</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>misura</leftvalue>
- <function>IS NOT NULL</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>misura</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue />
+      </condition>
     </compare>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1045,27 +1131,37 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>MOMO</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xd;&#xa;codiceautom,&#xd;&#xa;marca,&#xd;&#xa;modello,&#xd;&#xa;tipo,&#xd;&#xa;anno&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_masterauto_partnerauto_rel&#xd;&#xa;JOIN connector_2017.carfit_partner_auto&#xd;&#xa;ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop &#x3d; connector_2017.carfit_partner_auto.codiceauto&#xd;&#xa;WHERE&#xd;&#xa;connector_2017.carfit_partner_auto.partner&#x3d;&#x27;MOMO&#x27;</sql>
+    <sql>SELECT
+codiceautom,
+marca,
+modello,
+tipo,
+anno
+FROM
+connector_2017.carfit_masterauto_partnerauto_rel
+JOIN connector_2017.carfit_partner_auto
+ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop = connector_2017.carfit_partner_auto.codiceauto
+WHERE
+connector_2017.carfit_partner_auto.partner='MOMO'</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1077,29 +1173,28 @@
       <yloc>214</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Merge Join</name>
     <type>MergeJoin</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<join_type>INNER</join_type>
-<step1>Auto</step1>
-<step2>Cerchi</step2>
+    <join_type>INNER</join_type>
+    <step1>Auto</step1>
+    <step2>Cerchi</step2>
     <keys_1>
       <key>idauto</key>
     </keys_1>
     <keys_2>
       <key>CODICEAUTO</key>
     </keys_2>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1111,22 +1206,21 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Merge Join 2</name>
     <type>MergeJoin</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<join_type>INNER</join_type>
-<step1>Sort rows</step1>
-<step2>Sort rows 2</step2>
+    <join_type>INNER</join_type>
+    <step1>Sort rows</step1>
+    <step2>Sort rows 2</step2>
     <keys_1>
       <key>marca</key>
       <key>modello</key>
@@ -1139,7 +1233,7 @@
       <key>TIPOAUTO</key>
       <key>ANNOAUTO</key>
     </keys_2>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1151,22 +1245,21 @@
       <yloc>214</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Merge OZ</name>
     <type>MergeJoin</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-<join_type>INNER</join_type>
-<step1>Sort rows 3</step1>
-<step2>Sort rows 2 2</step2>
+    <join_type>INNER</join_type>
+    <step1>Sort rows 3</step1>
+    <step2>Sort rows 2 2</step2>
     <keys_1>
       <key>marca</key>
       <key>modello</key>
@@ -1177,7 +1270,7 @@
       <key>MODELLOAUTO</key>
       <key>ANNOAUTO</key>
     </keys_2>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1189,27 +1282,37 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>OZR</name>
     <type>TableInput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xd;&#xa;codiceautom,&#xd;&#xa;marca,&#xd;&#xa;modello,&#xd;&#xa;tipo,&#xd;&#xa;anno&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_masterauto_partnerauto_rel&#xd;&#xa;JOIN connector_2017.carfit_partner_auto&#xd;&#xa;ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop &#x3d; connector_2017.carfit_partner_auto.codiceauto&#xd;&#xa;WHERE&#xd;&#xa;connector_2017.carfit_partner_auto.partner&#x3d;&#x27;OZR&#x27;</sql>
+    <sql>SELECT
+codiceautom,
+marca,
+modello,
+tipo,
+anno
+FROM
+connector_2017.carfit_masterauto_partnerauto_rel
+JOIN connector_2017.carfit_partner_auto
+ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop = connector_2017.carfit_partner_auto.codiceauto
+WHERE
+connector_2017.carfit_partner_auto.partner='OZR'</sql>
     <limit>0</limit>
-    <lookup/>
+    <lookup />
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1221,33 +1324,32 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Replace in string</name>
     <type>ReplaceString</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
     <fields>
       <field>
         <in_stream_name>raggio</in_stream_name>
-        <out_stream_name/>
+        <out_stream_name />
         <use_regex>no</use_regex>
         <replace_string>R</replace_string>
-        <replace_by_string/>
+        <replace_by_string />
         <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
+        <replace_field_by_string />
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1259,24 +1361,29 @@
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>codiceautom</name>
+    <fields>
+      <field>
+        <name>codiceautom</name>
         <rename>idauto</rename>
-      </field>      <field>        <name>misure</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+      </field>
+      <field>
+        <name>misure</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1288,23 +1395,28 @@
       <yloc>214</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>idauto</name>
-      </field>      <field>        <name>misure</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>idauto</name>
+      </field>
+      <field>
+        <name>misure</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1316,24 +1428,29 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values OZ</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>codiceautom</name>
+    <fields>
+      <field>
+        <name>codiceautom</name>
         <rename>idauto</rename>
-      </field>      <field>        <name>misure</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+      </field>
+      <field>
+        <name>misure</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1345,26 +1462,25 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Sort rows</name>
     <type>SortRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>marca</name>
@@ -1399,7 +1515,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1411,26 +1527,25 @@
       <yloc>214</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Sort rows 2</name>
     <type>SortRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>MARCAAUTO</name>
@@ -1465,7 +1580,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1477,26 +1592,25 @@
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Sort rows 2 2</name>
     <type>SortRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>MARCAAUTO</name>
@@ -1523,7 +1637,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1535,26 +1649,25 @@
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Sort rows 3</name>
     <type>SortRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>marca</name>
@@ -1581,7 +1694,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1593,26 +1706,25 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Sort rows 4</name>
     <type>SortRows</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>Y</unique_rows>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory />
+    <compress>N</compress>
+    <compress_variable />
+    <unique_rows>Y</unique_rows>
     <fields>
       <field>
         <name>idauto</name>
@@ -1647,7 +1759,7 @@
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1659,49 +1771,54 @@
       <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split Fields</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misura</splitfield>
-   <delimiter>&#x2f;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>larghezza</name>
-        <id/>
+    <splitfield>misura</splitfield>
+    <delimiter>/</delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>larghezza</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp_misura</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp_misura</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1713,49 +1830,54 @@
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split Fields 2</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misura</splitfield>
-   <delimiter>&#x2f;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>larghezza</name>
-        <id/>
+    <splitfield>misura</splitfield>
+    <delimiter>/</delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>larghezza</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp_misura</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp_misura</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1767,62 +1889,69 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split Fields 2 2</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>anno</splitfield>
-   <delimiter> </delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>anno_da</name>
-        <id/>
+    <splitfield>anno</splitfield>
+    <delimiter> </delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>anno_da</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp1</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp1</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp2</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp2</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>none</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1834,27 +1963,26 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split field to rows</name>
     <type>SplitFieldToRows3</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misure</splitfield>
-   <delimiter>&#x7c;&#x7c;</delimiter>
-   <newfield>misura</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
-    <cluster_schema/>
+    <splitfield>misure</splitfield>
+    <delimiter>||</delimiter>
+    <newfield>misura</newfield>
+    <rownum>N</rownum>
+    <rownum_field />
+    <resetrownumber>Y</resetrownumber>
+    <delimiter_is_regex>N</delimiter_is_regex>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1866,27 +1994,26 @@
       <yloc>214</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split field to rows 2</name>
     <type>SplitFieldToRows3</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misure</splitfield>
-   <delimiter>&#x7c;&#x7c;</delimiter>
-   <newfield>misura</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
-    <cluster_schema/>
+    <splitfield>misure</splitfield>
+    <delimiter>||</delimiter>
+    <newfield>misura</newfield>
+    <rownum>N</rownum>
+    <rownum_field />
+    <resetrownumber>Y</resetrownumber>
+    <delimiter_is_regex>N</delimiter_is_regex>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1898,27 +2025,26 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split field to rows 3</name>
     <type>SplitFieldToRows3</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misure</splitfield>
-   <delimiter>&#x7c;&#x7c;</delimiter>
-   <newfield>misura</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
-    <cluster_schema/>
+    <splitfield>misure</splitfield>
+    <delimiter>||</delimiter>
+    <newfield>misura</newfield>
+    <rownum>N</rownum>
+    <rownum_field />
+    <resetrownumber>Y</resetrownumber>
+    <delimiter_is_regex>N</delimiter_is_regex>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1930,49 +2056,54 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split larghezza</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>misura</splitfield>
-   <delimiter>&#x2f;</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>larghezza</name>
-        <id/>
+    <splitfield>misura</splitfield>
+    <delimiter>/</delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>larghezza</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp_misura</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp_misura</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -1984,62 +2115,69 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split larghezza 2</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>tmp_misura</splitfield>
-   <delimiter> </delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>spalla</name>
-        <id/>
+    <splitfield>tmp_misura</splitfield>
+    <delimiter> </delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>spalla</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>raggio</name>
-        <id/>
+      </field>
+      <field>
+        <name>raggio</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>tmp</name>
-        <id/>
+      </field>
+      <field>
+        <name>tmp</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2051,49 +2189,54 @@
       <yloc>26</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split larghezza 2 2</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>tmp_misura</splitfield>
-   <delimiter>R</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>spalla</name>
-        <id/>
+    <splitfield>tmp_misura</splitfield>
+    <delimiter>R</delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>spalla</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>raggio</name>
-        <id/>
+      </field>
+      <field>
+        <name>raggio</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2105,49 +2248,54 @@
       <yloc>234</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split larghezza 2 2 2</name>
     <type>FieldSplitter</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-   <splitfield>tmp_misura</splitfield>
-   <delimiter>R</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>spalla</name>
-        <id/>
+    <splitfield>tmp_misura</splitfield>
+    <delimiter>R</delimiter>
+    <enclosure />
+    <fields>
+      <field>
+        <name>spalla</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>      <field>        <name>raggio</name>
-        <id/>
+      </field>
+      <field>
+        <name>raggio</name>
+        <id />
         <idrem>N</idrem>
         <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
+        <format />
+        <group />
+        <decimal />
+        <currency />
         <length>-1</length>
         <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
+        <nullif />
+        <ifnull />
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2159,25 +2307,34 @@
       <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Valori MAK</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>idauto</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>raggio</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>idauto</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>raggio</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2189,25 +2346,34 @@
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Valori MOMO</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>idauto</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>raggio</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>idauto</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>raggio</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2219,25 +2385,34 @@
       <yloc>233</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Valori OZR</name>
     <type>SelectValues</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <fields>      <field>        <name>idauto</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>raggio</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>idauto</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>raggio</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2249,21 +2424,20 @@
       <yloc>384</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>autopneumatici</name>
     <type>TextFileOutput</type>
-    <description/>
+    <description />
     <distribute>Y</distribute>
-    <custom_distribution/>
+    <custom_distribution />
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name/>
+      <schema_name />
     </partitioning>
-    <separator>&#x7c;</separator>
-    <enclosure>&#x22;</enclosure>
+    <separator>|</separator>
+    <enclosure>"</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>Y</header>
@@ -2271,12 +2445,12 @@
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine/>
+    <endedLine />
     <fileNameInField>N</fileNameInField>
-    <fileNameField/>
+    <fileNameField />
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;connector&#x24;&#x7b;file.separator&#x7d;web&#x24;&#x7b;file.separator&#x7d;exp&#x24;&#x7b;file.separator&#x7d;autopneumatici</name>
+      <name>${MMAC_STARTUP}pneus${file.separator}connector${file.separator}web${file.separator}exp${file.separator}prod${file.separator}autopneumatici</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
@@ -2287,7 +2461,7 @@
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
+      <date_time_format />
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -2297,11 +2471,11 @@
       <field>
         <name>idauto</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2309,11 +2483,11 @@
       <field>
         <name>larghezza</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2321,11 +2495,11 @@
       <field>
         <name>spalla</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -2333,17 +2507,17 @@
       <field>
         <name>raggio</name>
         <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <nullif />
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema/>
+    <cluster_schema />
     <remotesteps>
       <input>
       </input>
@@ -2355,8 +2529,7 @@
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
