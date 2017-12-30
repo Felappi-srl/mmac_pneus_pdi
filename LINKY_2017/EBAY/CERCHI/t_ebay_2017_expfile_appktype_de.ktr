@@ -1,22 +1,22 @@
 <transformation>
   <info>
     <name>t_ebay_2017_expfile_appktype_de</name>
-    <description />
-    <extended_description />
-    <trans_version />
+    <description/>
+    <extended_description/>
+    <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>/LINKY_2017/EBAY/CERCHI</directory>
+    <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
     <parameters>
     </parameters>
     <log>
       <trans-log-table>
-        <connection />
-        <schema />
-        <table />
-        <size_limit_lines />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <size_limit_lines/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -41,37 +41,37 @@
           <id>LINES_READ</id>
           <enabled>Y</enabled>
           <name>LINES_READ</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_WRITTEN</id>
           <enabled>Y</enabled>
           <name>LINES_WRITTEN</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_UPDATED</id>
           <enabled>Y</enabled>
           <name>LINES_UPDATED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_INPUT</id>
           <enabled>Y</enabled>
           <name>LINES_INPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_OUTPUT</id>
           <enabled>Y</enabled>
           <name>LINES_OUTPUT</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>LINES_REJECTED</id>
           <enabled>Y</enabled>
           <name>LINES_REJECTED</name>
-          <subject />
+          <subject/>
         </field>
         <field>
           <id>ERRORS</id>
@@ -125,11 +125,11 @@
         </field>
       </trans-log-table>
       <perf-log-table>
-        <connection />
-        <schema />
-        <table />
-        <interval />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <interval/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -207,10 +207,10 @@
         </field>
       </perf-log-table>
       <channel-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -273,10 +273,10 @@
         </field>
       </channel-log-table>
       <step-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -349,10 +349,10 @@
         </field>
       </step-log-table>
       <metrics-log-table>
-        <connection />
-        <schema />
-        <table />
-        <timeout_days />
+        <connection/>
+        <schema/>
+        <table/>
+        <timeout_days/>
         <field>
           <id>ID_BATCH</id>
           <enabled>Y</enabled>
@@ -401,9 +401,9 @@
       </metrics-log-table>
     </log>
     <maxdate>
-      <connection />
-      <table />
-      <field />
+      <connection/>
+      <table/>
+      <field/>
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
@@ -414,7 +414,7 @@
     <feedback_shown>Y</feedback_shown>
     <feedback_size>50000</feedback_size>
     <using_thread_priorities>Y</using_thread_priorities>
-    <shared_objects_file />
+    <shared_objects_file/>
     <capture_step_performance>N</capture_step_performance>
     <step_performance_capturing_delay>1000</step_performance_capturing_delay>
     <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012/07/27 16:26:43.730</created_date>
+    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017/11/16 12:14:38.793</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2017&#x2f;12&#x2f;28 14&#x3a;02&#x3a;18.573</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -444,58 +444,22 @@
     <port>3306</port>
     <username>root</username>
     <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.defaultFetchSize</code>
-        <attribute>500</attribute>
-      </attribute>
-      <attribute>
-        <code>EXTRA_OPTION_MYSQL.useCursorFetch</code>
-        <attribute>true</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <connection>
@@ -507,54 +471,21 @@
     <port>1433</port>
     <username>sa</username>
     <password>Encrypted 2be98afc86aa7f2e48d1ca2718fc4f78b</password>
-    <servername />
-    <data_tablespace />
-    <index_tablespace />
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
     <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQLUseIntegratedSecurity</code>
-        <attribute>false</attribute>
-      </attribute>
-      <attribute>
-        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>1433</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
+      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
@@ -602,23 +533,23 @@
   <step>
     <name>Add constants 2 3 2</name>
     <type>Constant</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <name>t_finespecifica</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;/br></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -626,11 +557,11 @@
       <field>
         <name>t_icarico</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Lochzahl: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Lochzahl&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -638,11 +569,11 @@
       <field>
         <name>t_larghezza</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Felgenbreite: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Felgenbreite&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -650,11 +581,11 @@
       <field>
         <name>t_ivelocita</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Offset: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Offset&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -662,11 +593,11 @@
       <field>
         <name>t_spalla</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Abstand: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Abstand&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -674,11 +605,11 @@
       <field>
         <name>t_marca</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Reifenhersteller: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Reifenhersteller&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -686,11 +617,11 @@
       <field>
         <name>t_raggio</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif>&lt;strong>Zollgröße: &lt;/strong></nullif>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>&#x3c;strong&#x3e;Zollgr&#xf6;&#xdf;e&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -698,17 +629,17 @@
       <field>
         <name>tipo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif>CERCHI</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -720,61 +651,27 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>CERCHI LEGA</name>
     <type>TableInput</type>
-    <description />
+    <description/>
     <distribute>N</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT distinct
- e.codice as product_sku
-, substring((replace (var.nome, 'CERCHI IN LEGA ','ALUFELGE ')),1,80) as Titolo
-, replace (var.nome, 'CERCHI IN LEGA ','ALUFELGE ') as titolo_header
-, ebaycat
-,'Germany' as siteid
-,'DE' as country
-,'FixedPriceItem' as Type
-,  Marca 
-, linky_calc_endprice_2016(partner,'DE','CERCHI','',prezzopubblico,0)  as product_price
-, product_in_stock as product_in_stock
-, case when codca1 is not null then codca1 else '' end as diametro
-, case when codca3 is not null then codca3 else '' end as spalla
-, case when codca4 is not null then desca4 else '' end as larghezza
-, case when codca5 is not null then desca5 else '' end as ivel
-, case when codca6 is not null then desca6 else '' end as icarico
-, case when codca2 is not null then DESca2 else '' end as offset
-, 'CERCHI' as category_path
-,product_full_image
-, '' as tipoutilizzo
-, partner,
-case when urlcertificato is not null then
-'&lt;p>&lt;a href="' + urlcertificato + '" target="_blank">Download das Zertifikat&lt;/a>&lt;/p>'
-else
-''
-end as urlcertificato,eancode,
-var.codice as mpn
-, auto
-FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice=var.codice
-where
- var.isece=1 
-and product_in_stock > 3 
-and prezzolistino > 10 
-and var.siteid='DE'  
-and (out_prod&lt;&gt;'1' OR out_prod IS NULL)
-</sql>
-    <limit>0</limit>
-    <lookup />
+    <sql>SELECT distinct&#xa;  var.codicevar  as product_sku&#xa;-- , substring&#x28; replace&#x28;replace&#x28; var.nome,&#x27;.50X&#x27;, &#x27;.5X&#x27;&#x29;, &#x27;.00X&#x27;, &#x27;X&#x27;&#x29;,1,80&#x29; as Titolo&#xd;&#xa;, replace&#x28;replace&#x28; var.nome,&#x27;.50X&#x27;, &#x27;.5X&#x27;&#x29;, &#x27;.00X&#x27;, &#x27;X&#x27;&#x29; as titolo_header &#xd;&#xa;&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace &#x28;var.nome, &#x27;CERCHI IN LEGA &#x27;,&#x27;ALUFELGE &#x27;&#x29;,&#x27;.50X&#x27;, &#x27;.5X&#x27;&#x29;, &#x27;.00X&#x27;, &#x27;X&#x27;&#x29;,1,80&#x29; as Titolo&#xa;, replace &#x28;replace&#x28;replace&#x28;var.nome,&#x27;.50X&#x27;, &#x27;.5X&#x27;&#x29;, &#x27;.00X&#x27;, &#x27;X&#x27;&#x29;, &#x27;CERCHI IN LEGA &#x27;,&#x27;ALUFELGE &#x27;&#x29; as titolo_header&#xa;, ebaycat&#xa;,&#x27;Germany&#x27; as siteid&#xa;,&#x27;DE&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, linky_calc_endprice_2016&#x28;partner,&#x27;DE&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico,0&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, &#x27;CERCHI&#x27; as category_path&#xa;,product_full_image&#xa;, &#x27;&#x27; as tipoutilizzo&#xa;, partner,&#xa;case when urlcertificato is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Download das Zertifikat&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xa;else&#xa;&#x27;&#x27;&#xa;end as urlcertificato,eancode,&#xa;var.codice as mpn&#xa;, auto&#xa;FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice&#x3d;var.codice&#xa;where&#xa; var.isece&#x3d;1 &#xa;and product_in_stock &#x3e; 3 &#xa;and prezzolistino &#x3e; 10 &#xa;and var.siteid&#x3d;&#x27;DE&#x27;  &#xa;and &#x28;out_prod&#x3c;&#x3e;&#x27;1&#x27; OR out_prod IS NULL&#x29;&#xa;and e.partner&#x3d;&#x27;ALCAR&#x27;&#xd;&#xa;and auto is not null</sql>
+    <limit>1</limit>
+    <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -786,43 +683,31 @@ and (out_prod&lt;&gt;'1' OR out_prod IS NULL)
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS auto template</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-var tmp1 = TEMPLATE.replace('{{TITOLO}}',Titolo);
-var tmp2 = tmp1.replace('{{CARATTERISTICHE}}',caratteristiche);
-
-descrizione = tmp2;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>descrizione</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;var tmp1 &#x3d; TEMPLATE.replace&#x28;&#x27;&#x7b;&#x7b;TITOLO&#x7d;&#x7d;&#x27;,Titolo&#x29;&#x3b;&#xa;var tmp2 &#x3d; tmp1.replace&#x28;&#x27;&#x7b;&#x7b;CARATTERISTICHE&#x7d;&#x7d;&#x27;,caratteristiche&#x29;&#x3b;&#xa;&#xa;descrizione &#x3d; tmp2&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>descrizione</name>
         <rename>descrizione</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -834,45 +719,31 @@ descrizione = tmp2;</jsScript_script>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>JS cerchi</name>
     <type>ScriptValueMod</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script qua
-
-caratteristiche = t_marca + Marca + t_finespecifica +
-				t_larghezza + larghezza + t_finespecifica +
-				t_spalla + spalla + t_finespecifica +
-				t_raggio + diametro + t_finespecifica +
-				t_icarico + icarico + t_finespecifica +
-				t_ivelocita + offset + t_finespecifica;</jsScript_script>
-      </jsScript>
-    </jsScripts>
-    <fields>
-      <field>
-        <name>caratteristiche</name>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; offset &#x2b; t_finespecifica&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>
-    </fields>
-    <cluster_schema />
+      </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -884,48 +755,49 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Look Cerchi</name>
     <type>DBLookup</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
     <cache>Y</cache>
     <cache_load_all>N</cache_load_all>
     <cache_size>0</cache_size>
     <lookup>
-      <schema />
+      <schema/>
       <table>linky_ebay_template</table>
-      <orderby />
+      <orderby/>
       <fail_on_multiple>N</fail_on_multiple>
       <eat_row_on_failure>N</eat_row_on_failure>
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>=</condition>
-        <name2 />
+        <condition>&#x3d;</condition>
+        <name2/>
       </key>
       <value>
         <name>TEMPLATE</name>
         <rename>TEMPLATE</rename>
-        <default />
+        <default/>
         <type>String</type>
       </value>
     </lookup>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -937,25 +809,26 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Sort rows</name>
     <type>SortRows</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <sort_size>1000000</sort_size>
-    <free_memory />
-    <compress>N</compress>
-    <compress_variable />
-    <unique_rows>N</unique_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
     <fields>
       <field>
         <name>product_sku</name>
@@ -966,7 +839,7 @@ caratteristiche = t_marca + Marca + t_finespecifica +
         <presorted>N</presorted>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -978,34 +851,35 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
     <fields>
       <field>
         <in_stream_name>descrizione</in_stream_name>
-        <out_stream_name />
+        <out_stream_name/>
         <trim_type>none</trim_type>
         <lower_upper>none</lower_upper>
         <padding_type>none</padding_type>
-        <pad_char />
-        <pad_len />
+        <pad_char/>
+        <pad_len/>
         <init_cap>no</init_cap>
         <mask_xml>none</mask_xml>
         <digits>none</digits>
         <remove_special_characters>crlf</remove_special_characters>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1017,29 +891,26 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>Unique rows</name>
     <type>Unique</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <count_rows>N</count_rows>
-    <count_field />
-    <reject_duplicate_row>N</reject_duplicate_row>
-    <error_description />
-    <fields>
-      <field>
-        <name>product_sku</name>
+      <count_rows>N</count_rows>
+      <count_field/>
+      <reject_duplicate_row>N</reject_duplicate_row>
+      <error_description/>
+    <fields>      <field>        <name>product_sku</name>
         <case_insensitive>N</case_insensitive>
-      </field>
-    </fields>
-    <cluster_schema />
+        </field>      </fields>    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1051,20 +922,21 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step>
     <name>articoli</name>
     <type>TextFileOutput</type>
-    <description />
+    <description/>
     <distribute>Y</distribute>
-    <custom_distribution />
+    <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
-      <schema_name />
+      <schema_name/>
     </partitioning>
-    <separator>^</separator>
-    <enclosure />
+    <separator>&#x5e;</separator>
+    <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
     <header>N</header>
@@ -1072,12 +944,12 @@ caratteristiche = t_marca + Marca + t_finespecifica +
     <format>DOS</format>
     <compression>None</compression>
     <encoding>UTF-8</encoding>
-    <endedLine />
+    <endedLine/>
     <fileNameInField>N</fileNameInField>
-    <fileNameField />
+    <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C:\linky\pneus\ebay\ebay_app_DE</name>
+      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_app_de</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -1088,7 +960,7 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format />
+      <date_time_format/>
       <add_to_result_filenames>N</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -1098,11 +970,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>product_sku</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1110,11 +982,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>Titolo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1123,10 +995,10 @@ caratteristiche = t_marca + Marca + t_finespecifica +
         <name>ebaycat</name>
         <type>Integer</type>
         <format>0</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1134,11 +1006,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>siteid</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1146,11 +1018,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>country</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1158,11 +1030,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>Type</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1170,11 +1042,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>Marca</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1182,11 +1054,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>product_price</name>
         <type>Number</type>
-        <format>#.#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>15</length>
         <precision>2</precision>
@@ -1194,11 +1066,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>#.#</format>
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format>&#x23;.&#x23;</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>5</length>
         <precision>0</precision>
@@ -1206,11 +1078,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>diametro</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1218,11 +1090,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>spalla</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1230,11 +1102,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>larghezza</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1242,11 +1114,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>ivel</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1254,11 +1126,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>icarico</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1266,11 +1138,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>offset</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1278,11 +1150,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>country</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1290,11 +1162,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>category_path</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1302,11 +1174,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>descrizione</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1314,11 +1186,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>product_full_image</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1326,11 +1198,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>tipoutilizzo</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1338,11 +1210,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>partner</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1350,11 +1222,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>EANCODE</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1362,11 +1234,11 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>mpn</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
@@ -1374,17 +1246,17 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <field>
         <name>auto</name>
         <type>String</type>
-        <format />
-        <currency />
-        <decimal />
-        <group />
-        <nullif />
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
         <trim_type>both</trim_type>
         <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
-    <cluster_schema />
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1396,7 +1268,8 @@ caratteristiche = t_marca + Marca + t_finespecifica +
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
-  </step>
+    </step>
+
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

@@ -429,7 +429,7 @@
     <created_user/>
     <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;05.603</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;30 11&#x3a;02&#x3a;05.447</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;21 16&#x3a;10&#x3a;21.647</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -474,6 +474,21 @@
     </hop>
     <hop>
       <from>Value Mapper</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Prezzo Zero</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filter rows</from>
+      <to>Prezzo OK</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Prezzo OK</from>
       <to>Update</to>
       <enabled>Y</enabled>
     </hop>
@@ -589,10 +604,10 @@
       </field>
       <field>
         <name>prezzo</name>
-        <type>String</type>
+        <type>Number</type>
         <format/>
         <currency/>
-        <decimal/>
+        <decimal>,</decimal>
         <group/>
         <nullif/>
         <ifnull/>
@@ -715,7 +730,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>480</xloc>
+      <xloc>640</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -750,6 +765,91 @@
     </remotesteps>
     <GUI>
       <xloc>288</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<send_true_to>Prezzo OK</send_true_to>
+<send_false_to>Prezzo Zero</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>prezzo</leftvalue>
+ <function>&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Number</type><text>0.0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;.&#x23;</mask></value> </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Prezzo Zero</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Prezzo OK</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>

@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;30 12&#x3a;07&#x3a;46.848</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;21 15&#x3a;23&#x3a;39.862</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -1182,6 +1182,22 @@
       <xloc>1024</xloc>
       <yloc>128</yloc>
     </entry>
+    <entry>
+      <name>Azzera Giacenze</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_ebay set product_in_stock&#x3d;&#x27;0&#x27; where partner&#x3d;&#x27;WSP&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>112</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1286,15 +1302,6 @@
     <hop>
       <from>Ebay MAK IT</from>
       <to>Ebay MAK DE</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_imp_ebay_var_wsp</from>
-      <to>t_ebay_ExpFile_wsp_it</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1525,6 +1532,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_imp_ebay_var_wsp</from>
+      <to>Azzera Giacenze</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Azzera Giacenze</from>
+      <to>t_ebay_ExpFile_wsp_it</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

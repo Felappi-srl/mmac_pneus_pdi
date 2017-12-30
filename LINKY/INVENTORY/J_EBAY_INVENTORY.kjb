@@ -8,9 +8,36 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;01.703</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;02 11&#x3a;17&#x3a;10.969</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;28 09&#x3a;51&#x3a;54.900</modified_date>
     <parameters>
     </parameters>
+  <connection>
+    <name>CONNECTOR_2017</name>
+    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>connector_2017</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>LINKY</name>
     <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
@@ -339,11 +366,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
-      <yloc>48</yloc>
+      <xloc>992</xloc>
+      <yloc>272</yloc>
     </entry>
     <entry>
-      <name>SQL</name>
+      <name>SKU SQL</name>
       <description/>
       <type>SQL</type>
       <sql>update linky_ebay_report  set siteid&#x3d;right&#x28;ebaysku,2&#x29;, sku&#x3d;substring&#x28;ebaysku,1,len&#x28;ebaysku&#x29;-2&#x29;&#xd;&#xa;where right&#x28;ebaysku,3&#x29;&#x3c;&#x3e;&#x27;AUS&#x27;&#x3b;&#xd;&#xa;update linky_ebay_report  set siteid&#x3d;right&#x28;ebaysku,3&#x29;, sku&#x3d;substring&#x28;ebaysku,1,len&#x28;ebaysku&#x29;-3&#x29;&#xd;&#xa;where right&#x28;ebaysku,3&#x29;&#x3d;&#x27;AUS&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
@@ -366,7 +393,7 @@
       <include_subfolders>N</include_subfolders>
       <fields>
         <field>
-          <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;reports</name>
+          <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;reports</name>
           <filemask>.&#x2a;&#x5c;.xml</filemask>
         </field>
       </fields>
@@ -615,7 +642,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>992</xloc>
-      <yloc>48</yloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Valuta il numero di righe nella tabella</name>
@@ -624,7 +651,7 @@
       <connection>LINKY</connection>
       <schemaname/>
       <tablename>linky_ebay_report</tablename>
-      <success_condition>rows_count_smaller_equal</success_condition>
+      <success_condition>rows_count_greater</success_condition>
       <limit>1300000</limit>
       <is_custom_sql>N</is_custom_sql>
       <is_usevars>N</is_usevars>
@@ -634,7 +661,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
+      <xloc>992</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -656,6 +683,22 @@
       <nr>0</nr>
       <xloc>544</xloc>
       <yloc>176</yloc>
+    </entry>
+    <entry>
+      <name>SKU MYSQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_ebay_report  set siteid&#x3d;right&#x28;ebaysku,2&#x29;, sku&#x3d;substring&#x28;ebaysku,1,LENGTH&#x28;ebaysku&#x29;-2&#x29;&#xd;&#xa;where right&#x28;ebaysku,3&#x29;&#x3c;&#x3e;&#x27;AUS&#x27;&#x3b;&#xd;&#xa;update linky_ebay_report  set siteid&#x3d;right&#x28;ebaysku,3&#x29;, sku&#x3d;substring&#x28;ebaysku,1,LENGTH&#x28;ebaysku&#x29;-3&#x29;&#xd;&#xa;where right&#x28;ebaysku,3&#x29;&#x3d;&#x27;AUS&#x27;&#x3b;&#xd;&#xa;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR_2017</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>848</xloc>
+      <yloc>48</yloc>
     </entry>
   </entries>
   <hops>
@@ -724,16 +767,7 @@
     </hop>
     <hop>
       <from>J_SUB_INVENTORY</from>
-      <to>SQL</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>SQL</from>
-      <to>Valuta il numero di righe nella tabella</to>
+      <to>SKU SQL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -746,7 +780,7 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>N</evaluation>
+      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -777,7 +811,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>SQL</from>
+      <from>SKU SQL</from>
       <to>DUMMY</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -791,12 +825,30 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>DUMMY</from>
       <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SKU SQL</from>
+      <to>SKU MYSQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>SKU MYSQL</from>
+      <to>Valuta il numero di righe nella tabella</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

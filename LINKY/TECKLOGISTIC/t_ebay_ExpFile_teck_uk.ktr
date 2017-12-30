@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;04&#x2f;13 08&#x3a;39&#x3a;51.934</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;21 16&#x3a;32&#x3a;14.587</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -448,10 +448,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -462,11 +462,6 @@
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>CERCHI LEGA TECK</from>
-      <to>Add constants 2 3</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Add constants 2 3</from>
       <to>Formula</to>
@@ -490,6 +485,16 @@
     <hop>
       <from>Prezzo</from>
       <to>articoli</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CERCHI LEGA TECK</from>
+      <to>MARCA AUTO &#x2b; FOR</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MARCA AUTO &#x2b; FOR</from>
+      <to>Add constants 2 3</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -700,7 +705,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;,upper&#x28; substring&#x28;replace&#x28;&#xd;&#xa; replace&#x28;var.short_desc,&#x27; KIA&#x27;,&#x27; FOR KIA&#x27;&#x29;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#x29;&#xd;&#xa;as Titolo,&#xd;&#xa; replace&#x28;replace&#x28; replace&#x28;var.short_desc,&#x27; KIA&#x27;,&#x27; FOR KIA&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29; ,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;&#xd;&#xa;as titolo_header&#xd;&#xa;, ebaycat&#xa;,&#x27;UK&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, replace&#x28;case when codca3 is not null then codca3 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as spalla&#xd;&#xa;, replace&#x28;case when codca4 is not null then desca4 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as larghezza&#xd;&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; annoauto&#xd;&#xa;, partner&#xd;&#xa;, case when urlimgauto is not null then&#xd;&#xa;	&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;&#x27; &#x2b; replace&#x28;urlimgauto,&#x27;viewer&#x3f;&#x27;,&#x27;viewerimage.php&#x3f;&#x27;&#x29; &#x2b; &#x27;&#x22; width&#x3d;&#x22;640px&#x22; height&#x3d;&#x22;300px&#x22;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;	&#x27;&#x27;&#xd;&#xa;end as urlimgauto&#xd;&#xa;, case when urlcertificato is not null then&#xd;&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Herunterladen des Zertifikats&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;&#x27;&#x27;&#xd;&#xa;end as urlcertificato,eancode,&#xd;&#xa;var.codice as mpn&#xd;&#xa;&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa; product_in_stock &#x3e; 1  and PARTNER &#x3d;&#x27;TECK&#x27; AND prezzolistino &#x3e; 10 AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;United Kingdom&#x27; or var.siteid&#x3d;&#x27;UK&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;--and lastupdate is not null</sql>
+    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;,upper&#x28; substring&#x28;replace&#x28;&#xd;&#xa; var.short_desc,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#x29;&#xd;&#xa;as Titolo,&#xd;&#xa; replace&#x28;replace&#x28; var.short_desc,&#x27;.00&#x27;,&#x27;&#x27;&#x29; ,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;&#xd;&#xa;as titolo_header&#xd;&#xa;, ebaycat&#xa;,&#x27;UK&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, replace&#x28;case when codca3 is not null then codca3 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as spalla&#xd;&#xa;, replace&#x28;case when codca4 is not null then desca4 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as larghezza&#xd;&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; annoauto&#xd;&#xa;, partner&#xd;&#xa;, case when urlimgauto is not null then&#xd;&#xa;	&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;&#x27; &#x2b; replace&#x28;urlimgauto,&#x27;viewer&#x3f;&#x27;,&#x27;viewerimage.php&#x3f;&#x27;&#x29; &#x2b; &#x27;&#x22; width&#x3d;&#x22;640px&#x22; height&#x3d;&#x22;300px&#x22;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;	&#x27;&#x27;&#xd;&#xa;end as urlimgauto&#xd;&#xa;, case when urlcertificato is not null then&#xd;&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Herunterladen des Zertifikats&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;&#x27;&#x27;&#xd;&#xa;end as urlcertificato,eancode,&#xd;&#xa;var.codice as mpn&#xd;&#xa;&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa; product_in_stock &#x3e; 1  and PARTNER &#x3d;&#x27;TECK&#x27; AND prezzolistino &#x3e; 10 AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;United Kingdom&#x27; or var.siteid&#x3d;&#x27;UK&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;--and lastupdate is not null</sql>
     <limit>50000</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1232,6 +1237,88 @@
     <GUI>
       <xloc>824</xloc>
       <yloc>85</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MARCA AUTO &#x2b; FOR</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>EANCODE</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

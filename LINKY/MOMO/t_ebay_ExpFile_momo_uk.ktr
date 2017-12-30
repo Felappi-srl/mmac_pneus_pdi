@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;04&#x2f;21 12&#x3a;26&#x3a;34.677</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;21 16&#x3a;30&#x3a;54.712</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -448,10 +448,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -488,13 +488,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>CERCHI LEGA MAK</from>
-      <to>String operations</to>
+      <from>String operations</from>
+      <to>Add constants 2 3</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>String operations</from>
-      <to>Add constants 2 3</to>
+      <from>CERCHI LEGA MAK</from>
+      <to>MARCA AUTO &#x2b; FOR</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MARCA AUTO &#x2b; FOR</from>
+      <to>String operations</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -687,8 +692,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>80</yloc>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -705,7 +710,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, &#xd;&#xa;    substring&#x28;&#x27;ALLOY WHEEL &#x27; &#x2b; Marca &#x2b; &#x27; &#x27; &#x2b;  replace&#x28;var.short_desc,&#x27; KIA&#x27;,&#x27; FOR KIA&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;,&#x27;ALLOY WHEEL MOMO &#x27; &#x2b;  replace&#x28;var.short_desc,&#x27; KIA&#x27;,&#x27; FOR KIA&#x27;&#x29; as titolo_header&#xa;, ebaycat&#xa;,&#x27;UK&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; annoauto&#xd;&#xa;, partner,&#xd;&#xa;case when urlcertificato is not null then&#xd;&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Download Certificate&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;&#x27;&#x27;&#xd;&#xa;end as urlcertificato&#xd;&#xa;,EANCODE,&#xd;&#xa;var.codice as mpn&#xa;FROM linky_ebay e inner join linky_ebay_var as var  on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on REPLACE&#x28;REPLACE&#x28;var.codicevar,CHAR&#x28;10&#x29;,&#x27;&#x27;&#x29;,CHAR&#x28;13&#x29;,&#x27;&#x27;&#x29; &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa; product_in_stock &#x3e; 3  and PARTNER &#x3d;&#x27;MOMO&#x27; AND prezzolistino &#x3e; 10 AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;United Kingdom&#x27; or var.siteid&#x3d;&#x27;UK&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;--and lastupdate is not null</sql>
+    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, &#xd;&#xa;    substring&#x28;&#x27;ALLOY WHEEL &#x27; &#x2b; Marca &#x2b; &#x27; &#x27; &#x2b;  var.short_desc,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;,&#x27;ALLOY WHEEL MOMO &#x27; &#x2b; var.short_desc as titolo_header&#xa;, ebaycat&#xa;,&#x27;UK&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; annoauto&#xd;&#xa;, partner,&#xd;&#xa;case when urlcertificato is not null then&#xd;&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Download Certificate&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;&#x27;&#x27;&#xd;&#xa;end as urlcertificato&#xd;&#xa;,EANCODE,&#xd;&#xa;var.codice as mpn&#xa;FROM linky_ebay e inner join linky_ebay_var as var  on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on REPLACE&#x28;REPLACE&#x28;var.codicevar,CHAR&#x28;10&#x29;,&#x27;&#x27;&#x29;,CHAR&#x28;13&#x29;,&#x27;&#x27;&#x29; &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa; product_in_stock &#x3e; 3  and PARTNER &#x3d;&#x27;MOMO&#x27; AND prezzolistino &#x3e; 10 AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;United Kingdom&#x27; or var.siteid&#x3d;&#x27;UK&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;--and lastupdate is not null</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -751,8 +756,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>436</xloc>
-      <yloc>84</yloc>
+      <xloc>592</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -791,8 +796,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>697</xloc>
-      <yloc>86</yloc>
+      <xloc>848</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -833,8 +838,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>83</yloc>
+      <xloc>720</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -886,8 +891,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
-      <yloc>80</yloc>
+      <xloc>336</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -918,8 +923,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>564</xloc>
-      <yloc>248</yloc>
+      <xloc>720</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1288,8 +1293,90 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>824</xloc>
-      <yloc>85</yloc>
+      <xloc>976</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>MARCA AUTO &#x2b; FOR</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>EANCODE</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;02.060</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;24 10&#x3a;05&#x3a;13.806</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;28 14&#x3a;39&#x3a;40.024</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -538,7 +538,7 @@
       <name>CATEGORIA</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_mak set&#xd;&#xa;categoria &#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953,CH-179679,IE-179679&#x27;&#xd;&#xa;</sql>
+      <sql>update linky_articoli_mak set&#xd;&#xa;categoria &#x3d;&#x27;IT-179679,DE-179679, NL-179679, FR-179679, UK-179679, ES-179679,US-43953,AU-43953,CH-179679,IE-179679&#x27;&#xd;&#xa;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -633,10 +633,10 @@
       <yloc>304</yloc>
     </entry>
     <entry>
-      <name>FORZO PREZZI disabilitato</name>
+      <name>FORZO PREZZI </name>
       <description/>
       <type>SQL</type>
-      <sql>-- update linky_articoli_mak set&#xd;&#xa;-- prezzopubblico&#x3d;prezzospecial where prezzospecial&#x3e;0 and prezzospecial is not null</sql>
+      <sql>update linky_articoli_mak set&#xd;&#xa;prezzopubblico&#x3d;prezzospecial where prezzospecial&#x3e;0 and prezzospecial is not null</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -760,7 +760,7 @@
     </hop>
     <hop>
       <from>senza immagine</from>
-      <to>FORZO PREZZI disabilitato</to>
+      <to>FORZO PREZZI </to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -768,7 +768,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>FORZO PREZZI disabilitato</from>
+      <from>FORZO PREZZI </from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

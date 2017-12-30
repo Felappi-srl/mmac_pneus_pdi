@@ -434,12 +434,39 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;40.627</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;02 10&#x3a;39&#x3a;06.429</modified_date>
+    <modified_date>2017&#x2f;12&#x2f;28 09&#x3a;19&#x3a;03.233</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>CONNECTOR_2017</name>
+    <server>pneus.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>connector_2017</database>
+    <port>3306</port>
+    <username>root</username>
+    <password>Encrypted 2be98afc86aa7f2e4a910ba7edf9fa68b</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>Y</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
   <connection>
     <name>LINKY</name>
     <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
@@ -484,7 +511,7 @@
     </hop>
     <hop>
       <from>Filter rows 2</from>
-      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <to>Vuoto</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -509,7 +536,17 @@
     </hop>
     <hop>
       <from>Filter rows 2</from>
+      <to>Ok</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ok</from>
       <to>EBAY_REPORT</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Ok</from>
+      <to>EBAY_REPORT_MYSQL</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -539,7 +576,7 @@
     </step>
 
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <name>Vuoto</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -582,7 +619,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
+      <xloc>896</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -642,8 +679,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>64</yloc>
+      <xloc>752</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -694,8 +731,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Dummy &#x28;do nothing&#x29; 2</send_true_to>
-<send_false_to>EBAY_REPORT</send_false_to>
+<send_true_to>Vuoto</send_true_to>
+<send_false_to>Ok</send_false_to>
     <compare>
 <condition>
  <negated>N</negated>
@@ -974,6 +1011,91 @@
     </remotesteps>
     <GUI>
       <xloc>224</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>EBAY_REPORT_MYSQL</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR_2017</connection>
+    <schema/>
+    <table>linky_ebay_report</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>Y</ignore_errors>
+    <use_batch>N</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>EBAYSKU</column_name>
+          <stream_name>SKU</stream_name>
+        </field>
+        <field>
+          <column_name>QTY</column_name>
+          <stream_name>Quantity</stream_name>
+        </field>
+        <field>
+          <column_name>PREZZO</column_name>
+          <stream_name>Price</stream_name>
+        </field>
+        <field>
+          <column_name>IDOGGETTO</column_name>
+          <stream_name>ItemID</stream_name>
+        </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Ok</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>752</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>

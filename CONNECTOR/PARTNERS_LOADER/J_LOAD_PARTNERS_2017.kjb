@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.905</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;30 11&#x3a;45&#x3a;52.452</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;28 15&#x3a;26&#x3a;22.088</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -842,6 +842,22 @@
       <xloc>128</xloc>
       <yloc>272</yloc>
     </entry>
+    <entry>
+      <name>CATEGORIA</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_integro_articoli set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-179680, FR-179680, UK-179680, ES-179680, AU-66471, CH-179680,IE-179680&#x27;&#xd;&#xa;where settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;&#x29;&#x3b;&#xd;&#xa;update linky_integro_catene set&#xd;&#xa;ebaycat &#x3d;&#x27;IT-40278,DE-40278, NL-40278, FR-18329, UK-9885, ES-40278, US-180090, AU-33746,CH-40278,IE-40278&#x27;&#x3b;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>624</xloc>
+      <yloc>416</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1008,12 +1024,21 @@
     </hop>
     <hop>
       <from>SPALLA</from>
+      <to>CATEGORIA</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>CATEGORIA</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>

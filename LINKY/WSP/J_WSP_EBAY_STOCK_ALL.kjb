@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;10&#x2f;09 08&#x3a;37&#x3a;28.230</modified_date>
+  <modified_date>2017&#x2f;12&#x2f;21 18&#x3a;18&#x3a;32.170</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -860,6 +860,22 @@
       <xloc>320</xloc>
       <yloc>480</yloc>
     </entry>
+    <entry>
+      <name>Azzera giacenza_ferie</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_ebay set product_in_stock&#x3d;&#x27;0&#x27; where partner&#x3d;&#x27;WSP&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>864</xloc>
+      <yloc>32</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1052,15 +1068,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_imp_ebay_wsp_experimental</from>
-      <to>t_ebay_ExpFile_stock_wsp_it</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>Set variables</from>
       <to>J_LOAD_WSP</to>
       <from_nr>0</from_nr>
@@ -1086,6 +1093,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_imp_ebay_wsp_experimental</from>
+      <to>Azzera giacenza_ferie</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Azzera giacenza_ferie</from>
+      <to>t_ebay_ExpFile_stock_wsp_it</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
   </hops>
   <notepads>
