@@ -1,6 +1,6 @@
 <transformation>
   <info>
-    <name>t_exp_pneus_accoppiate_x_ebay_estero</name>
+    <name>t_exp_pneus_unpublished</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
+    <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;52.840</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;29 16&#x3a;31&#x3a;20.782</modified_date>
+    <modified_date>2017&#x2f;06&#x2f;01 09&#x3a;26&#x3a;50.375</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -463,28 +463,18 @@
   </connection>
   <order>
     <hop>
-      <from>Split field to rows 2</from>
-      <to>Split Fields 2</to>
+      <from>Table input</from>
+      <to>Exp_Pneumatici</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Split Fields 2</from>
-      <to>Text file output</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Accoppiate</from>
-      <to>Value Mapper</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Value Mapper</from>
-      <to>Split field to rows 2</to>
+      <from>CATENE</from>
+      <to>Exp_Catene</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Accoppiate</name>
+    <name>CATENE</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -495,7 +485,7 @@
       <schema_name/>
     </partitioning>
     <connection>INPUT</connection>
-    <sql>SELECT MSGRUMER.GruDes AS Marchio, &#xa;	MZANAART.ArtCodice AS Codice, &#xa;	MZANAART.ArtDescri AS Nome, &#xa;	rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27;  &#x2b;rtrim&#x28;coalesce&#x28;MSFAM.FamDes,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27;&#x2b; rtrim&#x28;MSGRUMER.GruDes&#x29; AS short_desc, &#xa;	rtrim&#x28;MSGRUMER.GruDes&#x29; &#x2b;&#x27; &#x27; &#x2b; rtrim&#x28;MZANAART.ArtDescri&#x29; &#x2b; &#x27; &#x27;  &#x2b;rtrim&#x28;coalesce&#x28;MSFAM.FamDes,&#x27;&#x27;&#x29;&#x29;  AS descrizione, &#xa;	&#x27;ACCOPPIATE MOTO&#x27;  AS category_path, &#xa;	&#x27;ACCOPPIATE MOTO&#x27;  &#x2b; &#x27;&#x7c;&#x27; &#x2b; &#x27;ACCOPPIATE MOTO&#x23;&#x27; &#x2b; rtrim&#x28;MSFAM.FamDes&#x29; AS full_category_path, &#xa;	MZANAART.ArtCosLor AS prezzo, &#xa;	ArtCosLor AS prezzolistino, &#xa;	&#x27;EUR&#x27; AS currency, &#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;MZANAART.Artnote as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image, &#xd;&#xa;	&#x27;Y&#x27; AS product_publish, &#xa;	&#x27;21&#x27; AS iva, &#xa;	CASE WHEN ARTCOSSC1 &#x3e; 0 THEN ARTCOSSC1 ELSE ARTCOSSC2 END AS product_in_stock, &#xa;	&#x27;12234563&#x27; AS product_available, &#xa;	&#x27;N&#x27; AS product_special, &#xa;	MSFAM.FamCod AS codca1, &#xa;	MSFAM.FamDes AS desca1, &#xa;	MSTIPPRO.TprCod AS codca2, &#xa;	MSTIPPRO.TprDes AS desca2, &#xa;	MSSET.SetCod AS codca3, &#xa;	MSSET.SetDes AS desca3, &#xa;	MSREP.RepCod AS codca4, &#xa;	MSREP.RepDes AS desca4, &#xa;	MSSCAFFA.ScaCod AS codca5, &#xa;	MSSCAFFA.ScaDes AS desca5, &#xa;	MSVOCDOG.VodCod AS codca6, &#xa;	MSVOCDOG.VodDes AS desca6,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;replace&#x28;cast&#x28;MZANAART.Artnote3 as varchar&#x28;max&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29; as altreCatEbay,&#xd;&#xa;rtrim&#x28;ltrim&#x28;MZANAART.ArtCodfor&#x29;&#x29; AS eancode&#xa;FROM MZANAART INNER JOIN MSGRUMER ON MZANAART.ArtCodGru &#x3d; MSGRUMER.GruCod&#xa;	 LEFT OUTER JOIN MSCATOMO ON MZANAART.ArtCodCat &#x3d; MSCATOMO.CatMCod&#xa;	 LEFT OUTER JOIN MSFAM ON MZANAART.ArtCodFam &#x3d; MSFAM.FamCod&#xa;	 LEFT OUTER JOIN MSTIPPRO ON MZANAART.ArtTipPro &#x3d; MSTIPPRO.TprCod&#xa;	 LEFT OUTER JOIN MSSET ON MZANAART.ArtCodSet &#x3d; MSSET.SetCod&#xa;	 LEFT OUTER JOIN MSREP ON MSREP.RepCod &#x3d; MZANAART.ArtCodRep&#xa;	 LEFT OUTER JOIN MSSCAFFA ON MZANAART.ArtCodSca &#x3d; MSSCAFFA.ScaCod&#xa;	 LEFT OUTER JOIN MSVOCDOG ON MZANAART.ArtVocDog &#x3d; MSVOCDOG.VodCod&#xa;WHERE &#xd;&#xa;cast&#x28;MZANAART.Artnote3 as varchar&#x28;max&#x29;&#x29;&#x3c;&#x3e;&#x27;&#x27; and&#xa;--MZANAART.ARTCODICE &#x3d; &#x27;AC127018055COR3&#x27; and &#xa;MSCATOMO.CatMDes not like &#x27;CERCHI&#x25;&#x27; and&#xa;MZANAART.ArtDescri like &#x27;ACCOPPIATA&#x25;&#x27; and&#xd;&#xa;artblocco in &#x28;&#x27;T&#x27;,&#x27;E&#x27;&#x29; and ARTCODVDS &#x3e; 0</sql>
+    <sql>SELECT &#xa;	rtrim&#x28;MZANAART.ArtCodice&#x29;  AS Codice, &#xa;	0 AS product_in_stock&#xa;FROM MZANAART &#xa;WHERE &#xa;artblocco NOT in &#x28;&#x27;T&#x27;,&#x27;E&#x27;&#x29;&#xa;and artcodcat &#x3d;&#x27;CAT&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -509,15 +499,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>112</xloc>
-      <yloc>96</yloc>
+      <xloc>336</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split Fields 2</name>
-    <type>FieldSplitter</type>
+    <name>Table input</name>
+    <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
     <custom_distribution/>
@@ -526,67 +516,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>Categorie</splitfield>
-   <delimiter>-</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>SiteID</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>      <field>        <name>EbayCat</name>
-        <id/>
-        <idrem>N</idrem>
-        <type>String</type>
-        <format/>
-        <group/>
-        <decimal/>
-        <currency/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <nullif/>
-        <ifnull/>
-        <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>554</xloc>
-      <yloc>107</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Split field to rows 2</name>
-    <type>SplitFieldToRows3</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-   <splitfield>EBAYCAT_OK</splitfield>
-   <delimiter>,</delimiter>
-   <newfield>Categorie</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
+    <connection>INPUT</connection>
+    <sql>SELECT &#x2a;,&#xd;&#xa;	MZANAART.ArtCodice AS Codice, &#xd;&#xa;	0 AS product_in_stock&#xd;&#xa;FROM MZANAART &#xd;&#xa;WHERE &#xd;&#xa;artblocco NOT in &#x28;&#x27;T&#x27;,&#x27;E&#x27;&#x29;&#xd;&#xa;and artcodcat &#x3c;&#x3e; &#x27;CAT&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -595,14 +531,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>354</xloc>
-      <yloc>107</yloc>
+      <xloc>64</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Text file output</name>
+    <name>Exp_Catene</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -626,7 +562,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;pneus&#x5c;pneus_ebay_estero_accoppiate</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;pneus&#x5c;pneus_unpublished_catene</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -645,139 +581,7 @@
     </file>
     <fields>
       <field>
-        <name>codice</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>nome</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>short_desc</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>descrizione</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>category_path</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>full_category_path</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>prezzo</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>prezzolistino</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_full_image</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_thumb_image</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_publish</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>iva</name>
+        <name>Codice</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -800,246 +604,6 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
-      <field>
-        <name>product_available</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>product_special</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca1</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca1</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca2</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca3</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca3</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca4</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca4</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca5</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>codca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>desca6</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>Marchio</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>currency</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>ebaycat</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>pubblicato</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>siteid</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>EANCODE</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1049,15 +613,15 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>112</yloc>
+      <xloc>496</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Value Mapper</name>
-    <type>ValueMapper</type>
+    <name>Exp_Pneumatici</name>
+    <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1066,17 +630,61 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>category_path</field_to_use>
-    <target_field>EBAYCAT_OK</target_field>
-    <non_match_default>IT-124313, DE-124313, NL-124313, FR-124313, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313</non_match_default>
+    <separator>&#x3b;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;pneus&#x5c;pneus_unpublished_pneumatici</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
     <fields>
       <field>
-        <source_value>MOTO</source_value>
-        <target_value>IT-124313, DE-124313, NL-124313, FR-124313, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313</target_value>
+        <name>Codice</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <source_value>SCOOTER</source_value>
-        <target_value>IT-182364, DE-182364, NL-182364, FR-182364, UK-182364, ES-182364, US-182364, AU-182364, CH-182364, IE-182364</target_value>
+        <name>product_in_stock</name>
+        <type>Integer</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
     <cluster_schema/>
@@ -1087,8 +695,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
-      <yloc>96</yloc>
+      <xloc>208</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
