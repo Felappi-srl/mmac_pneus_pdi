@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;centrogomme</directory>
+    <directory>/CONNECTOR/centrogomme</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
+    <created_date>2012/07/27 16:26:47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;18 10&#x3a;06&#x3a;37.577</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/05/26 11:51:15.079</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,25 +448,53 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>ARTICOLI</from>
-      <to>Split field to rows</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Split field to rows</from>
       <to>Split Fields</to>
@@ -479,22 +507,37 @@
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29; 2</to>
+      <to>Dummy (do nothing) 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <from>Dummy (do nothing) 2</from>
       <to>INSERT</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>INSERT</from>
-      <to>Dummy &#x28;do nothing&#x29; 3</to>
+      <to>Dummy (do nothing) 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ARTICOLI</from>
+      <to>Modified Java Script Value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified Java Script Value</from>
+      <to>Replace in string</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Replace in string</from>
+      <to>Split field to rows</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -510,7 +553,78 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>select &#xd;&#xa;  marca as marchio&#xd;&#xa;, ipcodESTD as codice&#xd;&#xa;, &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,DESCRIZIONE,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;, &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; coalesce&#x28;LARGHEZZA,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29; &#xd;&#xa;&#x2b;&#xd;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xd;&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xd;&#xa;	&#x27; ZR&#x27; else&#xd;&#xa;	&#x27; R&#x27; end&#xd;&#xa;	else&#xd;&#xa; &#x27; R&#x27; &#xd;&#xa;end &#x2b; coalesce&#x28;CODICECERCHIO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; coalesce&#x28;marca,&#x27;&#x27;&#x29;  AS SHORT_DESC&#xd;&#xa;, marca &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; coalesce&#x28;LARGHEZZA,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29; &#x2b;&#xd;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xd;&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xd;&#xa;	&#x27; ZR&#x27; else&#xd;&#xa;	&#x27; R&#x27; end&#xd;&#xa;	else&#xd;&#xa; &#x27; R&#x27; &#xd;&#xa;end &#x2b; coalesce&#x28;CODICECERCHIO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS descrizione&#xd;&#xa;, SETTORE as category_path&#xd;&#xa;, &#x27;&#x27; as full_category_path&#xd;&#xa;, prezzoscontato as prezzo&#xd;&#xa;, prezzoscontato as prezzoLISTINO&#xd;&#xa;, &#x27;EUR&#x27; AS currency&#xd;&#xa;, &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image &#xd;&#xa;, &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_thumb_image &#xd;&#xa;, &#x27;Y&#x27; AS product_publish&#xd;&#xa;, &#x27;21&#x27; AS iva&#xd;&#xa;, giacenza AS product_in_stock&#xd;&#xa;, &#x27;12234563&#x27; AS product_available &#xd;&#xa;, &#x27;N&#x27; AS product_special &#xd;&#xa;, CODICECERCHIO AS CODCA1&#xd;&#xa;, CODICECERCHIO AS DESCA1&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;N&#x27;&#xd;&#xa; WHEN CODICESTAGIONE&#x3d;&#x27;4&#x27; THEN &#x27;4&#x27; &#xd;&#xa;ELSE &#x27;E&#x27; END AS CODCA2&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; &#xd;&#xa; WHEN CODICESTAGIONE&#x3d;&#x27;4&#x27; THEN &#x27;4 STAGIONI&#x27;&#xd;&#xa;ELSE &#x27;ESTIVE&#x27; END AS DESCA2&#xd;&#xa;, SERIE AS CODCA3&#xd;&#xa;, &#x27;SERIE &#x27; &#x2b; SERIE AS DESCA3&#xd;&#xa;, LARGHEZZA AS CODCA4&#xd;&#xa;, LARGHEZZA AS DESCA4&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; AS CODCA5&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b;&#x27;&#x3a; &#x27; &#x2b;SUBSTRING&#x28;VEL,2,4&#x29; &#x2b; &#x27; Km&#x2f;h&#x27; AS DESCA5&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS CODCA6&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS DESCA6&#xd;&#xa;, &#x27;Y&#x27; as pubblicato&#xd;&#xa;, replace&#x28;cast&#x28;ebaycat as varchar&#x28;max&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29; as altreCatEbay&#xd;&#xa;, partner&#xd;&#xa;, codicerotolamento&#xd;&#xa;, codiceaderenza&#xd;&#xa;, codicerumorosita&#xd;&#xa;, ean&#xd;&#xa;from linky_integro_articoli&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and ebaycat&#x3c;&#x3e;&#x27;&#x27; and bestprice&#x3d;1&#xd;&#xa;--and ipcodeSTD not in &#x28;select codice from linky_ebayarticoli&#x29;&#xd;&#xa;--and marca&#x3d;&#x27;YOKOHAMA&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;3446053&#x27;</sql>
+    <sql>select
+  marca as marchio
+, sku as codice
+, 'GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,DESCRIZIONE,'') AS NOME
+, ' GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,'') + ' ' 
+  + coalesce(LARGHEZZA,'') + '/' + coalesce(SERIE,'') 
++
+case when rtrim(SETTORE) in  ('SCOOTER','MOTO') then
+	case when rtrim(coalesce(VEL,'')) = 'W' then
+	' ZR' else
+	' R' end
+	else
+ ' R' 
+end + coalesce(CODICECERCHIO,'') + ' ' + ltrim(coalesce(replace(icarico,',0',''),'')) + replace(rtrim(substring(coalesce(VEL,''),1,2)),'Z','W') + ' ' + coalesce(marca,'')  AS SHORT_DESC_DB
+, marca + ' GOMME PNEUMATICI ' + COALESCE(TITOLOALTERNATIVO,'') + ' ' 
+  + coalesce(LARGHEZZA,'') + '/' + coalesce(SERIE,'') +
+case when rtrim(SETTORE) in  ('SCOOTER','MOTO') then
+	case when rtrim(coalesce(VEL,'')) = 'W' then
+	' ZR' else
+	' R' end
+	else
+ ' R' 
+end + coalesce(CODICECERCHIO,'') + ' ' + ltrim(coalesce(replace(icarico,',0',''),'')) + replace(rtrim(substring(coalesce(VEL,''),1,2)),'Z','W')  AS descrizione_DB
+, SETTORE as category_path
+, '' as full_category_path
+, prezzoscontato as prezzo
+, prezzoscontato as prezzoLISTINO
+, 'EUR' AS currency
+, 'http://s3-eu-west-1.amazonaws.com/cdn.pneus-center.it/web/foto/' + ltrim(rtrim(lower(cast(immagine as varchar(max))))) + '.jpg' AS product_full_image 
+, 'http://s3-eu-west-1.amazonaws.com/cdn.pneus-center.it/web/foto/resized/' + ltrim(rtrim(lower(cast(immagine as varchar(max))))) + '.jpg' AS product_thumb_image 
+, 'Y' AS product_publish
+, '21' AS iva
+, giacenza AS product_in_stock
+, '12234563' AS product_available 
+, 'N' AS product_special 
+, CODICECERCHIO AS CODCA1
+, CODICECERCHIO AS DESCA1
+, CASE WHEN CODICESTAGIONE='I' THEN 'N'
+ WHEN CODICESTAGIONE='4' THEN '4' 
+ELSE 'E' END AS CODCA2
+, CASE WHEN CODICESTAGIONE='I' THEN 'INVERNALI' 
+ WHEN CODICESTAGIONE='4' THEN '4 STAGIONI'
+ELSE 'ESTIVE' END AS DESCA2
+, SERIE AS CODCA3
+, 'SERIE ' + SERIE AS DESCA3
+, LARGHEZZA AS CODCA4
+, LARGHEZZA AS DESCA4
+, replace(SUBSTRING(VEL,1,1),'Z','W') AS CODCA5_DB
+, replace(SUBSTRING(VEL,1,1),'Z','W') +': ' +SUBSTRING(VEL,2,4) + ' Km/h' AS DESCA5
+, ltrim(coalesce(replace(icarico,',0',''),'')) AS CODCA6
+, ltrim(coalesce(replace(icarico,',0',''),'')) AS DESCA6
+, 'Y' as pubblicato
+, replace(cast(ebaycat as varchar(max)),' ','') as altreCatEbay
+, partner
+, codicerotolamento
+, codiceaderenza
+, codicerumorosita
+, ean
+, runflat
+, radiale
+, TITOLOALTERNATIVO
+, LARGHEZZA
+, SERIE
+, CODICECERCHIO as DIAMETRO
+, icarico as z_icarico
+from linky_integro_articoli
+WHERE IMMAGINE IS NOT NULL and immagine &lt;&gt; '' and ebaycat&lt;&gt;'' and bestprice=1
+--and ipcodeSTD not in (select codice from linky_ebayarticoli)
+--and marca='YOKOHAMA'
+--and ipcode='3446053'
+--ipcodestd IN ('2207900','1534800','2491500','2681200','2670700' , '630173', '2583600', '1816900', '2715900')
+--order by ipcode ASC</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -528,10 +642,9 @@
       <yloc>66</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
+    <name>Dummy (do nothing)</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -549,14 +662,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>221</yloc>
+      <xloc>704</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 2</name>
+    <name>Dummy (do nothing) 2</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -574,14 +686,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>565</xloc>
-      <yloc>66</yloc>
+      <xloc>800</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29; 3</name>
+    <name>Dummy (do nothing) 3</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -599,12 +710,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>207</yloc>
+      <xloc>896</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
@@ -616,15 +726,24 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Dummy &#x28;do nothing&#x29; 2</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <send_true_to>Dummy (do nothing) 2</send_true_to>
+    <send_false_to>Dummy (do nothing)</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>EbayCat</leftvalue>
- <function>&#x3e;</function>
- <rightvalue/>
- <value><name>constant</name><type>Number</type><text>0.0</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask>&#x23;.&#x23;</mask></value> </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>EbayCat</leftvalue>
+        <function>&gt;</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>Number</type>
+          <text>0.0</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask>#.#</mask>
+        </value>
+      </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -634,12 +753,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>469</xloc>
-      <yloc>66</yloc>
+      <xloc>704</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>INSERT</name>
     <type>TableOutput</type>
@@ -669,154 +787,158 @@
     <return_keys>N</return_keys>
     <return_field/>
     <fields>
-        <field>
-          <column_name>codice</column_name>
-          <stream_name>Codice</stream_name>
-        </field>
-        <field>
-          <column_name>nome</column_name>
-          <stream_name>Nome</stream_name>
-        </field>
-        <field>
-          <column_name>short_desc</column_name>
-          <stream_name>short_desc</stream_name>
-        </field>
-        <field>
-          <column_name>descrizione</column_name>
-          <stream_name>descrizione</stream_name>
-        </field>
-        <field>
-          <column_name>category_path</column_name>
-          <stream_name>category_path</stream_name>
-        </field>
-        <field>
-          <column_name>full_category_path</column_name>
-          <stream_name>full_category_path</stream_name>
-        </field>
-        <field>
-          <column_name>prezzo</column_name>
-          <stream_name>prezzo</stream_name>
-        </field>
-        <field>
-          <column_name>prezzolistino</column_name>
-          <stream_name>prezzolistino</stream_name>
-        </field>
-        <field>
-          <column_name>product_full_image</column_name>
-          <stream_name>product_full_image</stream_name>
-        </field>
-        <field>
-          <column_name>product_thumb_image</column_name>
-          <stream_name>product_thumb_image</stream_name>
-        </field>
-        <field>
-          <column_name>product_publish</column_name>
-          <stream_name>product_publish</stream_name>
-        </field>
-        <field>
-          <column_name>iva</column_name>
-          <stream_name>iva</stream_name>
-        </field>
-        <field>
-          <column_name>product_in_stock</column_name>
-          <stream_name>product_in_stock</stream_name>
-        </field>
-        <field>
-          <column_name>product_available</column_name>
-          <stream_name>product_available</stream_name>
-        </field>
-        <field>
-          <column_name>product_special</column_name>
-          <stream_name>product_special</stream_name>
-        </field>
-        <field>
-          <column_name>codca1</column_name>
-          <stream_name>codca1</stream_name>
-        </field>
-        <field>
-          <column_name>desca1</column_name>
-          <stream_name>desca1</stream_name>
-        </field>
-        <field>
-          <column_name>codca2</column_name>
-          <stream_name>codca2</stream_name>
-        </field>
-        <field>
-          <column_name>desca2</column_name>
-          <stream_name>desca2</stream_name>
-        </field>
-        <field>
-          <column_name>codca3</column_name>
-          <stream_name>codca3</stream_name>
-        </field>
-        <field>
-          <column_name>desca3</column_name>
-          <stream_name>desca3</stream_name>
-        </field>
-        <field>
-          <column_name>codca4</column_name>
-          <stream_name>codca4</stream_name>
-        </field>
-        <field>
-          <column_name>desca4</column_name>
-          <stream_name>desca4</stream_name>
-        </field>
-        <field>
-          <column_name>codca5</column_name>
-          <stream_name>codca5</stream_name>
-        </field>
-        <field>
-          <column_name>desca5</column_name>
-          <stream_name>desca5</stream_name>
-        </field>
-        <field>
-          <column_name>codca6</column_name>
-          <stream_name>codca6</stream_name>
-        </field>
-        <field>
-          <column_name>desca6</column_name>
-          <stream_name>desca6</stream_name>
-        </field>
-        <field>
-          <column_name>marca</column_name>
-          <stream_name>Marchio</stream_name>
-        </field>
-        <field>
-          <column_name>currency_id</column_name>
-          <stream_name>currency</stream_name>
-        </field>
-        <field>
-          <column_name>ebaycat</column_name>
-          <stream_name>ebaycat</stream_name>
-        </field>
-        <field>
-          <column_name>pubblicato</column_name>
-          <stream_name>pubblicato</stream_name>
-        </field>
-        <field>
-          <column_name>siteid</column_name>
-          <stream_name>siteid</stream_name>
-        </field>
-        <field>
-          <column_name>partner</column_name>
-          <stream_name>partner</stream_name>
-        </field>
-        <field>
-          <column_name>codicerotolamento</column_name>
-          <stream_name>codicerotolamento</stream_name>
-        </field>
-        <field>
-          <column_name>CODICERUMOROSITA</column_name>
-          <stream_name>CODICERUMOROSITA</stream_name>
-        </field>
-        <field>
-          <column_name>CODICEADERENZA</column_name>
-          <stream_name>CODICEADERENZA</stream_name>
-        </field>
-        <field>
-          <column_name>EANCODE</column_name>
-          <stream_name>ean</stream_name>
-        </field>
+      <field>
+        <column_name>codice</column_name>
+        <stream_name>codice</stream_name>
+      </field>
+      <field>
+        <column_name>nome</column_name>
+        <stream_name>NOME</stream_name>
+      </field>
+      <field>
+        <column_name>short_desc</column_name>
+        <stream_name>short_desc</stream_name>
+      </field>
+      <field>
+        <column_name>descrizione</column_name>
+        <stream_name>descrizione</stream_name>
+      </field>
+      <field>
+        <column_name>category_path</column_name>
+        <stream_name>category_path</stream_name>
+      </field>
+      <field>
+        <column_name>full_category_path</column_name>
+        <stream_name>full_category_path</stream_name>
+      </field>
+      <field>
+        <column_name>prezzo</column_name>
+        <stream_name>prezzo</stream_name>
+      </field>
+      <field>
+        <column_name>prezzolistino</column_name>
+        <stream_name>prezzoLISTINO</stream_name>
+      </field>
+      <field>
+        <column_name>product_full_image</column_name>
+        <stream_name>product_full_image</stream_name>
+      </field>
+      <field>
+        <column_name>product_thumb_image</column_name>
+        <stream_name>product_thumb_image</stream_name>
+      </field>
+      <field>
+        <column_name>product_publish</column_name>
+        <stream_name>product_publish</stream_name>
+      </field>
+      <field>
+        <column_name>iva</column_name>
+        <stream_name>iva</stream_name>
+      </field>
+      <field>
+        <column_name>product_in_stock</column_name>
+        <stream_name>product_in_stock</stream_name>
+      </field>
+      <field>
+        <column_name>product_available</column_name>
+        <stream_name>product_available</stream_name>
+      </field>
+      <field>
+        <column_name>product_special</column_name>
+        <stream_name>product_special</stream_name>
+      </field>
+      <field>
+        <column_name>codca1</column_name>
+        <stream_name>CODCA1</stream_name>
+      </field>
+      <field>
+        <column_name>desca1</column_name>
+        <stream_name>DESCA1</stream_name>
+      </field>
+      <field>
+        <column_name>codca2</column_name>
+        <stream_name>CODCA2</stream_name>
+      </field>
+      <field>
+        <column_name>desca2</column_name>
+        <stream_name>DESCA2</stream_name>
+      </field>
+      <field>
+        <column_name>codca3</column_name>
+        <stream_name>CODCA3</stream_name>
+      </field>
+      <field>
+        <column_name>desca3</column_name>
+        <stream_name>DESCA3</stream_name>
+      </field>
+      <field>
+        <column_name>codca4</column_name>
+        <stream_name>CODCA4</stream_name>
+      </field>
+      <field>
+        <column_name>desca4</column_name>
+        <stream_name>DESCA4</stream_name>
+      </field>
+      <field>
+        <column_name>codca5</column_name>
+        <stream_name>codca5</stream_name>
+      </field>
+      <field>
+        <column_name>desca5</column_name>
+        <stream_name>DESCA5</stream_name>
+      </field>
+      <field>
+        <column_name>codca6</column_name>
+        <stream_name>CODCA6</stream_name>
+      </field>
+      <field>
+        <column_name>desca6</column_name>
+        <stream_name>DESCA6</stream_name>
+      </field>
+      <field>
+        <column_name>marca</column_name>
+        <stream_name>marchio</stream_name>
+      </field>
+      <field>
+        <column_name>currency_id</column_name>
+        <stream_name>currency</stream_name>
+      </field>
+      <field>
+        <column_name>ebaycat</column_name>
+        <stream_name>EbayCat</stream_name>
+      </field>
+      <field>
+        <column_name>pubblicato</column_name>
+        <stream_name>pubblicato</stream_name>
+      </field>
+      <field>
+        <column_name>siteID</column_name>
+        <stream_name>SiteID</stream_name>
+      </field>
+      <field>
+        <column_name>Partner</column_name>
+        <stream_name>partner</stream_name>
+      </field>
+      <field>
+        <column_name>CODICEROTOLAMENTO</column_name>
+        <stream_name>codicerotolamento</stream_name>
+      </field>
+      <field>
+        <column_name>CODICERUMOROSITA</column_name>
+        <stream_name>codicerumorosita</stream_name>
+      </field>
+      <field>
+        <column_name>CODICEADERENZA</column_name>
+        <stream_name>codiceaderenza</stream_name>
+      </field>
+      <field>
+        <column_name>EANCODE</column_name>
+        <stream_name>ean</stream_name>
+      </field>
+      <field>
+        <column_name>runflat</column_name>
+        <stream_name>runflat</stream_name>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -826,12 +948,223 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>683</xloc>
-      <yloc>66</yloc>
+      <xloc>896</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
+  </step>
+  <step>
+    <name>Modified Java Script Value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
 
+
+var tmp_SETTORE;
+	tmp_SETTORE = trim(category_path);
+
+var tmp_codca5;
+	tmp_codca5 = trim(CODCA5_DB);
+
+
+
+
+
+
+var R;
+
+if (tmp_SETTORE=='SCOOTER' &amp;&amp; tmp_codca5 == 'H'){
+	R=' R';
+} else if (tmp_SETTORE=='SCOOTER' &amp;&amp; tmp_codca5 != 'H'){
+	R=' -';
+}
+
+else if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'W'){
+	R=' ZR';
+}
+
+else if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'WX'){
+	R=' ZR';
+}
+
+else if (tmp_SETTORE=='MOTO' &amp;&amp; indexOf(radiale,'_')>-1){
+	R=' R';
+}
+
+else if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'R'){
+	R=' R';
+}
+
+else if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'S'){
+	R=' -';
+}
+
+else{
+	R=' R';
+}
+
+
+var slash;
+if ( trim(SERIE).length > 0){
+	slash='/';
+}
+else{
+	slash= '';
+}
+
+
+
+
+var car;
+if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'W'){
+	car='(' + trim(z_icarico) + tmp_codca5 + ')';
+
+} 
+else if (tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'WX'){
+	car=trim(z_icarico) + tmp_codca5.slice(0,1);
+} 
+
+else if ( tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'R'){
+	car=trim(z_icarico) + tmp_codca5;
+}
+
+else if ( tmp_SETTORE=='MOTO' &amp;&amp; trim(radiale) == 'S'){
+	car=trim(z_icarico) + tmp_codca5;
+}
+else{
+	car= trim(z_icarico) + tmp_codca5;
+}
+
+
+
+var short_desc;
+short_desc = 'GOMME PNEUMATICI ' + trim(TITOLOALTERNATIVO) + ' ' + trim(LARGHEZZA) + slash + trim(SERIE) + R + trim(DIAMETRO) + ' ' + car +' ' + trim(marchio);
+
+var descrizione;
+descrizione = trim(marchio) + ' GOMME PNEUMATICI ' + trim(TITOLOALTERNATIVO) + ' ' + trim(LARGHEZZA) + slash +trim(SERIE) + R + trim(DIAMETRO) + ' ' + car;
+
+
+
+var codca5;
+if (tmp_codca5=='WX'){
+	codca5='W';
+}
+else if (indexOf(tmp_codca5,'_')>-1) {
+	codca5=tmp_codca5.slice(0,1);
+}
+else if (tmp_codca5=='RA'){
+	codca5='';
+}
+else {
+	codca5=CODCA5_DB;
+}
+
+
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>short_desc</name>
+        <rename>short_desc</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>descrizione</name>
+        <rename>descrizione</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>codca5</name>
+        <rename>codca5</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>short_desc</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>  </replace_string>
+        <replace_by_string> </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>descrizione</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>  </replace_string>
+        <replace_by_string> </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Split Fields</name>
     <type>FieldSplitter</type>
@@ -843,10 +1176,12 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>Categorie</splitfield>
-   <delimiter>-</delimiter>
-   <enclosure/>
-    <fields>      <field>        <name>SiteID</name>
+    <splitfield>Categorie</splitfield>
+    <delimiter>-</delimiter>
+    <enclosure/>
+    <fields>
+      <field>
+        <name>SiteID</name>
         <id/>
         <idrem>N</idrem>
         <type>String</type>
@@ -859,7 +1194,9 @@
         <nullif/>
         <ifnull/>
         <trimtype>both</trimtype>
-      </field>      <field>        <name>EbayCat</name>
+      </field>
+      <field>
+        <name>EbayCat</name>
         <id/>
         <idrem>N</idrem>
         <type>Number</type>
@@ -872,7 +1209,9 @@
         <nullif/>
         <ifnull/>
         <trimtype>both</trimtype>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -880,12 +1219,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>344</xloc>
-      <yloc>66</yloc>
+      <xloc>576</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Split field to rows</name>
     <type>SplitFieldToRows3</type>
@@ -897,13 +1235,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-   <splitfield>altreCatEbay</splitfield>
-   <delimiter>,</delimiter>
-   <newfield>Categorie</newfield>
-   <rownum>N</rownum>
-   <rownum_field/>
-   <resetrownumber>Y</resetrownumber>
-   <delimiter_is_regex>N</delimiter_is_regex>
+    <splitfield>altreCatEbay</splitfield>
+    <delimiter>,</delimiter>
+    <newfield>Categorie</newfield>
+    <rownum>N</rownum>
+    <rownum_field/>
+    <resetrownumber>Y</resetrownumber>
+    <delimiter_is_regex>N</delimiter_is_regex>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -912,25 +1250,24 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>225</xloc>
-      <yloc>66</yloc>
+      <xloc>464</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
-      <error>
-        <source_step>INSERT</source_step>
-        <target_step>Dummy &#x28;do nothing&#x29; 3</target_step>
-        <is_enabled>Y</is_enabled>
-        <nr_valuename/>
-        <descriptions_valuename/>
-        <fields_valuename/>
-        <codes_valuename/>
-        <max_errors/>
-        <max_pct_errors/>
-        <min_pct_rows/>
-      </error>
+    <error>
+      <source_step>INSERT</source_step>
+      <target_step>Dummy (do nothing) 3</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>

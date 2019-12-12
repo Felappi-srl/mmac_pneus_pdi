@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;21 14&#x3a;27&#x3a;18.307</modified_date>
+  <modified_date>2018&#x2f;05&#x2f;12 09&#x3a;11&#x3a;49.165</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -433,7 +433,7 @@
       <name>SQL</name>
       <description/>
       <type>SQL</type>
-      <sql>update ebay_cerchi set pubblicato&#x3d;&#x27;N&#x27; where partner&#x3d;&#x27;ALCAR&#x27;</sql>
+      <sql>update ebay_cerchi set pubblicato&#x3d;&#x27;N&#x27; where partner&#x3d;&#x27;ALCAR&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;update ebay_cerchi_app as capp inner join ebay_cerchi as c ON capp.codice &#x3d; c.codice  &#xd;&#xa;set capp.isece&#x3d;&#x27;0&#x27; &#xd;&#xa;where c.partner &#x3d; &#x27;ALCAR&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -519,7 +519,7 @@
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
       <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destination>lufelappi&#x40;libero.it</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>

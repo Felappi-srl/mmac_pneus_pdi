@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;08&#x2f;31 10&#x3a;45&#x3a;36.184</modified_date>
+    <modified_date>2018&#x2f;01&#x2f;24 08&#x3a;39&#x3a;39.229</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -583,7 +583,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select distinct&#xd;&#xa;	&#x27;MAK&#x27; AS PARTNER&#xd;&#xa;, &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, &#xd;&#xa;&#x27;MAK &#x27; &#x2b;  WHEELMODEL &#x2b; &#x27; CERCHI IN LEGA &#x27; &#x2b; FINISHING &#x2b; &#x27; &#x27; &#x2b; CANALE &#x2b; &#x27;x&#x27; &#x2b; RAGGIO &#x2b; &#x27; &#x27; &#x2b; &#xd;&#xa;PCD as nome&#xd;&#xa;,WHEELMODEL &#x2b; &#x27; &#x27; &#x2b; FINISHING as short_desc&#xd;&#xa;-- &#x27;CERCHI IN LEGA &#x27; &#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;PCD,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#xd;&#xa;--as nome&#xd;&#xa;,coalesce&#x28;round&#x28;round&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzopubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x29;&#x2a;1.22&#x29;&#x2a;0.78,0&#x29;,2&#x29;,0&#x29; AS prezzo, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image ,&#xd;&#xa;--	cast&#x28;coalesce&#x28;&#xd;&#xa;--		case when GIACENZA &#x3d;&#x27;&#x3e; 12&#x27; then &#x27;12&#x27; else giacenza end,0&#x29; as numeric&#x28;9,0&#x29;&#x29; AS product_in_stock, &#xd;&#xa;case when giacenza&#x3d;&#x27;0&#x27; then cast&#x28;coalesce&#x28;rtrim&#x28;ltrim&#x28;giacenzainterna&#x29;&#x29;,&#x27;0&#x27;&#x29; as integer&#x29; else&#xd;&#xa;cast&#x28;coalesce&#x28;rtrim&#x28;ltrim&#x28;giacenza&#x29;&#x29;,&#x27;0&#x27;&#x29; as integer&#x29; end as product_in_stock,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	OFFSET AS codca2, &#xd;&#xa;	OFFSET AS desca2, &#xd;&#xa;	INTERASSE AS codca3, &#xd;&#xa;	INTERASSE AS desca3, &#xd;&#xa;	CANALE AS codca4, &#xd;&#xa;	CANALE AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;	&#x27;Y&#x27; as pubblicato,&#xd;&#xa;	case when isnumeric&#x28;eancode&#x29;&#x3d;1 then&#xd;&#xa;		cast&#x28;eancode as numeric&#x28;13&#x29;&#x29; &#xd;&#xa;	else&#xd;&#xa;		0&#xd;&#xa;	end&#xd;&#xa;		 as eancode,&#xd;&#xa;2420869031 as amzcat,&#xd;&#xa;case when isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xd;&#xa;case when isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xd;&#xa;case when isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa; and case when GIACENZA &#x3d;&#x27;&#x3e; 12&#x27; then &#x27;12&#x27; else giacenza end&#x3e;1 and canale is not null  and &#xd;&#xa;prezzo is not null&#xd;&#xa;and eancode is not null and &#x28;isece is not null or isnad is not null&#x29;&#xd;&#xa;--and &#x28;out_prod&#x3d;0 or out_prod is null&#x29;&#xd;&#xa;--and WHEELMODEL like &#x27;&#x25;ACCIAIO&#x25;&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;000601&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;F8520FUIQ45GG3&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
+    <sql>select distinct&#xd;&#xa;	&#x27;MAK&#x27; AS PARTNER&#xd;&#xa;, &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, &#xd;&#xa;&#x27;MAK &#x27; &#x2b;  WHEELMODEL &#x2b; &#x27; CERCHI IN LEGA &#x27; &#x2b; FINISHING &#x2b; &#x27; &#x27; &#x2b; CANALE &#x2b; &#x27;x&#x27; &#x2b; RAGGIO &#x2b; &#x27; &#x27; &#x2b; &#xd;&#xa;PCD as nome&#xd;&#xa;,WHEELMODEL &#x2b; &#x27; &#x27; &#x2b; FINISHING as short_desc&#xd;&#xa;-- &#x27;CERCHI IN LEGA &#x27; &#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;PCD,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#xd;&#xa;--as nome&#xd;&#xa;,coalesce&#x28;round&#x28;round&#x28;&#x28;&#x28;cast&#x28;replace&#x28;prezzopubblico,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as float&#x29;&#x29;&#x2a;1.22&#x29;&#x2a;0.82,0&#x29;,2&#x29;,0&#x29; AS prezzo, &#xd;&#xa;	&#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;IMMAGINE as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; AS product_full_image ,&#xd;&#xa;--	cast&#x28;coalesce&#x28;&#xd;&#xa;--		case when GIACENZA &#x3d;&#x27;&#x3e; 12&#x27; then &#x27;12&#x27; else giacenza end,0&#x29; as numeric&#x28;9,0&#x29;&#x29; AS product_in_stock, &#xd;&#xa;case when giacenza&#x3d;&#x27;0&#x27; then cast&#x28;coalesce&#x28;rtrim&#x28;ltrim&#x28;giacenzainterna&#x29;&#x29;,&#x27;0&#x27;&#x29; as integer&#x29; else&#xd;&#xa;cast&#x28;coalesce&#x28;rtrim&#x28;ltrim&#x28;giacenza&#x29;&#x29;,&#x27;0&#x27;&#x29; as integer&#x29; end as product_in_stock,&#xd;&#xa;	RAGGIO AS codca1, &#xd;&#xa;	RAGGIO AS desca1, &#xd;&#xa;	OFFSET AS codca2, &#xd;&#xa;	OFFSET AS desca2, &#xd;&#xa;	INTERASSE AS codca3, &#xd;&#xa;	INTERASSE AS desca3, &#xd;&#xa;	CANALE AS codca4, &#xd;&#xa;	CANALE AS desca4, &#xd;&#xa;	&#x27;&#x27; AS codca5, &#xd;&#xa;	&#x27;&#x27; AS desca5, &#xd;&#xa;	NUMEROFORI AS codca6, &#xd;&#xa;	NUMEROFORI AS desca6,&#xd;&#xa;	&#x27;Y&#x27; as pubblicato,&#xd;&#xa;	case when isnumeric&#x28;eancode&#x29;&#x3d;1 then&#xd;&#xa;		cast&#x28;eancode as numeric&#x28;13&#x29;&#x29; &#xd;&#xa;	else&#xd;&#xa;		0&#xd;&#xa;	end&#xd;&#xa;		 as eancode,&#xd;&#xa;2420869031 as amzcat,&#xd;&#xa;case when isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xd;&#xa;case when isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xd;&#xa;case when isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa; and case when GIACENZA &#x3d;&#x27;&#x3e; 12&#x27; then &#x27;12&#x27; else giacenza end&#x3e;1 and canale is not null  and &#xd;&#xa;prezzo is not null&#xd;&#xa;and eancode is not null and &#x28;isece is not null or isnad is not null&#x29;&#xd;&#xa;--and &#x28;out_prod&#x3d;0 or out_prod is null&#x29;&#xd;&#xa;--and WHEELMODEL like &#x27;&#x25;ACCIAIO&#x25;&#x27;&#xd;&#xa;--and ipcode&#x3d;&#x27;000601&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;F8520FUIQ45GG3&#x27;&#xd;&#xa;order by eancode&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -897,7 +897,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>872</xloc>
+      <xloc>928</xloc>
       <yloc>56</yloc>
       <draw>Y</draw>
     </GUI>
@@ -939,6 +939,77 @@
     </remotesteps>
     <GUI>
       <xloc>418</xloc>
+      <yloc>56</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>PARTNER</name>
+      </field>      <field>        <name>marchio</name>
+      </field>      <field>        <name>codice</name>
+      </field>      <field>        <name>nome</name>
+      </field>      <field>        <name>short_desc</name>
+      </field>      <field>        <name>prezzo</name>
+      </field>      <field>        <name>product_full_image</name>
+      </field>      <field>        <name>product_in_stock</name>
+      </field>      <field>        <name>codca1</name>
+      </field>      <field>        <name>desca1</name>
+      </field>      <field>        <name>codca2</name>
+      </field>      <field>        <name>desca2</name>
+      </field>      <field>        <name>codca3</name>
+      </field>      <field>        <name>desca3</name>
+      </field>      <field>        <name>codca4</name>
+      </field>      <field>        <name>desca4</name>
+      </field>      <field>        <name>codca5</name>
+      </field>      <field>        <name>desca5</name>
+      </field>      <field>        <name>codca6</name>
+      </field>      <field>        <name>desca6</name>
+      </field>      <field>        <name>pubblicato</name>
+      </field>      <field>        <name>eancode</name>
+      </field>      <field>        <name>amzcat</name>
+      </field>      <field>        <name>isECE</name>
+      </field>      <field>        <name>isNAD</name>
+      </field>      <field>        <name>isTUV</name>
+      </field>      <field>        <name>tmp_eancode</name>
+      </field>      <field>        <name>modelloauto</name>
+      </field>      <field>        <name>flagfield</name>
+      </field>      <field>        <name>LastUpdate</name>
+      </field>        <select_unspecified>N</select_unspecified>
+      <meta>        <name>eancode</name>
+        <rename>eancode</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask>&#x23;</conversion_mask>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
       <yloc>56</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1005,107 +1076,6 @@
     <GUI>
       <xloc>160</xloc>
       <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>      <field>        <name>PARTNER</name>
-        <rename/>
-      </field>      <field>        <name>marchio</name>
-        <rename/>
-      </field>      <field>        <name>codice</name>
-        <rename/>
-      </field>      <field>        <name>nome</name>
-        <rename/>
-      </field>      <field>        <name>short_desc</name>
-        <rename/>
-      </field>      <field>        <name>prezzo</name>
-        <rename/>
-      </field>      <field>        <name>product_full_image</name>
-        <rename/>
-      </field>      <field>        <name>product_in_stock</name>
-        <rename/>
-      </field>      <field>        <name>codca1</name>
-        <rename/>
-      </field>      <field>        <name>desca1</name>
-        <rename/>
-      </field>      <field>        <name>codca2</name>
-        <rename/>
-      </field>      <field>        <name>desca2</name>
-        <rename/>
-      </field>      <field>        <name>codca3</name>
-        <rename/>
-      </field>      <field>        <name>desca3</name>
-        <rename/>
-      </field>      <field>        <name>codca4</name>
-        <rename/>
-      </field>      <field>        <name>desca4</name>
-        <rename/>
-      </field>      <field>        <name>codca5</name>
-        <rename/>
-      </field>      <field>        <name>desca5</name>
-        <rename/>
-      </field>      <field>        <name>codca6</name>
-        <rename/>
-      </field>      <field>        <name>desca6</name>
-        <rename/>
-      </field>      <field>        <name>pubblicato</name>
-        <rename/>
-      </field>      <field>        <name>eancode</name>
-        <rename/>
-      </field>      <field>        <name>amzcat</name>
-        <rename/>
-      </field>      <field>        <name>isECE</name>
-        <rename/>
-      </field>      <field>        <name>isNAD</name>
-        <rename/>
-      </field>      <field>        <name>isTUV</name>
-        <rename/>
-      </field>      <field>        <name>tmp_eancode</name>
-        <rename/>
-      </field>      <field>        <name>modelloauto</name>
-        <rename/>
-      </field>      <field>        <name>flagfield</name>
-        <rename/>
-      </field>      <field>        <name>LastUpdate</name>
-        <rename/>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>eancode</name>
-        <rename>eancode</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>&#x23;</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>800</xloc>
-      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

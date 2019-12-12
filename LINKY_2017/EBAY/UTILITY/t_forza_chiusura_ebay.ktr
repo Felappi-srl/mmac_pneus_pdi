@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;09&#x2f;13 09&#x3a;17&#x3a;20.279</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;09&#x2f;13 12&#x3a;28&#x3a;57.678</modified_date>
+    <modified_date>2018&#x2f;04&#x2f;04 10&#x3a;57&#x3a;30.544</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -528,8 +528,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>160</yloc>
+      <xloc>400</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -553,8 +553,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>64</yloc>
+      <xloc>560</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -592,7 +592,7 @@
       </field>
       <field>
         <source_value>AUS</source_value>
-        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_au_0</target_value>
+        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_aus_0</target_value>
       </field>
       <field>
         <source_value>UK</source_value>
@@ -610,6 +610,14 @@
         <source_value/>
         <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_de_0</target_value>
       </field>
+      <field>
+        <source_value>CH</source_value>
+        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_ch_0</target_value>
+      </field>
+      <field>
+        <source_value>IE</source_value>
+        <target_value>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;ebay&#x5c;ebay_stock_ie_0</target_value>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -619,8 +627,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
-      <yloc>240</yloc>
+      <xloc>624</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -654,8 +662,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>64</yloc>
+      <xloc>400</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -711,6 +719,14 @@
         <source_value/>
         <target_value>DE&#x7c;Italy&#x7c;DE</target_value>
       </field>
+      <field>
+        <source_value>CH</source_value>
+        <target_value>CH&#x7c;Italy&#x7c;CH</target_value>
+      </field>
+      <field>
+        <source_value>IE</source_value>
+        <target_value>IE&#x7c;Italy&#x7c;IE</target_value>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -720,8 +736,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>464</xloc>
-      <yloc>240</yloc>
+      <xloc>528</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -762,8 +778,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>240</yloc>
+      <xloc>400</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -802,7 +818,7 @@
     <rownum>N</rownum>
     <rownumByFile>N</rownumByFile>
     <rownum_field/>
-    <format>DOS</format>
+    <format>Unix</format>
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
@@ -866,8 +882,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>64</yloc>
+      <xloc>144</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -960,8 +976,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>240</yloc>
+      <xloc>752</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

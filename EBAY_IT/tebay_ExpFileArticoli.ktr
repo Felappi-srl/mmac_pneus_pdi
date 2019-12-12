@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;EBAY_IT</directory>
+    <directory>/EBAY_IT</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
+    <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;19 09&#x3a;03&#x3a;47.900</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/05/26 13:58:46.981</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,50 +448,53 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>AUTO</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>MOTO SCOOTER</from>
-      <to>Add constants 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ACCOPPIATE</from>
-      <to>Add constants 2 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>CERCHI LEGA REPLICA</from>
-      <to>Add constants 2 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>CATENE</from>
-      <to>Add constants 4</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>RUOTINI</from>
-      <to>Add constants 2 4</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Add constants 2 4</from>
       <to>Ruotini 2</to>
@@ -643,6 +646,86 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>tmp_ivel_auto</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_ruotini</from>
+      <to>Add constants 2 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_moto</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_as tipop</from>
+      <to>Add constants 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AUTO</from>
+      <to>String operations 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2</from>
+      <to>tmp_ivel_auto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MOTO SCOOTER</from>
+      <to>String operations 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 2</from>
+      <to>tmp_ivel_moto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ACCOPPIATE MOTO</from>
+      <to>String operations 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 3</from>
+      <to>tmp_ivel_as tipop</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CERCHI LEGA REPLICA</from>
+      <to>String operations 2 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>RUOTINI</from>
+      <to>String operations 2 5</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 5</from>
+      <to>tmp_ivel_ruotini</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CATENE</from>
+      <to>String operations 2 6</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 4</from>
+      <to>Add constants 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 6</from>
+      <to>Add constants 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>String operations</from>
       <to>articoli</to>
       <enabled>Y</enabled>
@@ -659,8 +742,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>MOTO</head_name>
-<tail_name>Look accoppiate</tail_name>
+    <head_name>MOTO</head_name>
+    <tail_name>Look accoppiate</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -669,14 +752,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>976</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>ACCOPPIATE</name>
+    <name>ACCOPPIATE MOTO</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -687,8 +769,43 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;COPPIA GOMME&#x27;&#x29;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,&#xa;eancode&#xa;FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;&#x28;linky_ebayarticoli.siteid&#x3d;&#x27;Italy&#x27; or linky_ebayarticoli.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc,'ACCOPPIATA GOMME','COPPIA GOMME')  + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76)  as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then desca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then codca5 else '' end as tmp_ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' 
+else 'ACCOPPIATE MOTO' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IT'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0 and 
+pubblicato='Y' and
+(linky_ebayarticoli.siteid='Italy' or linky_ebayarticoli.siteid='IT') and 
+--codice='1840235VWRA3XL' and
+category_path  in ('ACCOPPIATE MOTO')
+</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -705,8 +822,7 @@
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>AUTO</name>
     <type>TableInput</type>
@@ -719,8 +835,55 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;short_desc  &#x2b; &#xa;coalesce&#x28;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; coalesce&#x28;desca2,&#x27;&#x27;&#x29; else &#x27;&#x27; end,&#x27;&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null and len&#x28;codicerumorosita&#x29;&#x3e;2 then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, case when len&#x28;codicerumorosita&#x29;&#x3e;2 then substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; else &#x27;&#x27; end as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;case when len&#x28;eancode&#x29;&#x3c;12 then &#x27;&#x27; else eancode end as eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;&#x28;linky_ebayarticoli.siteid&#x3d;&#x27;Italy&#x27; or linky_ebayarticoli.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;2393601&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path not in &#x28;&#x27;CERCHI IN METALLO&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;&#x29;&#xa;and short_desc is not null</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(short_desc  + 
+coalesce(case when codca2 in ('X','N','R') then ' ' + coalesce(desca2,'') else '' end,''),1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then rtrim(ltrim(codca1)) else '' end as diametro
+, case when codca3 is not null then rtrim(ltrim(codca3)) else '' end as spalla
+, case when codca4 is not null then rtrim(ltrim(codca4)) else '' end as larghezza
+, case when codca5 is not null then rtrim(ltrim(codca5)) else '' end as tmp_ivel
+, case when codca6 is not null then rtrim(ltrim(desca6)) else '' end as icarico
+, case when codca2 is not null then rtrim(ltrim(codca2)) else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+, case when codicerotolamento is not null and len(codicerumorosita)>2 then
+'&lt;p>&lt;img src="https://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
+ codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
+substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
+'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
+else
+''
+end as energy
+, case when len(codicerumorosita)>2 then substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) else '' end as rumorosita
+, codicerotolamento
+, codiceaderenza
+, partner,
+case when len(eancode)&lt;12 then '' else eancode end as eancode
+,runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IT'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+pubblicato='Y' and
+-- (linky_ebayarticoli.siteid='Italy' or linky_ebayarticoli.siteid='IT') and 
+linky_ebayarticoli.siteid='IT' and 
+-- codca2='R' and 
+--codice like '2393601%' and
+--codicerotolamento is not null and
+category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SCOOTER','MOTO', 'CATENE DA NEVE','RUOTINI','')
+and short_desc is not null
+ORDER BY codice</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -737,8 +900,7 @@
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants</name>
     <type>Constant</type>
@@ -758,7 +920,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -770,7 +932,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Indice di carico&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Indice di carico: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -782,7 +944,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza dei pneumatici&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza dei pneumatici: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -794,7 +956,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Codice di velocit&#x26;agrave&#x3b; max omologata&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Codice di velocit&amp;agrave; max omologata: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -806,7 +968,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spalla &#x2f; Sezione&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spalla / Sezione: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -818,7 +980,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Produttore&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Produttore: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -830,7 +992,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diametro&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diametro: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -856,12 +1018,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2</name>
     <type>Constant</type>
@@ -881,7 +1042,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -893,7 +1054,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Indice di carico&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Indice di carico: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -905,7 +1066,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza dei pneumatici&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza dei pneumatici: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -917,7 +1078,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Codice di velocit&#x26;agrave&#x3b; max omologata&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Codice di velocit&amp;agrave; max omologata: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -929,7 +1090,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spalla &#x2f; Sezione&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spalla / Sezione: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -941,7 +1102,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Produttore&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Produttore: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -953,7 +1114,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diametro&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diametro: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -979,12 +1140,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 2</name>
     <type>Constant</type>
@@ -1004,7 +1164,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1016,7 +1176,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Caratteristiche&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Caratteristiche: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1028,7 +1188,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza dei pneumatici&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza dei pneumatici: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1040,7 +1200,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Codice di velocit&#x26;agrave&#x3b; max omologata&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Codice di velocit&amp;agrave; max omologata: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1052,7 +1212,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spalla &#x2f; Sezione&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spalla / Sezione: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1064,7 +1224,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Produttore&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Produttore: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1076,7 +1236,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Misure&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Misure: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1102,12 +1262,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 3</name>
     <type>Constant</type>
@@ -1127,7 +1286,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1139,7 +1298,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Numero fori&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Numero fori: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1151,7 +1310,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza cerchio&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza cerchio: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1163,7 +1322,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Offset&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Offset: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1175,7 +1334,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Interasse&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Interasse: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1187,7 +1346,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Produttore&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Produttore: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1199,7 +1358,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diametro&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diametro: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1225,12 +1384,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 4</name>
     <type>Constant</type>
@@ -1250,7 +1408,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1262,7 +1420,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;&#x3c;span&#x3e;Anno auto&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>&lt;span>Anno auto: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1274,7 +1432,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza dei pneumatici&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza dei pneumatici: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1286,7 +1444,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Modello auto&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Modello auto: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1298,7 +1456,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spalla &#x2f; Sezione&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spalla / Sezione: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1310,7 +1468,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Marca auto&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Marca auto: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1322,7 +1480,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diametro&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diametro: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1348,12 +1506,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 4</name>
     <type>Constant</type>
@@ -1373,7 +1530,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;br&#x3e;</nullif>
+        <nullif>&lt;/br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1397,7 +1554,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Larghezza dei pneumatici&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Larghezza dei pneumatici: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1409,7 +1566,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spessore maglia&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spessore maglia: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1421,7 +1578,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Spalla &#x2f; Sezione&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Spalla / Sezione: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1433,7 +1590,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Produttore&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Produttore: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1445,7 +1602,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Raggio&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Raggio: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1471,12 +1628,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>432</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CATE</name>
     <type>Append</type>
@@ -1488,8 +1644,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>RUOT</head_name>
-<tail_name>Look catene</tail_name>
+    <head_name>RUOT</head_name>
+    <tail_name>Look catene</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1498,12 +1654,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>976</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CATENE</name>
     <type>TableInput</type>
@@ -1516,8 +1671,81 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, substring&#x28;var.short_desc &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm SPESSORE&#x27; else &#x27;&#x27; end, 1,76&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner,&#xa;eancode&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27; &#x3d; linky_ebay_report.SITEID&#xa;where &#xa;linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;&#x28;var.siteid&#x3d;&#x27;Italy&#x27; or var.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xa;union all&#xd;&#xa;SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;e.short_desc &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm SPESSORE&#x27; else &#x27;&#x27; end, 1,76&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;Italy&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 &#x3c;&#x3e;&#x27;0&#x27;then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;,&#x27;&#x27; as energy&#xd;&#xa;, &#x27;&#x27; as rumorosita&#xd;&#xa;, &#x27;&#x27; as codicerotolamento&#xd;&#xa;, &#x27;&#x27; as codiceaderenza&#xd;&#xa;, partner,&#xd;&#xa;eancode&#xd;&#xa;FROM linky_ebayarticoli e&#xd;&#xa;LEFT JOIN linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;&#x28;e.siteid&#x3d;&#x27;Italy&#x27; or e.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xd;&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codicevar as product_sku
+, substring(var.short_desc +  case when codca5 is not null then ' ' + rtrim(ltrim(desca5)) + ' mm SPESSORE' else '' end, 1,76) 
+as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then rtrim(ltrim(desca5)) + ' mm' else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
+LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'IT' = linky_ebay_report.SITEID
+where 
+linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+pubblicato='Y' and
+(var.siteid='Italy' or var.siteid='IT') and 
+-- codca2='R' and
+--codice like 'CATPEWRSS73%' and
+category_path in ( 'CATENE DA NEVE')
+union all
+SELECT distinct
+ codice as product_sku
+, substring(e.short_desc +  case when codca5 is not null then ' ' + rtrim(ltrim(desca5)) + ' mm SPESSORE' else '' end, 1,76) 
+as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 &lt;&gt;'0'then rtrim(ltrim(desca5)) + ' mm' else '' end as tmp_ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner,
+eancode,
+'' as runflat,category_path as tipop
+FROM linky_ebayarticoli e
+LEFT JOIN linky_ebay_report on e.codice = linky_ebay_report.SKU and 'IT' = linky_ebay_report.SITEID
+where 
+ linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+pubblicato='Y' and
+(e.siteid='Italy' or e.siteid='IT') and 
+-- codca2='R' and
+--codice like 'CATPEWRSS73%' and
+category_path in ( 'CATENE DA NEVE')</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -1534,8 +1762,7 @@
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CERCHI</name>
     <type>Append</type>
@@ -1547,8 +1774,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>ACC</head_name>
-<tail_name>Look Cerchi</tail_name>
+    <head_name>ACC</head_name>
+    <tail_name>Look Cerchi</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1557,12 +1784,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>976</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CERCHI LEGA REPLICA</name>
     <type>TableInput</type>
@@ -1575,8 +1801,45 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;CERCHI IN LEGA &#x27; &#x2b; short_desc,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,&#xa;eancode&#xa;FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where &#xa;linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and &#xa;&#x28;PARTNER &#x3c;&#x3e;&#x27;MAK&#x27; or partner is null&#x29; AND&#xa;&#x28;linky_ebayarticoli.siteid&#x3d;&#x27;Italy&#x27; or linky_ebayarticoli.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;--codice&#x3d;&#x27;DLCOP1675636598N&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;,&#x27;CERCHI&#x27;&#x29;&#xa;&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring('CERCHI IN LEGA ' + short_desc,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then desca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then DESca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IT'= linky_ebay_report.SITEID
+where 
+linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+ pubblicato='Y' and 
+(PARTNER &lt;&gt;'MAK' or partner is null) AND
+(linky_ebayarticoli.siteid='Italy' or linky_ebayarticoli.siteid='IT') and 
+--codice='DLCOP1675636598N' and
+-- codice = 'DL17758935112G' and 
+category_path  in ('CERCHI IN LEGA','CERCHI')
+
+</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -1593,8 +1856,159 @@
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1216</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>articoli</send_true_to>
+    <send_false_to>Dummy (do nothing)</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1655205VPRECON5</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1565185TECO5</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1465175TPREMCON5</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1745205VPREM6XL</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1560185HPREM5</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>product_sku</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>1840225YPREM6XL</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1120</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>JS Accoppiate</name>
     <type>ScriptValueMod</type>
@@ -1608,16 +2022,27 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica&#x3b;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_raggio + diametro + t_finespecifica;;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1625,12 +2050,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS auto</name>
     <type>ScriptValueMod</type>
@@ -1644,16 +2068,32 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica &#x2b;&#xa;				energy &#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica +
+				energy ;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1661,12 +2101,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS auto template</name>
     <type>ScriptValueMod</type>
@@ -1680,16 +2119,29 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;var tmp1 &#x3d; TEMPLATE.replace&#x28;&#x27;&#x7b;&#x7b;TITOLO&#x7d;&#x7d;&#x27;,Titolo&#x29;&#x3b;&#xa;var tmp2 &#x3d; tmp1.replace&#x28;&#x27;&#x7b;&#x7b;CARATTERISTICHE&#x7d;&#x7d;&#x27;,caratteristiche&#x29;&#x3b;&#xa;&#xa;descrizione &#x3d; tmp2&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>descrizione</name>
+        <jsScript_script>//Script qua
+
+var tmp1 = TEMPLATE.replace('{{TITOLO}}',Titolo);
+var tmp2 = tmp1.replace('{{CARATTERISTICHE}}',caratteristiche);
+
+descrizione = tmp2;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>descrizione</name>
         <rename>descrizione</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1697,12 +2149,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>1072</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS cerchi</name>
     <type>ScriptValueMod</type>
@@ -1716,16 +2167,31 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1733,12 +2199,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS moto</name>
     <type>ScriptValueMod</type>
@@ -1752,16 +2217,31 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1769,12 +2249,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look Cerchi</name>
     <type>DBLookup</type>
@@ -1799,13 +2278,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1823,12 +2302,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look accoppiate</name>
     <type>DBLookup</type>
@@ -1853,13 +2331,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1877,12 +2355,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look catene</name>
     <type>DBLookup</type>
@@ -1907,13 +2384,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1931,12 +2408,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look ruotini</name>
     <type>DBLookup</type>
@@ -1961,13 +2437,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1985,12 +2461,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look scooter</name>
     <type>DBLookup</type>
@@ -2015,13 +2490,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2039,12 +2514,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>MOTO</name>
     <type>Append</type>
@@ -2056,8 +2530,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>look Auto</head_name>
-<tail_name>Look scooter</tail_name>
+    <head_name>look Auto</head_name>
+    <tail_name>Look scooter</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -2066,12 +2540,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>976</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>MOTO SCOOTER</name>
     <type>TableInput</type>
@@ -2084,8 +2557,45 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;short_desc  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29;  &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then codca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,&#xa;eancode&#xa;FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;&#x28;linky_ebayarticoli.siteid&#x3d;&#x27;Italy&#x27; or linky_ebayarticoli.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;and short_desc is not null&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(short_desc  + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76)  + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)  as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then rtrim(ltrim(codca1)) else '' end as diametro
+, case when codca3 is not null then rtrim(ltrim(codca3)) else '' end as spalla
+, case when codca4 is not null then rtrim(ltrim(codca4)) else '' end as larghezza
+, case when codca5 is not null then rtrim(ltrim(codca5)) else '' end as tmp_ivel
+, case when codca6 is not null then rtrim(ltrim(desca6)) else '' end as icarico
+, case when codca2 is not null then rtrim(ltrim(codca2)) else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,
+eancode
+,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IT'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0 and 
+pubblicato='Y' and
+(linky_ebayarticoli.siteid='Italy' or linky_ebayarticoli.siteid='IT') and 
+--codca2 ='N' and
+--codice='1840235VWRA3XL' and
+category_path  in ('SCOOTER','MOTO')
+and short_desc is not null
+</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -2102,8 +2612,7 @@
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RUOT</name>
     <type>Append</type>
@@ -2115,8 +2624,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>CERCHI</head_name>
-<tail_name>Look ruotini</tail_name>
+    <head_name>CERCHI</head_name>
+    <tail_name>Look ruotini</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -2125,12 +2634,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>976</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RUOTINI</name>
     <type>TableInput</type>
@@ -2143,8 +2651,52 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;short_desc  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Italy&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when desca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when desca3 is not null then desca3 else &#x27;&#x27; end as spalla&#xa;, case when desca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when desca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when desca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when desca2 is not null then desca2 else &#x27;&#x27; end as offset&#xa;, &#x27;RUOTINI&#x27; as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;IT&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;&#x28;linky_ebayarticoli.siteid&#x3d;&#x27;Italy&#x27; or linky_ebayarticoli.siteid&#x3d;&#x27;IT&#x27;&#x29; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;1598990&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path &#x3d; &#x27;RUOTINI&#x27;&#xa;</sql>
-    <limit>0</limit>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(short_desc  + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, ebaycat
+,'Italy' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IT','RUOTINI','',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when desca1 is not null then desca1 else '' end as diametro
+, case when desca3 is not null then desca3 else '' end as spalla
+, case when desca4 is not null then desca4 else '' end as larghezza
+, case when desca5 is not null then desca5 else '' end as tmp_ivel
+, case when desca6 is not null then desca6 else '' end as icarico
+, case when desca2 is not null then desca2 else '' end as offset
+, 'RUOTINI' as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+, case when codicerotolamento is not null then
+'&lt;p>&lt;img src="https://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
+ codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
+substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
+'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
+else
+''
+end as energy
+, substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) as rumorosita
+, codicerotolamento
+, codiceaderenza
+, partner,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'IT'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+pubblicato='Y' and
+(linky_ebayarticoli.siteid='Italy' or linky_ebayarticoli.siteid='IT') and 
+-- codca2='R' and 
+--codice like '1598990%' and
+--codicerotolamento is not null and
+category_path = 'RUOTINI'
+</sql>
+    <limit>${numerorighe}</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
     <variables_active>N</variables_active>
@@ -2161,8 +2713,7 @@
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Ruotini 2</name>
     <type>ScriptValueMod</type>
@@ -2176,16 +2727,29 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; offset &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche = t_marca + offset + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2193,12 +2757,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Ruotini 2 2</name>
     <type>ScriptValueMod</type>
@@ -2212,16 +2775,25 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche = t_marca + Marca + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2229,12 +2801,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>544</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -2246,34 +2817,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2281,12 +2912,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
@@ -2298,34 +2928,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2333,12 +3023,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2 2</name>
     <type>SelectValues</type>
@@ -2350,34 +3039,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2385,12 +3134,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3</name>
     <type>SelectValues</type>
@@ -2402,34 +3150,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2437,12 +3245,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>288</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3 2</name>
     <type>SelectValues</type>
@@ -2454,34 +3261,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2489,12 +3356,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3 2 2</name>
     <type>SelectValues</type>
@@ -2506,34 +3372,94 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2541,12 +3467,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>688</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
@@ -2581,12 +3506,1961 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>1072</xloc>
       <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>String operations 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 3</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 4</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 5</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 6</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>product_sku</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>siteid</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Type</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>Marca</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>diametro</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>spalla</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>larghezza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>icarico</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>offset</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>category_path</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>product_full_image</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipoutilizzo</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>energy</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>rumorosita</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codicerotolamento</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>codiceaderenza</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>partner</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>eancode</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>runflat</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>tipop</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>464</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>articoli</name>
     <type>TextFileOutput</type>
@@ -2598,7 +5472,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x7c;</separator>
+    <separator>|</separator>
     <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -2612,8 +5486,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay</name>
-      <is_command>N</is_command>
+      <name>C:\linky\pneus\ebay\ebay</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -2717,7 +5590,7 @@
       <field>
         <name>product_price</name>
         <type>Number</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2729,7 +5602,7 @@
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2921,7 +5794,31 @@
       <field>
         <name>eancode</name>
         <type>String</type>
-        <format>&#x23;</format>
+        <format>#</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>runflat</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>tipop</name>
+        <type>String</type>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
@@ -2939,12 +5836,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
-      <yloc>224</yloc>
+      <xloc>1072</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>look Auto</name>
     <type>DBLookup</type>
@@ -2969,13 +5865,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2993,12 +5889,447 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>560</xloc>
+      <xloc>816</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>tmp_ivel_as tipop</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: max 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: max 100 km/h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: max 120 km/h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: max 130 km/h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: max 150 km/h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: max 170 km/h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: max 180 km/h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: max 210 km/h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: max 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Z</source_value>
+        <target_value>Z: over 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: max 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>(W)</source_value>
+        <target_value>(W): over 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: max 50 km/h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: max 60 km/h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: max 65 km/h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: max 70 km/h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: max 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: max 90 km/h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tmp_ivel_auto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: 100 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K: 110 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: 120 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: 130 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N: 140 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: 150 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q: 160 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: 170 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: 180 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T: 190 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U: 200 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: 210 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: 240 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR >240 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: 270 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y: 300 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: 50 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: 60 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: 65 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: 70 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: 80 Kmh</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: 90 Kmh</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tmp_ivel_moto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: 100 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K: 110 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: 120 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: 130 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N: 140 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: 150 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q: 160 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: 170 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: 180 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T: 190 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U: 200 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: 210 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: 240 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR >240 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: 270 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y: 300 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: 50 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: 60 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: 65 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: 70 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: 80 Km/h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: 90 Km/h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tmp_ivel_ruotini</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: max 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: max 100 km/h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: max 120 km/h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: max 130 km/h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: max 150 km/h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: max 170 km/h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: max 180 km/h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: max 210 km/h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: max 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Z</source_value>
+        <target_value>Z: over 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: max 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>(W)</source_value>
+        <target_value>(W): over 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: max 50 km/h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: max 60 km/h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: max 65 km/h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: max 70 km/h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: max 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: max 90 km/h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

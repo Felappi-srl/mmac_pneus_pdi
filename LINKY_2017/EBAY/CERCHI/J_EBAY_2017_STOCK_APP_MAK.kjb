@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;28 09&#x3a;34&#x3a;10.210</modified_date>
+  <modified_date>2018&#x2f;06&#x2f;05 16&#x3a;14&#x3a;08.152</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -341,7 +341,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>592</xloc>
-      <yloc>224</yloc>
+      <yloc>432</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -521,6 +521,78 @@
       <xloc>592</xloc>
       <yloc>112</yloc>
     </entry>
+    <entry>
+      <name>t_ebay_2017_expfile_stock_appktype_de</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_2017_expfile_stock_appktype_de</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>208</yloc>
+    </entry>
+    <entry>
+      <name>t_ebay_2017_expfile_stock_appktype_uk</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_2017_expfile_stock_appktype_uk</transname>
+      <directory>&#x2f;LINKY_2017&#x2f;EBAY&#x2f;CERCHI</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>320</yloc>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -588,6 +660,24 @@
     </hop>
     <hop>
       <from>t_ebay_2017_expfile_stock_appktype_it</from>
+      <to>t_ebay_2017_expfile_stock_appktype_de</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_2017_expfile_stock_appktype_de</from>
+      <to>t_ebay_2017_expfile_stock_appktype_uk</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_2017_expfile_stock_appktype_uk</from>
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;06&#x2f;22 11&#x3a;19&#x3a;42.719</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;08&#x2f;31 12&#x3a;51&#x3a;12.013</modified_date>
+    <modified_date>2018&#x2f;04&#x2f;19 15&#x3a;42&#x3a;42.725</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -462,16 +462,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>get_csv_wheels</from>
-      <to>HTTP wheels</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>HTTP wheels</from>
-      <to>JSON Input 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>JSON Input 2</from>
       <to>JSON Input 2 2</to>
       <enabled>Y</enabled>
@@ -487,8 +477,18 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>get_csv_wheels</from>
+      <to>REST Client</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>REST Client</from>
+      <to>JSON Input 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Add constants</from>
-      <to>File Wheels</to>
+      <to>Set Variables</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -525,8 +525,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>800</xloc>
-      <yloc>128</yloc>
+      <xloc>848</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -557,8 +557,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
-      <yloc>128</yloc>
+      <xloc>720</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -684,52 +684,6 @@
     </remotesteps>
     <GUI>
       <xloc>208</xloc>
-      <yloc>48</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>HTTP wheels</name>
-    <type>HTTPPOST</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <postafile>N</postafile>
-    <encoding/>
-    <url/>
-    <urlInField>Y</urlInField>
-    <urlField>url_request</urlField>
-    <requestEntity/>
-    <httpLogin/>
-    <httpPassword>Encrypted </httpPassword>
-    <proxyHost/>
-    <proxyPort/>
-    <socketTimeout>14400000</socketTimeout>
-    <connectionTimeout>14400000</connectionTimeout>
-    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
-    <lookup>
-      </lookup>
-    <result>
-      <name>result</name>
-      <code/>
-      <response_time/>
-      <response_header/>
-      </result>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1065,6 +1019,92 @@
     <GUI>
       <xloc>128</xloc>
       <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>REST Client</name>
+    <type>Rest</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <applicationType>TEXT PLAIN</applicationType>
+    <method>GET</method>
+    <url/>
+    <urlInField>Y</urlInField>
+    <dynamicMethod>N</dynamicMethod>
+    <methodFieldName/>
+    <urlField>url_request</urlField>
+    <bodyField/>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <preemptive>N</preemptive>
+    <trustStoreFile/>
+    <trustStorePassword>Encrypted </trustStorePassword>
+    <headers>
+      </headers>
+    <parameters>
+      </parameters>
+    <matrixParameters>
+      </matrixParameters>
+    <result>
+      <name>result</name>
+      <code/>
+      <response_time/>
+      <response_header/>
+      </result>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <field_name>link</field_name>
+        <variable_name>link_file</variable_name>
+        <variable_type>PARENT_JOB</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

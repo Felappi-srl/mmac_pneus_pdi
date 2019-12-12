@@ -429,15 +429,15 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;02 14&#x3a;50&#x3a;41.387</modified_date>
+    <modified_date>2018&#x2f;05&#x2f;12 12&#x3a;25&#x3a;52.417</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
       <note>link originale&#x3a;&#xa;C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_FR</note>
-      <xloc>976</xloc>
-      <yloc>192</yloc>
+      <xloc>1088</xloc>
+      <yloc>176</yloc>
       <width>228</width>
       <heigth>48</heigth>
       <fontname>.SF NS Text</fontname>
@@ -483,21 +483,6 @@
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>AUTO</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>MOTO SCOOTER</from>
-      <to>Add constants 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ACCOPPIATE</from>
-      <to>Add constants 2 2</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Append streams</from>
       <to>Append streams 3</to>
@@ -683,6 +668,51 @@
       <to>Append streams 3 2 2</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>String operations 2</from>
+      <to>tmp_ivel_auto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AUTO</from>
+      <to>String operations 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_auto</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MOTO SCOOTER</from>
+      <to>String operations 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ACCOPPIATE</from>
+      <to>String operations 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 2</from>
+      <to>tmp_ivel_moto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 3</from>
+      <to>tmp_ivel_accoppiate</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_moto</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_accoppiate</from>
+      <to>Add constants 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ACCOPPIATE</name>
@@ -696,7 +726,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;SET DE PNEUS&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codice&#x3d;&#x27;AC1009013080HTOU&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;SET DE PNEUS&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as tmp_ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode,&#x27;&#x27; as runflat,category_path as tipop&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codice&#x3d;&#x27;AC1009013080HTOU&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -728,7 +758,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;PNEU&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;HIVER&#x27;&#x29; else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null and len&#x28;codicerumorosita&#x29; &#x3e; 2 then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, case when len&#x28;codicerumorosita&#x29; &#x3e; 2 then substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; else &#x27;&#x27;  end as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN METALLO&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;PNEU&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;HIVER&#x27;&#x29; else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as tmp_ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null and len&#x28;codicerumorosita&#x29; &#x3e; 2 then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;https&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, case when len&#x28;codicerumorosita&#x29; &#x3e; 2 then substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; else &#x27;&#x27;  end as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner&#xa;,eancode,runflat,category_path as tipop&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN METALLO&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -877,7 +907,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>336</xloc>
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1012,7 +1042,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>336</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1147,7 +1177,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>336</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1282,7 +1312,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>336</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1405,7 +1435,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>336</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1540,7 +1570,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
+      <xloc>320</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1567,7 +1597,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>816</xloc>
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1594,7 +1624,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>816</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1621,7 +1651,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>816</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1648,7 +1678,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>816</xloc>
       <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1675,7 +1705,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>816</xloc>
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1693,7 +1723,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;var.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm CROISILLONS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;var.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xa;union all&#xd;&#xa;SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;e.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm CROISILLONS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 &#x3c;&#x3e;&#x27;0&#x27;then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;,&#x27;&#x27; as energy&#xd;&#xa;, &#x27;&#x27; as rumorosita&#xd;&#xa;, &#x27;&#x27; as codicerotolamento&#xd;&#xa;, &#x27;&#x27; as codiceaderenza&#xd;&#xa;, partner,&#xd;&#xa;eancode&#xd;&#xa;FROM linky_ebayarticoli e&#xd;&#xa;LEFT JOIN linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;e.siteid&#x3d;&#x27;FR&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xd;&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xd;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;var.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm CROISILLONS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode,&#x27;&#x27; as runflat,category_path as tipop&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;var.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xa;union all&#xd;&#xa;SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;e.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;CHAINES A NEIGE&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm CROISILLONS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 &#x3c;&#x3e;&#x27;0&#x27;then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;,&#x27;&#x27; as energy&#xd;&#xa;, &#x27;&#x27; as rumorosita&#xd;&#xa;, &#x27;&#x27; as codicerotolamento&#xd;&#xa;, &#x27;&#x27; as codiceaderenza&#xd;&#xa;, partner,&#xd;&#xa;eancode,&#x27;&#x27; as runflat,category_path as tipop&#xd;&#xa;FROM linky_ebayarticoli e&#xd;&#xa;LEFT JOIN linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;e.siteid&#x3d;&#x27;FR&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xd;&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1725,7 +1755,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;JANTES ROUES &#x27; &#x2b; short_desc,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;JANTES ROUES &#x27; &#x2b; short_desc,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode,&#x27;&#x27; as runflat,category_path as tipop&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1775,7 +1805,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1811,7 +1841,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1847,7 +1877,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>976</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1883,7 +1913,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1919,7 +1949,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1973,7 +2003,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2027,7 +2057,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2081,7 +2111,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2135,7 +2165,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2189,7 +2219,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2207,7 +2237,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;PNEU&#x27;&#x29;  &#x2b;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xa;--codice&#x3d;&#x27;219090VMT90X11&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;PNEU&#x27;&#x29;  &#x2b;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;HIVER&#x27;&#x29;, &#x27;ESTIVE&#x27;,&#x27;&#x27;&#x29; else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as tmp_ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode,&#x27;&#x27; as runflat,category_path as tipop&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xa;--codice&#x3d;&#x27;219090VMT90X11&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2261,7 +2291,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>928</xloc>
+      <xloc>1088</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2279,7 +2309,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;short_desc,&#x27;RUOTINO DI SCORTA&#x27;,&#x27;ROUE DE SECOURS&#x27;&#x29;,&#x27; PER &#x27;,&#x27; POUR &#x27;&#x29;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when desca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when desca3 is not null then desca3 else &#x27;&#x27; end as spalla&#xa;, case when desca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when desca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when desca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when desca2 is not null then desca2 else &#x27;&#x27; end as offset&#xa;, &#x27;RUOTINI&#x27; as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;eancode&#xd;&#xa;,&#x27;EUR&#x27; as currency&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa; linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;1598990&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path &#x3d; &#x27;RUOTINI&#x27;&#xa;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;short_desc,&#x27;RUOTINO DI SCORTA&#x27;,&#x27;ROUE DE SECOURS&#x27;&#x29;,&#x27; PER &#x27;,&#x27; POUR &#x27;&#x29;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, CAST &#x28;ebaycat as VARCHAR&#x29; as ebaycat&#xd;&#xa;,&#x27;France&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;FR&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when desca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when desca3 is not null then desca3 else &#x27;&#x27; end as spalla&#xa;, case when desca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when desca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when desca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when desca2 is not null then desca2 else &#x27;&#x27; end as offset&#xa;, &#x27;RUOTINI&#x27; as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;https&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;eancode,&#x27;&#x27; as runflat,category_path as tipop&#xd;&#xa;,&#x27;EUR&#x27; as currency&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;FR&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa; linky_ebayarticoli.siteid&#x3d;&#x27;FR&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;1598990&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path &#x3d; &#x27;RUOTINI&#x27;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2335,7 +2365,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>976</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2371,7 +2401,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2407,7 +2437,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
+      <xloc>448</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2451,6 +2481,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2460,7 +2492,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2504,6 +2536,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2513,7 +2547,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2557,6 +2591,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2566,7 +2602,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2610,6 +2646,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2619,7 +2657,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2663,6 +2701,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2672,7 +2712,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2716,6 +2756,8 @@
       </field>      <field>        <name>caratteristiche</name>
       </field>      <field>        <name>tipo</name>
       </field>      <field>        <name>currency</name>
+      </field>      <field>        <name>runflat</name>
+      </field>      <field>        <name>tipop</name>
       </field>        <select_unspecified>N</select_unspecified>
     </fields>    <cluster_schema/>
     <remotesteps>
@@ -2725,7 +2767,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>576</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -2765,8 +2807,128 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>976</xloc>
       <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations 2 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations 2 3</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -2797,7 +2959,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>976</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3146,6 +3308,30 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>runflat</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>tipop</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -3155,7 +3341,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1040</xloc>
+      <xloc>1200</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -3209,8 +3395,362 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>704</xloc>
       <yloc>16</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>tmp_ivel_accoppiate</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J&#x3a; max 100 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K&#x3a; max 110 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L&#x3a; max 120 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M&#x3a; max 130 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N&#x3a; max 140 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P&#x3a; max 150 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q&#x3a; max 160 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R&#x3a; max 170 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S&#x3a; max 180 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T&#x3a; max 190 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U&#x3a; max 200 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H&#x3a; max 210 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V&#x3a; max 240 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR&#x3a; max &#x3e;240 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W&#x3a; max 270 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y&#x3a; max 300 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B&#x3a; max 50 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C&#x3a; max 60 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D&#x3a; max 65 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E&#x3a; max 70 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F&#x3a; max 80 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G&#x3a; max 90 km&#x2f;h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>tmp_ivel_auto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J&#x3a; max 100 kmh</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K&#x3a; max 110 kmh</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L&#x3a; max 120 kmh</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M&#x3a; max 130 kmh</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N&#x3a; max 140 kmh</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P&#x3a; max 150 kmh</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q&#x3a; max 160 kmh</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R&#x3a; max 170 kmh</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S&#x3a; max 180 kmh</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T&#x3a; max 190 kmh</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U&#x3a; max 200 kmh</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H&#x3a; max 210 kmh</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V&#x3a; max 240 kmh</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR&#x3a; max &#x3e;240 kmh</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W&#x3a; max 270 kmh</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y&#x3a; max 300 kmh</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B&#x3a; max 50 kmh</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C&#x3a; max 60 kmh</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D&#x3a; max 65 kmh</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E&#x3a; max 70 kmh</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F&#x3a; max 80 kmh</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G&#x3a; max 90 kmh</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>16</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>tmp_ivel_moto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J&#x3a; max 100 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K&#x3a; max 110 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L&#x3a; max 120 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M&#x3a; max 130 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N&#x3a; max 140 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P&#x3a; max 150 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q&#x3a; max 160 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R&#x3a; max 170 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S&#x3a; max 180 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T&#x3a; max 190 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U&#x3a; max 200 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H&#x3a; max 210 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V&#x3a; max 240 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR&#x3a; max &#x3e;240 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W&#x3a; max 270 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y&#x3a; max 300 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B&#x3a; max 50 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C&#x3a; max 60 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D&#x3a; max 65 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E&#x3a; max 70 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F&#x3a; max 80 km&#x2f;h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G&#x3a; max 90 km&#x2f;h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

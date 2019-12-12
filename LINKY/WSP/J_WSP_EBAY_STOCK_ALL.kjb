@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;21 18&#x3a;18&#x3a;32.170</modified_date>
+  <modified_date>2018&#x2f;04&#x2f;14 09&#x3a;36&#x3a;14.498</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>127</xloc>
-      <yloc>607</yloc>
+      <xloc>800</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -633,8 +633,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>709</xloc>
-      <yloc>613</yloc>
+      <xloc>528</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>Mail Error</name>
@@ -713,8 +713,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>260</xloc>
-      <yloc>608</yloc>
+      <xloc>688</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_stock_wsp_fr</name>
@@ -858,7 +858,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>320</xloc>
-      <yloc>480</yloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>Azzera giacenza_ferie</name>
@@ -1099,7 +1099,7 @@
       <to>Azzera giacenza_ferie</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -1108,9 +1108,18 @@
       <to>t_ebay_ExpFile_stock_wsp_it</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_imp_ebay_wsp_experimental</from>
+      <to>t_ebay_ExpFile_stock_wsp_it</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

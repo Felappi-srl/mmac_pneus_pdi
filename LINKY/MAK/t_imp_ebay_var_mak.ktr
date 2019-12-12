@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;11 13&#x3a;20&#x3a;52.418</modified_date>
+    <modified_date>2018&#x2f;04&#x2f;26 10&#x3a;00&#x3a;54.850</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -437,8 +437,8 @@
   </notepads>
   <connection>
     <name>CONNECTOR</name>
-    <server>192.168.1.11</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>CONNECTOR</database>
     <port>1433</port>
@@ -451,6 +451,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -462,8 +463,8 @@
   </connection>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -473,10 +474,10 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
       <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
@@ -540,7 +541,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;annoauto,&#x27;&#x27;&#x29; &#x2b; coalesce&#x28;tipoauto,&#x27;&#x27;&#x29;&#x29;&#xd;&#xa;  ,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa;,1,46&#x29; as codicevar&#xd;&#xa;,&#xd;&#xa;case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;,  COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS SHORT_DESC&#xd;&#xa;, case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end &#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS DESCRIPTION&#xd;&#xa;,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;marcaauto,&#xd;&#xa;modelloauto,&#xd;&#xa;annoauto,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV ,&#xd;&#xa;case when isNAD is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;ISNAD,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertNAD&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; and giacenza&#x3e;1 and prezzo is not null&#xd;&#xa;and &#x28;out_prod is null or out_prod&#x3c;&#x3e;1&#x29;&#xd;&#xa;-- and &#xd;&#xa;--marcaauto &#x3d; &#x27;RENAULT&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;F6560MIBM45VK2&#x27;&#xd;&#xa;&#xd;&#xa;</sql>
+    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, upper&#x28;partnumber &#x2b; codiceauto&#x29; as codicevar&#xd;&#xa;, case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;REPLACE&#x28;REPLACE&#x28;REPLACE&#x28;CANALE,&#x27;J&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;CASE WHEN INTERASSE &#x3d; &#x27;098&#x27; THEN &#x27;98&#x27; ELSE INTERASSE END,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;,  COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;REPLACE&#x28;REPLACE&#x28;REPLACE&#x28;CANALE,&#x27;J&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;CASE WHEN INTERASSE &#x3d; &#x27;098&#x27; THEN &#x27;98&#x27; ELSE INTERASSE END,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS SHORT_DESC&#xd;&#xa;, case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end &#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29; &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;REPLACE&#x28;REPLACE&#x28;REPLACE&#x28;CANALE,&#x27;J&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;CASE WHEN INTERASSE &#x3d; &#x27;098&#x27; THEN &#x27;98&#x27; ELSE INTERASSE END,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29; AS DESCRIPTION&#xd;&#xa;,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;marcaauto,&#xd;&#xa;modelloauto,&#xd;&#xa;annoauto,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV ,&#xd;&#xa;case when isNAD is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;ISNAD,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertNAD&#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; and giacenza&#x3e;1 and prezzo is not null&#xd;&#xa;and &#x28;out_prod is null or out_prod&#x3c;&#x3e;1&#x29;&#xd;&#xa;-- and &#xd;&#xa;--marcaauto &#x3d; &#x27;RENAULT&#x27;&#xd;&#xa;--and partnumber&#x3d;&#x27;F1020NNIB19WSX&#x27;&#xd;&#xa;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

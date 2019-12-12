@@ -440,3 +440,12 @@ Save repository element : CONNECTOR : Modification by user
 Save database : Modification by user
 Save repository element : LINKY : Modification by user
 Rename job : Renamed from J_associazione_moto_exp to J_ASSOCIA_MOTO_EXP
+Rename job : Renamed from J_LOAD_PARTNERS_2017 to J_LOAD_PARTNERS_2017_MYSQL
+Rename transformation : Renamed from t_linky_2017_web_pneumatici_exp to t_linky_2017_web_pneumatici_exp_backup_11-01-2018
+Rename transformation : Renamed from t_linky_2017_web_pneumatici_exp2222 to t_linky_2017_web_pneumatici_exp
+Rename transformation : Renamed from t_load_centrogomme_2018_equal_row to t_load_all_file_duplicate_rows
+Rename transformation : Renamed from t_load_pneusservice_onliy_dispo to t_load_pneusservice_only_dispo
+Rename transformation : Renamed from t_linky_2017_web_convert_accoppiate to t_linky_2017_web_agg_TITLE_accoppiate
+Rename transformation : Renamed from t_linky_2017_web_import_title_accoppiate to t_linky_2017_web_import_giacenza_accoppiate
+Rename transformation : Renamed from t_linky_2017_web_giacenze_exp_ALL to t_linky_2017_web_agg_report_mag_giacenze
+Rename transformation : Renamed from t_imp_ebay_var_pns to t_imp_ebay_var_top

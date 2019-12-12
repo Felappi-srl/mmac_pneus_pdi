@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;Toyo</directory>
+    <directory>/CONNECTOR/Toyo</directory>
     <parameters>
     </parameters>
     <log>
@@ -407,7 +407,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>10000</size_rowset>
+    <size_rowset>100000</size_rowset>
     <sleep_time_empty>0</sleep_time_empty>
     <sleep_time_full>0</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
+    <created_date>2014/07/18 15:39:14.807</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;09&#x2f;05 15&#x3a;55&#x3a;37.791</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/14 11:05:56.028</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,17 +448,50 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
@@ -474,16 +507,11 @@
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Add constants</from>
-      <to>Value Mapper</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Value Mapper</from>
+      <from>STAGIONE</from>
       <to>Get System Info</to>
       <enabled>Y</enabled>
     </hop>
@@ -494,7 +522,7 @@
     </hop>
     <hop>
       <from>Calculator</from>
-      <to>Value Mapper 2</to>
+      <to>RUMORE</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -503,7 +531,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Value Mapper 2</from>
+      <from>RUMORE</from>
       <to>Modified Java Script Value</to>
       <enabled>Y</enabled>
     </hop>
@@ -514,7 +542,12 @@
     </hop>
     <hop>
       <from>Escludi OTHER</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
+      <to>Dummy (do nothing)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Text file input</from>
+      <to>Escludi OTHER</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -524,17 +557,87 @@
     </hop>
     <hop>
       <from>Filter rows 2</from>
-      <to>Insert &#x2f; Update NO COSTO</to>
+      <to>Check Prezzo Tyre</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Check Prezzo Tyre</from>
+      <to>Insert / Update NO COSTO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Filter rows 2</from>
-      <to>Insert &#x2f; Update SI COSTO</to>
+      <to>Check Prezzo Tyre 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Text file input</from>
-      <to>Escludi OTHER</to>
+      <from>Check Prezzo Tyre 2</from>
+      <to>Insert / Update SI COSTO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Database lookup</from>
+      <to>Filtra category</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Err_MARCA</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtra category</from>
+      <to>Create_IPCODESTD</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtra category</from>
+      <to>Select NO marca</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
+      <to>Var Mail</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MARCA</from>
+      <to>Database lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select NO marca</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup</from>
+      <to>MARCA</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Var Mail</from>
+      <to>Mail</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Create_IPCODESTD</from>
+      <to>STAGIONE</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -565,7 +668,7 @@
       <field>
         <name>sconto</name>
         <type>Number</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal>.</decimal>
         <group>,</group>
@@ -583,12 +686,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>438</xloc>
-      <yloc>43</yloc>
+      <xloc>352</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
@@ -610,7 +712,7 @@
       <value_length>15</value_length>
       <value_precision>4</value_precision>
       <remove>N</remove>
-      <conversion_mask>&#x23;.&#x23;&#x23;</conversion_mask>
+      <conversion_mask>#.##</conversion_mask>
       <decimal_symbol>.</decimal_symbol>
       <grouping_symbol>,</grouping_symbol>
       <currency_symbol/>
@@ -623,14 +725,218 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>755</xloc>
-      <yloc>46</yloc>
+      <xloc>832</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
+    <name>Check Prezzo Tyre</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
+
+var giacenza;
+
+if(Prezzonetto &lt; 10){
+
+giacenza = 0;
+
+}else{
+
+giacenza = QTY;
+
+};</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>giacenza</name>
+        <rename>giacenza</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Check Prezzo Tyre 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
+
+var giacenza;
+
+if(Prezzonetto &lt; 10){
+
+giacenza = 0;
+
+}else{
+
+giacenza = QTY;
+
+};</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>giacenza</name>
+        <rename>giacenza</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>384</xloc>
+      <yloc>528</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Create_IPCODESTD</name>
+    <type>DBProc</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <procedure>LINKY.dbo.linky_calc_ipcodestd</procedure>
+    <lookup>
+      <arg>
+        <name>Codice Prodotto</name>
+        <direction>IN</direction>
+        <type>String</type>
+      </arg>
+      <arg>
+        <name>idmarca</name>
+        <direction>IN</direction>
+        <type>Number</type>
+      </arg>
+      <arg>
+        <name>partner</name>
+        <direction>IN</direction>
+        <type>String</type>
+      </arg>
+    </lookup>
+    <result>
+      <name>IPCODESTD</name>
+      <type>String</type>
+    </result>
+    <auto_commit>Y</auto_commit>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Database lookup</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_integro_marche</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>MARCA</name>
+        <field>marca</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>idmarca</name>
+        <rename>idmarca</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -648,12 +954,44 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>160</yloc>
+      <xloc>144</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Err_MARCA</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT err_marca, marca_ok FROM linky_integro_convert_marca 
+-- WHERE 1=1 
+order by err_marca</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Escludi OTHER</name>
     <type>FilterRows</type>
@@ -665,34 +1003,61 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
-<send_false_to>Filter rows</send_false_to>
+    <send_true_to>Dummy (do nothing)</send_true_to>
+    <send_false_to>Filter rows</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>GruppoMerce</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>OTHER</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>OR</operator>
-   <leftvalue>Brand</leftvalue>
-   <function>&#x3d;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>Brand</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>OR</operator>
-   <leftvalue>Mag.</leftvalue>
-   <function>&#x3c;&#x3e;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>TIT</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>GruppoMerce</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>OTHER</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>Brand</leftvalue>
+            <function>=</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>Brand</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>OR</operator>
+            <leftvalue>Mag.</leftvalue>
+            <function>&lt;></function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>TIT</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -702,12 +1067,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>128</xloc>
-      <yloc>48</yloc>
+      <xloc>48</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
@@ -719,27 +1083,45 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Select values</send_true_to>
-<send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
+    <send_true_to>Select values</send_true_to>
+    <send_false_to>Dummy (do nothing)</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>Codice Prodotto</leftvalue>
-   <function>IS NOT NULL</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>&#x3c;null&#x3e;</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>Prezzo listino</leftvalue>
-   <function>&#x3c;&#x3e;</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>,00</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>Codice Prodotto</leftvalue>
+            <function>IS NOT NULL</function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>&lt;null></text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+          <condition>
+            <negated>N</negated>
+            <operator>AND</operator>
+            <leftvalue>Prezzo listino</leftvalue>
+            <function>&lt;></function>
+            <rightvalue/>
+            <value>
+              <name>constant</name>
+              <type>String</type>
+              <text>,00</text>
+              <length>-1</length>
+              <precision>-1</precision>
+              <isnull>N</isnull>
+              <mask/>
+            </value>
+          </condition>
+        </conditions>
+      </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -749,12 +1131,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>48</yloc>
+      <xloc>144</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Filter rows 2</name>
     <type>FilterRows</type>
@@ -766,15 +1147,15 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Insert &#x2f; Update NO COSTO</send_true_to>
-<send_false_to>Insert &#x2f; Update SI COSTO</send_false_to>
+    <send_true_to>Check Prezzo Tyre</send_true_to>
+    <send_false_to>Check Prezzo Tyre 2</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <leftvalue>Costo</leftvalue>
- <function>IS NULL</function>
- <rightvalue/>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>Costo</leftvalue>
+        <function>IS NULL</function>
+        <rightvalue/>
+      </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -784,12 +1165,45 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>208</yloc>
+      <xloc>512</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Filtra category</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Create_IPCODESTD</send_true_to>
+    <send_false_to>Select NO marca</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>idmarca</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Formula</name>
     <type>Formula</type>
@@ -801,20 +1215,22 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-       <formula><field_name>CodiceRum</field_name>
-<formula_string>&#x5b;Rumore&#x5d;&#x26;&#x22;_&#x22;&#x26;&#x5b;db&#x5d;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
-       <formula><field_name>DescrizioneRumore</field_name>
-<formula_string>&#x5b;db&#x5d;&#x26;&#x22;DB &#x22;&#x26;&#x5b;ParentesiRumore&#x5d;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
+    <formula>
+      <field_name>CodiceRum</field_name>
+      <formula_string>[Rumore]&amp;"_"&amp;[db]</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
+    <formula>
+      <field_name>DescrizioneRumore</field_name>
+      <formula_string>[db]&amp;"DB "&amp;[ParentesiRumore]</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -823,12 +1239,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>608</xloc>
-      <yloc>208</yloc>
+      <xloc>512</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Get System Info</name>
     <type>SystemInfo</type>
@@ -843,9 +1258,9 @@
     <fields>
       <field>
         <name>OGGI</name>
-        <type>system date &#x28;variable&#x29;</type>
-        </field>
-      </fields>
+        <type>system date (variable)</type>
+      </field>
+    </fields>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -854,14 +1269,58 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>652</xloc>
-      <yloc>48</yloc>
+      <xloc>928</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Insert &#x2f; Update NO COSTO</name>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>partner</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>MARCHE</aggregate>
+        <subject>MARCA</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>944</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / Update NO COSTO</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -872,21 +1331,27 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <commit>1</commit>
+    <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
       <table>linky_integro_articoli</table>
       <key>
-        <name>Codice Prodotto</name>
-        <field>IpCode</field>
-        <condition>&#x3d;</condition>
+        <name>IPCODESTD</name>
+        <field>IPCODESTD</field>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>partner</name>
         <field>partner</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>idmarca</name>
+        <field>IDMARCA</field>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -917,7 +1382,7 @@
       <value>
         <name>DESCRIZIONE</name>
         <rename>Descrizione</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>CODICEMARCA</name>
@@ -1001,7 +1466,7 @@
       </value>
       <value>
         <name>GIACENZA</name>
-        <rename>QTY</rename>
+        <rename>giacenza</rename>
         <update>Y</update>
       </value>
       <value>
@@ -1024,6 +1489,21 @@
         <rename>IndVelocita</rename>
         <update>N</update>
       </value>
+      <value>
+        <name>RUNFLAT</name>
+        <rename>RUNFLATOK</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>IDMARCA</name>
+        <rename>idmarca</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>IPCODESTD</name>
+        <rename>IPCODESTD</rename>
+        <update>N</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -1033,14 +1513,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>208</yloc>
+      <xloc>240</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Insert &#x2f; Update SI COSTO</name>
+    <name>Insert / Update SI COSTO</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -1059,13 +1538,13 @@
       <key>
         <name>Codice Prodotto</name>
         <field>IpCode</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>partner</name>
         <field>partner</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1096,7 +1575,7 @@
       <value>
         <name>DESCRIZIONE</name>
         <rename>Descrizione</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>CODICEMARCA</name>
@@ -1180,7 +1659,7 @@
       </value>
       <value>
         <name>GIACENZA</name>
-        <rename>QTY</rename>
+        <rename>giacenza</rename>
         <update>Y</update>
       </value>
       <value>
@@ -1203,6 +1682,11 @@
         <rename>IndVelocita</rename>
         <update>N</update>
       </value>
+      <value>
+        <name>RUNFLAT</name>
+        <rename>RUNFLATOK</rename>
+        <update>N</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -1212,12 +1696,132 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>304</yloc>
+      <xloc>240</xloc>
+      <yloc>624</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
+  </step>
+  <step>
+    <name>MARCA</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
 
+
+
+
+if( marca_ok != null)
+	{
+		MARCA = trim(marca_ok);
+	}
+	else
+	{
+		MARCA = trim(Brand);		
+	}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>MARCA</name>
+        <rename>MARCA</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Mail</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <server>smtpserver</server>
+    <port>smtpport</port>
+    <destination>dest</destination>
+    <destinationCc>cc</destinationCc>
+    <destinationBCc/>
+    <replyToAddresses>mailrisp</replyToAddresses>
+    <replyto>mailrisp</replyto>
+    <replytoname>namerisp</replytoname>
+    <subject>oggetto</subject>
+    <include_date>N</include_date>
+    <include_subfolders>N</include_subfolders>
+    <zipFilenameDynamic>N</zipFilenameDynamic>
+    <isFilenameDynamic>Y</isFilenameDynamic>
+    <attachContentFromField>N</attachContentFromField>
+    <attachContentField/>
+    <attachContentFileNameField/>
+    <dynamicFieldname>linkfile</dynamicFieldname>
+    <dynamicWildcard/>
+    <dynamicZipFilename/>
+    <sourcefilefoldername/>
+    <sourcewildcard/>
+    <contact_person/>
+    <contact_phone/>
+    <comment>corpo</comment>
+    <include_files>N</include_files>
+    <zip_files>N</zip_files>
+    <zip_name/>
+    <zip_limit_size>0</zip_limit_size>
+    <use_auth>Y</use_auth>
+    <use_secure_auth>Y</use_secure_auth>
+    <auth_user>smtpuser</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4b814ba60ce93bcc9</auth_password>
+    <only_comment>N</only_comment>
+    <use_HTML>N</use_HTML>
+    <use_Priority>N</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>normal</priority>
+    <importance>normal</importance>
+    <sensitivity>normal</sensitivity>
+    <secureconnectiontype>SSL</secureconnectiontype>
+    <embeddedimages>
+      </embeddedimages>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1120</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Modified Java Script Value</name>
     <type>ScriptValueMod</type>
@@ -1231,28 +1835,135 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;GruppoMerce&#x3d;&#x3d;&#x27;PCR&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;VETTURA&#x27;&#x3b;&#xd;&#xa;&#x7d; else if &#x28;GruppoMerce&#x3d;&#x3d;&#x27;PC&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;VETTURA&#x27;&#x3b;&#xd;&#xa;&#x7d; else if &#x28;GruppoMerce&#x3d;&#x3d;&#x27;LVR&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;TRASPORTO LEGGERO&#x27;&#x3b;&#xd;&#xa;&#x7d; else if &#x28;GruppoMerce&#x3d;&#x3d;&#x27;SUV&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;FUORISTRADA&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;Tipomat&#x3d;&#x3d;&#x27;22  STUDLESS&#x27;&#x29; &#x7b;&#xd;&#xa;  SETTOREOK&#x3d;&#x27;RUN FLAT&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f;&#x5b;&#x5d;&#xd;&#xa;&#xd;&#xa;QTY &#x3d; Disp.replace&#x28;&#x27;&#x2b;&#x27;,&#x27;&#x27;&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;QTY&#x3c;0&#x29; &#x7b;&#xd;&#xa;  QTY&#x3d;0&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;STAGIONE&#x3d;&#x3d;&#x27;ESTATE&#x27;&#x29; &#x7b;&#xd;&#xa;  CODICESTAGIONE&#x3d;&#x27;E&#x27;&#x3b;&#xd;&#xa;&#x7d; else if &#x28;STAGIONE&#x3d;&#x3d;&#x27;INVERNO&#x27;&#x29; &#x7b;&#xd;&#xa;  CODICESTAGIONE&#x3d;&#x27;I&#x27;&#x3b;&#xd;&#xa;&#x7d; else if &#x28;STAGIONE&#x3d;&#x3d;&#x27;4 STAGIONI&#x27;&#x29; &#x7b;&#xd;&#xa;  CODICESTAGIONE&#x3d;&#x27;4&#x27;&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>SETTOREOK</name>
+        <jsScript_script>//Script qua
+
+if (GruppoMerce=='PCR') {
+  SETTOREOK='VETTURA';
+} else if (GruppoMerce=='PC') {
+  SETTOREOK='VETTURA';
+} else if (GruppoMerce=='LVR') {
+  SETTOREOK='TRASPORTO LEGGERO';
+} else if (GruppoMerce=='SUV') {
+  SETTOREOK='FUORISTRADA';
+}
+
+//if (Tipomat=='22  STUDLESS') {
+//  SETTOREOK='RUN FLAT';}
+
+if (Tipomat=='22  STUDLESS') {
+  RUNFLATOK='Y';
+}
+else{
+  RUNFLATOK='N';
+}
+
+
+
+//[]
+
+QTY = Disp.replace('+','');
+
+if (QTY&lt;0) {
+  QTY=0;
+}
+
+if (STAGIONE=='ESTATE') {
+  CODICESTAGIONE='E';
+} else if (STAGIONE=='INVERNO') {
+  CODICESTAGIONE='I';
+} else if (STAGIONE=='4 STAGIONI') {
+  CODICESTAGIONE='4';
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>SETTOREOK</name>
         <rename>SETTOREOK</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>QTY</name>
+      </field>
+      <field>
+        <name>QTY</name>
         <rename>QTY</rename>
         <type>Integer</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>CODICESTAGIONE</name>
+      </field>
+      <field>
+        <name>CODICESTAGIONE</name>
         <rename>CODICESTAGIONE</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+      <field>
+        <name>RUNFLATOK</name>
+        <rename>RUNFLATOK</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>RUMORE</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>Rumore</field_to_use>
+    <target_field>ParentesiRumore</target_field>
+    <non_match_default>)</non_match_default>
+    <fields>
+      <field>
+        <source_value>1</source_value>
+        <target_value>)</target_value>
+      </field>
+      <field>
+        <source_value>2</source_value>
+        <target_value>))</target_value>
+      </field>
+      <field>
+        <source_value>3</source_value>
+        <target_value>)))</target_value>
+      </field>
+      <field>
+        <source_value>4</source_value>
+        <target_value>))))</target_value>
+      </field>
+      <field>
+        <source_value>5</source_value>
+        <target_value>)))))</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1261,11 +1972,84 @@
     </remotesteps>
     <GUI>
       <xloc>752</xloc>
-      <yloc>208</yloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>STAGIONE</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>Tipomat</field_to_use>
+    <target_field>STAGIONE</target_field>
+    <non_match_default>ESTATE</non_match_default>
+    <fields>
+      <field>
+        <source_value>11  SUMMER</source_value>
+        <target_value>ESTATE</target_value>
+      </field>
+      <field>
+        <source_value>21  SNOW</source_value>
+        <target_value>INVERNO</target_value>
+      </field>
+      <field>
+        <source_value>12  AW</source_value>
+        <target_value>4 STAGIONI</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>928</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select NO marca</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>MARCA</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -1277,32 +2061,82 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>Brand</name>
-      </field>      <field>        <name>Ean</name>
-      </field>      <field>        <name>Codice Prodotto</name>
-      </field>      <field>        <name>Descrizione</name>
-      </field>      <field>        <name>Tipomat</name>
-      </field>      <field>        <name>GruppoMerce</name>
-      </field>      <field>        <name>Consumo</name>
-      </field>      <field>        <name>Wet</name>
-      </field>      <field>        <name>Rumore</name>
-      </field>      <field>        <name>Db</name>
-      </field>      <field>        <name>Mag.</name>
-      </field>      <field>        <name>Disp</name>
-      </field>      <field>        <name>Arrivi</name>
-      </field>      <field>        <name>Prezzo listino</name>
-      </field>      <field>        <name>Agg.</name>
-      </field>      <field>        <name>Misure</name>
-      </field>      <field>        <name>Mis.1</name>
-      </field>      <field>        <name>Mis.2</name>
-      </field>      <field>        <name>Mis.3</name>
-      </field>      <field>        <name>Disegno</name>
-      </field>      <field>        <name>Imm.</name>
-      </field>      <field>        <name>Costo</name>
-      </field>      <field>        <name>IndCarico</name>
-      </field>      <field>        <name>IndVelocita</name>
-      </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>Prezzo listino</name>
+    <fields>
+      <field>
+        <name>Brand</name>
+      </field>
+      <field>
+        <name>Ean</name>
+      </field>
+      <field>
+        <name>Codice Prodotto</name>
+      </field>
+      <field>
+        <name>Descrizione</name>
+      </field>
+      <field>
+        <name>Tipomat</name>
+      </field>
+      <field>
+        <name>GruppoMerce</name>
+      </field>
+      <field>
+        <name>Consumo</name>
+      </field>
+      <field>
+        <name>Wet</name>
+      </field>
+      <field>
+        <name>Rumore</name>
+      </field>
+      <field>
+        <name>Db</name>
+      </field>
+      <field>
+        <name>Mag.</name>
+      </field>
+      <field>
+        <name>Disp</name>
+      </field>
+      <field>
+        <name>Arrivi</name>
+      </field>
+      <field>
+        <name>Prezzo listino</name>
+      </field>
+      <field>
+        <name>Agg.</name>
+      </field>
+      <field>
+        <name>Misure</name>
+      </field>
+      <field>
+        <name>Mis.1</name>
+      </field>
+      <field>
+        <name>Mis.2</name>
+      </field>
+      <field>
+        <name>Mis.3</name>
+      </field>
+      <field>
+        <name>Disegno</name>
+      </field>
+      <field>
+        <name>Imm.</name>
+      </field>
+      <field>
+        <name>Costo</name>
+      </field>
+      <field>
+        <name>IndCarico</name>
+      </field>
+      <field>
+        <name>IndVelocita</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>Prezzo listino</name>
         <rename>Prezzo listino</rename>
         <type>Number</type>
         <length>-2</length>
@@ -1317,7 +2151,9 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>      <meta>        <name>Costo</name>
+      </meta>
+      <meta>
+        <name>Costo</name>
         <rename>Costo</rename>
         <type>Number</type>
         <length>-2</length>
@@ -1332,7 +2168,9 @@
         <grouping_symbol/>
         <currency_symbol/>
         <storage_type/>
-      </meta>    </fields>    <cluster_schema/>
+      </meta>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1340,12 +2178,93 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>48</yloc>
+      <xloc>256</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>MARCA</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>96</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Err_MARCA</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>Brand</name>
+        <field>err_marca</field>
+      </key>
+      <value>
+        <name>marca_ok</name>
+        <rename>marca_ok</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Text file input</name>
     <type>TextFileInput</type>
@@ -1361,8 +2280,8 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>&#x3b;</separator>
-    <enclosure>&#x22;</enclosure>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
     <header>Y</header>
@@ -1382,9 +2301,10 @@
     <rownum_field/>
     <format>mixed</format>
     <encoding/>
+    <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;Toyo&#x5c;ArtCli.csv</name>
+      <name>C:\LINKY\pneus\connector\Toyo\ArtCli.csv</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1789,15 +2709,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>32</xloc>
+      <xloc>48</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Value Mapper</name>
-    <type>ValueMapper</type>
+    <name>Unique rows</name>
+    <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1806,21 +2725,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>Tipomat</field_to_use>
-    <target_field>STAGIONE</target_field>
-    <non_match_default>ESTATE</non_match_default>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
     <fields>
       <field>
-        <source_value>11  SUMMER</source_value>
-        <target_value>ESTATE</target_value>
-      </field>
-      <field>
-        <source_value>21  SNOW</source_value>
-        <target_value>INVERNO</target_value>
-      </field>
-      <field>
-        <source_value>12  AW</source_value>
-        <target_value>4 STAGIONI</target_value>
+        <name>MARCA</name>
+        <case_insensitive>N</case_insensitive>
       </field>
     </fields>
     <cluster_schema/>
@@ -1831,46 +2743,156 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>550</xloc>
-      <yloc>44</yloc>
+      <xloc>864</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Value Mapper 2</name>
-    <type>ValueMapper</type>
+    <name>Var Mail</name>
+    <type>ScriptValueMod</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>Rumore</field_to_use>
-    <target_field>ParentesiRumore</target_field>
-    <non_match_default>&#x29;</non_match_default>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
+
+
+link = 'C:/LINKY/PNEUS/web/z_marche_new/' + partner + '_marche_new';
+linkfile = link + 'txt';
+
+dest = 'diego@tyreo.com';
+cc = 'lufelappi@libero.it';
+
+namerisp = 'Diego';
+mailrisp = 'diego@tyreo.com';
+
+smtpserver = 'smtp.zoho.eu';
+smtpport = '465';
+smtpuser = 'diego@tyreo.com';
+smtppass = 'diego_vitali';
+
+
+oggetto = 'ERRORE - MARCA NUOVA PER IL PARTNER ' + partner;
+corpo = MARCHE;
+
+gruppo=1;</jsScript_script>
+      </jsScript>
+    </jsScripts>
     <fields>
       <field>
-        <source_value>1</source_value>
-        <target_value>&#x29;</target_value>
+        <name>link</name>
+        <rename>link</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>
       <field>
-        <source_value>2</source_value>
-        <target_value>&#x29;&#x29;</target_value>
+        <name>dest</name>
+        <rename>dest</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>
       <field>
-        <source_value>3</source_value>
-        <target_value>&#x29;&#x29;&#x29;</target_value>
+        <name>cc</name>
+        <rename>cc</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>
       <field>
-        <source_value>4</source_value>
-        <target_value>&#x29;&#x29;&#x29;&#x29;</target_value>
+        <name>namerisp</name>
+        <rename>namerisp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>
       <field>
-        <source_value>5</source_value>
-        <target_value>&#x29;&#x29;&#x29;&#x29;&#x29;</target_value>
+        <name>mailrisp</name>
+        <rename>mailrisp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpserver</name>
+        <rename>smtpserver</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpport</name>
+        <rename>smtpport</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpuser</name>
+        <rename>smtpuser</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtppass</name>
+        <rename>smtppass</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>oggetto</name>
+        <rename>oggetto</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>corpo</name>
+        <rename>corpo</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>linkfile</name>
+        <rename>linkfile</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>gruppo</name>
+        <rename>gruppo</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>
     </fields>
     <cluster_schema/>
@@ -1881,12 +2903,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>758</xloc>
-      <yloc>124</yloc>
+      <xloc>1040</xloc>
+      <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

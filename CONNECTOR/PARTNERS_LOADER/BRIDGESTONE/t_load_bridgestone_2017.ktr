@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;PARTNERS_LOADER&#x2f;BRIDGESTONE</directory>
+    <directory>/CONNECTOR/PARTNERS_LOADER/BRIDGESTONE</directory>
     <parameters>
     </parameters>
     <log>
@@ -407,7 +407,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>10000</size_rowset>
+    <size_rowset>100000</size_rowset>
     <sleep_time_empty>0</sleep_time_empty>
     <sleep_time_full>0</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;14.807</created_date>
+    <created_date>2014/07/18 15:39:14.807</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;07&#x2f;06 14&#x3a;12&#x3a;36.175</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/01 18:02:26.142</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,23 +448,56 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
     <hop>
       <from>Filter rows</from>
-      <to>Dummy &#x28;do nothing&#x29;</to>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -483,32 +516,12 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Get System Info</from>
-      <to>Insert &#x2f; Update</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Calculator</from>
-      <to>Get System Info</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Stagione - SETTORE</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Stagione - SETTORE</from>
-      <to>Switch &#x2f; Case</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Switch &#x2f; Case</from>
+      <from>Switch / Case</from>
       <to>Estate</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Switch &#x2f; Case</from>
+      <from>Switch / Case</from>
       <to>Inverno</to>
       <enabled>Y</enabled>
     </hop>
@@ -522,58 +535,92 @@
       <to>Calculator</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Get System Info</from>
+      <to>Insert / Update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Database lookup</from>
+      <to>Filtra category</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Err_MARCA</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtra category</from>
+      <to>Create_IPCODESTD</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Filtra category</from>
+      <to>Select NO marca</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
+      <to>Var Mail</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MARCA</from>
+      <to>Database lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select NO marca</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows</from>
+      <to>Unique rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stream lookup</from>
+      <to>MARCA</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Unique rows</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Var Mail</from>
+      <to>Mail</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
+      <to>Stagione - SETTORE</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Create_IPCODESTD</from>
+      <to>Switch / Case</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Stagione - SETTORE</from>
+      <to>PARTNER</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PARTNER</from>
+      <to>Stream lookup</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Calculator</from>
+      <to>Get System Info</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
-  <step>
-    <name>Estate</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>partner</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>BRD</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>sconto</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>.49</nullif>
-        <length>5</length>
-        <precision>2</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>624</xloc>
-      <yloc>16</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
@@ -608,12 +655,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>80</yloc>
+      <xloc>528</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Concat Fields</name>
     <type>ConcatFields</type>
@@ -640,7 +686,6 @@
     <create_parent_folder>Y</create_parent_folder>
     <file>
       <name>file</name>
-      <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>txt</extention>
@@ -707,9 +752,9 @@
       </field>
     </fields>
     <ConcatFields>
-<targetFieldName>DESCRIZIONE</targetFieldName>
-<targetFieldLength>0</targetFieldLength>
-<removeSelectedFields>N</removeSelectedFields>
+      <targetFieldName>DESCRIZIONE</targetFieldName>
+      <targetFieldLength>0</targetFieldLength>
+      <removeSelectedFields>N</removeSelectedFields>
     </ConcatFields>
     <cluster_schema/>
     <remotesteps>
@@ -719,14 +764,108 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>80</yloc>
+      <xloc>256</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Dummy &#x28;do nothing&#x29;</name>
+    <name>Create_IPCODESTD</name>
+    <type>DBProc</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <procedure>LINKY.dbo.linky_calc_ipcodestd</procedure>
+    <lookup>
+      <arg>
+        <name>SKU</name>
+        <direction>IN</direction>
+        <type>String</type>
+      </arg>
+      <arg>
+        <name>idmarca</name>
+        <direction>IN</direction>
+        <type>Number</type>
+      </arg>
+      <arg>
+        <name>partner</name>
+        <direction>IN</direction>
+        <type>String</type>
+      </arg>
+    </lookup>
+    <result>
+      <name>IPCODESTD</name>
+      <type>String</type>
+    </result>
+    <auto_commit>Y</auto_commit>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Database lookup</name>
+    <type>DBLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <cache>Y</cache>
+    <cache_load_all>Y</cache_load_all>
+    <cache_size>0</cache_size>
+    <lookup>
+      <schema/>
+      <table>linky_integro_marche</table>
+      <orderby/>
+      <fail_on_multiple>N</fail_on_multiple>
+      <eat_row_on_failure>N</eat_row_on_failure>
+      <key>
+        <name>MARCA</name>
+        <field>marca</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>idmarca</name>
+        <rename>idmarca</rename>
+        <default/>
+        <type>Integer</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>624</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Dummy (do nothing)</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -744,12 +883,82 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>208</yloc>
+      <xloc>176</xloc>
+      <yloc>80</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Err_MARCA</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <sql>SELECT err_marca, marca_ok FROM linky_integro_convert_marca 
+-- WHERE 1=1 
+order by err_marca</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Estate</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>sconto</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>.46</nullif>
+        <length>5</length>
+        <precision>2</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>480</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
@@ -761,20 +970,20 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Dummy &#x28;do nothing&#x29;</send_true_to>
-<send_false_to>Concat Fields</send_false_to>
+    <send_true_to>Dummy (do nothing)</send_true_to>
+    <send_false_to>Concat Fields</send_false_to>
     <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>SUPPLIER_CODE</leftvalue>
-   <function>IS NULL</function>
-   <rightvalue/>
-   </condition>
-  </conditions>
- </condition>
+      <condition>
+        <negated>N</negated>
+        <conditions>
+          <condition>
+            <negated>N</negated>
+            <leftvalue>SUPPLIER_CODE</leftvalue>
+            <function>IS NULL</function>
+            <rightvalue/>
+          </condition>
+        </conditions>
+      </condition>
     </compare>
     <cluster_schema/>
     <remotesteps>
@@ -784,17 +993,50 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>80</yloc>
+      <xloc>176</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Filtra category</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Create_IPCODESTD</send_true_to>
+    <send_false_to>Select NO marca</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>idmarca</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Get System Info</name>
     <type>SystemInfo</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -804,9 +1046,9 @@
     <fields>
       <field>
         <name>OGGI</name>
-        <type>system date &#x28;variable&#x29;</type>
-        </field>
-      </fields>
+        <type>system date (variable)</type>
+      </field>
+    </fields>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -815,14 +1057,58 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>160</yloc>
+      <xloc>400</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Insert &#x2f; Update</name>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>partner</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>MARCHE</aggregate>
+        <subject>MARCA</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / Update</name>
     <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
@@ -833,21 +1119,27 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <commit>1</commit>
+    <commit>1000</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
       <table>linky_integro_articoli</table>
       <key>
-        <name>SKU</name>
-        <field>IPCODE</field>
-        <condition>&#x3d;</condition>
+        <name>IPCODESTD</name>
+        <field>IPCODESTD</field>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>partner</name>
-        <field>partner</field>
-        <condition>&#x3d;</condition>
+        <field>PARTNER</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>idmarca</name>
+        <field>IDMARCA</field>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -902,8 +1194,8 @@
       </value>
       <value>
         <name>IPCODESTD</name>
-        <rename>SKU</rename>
-        <update>Y</update>
+        <rename>IPCODESTD</rename>
+        <update>N</update>
       </value>
       <value>
         <name>CODICECERCHIO</name>
@@ -918,12 +1210,12 @@
       <value>
         <name>CODICEVEL</name>
         <rename>SP1</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>VEL</name>
         <rename>SP1</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>CODICELARGHEZZA</name>
@@ -948,7 +1240,7 @@
       <value>
         <name>ICARICO</name>
         <rename>LI1</rename>
-        <update>Y</update>
+        <update>N</update>
       </value>
       <value>
         <name>CODICEROTOLAMENTO</name>
@@ -975,6 +1267,16 @@
         <rename>PREZZOSCONTATO</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>RUNFLAT</name>
+        <rename>RUNFLATOK</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>IDMARCA</name>
+        <rename>idmarca</rename>
+        <update>N</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -984,12 +1286,241 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>848</xloc>
-      <yloc>240</yloc>
+      <xloc>288</xloc>
+      <yloc>528</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
+  </step>
+  <step>
+    <name>Inverno</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>sconto</name>
+        <type>Number</type>
+        <format>#.#</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>.55</nullif>
+        <length>5</length>
+        <precision>2</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
+      <yloc>592</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>MARCA</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
 
+
+
+
+if( marca_ok != null)
+	{
+		MARCA = trim(marca_ok);
+	}
+	else
+	{
+		MARCA = trim(BRAND_TEXT);		
+	}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>MARCA</name>
+        <rename>MARCA</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Mail</name>
+    <type>Mail</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <server>smtpserver</server>
+    <port>smtpport</port>
+    <destination>dest</destination>
+    <destinationCc>cc</destinationCc>
+    <destinationBCc/>
+    <replyToAddresses>mailrisp</replyToAddresses>
+    <replyto>mailrisp</replyto>
+    <replytoname>namerisp</replytoname>
+    <subject>oggetto</subject>
+    <include_date>N</include_date>
+    <include_subfolders>N</include_subfolders>
+    <zipFilenameDynamic>N</zipFilenameDynamic>
+    <isFilenameDynamic>Y</isFilenameDynamic>
+    <attachContentFromField>N</attachContentFromField>
+    <attachContentField/>
+    <attachContentFileNameField/>
+    <dynamicFieldname>linkfile</dynamicFieldname>
+    <dynamicWildcard/>
+    <dynamicZipFilename/>
+    <sourcefilefoldername/>
+    <sourcewildcard/>
+    <contact_person/>
+    <contact_phone/>
+    <comment>corpo</comment>
+    <include_files>N</include_files>
+    <zip_files>N</zip_files>
+    <zip_name/>
+    <zip_limit_size>0</zip_limit_size>
+    <use_auth>Y</use_auth>
+    <use_secure_auth>Y</use_secure_auth>
+    <auth_user>smtpuser</auth_user>
+    <auth_password>Encrypted 2be98afc86aa7f2e4b814ba60ce93bcc9</auth_password>
+    <only_comment>N</only_comment>
+    <use_HTML>N</use_HTML>
+    <use_Priority>N</use_Priority>
+    <encoding>UTF-8</encoding>
+    <priority>normal</priority>
+    <importance>normal</importance>
+    <sensitivity>normal</sensitivity>
+    <secureconnectiontype>SSL</secureconnectiontype>
+    <embeddedimages>
+      </embeddedimages>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>PARTNER</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>partner</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BRD</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select NO marca</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>MARCA</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -1001,29 +1532,73 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>EAN</name>
-      </field>      <field>        <name>SUPPLIER_CODE</name>
-      </field>      <field>        <name>PROD_INFO</name>
-      </field>      <field>        <name>BRAND_TEXT</name>
-      </field>      <field>        <name>RIM_INCH</name>
-      </field>      <field>        <name>WIDTH_MM</name>
-      </field>      <field>        <name>ASPECT_RATIO</name>
-      </field>      <field>        <name>DEPTH</name>
-      </field>      <field>        <name>LI1</name>
-      </field>      <field>        <name>SP1</name>
-      </field>      <field>        <name>RUN_FLAT</name>
-      </field>      <field>        <name>PRODUCT_TYPE</name>
-      </field>      <field>        <name>VEHICLE_TYPE</name>
-      </field>      <field>        <name>GROSS_PRICE</name>
-      </field>      <field>        <name>NOISE_PERFORMANCE</name>
-      </field>      <field>        <name>NOISE_CLASS_TYPE</name>
-      </field>      <field>        <name>ROLLING_RESISTANCE</name>
-      </field>      <field>        <name>WET_GRIP</name>
-      </field>      <field>        <name>EC_VE</name>
-      </field>      <field>        <name>DESCRIZIONE</name>
-      </field>      <field>        <name>PROD_GRP_2</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>EAN</name>
+      </field>
+      <field>
+        <name>SUPPLIER_CODE</name>
+      </field>
+      <field>
+        <name>PROD_INFO</name>
+      </field>
+      <field>
+        <name>BRAND_TEXT</name>
+      </field>
+      <field>
+        <name>RIM_INCH</name>
+      </field>
+      <field>
+        <name>WIDTH_MM</name>
+      </field>
+      <field>
+        <name>ASPECT_RATIO</name>
+      </field>
+      <field>
+        <name>DEPTH</name>
+      </field>
+      <field>
+        <name>LI1</name>
+      </field>
+      <field>
+        <name>SP1</name>
+      </field>
+      <field>
+        <name>RUN_FLAT</name>
+      </field>
+      <field>
+        <name>PRODUCT_TYPE</name>
+      </field>
+      <field>
+        <name>VEHICLE_TYPE</name>
+      </field>
+      <field>
+        <name>GROSS_PRICE</name>
+      </field>
+      <field>
+        <name>NOISE_PERFORMANCE</name>
+      </field>
+      <field>
+        <name>NOISE_CLASS_TYPE</name>
+      </field>
+      <field>
+        <name>ROLLING_RESISTANCE</name>
+      </field>
+      <field>
+        <name>WET_GRIP</name>
+      </field>
+      <field>
+        <name>EC_VE</name>
+      </field>
+      <field>
+        <name>DESCRIZIONE</name>
+      </field>
+      <field>
+        <name>PROD_GRP_2</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1031,12 +1606,52 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
-      <yloc>80</yloc>
+      <xloc>256</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Sort rows</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>MARCA</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>800</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Stagione - SETTORE</name>
     <type>ScriptValueMod</type>
@@ -1050,46 +1665,132 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;SUPPLIER_CODE.length&#x3d;&#x3d;4&#x29;&#x7b;&#xd;&#xa;	SKU&#x3d;&#x27;0&#x27; &#x2b; SUPPLIER_CODE&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	SKU&#x3d;SUPPLIER_CODE&#x3b;	&#xd;&#xa;&#x7d;&#xd;&#xa;lettera &#x3d; PROD_GRP_2.substr&#x28;PROD_GRP_2.length-1,1&#x29;&#x3b;&#xd;&#xa;sett &#x3d; PROD_GRP_2.substr&#x28;0,1&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;RUN_FLAT&#x3d;&#x3d;&#x27;RFT&#x27;&#x29;&#x7b;&#xd;&#xa;		SETTORE&#x3d;&#x27;RUN FLAT&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	if &#x28;sett&#x3d;&#x3d;&#x27;4&#x27;&#x29;&#x7b;&#xd;&#xa;		SETTORE&#x3d;&#x27;FUORISTRADA&#x27;&#x3b;&#xd;&#xa;	&#x7d;else if&#x28;sett&#x3d;&#x3d;&#x27;C&#x27;&#x29;&#x7b;&#xd;&#xa;		SETTORE&#x3d;&#x27;TRASPORTO LEGGERO&#x27;&#x3b;&#xd;&#xa;	&#x7d;else if&#x28;sett&#x3d;&#x3d;&#x27;P&#x27;&#x29;&#x7b;&#xd;&#xa;		SETTORE&#x3d;&#x27;VETTURA&#x27;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		SETTORE&#x3d;&#x27;VETTURA&#x27;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;lettera&#x3d;&#x3d;&#x27;W&#x27;&#x29;&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;INVERNO&#x27;&#x3b;&#xd;&#xa;&#x7d;else if&#x28;lettera&#x3d;&#x3d;&#x27;S&#x27;&#x29;&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;&#x7d;else if&#x28;lettera&#x3d;&#x3d;&#x27;A&#x27;&#x29;&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;4 STAGIONI&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	STAGIONEOK&#x3d;&#x27;ESTATE&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;MARCA &#x3d; upper&#x28;BRAND_TEXT&#x29;&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;NOISE_PERFORMANCE&#x29;&#x7b;&#xd;&#xa;	CODICERUM &#x3d; NOISE_PERFORMANCE &#x2b; &#x27;_&#x27; &#x2b; NOISE_CLASS_TYPE&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;		CODICERUM &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;NOISE_CLASS_TYPE &#x3d;&#x3d;&#x27;1&#x27;&#x29;&#x7b;&#xd;&#xa;	RUM&#x3d; NOISE_PERFORMANCE &#x2b; &#x27;DB &#x29;&#x27;&#x3b;&#xd;&#xa;&#x7d;else if &#x28;NOISE_CLASS_TYPE &#x3d;&#x3d;&#x27;2&#x27;&#x29;&#x7b;&#xd;&#xa;	RUM&#x3d; NOISE_PERFORMANCE &#x2b; &#x27;DB &#x29;&#x29;&#x27;&#x3b;&#xd;&#xa;&#x7d;else if &#x28;NOISE_CLASS_TYPE &#x3d;&#x3d;&#x27;3&#x27;&#x29;&#x7b;&#xd;&#xa;	RUM&#x3d; NOISE_PERFORMANCE &#x2b; &#x27;DB &#x29;&#x29;&#x29;&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	RUM&#x3d;&#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>STAGIONEOK</name>
+        <jsScript_script>//Script qua
+
+if (SUPPLIER_CODE.length==4){
+	SKU='0' + SUPPLIER_CODE;
+}else{
+	SKU=SUPPLIER_CODE;	
+}
+lettera = PROD_GRP_2.substr(PROD_GRP_2.length-1,1);
+sett = PROD_GRP_2.substr(0,1);
+
+
+if (sett=='4'){
+	SETTORE='FUORISTRADA';
+}else if(sett=='C'){
+	SETTORE='TRASPORTO LEGGERO';
+}else if(sett=='P'){
+	SETTORE='VETTURA';
+}else{
+	SETTORE='VETTURA';
+}
+
+
+
+if (RUN_FLAT=='RFT'){
+	RUNFLATOK='Y';
+}else if ( RUN_FLAT=='EXT') {
+	RUNFLATOK='Y';
+}else {
+	RUNFLATOK='N';
+}
+
+
+
+if (lettera=='W'){
+	STAGIONEOK='INVERNO';
+}else if(lettera=='S'){
+	STAGIONEOK='ESTATE';
+}else if(lettera=='A'){
+	STAGIONEOK='4 STAGIONI';
+}else{
+	STAGIONEOK='ESTATE';
+}
+
+MARCA = upper(BRAND_TEXT);
+
+if (NOISE_PERFORMANCE){
+	CODICERUM = NOISE_PERFORMANCE + '_' + NOISE_CLASS_TYPE;
+}else{
+		CODICERUM = '';
+}
+
+if (NOISE_CLASS_TYPE =='1'){
+	RUM= NOISE_PERFORMANCE + 'DB )';
+}else if (NOISE_CLASS_TYPE =='2'){
+	RUM= NOISE_PERFORMANCE + 'DB ))';
+}else if (NOISE_CLASS_TYPE =='3'){
+	RUM= NOISE_PERFORMANCE + 'DB )))';
+}else{
+	RUM='';
+}
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>STAGIONEOK</name>
         <rename>STAGIONEOK</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>MARCA</name>
+      </field>
+      <field>
+        <name>MARCA</name>
         <rename>MARCA</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>SETTORE</name>
+      </field>
+      <field>
+        <name>SETTORE</name>
         <rename>SETTORE</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>CODICERUM</name>
+      </field>
+      <field>
+        <name>CODICERUM</name>
         <rename>CODICERUM</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>RUM</name>
+      </field>
+      <field>
+        <name>RUM</name>
         <rename>RUM</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>      <field>        <name>SKU</name>
+      </field>
+      <field>
+        <name>SKU</name>
         <rename>SKU</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+      <field>
+        <name>RUNFLATOK</name>
+        <rename>RUNFLATOK</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1097,12 +1798,93 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>80</yloc>
+      <xloc>256</xloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>Stream lookup</name>
+    <type>StreamLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <from>Err_MARCA</from>
+    <input_sorted>N</input_sorted>
+    <preserve_memory>Y</preserve_memory>
+    <sorted_list>N</sorted_list>
+    <integer_pair>N</integer_pair>
+    <lookup>
+      <key>
+        <name>BRAND_TEXT</name>
+        <field>err_marca</field>
+      </key>
+      <value>
+        <name>marca_ok</name>
+        <rename>marca_ok</rename>
+        <default/>
+        <type>String</type>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Switch / Case</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fieldname>STAGIONEOK</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>String</case_value_type>
+    <case_value_format/>
+    <case_value_decimal/>
+    <case_value_group/>
+    <default_target_step>Estate</default_target_step>
+    <cases>
+      <case>
+        <value>INVERNO</value>
+        <target_step>Inverno</target_step>
+      </case>
+      <case>
+        <value>ESTATE</value>
+        <target_step>Estate</target_step>
+      </case>
+    </cases>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>496</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Text file input</name>
     <type>TextFileInput</type>
@@ -1118,7 +1900,7 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>&#x3b;</separator>
+    <separator>;</separator>
     <enclosure/>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
@@ -1139,9 +1921,10 @@
     <rownum_field/>
     <format>mixed</format>
     <encoding/>
+    <length>Characters</length>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;bridgestone&#x5c;PRICAT_BRIDGESTONE.CSV</name>
+      <name>C:\LINKY\PNEUS\connector\bridgestone\br1dg4\PRICAT_BRIDGESTONE.CSV</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -1738,7 +2521,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>LI3&#x28;DWB&#x29;</name>
+        <name>LI3(DWB)</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1753,7 +2536,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>LI4&#x28;DWB&#x29;</name>
+        <name>LI4(DWB)</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -1798,7 +2581,7 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>TL&#x2f;TT</name>
+        <name>TL/TT</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -2130,7 +2913,7 @@
       <field>
         <name>NOISE_PERFORMANCE</name>
         <type>Number</type>
-        <format>&#x23;</format>
+        <format>#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2251,15 +3034,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>48</xloc>
-      <yloc>80</yloc>
+      <xloc>80</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Switch &#x2f; Case</name>
-    <type>SwitchCase</type>
+    <name>Unique rows</name>
+    <type>Unique</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2268,66 +3050,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<fieldname>STAGIONEOK</fieldname>
-<use_contains>N</use_contains>
-<case_value_type>String</case_value_type>
-<case_value_format/>
-<case_value_decimal/>
-<case_value_group/>
-<default_target_step>Estate</default_target_step>
-<cases><case><value>INVERNO</value>
-<target_step>Inverno</target_step>
-</case><case><value>ESTATE</value>
-<target_step>Estate</target_step>
-</case></cases>    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>528</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Inverno</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
     <fields>
       <field>
-        <name>partner</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>BRD</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-      <field>
-        <name>sconto</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>.55</nullif>
-        <length>5</length>
-        <precision>2</precision>
-        <set_empty_string>N</set_empty_string>
+        <name>MARCA</name>
+        <case_insensitive>N</case_insensitive>
       </field>
     </fields>
     <cluster_schema/>
@@ -2338,12 +3068,171 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>160</yloc>
+      <xloc>880</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
+  </step>
+  <step>
+    <name>Var Mail</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script qua
 
+
+link = 'C:/LINKY/PNEUS/web/z_marche_new/' + partner + '_marche_new';
+linkfile = link + 'txt';
+
+dest = 'diego@tyreo.com';
+cc = 'lufelappi@libero.it';
+
+namerisp = 'Diego';
+mailrisp = 'diego@tyreo.com';
+
+smtpserver = 'smtp.zoho.eu';
+smtpport = '465';
+smtpuser = 'diego@tyreo.com';
+smtppass = 'diego_vitali';
+
+
+oggetto = 'ERRORE - MARCA NUOVA PER IL PARTNER ' + partner;
+corpo = MARCHE;
+
+gruppo=1;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>link</name>
+        <rename>link</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>dest</name>
+        <rename>dest</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>cc</name>
+        <rename>cc</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>namerisp</name>
+        <rename>namerisp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>mailrisp</name>
+        <rename>mailrisp</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpserver</name>
+        <rename>smtpserver</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpport</name>
+        <rename>smtpport</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtpuser</name>
+        <rename>smtpuser</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>smtppass</name>
+        <rename>smtppass</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>oggetto</name>
+        <rename>oggetto</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>corpo</name>
+        <rename>corpo</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>linkfile</name>
+        <rename>linkfile</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>gruppo</name>
+        <rename>gruppo</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1056</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

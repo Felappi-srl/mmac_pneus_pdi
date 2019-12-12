@@ -407,7 +407,7 @@
       <offset>0.0</offset>
       <maxdiff>0.0</maxdiff>
     </maxdate>
-    <size_rowset>10000</size_rowset>
+    <size_rowset>100000</size_rowset>
     <sleep_time_empty>0</sleep_time_empty>
     <sleep_time_full>0</sleep_time_full>
     <unique_connections>N</unique_connections>
@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;19.940</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;02 11&#x3a;46&#x3a;43.469</modified_date>
+    <modified_date>2018&#x2f;06&#x2f;13 09&#x3a;35&#x3a;04.756</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -486,14 +486,8 @@
       <schema/>
       <table>linky_tyre24</table>
       <key>
-        <name>IPCODE</name>
-        <field>IPCODE</field>
-        <condition>&#x3d;</condition>
-        <name2/>
-      </key>
-      <key>
-        <name>marca</name>
-        <field>MARCA</field>
+        <name>SKU</name>
+        <field>SKU</field>
         <condition>&#x3d;</condition>
         <name2/>
       </key>
@@ -539,7 +533,7 @@
       </value>
       <value>
         <name>IPCODE</name>
-        <rename>ipcodE</rename>
+        <rename>IPCODE</rename>
         <update>Y</update>
       </value>
       <value>
@@ -632,6 +626,16 @@
         <rename>prezzoriferimento</rename>
         <update>Y</update>
       </value>
+      <value>
+        <name>SKU</name>
+        <rename>SKU</rename>
+        <update>N</update>
+      </value>
+      <value>
+        <name>RUNFLAT</name>
+        <rename>runflat</rename>
+        <update>Y</update>
+      </value>
     </lookup>
     <cluster_schema/>
     <remotesteps>
@@ -659,7 +663,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>select &#xd;&#xa;partner&#xd;&#xa;, ipcodESTD as IPCODE&#xd;&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzo&#xd;&#xa; , round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzoLISTINO&#xd;&#xa;--, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 10&#x29;  &#x29;,0&#x29; as prezzo&#xd;&#xa;--, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 10&#x29;  &#x29;,0&#x29; as prezzoLISTINO&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE&#xd;&#xa; AS Category_Path&#xd;&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa;  &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xd;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xd;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE as Full_Category_path&#xd;&#xa;, marca&#xd;&#xa;, ipcode as codice&#xd;&#xa;, &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,DESCRIZIONE,&#x27;&#x27;&#x29; AS NOME&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,descrizione,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29; &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS SHORT_DESC&#xd;&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xd;&#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29;  &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27;  &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS DESCRIZIONE&#xd;&#xa;, &#x27;EUR&#x27; as currency&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as fullimg&#xd;&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;resized&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as resimg&#xd;&#xa;, case when giacenza &#x3c;&#x3e;0 then &#x27;Y&#x27; else &#x27;N&#x27; end as Publish&#xd;&#xa;, 21 as iva&#xd;&#xa;,  giacenza  as product_in_stock&#xd;&#xa;, 12234563 product_available&#xd;&#xa;, &#x27;N&#x27; as product_special&#xd;&#xa;, CODICECERCHIO AS CODCA1&#xd;&#xa;, CODICECERCHIO AS DESCA1&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;N&#x27; ELSE &#x27;E&#x27; END AS CODCA2&#xd;&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; ELSE &#x27;ESTIVE&#x27; END AS DESCA2&#xd;&#xa;, SERIE AS CODCA3&#xd;&#xa;, &#x27;SERIE &#x27; &#x2b; SERIE AS DESCA3&#xd;&#xa;, LARGHEZZA AS CODCA4&#xd;&#xa;, LARGHEZZA AS DESCA4&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; AS CODCA5&#xd;&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b;&#x27;&#x3a; &#x27; &#x2b;SUBSTRING&#x28;VEL,2,4&#x29; &#x2b; &#x27; Km&#x2f;h&#x27; AS DESCA5&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS CODCA6&#xd;&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS DESCA6,&#xd;&#xa;CODICEROTOLAMENTO,&#xd;&#xa;ROTOLAMENTO,&#xd;&#xa;CODICEADERENZA	,&#xd;&#xa;ADERENZA	,&#xd;&#xa;CODICERUMOROSITA,&#xd;&#xa;RUMOROSITA,&#xd;&#xa;REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; AS SETTORE,&#xd;&#xa;--case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else &#xd;&#xa;substring&#x28;EAN,1,13&#x29; &#xd;&#xa;--end &#xd;&#xa;as ean&#xd;&#xa;,prezzoscontato as prezzoriferimento&#xd;&#xa;from linky_integro_articoli&#xd;&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;--and partner not in &#x28;&#x27;TG&#x27;&#x29;&#xd;&#xa;and giacenza&#x3e;1 and prezzoscontato&#x3e;0&#xd;&#xa;and settore not in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xd;&#xa;--and ipcode&#x3d;&#x27;1208417178&#x27;&#xd;&#xa;order by ipcodeSTD, prezzoscontato desc</sql>
+    <sql>select &#xa;SKU&#xa;, partner&#xa;, ipcodESTD as IPCODE&#xa;, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzo&#xa; , round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 7&#x29; &#x2a; 1.10 &#x29;,0&#x29; as prezzoLISTINO&#xa;--, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 10&#x29;  &#x29;,0&#x29; as prezzo&#xa;--, round&#x28;&#x28;&#x28;prezzoscontato &#x2b; 10&#x29;  &#x29;,0&#x29; as prezzoLISTINO&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE&#xa; AS Category_Path&#xa;, REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xa;  &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;&#x7c;&#x27;&#xa;  &#x2b; REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29;&#xa; &#x2b; &#x27;&#x23;Raggio &#x27; &#x2b; REPLACE&#x28;REPLACE&#x28;CERCHIO,&#x27;DIAMETRO &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x22;&#x27;,&#x27;&#x27;&#x29;&#xa; &#x2b; &#x27;&#x23;&#x27; &#x2b; LARGHEZZA &#x2b; &#x27;-&#x27; &#x2b; SERIE as Full_Category_path&#xa;, marca&#xa;, ipcode as codice&#xa;, &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,DESCRIZIONE,&#x27;&#x27;&#x29; AS NOME&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,descrizione,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29; &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS SHORT_DESC&#xa;, MARCA &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; coalesce&#x28;SERIE,&#x27;&#x27;&#x29;  &#x2b; &#x27; R&#x27; &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27;  &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29;  AS DESCRIZIONE&#xa;, &#x27;EUR&#x27; as currency&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as fullimg&#xa;, &#x27;images&#x2f;stories&#x2f;virtuemart&#x2f;product&#x2f;resized&#x2f;&#x27; &#x2b; immagine &#x2b; &#x27;.jpg&#x27; as resimg&#xa;, case when giacenza &#x3c;&#x3e;0 then &#x27;Y&#x27; else &#x27;N&#x27; end as Publish&#xa;, 21 as iva&#xa;,  giacenza  as product_in_stock&#xa;, 12234563 product_available&#xa;, &#x27;N&#x27; as product_special&#xa;, CODICECERCHIO AS CODCA1&#xa;, CODICECERCHIO AS DESCA1&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;N&#x27; ELSE &#x27;E&#x27; END AS CODCA2&#xa;, CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; ELSE &#x27;ESTIVE&#x27; END AS DESCA2&#xa;, SERIE AS CODCA3&#xa;, &#x27;SERIE &#x27; &#x2b; SERIE AS DESCA3&#xa;, LARGHEZZA AS CODCA4&#xa;, LARGHEZZA AS DESCA4&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; AS CODCA5&#xa;, replace&#x28;SUBSTRING&#x28;VEL,1,1&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b;&#x27;&#x3a; &#x27; &#x2b;SUBSTRING&#x28;VEL,2,4&#x29; &#x2b; &#x27; Km&#x2f;h&#x27; AS DESCA5&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS CODCA6&#xa;, ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; AS DESCA6,&#xa;CODICEROTOLAMENTO,&#xa;ROTOLAMENTO,&#xa;CODICEADERENZA	,&#xa;ADERENZA	,&#xa;CODICERUMOROSITA,&#xa;RUMOROSITA,&#xa;REPLACE&#x28;REPLACE&#x28;SETTORE,&#x27; FUORI LISTINO&#x27;,&#x27;&#x27;&#x29;,&#x27;4X4&#x27;,&#x27;FUORI STRADA&#x27;&#x29; AS SETTORE,&#xa;--case when partner&#x3d;&#x27;TG&#x27; then &#x27;&#x27; else &#xa;substring&#x28;EAN,1,13&#x29; &#xa;--end &#xa;as ean&#xa;,prezzoscontato as prezzoriferimento&#xd;&#xa;, runflat&#xa;from linky_integro_articoli&#xa;WHERE IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xa;--and partner not in &#x28;&#x27;TG&#x27;&#x29;&#xa;and giacenza&#x3e;1 and prezzoscontato&#x3e;0&#xa;and settore not in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#xa;--and ipcode&#x3d;&#x27;1208417178&#x27;&#xa;order by ipcodeSTD, prezzoscontato desc</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

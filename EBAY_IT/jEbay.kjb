@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;18 10&#x3a;12&#x3a;28.777</modified_date>
+  <modified_date>2018&#x2f;06&#x2f;05 17&#x3a;34&#x3a;06.544</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -523,7 +523,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
+      <xloc>944</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -592,7 +592,7 @@
       <name>CG Update stock</name>
       <description/>
       <type>SQL</type>
-      <sql>UPDATE  L&#xa;SET &#xa;l.prezzo&#x3d;prezzoscontato, &#xa;l.prezzolistino&#x3d;prezzoscontato , &#xa;l.category_path&#x3d;settore , &#xa;l.product_publish&#x3d;&#x27;Y&#x27;,&#xa;l.product_in_stock&#x3d;	giacenza , &#xa;l.product_available&#x3d;&#x27;12234563&#x27; , &#xa;l.pubblicato&#x3d;	&#x27;Y&#x27;,&#xa;l.product_full_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; ,&#xa;l.product_thumb_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27;&#xa;,l.nome&#x3d; &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,linky_integro_articoli.DESCRIZIONE,&#x27;&#x27;&#x29;&#xa;,l.short_desc&#x3d; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;	&#x27; ZR&#x27; else&#xa;	&#x27; R&#x27; end&#xa;	else&#xa; &#x27; R&#x27; &#xa;end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; linky_integro_articoli.marca&#xa;,l.descrizione&#x3d; linky_integro_articoli.marca &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;	&#x27; ZR&#x27; else&#xa;	&#x27; R&#x27; end&#xa;	else&#xa; &#x27; R&#x27; &#xa;end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#xa;,l.codca2&#x3d;CASE WHEN STAGIONE&#x3d;&#x27;INVERNO&#x27; THEN &#x27;N&#x27;&#xa; WHEN STAGIONE&#x3d;&#x27;4 STAGIONI&#x27; THEN &#x27;4&#x27; &#xa;ELSE &#x27;E&#x27; END &#xa;, l.desca2&#x3d;CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; &#xa; WHEN CODICESTAGIONE&#x3d;&#x27;4&#x27; THEN &#x27;4 STAGIONI&#x27;&#xa;ELSE &#x27;ESTIVE&#x27; END ,&#xa;L.CODICERUMOROSITA &#x3d; linky_integro_articoli.CODICERUMOROSITA&#xa;FROM &#xa;LINKY.DBO.LINKY_EBAYARTICOLI L inner join&#xa;linky_integro_articoli on &#xa;	l.codice&#x3d;linky_integro_articoli.ipcodESTD&#xa;	and l.marca&#x3d;linky_integro_articoli.marca &#xa;	and l.partner in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xa;	and linky_integro_articoli.IMMAGINE IS NOT NULL &#xa;	and linky_integro_articoli.immagine &#x3c;&#x3e; &#x27;&#x27; &#xa;	and linky_integro_articoli.ebaycat&#x3c;&#x3e;&#x27;&#x27;&#xa;	and bestprice&#x3d;1 &#xa;-- inserita regola che determina il fatto che il prezzo di acquisto non pu&#xf2; essre pi&#xf9; basso di 20eur&#xa;and prezzoscontato &#x3e; 20</sql>
+      <sql>UPDATE  L&#xa;SET &#xa;l.prezzo&#x3d;prezzoscontato, &#xa;l.prezzolistino&#x3d;prezzoscontato , &#xa;l.category_path&#x3d;settore , &#xa;l.product_publish&#x3d;&#x27;Y&#x27;,&#xa;l.product_in_stock&#x3d;	giacenza , &#xa;l.product_available&#x3d;&#x27;12234563&#x27; , &#xa;l.pubblicato&#x3d;	&#x27;Y&#x27;,&#xa;l.product_full_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27; ,&#xa;l.product_thumb_image&#x3d; &#x27;http&#x3a;&#x2f;&#x2f;s3-eu-west-1.amazonaws.com&#x2f;cdn.pneus-center.it&#x2f;web&#x2f;foto&#x2f;resized&#x2f;&#x27; &#x2b; ltrim&#x28;rtrim&#x28;lower&#x28;cast&#x28;immagine as varchar&#x28;max&#x29;&#x29;&#x29;&#x29;&#x29; &#x2b; &#x27;.jpg&#x27;&#xa;,l.nome&#x3d; &#x27;GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,linky_integro_articoli.DESCRIZIONE,&#x27;&#x27;&#x29;&#xa;-- SHORT DESCRIPTION&#xa;--,l.short_desc&#x3d; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;--  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;--case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;--	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;--	&#x27; ZR&#x27; else&#xa;--	&#x27; R&#x27; end&#xa;--	else&#xa;-- &#x27; R&#x27; &#xa;--end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; linky_integro_articoli.marca&#xa;&#xa;-- DESCRIZIONE&#xa;--,l.descrizione&#x3d; linky_integro_articoli.marca &#x2b; &#x27; GOMME PNEUMATICI &#x27; &#x2b; COALESCE&#x28;TITOLOALTERNATIVO,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#xa;--  &#x2b; LARGHEZZA &#x2b; &#x27;&#x2f;&#x27; &#x2b; SERIE &#x2b;&#xa;--case when rtrim&#x28;SETTORE&#x29; in  &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29; then&#xa;--	case when rtrim&#x28;coalesce&#x28;VEL,&#x27;&#x27;&#x29;&#x29; &#x3d; &#x27;W&#x27; then&#xa;--	&#x27; ZR&#x27; else&#xa;--	&#x27; R&#x27; end&#xa;--	else&#xa; --&#x27; R&#x27; &#xa;--end &#x2b; CODICECERCHIO &#x2b; &#x27; &#x27; &#x2b; ltrim&#x28;coalesce&#x28;replace&#x28;icarico,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x27;&#x29;&#x29; &#x2b; replace&#x28;rtrim&#x28;substring&#x28;VEL,1,2&#x29;&#x29;,&#x27;Z&#x27;,&#x27;W&#x27;&#x29; &#xa;,l.codca2&#x3d;CASE WHEN STAGIONE&#x3d;&#x27;INVERNO&#x27; THEN &#x27;N&#x27;&#xa; WHEN STAGIONE&#x3d;&#x27;4 STAGIONI&#x27; THEN &#x27;4&#x27; &#xa;ELSE &#x27;E&#x27; END &#xa;, l.desca2&#x3d;CASE WHEN CODICESTAGIONE&#x3d;&#x27;I&#x27; THEN &#x27;INVERNALI&#x27; &#xa; WHEN CODICESTAGIONE&#x3d;&#x27;4&#x27; THEN &#x27;4 STAGIONI&#x27;&#xa;ELSE &#x27;ESTIVE&#x27; END ,&#xa;L.CODICERUMOROSITA &#x3d; linky_integro_articoli.CODICERUMOROSITA&#xa;,l.marca&#x3d;linky_integro_articoli.marca&#xa;FROM &#xa;LINKY.DBO.LINKY_EBAYARTICOLI L inner join&#xa;linky_integro_articoli on &#xa;	l.codice&#x3d;linky_integro_articoli.SKU &#xa;	and l.partner in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xa;	and linky_integro_articoli.IMMAGINE IS NOT NULL &#xa;	and linky_integro_articoli.immagine &#x3c;&#x3e; &#x27;&#x27; &#xa;	and linky_integro_articoli.ebaycat&#x3c;&#x3e;&#x27;&#x27;&#xa;	and bestprice&#x3d;1 &#xa;-- inserita regola che determina il fatto che il prezzo di acquisto non pu&#xf2; essre pi&#xf9; basso di 20eur&#xa;and prezzoscontato &#x3e; 20</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -601,7 +601,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
+      <xloc>672</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -682,7 +682,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>256</xloc>
-      <yloc>352</yloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>Mail OK</name>
@@ -823,7 +823,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>64</xloc>
-      <yloc>256</yloc>
+      <yloc>240</yloc>
     </entry>
     <entry>
       <name>J_BESTPRICE_2017</name>
@@ -884,7 +884,7 @@
       <name>CATEGORIA EBAY CG</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471, CH-179680, IE-179680&#x27;&#xa;where&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29;&#x3b;&#xa;update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313&#x27;&#xa;where&#xa;settore in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29;&#x3b;</sql>
+      <sql>update linky_integro_articoli set&#xa;--ebaycat &#x3d;&#x27;IT-179680, DE-179680, NL-21665, FR-179680, UK-179680, ES-179680, US-66471, AU-66471, CH-179680, IE-179680&#x27;&#xa;ebaycat &#x3d; &#x27;IT-179680, DE-179680, NL-179680, FR-179680, UK-179680, ES-179680, AU-66471, CH-179680, IE-179680&#x27;&#xa;where&#xa;settore in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29;&#x3b;&#xa;&#xa;update linky_integro_articoli set&#xa;--ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-21665, FR-62247, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313&#x27;&#xa;ebaycat &#x3d;&#x27;IT-124313, DE-124313, NL-124313, FR-124313, UK-124313, ES-124313, US-124313, AU-124313, CH-124313, IE-124313&#x27;&#xa;where&#xa;settore in &#x28;&#x27;MOTO&#x27;&#x29;&#x3b;&#xa;&#xa;update linky_integro_articoli set&#xa;ebaycat &#x3d;&#x27;IT-182364, DE-182364, NL-182364, FR-182364, UK-182364, ES-182364, US-182364, AU-182364, CH-182364, IE-182364&#x27;&#xa;where&#xa;settore in &#x28;&#x27;SCOOTER&#x27;&#x29;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -925,7 +925,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>416</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -957,7 +957,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
+      <xloc>208</xloc>
       <yloc>256</yloc>
     </entry>
     <entry>
@@ -1042,7 +1042,7 @@
       <name>CATEGORIA EBAY CG 2</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;21665&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;&#xd;&#xa;where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;21665&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;62247&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xd;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</sql>
+      <sql>update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;   where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;   where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;66471&#x27;   where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;179680&#x27;  where category_path in &#x28;&#x27;VETTURA&#x27;,&#x27;FUORISTRADA&#x27;,&#x27;TRASPORTO LEGGERO&#x27;,&#x27;RUN FLAT&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xa;&#xa;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;124313&#x27; where category_path in &#x28;&#x27;MOTO&#x27;,&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;&#xa;&#xa;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IT&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;NL&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;UK&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;ES&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;US&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;AU&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;CH&#x27;&#x3b;&#xa;update linky_ebayarticoli set ebaycat &#x3d;&#x27;182364&#x27; where category_path in &#x28;&#x27;SCOOTER&#x27;&#x29; and siteid&#x3d;&#x27;IE&#x27;&#x3b;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -1051,7 +1051,43 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>800</xloc>
+      <yloc>256</yloc>
+    </entry>
+    <entry>
+      <name>Agg_dati_EB</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>Agg_dati_EB</transname>
+      <directory>&#x2f;EBAY_IT</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>544</xloc>
       <yloc>256</yloc>
     </entry>
   </entries>
@@ -1233,17 +1269,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>CG Update stock</from>
-      <to>J_imp_ebay_all_catene_partners</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>J_imp_ebay_all_catene_partners</from>
@@ -1359,8 +1386,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>EBAY IE</from>
@@ -1379,6 +1406,24 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>CG Update stock</from>
+      <to>Agg_dati_EB</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Agg_dati_EB</from>
+      <to>J_imp_ebay_all_catene_partners</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>

@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;tyre24</directory>
+    <directory>/CONNECTOR/tyre24</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,18 +427,40 @@
     <clusterschemas>
     </clusterschemas>
     <created_user/>
-    <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.179</created_date>
+    <created_date>2016/11/03 08:50:08.179</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;04&#x2f;27 08&#x3a;11&#x3a;37.180</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/06 11:11:24.523</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
+    <notepad>
+      <note>Sostituita tutta la procedura con un semplice update in quanto non viene eseguito più a questo livello
+nessuna sistemazione dell'ipcode</note>
+      <xloc>220</xloc>
+      <yloc>246</yloc>
+      <width>546</width>
+      <heigth>42</heigth>
+      <fontname>Segoe UI</fontname>
+      <fontsize>9</fontsize>
+      <fontbold>N</fontbold>
+      <fontitalic>N</fontitalic>
+      <fontcolorred>0</fontcolorred>
+      <fontcolorgreen>0</fontcolorgreen>
+      <fontcolorblue>0</fontcolorblue>
+      <backgroundcolorred>255</backgroundcolorred>
+      <backgroundcolorgreen>205</backgroundcolorgreen>
+      <backgroundcolorblue>112</backgroundcolorblue>
+      <bordercolorred>100</bordercolorred>
+      <bordercolorgreen>100</bordercolorgreen>
+      <bordercolorblue>100</bordercolorblue>
+      <drawshadow>Y</drawshadow>
+    </notepad>
   </notepads>
   <connection>
     <name>LINKY</name>
-    <server>localhost</server>
-    <type>MSSQL</type>
+    <server>pnues-sql.cvf36q72dcau.eu-west-1.rds.amazonaws.com</server>
+    <type>MSSQLNATIVE</type>
     <access>Native</access>
     <database>LINKY</database>
     <port>1433</port>
@@ -448,49 +470,82 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>EXTRA_OPTION_MSSQL.instance</code><attribute>SQL2008</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
     <hop>
       <from>TUTTO IL RESTO</from>
       <to>Default</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Default</from>
       <to>Update</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Elenco</from>
-      <to>Switch &#x2f; Case</to>
-      <enabled>Y</enabled>
+      <to>Switch / Case</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
-      <from>Switch &#x2f; Case</from>
+      <from>Switch / Case</from>
       <to>TUTTO IL RESTO</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
-      <from>Switch &#x2f; Case</from>
+      <from>Switch / Case</from>
       <to>CONTINENTAL</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>CONTINENTAL</from>
       <to>Default</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -506,16 +561,48 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#x2f;&#x2f;BR7852411&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#xd;&#xa;if&#x28;ipcode.indexOf&#x28;&#x27;&#x23;&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	if &#x28;ipcode.substr&#x28;ipcode.length-3,1&#x29;&#x3d;&#x3d;&#x27;&#x23;&#x27;&#x29;&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x2b;&#x27;000&#x27;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else if&#x28;ipcode.indexOf&#x28;&#x27;OLD&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x2b;&#x27;000&#x27;&#x3b;&#xd;&#xa;	&#xd;&#xa;&#x7d;else if&#x28;ipcode.indexOf&#x28;&#x27;D&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	if &#x28;ipcode.substr&#x28;ipcode.length-3,1&#x29;&#x3d;&#x3d;&#x27;D&#x27; &#x26;&#x26; marca &#x21;&#x3d;&#x27;INTERSTATE&#x27;&#x29;&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x2b;&#x27;000&#x27;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2a;&#x2f;&#xd;&#xa;IPTYRE&#x3d;ipcode&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>IPTYRE</name>
+        <jsScript_script>//Script qua
+//BR7852411
+
+/*
+if(ipcode.indexOf('#')>0) {
+	if (ipcode.substr(ipcode.length-3,1)=='#'){
+		IPTYRE=ipcode.substr(0,ipcode.length-3)+'000';
+	}else{
+		IPTYRE=ipcode;
+	}
+}else if(ipcode.indexOf('OLD')>0) {
+	
+		IPTYRE=ipcode.substr(0,ipcode.length-3)+'000';
+	
+}else if(ipcode.indexOf('D')>0) {
+	if (ipcode.substr(ipcode.length-3,1)=='D' &amp;&amp; marca !='INTERSTATE'){
+		IPTYRE=ipcode.substr(0,ipcode.length-3)+'000';
+	}else{
+		IPTYRE=ipcode;
+	}
+}else{
+	IPTYRE=ipcode;
+}
+*/
+IPTYRE=ipcode;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>IPTYRE</name>
         <rename>IPTYRE</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -527,8 +614,7 @@
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Default</name>
     <type>Dummy</type>
@@ -552,8 +638,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Elenco</name>
     <type>TableInput</type>
@@ -566,7 +651,13 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT ipcode,marca , partner&#xd;&#xa;from linky_tyre24&#xd;&#xa;--where&#xd;&#xa;--ipcode like &#x27;&#x25;&#x23;&#x25;&#x27; or ipcode like &#x27;&#x25;OLD&#x27; &#xd;&#xa;--marca&#x3d;&#x27;HANKOOK&#x27; &#xd;&#xa;--AND GIACENZA&#x3e;0&#xd;&#xa;--and partner&#x3d;&#x27;TG&#x27;</sql>
+    <sql>SELECT ipcode,marca , partner
+from linky_tyre24
+--where
+--ipcode like '%#%' or ipcode like '%OLD' 
+--marca='HANKOOK' 
+--AND GIACENZA>0
+--and partner='TG'</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -584,10 +675,46 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>Switch &#x2f; Case</name>
+    <name>Execute SQL script</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LINKY</connection>
+    <execute_each_row>N</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>N</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>update linky_tyre24 set codicetyre = ipcode;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field/>
+    <arguments>
+    </arguments>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Switch / Case</name>
     <type>SwitchCase</type>
     <description/>
     <distribute>Y</distribute>
@@ -597,16 +724,20 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<fieldname>marca</fieldname>
-<use_contains>N</use_contains>
-<case_value_type>String</case_value_type>
-<case_value_format/>
-<case_value_decimal/>
-<case_value_group/>
-<default_target_step>TUTTO IL RESTO</default_target_step>
-<cases><case><value>CONTINENTAL</value>
-<target_step>CONTINENTAL</target_step>
-</case></cases>    <cluster_schema/>
+    <fieldname>marca</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>String</case_value_type>
+    <case_value_format/>
+    <case_value_decimal/>
+    <case_value_group/>
+    <default_target_step>TUTTO IL RESTO</default_target_step>
+    <cases>
+      <case>
+        <value>CONTINENTAL</value>
+        <target_step>CONTINENTAL</target_step>
+      </case>
+    </cases>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -618,8 +749,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>TUTTO IL RESTO</name>
     <type>ScriptValueMod</type>
@@ -633,16 +763,48 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#x2f;&#x2f;BR7852411&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2a;&#xd;&#xa;if&#x28;ipcode.indexOf&#x28;&#x27;&#x23;&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	if &#x28;ipcode.substr&#x28;ipcode.length-3,1&#x29;&#x3d;&#x3d;&#x27;&#x23;&#x27;&#x29;&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else if&#x28;ipcode.indexOf&#x28;&#x27;OLD&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x3b;&#xd;&#xa;	&#xd;&#xa;&#x7d;else if&#x28;ipcode.indexOf&#x28;&#x27;D&#x27;&#x29;&#x3e;0&#x29; &#x7b;&#xd;&#xa;	if &#x28;ipcode.substr&#x28;ipcode.length-3,1&#x29;&#x3d;&#x3d;&#x27;D&#x27; &#x26;&#x26; marca &#x21;&#x3d;&#x27;INTERSTATE&#x27;&#x29;&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode.substr&#x28;0,ipcode.length-3&#x29;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	IPTYRE&#x3d;ipcode&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2a;&#x2f;&#xd;&#xa;IPTYRE&#x3d;ipcode&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>IPTYRE</name>
+        <jsScript_script>//Script qua
+//BR7852411
+
+/*
+if(ipcode.indexOf('#')>0) {
+	if (ipcode.substr(ipcode.length-3,1)=='#'){
+		IPTYRE=ipcode.substr(0,ipcode.length-3);
+	}else{
+		IPTYRE=ipcode;
+	}
+}else if(ipcode.indexOf('OLD')>0) {
+	
+		IPTYRE=ipcode.substr(0,ipcode.length-3);
+	
+}else if(ipcode.indexOf('D')>0) {
+	if (ipcode.substr(ipcode.length-3,1)=='D' &amp;&amp; marca !='INTERSTATE'){
+		IPTYRE=ipcode.substr(0,ipcode.length-3);
+	}else{
+		IPTYRE=ipcode;
+	}
+}else{
+	IPTYRE=ipcode;
+}
+*/
+IPTYRE=ipcode;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>IPTYRE</name>
         <rename>IPTYRE</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -654,8 +816,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Update</name>
     <type>Update</type>
@@ -679,26 +840,26 @@
       <key>
         <name>ipcode</name>
         <field>IPCODE</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
-        </key>
+      </key>
       <key>
         <name>marca</name>
         <field>MARCA</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
-        </key>
+      </key>
       <key>
         <name>partner</name>
         <field>PARTNER</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
-        </key>
+      </key>
       <value>
         <name>CODICETYRE</name>
         <rename>IPTYRE</rename>
-        </value>
-      </lookup>
+      </value>
+    </lookup>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -711,8 +872,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

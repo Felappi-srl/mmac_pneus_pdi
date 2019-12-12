@@ -4,12 +4,12 @@
   <extended_description/>
   <job_version/>
   <job_status>0</job_status>
-  <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+  <directory>/CONNECTOR/tyre24/compprice</directory>
   <created_user>-</created_user>
-  <created_date>2017&#x2f;03&#x2f;08 17&#x3a;44&#x3a;41.883</created_date>
+  <created_date>2017/03/08 17:44:41.883</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;02 11&#x3a;39&#x3a;28.361</modified_date>
-    <parameters>
+  <modified_date>2018/06/03 19:27:35.820</modified_date>
+  <parameters>
     </parameters>
   <connection>
     <name>LINKY</name>
@@ -24,305 +24,338 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
-    <slaveservers>
+  <slaveservers>
     </slaveservers>
-      <job-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <size_limit_lines/>
-        <interval/>
-        <timeout_days/>
-        <field>
-          <id>ID_JOB</id>
-          <enabled>Y</enabled>
-          <name>ID_JOB</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>JOBNAME</id>
-          <enabled>Y</enabled>
-          <name>JOBNAME</name>
-        </field>
-        <field>
-          <id>STATUS</id>
-          <enabled>Y</enabled>
-          <name>STATUS</name>
-        </field>
-        <field>
-          <id>LINES_READ</id>
-          <enabled>Y</enabled>
-          <name>LINES_READ</name>
-        </field>
-        <field>
-          <id>LINES_WRITTEN</id>
-          <enabled>Y</enabled>
-          <name>LINES_WRITTEN</name>
-        </field>
-        <field>
-          <id>LINES_UPDATED</id>
-          <enabled>Y</enabled>
-          <name>LINES_UPDATED</name>
-        </field>
-        <field>
-          <id>LINES_INPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_INPUT</name>
-        </field>
-        <field>
-          <id>LINES_OUTPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_OUTPUT</name>
-        </field>
-        <field>
-          <id>LINES_REJECTED</id>
-          <enabled>Y</enabled>
-          <name>LINES_REJECTED</name>
-        </field>
-        <field>
-          <id>ERRORS</id>
-          <enabled>Y</enabled>
-          <name>ERRORS</name>
-        </field>
-        <field>
-          <id>STARTDATE</id>
-          <enabled>Y</enabled>
-          <name>STARTDATE</name>
-        </field>
-        <field>
-          <id>ENDDATE</id>
-          <enabled>Y</enabled>
-          <name>ENDDATE</name>
-        </field>
-        <field>
-          <id>LOGDATE</id>
-          <enabled>Y</enabled>
-          <name>LOGDATE</name>
-        </field>
-        <field>
-          <id>DEPDATE</id>
-          <enabled>Y</enabled>
-          <name>DEPDATE</name>
-        </field>
-        <field>
-          <id>REPLAYDATE</id>
-          <enabled>Y</enabled>
-          <name>REPLAYDATE</name>
-        </field>
-        <field>
-          <id>LOG_FIELD</id>
-          <enabled>Y</enabled>
-          <name>LOG_FIELD</name>
-        </field>
-        <field>
-          <id>EXECUTING_SERVER</id>
-          <enabled>N</enabled>
-          <name>EXECUTING_SERVER</name>
-        </field>
-        <field>
-          <id>EXECUTING_USER</id>
-          <enabled>N</enabled>
-          <name>EXECUTING_USER</name>
-        </field>
-        <field>
-          <id>START_JOB_ENTRY</id>
-          <enabled>N</enabled>
-          <name>START_JOB_ENTRY</name>
-        </field>
-        <field>
-          <id>CLIENT</id>
-          <enabled>N</enabled>
-          <name>CLIENT</name>
-        </field>
-      </job-log-table>
-      <jobentry-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
-        <field>
-          <id>ID_BATCH</id>
-          <enabled>Y</enabled>
-          <name>ID_BATCH</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>LOG_DATE</id>
-          <enabled>Y</enabled>
-          <name>LOG_DATE</name>
-        </field>
-        <field>
-          <id>JOBNAME</id>
-          <enabled>Y</enabled>
-          <name>TRANSNAME</name>
-        </field>
-        <field>
-          <id>JOBENTRYNAME</id>
-          <enabled>Y</enabled>
-          <name>STEPNAME</name>
-        </field>
-        <field>
-          <id>LINES_READ</id>
-          <enabled>Y</enabled>
-          <name>LINES_READ</name>
-        </field>
-        <field>
-          <id>LINES_WRITTEN</id>
-          <enabled>Y</enabled>
-          <name>LINES_WRITTEN</name>
-        </field>
-        <field>
-          <id>LINES_UPDATED</id>
-          <enabled>Y</enabled>
-          <name>LINES_UPDATED</name>
-        </field>
-        <field>
-          <id>LINES_INPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_INPUT</name>
-        </field>
-        <field>
-          <id>LINES_OUTPUT</id>
-          <enabled>Y</enabled>
-          <name>LINES_OUTPUT</name>
-        </field>
-        <field>
-          <id>LINES_REJECTED</id>
-          <enabled>Y</enabled>
-          <name>LINES_REJECTED</name>
-        </field>
-        <field>
-          <id>ERRORS</id>
-          <enabled>Y</enabled>
-          <name>ERRORS</name>
-        </field>
-        <field>
-          <id>RESULT</id>
-          <enabled>Y</enabled>
-          <name>RESULT</name>
-        </field>
-        <field>
-          <id>NR_RESULT_ROWS</id>
-          <enabled>Y</enabled>
-          <name>NR_RESULT_ROWS</name>
-        </field>
-        <field>
-          <id>NR_RESULT_FILES</id>
-          <enabled>Y</enabled>
-          <name>NR_RESULT_FILES</name>
-        </field>
-        <field>
-          <id>LOG_FIELD</id>
-          <enabled>N</enabled>
-          <name>LOG_FIELD</name>
-        </field>
-        <field>
-          <id>COPY_NR</id>
-          <enabled>N</enabled>
-          <name>COPY_NR</name>
-        </field>
-      </jobentry-log-table>
-      <channel-log-table>
-        <connection/>
-        <schema/>
-        <table/>
-        <timeout_days/>
-        <field>
-          <id>ID_BATCH</id>
-          <enabled>Y</enabled>
-          <name>ID_BATCH</name>
-        </field>
-        <field>
-          <id>CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>LOG_DATE</id>
-          <enabled>Y</enabled>
-          <name>LOG_DATE</name>
-        </field>
-        <field>
-          <id>LOGGING_OBJECT_TYPE</id>
-          <enabled>Y</enabled>
-          <name>LOGGING_OBJECT_TYPE</name>
-        </field>
-        <field>
-          <id>OBJECT_NAME</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_NAME</name>
-        </field>
-        <field>
-          <id>OBJECT_COPY</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_COPY</name>
-        </field>
-        <field>
-          <id>REPOSITORY_DIRECTORY</id>
-          <enabled>Y</enabled>
-          <name>REPOSITORY_DIRECTORY</name>
-        </field>
-        <field>
-          <id>FILENAME</id>
-          <enabled>Y</enabled>
-          <name>FILENAME</name>
-        </field>
-        <field>
-          <id>OBJECT_ID</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_ID</name>
-        </field>
-        <field>
-          <id>OBJECT_REVISION</id>
-          <enabled>Y</enabled>
-          <name>OBJECT_REVISION</name>
-        </field>
-        <field>
-          <id>PARENT_CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>PARENT_CHANNEL_ID</name>
-        </field>
-        <field>
-          <id>ROOT_CHANNEL_ID</id>
-          <enabled>Y</enabled>
-          <name>ROOT_CHANNEL_ID</name>
-        </field>
-      </channel-log-table>
-   <pass_batchid>N</pass_batchid>
-   <shared_objects_file/>
+  <job-log-table>
+    <connection/>
+    <schema/>
+    <table/>
+    <size_limit_lines/>
+    <interval/>
+    <timeout_days/>
+    <field>
+      <id>ID_JOB</id>
+      <enabled>Y</enabled>
+      <name>ID_JOB</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>JOBNAME</id>
+      <enabled>Y</enabled>
+      <name>JOBNAME</name>
+    </field>
+    <field>
+      <id>STATUS</id>
+      <enabled>Y</enabled>
+      <name>STATUS</name>
+    </field>
+    <field>
+      <id>LINES_READ</id>
+      <enabled>Y</enabled>
+      <name>LINES_READ</name>
+    </field>
+    <field>
+      <id>LINES_WRITTEN</id>
+      <enabled>Y</enabled>
+      <name>LINES_WRITTEN</name>
+    </field>
+    <field>
+      <id>LINES_UPDATED</id>
+      <enabled>Y</enabled>
+      <name>LINES_UPDATED</name>
+    </field>
+    <field>
+      <id>LINES_INPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_INPUT</name>
+    </field>
+    <field>
+      <id>LINES_OUTPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_OUTPUT</name>
+    </field>
+    <field>
+      <id>LINES_REJECTED</id>
+      <enabled>Y</enabled>
+      <name>LINES_REJECTED</name>
+    </field>
+    <field>
+      <id>ERRORS</id>
+      <enabled>Y</enabled>
+      <name>ERRORS</name>
+    </field>
+    <field>
+      <id>STARTDATE</id>
+      <enabled>Y</enabled>
+      <name>STARTDATE</name>
+    </field>
+    <field>
+      <id>ENDDATE</id>
+      <enabled>Y</enabled>
+      <name>ENDDATE</name>
+    </field>
+    <field>
+      <id>LOGDATE</id>
+      <enabled>Y</enabled>
+      <name>LOGDATE</name>
+    </field>
+    <field>
+      <id>DEPDATE</id>
+      <enabled>Y</enabled>
+      <name>DEPDATE</name>
+    </field>
+    <field>
+      <id>REPLAYDATE</id>
+      <enabled>Y</enabled>
+      <name>REPLAYDATE</name>
+    </field>
+    <field>
+      <id>LOG_FIELD</id>
+      <enabled>Y</enabled>
+      <name>LOG_FIELD</name>
+    </field>
+    <field>
+      <id>EXECUTING_SERVER</id>
+      <enabled>N</enabled>
+      <name>EXECUTING_SERVER</name>
+    </field>
+    <field>
+      <id>EXECUTING_USER</id>
+      <enabled>N</enabled>
+      <name>EXECUTING_USER</name>
+    </field>
+    <field>
+      <id>START_JOB_ENTRY</id>
+      <enabled>N</enabled>
+      <name>START_JOB_ENTRY</name>
+    </field>
+    <field>
+      <id>CLIENT</id>
+      <enabled>N</enabled>
+      <name>CLIENT</name>
+    </field>
+  </job-log-table>
+  <jobentry-log-table>
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
+    <field>
+      <id>ID_BATCH</id>
+      <enabled>Y</enabled>
+      <name>ID_BATCH</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>LOG_DATE</id>
+      <enabled>Y</enabled>
+      <name>LOG_DATE</name>
+    </field>
+    <field>
+      <id>JOBNAME</id>
+      <enabled>Y</enabled>
+      <name>TRANSNAME</name>
+    </field>
+    <field>
+      <id>JOBENTRYNAME</id>
+      <enabled>Y</enabled>
+      <name>STEPNAME</name>
+    </field>
+    <field>
+      <id>LINES_READ</id>
+      <enabled>Y</enabled>
+      <name>LINES_READ</name>
+    </field>
+    <field>
+      <id>LINES_WRITTEN</id>
+      <enabled>Y</enabled>
+      <name>LINES_WRITTEN</name>
+    </field>
+    <field>
+      <id>LINES_UPDATED</id>
+      <enabled>Y</enabled>
+      <name>LINES_UPDATED</name>
+    </field>
+    <field>
+      <id>LINES_INPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_INPUT</name>
+    </field>
+    <field>
+      <id>LINES_OUTPUT</id>
+      <enabled>Y</enabled>
+      <name>LINES_OUTPUT</name>
+    </field>
+    <field>
+      <id>LINES_REJECTED</id>
+      <enabled>Y</enabled>
+      <name>LINES_REJECTED</name>
+    </field>
+    <field>
+      <id>ERRORS</id>
+      <enabled>Y</enabled>
+      <name>ERRORS</name>
+    </field>
+    <field>
+      <id>RESULT</id>
+      <enabled>Y</enabled>
+      <name>RESULT</name>
+    </field>
+    <field>
+      <id>NR_RESULT_ROWS</id>
+      <enabled>Y</enabled>
+      <name>NR_RESULT_ROWS</name>
+    </field>
+    <field>
+      <id>NR_RESULT_FILES</id>
+      <enabled>Y</enabled>
+      <name>NR_RESULT_FILES</name>
+    </field>
+    <field>
+      <id>LOG_FIELD</id>
+      <enabled>N</enabled>
+      <name>LOG_FIELD</name>
+    </field>
+    <field>
+      <id>COPY_NR</id>
+      <enabled>N</enabled>
+      <name>COPY_NR</name>
+    </field>
+  </jobentry-log-table>
+  <channel-log-table>
+    <connection/>
+    <schema/>
+    <table/>
+    <timeout_days/>
+    <field>
+      <id>ID_BATCH</id>
+      <enabled>Y</enabled>
+      <name>ID_BATCH</name>
+    </field>
+    <field>
+      <id>CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>LOG_DATE</id>
+      <enabled>Y</enabled>
+      <name>LOG_DATE</name>
+    </field>
+    <field>
+      <id>LOGGING_OBJECT_TYPE</id>
+      <enabled>Y</enabled>
+      <name>LOGGING_OBJECT_TYPE</name>
+    </field>
+    <field>
+      <id>OBJECT_NAME</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_NAME</name>
+    </field>
+    <field>
+      <id>OBJECT_COPY</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_COPY</name>
+    </field>
+    <field>
+      <id>REPOSITORY_DIRECTORY</id>
+      <enabled>Y</enabled>
+      <name>REPOSITORY_DIRECTORY</name>
+    </field>
+    <field>
+      <id>FILENAME</id>
+      <enabled>Y</enabled>
+      <name>FILENAME</name>
+    </field>
+    <field>
+      <id>OBJECT_ID</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_ID</name>
+    </field>
+    <field>
+      <id>OBJECT_REVISION</id>
+      <enabled>Y</enabled>
+      <name>OBJECT_REVISION</name>
+    </field>
+    <field>
+      <id>PARENT_CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>PARENT_CHANNEL_ID</name>
+    </field>
+    <field>
+      <id>ROOT_CHANNEL_ID</id>
+      <enabled>Y</enabled>
+      <name>ROOT_CHANNEL_ID</name>
+    </field>
+  </channel-log-table>
+  <pass_batchid>N</pass_batchid>
+  <shared_objects_file/>
   <entries>
     <entry>
       <name>EMAIL IT</name>
       <description/>
       <type>GET_POP</type>
       <servername>imap.gmail.com</servername>
-      <username>info&#x40;pneus-center.it</username>
+      <username>info@pneus-center.it</username>
       <password>Encrypted 2be98afc86aa7c0a2ae15af60ce9bfa8c</password>
       <usessl>Y</usessl>
       <sslport>993</sslport>
-      <outputdirectory>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;tyre24&#x5c;Competitor</outputdirectory>
-      <filenamepattern>name_&#x7b;SYS&#x7c;hhmmss_MMddyyyy&#x7c;&#x7d;_&#x23;IdFile&#x23;.mail</filenamepattern>
+      <outputdirectory>C:\LINKY\pneus\connector\tyre24\Competitor</outputdirectory>
+      <filenamepattern>name_{SYS|hhmmss_MMddyyyy|}_#IdFile#.mail</filenamepattern>
       <retrievemails>0</retrievemails>
       <firstmails/>
       <delete>N</delete>
@@ -335,17 +368,17 @@
       <valueimaplist>imaplistall</valueimaplist>
       <imapfirstmails>0</imapfirstmails>
       <imapfolder>INBOX</imapfolder>
-      <sendersearch>lufelappi&#x40;libero.it</sendersearch>
+      <sendersearch>no-reply@tyre24.de</sendersearch>
       <nottermsendersearch>N</nottermsendersearch>
       <receipientsearch/>
       <nottermreceipientsearch>N</nottermreceipientsearch>
-      <subjectsearch>FWD&#x3a; Tyre24 - Classifiche attuali degli pneumatici</subjectsearch>
+      <subjectsearch>Tyre24 - Classifiche attuali degli pneumatici</subjectsearch>
       <nottermsubjectsearch>N</nottermsubjectsearch>
       <bodysearch/>
       <nottermbodysearch>N</nottermbodysearch>
       <conditionreceiveddate>greater</conditionreceiveddate>
       <nottermreceiveddatesearch>N</nottermreceiveddatesearch>
-      <receiveddate1>2017-10-30 07&#x3a;40&#x3a;41</receiveddate1>
+      <receiveddate1>2018-06-02 07:40:41</receiveddate1>
       <receiveddate2/>
       <actiontype>get</actiontype>
       <movetoimapfolder>Tyre24</movetoimapfolder>
@@ -388,8 +421,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
-      <yloc>224</yloc>
+      <xloc>784</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>t_t24_get_compprice_cerchi_de</name>
@@ -399,7 +432,7 @@
       <trans_object_id/>
       <filename/>
       <transname>t_t24_get_compprice_cerchi_de</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -418,20 +451,28 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
-      <yloc>48</yloc>
+      <xloc>496</xloc>
+      <yloc>0</yloc>
     </entry>
     <entry>
       <name>Azzero</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24 set prezzoit&#x3d;0&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;0&#x3b;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;0&#x3b;</sql>
+      <sql>update linky_tyre24 set prezzoit=0;
+update linky_tyre24 set prezzode=0;
+update linky_tyre24 set prezzofr=0;
+update linky_tyre24 set prezzoat=0;
+update linky_tyre24 set prezzobe=0;
+update linky_tyre24 set prezzoes=0;
+update linky_tyre24 set prezzolu=0;
+update linky_tyre24 set prezzonl=0;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -440,14 +481,83 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
-      <yloc>48</yloc>
+      <xloc>1072</xloc>
+      <yloc>240</yloc>
     </entry>
     <entry>
       <name>Nostro prezzo Posizione 1 IT e DE FR</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29;&#x3b;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29;&#xd;&#xa;and comp.NOSTROPREZZO&#x3e;&#x3d;&#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;</sql>
+      <sql>update t24
+set t24.PREZZOIT =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='IT'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO) = (prezzoriferimentoold + ricaricoold)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO);
+--
+update t24
+set t24.PREZZODE =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='DE'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOFR =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='FR'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOAT =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='AT'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOBE =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='BE'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOES =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='ES'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZONL =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='NL'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOLU =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='LU'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + RICARICO+10) = (prezzoriferimentoold + ricaricoold+10)
+and comp.NOSTROPREZZO>=(t24.PREZZORIFERIMENTO + RICARICO+10)
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -456,14 +566,76 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1088</xloc>
-      <yloc>144</yloc>
+      <xloc>1072</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
-      <name>PREZZO &#x3c;&#x3e;1 IT e DE FR</name>
+      <name>PREZZO &lt;&gt;1 IT e DE FR</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOIT &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO &#x2b;10 else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27; and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZOFR &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2b; RICARICO&#x2b;10&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2b; RICARICO &#x2b;10 else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.partner&#x3c;&#x3e;&#x27;PN&#x27; and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;</sql>
+      <sql>update t24
+set t24.PREZZOIT = 
+case when (t24.PREZZORIFERIMENTO + RICARICO) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='IT'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN'
+--
+update t24
+set t24.PREZZODE = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='DE'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOFR = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='FR'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOAT = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='AT'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOBE = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='BE'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOES = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='ES'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZONL = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='NL'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set t24.PREZZOLU = 
+case when (t24.PREZZORIFERIMENTO + RICARICO+10) > (comp.BESTPRICE-GAP) then t24.PREZZORIFERIMENTO + RICARICO +10 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='LU'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.partner&lt;&gt;'PN' and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -472,14 +644,21 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>864</xloc>
-      <yloc>144</yloc>
+      <xloc>832</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>SQL IT e DE FR ancora a zero</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24 set prezzoit&#x3d;listino where prezzoit &#x3d;0&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;listino&#x2b;10 where prezzode &#x3d;0&#x3b;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino&#x2b;10 where prezzofr &#x3d;0&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_tyre24 set prezzoit=listino where prezzoit =0;
+update linky_tyre24 set prezzode=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzode =0;
+update linky_tyre24 set prezzofr=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzofr =0;
+update linky_tyre24 set prezzoat=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzoat =0;
+update linky_tyre24 set prezzoes=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzoes =0;
+update linky_tyre24 set prezzobe=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzobe =0;
+update linky_tyre24 set prezzonl=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzonl =0;
+update linky_tyre24 set prezzolu=listino + (case when partner = 'MAK' then 0 else 10 end) where prezzolu =0;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -488,8 +667,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>144</yloc>
+      <xloc>416</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>t_t24_get_compprice</name>
@@ -499,7 +678,7 @@
       <trans_object_id/>
       <filename/>
       <transname>t_t24_get_compprice</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -518,13 +697,14 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
+      <xloc>960</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -535,7 +715,7 @@
       <trans_object_id/>
       <filename/>
       <transname>t_t24_get_compprice_cerchi_fr</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -554,20 +734,81 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>976</xloc>
-      <yloc>48</yloc>
+      <xloc>1072</xloc>
+      <yloc>0</yloc>
     </entry>
     <entry>
       <name>Nostro prezzo Posizione 1 MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27; and t24.gapold&#x3d;linky_tyre24_params.gap&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27; and t24.gapold&#x3d;linky_tyre24_params.gap&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZOFR &#x3d;comp.NOSTROPREZZO&#xd;&#xa; from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3d;&#x27;1.&#x27; and partner&#x3c;&#x3e;&#x27;PN&#x27; and &#x28;prezzoriferimento &#x2a; SCONTOMAK&#x29; &#x3d; &#x28;prezzoriferimentoold &#x2a; SCONTOMAK&#x29;&#xd;&#xa;and t24.MARCA&#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27; and t24.gapold&#x3d;linky_tyre24_params.gap&#x3b;&#xd;&#xa;</sql>
+      <sql>update t24
+set t24.PREZZOFR =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='FR'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='FR' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZODE =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='DE'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='DE' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZOAT =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='AT'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='AT' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZOBE =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='BE'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='BE' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZOES =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='ES'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='ES' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZONL =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='NL'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='NL' and t24.gapold=linky_tyre24_params.gap;
+--
+update t24
+set t24.PREZZOLU =comp.NOSTROPREZZO
+ from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='LU'
+, linky_tyre24_params
+where comp.POSIZIONE='1.' and partner&lt;&gt;'PN' and (prezzoriferimento + SCONTOMAK) = (prezzoriferimentoold + linky_tyre24_params.scontomakold)
+and t24.MARCA='MAK' and comp.siteid='LU' and t24.gapold=linky_tyre24_params.gap;
+
+
+
+
+
+</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -576,14 +817,69 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>144</yloc>
+      <xloc>240</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
-      <name>PREZZO &#x3c;&#x3e;1 MAK</name>
+      <name>PREZZO &lt;&gt;1 MAK</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set t24.PREZZOFR &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.marca &#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZODE &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.marca &#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;DE&#x27;&#x3b;&#xd;&#xa;update t24&#xd;&#xa;set t24.PREZZOFR &#x3d; &#xd;&#xa;case when &#x28;t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK&#x29; &#x3e; &#x28;comp.BESTPRICE-GAP&#x29; then t24.PREZZORIFERIMENTO &#x2a; SCONTOMAK else comp.BESTPRICE-GAP end&#xd;&#xa;from linky_tyre24 as t24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where comp.POSIZIONE&#x3c;&#x3e;&#x27;1.&#x27; and t24.marca &#x3d;&#x27;MAK&#x27; and comp.siteid&#x3d;&#x27;FR&#x27;&#x3b;&#xd;&#xa;</sql>
+      <sql>update t24
+set t24.PREZZOFR = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='FR'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='FR';
+update t24
+set t24.PREZZODE = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='DE'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='DE';
+--
+update t24
+set t24.PREZZOAT = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='AT'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='AT';
+--
+update t24
+set t24.PREZZOBE = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='BE'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='BE';
+--
+update t24
+set t24.PREZZOES = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='ES'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='ES';
+--
+update t24
+set t24.PREZZONL = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='NL'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='NL';
+--
+update t24
+set t24.PREZZOLU = 
+case when ((t24.PREZZOscontato) + SCONTOMAK)*1.05 > (comp.BESTPRICE-GAP) then ((t24.PREZZOscontato) + SCONTOMAK)*1.05 else comp.BESTPRICE-GAP end
+from linky_tyre24 as t24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='LU'
+, linky_tyre24_params
+where comp.POSIZIONE&lt;&gt;'1.' and t24.marca ='MAK' and comp.siteid='LU';
+--
+</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -592,14 +888,37 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>144</yloc>
+      <xloc>96</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>COMPILO FR e DE</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24 set prezzode&#x3d;listino&#x2b;9 where prezzode &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzode&#x3d;listino&#x2b;10 where prezzode &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino&#x2b;9 where prezzofr &#x3d;0 and marca&#x3d;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;update linky_tyre24 set prezzofr&#x3d;listino where prezzofr &#x3d;0 and marca&#x3c;&#x3e;&#x27;MAK&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;update t24 set t24.gapold &#x3d; linky_tyre24_params.gap from  linky_tyre24 as t24, linky_tyre24_params&#x3b;&#xd;&#xa;</sql>
+      <sql>update linky_tyre24 set prezzode=listino +0 where prezzode =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino +9
+update linky_tyre24 set prezzode=listino+10 where prezzode =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzofr=listino +0 where prezzofr =0 and marca='MAK';  --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzofr=listino where prezzofr =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzoat=listino +0 where prezzoat =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzoat=listino where prezzoat =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzobe=listino +0 where prezzobe =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzobe=listino where prezzobe =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzoes=listino +0 where prezzoes =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzoes=listino where prezzoes =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzonl=listino +0 where prezzonl =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzonl=listino where prezzonl =0 and marca&lt;&gt;'MAK';
+
+update linky_tyre24 set prezzolu=listino +0 where prezzolu =0 and marca='MAK'; --prima dei prezzi imposti di listino solo per MAK si aggiungiva listino 
+update linky_tyre24 set prezzolu=listino where prezzolu =0 and marca&lt;&gt;'MAK';
+
+
+update t24 set t24.gapold = linky_tyre24_params.gap from  linky_tyre24 as t24, linky_tyre24_params;
+</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -608,14 +927,15 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
-      <yloc>224</yloc>
+      <xloc>96</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>Compila prezzo riferimento OLD</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_tyre24 set prezzoriferimentoold&#x3d;prezzoriferimento&#x3b;&#xd;&#xa;update linky_tyre24_params set ricaricoold&#x3d;ricarico&#x3b;</sql>
+      <sql>update linky_tyre24 set prezzoriferimentoold=prezzoriferimento;
+update linky_tyre24_params set ricaricoold=ricarico, scontomakold=scontomak;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -624,8 +944,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>384</xloc>
-      <yloc>224</yloc>
+      <xloc>416</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
       <name>Cancella i file</name>
@@ -635,8 +955,8 @@
       <include_subfolders>N</include_subfolders>
       <fields>
         <field>
-          <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;tyre24&#x5c;competitor</name>
-          <filemask>.&#x2a;&#x5c;.csv</filemask>
+          <name>C:\LINKY\PNEUS\connector\tyre24\competitor</name>
+          <filemask>.*\.csv</filemask>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -649,7 +969,20 @@
       <name>Overrides</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24 set t24.PREZZODE&#x3d;overr.prezzo&#xd;&#xa; from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE &#x3d; overr.IPCODE and overr.siteid&#x3d;&#x27;DE&#x27; and overr.mkt&#x3d;&#x27;T24&#x27;&#x3b;&#xd;&#xa;update t24 set t24.PREZZOFR&#x3d;overr.prezzo&#xd;&#xa; from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE &#x3d; overr.IPCODE and overr.siteid&#x3d;&#x27;FR&#x27; and overr.mkt&#x3d;&#x27;T24&#x27;&#x3b;</sql>
+      <sql>update t24 set t24.PREZZODE=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='DE' and overr.mkt='T24';
+update t24 set t24.PREZZOFR=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='FR' and overr.mkt='T24';
+update t24 set t24.PREZZOAT=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='AT' and overr.mkt='T24';
+update t24 set t24.PREZZOBE=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='BE' and overr.mkt='T24';
+update t24 set t24.PREZZOES=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='ES' and overr.mkt='T24';
+update t24 set t24.PREZZONL=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='NL' and overr.mkt='T24';
+update t24 set t24.PREZZOLU=overr.prezzo
+ from linky_tyre24 as t24 inner join LINKY_prezzi_overrides as overr on t24.IPCODE = overr.IPCODE and overr.siteid='LU' and overr.mkt='T24';</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -658,14 +991,79 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>192</xloc>
-      <yloc>224</yloc>
+      <xloc>224</xloc>
+      <yloc>416</yloc>
     </entry>
     <entry>
-      <name>PREZZO &#x3d; 1 da aggiornare IT e DE FR</name>
+      <name>PREZZO = 1 da aggiornare IT e DE FR</name>
       <description/>
       <type>SQL</type>
-      <sql>update t24&#xd;&#xa;set prezzoit&#x3d;listino&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;IT&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set prezzode&#x3d;listino&#x2b;10&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;DE&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;&#xd;&#xa;--&#xd;&#xa;update t24&#xd;&#xa;set prezzofr&#x3d;listino&#x2b;10&#xd;&#xa;from linky_tyre24 as T24&#xd;&#xa;inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE &#x3d; comp.IPCODE and comp.siteid&#x3d;&#x27;FR&#x27;&#xd;&#xa;, linky_tyre24_params&#xd;&#xa;where &#x28;prezzoriferimento &#x2b; RICARICO&#x2b;10&#x29; &#x3c;&#x3e; &#x28;prezzoriferimentoold &#x2b; ricaricoold&#x2b;10&#x29; and comp.POSIZIONE&#x3d;&#x27;1.&#x27;&#xd;&#xa;and t24.partner not in &#x28;select codicepartner from linky_partners where tipo&#x3d;&#x27;CERCHI&#x27;&#x29;&#x3b;&#xd;&#xa;</sql>
+      <sql>update t24
+set prezzoit=listino
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='IT'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO) &lt;&gt; (prezzoriferimentoold + ricaricoold) and comp.POSIZIONE='1.'
+--
+update t24
+set prezzode=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='DE'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzofr=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='FR'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzoat=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='AT'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzobe=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='BE'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzoes=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='ES'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzonl=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='NL'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+--
+update t24
+set prezzolu=listino+10
+from linky_tyre24 as T24
+inner join LINKY_T24_COMPPRICE as comp on t24.IPCODE = comp.IPCODE and comp.siteid='LU'
+, linky_tyre24_params
+where (prezzoriferimento + RICARICO+10) &lt;&gt; (prezzoriferimentoold + ricaricoold+10) and comp.POSIZIONE='1.'
+and t24.partner not in (select codicepartner from linky_partners where tipo='CERCHI');
+
+
+
+</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -674,8 +1072,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
-      <yloc>144</yloc>
+      <xloc>592</xloc>
+      <yloc>336</yloc>
     </entry>
     <entry>
       <name>t_t24_get_compprice_de</name>
@@ -685,7 +1083,7 @@
       <trans_object_id/>
       <filename/>
       <transname>t_t24_get_compprice_de</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -704,13 +1102,14 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>640</xloc>
       <yloc>48</yloc>
     </entry>
     <entry>
@@ -721,7 +1120,7 @@
       <trans_object_id/>
       <filename/>
       <transname>t_t24_get_compprice_fr</transname>
-      <directory>&#x2f;CONNECTOR&#x2f;tyre24&#x2f;compprice</directory>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
       <exec_per_row>N</exec_per_row>
@@ -740,14 +1139,566 @@
       <follow_abort_remote>N</follow_abort_remote>
       <create_parent_folder>N</create_parent_folder>
       <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
       <parameters>
         <pass_all_parameters>Y</pass_all_parameters>
       </parameters>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>688</xloc>
+      <xloc>800</xloc>
       <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_cerchi_be</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_cerchi_be</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>960</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_be</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_be</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>800</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_cerchi_at</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_cerchi_at</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>640</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_at</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_at</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_cerchi_es</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_cerchi_es</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_es</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_es</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>144</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_cerchi_lu</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_cerchi_lu</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>160</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_lu</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_lu</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_cerchi_nl</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_cerchi_nl</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>480</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>t_t24_get_compprice_nl</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_t24_get_compprice_nl</transname>
+      <directory>/CONNECTOR/tyre24/compprice</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <run_configuration/>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>656</xloc>
+      <yloc>240</yloc>
+    </entry>
+    <entry>
+      <name>Copia i file</name>
+      <description/>
+      <type>COPY_FILES</type>
+      <copy_empty_folders>Y</copy_empty_folders>
+      <arg_from_previous>N</arg_from_previous>
+      <overwrite_files>Y</overwrite_files>
+      <include_subfolders>N</include_subfolders>
+      <remove_source_files>N</remove_source_files>
+      <add_result_filesname>N</add_result_filesname>
+      <destination_is_a_file>N</destination_is_a_file>
+      <create_destination_folder>N</create_destination_folder>
+      <fields>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_at.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-0</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_be.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-1</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_de.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-2</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_es.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-3</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_fr.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-4</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_it.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-5</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_lu.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-6</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_A_nl.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-7</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_at.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-8</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_be.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-9</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_de.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-10</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_es.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-11</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_fr.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-12</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_it.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-13</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_lu.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-14</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+        <field>
+          <source_filefolder>file:///C:/LINKY/PNEUS/connector/tyre24/competitor/Lista dei piazzamenti_R_nl.csv</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-15</source_configuration_name>
+          <destination_filefolder>file:///C:/LINKY/PNEUS/z_export/tyre24_classifiche</destination_filefolder>
+          <destination_configuration_name>LOCAL-DEST-FILE-15</destination_configuration_name>
+          <wildcard/>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>320</xloc>
+      <yloc>48</yloc>
+    </entry>
+    <entry>
+      <name>Togli TRASP a MAK</name>
+      <description/>
+      <type>SQL</type>
+      <sql>UPDATE linky_tyre24 
+SET PREZZOAT =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZOAT > 30;
+
+
+UPDATE linky_tyre24 
+SET PREZZOBE =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZOBE > 30;
+
+
+UPDATE linky_tyre24 
+SET PREZZODE =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZODE > 30;
+
+
+UPDATE linky_tyre24 
+SET PREZZOES =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZOES > 30;
+
+
+UPDATE linky_tyre24 
+SET PREZZOFR =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZOFR > 30;
+
+
+UPDATE linky_tyre24 
+SET PREZZOLU =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZOLU > 30;
+
+
+
+UPDATE linky_tyre24 
+SET PREZZONL =  CAST (PREZZOAT AS FLOAT) - 10
+WHERE PARTNER = 'MAK' and PREZZONL > 30;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>LINKY</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>608</xloc>
+      <yloc>464</yloc>
     </entry>
   </entries>
   <hops>
@@ -762,16 +1713,7 @@
     </hop>
     <hop>
       <from>Nostro prezzo Posizione 1 IT e DE FR</from>
-      <to>PREZZO &#x3c;&#x3e;1 IT e DE FR</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
-    </hop>
-    <hop>
-      <from>t_t24_get_compprice_cerchi_fr</from>
-      <to>Azzero</to>
+      <to>PREZZO &lt;&gt;1 IT e DE FR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -783,13 +1725,13 @@
       <to>t_t24_get_compprice_cerchi_fr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Nostro prezzo Posizione 1 MAK</from>
-      <to>PREZZO &#x3c;&#x3e;1 MAK</to>
+      <to>PREZZO &lt;&gt;1 MAK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -797,7 +1739,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>PREZZO &#x3c;&#x3e;1 MAK</from>
+      <from>PREZZO &lt;&gt;1 MAK</from>
       <to>COMPILO FR e DE</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -811,25 +1753,7 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Compila prezzo riferimento OLD</from>
-      <to>Successo</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>EMAIL IT</from>
-      <to>t_t24_get_compprice_cerchi_de</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
@@ -869,16 +1793,16 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>PREZZO &#x3c;&#x3e;1 IT e DE FR</from>
-      <to>PREZZO &#x3d; 1 da aggiornare IT e DE FR</to>
+      <from>PREZZO &lt;&gt;1 IT e DE FR</from>
+      <to>PREZZO = 1 da aggiornare IT e DE FR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>PREZZO &#x3d; 1 da aggiornare IT e DE FR</from>
+      <from>PREZZO = 1 da aggiornare IT e DE FR</from>
       <to>SQL IT e DE FR ancora a zero</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -887,7 +1811,160 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_t24_get_compprice_cerchi_de</from>
+      <from>t_t24_get_compprice_cerchi_fr</from>
+      <to>t_t24_get_compprice_cerchi_be</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_be</from>
+      <to>t_t24_get_compprice_be</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_be</from>
+      <to>t_t24_get_compprice_cerchi_at</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_at</from>
+      <to>t_t24_get_compprice_at</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_at</from>
+      <to>t_t24_get_compprice_cerchi_es</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_es</from>
+      <to>t_t24_get_compprice_es</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_es</from>
+      <to>t_t24_get_compprice_cerchi_lu</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_lu</from>
+      <to>t_t24_get_compprice_lu</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_lu</from>
+      <to>t_t24_get_compprice_cerchi_nl</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_nl</from>
+      <to>t_t24_get_compprice_nl</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_nl</from>
+      <to>Azzero</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice_cerchi_fr</from>
+      <to>Azzero</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EMAIL IT</from>
+      <to>Copia i file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Copia i file</from>
+      <to>t_t24_get_compprice_cerchi_de</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_t24_get_compprice</from>
+      <to>Azzero</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila prezzo riferimento OLD</from>
+      <to>Togli TRASP a MAK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Togli TRASP a MAK</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>N</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Copia i file</from>
       <to>t_t24_get_compprice_de</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -911,6 +1988,15 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Compila prezzo riferimento OLD</from>
+      <to>Successo</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>

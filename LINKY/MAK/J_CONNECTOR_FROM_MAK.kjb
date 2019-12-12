@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;02.060</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;28 14&#x3a;39&#x3a;40.024</modified_date>
+  <modified_date>2018&#x2f;02&#x2f;26 08&#x3a;15&#x3a;12.654</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,7 +339,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
+      <xloc>80</xloc>
       <yloc>304</yloc>
     </entry>
     <entry>
@@ -388,7 +388,7 @@
       <Result_field_includesubfolders/>
       <fields>
         <field>
-          <source_filefolder>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;connector&#x5c;mak&#x5c;stock_mak.csv</source_filefolder>
+          <source_filefolder>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;mak&#x5c;stock_ftp&#x5c;stock_mak.csv</source_filefolder>
           <wildcard/>
           <include_subFolders>N</include_subFolders>
         </field>
@@ -501,8 +501,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>201</xloc>
-      <yloc>64</yloc>
+      <xloc>208</xloc>
+      <yloc>0</yloc>
     </entry>
     <entry>
       <name>LIS</name>
@@ -531,8 +531,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>326</xloc>
-      <yloc>64</yloc>
+      <xloc>336</xloc>
+      <yloc>0</yloc>
     </entry>
     <entry>
       <name>CATEGORIA</name>
@@ -577,8 +577,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>455</xloc>
-      <yloc>64</yloc>
+      <xloc>464</xloc>
+      <yloc>0</yloc>
     </entry>
     <entry>
       <name>t_load_lis_pubblico_mak</name>
@@ -620,7 +620,7 @@
       <name>senza immagine</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_mak set&#xd;&#xa;giacenza&#x3d;0 where immagine is null or immagine &#x3d;&#x27;&#x27;&#xd;&#xa;--where categoria is null</sql>
+      <sql>update linky_articoli_mak set&#xd;&#xa;giacenza&#x3d;0 &#xd;&#xa;where immagine is null or immagine &#x3d;&#x27;&#x27;&#xd;&#xa;--where categoria is null</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -646,6 +646,22 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>320</xloc>
+      <yloc>304</yloc>
+    </entry>
+    <entry>
+      <name>AZZERO QNTY NULL</name>
+      <description/>
+      <type>SQL</type>
+      <sql>update linky_articoli_mak &#xd;&#xa;set GIACENZA &#x3d; 0 &#xd;&#xa;where GIACENZA IS NULL or GIACENZA &#x3d; &#x27;&#x27;</sql>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>F</sqlfromfile>
+      <sqlfilename/>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>CONNECTOR</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>208</xloc>
       <yloc>304</yloc>
     </entry>
   </entries>
@@ -691,7 +707,7 @@
       <to>Preleva file con SFTP</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -700,7 +716,7 @@
       <to>LIS</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -718,7 +734,7 @@
       <to>Listino Pubblico</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -727,7 +743,7 @@
       <to>File &#x3e; 0</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -768,7 +784,25 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
+      <from>START</from>
+      <to>File &#x3e; 0</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
       <from>FORZO PREZZI </from>
+      <to>AZZERO QNTY NULL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>AZZERO QNTY NULL</from>
       <to>Successo</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>

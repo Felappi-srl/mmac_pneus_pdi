@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;07&#x2f;12 14&#x3a;03&#x3a;05.363</modified_date>
+  <modified_date>2019&#x2f;03&#x2f;29 11&#x3a;35&#x3a;04.998</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
-      <yloc>432</yloc>
+      <xloc>1184</xloc>
+      <yloc>624</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -478,7 +478,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>752</xloc>
-      <yloc>272</yloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Ebay MAK IT</name>
@@ -500,8 +500,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>432</yloc>
+      <xloc>336</xloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>J_LOAD_MOMO</name>
@@ -605,7 +605,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>608</xloc>
-      <yloc>256</yloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Ebay MAK DE</name>
@@ -627,8 +627,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
-      <yloc>432</yloc>
+      <xloc>448</xloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_momo_uk</name>
@@ -664,7 +664,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>432</xloc>
-      <yloc>256</yloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Ebay MAK UK</name>
@@ -686,8 +686,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
-      <yloc>432</yloc>
+      <xloc>256</xloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_momo_nl</name>
@@ -722,8 +722,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>138</xloc>
-      <yloc>230</yloc>
+      <xloc>48</xloc>
+      <yloc>192</yloc>
     </entry>
     <entry>
       <name>Ebay MAK NL</name>
@@ -745,8 +745,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
-      <yloc>432</yloc>
+      <xloc>560</xloc>
+      <yloc>544</yloc>
     </entry>
     <entry>
       <name>Mail Error</name>
@@ -754,7 +754,7 @@
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
       <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destination>lufelappi&#x40;libero.it</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>
@@ -794,12 +794,12 @@
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
       <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destination>lufelappi&#x40;libero.it</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>
       <replytoname>PNEUS jobs</replytoname>
-      <subject>12 - OK EBAY NEW MOMO</subject>
+      <subject>12 - OK EBAY CERCHI NEW MOMO</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
@@ -825,8 +825,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>784</xloc>
-      <yloc>432</yloc>
+      <xloc>896</xloc>
+      <yloc>624</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_momo_fr</name>
@@ -861,8 +861,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>133</xloc>
-      <yloc>343</yloc>
+      <xloc>160</xloc>
+      <yloc>368</yloc>
     </entry>
     <entry>
       <name>Ebay MAK FR</name>
@@ -884,8 +884,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>560</xloc>
-      <yloc>432</yloc>
+      <xloc>672</xloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>t_ebay_ExpFile_momo_es</name>
@@ -920,8 +920,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
-      <yloc>344</yloc>
+      <xloc>336</xloc>
+      <yloc>368</yloc>
     </entry>
     <entry>
       <name>Ebay MAK ES</name>
@@ -943,8 +943,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
-      <yloc>432</yloc>
+      <xloc>784</xloc>
+      <yloc>496</yloc>
     </entry>
     <entry>
       <name>ECE</name>
@@ -1011,8 +1011,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>224</yloc>
+      <xloc>160</xloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Ebay MAK AUS</name>
@@ -1034,8 +1034,67 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>336</yloc>
+      <xloc>160</xloc>
+      <yloc>496</yloc>
+    </entry>
+    <entry>
+      <name>EBAY US</name>
+      <description/>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe linky_action&#x3d;ADD crea ebay_mak_us  batch</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>896</xloc>
+      <yloc>496</yloc>
+    </entry>
+    <entry>
+      <name>t_ebay_ExpFile_momo_us</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>rep_name</specification_method>
+      <trans_object_id/>
+      <filename/>
+      <transname>t_ebay_ExpFile_momo_us</transname>
+      <directory>&#x2f;LINKY&#x2f;MOMO</directory>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>
+        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>496</xloc>
+      <yloc>368</yloc>
     </entry>
   </entries>
   <hops>
@@ -1080,7 +1139,7 @@
       <to>Ebay MAK NL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -1161,7 +1220,7 @@
       <to>Mail Error</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1188,7 +1247,7 @@
       <to>t_ebay_ExpFile_momo_fr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1206,7 +1265,7 @@
       <to>Ebay MAK FR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -1252,8 +1311,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>t_imp_ebay_var_momo</from>
@@ -1296,7 +1355,7 @@
       <to>t_ebay_ExpFile_momo_nl</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
@@ -1308,24 +1367,6 @@
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
       <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Ebay MAK ES</from>
-      <to>Mail OK</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_ebay_ExpFile_momo_es</from>
-      <to>Ebay MAK AUS</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Ebay MAK AUS</from>
@@ -1361,6 +1402,69 @@
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_momo_aus</from>
+      <to>t_ebay_ExpFile_momo_fr</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay MAK DE</from>
+      <to>Ebay MAK FR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay MAK ES</from>
+      <to>EBAY US</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>EBAY US</from>
+      <to>Mail OK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_momo_us</from>
+      <to>Ebay MAK AUS</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_momo_es</from>
+      <to>t_ebay_ExpFile_momo_us</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_ExpFile_momo_us</from>
+      <to>Mail Error</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>N</unconditional>
     </hop>
   </hops>

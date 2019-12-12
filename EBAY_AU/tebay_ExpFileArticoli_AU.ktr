@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;EBAY_AU</directory>
+    <directory>/EBAY_AU</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,17 +427,18 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
+    <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;09 09&#x3a;28&#x3a;33.591</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/20 15:41:43.565</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
     <notepad>
-      <note>Link originale&#x3a;&#xa;C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_AUS</note>
-      <xloc>1076</xloc>
-      <yloc>194</yloc>
+      <note>Link originale:
+C:\linky\pneus\ebay\ebay_AUS</note>
+      <xloc>1152</xloc>
+      <yloc>192</yloc>
       <width>239</width>
       <heigth>48</heigth>
       <fontname>.SF NS Text</fontname>
@@ -469,35 +470,53 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
-    <hop>
-      <from>AUTO</from>
-      <to>Add constants</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>MOTO SCOOTER</from>
-      <to>Add constants 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ACCOPPIATE</from>
-      <to>Add constants 2 2</to>
-      <enabled>Y</enabled>
-    </hop>
     <hop>
       <from>Append streams</from>
       <to>Append streams 3</to>
@@ -683,6 +702,51 @@
       <to>RecuperaCambio</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>String operations 2</from>
+      <to>tmp_ivel_auto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 2</from>
+      <to>tmp_ivel_moto</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations 2 3</from>
+      <to>tmp_ivel_accoppiate</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>AUTO</from>
+      <to>String operations 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>MOTO SCOOTER</from>
+      <to>String operations 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ACCOPPIATE</from>
+      <to>String operations 2 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_auto</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_moto</from>
+      <to>Add constants 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>tmp_ivel_accoppiate</from>
+      <to>Add constants 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ACCOPPIATE</name>
@@ -696,7 +760,42 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;TIRE SET&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;coalesce&#x28;partner,&#x27;FEL&#x27;&#x29;,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0  and  prezzolistino &#x3e; 0 and  &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;AU&#x27; and &#xa;--codiceN&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc,'ACCOPPIATA GOMME','TIRE SET') + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(coalesce(partner,'FEL'),'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then desca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then codca5 else '' end as tmp_ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' 
+else 'ACCOPPIATE MOTO' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0  and  prezzolistino > 0 and  
+pubblicato='Y' and
+linky_ebayarticoli.siteid='AU' and 
+--codiceN' and
+category_path  in ('ACCOPPIATE MOTO')
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -714,8 +813,7 @@
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>AUTO</name>
     <type>TableInput</type>
@@ -728,7 +826,50 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;TYRE&#x27;&#x29; &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; rtrim&#x28;REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;WINTER&#x27;&#x29;&#x29; else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;coalesce&#x28;partner,&#x27;FEL&#x27;&#x29;,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, coalesce&#x28;case when codicerotolamento is not null and len&#x28;codicerumorosita&#x29; &#x3e; 2 then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end ,&#x27;&#x27;&#x29; as energy&#xa;, case when len&#x28;codicerumorosita&#x29; &#x3e; 2 then coalesce&#x28;substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29;,&#x27;&#x27;&#x29; else &#x27;&#x27; end as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0 and  prezzolistino &#x3e; 0 and&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;AU&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--linky_ebayarticoli.codice&#x3d;&#x27;255597&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN METALLO&#x27;,&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc , 'GOMME PNEUMATICI','TYRE') + 
+case when codca2 in ('X','N','R') then ' ' + rtrim(REPLACE(desca2,'INVERNALI','WINTER')) else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(coalesce(partner,'FEL'),'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then codca5 else '' end as tmp_ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+, coalesce(case when codicerotolamento is not null and len(codicerumorosita) > 2 then
+'&lt;p>&lt;img src="https://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
+ codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
+substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
+'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
+else
+''
+end ,'') as energy
+, case when len(codicerumorosita) > 2 then coalesce(substring(codicerumorosita,1, charindex('_',codicerumorosita)-1),'') else '' end as rumorosita
+, codicerotolamento
+, codiceaderenza
+, partner
+,eancode,runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0 and  prezzolistino > 0 and
+pubblicato='Y' and
+linky_ebayarticoli.siteid='AU' and 
+-- codca2='R' and 
+-- linky_ebayarticoli.codice='1_01521700#13' and
+category_path not in ('CERCHI IN METALLO','CERCHI IN LEGA','ACCOPPIATE MOTO','SCOOTER','MOTO', 'CATENE DA NEVE','RUOTINI','')
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -742,12 +883,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
+      <xloc>48</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants</name>
     <type>Constant</type>
@@ -767,7 +907,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -779,7 +919,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Load index&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Load index: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -791,7 +931,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Tyre Width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Tyre Width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -803,7 +943,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Speed Rating&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -815,7 +955,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Aspect Ratio&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -827,7 +967,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Manufacturer&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -839,7 +979,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diameter&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -877,12 +1017,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2</name>
     <type>Constant</type>
@@ -902,7 +1041,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -914,7 +1053,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Load index&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Load index: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -926,7 +1065,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Tyre Width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Tyre Width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -938,7 +1077,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Speed Rating&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -950,7 +1089,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Aspect Ratio&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -962,7 +1101,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Manufacturer&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -974,7 +1113,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diameter&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1012,12 +1151,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 2</name>
     <type>Constant</type>
@@ -1037,7 +1175,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1049,7 +1187,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Informations&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Informations: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1061,7 +1199,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Tyre Width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Tyre Width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1073,7 +1211,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Speed Rating&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Speed Rating:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1085,7 +1223,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Aspect Ratio&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Aspect Ratio: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1097,7 +1235,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Manufacturer&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1109,7 +1247,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Measures&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Measures: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1147,12 +1285,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 3</name>
     <type>Constant</type>
@@ -1172,7 +1309,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1184,7 +1321,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Number of Studs&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Number of Studs: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1196,7 +1333,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Wheel Width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Wheel Width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1208,7 +1345,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Offset&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Offset:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1220,7 +1357,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Distance&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Distance: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1232,7 +1369,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Manufacturers&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Manufacturers: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1244,7 +1381,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diameter&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1282,12 +1419,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 4</name>
     <type>Constant</type>
@@ -1307,7 +1443,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1319,7 +1455,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Year&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Year: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1331,7 +1467,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1343,7 +1479,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Model&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Model:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1355,7 +1491,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Section&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Section: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1367,7 +1503,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Brand&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Brand: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1379,7 +1515,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diameter&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diameter: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1417,12 +1553,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 4</name>
     <type>Constant</type>
@@ -1442,7 +1577,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;br&#x3e;</nullif>
+        <nullif>&lt;br></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1466,7 +1601,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Tyre width&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Tyre width: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1478,7 +1613,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Thickness mesh&#x3a;&#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Thickness mesh:&lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1490,7 +1625,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Section&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Section: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1502,7 +1637,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Manufacturer&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Manufacturer: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1514,7 +1649,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;strong&#x3e;Diameters&#x3a; &#x3c;&#x2f;strong&#x3e;</nullif>
+        <nullif>&lt;strong>Diameters: &lt;/strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1552,12 +1687,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
+      <xloc>368</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams</name>
     <type>Append</type>
@@ -1569,8 +1703,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>look Auto</head_name>
-<tail_name>Look scooter</tail_name>
+    <head_name>look Auto</head_name>
+    <tail_name>Look scooter</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1579,12 +1713,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 3</name>
     <type>Append</type>
@@ -1596,8 +1729,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams</head_name>
-<tail_name>Look accoppiate</tail_name>
+    <head_name>Append streams</head_name>
+    <tail_name>Look accoppiate</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1606,12 +1739,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 3 2</name>
     <type>Append</type>
@@ -1623,8 +1755,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams 3</head_name>
-<tail_name>Look Cerchi</tail_name>
+    <head_name>Append streams 3</head_name>
+    <tail_name>Look Cerchi</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1633,12 +1765,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 4</name>
     <type>Append</type>
@@ -1650,8 +1781,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams 4 2</head_name>
-<tail_name>Look catene</tail_name>
+    <head_name>Append streams 4 2</head_name>
+    <tail_name>Look catene</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1660,12 +1791,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 4 2</name>
     <type>Append</type>
@@ -1677,8 +1807,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams 3 2</head_name>
-<tail_name>Look ruotini</tail_name>
+    <head_name>Append streams 3 2</head_name>
+    <tail_name>Look ruotini</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1687,12 +1817,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CATENE</name>
     <type>TableInput</type>
@@ -1705,7 +1834,78 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;var.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;SNOW TIRE CHAINS&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;SNOW TIRE CHAINS&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm THICKNESS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;,  ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;coalesce&#x28;partner,&#x27;FEL&#x27;&#x29;,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0  and  prezzolistino &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;var.siteid&#x3d;&#x27;AU&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--e.codice&#x3d;&#x27;CATWEIM90F41&#x27; and&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;&#xa;union all&#xa;SELECT distinct&#xd;&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;rtrim&#x28;e.short_desc&#x29;,&#x27;CATENE DA NEVE&#x27;,&#x27;SNOW TIRE CHAINS&#x27;&#x29;,&#x27;CATENE NEVE&#x27;,&#x27;SNOW TIRE CHAINS&#x27;&#x29; &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; ltrim&#x28;rtrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm THICKNESS&#x27; else &#x27;&#x27; end , 1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;Australia&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 &#x3c;&#x3e;&#x27;0&#x27;then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;,&#x27;&#x27; as energy&#xd;&#xa;, &#x27;&#x27; as rumorosita&#xd;&#xa;, &#x27;&#x27; as codicerotolamento&#xd;&#xa;, &#x27;&#x27; as codiceaderenza&#xd;&#xa;, partner,&#xd;&#xa;eancode&#xd;&#xa;FROM linky_ebayarticoli e&#xd;&#xa;-- LEFT JOIN linky_ebay_report on e.codice &#x3d; linky_ebay_report.SKU and linky_ebay_report.SITEID&#x3d;&#x27;AUS&#x27; &#xd;&#xa;where &#xd;&#xa; e.codice not in &#x28;select sku from linky_ebay_report where SITEID&#x3d;&#x27;AUS&#x27; &#x29; and&#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;e.siteid&#x3d;&#x27;AU&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and&#xd;&#xa;--codice like &#x27;CATPEWRSS73&#x25;&#x27; and&#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29;</sql>
+    <sql>SELECT distinct
+ codicevar as product_sku
+, substring(replace(replace(rtrim(var.short_desc),'CATENE DA NEVE','SNOW TIRE CHAINS'),'CATENE NEVE','SNOW TIRE CHAINS') +  case when codca5 is not null then ' ' + ltrim(rtrim(desca5)) + ' mm THICKNESS' else '' end , 1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(coalesce(partner,'FEL'),'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then rtrim(ltrim(desca5)) + ' mm' else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,eancode,'' as runflat,category_path as tipop
+FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
+LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0  and  prezzolistino > 0 and 
+pubblicato='Y' and
+var.siteid='AU' and 
+-- codca2='R' and 
+--e.codice='CATWEIM90F41' and
+category_path in ( 'CATENE DA NEVE')
+union all
+SELECT distinct
+ codice as product_sku
+, substring(replace(replace(rtrim(e.short_desc),'CATENE DA NEVE','SNOW TIRE CHAINS'),'CATENE NEVE','SNOW TIRE CHAINS') +  case when codca5 is not null then ' ' + ltrim(rtrim(desca5)) + ' mm THICKNESS' else '' end , 1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 &lt;&gt;'0'then rtrim(ltrim(desca5)) + ' mm' else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli e
+-- LEFT JOIN linky_ebay_report on e.codice = linky_ebay_report.SKU and linky_ebay_report.SITEID='AUS' 
+where 
+ e.codice not in (select sku from linky_ebay_report where SITEID='AUS' ) and
+product_in_stock > 0 and 
+pubblicato='Y' and
+e.siteid='AU' and 
+-- codca2='R' and
+--codice like 'CATPEWRSS73%' and
+category_path in ( 'CATENE DA NEVE')</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1723,8 +1923,7 @@
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CERCHI LEGA REPLICA</name>
     <type>TableInput</type>
@@ -1737,7 +1936,42 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;ALLOY WHEEL &#x27; &#x2b; short_desc,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;--,prezzolistino&#xa;, dbo.linky_calc_endprice&#x28;coalesce&#x28;partner,&#x27;FEL&#x27;&#x29;,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where &#xa;--linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0  and  prezzolistino &#x3e; 0 and &#xa;--pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;AU&#x27; and &#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring('ALLOY WHEEL ' + short_desc,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+--,prezzolistino
+, dbo.linky_calc_endprice(coalesce(partner,'FEL'),'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then desca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then DESca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where 
+--linky_ebay_report.SKU is null and
+product_in_stock > 0  and  prezzolistino > 0 and 
+--pubblicato='Y' and
+linky_ebayarticoli.siteid='AU' and 
+--codice='1840235VWRA3XL' and
+category_path  in ('CERCHI IN LEGA')
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1755,8 +1989,7 @@
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS Accoppiate</name>
     <type>ScriptValueMod</type>
@@ -1770,16 +2003,27 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_raggio + diametro + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1787,12 +2031,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS auto</name>
     <type>ScriptValueMod</type>
@@ -1806,16 +2049,32 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica &#x2b;&#xa;				energy &#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica +
+				energy ;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1823,12 +2082,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS auto template</name>
     <type>ScriptValueMod</type>
@@ -1842,16 +2100,29 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;var tmp1 &#x3d; TEMPLATE.replace&#x28;&#x27;&#x7b;&#x7b;TITOLO&#x7d;&#x7d;&#x27;,Titolo&#x29;&#x3b;&#xa;var tmp2 &#x3d; tmp1.replace&#x28;&#x27;&#x7b;&#x7b;CARATTERISTICHE&#x7d;&#x7d;&#x27;,caratteristiche&#x29;&#x3b;&#xa;&#xa;descrizione &#x3d; tmp2&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>descrizione</name>
+        <jsScript_script>//Script qua
+
+var tmp1 = TEMPLATE.replace('{{TITOLO}}',Titolo);
+var tmp2 = tmp1.replace('{{CARATTERISTICHE}}',caratteristiche);
+
+descrizione = tmp2;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>descrizione</name>
         <rename>descrizione</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1859,12 +2130,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>1072</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS cerchi</name>
     <type>ScriptValueMod</type>
@@ -1878,16 +2148,31 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1895,12 +2180,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JS moto</name>
     <type>ScriptValueMod</type>
@@ -1914,16 +2198,31 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xa;&#xa;caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>//Script qua
+
+caratteristiche = t_marca + Marca + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1931,12 +2230,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look Cerchi</name>
     <type>DBLookup</type>
@@ -1961,13 +2259,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -1985,12 +2283,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look accoppiate</name>
     <type>DBLookup</type>
@@ -2015,13 +2312,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2039,12 +2336,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look catene</name>
     <type>DBLookup</type>
@@ -2069,13 +2365,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2093,12 +2389,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look ruotini</name>
     <type>DBLookup</type>
@@ -2123,13 +2418,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2147,12 +2442,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Look scooter</name>
     <type>DBLookup</type>
@@ -2177,13 +2471,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -2201,12 +2495,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>MOTO SCOOTER</name>
     <type>TableInput</type>
@@ -2219,7 +2512,42 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;TYRE&#x27;&#x29;  &#x2b;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29;   as Titolo&#xa;, ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;coalesce&#x28;partner,&#x27;FEL&#x27;&#x29;,&#x27;AU&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;,&#x27;&#x27; as energy&#xa;, &#x27;&#x27; as rumorosita&#xa;, &#x27;&#x27; as codicerotolamento&#xa;, &#x27;&#x27; as codiceaderenza&#xa;, partner&#xa;,eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa; product_in_stock &#x3e; 0  and  prezzolistino &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa;linky_ebayarticoli.siteid&#x3d;&#x27;AU&#x27; and &#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc,'GOMME PNEUMATICI','TYRE')  +  + 
+case when codca2 in ('X','N','R') then ' ' + REPLACE(REPLACE(desca2,'INVERNALI','WINTER'), 'ESTIVE','') else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4)   as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(coalesce(partner,'FEL'),'AU',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then codca5 else '' end as tmp_ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+,'' as energy
+, '' as rumorosita
+, '' as codicerotolamento
+, '' as codiceaderenza
+, partner
+,eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+ product_in_stock > 0  and  prezzolistino > 0 and 
+pubblicato='Y' and
+linky_ebayarticoli.siteid='AU' and 
+--codca2 ='N' and
+--codice='1840235VWRA3XL' and
+category_path  in ('SCOOTER','MOTO')
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2237,8 +2565,7 @@
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Prezzo</name>
     <type>Calculator</type>
@@ -2260,7 +2587,7 @@
       <value_length>-1</value_length>
       <value_precision>0</value_precision>
       <remove>N</remove>
-      <conversion_mask>&#x23;</conversion_mask>
+      <conversion_mask>#</conversion_mask>
       <decimal_symbol>.</decimal_symbol>
       <grouping_symbol>,</grouping_symbol>
       <currency_symbol/>
@@ -2273,12 +2600,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
+      <xloc>1168</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RUOTINI</name>
     <type>TableInput</type>
@@ -2291,7 +2617,51 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;replace&#x28;short_desc,&#x27;RUOTINO DI SCORTA&#x27;,&#x27;SPARE WHEEL&#x27;&#x29;,&#x27; PER &#x27;,&#x27; FOR &#x27;&#x29;  &#x2b; &#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#xa;as Titolo&#xa;, ebaycat&#xa;,&#x27;Australia&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;AU&#x27;,&#x27;RUOTINI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, case when desca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when desca3 is not null then desca3 else &#x27;&#x27; end as spalla&#xa;, case when desca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when desca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when desca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when desca2 is not null then desca2 else &#x27;&#x27; end as offset&#xa;, &#x27;RUOTINI&#x27; as category_path&#xa;,product_full_image&#xa;, codca2 as tipoutilizzo&#xa;, case when codicerotolamento is not null then&#xa;&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;www.etichettepneumatici.it&#x2f;Image&#x2f;GetImage&#x3f;fuelefficiency&#x3d;&#x27; &#x2b; &#xa; codicerotolamento &#x2b; &#x27;&#x26;wetgrip&#x3d;&#x27; &#x2b; codiceaderenza &#x2b; &#x27;&#x26;noiseclass&#x3d;&#x27; &#x2b; &#xa;substring&#x28;codicerumorosita,charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;&#x2b;1,1&#x29; &#x2b; &#xa;&#x27;&#x26;decibels&#x3d;&#x27; &#x2b; substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; &#x2b; &#x27;&#x26;width&#x3d;300&#x22; alt&#x3d;&#x22;&#x22; &#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27; &#xa;else&#xa;&#x27;&#x27;&#xa;end as energy&#xa;, substring&#x28;codicerumorosita,1, charindex&#x28;&#x27;_&#x27;,codicerumorosita&#x29;-1&#x29; as rumorosita&#xa;, codicerotolamento&#xa;, codiceaderenza&#xa;, partner,&#xa;eancode&#xa;FROM linky_ebayarticoli &#xa;LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice &#x3d; linky_ebay_report.SKU and &#x27;AUS&#x27;&#x3d; linky_ebay_report.SITEID&#xa;where linky_ebay_report.SKU is null and&#xa;product_in_stock &#x3e; 0 and &#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xa; linky_ebayarticoli.siteid&#x3d;&#x27;AU&#x27; and &#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xa;--codice like &#x27;1598990&#x25;&#x27; and&#xa;--codicerotolamento is not null and&#xa;category_path &#x3d; &#x27;RUOTINI&#x27;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(replace(short_desc,'RUOTINO DI SCORTA','SPARE WHEEL'),' PER ',' FOR ')  + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) 
+as Titolo
+, CAST (ebaycat as VARCHAR) as ebaycat
+,'Australia' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'AU','RUOTINI','',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when desca1 is not null then desca1 else '' end as diametro
+, case when desca3 is not null then desca3 else '' end as spalla
+, case when desca4 is not null then desca4 else '' end as larghezza
+, case when desca5 is not null then desca5 else '' end as ivel
+, case when desca6 is not null then desca6 else '' end as icarico
+, case when desca2 is not null then desca2 else '' end as offset
+, 'RUOTINI' as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+, case when codicerotolamento is not null then
+'&lt;p>&lt;img src="https://www.etichettepneumatici.it/Image/GetImage?fuelefficiency=' + 
+ codicerotolamento + '&amp;wetgrip=' + codiceaderenza + '&amp;noiseclass=' + 
+substring(codicerumorosita,charindex('_',codicerumorosita)+1,1) + 
+'&amp;decibels=' + substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) + '&amp;width=300" alt="" />&lt;/p>' 
+else
+''
+end as energy
+, substring(codicerumorosita,1, charindex('_',codicerumorosita)-1) as rumorosita
+, codicerotolamento
+, codiceaderenza
+, partner,
+eancode,'' as runflat,category_path as tipop
+FROM linky_ebayarticoli 
+LEFT JOIN linky_ebay_report on linky_ebayarticoli.codice = linky_ebay_report.SKU and 'AUS'= linky_ebay_report.SITEID
+where linky_ebay_report.SKU is null and
+product_in_stock > 0 and 
+pubblicato='Y' and
+ linky_ebayarticoli.siteid='AU' and 
+-- codca2='R' and 
+--codice like '1598990%' and
+--codicerotolamento is not null and
+category_path = 'RUOTINI'
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2309,8 +2679,7 @@
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RecuperaCambio</name>
     <type>StreamLookup</type>
@@ -2347,12 +2716,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>1072</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Ruotini 2</name>
     <type>ScriptValueMod</type>
@@ -2366,16 +2734,29 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; offset &#x2b; t_finespecifica &#x2b;&#xa;				t_larghezza &#x2b; larghezza &#x2b; t_finespecifica &#x2b;&#xa;				t_spalla &#x2b; spalla &#x2b; t_finespecifica &#x2b;&#xa;				t_raggio &#x2b; diametro &#x2b; t_finespecifica &#x2b;&#xa;				t_icarico &#x2b; icarico &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche = t_marca + offset + t_finespecifica +
+				t_larghezza + larghezza + t_finespecifica +
+				t_spalla + spalla + t_finespecifica +
+				t_raggio + diametro + t_finespecifica +
+				t_icarico + icarico + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2383,12 +2764,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Ruotini 2 2</name>
     <type>ScriptValueMod</type>
@@ -2402,16 +2782,25 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>caratteristiche &#x3d; t_marca &#x2b; Marca &#x2b; t_finespecifica &#x2b;&#xa;				t_ivelocita &#x2b; ivel &#x2b; t_finespecifica&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>caratteristiche</name>
+        <jsScript_script>caratteristiche = t_marca + Marca + t_finespecifica +
+				t_ivelocita + ivel + t_finespecifica;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>caratteristiche</name>
         <rename>caratteristiche</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2419,12 +2808,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -2436,35 +2824,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2472,12 +2922,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
@@ -2489,35 +2938,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2525,12 +3036,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2 2</name>
     <type>SelectValues</type>
@@ -2542,35 +3052,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2578,12 +3150,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3</name>
     <type>SelectValues</type>
@@ -2595,35 +3166,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2631,12 +3264,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3 2</name>
     <type>SelectValues</type>
@@ -2648,35 +3280,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2684,12 +3378,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 3 2 2</name>
     <type>SelectValues</type>
@@ -2701,35 +3394,97 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>product_sku</name>
-      </field>      <field>        <name>Titolo</name>
-      </field>      <field>        <name>ebaycat</name>
-      </field>      <field>        <name>siteid</name>
-      </field>      <field>        <name>country</name>
-      </field>      <field>        <name>Type</name>
-      </field>      <field>        <name>Marca</name>
-      </field>      <field>        <name>product_price</name>
-      </field>      <field>        <name>product_in_stock</name>
-      </field>      <field>        <name>diametro</name>
-      </field>      <field>        <name>spalla</name>
-      </field>      <field>        <name>larghezza</name>
-      </field>      <field>        <name>ivel</name>
-      </field>      <field>        <name>icarico</name>
-      </field>      <field>        <name>offset</name>
-      </field>      <field>        <name>category_path</name>
-      </field>      <field>        <name>product_full_image</name>
-      </field>      <field>        <name>tipoutilizzo</name>
-      </field>      <field>        <name>energy</name>
-      </field>      <field>        <name>rumorosita</name>
-      </field>      <field>        <name>codicerotolamento</name>
-      </field>      <field>        <name>codiceaderenza</name>
-      </field>      <field>        <name>partner</name>
-      </field>      <field>        <name>eancode</name>
-      </field>      <field>        <name>caratteristiche</name>
-      </field>      <field>        <name>tipo</name>
-      </field>      <field>        <name>currency</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>product_sku</name>
+      </field>
+      <field>
+        <name>Titolo</name>
+      </field>
+      <field>
+        <name>ebaycat</name>
+      </field>
+      <field>
+        <name>siteid</name>
+      </field>
+      <field>
+        <name>country</name>
+      </field>
+      <field>
+        <name>Type</name>
+      </field>
+      <field>
+        <name>Marca</name>
+      </field>
+      <field>
+        <name>product_price</name>
+      </field>
+      <field>
+        <name>product_in_stock</name>
+      </field>
+      <field>
+        <name>diametro</name>
+      </field>
+      <field>
+        <name>spalla</name>
+      </field>
+      <field>
+        <name>larghezza</name>
+      </field>
+      <field>
+        <name>ivel</name>
+      </field>
+      <field>
+        <name>icarico</name>
+      </field>
+      <field>
+        <name>offset</name>
+      </field>
+      <field>
+        <name>category_path</name>
+      </field>
+      <field>
+        <name>product_full_image</name>
+      </field>
+      <field>
+        <name>tipoutilizzo</name>
+      </field>
+      <field>
+        <name>energy</name>
+      </field>
+      <field>
+        <name>rumorosita</name>
+      </field>
+      <field>
+        <name>codicerotolamento</name>
+      </field>
+      <field>
+        <name>codiceaderenza</name>
+      </field>
+      <field>
+        <name>partner</name>
+      </field>
+      <field>
+        <name>eancode</name>
+      </field>
+      <field>
+        <name>caratteristiche</name>
+      </field>
+      <field>
+        <name>tipo</name>
+      </field>
+      <field>
+        <name>currency</name>
+      </field>
+      <field>
+        <name>runflat</name>
+      </field>
+      <field>
+        <name>tipop</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -2737,12 +3492,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
+      <xloc>656</xloc>
       <yloc>496</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>String operations</name>
     <type>StringOperations</type>
@@ -2777,12 +3531,128 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>1072</xloc>
       <yloc>368</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>String operations 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 2</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations 2 3</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>tmp_ivel</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>160</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Valute</name>
     <type>TableInput</type>
@@ -2795,7 +3665,11 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT&#xa;  Valuta&#xa;, Cambio&#xa;FROM linky_valute&#xa;</sql>
+    <sql>SELECT
+  Valuta
+, Cambio
+FROM linky_valute
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2809,12 +3683,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>912</xloc>
+      <xloc>1072</xloc>
       <yloc>96</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>articoli AUS</name>
     <type>TextFileOutput</type>
@@ -2826,7 +3699,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x7c;</separator>
+    <separator>|</separator>
     <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -2840,8 +3713,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_aus</name>
-      <is_command>N</is_command>
+      <name>C:\linky\pneus\ebay\ebay_aus</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -2945,7 +3817,7 @@
       <field>
         <name>prezzofinale</name>
         <type>Number</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2957,7 +3829,7 @@
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -3158,6 +4030,30 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>runflat</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>tipop</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -3167,12 +4063,11 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1120</xloc>
+      <xloc>1280</xloc>
       <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>look Auto</name>
     <type>DBLookup</type>
@@ -3197,13 +4092,13 @@
       <key>
         <name>siteid</name>
         <field>SITID</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <key>
         <name>tipo</name>
         <field>TIPO</field>
-        <condition>&#x3d;</condition>
+        <condition>=</condition>
         <name2/>
       </key>
       <value>
@@ -3221,12 +4116,362 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
+      <xloc>784</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>tmp_ivel_accoppiate</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: 100 km/h</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K: 110 km/h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: 120 km/h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: 130 km/h</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N: 140 km/h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: 150 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q: 160 km/h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: 170 km/h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: 180 km/h</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T: 190 km/h</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U: 200 km/h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: 210 km/h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR: >240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y: 300 km/h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: 50 km/h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: 60 km/h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: 65 km/h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: 70 km/h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: 90 km/h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tmp_ivel_auto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J (max 100 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K (max 110 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L (max 120 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M (max 130 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N (max 140 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P (max 150 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q (max 160 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R (max 170 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S (max 180 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T (max 190 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U (max 200 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H (max 210 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V (max 240 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR (max >240 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W (max 270 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y (max 300 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B (max 50 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C (max 60 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D (max 65 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E (max 70 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F (max 80 Km/hr)</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G (max 90 Km/hr)</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>tmp_ivel_moto</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>tmp_ivel</field_to_use>
+    <target_field>ivel</target_field>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>J</source_value>
+        <target_value>J: 100 km/h</target_value>
+      </field>
+      <field>
+        <source_value>K</source_value>
+        <target_value>K: 110 km/h</target_value>
+      </field>
+      <field>
+        <source_value>L</source_value>
+        <target_value>L: 120 km/h</target_value>
+      </field>
+      <field>
+        <source_value>M</source_value>
+        <target_value>M: 130 km/h</target_value>
+      </field>
+      <field>
+        <source_value>N</source_value>
+        <target_value>N: 140 km/h</target_value>
+      </field>
+      <field>
+        <source_value>P</source_value>
+        <target_value>P: 150 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Q</source_value>
+        <target_value>Q: 160 km/h</target_value>
+      </field>
+      <field>
+        <source_value>R</source_value>
+        <target_value>R: 170 km/h</target_value>
+      </field>
+      <field>
+        <source_value>S</source_value>
+        <target_value>S: 180 km/h</target_value>
+      </field>
+      <field>
+        <source_value>T</source_value>
+        <target_value>T: 190 km/h</target_value>
+      </field>
+      <field>
+        <source_value>U</source_value>
+        <target_value>U: 200 km/h</target_value>
+      </field>
+      <field>
+        <source_value>H</source_value>
+        <target_value>H: 210 km/h</target_value>
+      </field>
+      <field>
+        <source_value>V</source_value>
+        <target_value>V: 240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>ZR</source_value>
+        <target_value>ZR: >240 km/h</target_value>
+      </field>
+      <field>
+        <source_value>W</source_value>
+        <target_value>W: 270 km/h</target_value>
+      </field>
+      <field>
+        <source_value>Y</source_value>
+        <target_value>Y: 300 km/h</target_value>
+      </field>
+      <field>
+        <source_value>B</source_value>
+        <target_value>B: 50 km/h</target_value>
+      </field>
+      <field>
+        <source_value>C</source_value>
+        <target_value>C: 60 km/h</target_value>
+      </field>
+      <field>
+        <source_value>D</source_value>
+        <target_value>D: 65 km/h</target_value>
+      </field>
+      <field>
+        <source_value>E</source_value>
+        <target_value>E: 70 km/h</target_value>
+      </field>
+      <field>
+        <source_value>F</source_value>
+        <target_value>F: 80 km/h</target_value>
+      </field>
+      <field>
+        <source_value>G</source_value>
+        <target_value>G: 90 km/h</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

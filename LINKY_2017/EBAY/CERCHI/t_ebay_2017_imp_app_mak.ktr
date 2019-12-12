@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.397</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;29 11&#x3a;08&#x3a;51.390</modified_date>
+    <modified_date>2018&#x2f;04&#x2f;30 14&#x3a;14&#x3a;48.639</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -495,11 +495,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Dummy &#x28;do nothing&#x29; 2</from>
-      <to>Table output</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Table output</from>
       <to>Dummy &#x28;do nothing&#x29; 3</to>
       <enabled>Y</enabled>
@@ -524,6 +519,11 @@
       <to>Unique rows</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Dummy &#x28;do nothing&#x29; 2</from>
+      <to>Insert &#x2f; Update</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ARTICOLI</name>
@@ -537,7 +537,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, substring&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;upper&#x28;partnumber &#x2b; marcaauto &#x2b; coalesce&#x28;modelloauto,&#x27;&#x27;&#x29;&#x29;,&#x27; &#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3e;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x2f;&#x27;,&#x27;&#x27;&#x29;,&#x27;&#x3c;&#x27;,&#x27;&#x27;&#x29;,&#x27;-&#x27;,&#x27;&#x27;&#x29;,1,46&#x29; as codievar&#xd;&#xa;,case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; replace&#x28;COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;INTERASSE,&#x27;&#x27;&#x29; &#xd;&#xa;	 &#x2b; &#x27; ET&#x27; &#x2b; COALESCE&#x28;offset,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29;&#x29; AS NOME&#xd;&#xa; ,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;, upper&#x28;marcaauto&#x29; as marca&#xd;&#xa;, upper&#x28;modelloauto&#x29; as modello &#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa;IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa;and CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;3&#xd;&#xa;and prezzo is not null</sql>
+    <sql>select &#xd;&#xa;  &#x27;MAK&#x27; as marchio&#xd;&#xa;, partnumber as codice&#xd;&#xa;, upper&#x28;partnumber &#x2b; substring&#x28;codiceauto,1,9&#x29;&#x29; as codievar&#xd;&#xa;,case when WHEELMODEL &#x3d;&#x27;ACCIAIO&#x27; then &#x27;CERCHI IN METALLO MAK &#x27; else&#xd;&#xa; &#x27;CERCHI IN LEGA MAK &#x27; end&#xd;&#xa;&#x2b; COALESCE&#x28;WHEELMODEL,&#x27;&#x27;&#x29;  &#xd;&#xa;   &#x2b; &#x27; &#x27; &#x2b; replace&#x28;COALESCE&#x28;CANALE,&#x27;&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;RAGGIO,&#x27;&#x27;&#x29;  &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;NUMEROFORI,&#x27;&#x27;&#x29; &#x2b; &#x27;x&#x27; &#x2b; COALESCE&#x28;CASE WHEN INTERASSE &#x3d; &#x27;098&#x27; THEN &#x27;98&#x27; ELSE INTERASSE END,&#x27;&#x27;&#x29; &#xd;&#xa;	 &#x2b; &#x27; ET&#x27; &#x2b; COALESCE&#x28;offset,&#x27;&#x27;&#x29; &#x2b; &#x27; &#x27; &#x2b; COALESCE&#x28;FINISHING,&#x27;&#x27;&#x29;&#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MARCAAUTO,&#x27;&#x27;&#x29;&#x29; &#x2b; &#x27; &#x27; &#x2b; upper&#x28;COALESCE&#x28;MODELLOAUTO,&#x27;&#x27;&#x29;&#x29; AS NOME&#xd;&#xa; ,CATEGORIA as ALTREebaycat,&#xd;&#xa;&#x27;Y&#x27; as pubblicato,&#xd;&#xa;&#x27;MAK&#x27; AS PARTNER,&#xd;&#xa;case when isece is not null or isnad is not null then &#x27;1&#x27; else 0 end as isece,&#xd;&#xa;case when istuv is not null then &#x27;http&#x3a;&#x2f;&#x2f;b2b.makwheels.it&#x2f;SysInf&#x2f;MAK&#x2f;Documenti&#x2f;Certificati&#x2f;&#x27; &#x2b; replace&#x28;certificato,&#x27; &#x27;,&#x27;&#x25;20&#x27;&#x29; &#x2b; &#x27;.pdf&#x27; else &#x27;&#x27; end as urlcertificato,&#xd;&#xa;case when istuv is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV&#xd;&#xa;, upper&#x28;marcaauto&#x29; as marca&#xd;&#xa;, upper&#x28;modelloauto&#x29; as modello &#xd;&#xa;from linky_articoli_mak&#xd;&#xa;WHERE &#xd;&#xa; IMMAGINE IS NOT NULL and immagine &#x3c;&#x3e; &#x27;&#x27; &#xd;&#xa; and &#xd;&#xa;CATEGORIA&#x3c;&#x3e;&#x27;&#x27; &#xd;&#xa;and giacenza&#x3e;3&#xd;&#xa;and prezzo is not null&#xd;&#xa;--and partnumber&#x3d;&#x27;F1020NNIB19WSX&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -576,7 +576,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
+      <xloc>640</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -601,8 +601,108 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>160</yloc>
+      <xloc>560</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Insert &#x2f; Update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR_2017</connection>
+    <commit>1000</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>ebay_cerchi_app</table>
+      <key>
+        <name>codievar</name>
+        <field>codicevar</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>codice</name>
+        <field>codice</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>SiteID</name>
+        <field>siteid</field>
+        <condition>&#x3d;</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>codice</name>
+        <rename>codice</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>nome</name>
+        <rename>NOME</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>siteid</name>
+        <rename>SiteID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>ebaycat</name>
+        <rename>EbayCat</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>isece</name>
+        <rename>isece</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>urlcertificato</name>
+        <rename>urlcertificato</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>istuv</name>
+        <rename>isTUV</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>codicevar</name>
+        <rename>codievar</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>marcaauto</name>
+        <rename>marca</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>modelloauto</name>
+        <rename>modello</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -813,8 +913,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>64</yloc>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

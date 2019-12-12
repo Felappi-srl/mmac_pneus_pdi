@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;16.243</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;10&#x2f;18 16&#x3a;12&#x3a;01.904</modified_date>
+    <modified_date>2018&#x2f;05&#x2f;24 15&#x3a;04&#x3a;52.603</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -463,8 +463,8 @@
   </connection>
   <order>
     <hop>
-      <from>Split Fields</from>
-      <to>Split Fields 2</to>
+      <from>Split canale&#x2f;raggio</from>
+      <to>Split fori&#x2f;interasse</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -474,7 +474,7 @@
     </hop>
     <hop>
       <from>Filter rows</from>
-      <to>Split Fields</to>
+      <to>Split canale&#x2f;raggio</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -483,18 +483,28 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Split Fields 2</from>
+      <from>Script NAD ECE e ANNI</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Insert &#x2f; Update</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Split fori&#x2f;interasse</from>
       <to>Replace in string</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Replace in string</from>
-      <to>Modified Java Script Value</to>
+      <to>Split ANNI</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Modified Java Script Value</from>
-      <to>Insert &#x2f; Update</to>
+      <from>Split ANNI</from>
+      <to>Script NAD ECE e ANNI</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -517,8 +527,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>320</yloc>
+      <xloc>144</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -534,7 +544,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<send_true_to>Split Fields</send_true_to>
+<send_true_to>Split canale&#x2f;raggio</send_true_to>
 <send_false_to>Dummy &#x28;do nothing&#x29;</send_false_to>
     <compare>
 <condition>
@@ -552,8 +562,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>160</xloc>
-      <yloc>64</yloc>
+      <xloc>144</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -570,7 +580,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <commit>1</commit>
+    <commit>5000</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
@@ -594,7 +604,7 @@
         <name2/>
       </key>
       <key>
-        <name>Mod. Anno</name>
+        <name>anno_ok</name>
         <field>ANNOAUTO</field>
         <condition>&#x3d;</condition>
         <name2/>
@@ -627,17 +637,17 @@
       </value>
       <value>
         <name>ANNOAUTO</name>
-        <rename>Mod. Anno</rename>
+        <rename>Anni</rename>
         <update>N</update>
       </value>
       <value>
         <name>WHEELMODEL</name>
-        <rename>Nome ruota</rename>
+        <rename>Modello Ruota</rename>
         <update>Y</update>
       </value>
       <value>
         <name>FINISHING</name>
-        <rename>Colore</rename>
+        <rename>Finitura</rename>
         <update>Y</update>
       </value>
       <value>
@@ -667,47 +677,12 @@
       </value>
       <value>
         <name>CB</name>
-        <rename>CB</rename>
+        <rename>Diam. Foro Centraggio</rename>
         <update>Y</update>
       </value>
       <value>
         <name>CENTRAGGIO</name>
-        <rename>Centraggio</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>EANCODE</name>
-        <rename>CODICE EAN</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura1</name>
-        <rename>Pneumatico_1</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura2</name>
-        <rename>Pneumatico_2</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura3</name>
-        <rename>Pneumatico_3</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura4</name>
-        <rename>Pneumatico_4</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura5</name>
-        <rename>Pneumatico_5</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>misura6</name>
-        <rename>Pneumatico_6</rename>
+        <rename>Diam. Foro Centraggio</rename>
         <update>Y</update>
       </value>
       <value>
@@ -729,8 +704,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>720</xloc>
-      <yloc>64</yloc>
+      <xloc>944</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -762,7 +737,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;momo&#x5c;Lista Applicazioni Italia Settembre 2017_EAN.XLSX</name>
+      <name>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;momo&#x5c;MOMO_Applicazione Italia_Spring 2018.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -776,7 +751,7 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -788,7 +763,7 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -800,7 +775,7 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
@@ -830,7 +805,7 @@
         <group/>
       </field>
       <field>
-        <name>Codice</name>
+        <name>Anni</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -842,7 +817,31 @@
         <group/>
       </field>
       <field>
-        <name>EAN</name>
+        <name>Diam. Foro Centraggio</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>PCD</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Codice</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -890,7 +889,7 @@
         <group/>
       </field>
       <field>
-        <name>PCD</name>
+        <name>PCDruota</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -908,37 +907,13 @@
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>&#x23;</format>
         <currency/>
         <decimal/>
         <group/>
       </field>
       <field>
-        <name>Diam. Foro Centraggio</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Anello</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Bulloneria</name>
+        <name>Diam. Foro Centraggio2</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -951,18 +926,6 @@
       </field>
       <field>
         <name>Kit Nr&#xa;&#x28;set bulloneria &#x2b; anello centraggio per ruota&#x29;</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Notes</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -997,34 +960,10 @@
         <decimal/>
         <group/>
       </field>
-      <field>
-        <name>Asse</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
-      <field>
-        <name>Pneumatico</name>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-      </field>
     </fields>
     <sheets>
       <sheet>
-        <name>Applicazione Italia</name>
+        <name>Spring 2018</name>
         <startrow>3</startrow>
         <startcol>0</startcol>
         </sheet>
@@ -1055,14 +994,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>64</yloc>
+      <xloc>48</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
+    <name>Script NAD ECE e ANNI</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -1076,7 +1015,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;OMOLOGAZIONE&#x3d;&#x3d;&#x27;NAD&#x27;&#x29;&#x7b;&#xd;&#xa;	isNAD&#x3d;&#x27;1&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	isNAD&#x3d;&#x27;0&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;OMOLOGAZIONE&#x3d;&#x3d;&#x27;ECE&#x27;&#x29;&#x7b;&#xd;&#xa;	isECE&#x3d;&#x27;1&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	isECE&#x3d;&#x27;0&#x27;&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;if &#x28;OMOLOGAZIONE&#x3d;&#x3d;&#x27;NAD&#x27;&#x29;&#x7b;&#xd;&#xa;	isNAD&#x3d;&#x27;1&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	isNAD&#x3d;&#x27;0&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;OMOLOGAZIONE&#x3d;&#x3d;&#x27;ECE&#x27;&#x29;&#x7b;&#xd;&#xa;	isECE&#x3d;&#x27;1&#x27;&#x3b;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	isECE&#x3d;&#x27;0&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var anno_da&#xd;&#xa;if &#x28;tmp_anno_da&#x29;&#x7b;&#xd;&#xa;	if &#x28;tmp_anno_da.length &#x3d;&#x3d; 4&#x29;&#x7b;&#xd;&#xa;		anno_da &#x3d; tmp_anno_da.substr&#x28;2,2&#x29;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		anno_da &#x3d; tmp_anno_da&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;	anno_da &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;var anno_a&#xd;&#xa;if &#x28;tmp_anno_a&#x29;&#x7b;&#xd;&#xa;	if &#x28;tmp_anno_a.length &#x3d;&#x3d; 4&#x29;&#x7b;&#xd;&#xa;		anno_a &#x3d; tmp_anno_a.substr&#x28;2,2&#x29;&#x3b;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		anno_a &#x3d; tmp_anno_a&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#x7d;else&#x7b;&#xd;&#xa;		anno_a &#x3d; &#x27;&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;anno_ok &#x3d; anno_da &#x2b; &#x27; - &#x27; &#x2b; anno_a&#x3b;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>isNAD</name>
         <rename>isNAD</rename>
         <type>String</type>
@@ -1089,6 +1028,12 @@
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
+      </field>      <field>        <name>anno_ok</name>
+        <rename>anno_ok</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
       </field>    </fields>    <cluster_schema/>
     <remotesteps>
       <input>
@@ -1097,8 +1042,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
-      <yloc>64</yloc>
+      <xloc>656</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1157,14 +1102,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
-      <yloc>64</yloc>
+      <xloc>464</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split Fields</name>
+    <name>Split canale&#x2f;raggio</name>
     <type>FieldSplitter</type>
     <description/>
     <distribute>Y</distribute>
@@ -1211,14 +1156,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>256</xloc>
-      <yloc>64</yloc>
+      <xloc>240</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Split Fields 2</name>
+    <name>Split fori&#x2f;interasse</name>
     <type>FieldSplitter</type>
     <description/>
     <distribute>Y</distribute>
@@ -1265,8 +1210,102 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>64</yloc>
+      <xloc>352</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Diam. Foro Centraggio</in_stream_name>
+        <out_stream_name/>
+        <trim_type>both</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char/>
+        <pad_len/>
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Split ANNI</name>
+    <type>FieldSplitter</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+   <splitfield>Anni</splitfield>
+   <delimiter>-</delimiter>
+   <enclosure/>
+    <fields>      <field>        <name>tmp_anno_da</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>      <field>        <name>tmp_anno_a</name>
+        <id/>
+        <idrem>N</idrem>
+        <type>String</type>
+        <format/>
+        <group/>
+        <decimal/>
+        <currency/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <nullif/>
+        <ifnull/>
+        <trimtype>both</trimtype>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

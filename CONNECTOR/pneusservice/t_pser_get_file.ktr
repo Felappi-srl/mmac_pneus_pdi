@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;CONNECTOR&#x2f;pneusservice</directory>
+    <directory>/CONNECTOR/pneusservice</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2017&#x2f;06&#x2f;22 11&#x3a;19&#x3a;42.719</created_date>
+    <created_date>2017/06/22 11:19:42.719</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;06&#x2f;29 15&#x3a;23&#x3a;47.219</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/16 09:26:48.559</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -516,7 +516,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneusservice&#x5c;pneusservice.csv</nullif>
+        <nullif>C:\LINKY\PNEUS\connector\pneusservice\pneusservice.csv</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -528,7 +528,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>C&#x3a;&#x5c;LINKY&#x5c;PNEUS&#x5c;connector&#x5c;pneusservice&#x5c;foto.zip</nullif>
+        <nullif>C:\LINKY\PNEUS\connector\pneusservice\foto.zip</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -546,8 +546,7 @@
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>File Foto</name>
     <type>ProcessFiles</type>
@@ -578,8 +577,7 @@
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>File Wheels</name>
     <type>ProcessFiles</type>
@@ -610,8 +608,7 @@
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Generate Rows</name>
     <type>RowGenerator</type>
@@ -655,7 +652,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>http&#x3a;&#x2f;&#x2f;www.pneusservice.com&#x2f;api&#x2f;picoportal.php</nullif>
+        <nullif>http://www.pneusservice.com/api/picoportal.php</nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -690,8 +687,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>HTTP Post</name>
     <type>HTTPPOST</type>
@@ -723,7 +719,7 @@
       <code/>
       <response_time/>
       <response_header/>
-      </result>
+    </result>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -736,8 +732,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>HTTP wheels</name>
     <type>HTTPPOST</type>
@@ -769,7 +764,7 @@
       <code/>
       <response_time/>
       <response_header/>
-      </result>
+    </result>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -782,8 +777,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JSON Input</name>
     <type>JsonInput</type>
@@ -804,6 +798,7 @@
     <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
     <doNotFailIfNoFile>Y</doNotFailIfNoFile>
     <ignoreMissingPath>N</ignoreMissingPath>
+    <defaultPathLeafToNull>Y</defaultPathLeafToNull>
     <rownum_field/>
     <file>
       <name/>
@@ -815,7 +810,7 @@
     <fields>
       <field>
         <name>token</name>
-        <path>&#x24;.token</path>
+        <path>$.token</path>
         <type>String</type>
         <format/>
         <currency/>
@@ -851,8 +846,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JSON Input 2</name>
     <type>JsonInput</type>
@@ -873,6 +867,7 @@
     <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
     <doNotFailIfNoFile>Y</doNotFailIfNoFile>
     <ignoreMissingPath>N</ignoreMissingPath>
+    <defaultPathLeafToNull>Y</defaultPathLeafToNull>
     <rownum_field/>
     <file>
       <name/>
@@ -884,7 +879,7 @@
     <fields>
       <field>
         <name>get_csv_wheels</name>
-        <path>&#x24;.get_csv_wheels</path>
+        <path>$.get_csv_wheels</path>
         <type>String</type>
         <format/>
         <currency/>
@@ -920,8 +915,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>JSON Input 2 2</name>
     <type>JsonInput</type>
@@ -942,6 +936,7 @@
     <IsIgnoreEmptyFile>Y</IsIgnoreEmptyFile>
     <doNotFailIfNoFile>Y</doNotFailIfNoFile>
     <ignoreMissingPath>N</ignoreMissingPath>
+    <defaultPathLeafToNull>Y</defaultPathLeafToNull>
     <rownum_field/>
     <file>
       <name/>
@@ -953,7 +948,7 @@
     <fields>
       <field>
         <name>link</name>
-        <path>&#x24;.link</path>
+        <path>$.link</path>
         <type>String</type>
         <format/>
         <currency/>
@@ -966,7 +961,7 @@
       </field>
       <field>
         <name>picture_file</name>
-        <path>&#x24;.picture_file</path>
+        <path>$.picture_file</path>
         <type>String</type>
         <format/>
         <currency/>
@@ -1002,8 +997,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values</name>
     <type>SelectValues</type>
@@ -1015,10 +1009,16 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>token</name>
-      </field>      <field>        <name>url</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>token</name>
+      </field>
+      <field>
+        <name>url</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1030,8 +1030,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Select values 2</name>
     <type>SelectValues</type>
@@ -1043,10 +1042,18 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>      <field>        <name>link</name>
-      </field>      <field>        <name>picture_file</name>
-      </field>        <select_unspecified>N</select_unspecified>
-    </fields>    <cluster_schema/>
+    <fields>
+      <field>
+        <name>link</name>
+        <rename/>
+      </field>
+      <field>
+        <name>picture_file</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1058,8 +1065,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>get_csv_wheels</name>
     <type>ScriptValueMod</type>
@@ -1073,16 +1079,26 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;url_request &#x3d; url &#x2b; &#x27;&#x3f;op&#x3d;get_csv_wheels&#x26;token&#x3d;&#x27; &#x2b; token &#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>url_request</name>
+        <jsScript_script>//Script qua
+
+url_request = url + '?op=get_csv_wheels&amp;token=' + token ;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>url_request</name>
         <rename>url_request</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1094,8 +1110,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>get_token</name>
     <type>ScriptValueMod</type>
@@ -1109,16 +1124,26 @@
     </partitioning>
     <compatible>N</compatible>
     <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>&#x2f;&#x2f;Script qua&#xd;&#xa;&#xd;&#xa;url_request &#x3d; url &#x2b; &#x27;&#x3f;op&#x3d;&#x27; &#x2b; operazione &#x2b; &#x27;&#x26;uid&#x3d;&#x27; &#x2b; uid &#x2b; &#x27;&#x26;pwd&#x3d;&#x27;&#x2b;pwd&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>url_request</name>
+        <jsScript_script>//Script qua
+
+url_request = url + '?op=' + operazione + '&amp;uid=' + uid + '&amp;pwd='+pwd;</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>url_request</name>
         <rename>url_request</rename>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <replace>N</replace>
-      </field>    </fields>    <cluster_schema/>
+      </field>
+    </fields>
+    <cluster_schema/>
     <remotesteps>
       <input>
       </input>
@@ -1130,8 +1155,7 @@
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

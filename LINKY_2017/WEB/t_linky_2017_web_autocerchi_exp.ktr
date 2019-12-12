@@ -429,7 +429,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;21 11&#x3a;23&#x3a;50.376</modified_date>
+    <modified_date>2018&#x2f;05&#x2f;25 10&#x3a;04&#x3a;08.082</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -591,7 +591,7 @@
     </hop>
     <hop>
       <from>Cerchi ALCAR</from>
-      <to>Sort rows 2 2 2</to>
+      <to>Sort cerchi alcar</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -601,16 +601,16 @@
     </hop>
     <hop>
       <from>ALCAR</from>
-      <to>Sort rows 3 2</to>
+      <to>Sort auto alcar</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 2 2 2</from>
+      <from>Sort cerchi alcar</from>
       <to>Merge ALCAR</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Sort rows 3 2</from>
+      <from>Sort auto alcar</from>
       <to>Merge ALCAR</to>
       <enabled>Y</enabled>
     </hop>
@@ -620,13 +620,48 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Select ALCAR</from>
+      <to>Append ALCAR</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi PNS</from>
+      <to>Sort rows 3 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PNS</from>
+      <to>Sort rows 3 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3 3</from>
+      <to>Merge PNS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Sort rows 3 4</from>
+      <to>Merge PNS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Merge PNS</from>
+      <to>Select PNS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Append ALCAR</from>
+      <to>Append PNS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Append PNS</from>
       <to>autocerchi.txt</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select ALCAR</from>
-      <to>Append ALCAR</to>
+      <from>Select PNS</from>
+      <to>Append PNS</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -642,7 +677,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT&#xa;codiceautom,&#xa;codiceauto&#xa;FROM&#xa;connector_2017.carfit_masterauto_partnerauto_rel&#xa;JOIN connector_2017.carfit_partner_auto&#xa;ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop &#x3d; connector_2017.carfit_partner_auto.codiceauto&#xa;WHERE&#xa;connector_2017.carfit_partner_auto.partner&#x3d;&#x27;ALCAR&#x27;</sql>
+    <sql>SELECT&#xa;codiceautom,&#xa;codiceauto,&#xd;&#xa;codiceautopartner&#xa;FROM&#xa;connector_2017.carfit_masterauto_partnerauto_rel&#xa;JOIN connector_2017.carfit_partner_auto&#xa;ON connector_2017.carfit_masterauto_partnerauto_rel.codiceautop &#x3d; connector_2017.carfit_partner_auto.codiceauto&#xa;WHERE&#xa;connector_2017.carfit_partner_auto.partner&#x3d;&#x27;ALCAR&#x27;&#xd;&#xa;-- and codiceautopartner in &#x28;13769,13770,13771,13772,13773,13774,13775,13776,13777,14228&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -656,8 +691,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>784</xloc>
-      <yloc>256</yloc>
+      <xloc>768</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -683,7 +718,34 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
+      <xloc>720</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Append PNS</name>
+    <type>Append</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<head_name>Append ALCAR</head_name>
+<tail_name>Select PNS</tail_name>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -710,8 +772,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>557</xloc>
-      <yloc>30</yloc>
+      <xloc>512</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -737,7 +799,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
+      <xloc>624</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -819,7 +881,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.CODICEAUTO,&#xa;dbo.&#x5b;linky_articoli_ALCAR&#x5d;.PARTNUMBER,&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.isECE,&#xa;	&#x27;0&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.URLCERTIFICATO as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl,&#xa;RAGGIO&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_ALCAR&#x5d;&#xa;JOIN dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;&#xa;ON dbo.&#x5b;linky_articoli_ALCAR&#x5d;.PARTNUMBER &#x3d; dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.CODICECERCHIO&#xa;where &#xd;&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.isECE&#x3d;1 &#xd;&#xa;and dbo.&#x5b;linky_articoli_ALCAR&#x5d;.giacenza&#x3e;0 &#xd;&#xa;</sql>
+    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.CODICEAUTO,&#xa;dbo.&#x5b;linky_articoli_ALCAR&#x5d;.PARTNUMBER,&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.isECE,&#xa;	&#x27;0&#x27; as isNAD,&#xa;	&#x27;0&#x27; as isTUV,&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.URLCERTIFICATO as ececerturl,&#xa;	&#x27;&#x27; as nadcerturl,&#xa;	&#x27;&#x27; as tuvcerturl,&#xa;RAGGIO&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_ALCAR&#x5d;&#xa;JOIN dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;&#xa;ON dbo.&#x5b;linky_articoli_ALCAR&#x5d;.PARTNUMBER &#x3d; dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.CODICECERCHIO&#xa;where &#xd;&#xa;dbo.&#x5b;linky_articoli_ALCAR_autocerchi&#x5d;.isECE&#x3d;1 &#xd;&#xa;and dbo.&#x5b;linky_articoli_ALCAR&#x5d;.giacenza&#x3e;0 &#xd;&#xa;&#xd;&#xa;-- and dbo.&#x5b;linky_articoli_ALCAR&#x5d;.PARTNUMBER &#x3d; &#x27;OKEG3BP25&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -833,8 +895,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
-      <yloc>336</yloc>
+      <xloc>704</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -851,7 +913,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MARCAAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MODELLOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.TIPOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.ANNOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.PARTNUMBER,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV,&#xa;&#x27;&#x27; as ececerturl,&#xa;&#x27;&#x27; as nadcerturl,&#xa;&#x27;&#x27; as tuvcerturl,&#xa;raggio&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;&#xa;where&#xa;replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; </sql>
+    <sql>SELECT&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MARCAAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.MODELLOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.TIPOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.ANNOAUTO,&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;.PARTNUMBER,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isECE is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isECE,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isNAD is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isNAD,&#xa;case when dbo.&#x5b;linky_articoli_MOMO&#x5d;.isTUV is not null then &#x27;1&#x27; else &#x27;0&#x27; end as isTUV,&#xa;&#x27;&#x27; as ececerturl,&#xa;&#x27;&#x27; as nadcerturl,&#xa;&#x27;&#x27; as tuvcerturl,&#xa;raggio&#xa;FROM&#xa;dbo.&#x5b;linky_articoli_MOMO&#x5d;&#xa;--where replace&#x28;GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -865,8 +927,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>404</xloc>
-      <yloc>294</yloc>
+      <xloc>224</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -897,8 +959,40 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>384</yloc>
+      <xloc>528</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi PNS</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>SELECT&#xd;&#xa;replace&#x28;dbo.&#x5b;linky_articoli_PNS&#x5d;.MARCAAUTO,&#x27;ALFA ROMEO&#x27;,&#x27;ALFA R.&#x27;&#x29; as MARCAAUTO,&#xd;&#xa;dbo.&#x5b;linky_articoli_PNS&#x5d;.MODELLOAUTO,&#xd;&#xa;dbo.&#x5b;linky_articoli_PNS&#x5d;.TIPOAUTO,&#xd;&#xa;dbo.&#x5b;linky_articoli_PNS&#x5d;.ANNOAUTO,&#xd;&#xa;dbo.&#x5b;linky_articoli_PNS&#x5d;.PARTNUMBER,&#xd;&#xa;	&#x27;0&#x27; as isECE,&#xd;&#xa;	&#x27;1&#x27; as isNAD,&#xd;&#xa;	&#x27;0&#x27; as isTUV,&#xd;&#xa;	&#x27;&#x27; as ececerturl,&#xd;&#xa;	&#x27;&#x27; as nadcerturl,&#xd;&#xa;	&#x27;&#x27; as tuvcerturl,&#xd;&#xa;RAGGIO&#xd;&#xa;FROM&#xd;&#xa;dbo.&#x5b;linky_articoli_PNS&#x5d;&#xd;&#xa;where &#x28;isece is not null or isnad is not null&#x29; and OUT_PROD &#x3d; &#x27;0&#x27;&#xd;&#xa;--and partnumber &#x3d; &#x27;NEVA70174002040I&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>736</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -947,13 +1041,13 @@
       <schema_name/>
     </partitioning>
 <join_type>INNER</join_type>
-<step1>Sort rows 3 2</step1>
-<step2>Sort rows 2 2 2</step2>
+<step1>Sort cerchi alcar</step1>
+<step2>Sort auto alcar</step2>
     <keys_1>
-      <key>codiceauto</key>
+      <key>CODICEAUTO</key>
     </keys_1>
     <keys_2>
-      <key>CODICEAUTO</key>
+      <key>codiceautopartner</key>
     </keys_2>
     <cluster_schema/>
     <remotesteps>
@@ -963,8 +1057,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>256</yloc>
+      <xloc>848</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1037,8 +1131,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>408</xloc>
-      <yloc>127</yloc>
+      <xloc>400</xloc>
+      <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1075,8 +1169,46 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>304</yloc>
+      <xloc>624</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Merge PNS</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+<join_type>INNER</join_type>
+<step1>Sort rows 3 3</step1>
+<step2>Sort rows 3 4</step2>
+    <keys_1>
+      <key>MARCAAUTO</key>
+      <key>MODELLOAUTO</key>
+      <key>ANNOAUTO</key>
+    </keys_1>
+    <keys_2>
+      <key>marca</key>
+      <key>modello</key>
+      <key>anno</key>
+    </keys_2>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1123,7 +1255,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>322</xloc>
+      <xloc>304</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1155,8 +1287,40 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>304</yloc>
+      <xloc>464</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>PNS</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR_2017</connection>
+    <sql>SELECT&#xd;&#xa;connector_2017.carfit_master_auto.codiceauto,&#xd;&#xa;connector_2017.carfit_master_auto.marca,&#xd;&#xa;connector_2017.carfit_master_auto.modello,&#xd;&#xa;connector_2017.carfit_master_auto.tipo,&#xd;&#xa;connector_2017.carfit_master_auto.anno&#xd;&#xa;FROM&#xd;&#xa;connector_2017.carfit_master_auto</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>720</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1192,8 +1356,45 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>176</yloc>
+      <xloc>720</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Select PNS</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>      <field>        <name>codiceauto</name>
+        <rename>idauto</rename>
+      </field>      <field>        <name>PARTNUMBER</name>
+        <rename>SKU</rename>
+      </field>      <field>        <name>isECE</name>
+      </field>      <field>        <name>isNAD</name>
+      </field>      <field>        <name>isTUV</name>
+      </field>      <field>        <name>ececerturl</name>
+      </field>      <field>        <name>nadcerturl</name>
+      </field>      <field>        <name>tuvcerturl</name>
+      </field>      <field>        <name>RAGGIO</name>
+      </field>        <select_unspecified>N</select_unspecified>
+    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>960</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1275,7 +1476,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>557</xloc>
+      <xloc>512</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1355,8 +1556,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>436</xloc>
-      <yloc>29</yloc>
+      <xloc>416</xloc>
+      <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1392,8 +1593,92 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>224</yloc>
+      <xloc>624</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort auto alcar</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>codiceautopartner</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>848</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort cerchi alcar</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CODICEAUTO</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>784</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1524,8 +1809,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>407</xloc>
-      <yloc>220</yloc>
+      <xloc>400</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1590,50 +1875,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>688</xloc>
-      <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Sort rows 2 2 2</name>
-    <type>SortRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>CODICEAUTO</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-        <collator_enabled>N</collator_enabled>
-        <collator_strength>0</collator_strength>
-        <presorted>N</presorted>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>976</xloc>
-      <yloc>336</yloc>
+      <xloc>624</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1698,14 +1941,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>592</xloc>
-      <yloc>304</yloc>
+      <xloc>528</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Sort rows 3 2</name>
+    <name>Sort rows 3 3</name>
     <type>SortRows</type>
     <description/>
     <distribute>Y</distribute>
@@ -1724,7 +1967,31 @@
       <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>codiceauto</name>
+        <name>MARCAAUTO</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>MODELLOAUTO</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>TIPOAUTO</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>ANNOAUTO</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -1740,8 +2007,74 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
-      <yloc>256</yloc>
+      <xloc>816</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Sort rows 3 4</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>out</prefix>
+      <sort_size>1000000</sort_size>
+      <free_memory/>
+      <compress>N</compress>
+      <compress_variable/>
+      <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>marca</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>modello</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>tipo</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+      <field>
+        <name>anno</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>816</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

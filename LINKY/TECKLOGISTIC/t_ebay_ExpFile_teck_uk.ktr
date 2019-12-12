@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;LINKY&#x2f;TECKLOGISTIC</directory>
+    <directory>/LINKY/TECKLOGISTIC</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
+    <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;21 16&#x3a;32&#x3a;14.587</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/20 11:11:51.188</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,17 +448,50 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
@@ -489,11 +522,11 @@
     </hop>
     <hop>
       <from>CERCHI LEGA TECK</from>
-      <to>MARCA AUTO &#x2b; FOR</to>
+      <to>MARCA AUTO + FOR</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>MARCA AUTO &#x2b; FOR</from>
+      <from>MARCA AUTO + FOR</from>
       <to>Add constants 2 3</to>
       <enabled>Y</enabled>
     </hop>
@@ -517,7 +550,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Mark&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Mark:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -529,7 +562,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Model&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Model:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -541,7 +574,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Model year&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Model year:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -553,7 +586,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;About us&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacts&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Shipment&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Payments&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;For more informations, please contact &#x3c;span&#x3e;&#x2b;39 392&#x2f;6472415&#x3c;&#x2f;span&#x3e; or &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">About us&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacts&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Shipment&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Payments&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">For more informations, please contact &lt;span>+39 392/6472415&lt;/span> or &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -565,7 +598,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;Product &#x3c;&#x2f;span&#x3e;informations&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>Product &lt;/span>informations&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -577,7 +610,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -589,7 +622,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Number of Studs&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Number of Studs: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -601,7 +634,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Wheel Width&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Wheel Width: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -613,7 +646,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Offset&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Offset:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -625,7 +658,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Distance&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Distance: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -637,7 +670,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Manufacturers&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Manufacturers: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -649,7 +682,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diameter&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Diameter: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -661,7 +694,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerCerchi&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Price&#x3c;&#x2f;strong&#x3e;  refers to one piece and includes the cost of transport&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;HAVE YOU NOT FOUND WHAT YOU WERE LOOKING FOR &#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact us, we are at your disposal&#x21;&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Shipping by courier, 3&#x2f;6 work days&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Shipping informations&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;If the buyer is not at home at the time of delivery and the goods must be on deposit,any additional expense to the permanence of the goods deposited is charged to the buyer.&#x3c;&#x2f;p&#x3e;&#x3c;p&#x3e;IT IS RACCOMENDED TO REQUEST INVOICE BEFORE ORDER THE GOODS, WRITING COMPANY DATA IN THE NOTES FIELD&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerCerchi">&lt;p id="notaprezzo">&lt;strong>Price&lt;/strong>  refers to one piece and includes the cost of transport&lt;/p>&lt;h5>HAVE YOU NOT FOUND WHAT YOU WERE LOOKING FOR ?&lt;/h5>&lt;p id="notfound">Contact us, we are at your disposal!!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Shipping by courier, 3/6 work days&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Shipping informations:&lt;/h6>&lt;p>If the buyer is not at home at the time of delivery and the goods must be on deposit,any additional expense to the permanence of the goods deposited is charged to the buyer.&lt;/p>&lt;p>IT IS RACCOMENDED TO REQUEST INVOICE BEFORE ORDER THE GOODS, WRITING COMPANY DATA IN THE NOTES FIELD&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -691,8 +724,7 @@
       <yloc>84</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CERCHI LEGA TECK</name>
     <type>TableInput</type>
@@ -705,7 +737,54 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codicevar as product_sku&#xa;,upper&#x28; substring&#x28;replace&#x28;&#xd;&#xa; var.short_desc,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;,1,76&#x29; &#x2b; &#x27; &#x27; &#x2b; SUBSTRING&#x28;CONVERT&#x28;varchar&#x28;40&#x29;, NEWID&#x28;&#x29;&#x29;,0,4&#x29; &#x29;&#xd;&#xa;as Titolo,&#xd;&#xa; replace&#x28;replace&#x28; var.short_desc,&#x27;.00&#x27;,&#x27;&#x27;&#x29; ,&#x27;CERCHI IN LEGA&#x27;,&#x27;ALLOY WHEEL&#x27;&#x29;&#xd;&#xa;as titolo_header&#xd;&#xa;, ebaycat&#xa;,&#x27;UK&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;UK&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, replace&#x28;case when codca3 is not null then codca3 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as spalla&#xd;&#xa;, replace&#x28;case when codca4 is not null then desca4 else &#x27;&#x27; end,&#x27;.00&#x27;,&#x27;&#x27;&#x29; as larghezza&#xd;&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;, MARCAAUTO&#xd;&#xa;, MODELLOAUTO&#xd;&#xa;, coalesce&#x28;ANNOAUTO,&#x27;&#x27;&#x29; annoauto&#xd;&#xa;, partner&#xd;&#xa;, case when urlimgauto is not null then&#xd;&#xa;	&#x27;&#x3c;p&#x3e;&#x3c;img src&#x3d;&#x22;&#x27; &#x2b; replace&#x28;urlimgauto,&#x27;viewer&#x3f;&#x27;,&#x27;viewerimage.php&#x3f;&#x27;&#x29; &#x2b; &#x27;&#x22; width&#x3d;&#x22;640px&#x22; height&#x3d;&#x22;300px&#x22;&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;	&#x27;&#x27;&#xd;&#xa;end as urlimgauto&#xd;&#xa;, case when urlcertificato is not null then&#xd;&#xa;&#x27;&#x3c;p&#x3e;&#x3c;a href&#x3d;&#x22;&#x27; &#x2b; urlcertificato &#x2b; &#x27;&#x22; target&#x3d;&#x22;_blank&#x22;&#x3e;Herunterladen des Zertifikats&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;p&#x3e;&#x27;&#xd;&#xa;else&#xd;&#xa;&#x27;&#x27;&#xd;&#xa;end as urlcertificato,eancode,&#xd;&#xa;var.codice as mpn&#xd;&#xa;&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa; linky_ebay_report.SKU is null and&#xd;&#xa; product_in_stock &#x3e; 1  and PARTNER &#x3d;&#x27;TECK&#x27; AND prezzolistino &#x3e; 10 AND&#xd;&#xa;&#x28;var.siteid&#x3d;&#x27;United Kingdom&#x27; or var.siteid&#x3d;&#x27;UK&#x27;&#x29; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;--and lastupdate is not null</sql>
+    <sql>SELECT distinct
+ codicevar as product_sku
+,upper( substring(replace(
+ var.short_desc,'CERCHI IN LEGA','ALLOY WHEEL'),1,76) + ' ' + SUBSTRING(CONVERT(varchar(40), NEWID()),0,4) )
+as Titolo,
+ replace(replace( var.short_desc,'.00','') ,'CERCHI IN LEGA','ALLOY WHEEL')
+as titolo_header
+, ebaycat
+,'UK' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'UK','CERCHI','',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, replace(case when codca3 is not null then codca3 else '' end,'.00','') as spalla
+, replace(case when codca4 is not null then desca4 else '' end,'.00','') as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then DESca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+, MARCAAUTO
+, MODELLOAUTO
+, coalesce(ANNOAUTO,'') annoauto
+, partner
+, case when urlimgauto is not null then
+	'&lt;p>&lt;img src="' + replace(urlimgauto,'viewer?','viewerimage.php?') + '" width="640px" height="300px">&lt;/p>'
+else
+	''
+end as urlimgauto
+, case when urlcertificato is not null then
+'&lt;p>&lt;a href="' + urlcertificato + '" target="_blank">Herunterladen des Zertifikats&lt;/a>&lt;/p>'
+else
+''
+end as urlcertificato,eancode,
+var.codice as mpn
+
+FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
+LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'UK' = linky_ebay_report.SITEID
+where 
+ linky_ebay_report.SKU is null and
+ product_in_stock > 1  and PARTNER ='TECK' AND prezzolistino > 10 AND
+(var.siteid='United Kingdom' or var.siteid='UK') and 
+--codice='1840235VWRA3XL' and
+category_path  in ('CERCHI IN LEGA')
+--and lastupdate is not null</sql>
     <limit>50000</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -723,8 +802,7 @@
       <yloc>84</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Formula</name>
     <type>Formula</type>
@@ -736,13 +814,14 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-       <formula><field_name>Descrizione</field_name>
-<formula_string>&#x5b;t_header&#x5d;&#x26;&#x5b;Titolo_header&#x5d;&#x26;&#x5b;urlimgauto&#x5d;&#x26;&#x5b;t_secondo&#x5d;&#x26;&#x5b;t_marca&#x5d;&#x26;&#x5b;Marca&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_marcaauto&#x5d;&#x26;&#x5b;marcaauto&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_raggio&#x5d;&#x26;&#x5b;diametro&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_larghezza&#x5d;&#x26;&#x5b;larghezza&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_icarico&#x5d;&#x26;&#x5b;icarico&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_spalla&#x5d;&#x26;&#x5b;spalla&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;t_ivelocita&#x5d;&#x26;&#x5b;offset&#x5d;&#x26;&#x5b;t_finespecifica&#x5d;&#x26;&#x5b;urlcertificato&#x5d;&#x26;&#x5b;t_footer&#x5d;</formula_string>
-<value_type>String</value_type>
-<value_length>-1</value_length>
-<value_precision>-1</value_precision>
-<replace_field/>
-</formula>
+    <formula>
+      <field_name>Descrizione</field_name>
+      <formula_string>[t_header]&amp;[Titolo_header]&amp;[urlimgauto]&amp;[t_secondo]&amp;[t_marca]&amp;[Marca]&amp;[t_finespecifica]&amp;[t_marcaauto]&amp;[marcaauto]&amp;[t_finespecifica]&amp;[t_raggio]&amp;[diametro]&amp;[t_finespecifica]&amp;[t_larghezza]&amp;[larghezza]&amp;[t_finespecifica]&amp;[t_icarico]&amp;[icarico]&amp;[t_finespecifica]&amp;[t_spalla]&amp;[spalla]&amp;[t_finespecifica]&amp;[t_ivelocita]&amp;[offset]&amp;[t_finespecifica]&amp;[urlcertificato]&amp;[t_footer]</formula_string>
+      <value_type>String</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <replace_field/>
+    </formula>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -755,8 +834,165 @@
       <yloc>84</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
+  <step>
+    <name>MARCA AUTO + FOR</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>TOYOTA</replace_string>
+        <replace_by_string>FOR TOYOTA</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> KIA </replace_string>
+        <replace_by_string> FOR KIA </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>EANCODE</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string/>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> JAGUAR </replace_string>
+        <replace_by_string> FOR JAGUAR </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> JAGUAR </replace_string>
+        <replace_by_string> FOR JAGUAR </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> RANGE ROVER </replace_string>
+        <replace_by_string> FOR RANGE ROVER </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>Titolo</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> LAND ROVER </replace_string>
+        <replace_by_string> FOR LAND ROVER </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> LAND ROVER </replace_string>
+        <replace_by_string> FOR LAND ROVER </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+      <field>
+        <in_stream_name>titolo_header</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string> RANGE ROVER </replace_string>
+        <replace_by_string> FOR RANGE ROVER </replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+        <is_unicode>no</is_unicode>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Prezzo</name>
     <type>Calculator</type>
@@ -778,7 +1014,7 @@
       <value_length>-1</value_length>
       <value_precision>0</value_precision>
       <remove>N</remove>
-      <conversion_mask>&#x23;</conversion_mask>
+      <conversion_mask>#</conversion_mask>
       <decimal_symbol>.</decimal_symbol>
       <grouping_symbol>,</grouping_symbol>
       <currency_symbol/>
@@ -795,8 +1031,7 @@
       <yloc>86</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RecuperaCambio</name>
     <type>StreamLookup</type>
@@ -837,8 +1072,7 @@
       <yloc>83</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Valute</name>
     <type>TableInput</type>
@@ -851,7 +1085,11 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT&#xa;  Valuta&#xa;, Cambio&#xa;FROM linky_valute&#xa;</sql>
+    <sql>SELECT
+  Valuta
+, Cambio
+FROM linky_valute
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -869,8 +1107,7 @@
       <yloc>248</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>articoli</name>
     <type>TextFileOutput</type>
@@ -882,7 +1119,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x7c;</separator>
+    <separator>|</separator>
     <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -896,8 +1133,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_uk</name>
-      <is_command>N</is_command>
+      <name>C:\linky\pneus\ebay\ebay_uk</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -1001,7 +1237,7 @@
       <field>
         <name>PrezzoFinale</name>
         <type>Number</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -1013,7 +1249,7 @@
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -1239,90 +1475,7 @@
       <yloc>85</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
-  <step>
-    <name>MARCA AUTO &#x2b; FOR</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>Titolo</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>TOYOTA</replace_string>
-        <replace_by_string>FOR TOYOTA</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>titolo_header</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>TOYOTA</replace_string>
-        <replace_by_string>FOR TOYOTA</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>Titolo</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string> KIA </replace_string>
-        <replace_by_string> FOR KIA </replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>titolo_header</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string> KIA </replace_string>
-        <replace_by_string> FOR KIA </replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-      <field>
-        <in_stream_name>EANCODE</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string/>
-        <replace_by_string/>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>176</xloc>
-      <yloc>80</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

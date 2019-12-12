@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;EBAY_IE</directory>
+    <directory>/EBAY_IE</directory>
     <parameters>
     </parameters>
     <log>
@@ -427,10 +427,10 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>admin</created_user>
-    <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
+    <created_date>2012/07/27 16:26:43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;09 10&#x3a;07&#x3a;01.789</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <modified_date>2018/06/16 12:08:50.837</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -448,22 +448,55 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQLUseIntegratedSecurity</code><attribute>false</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQLUseIntegratedSecurity</code>
+        <attribute>false</attribute>
+      </attribute>
+      <attribute>
+        <code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>1433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
     </attributes>
   </connection>
   <order>
     <hop>
-      <from>AUTO</from>
+      <from>AUTO/RUOTINI</from>
       <to>Add constants</to>
       <enabled>Y</enabled>
     </hop>
@@ -585,7 +618,37 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;ACCOPPIATA GOMME&#x27;,&#x27;GEKOPPELD MOTORBANDEN&#x27;&#x29; &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;IE&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IE&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;ACCOPPIATE MOTO&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then desca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; &#xd;&#xa;else &#x27;ACCOPPIATE MOTO&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;IE&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;--and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where product_in_stock &#x3e; 0 and  pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;IE&#x27; and &#xd;&#xa;--codiceN&#x27; and&#xa;category_path  in &#x28;&#x27;ACCOPPIATE MOTO&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc,'ACCOPPIATA GOMME','GEKOPPELD MOTORBANDEN') + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,80)  as Titolo
+, cast (ebaycat as varchar) as ebaycat
+,'IE' as siteid
+,'Italy' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'ACCOPPIATE MOTO' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then desca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' 
+else 'ACCOPPIATE MOTO' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice = linky_ebay_report.SKU and 'IE' = linky_ebay_report.SITEID
+--and a.product_in_stock&lt;&gt;linky_ebay_report.qty
+where product_in_stock > 0 and  pubblicato='Y' and
+a.siteid='IE' and 
+--codiceN' and
+category_path  in ('ACCOPPIATE MOTO')
+and partner in (SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO='PNEUMATICI')
+-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato
+and prezzolistino > 20
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -603,10 +666,9 @@
       <yloc>277</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
-    <name>AUTO</name>
+    <name>AUTO/RUOTINI</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -617,7 +679,38 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xd;&#xa;, substring&#x28;replace&#x28;short_desc , &#x27;GOMME PNEUMATICI&#x27;,&#x27;TYRE&#x27;&#x29; &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; REPLACE&#x28;desca2,&#x27;INVERNALI&#x27;,&#x27;WINTER&#x27;&#x29; else &#x27;&#x27; end,1,80&#x29;&#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;IE&#x27; as siteid&#xd;&#xa;,&#x27;Italy&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IE&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and a.siteid &#x3d; linky_ebay_report.SITEID&#xd;&#xa;--and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;IE&#x27; and &#xd;&#xa;-- codca2&#x3d;&#x27;R&#x27; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path not in &#x28;&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;, &#x27;CATENE DA NEVE&#x27;,&#x27;&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc , 'GOMME PNEUMATICI','TYRE') + 
+case when codca2 in ('X','N','R') then ' ' + REPLACE(desca2,'INVERNALI','WINTER') else '' end,1,80)
+as Titolo
+, cast (ebaycat as varchar) as ebaycat
+,'IE' as siteid
+,'Italy' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice = linky_ebay_report.SKU and a.siteid = linky_ebay_report.SITEID
+--and a.product_in_stock&lt;&gt;linky_ebay_report.qty
+where product_in_stock > 0 and pubblicato='Y' and
+a.siteid='IE' and 
+-- codca2='R' and 
+--codice='1840235VWRA3XL' and
+category_path not in ('CERCHI IN LEGA','ACCOPPIATE MOTO','SCOOTER','MOTO', 'CATENE DA NEVE','')
+ and (partner in (SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO='PNEUMATICI') or partner='PNS')
+-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato
+and prezzolistino > 20
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -635,8 +728,7 @@
       <yloc>97</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants</name>
     <type>Constant</type>
@@ -656,7 +748,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">Over ons&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacten&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Zendingen&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Betalingen&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">Voor informatie, gelieve ons te contacteren! &lt;span>392/6472415&lt;/span> of &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -668,7 +760,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Articolo&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>karakteristieken &lt;/span>Articolo&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -680,7 +772,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -692,7 +784,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Load index&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Load index: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -704,7 +796,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Breedte van de banden: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -716,7 +808,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Snelheid code goedgekeurd:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -728,7 +820,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Sectie / schouder: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -740,7 +832,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Merk: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -752,7 +844,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diameter&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Diameter: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -764,7 +856,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerAuto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerAuto">&lt;p id="notaprezzo">&lt;strong>Prijs&lt;/strong>  geldt voor een stuk en inclusief de kosten van het vervoer&lt;/p>&lt;h5>Neem contact met ons op voor de aankoop&lt;/h5>&lt;p id="beforebuy">van de beschikbaarheid van de gewenste hoeveelheid controleren.&lt;/p>&lt;h5>Niet gevonden wat je zocht?&lt;/h5>&lt;p id="notfound">Contact met ons op, wij staan tot uw beschikking!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Verzending per koerier, 4/5 dagen werken&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Noot voor de levering:&lt;/h6>&lt;p>Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -794,8 +886,7 @@
       <yloc>97</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2</name>
     <type>Constant</type>
@@ -815,7 +906,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">Over ons&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacten&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Zendingen&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Betalingen&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">Voor informatie, gelieve ons te contacteren! &lt;span>392/6472415&lt;/span> of &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -827,7 +918,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>karakteristieken &lt;/span>Artikel&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -839,7 +930,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -851,7 +942,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Load index&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Load index: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -863,7 +954,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Breedte van de banden: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -875,7 +966,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Snelheid code goedgekeurd:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -887,7 +978,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Sectie / schouder: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -899,7 +990,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Merk: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -911,7 +1002,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diameter&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Diameter: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -923,7 +1014,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerMoto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerMoto">&lt;p id="notaprezzo">&lt;strong>Prijs&lt;/strong>  geldt voor een stuk en inclusief de kosten van het vervoer&lt;/p>&lt;h5>Neem contact met ons op voor de aankoop&lt;/h5>&lt;p id="beforebuy">van de beschikbaarheid van de gewenste hoeveelheid controleren.&lt;/p>&lt;h5>Niet gevonden wat je zocht?&lt;/h5>&lt;p id="notfound">Contact met ons op, wij staan tot uw beschikking!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Verzending per koerier, 4/5 dagen werken&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Noot voor de levering:&lt;/h6>&lt;p>Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -953,8 +1044,7 @@
       <yloc>188</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 2</name>
     <type>Constant</type>
@@ -974,7 +1064,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">Over ons&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacten&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Zendingen&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Betalingen&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">Voor informatie, gelieve ons te contacteren! &lt;span>392/6472415&lt;/span> of &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -986,7 +1076,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>karakteristieken &lt;/span>Artikel&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -998,7 +1088,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1010,7 +1100,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Karakteristieken&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Karakteristieken: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1022,7 +1112,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Breedte van de banden: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1034,7 +1124,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Snelheid code goedgekeurd&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Snelheid code goedgekeurd:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1046,7 +1136,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Sectie / schouder: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1058,7 +1148,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Merk: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1070,7 +1160,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Karakteristieken&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Karakteristieken: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1082,7 +1172,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerMoto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e; is voor eet paar en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerMoto">&lt;p id="notaprezzo">&lt;strong>Prijs&lt;/strong> is voor eet paar en inclusief de kosten van het vervoer&lt;/p>&lt;h5>Neem contact met ons op voor de aankoop&lt;/h5>&lt;p id="beforebuy">van de beschikbaarheid van de gewenste hoeveelheid controleren.&lt;/p>&lt;h5>Niet gevonden wat je zocht?&lt;/h5>&lt;p id="notfound">Contact met ons op, wij staan tot uw beschikking!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Verzending per koerier, 4/5 dagen werken&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Noot voor de levering:&lt;/h6>&lt;p>Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1112,8 +1202,7 @@
       <yloc>277</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 2 3</name>
     <type>Constant</type>
@@ -1133,7 +1222,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">Over ons&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacten&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Zendingen&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Betalingen&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">Voor informatie, gelieve ons te contacteren! &lt;span>392/6472415&lt;/span> of &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1145,7 +1234,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;karakteristieken &#x3c;&#x2f;span&#x3e;Artikel&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>karakteristieken &lt;/span>Artikel&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1157,7 +1246,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1169,7 +1258,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Numero fori&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Numero fori: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1181,7 +1270,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Larghezza cerchio&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Larghezza cerchio: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1193,7 +1282,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Offset&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Offset:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1205,7 +1294,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Interasse&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Interasse: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1217,7 +1306,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Merk: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1229,7 +1318,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Diametro&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Diametro: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1241,7 +1330,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerCerchi&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e;  geldt voor een stuk en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerCerchi">&lt;p id="notaprezzo">&lt;strong>Prijs&lt;/strong>  geldt voor een stuk en inclusief de kosten van het vervoer&lt;/p>&lt;h5>Neem contact met ons op voor de aankoop&lt;/h5>&lt;p id="beforebuy">van de beschikbaarheid van de gewenste hoeveelheid controleren.&lt;/p>&lt;h5>Niet gevonden wat je zocht?&lt;/h5>&lt;p id="notfound">Contact met ons op, wij staan tot uw beschikking!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Verzending per koerier, 4/5 dagen werken&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Noot voor de levering:&lt;/h6>&lt;p>Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1271,8 +1360,7 @@
       <yloc>362</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Add constants 4</name>
     <type>Constant</type>
@@ -1292,7 +1380,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;div id&#x3d;&#x22;inserzione&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;wrapper&#x22;&#x3e;&#x3c;div id&#x3d;&#x22;header&#x22;&#x3e;&#x3c;ul id&#x3d;&#x22;menutop&#x22;&#x3e;&#x3c;li class&#x3d;&#x22;item1&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Chi-Siamo.html&#x22;&#x3e;Over ons&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item2&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Contatti.html&#x22;&#x3e;Contacten&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item3&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Spedizioni.html&#x22;&#x3e;Zendingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;li class&#x3d;&#x22;item4&#x22;&#x3e;&#x3c;a target&#x3d;&#x22;_blank&#x22; href&#x3d;&#x22;http&#x3a;&#x2f;&#x2f;stores.ebay.it&#x2f;PNEUS-CENTER-pneumatici-in-offerta&#x2f;Pagamenti.html&#x22;&#x3e;Betalingen&#x3c;&#x2f;a&#x3e;&#x3c;&#x2f;li&#x3e;&#x3c;&#x2f;ul&#x3e;&#x3c;p id&#x3d;&#x22;contactTop&#x22;&#x3e;Voor informatie, gelieve ons te contacteren&#x21; &#x3c;span&#x3e;392&#x2f;6472415&#x3c;&#x2f;span&#x3e; of &#x3c;span&#x3e;&#x2b;39 030.9827021&#x3c;&#x2f;span&#x3e; &#x28;int 2 Alessandro&#x29;&#x3c;&#x2f;p&#x3e;&#x3c;div class&#x3d;&#x22;testata&#x22;&#x3e;Pneus Center by Felappi Gomme&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;central&#x22;&#x3e;&#x3c;h1&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;div id="inserzione">&lt;div id="wrapper">&lt;div id="header">&lt;ul id="menutop">&lt;li class="item1">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Chi-Siamo.html">Over ons&lt;/a>&lt;/li>&lt;li class="item2">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Contatti.html">Contacten&lt;/a>&lt;/li>&lt;li class="item3">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Spedizioni.html">Zendingen&lt;/a>&lt;/li>&lt;li class="item4">&lt;a target="_blank" href="http://stores.ebay.it/PNEUS-CENTER-pneumatici-in-offerta/Pagamenti.html">Betalingen&lt;/a>&lt;/li>&lt;/ul>&lt;p id="contactTop">Voor informatie, gelieve ons te contacteren! &lt;span>392/6472415&lt;/span> of &lt;span>+39 030.9827021&lt;/span> (int 2 Alessandro)&lt;/p>&lt;div class="testata">Pneus Center by Felappi Gomme&lt;/div>&lt;/div>&lt;div id="central">&lt;h1>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1304,7 +1392,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;h1&#x3e;&#x3c;h2&#x3e;&#x3c;span&#x3e;Groep overeenkomt met de grootte van banden&#x3a;&#x3c;&#x2f;h2&#x3e;&#x3c;div id&#x3d;&#x22;descrizione&#x22;&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/h1>&lt;h2>&lt;span>Groep overeenkomt met de grootte van banden:&lt;/h2>&lt;div id="descrizione"></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1316,7 +1404,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;strong&#x3e;&#x3c;&#x2f;p&#x3e;</nullif>
+        <nullif>&lt;/strong>&lt;/p></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1340,7 +1428,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Breedte van de banden&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Breedte van de banden: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1352,7 +1440,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Dikte mesh&#x3a;&#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Dikte mesh:&lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1364,7 +1452,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Sectie &#x2f; schouder&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Sectie / schouder: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1376,7 +1464,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Merk&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Merk: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1388,7 +1476,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;p&#x3e;&#x3c;span&#x3e;Radius&#x3a; &#x3c;&#x2f;span&#x3e;&#x3c;strong&#x3e;</nullif>
+        <nullif>&lt;p>&lt;span>Radius: &lt;/span>&lt;strong></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1400,7 +1488,7 @@
         <currency/>
         <decimal/>
         <group/>
-        <nullif>&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;div id&#x3d;&#x22;footer&#x22; class&#x3d;&#x22;footerAuto&#x22;&#x3e;&#x3c;p id&#x3d;&#x22;notaprezzo&#x22;&#x3e;&#x3c;strong&#x3e;Prijs&#x3c;&#x2f;strong&#x3e; is voor eet paar en inclusief de kosten van het vervoer&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Neem contact met ons op voor de aankoop&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;beforebuy&#x22;&#x3e;van de beschikbaarheid van de gewenste hoeveelheid controleren.&#x3c;&#x2f;p&#x3e;&#x3c;h5&#x3e;Niet gevonden wat je zocht&#x3f;&#x3c;&#x2f;h5&#x3e;&#x3c;p id&#x3d;&#x22;notfound&#x22;&#x3e;Contact met ons op, wij staan tot uw beschikking&#x21;&#x3c;&#x2f;p&#x3e;&#x3c;p id&#x3d;&#x22;spedizionecorriere&#x22;&#x3e;&#x3c;strong&#x3e;Verzending per koerier, 4&#x2f;5 dagen werken&#x3c;&#x2f;strong&#x3e;&#x3c;br&#x2f;&#x3e;&#x3c;&#x2f;p&#x3e;&#x3c;div id&#x3d;&#x22;notaConsegna&#x22;&#x3e;&#x3c;h6&#x3e;Noot voor de levering&#x3a;&#x3c;&#x2f;h6&#x3e;&#x3c;p&#x3e;Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&#x3c;&#x2f;p&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;&#x2f;div&#x3e;&#x3c;style&#x3e;body&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;16px&#x3b;line-height&#x3a;1.2em&#x7d;&#x23;inserzione&#x7b;text-align&#x3a;center&#x3b;width&#x3a;100&#x25;&#x3b;font-family&#x3a;Arial,&#x22;Neue Helvetica&#x22;,Helvetica,sans-serif&#x3b;background-color&#x3a;&#x23;252525&#x3b;color&#x3a;&#x23;fff&#x3b; padding&#x3a;30px 0px&#x3b; margin&#x3a;0px&#x7d;&#x23;wrapper&#x7b;width&#x3a;900px&#x3b;border-top&#x3a;1px solid &#x23;000&#x3b;margin&#x3a;0 auto&#x3b;text-align&#x3a;left&#x3b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;back.jpg&#x22;&#x29; 0 0 no-repeat &#x23;010101&#x3b;padding-bottom&#x3a;45px&#x7d;&#x23;header&#x7b;overflow&#x3a;hidden&#x7d;&#x23;menutop&#x7b;float&#x3a;left&#x3b; margin&#x3a;0px&#x3b;padding&#x3a;0px 0px 0px 30px&#x3b;height&#x3a;50px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li&#x7b;float&#x3a;left&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;padding-right&#x3a;30px&#x3b;list-style&#x3a;none&#x7d;&#x23;menutop li a&#x7b;display&#x3a;block&#x3b;font-size&#x3a;12px&#x3b;line-height&#x3a;50px&#x3b;height&#x3a;50px&#x3b;color&#x3a;&#x23;fff&#x3b;text-decoration&#x3a;none&#x3b;font-weight&#x3a;bold&#x7d;&#x23;menutop li a&#x3a;hover, &#x23;menutop li a&#x3a;focus, &#x23;menutop li a&#x3a;active&#x7b;color&#x3a;&#x23;f8cf00&#x7d;&#x23;contactTop&#x7b;float&#x3a;right&#x3b;margin&#x3a;0px&#x3b;height&#x3a;50px&#x3b;line-height&#x3a;50px&#x3b;font-size&#x3a;12px&#x3b;padding-right&#x3a;30px&#x7d;&#x23;contactTop span&#x7b;font-weight&#x3a;bold&#x3b;&#x7d;div.testata&#x7b;background&#x3a;url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;header.png&#x22;&#x29; no-repeat 1px 0px transparent&#x3b;text-indent&#x3a;-999px&#x3b;height&#x3a;111px&#x3b;clear&#x3a;both&#x3b;margin&#x3a;0px&#x7d;&#x23;central&#x7b;overflow&#x3a;hidden&#x3b;padding&#x3a;30px&#x7d;h2&#x7b;float&#x3a;left&#x3b;font-weight&#x3a;normal&#x3b;color&#x3a;&#x23;999&#x3b;font-size&#x3a;20px&#x3b;line-height&#x3a;24px&#x3b;padding&#x3a;27px 0px 0px&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x3b;font-weight&#x3a;normal&#x7d;h2 span&#x7b;display&#x3a;block&#x3b;font-weight&#x3a;bold&#x3b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione&#x7b;background&#x3a;&#x23;171717&#x3b;border-top&#x3a;2px solid &#x23;000&#x3b;border-bottom&#x3a;1px solid &#x23;3f3f3f&#x3b;float&#x3a;right&#x3b;width&#x3a;560px&#x3b;padding&#x3a;10px 30px&#x7d;&#x23;descrizione p&#x7b;font-size&#x3a;18px&#x3b;&#x7d;&#x23;descrizione p span&#x7b;color&#x3a;&#x23;dadada&#x7d;&#x23;descrizione p strong&#x7b;padding-left&#x3a;20px&#x3b;color&#x3a;&#x23;fff&#x7d;&#x23;footer&#x7b;background-color&#x3a;&#x23;E3C201&#x3b;background-repeat&#x3a;no-repeat&#x3b;background-position&#x3a;0 0&#x3b;color&#x3a; &#x23;000&#x3b;height&#x3a; 443px&#x3b;margin-left&#x3a; 30px&#x3b;padding&#x3a; 10px 30px&#x3b;width&#x3a; 780px&#x3b;position&#x3a; relative&#x3b;&#x7d;.footerAuto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxauto.jpg&#x22;&#x29;&#x7d;.footerMoto&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxmoto.jpg&#x22;&#x29;&#x7d;.footerCerchione&#x7b;background-image&#x3a; url&#x28;&#x22;http&#x3a;&#x2f;&#x2f;i1051.photobucket.com&#x2f;albums&#x2f;s433&#x2f;pneuscenter&#x2f;ebaytpl&#x2f;boxcerchioni.jpg&#x22;&#x29;&#x7d;&#x23;notaprezzo&#x7b;padding&#x3a;32px 0 20px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;22px&#x7d;h5&#x7b;color&#x3a;&#x23;e8192c&#x3b;font-size&#x3a;20px&#x3b;padding&#x3a;30px 0 0&#x3b;margin&#x3a;0px&#x3b;text-transform&#x3a;uppercase&#x7d;&#x23;beforebuy&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;notfound&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;18px&#x7d;&#x23;spedizionecorriere&#x7b;font-size&#x3a; 20px&#x3b; margin&#x3a; 0&#x3b; padding&#x3a; 50px 0 0&#x3b;&#x7d;&#x23;spedizionecorriere span&#x7b;font-size&#x3a;18px&#x7d;&#x23;notaConsegna&#x7b;position&#x3a;absolute&#x3b;bottom&#x3a;33px&#x7d;h6&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3b;font-weight&#x3a;bold&#x7d;&#x23;notaConsegna p&#x7b;padding&#x3a;0px&#x3b;margin&#x3a;0px&#x3b;font-size&#x3a;14px&#x3c;&#x2f;style&#x3e;</nullif>
+        <nullif>&lt;/div>&lt;/div>&lt;div id="footer" class="footerAuto">&lt;p id="notaprezzo">&lt;strong>Prijs&lt;/strong> is voor eet paar en inclusief de kosten van het vervoer&lt;/p>&lt;h5>Neem contact met ons op voor de aankoop&lt;/h5>&lt;p id="beforebuy">van de beschikbaarheid van de gewenste hoeveelheid controleren.&lt;/p>&lt;h5>Niet gevonden wat je zocht?&lt;/h5>&lt;p id="notfound">Contact met ons op, wij staan tot uw beschikking!&lt;/p>&lt;p id="spedizionecorriere">&lt;strong>Verzending per koerier, 4/5 dagen werken&lt;/strong>&lt;br/>&lt;/p>&lt;div id="notaConsegna">&lt;h6>Noot voor de levering:&lt;/h6>&lt;p>Indien de koper niet thuis is op het moment van aflevering een paar keer en de goederen moeten in deposito, eventuele extra kosten voor de permanentie van de goederen die zijn gestort, en op kosten van de koper.&lt;/p>&lt;/div>&lt;/div>&lt;/div>&lt;/div>&lt;style>body{padding:0px;margin:0px;font-size:16px;line-height:1.2em}#inserzione{text-align:center;width:100%;font-family:Arial,"Neue Helvetica",Helvetica,sans-serif;background-color:#252525;color:#fff; padding:30px 0px; margin:0px}#wrapper{width:900px;border-top:1px solid #000;margin:0 auto;text-align:left;background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/back.jpg") 0 0 no-repeat #010101;padding-bottom:45px}#header{overflow:hidden}#menutop{float:left; margin:0px;padding:0px 0px 0px 30px;height:50px;list-style:none}#menutop li{float:left;height:50px;line-height:50px;padding-right:30px;list-style:none}#menutop li a{display:block;font-size:12px;line-height:50px;height:50px;color:#fff;text-decoration:none;font-weight:bold}#menutop li a:hover, #menutop li a:focus, #menutop li a:active{color:#f8cf00}#contactTop{float:right;margin:0px;height:50px;line-height:50px;font-size:12px;padding-right:30px}#contactTop span{font-weight:bold;}div.testata{background:url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/header.png") no-repeat 1px 0px transparent;text-indent:-999px;height:111px;clear:both;margin:0px}#central{overflow:hidden;padding:30px}h2{float:left;font-weight:normal;color:#999;font-size:20px;line-height:24px;padding:27px 0px 0px;margin:0px;text-transform:uppercase;font-weight:normal}h2 span{display:block;font-weight:bold;color:#dadada}#descrizione{background:#171717;border-top:2px solid #000;border-bottom:1px solid #3f3f3f;float:right;width:560px;padding:10px 30px}#descrizione p{font-size:18px;}#descrizione p span{color:#dadada}#descrizione p strong{padding-left:20px;color:#fff}#footer{background-color:#E3C201;background-repeat:no-repeat;background-position:0 0;color: #000;height: 443px;margin-left: 30px;padding: 10px 30px;width: 780px;position: relative;}.footerAuto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxauto.jpg")}.footerMoto{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxmoto.jpg")}.footerCerchione{background-image: url("http://i1051.photobucket.com/albums/s433/pneuscenter/ebaytpl/boxcerchioni.jpg")}#notaprezzo{padding:32px 0 20px;margin:0px;font-size:22px}h5{color:#e8192c;font-size:20px;padding:30px 0 0;margin:0px;text-transform:uppercase}#beforebuy{padding:0px;margin:0px;font-size:18px}#notfound{padding:0px;margin:0px;font-size:18px}#spedizionecorriere{font-size: 20px; margin: 0; padding: 50px 0 0;}#spedizionecorriere span{font-size:18px}#notaConsegna{position:absolute;bottom:33px}h6{padding:0px;margin:0px;font-size:14px;font-weight:bold}#notaConsegna p{padding:0px;margin:0px;font-size:14px&lt;/style></nullif>
         <length>-1</length>
         <precision>-1</precision>
         <set_empty_string>N</set_empty_string>
@@ -1430,8 +1518,7 @@
       <yloc>445</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams</name>
     <type>Append</type>
@@ -1443,8 +1530,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Calculator</head_name>
-<tail_name>Calculator 2</tail_name>
+    <head_name>Calculator</head_name>
+    <tail_name>Calculator 2</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1457,8 +1544,7 @@
       <yloc>106</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 3</name>
     <type>Append</type>
@@ -1470,8 +1556,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams</head_name>
-<tail_name>Calculator 2 2</tail_name>
+    <head_name>Append streams</head_name>
+    <tail_name>Calculator 2 2</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1484,8 +1570,7 @@
       <yloc>196</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 3 2</name>
     <type>Append</type>
@@ -1497,8 +1582,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams 3</head_name>
-<tail_name>Calculator 2 3</tail_name>
+    <head_name>Append streams 3</head_name>
+    <tail_name>Calculator 2 3</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1511,8 +1596,7 @@
       <yloc>314</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Append streams 4</name>
     <type>Append</type>
@@ -1524,8 +1608,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>Append streams 3 2</head_name>
-<tail_name>Calculator 4</tail_name>
+    <head_name>Append streams 3 2</head_name>
+    <tail_name>Calculator 4</tail_name>
     <cluster_schema/>
     <remotesteps>
       <input>
@@ -1538,8 +1622,7 @@
       <yloc>450</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CATENE</name>
     <type>TableInput</type>
@@ -1552,7 +1635,35 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xd;&#xa; codicevar as product_sku&#xd;&#xa;, substring&#x28;var.short_desc &#x2b;  case when codca5 is not null then &#x27; &#x27; &#x2b; rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm SPESSORE&#x27; else &#x27;&#x27; end, 1,76&#x29; &#xd;&#xa;as Titolo&#xd;&#xa;, ebaycat&#xd;&#xa;,&#x27;IE&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xd;&#xa;,  Marca &#xd;&#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IE&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xd;&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xd;&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xd;&#xa;, case when codca5 is not null then rtrim&#x28;ltrim&#x28;desca5&#x29;&#x29; &#x2b; &#x27; mm&#x27; else &#x27;&#x27; end as ivel&#xd;&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xd;&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xd;&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;CATENE DA NEVE&#x27; end as category_path&#xd;&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xd;&#xa;FROM linky_ebay e inner join linky_ebay_var var on e.codice&#x3d;var.codice&#xd;&#xa;LEFT JOIN linky_ebay_report on var.codicevar &#x3d; linky_ebay_report.SKU and &#x27;IE&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;where &#xd;&#xa;product_in_stock &#x3e; 0 and &#xd;&#xa;pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;var.siteid&#x3d;&#x27;IE&#x27; and &#xd;&#xa;category_path in &#x28; &#x27;CATENE DA NEVE&#x27;&#x29; &#xd;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;and e.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty</sql>
+    <sql>SELECT distinct
+ codicevar as product_sku
+, substring(var.short_desc +  case when codca5 is not null then ' ' + rtrim(ltrim(desca5)) + ' mm SPESSORE' else '' end, 1,76) 
+as Titolo
+, cast (ebaycat as varchar) as ebaycat
+,'IE' as siteid
+,'IT' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then rtrim(ltrim(desca5)) + ' mm' else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'CATENE DA NEVE' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+FROM linky_ebay e inner join linky_ebay_var var on e.codice=var.codice
+LEFT JOIN linky_ebay_report on var.codicevar = linky_ebay_report.SKU and 'IE' = linky_ebay_report.SITEID
+where 
+product_in_stock > 0 and 
+pubblicato='Y' and
+var.siteid='IE' and 
+category_path in ( 'CATENE DA NEVE') 
+and partner in (SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO='PNEUMATICI')
+and e.product_in_stock&lt;&gt;linky_ebay_report.qty</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1570,8 +1681,7 @@
       <yloc>445</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>CERCHI LEGA REPLICA</name>
     <type>TableInput</type>
@@ -1584,7 +1694,35 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;&#x27;LICHTMETALEN VELGEN &#x27; &#x2b; short_desc,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;IE&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;IE&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then desca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then DESca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;IE&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;--and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;IE&#x27; and &#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;CERCHI IN LEGA&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring('LICHTMETALEN VELGEN ' + short_desc,1,80)  as Titolo
+, cast (ebaycat as varchar) as ebaycat
+,'IE' as siteid
+,'Italy' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'IE',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then desca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then DESca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice = linky_ebay_report.SKU and 'IE' = linky_ebay_report.SITEID
+--and a.product_in_stock&lt;&gt;linky_ebay_report.qty
+where product_in_stock > 0 and pubblicato='Y' and
+a.siteid='IE' and 
+--codice='1840235VWRA3XL' and
+category_path  in ('CERCHI IN LEGA')
+and partner in (SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO='PNEUMATICI')
+-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato
+and prezzolistino > 20
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1602,8 +1740,7 @@
       <yloc>362</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator</name>
     <type>Calculator</type>
@@ -1792,8 +1929,7 @@
       <yloc>100</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator 2</name>
     <type>Calculator</type>
@@ -1982,8 +2118,7 @@
       <yloc>188</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator 2 2</name>
     <type>Calculator</type>
@@ -2172,8 +2307,7 @@
       <yloc>277</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator 2 3</name>
     <type>Calculator</type>
@@ -2362,8 +2496,7 @@
       <yloc>362</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Calculator 4</name>
     <type>Calculator</type>
@@ -2552,8 +2685,7 @@
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>MOTO SCOOTER</name>
     <type>TableInput</type>
@@ -2566,7 +2698,37 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xa;, substring&#x28;replace&#x28;short_desc,&#x27;GOMME PNEUMATICI&#x27;,&#x27;MOTORBANDEN&#x27;&#x29;  &#x2b;  &#x2b; &#xd;&#xa;case when codca2 in &#x28;&#x27;X&#x27;,&#x27;N&#x27;,&#x27;R&#x27;&#x29; then &#x27; &#x27; &#x2b; desca2 else &#x27;&#x27; end,1,80&#x29;  as Titolo&#xa;, ebaycat&#xa;,&#x27;IE&#x27; as siteid&#xa;,&#x27;Italy&#x27; as country&#xa;,&#x27;FixedPriceItem&#x27; as Type&#xa;,  Marca &#xa;, dbo.linky_calc_endprice&#x28;partner,&#x27;CH&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xa;, case when codca1 is not null then codca1 else &#x27;&#x27; end as diametro&#xa;, case when codca3 is not null then codca3 else &#x27;&#x27; end as spalla&#xa;, case when codca4 is not null then codca4 else &#x27;&#x27; end as larghezza&#xa;, case when codca5 is not null then desca5 else &#x27;&#x27; end as ivel&#xa;, case when codca6 is not null then desca6 else &#x27;&#x27; end as icarico&#xa;, case when codca2 is not null then codca2 else &#x27;&#x27; end as offset&#xa;, case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end as category_path&#xa;,product_full_image&#xd;&#xa;, codca2 as tipoutilizzo&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;IE&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;--and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where product_in_stock &#x3e; 0 and pubblicato&#x3d;&#x27;Y&#x27; and&#xd;&#xa;a.siteid&#x3d;&#x27;IE&#x27; and &#xd;&#xa;--codca2 &#x3d;&#x27;N&#x27; and&#xd;&#xa;--codice&#x3d;&#x27;1840235VWRA3XL&#x27; and&#xa;category_path  in &#x28;&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;&#xd;&#xa;-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato&#xd;&#xa;and prezzolistino &#x3e; 20&#xd;&#xa;</sql>
+    <sql>SELECT distinct
+ codice as product_sku
+, substring(replace(short_desc,'GOMME PNEUMATICI','MOTORBANDEN')  +  + 
+case when codca2 in ('X','N','R') then ' ' + desca2 else '' end,1,80)  as Titolo
+, cast (ebaycat as varchar) as ebaycat
+,'IE' as siteid
+,'Italy' as country
+,'FixedPriceItem' as Type
+,  Marca 
+, dbo.linky_calc_endprice(partner,'CH',case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end,'',prezzolistino)  as product_price
+, product_in_stock as product_in_stock
+, case when codca1 is not null then codca1 else '' end as diametro
+, case when codca3 is not null then codca3 else '' end as spalla
+, case when codca4 is not null then codca4 else '' end as larghezza
+, case when codca5 is not null then desca5 else '' end as ivel
+, case when codca6 is not null then desca6 else '' end as icarico
+, case when codca2 is not null then codca2 else '' end as offset
+, case when category_path = 'CERCHI IN LEGA' then 'CERCHI' else 'PNEUMATICI' end as category_path
+,product_full_image
+, codca2 as tipoutilizzo
+FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice = linky_ebay_report.SKU and 'IE' = linky_ebay_report.SITEID
+--and a.product_in_stock&lt;&gt;linky_ebay_report.qty
+where product_in_stock > 0 and pubblicato='Y' and
+a.siteid='IE' and 
+--codca2 ='N' and
+--codice='1840235VWRA3XL' and
+category_path  in ('SCOOTER','MOTO')
+and partner in (SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO='PNEUMATICI')
+-- procedura fatta per non aggiornare le inserzioni con prezzo sbagliato
+and prezzolistino > 20
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2584,8 +2746,7 @@
       <yloc>188</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Prezzo</name>
     <type>Calculator</type>
@@ -2607,7 +2768,7 @@
       <value_length>-1</value_length>
       <value_precision>0</value_precision>
       <remove>N</remove>
-      <conversion_mask>&#x23;</conversion_mask>
+      <conversion_mask>#</conversion_mask>
       <decimal_symbol>.</decimal_symbol>
       <grouping_symbol>,</grouping_symbol>
       <currency_symbol/>
@@ -2624,8 +2785,7 @@
       <yloc>318</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>RecuperaCambio</name>
     <type>StreamLookup</type>
@@ -2666,8 +2826,7 @@
       <yloc>321</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>Valute</name>
     <type>TableInput</type>
@@ -2680,7 +2839,11 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT&#xa;  Valuta&#xa;, Cambio&#xa;FROM linky_valute&#xa;</sql>
+    <sql>SELECT
+  Valuta
+, Cambio
+FROM linky_valute
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -2698,8 +2861,7 @@
       <yloc>155</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step>
     <name>articoli CH</name>
     <type>TextFileOutput</type>
@@ -2711,7 +2873,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>&#x7c;</separator>
+    <separator>|</separator>
     <enclosure/>
     <enclosure_forced>Y</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -2725,8 +2887,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;linky&#x5c;pneus&#x5c;ebay&#x5c;ebay_stock_ie</name>
-      <is_command>N</is_command>
+      <name>C:\linky\pneus\ebay\ebay_stock_ie</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -2770,7 +2931,7 @@
       <field>
         <name>prezzofinale</name>
         <type>Number</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2782,7 +2943,7 @@
       <field>
         <name>product_in_stock</name>
         <type>BigNumber</type>
-        <format>&#x23;.&#x23;</format>
+        <format>#.#</format>
         <currency/>
         <decimal/>
         <group/>
@@ -2816,8 +2977,7 @@
       <yloc>320</yloc>
       <draw>Y</draw>
     </GUI>
-    </step>
-
+  </step>
   <step_error_handling>
   </step_error_handling>
   <slave-step-copy-partition-distribution>

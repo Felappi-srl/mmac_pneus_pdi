@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;08 13&#x3a;12&#x3a;57.241</modified_date>
+    <modified_date>2018&#x2f;03&#x2f;09 08&#x3a;46&#x3a;38.741</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -478,7 +478,7 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>AUTO</from>
+      <from>AUTO&#x2f;RUOTINI</from>
       <to>Append streams</to>
       <enabled>Y</enabled>
     </hop>
@@ -531,7 +531,7 @@
     </step>
 
   <step>
-    <name>AUTO</name>
+    <name>AUTO&#x2f;RUOTINI</name>
     <type>TableInput</type>
     <description/>
     <distribute>N</distribute>
@@ -542,7 +542,7 @@
       <schema_name/>
     </partitioning>
     <connection>LINKY</connection>
-    <sql>SELECT distinct&#xa; codice as product_sku&#xd;&#xa;,&#x27;UK&#x27; as siteid&#xd;&#xa;,&#x27;Italy&#x27; as country&#xd;&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where &#xd;&#xa;&#x28;product_in_stock &#x3c;&#x3d; 0  or dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c; 30&#x29; and &#xa;category_path not in &#x28;&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;and a.siteid&#x3d;&#x27;UK&#x27;&#xd;&#xa;and partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29;</sql>
+    <sql>SELECT distinct&#xa; codice as product_sku&#xd;&#xa;,&#x27;UK&#x27; as siteid&#xd;&#xa;,&#x27;Italy&#x27; as country&#xd;&#xa;FROM linky_ebayarticoli as a inner JOIN linky_ebay_report on a.codice &#x3d; linky_ebay_report.SKU and &#x27;UK&#x27; &#x3d; linky_ebay_report.SITEID&#xd;&#xa;and a.product_in_stock&#x3c;&#x3e;linky_ebay_report.qty&#xd;&#xa;where &#xd;&#xa;&#x28;product_in_stock &#x3c;&#x3d; 0  or dbo.linky_calc_endprice&#x28;partner,&#x27;IT&#x27;,case when category_path &#x3d; &#x27;CERCHI IN LEGA&#x27; then &#x27;CERCHI&#x27; else &#x27;PNEUMATICI&#x27; end,&#x27;&#x27;,prezzolistino&#x29; &#x3c; 30&#x29; and &#xa;category_path not in &#x28;&#x27;CERCHI IN LEGA&#x27;,&#x27;ACCOPPIATE MOTO&#x27;,&#x27;SCOOTER&#x27;,&#x27;MOTO&#x27;&#x29;&#xa;and a.siteid&#x3d;&#x27;UK&#x27;&#xd;&#xa; and &#x28;partner in &#x28;SELECT CODICEPARTNER FROM LINKY_PARTNERS where TIPO&#x3d;&#x27;PNEUMATICI&#x27;&#x29; or partner&#x3d;&#x27;PNS&#x27;&#x29;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -573,7 +573,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-<head_name>AUTO</head_name>
+<head_name>AUTO&#x2f;RUOTINI</head_name>
 <tail_name>MOTO SCOOTER</tail_name>
     <cluster_schema/>
     <remotesteps>

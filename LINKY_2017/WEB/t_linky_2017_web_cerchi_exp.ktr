@@ -29,6 +29,11 @@
         <description/>
       </parameter>
       <parameter>
+        <name>inner_pns</name>
+        <default_value/>
+        <description/>
+      </parameter>
+      <parameter>
         <name>where</name>
         <default_value/>
         <description/>
@@ -454,7 +459,7 @@
     <created_user>-</created_user>
     <created_date>2017&#x2f;01&#x2f;04 11&#x3a;19&#x3a;33.723</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;20 14&#x3a;59&#x3a;16.116</modified_date>
+    <modified_date>2018&#x2f;05&#x2f;16 18&#x3a;26&#x3a;06.579</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -523,14 +528,9 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Convert INTERASSE</from>
-      <to>Select values 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Cerchi</from>
       <to>Sort rows</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>CANALE</from>
@@ -538,11 +538,106 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Convert_CANALE</from>
+      <from>&#x24;&#x24;</from>
       <to>cerchi.txt</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Cerchi - Agg ALCAR</from>
+      <to>Sort rows</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi all</from>
+      <to>Sort rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi agg_PNS</from>
+      <to>Sort rows</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi all MOMO</from>
+      <to>Sort rows</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>cerchi.txt</from>
+      <to>cerchi trovaprezzi</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi OZR</from>
+      <to>Sort rows</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Convert INTERASSE</from>
+      <to>PESO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PESO</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Cerchi agg_PNS test</from>
+      <to>Sort rows</to>
+      <enabled>N</enabled>
+    </hop>
+    <hop>
+      <from>Convert_CANALE</from>
+      <to>Value Mapper</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Value Mapper</from>
+      <to>&#x24;&#x24;</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>&#x24;&#x24;</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+      <replaceAllByValue/>
+      <replaceAllMask/>
+      <selectFields>N</selectFields>
+      <selectValuesType>Y</selectValuesType>
+      <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+      <valuetype>
+        <name>String</name>
+        <value>&#x24;&#x24;</value>
+        <mask/>
+        <set_type_empty_string>N</set_type_empty_string>
+        </valuetype>
+      </valuetypes>
+    <fields>
+      </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>336</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
   <step>
     <name>CANALE</name>
     <type>ScriptValueMod</type>
@@ -579,7 +674,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
+      <xloc>1040</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -597,7 +692,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>SELECT DISTINCT&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xa;&#x27;MAK&#x27; as MARCA,&#xa;linky_articoli_mak.FINISHING,&#xa;linky_articoli_mak.RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;linky_articoli_mak.NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;linky_articoli_mak.EANCODE,&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when linky_articoli_mak.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM linky_articoli_mak &#x24;&#x7b;inner_mak&#x7d;&#xa;WHERE&#xa;&#x24;&#x7b;where&#x7d;&#xa;replace&#x28;linky_articoli_mak.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_mak.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_mak.OUT_PROD&#x3d;0&#xa;--and linky_articoli_mak.PARTNUMBER&#x3d;&#x27;F7060FFSI40FF&#x27;&#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;&#x27;MOMO&#x27; as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_momo &#x24;&#x7b;inner_momo&#x7d;&#xa;WHERE&#xa;&#x24;&#x7b;where&#x7d;&#xa;replace&#x28;linky_articoli_momo.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_momo.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xa;union all &#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;WHEELMODEL as MODELLO,&#xa;brand as MARCA,&#xa;FINISHING,&#xa;RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_ozr &#x24;&#x7b;inner_ozr&#x7d;&#xa;WHERE&#xa;&#x24;&#x7b;where&#x7d;&#xa;replace&#x28;replace&#x28;linky_articoli_ozr.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ozr.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0&#xa;union all&#xa;&#xd;&#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;upper&#x28;WHEELMODEL&#x29; as MODELLO,&#xa;brand as MARCA,&#xa;upper&#x28;FINISHING&#x29; as finishing,&#xa;RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_ALCAR &#xd;&#xa;&#x24;&#x7b;inner_alcar&#x7d;&#xa;WHERE &#xd;&#xa;&#x24;&#x7b;where&#x7d;&#xa;replace&#x28;replace&#x28;linky_articoli_ALCAR.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ALCAR.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xa;</sql>
+    <sql>SELECT DISTINCT&#xd;&#xa;linky_articoli_pns.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_pns.WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;linky_articoli_pns.FINISHING,&#xd;&#xa;linky_articoli_pns.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_pns.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_pns.EANCODE,&#xd;&#xa;linky_articoli_pns.IMMAGINE as IMMAGINE&#xd;&#xa;, case when linky_articoli_pns.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_pns &#xd;&#xa;&#x24;&#x7b;inner_pns&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and&#xd;&#xa;&#xd;&#xa;--replace&#x28;linky_articoli_pns.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 &#xd;&#xa;and replace&#x28;linky_articoli_pns.PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;and linky_articoli_pns.OUT_PROD&#x3d;0&#xd;&#xa;&#xd;&#xa;--and linky_articoli_pns.PARTNUMBER&#x3d;&#x27;F7060FFSI40FF&#x27;&#xd;&#xa;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -613,6 +708,246 @@
     <GUI>
       <xloc>64</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi - Agg ALCAR</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>&#xd;&#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;upper&#x28;WHEELMODEL&#x29; as MODELLO,&#xa;brand as MARCA,&#xa;upper&#x28;FINISHING&#x29; as finishing,&#xa;RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_ALCAR&#xd;&#xa;-- &#x24;&#x7b;inner_alcar&#x7d;&#xa;WHERE&#xa;-- &#x24;&#x7b;where&#x7d;&#xa;-- replace&#x28;replace&#x28;linky_articoli_ALCAR.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ALCAR.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;PARTNUMBER IN &#x28; &#x27;TTSM2SA38E&#x27;, &#x27;TTSM2SA32E&#x27;, &#x27;TTSM2BP38E&#x27;, &#x27;TREK0SA48&#x27;, &#x27;TREO2SA45&#x27;, &#x27;TTXK8SA43E&#x27;, &#x27;TTXK8GA48&#x27;, &#x27;TTXK8GA43E&#x27;, &#x27;TTXK8GA40&#x27;, &#x27;TTXK6SA38E&#x27;, &#x27;TTXK6GA38E&#x27;, &#x27;TTXK5SA38E&#x27;, &#x27;TTXK5GA38E&#x27;, &#x27;TTXK3SA46&#x27;, &#x27;TTXK3SA38&#x27;, &#x27;TTXK3SA25&#x27;, &#x27;TTXK3SA23E&#x27;, &#x27;TTXK3GA46&#x27;, &#x27;TTXK3GA25&#x27;, &#x27;TTXK3GA23E&#x27;, &#x27;TTXK3GA15&#x27;, &#x27;TTXK2SA40E&#x27;, &#x27;TTXK2SA38&#x27;, &#x27;TTXK2GA45&#x27;, &#x27;TTXK2GA40E&#x27;, &#x27;TTXK2GA38&#x27;, &#x27;TTXK1SA35E&#x27;, &#x27;TTXK0SA46E&#x27;, &#x27;TTXK0GA46E&#x27;, &#x27;TTXK0GA40&#x27;, &#x27;TTIK8SA43V&#x27;, &#x27;TTIK8SA40&#x27;, &#x27;TTIK8BP47&#x27;, &#x27;TTIK8BP40&#x27;, &#x27;TTIK5SA39&#x27;, &#x27;TTDKASA39&#x27;, &#x27;TTDK8SA47V&#x27;, &#x27;TTDK8SA43V&#x27;, &#x27;TTDK8KA47V&#x27;, &#x27;TTDK8KA43V&#x27;, &#x27;TTDK8GA47V&#x27;, &#x27;TTDK8GA43V&#x27;, &#x27;TTDK6SA43V&#x27;, &#x27;TTDK6SA38V&#x27;, &#x27;TTDK6KA38V&#x27;, &#x27;TTDK6GA38V&#x27;, &#x27;TTDK5SA39&#x27;, &#x27;TTDK3SA46&#x27;, &#x27;TTDK3SA38&#x27;, &#x27;TTDK3SA25&#x27;, &#x27;TTDK3GA38&#x27;, &#x27;TTDK3GA25&#x27;, &#x27;TTDK2SA44&#x27;, &#x27;TTDK2SA38&#x27;, &#x27;TTDK2KA44&#x27;, &#x27;TTDK2KA38&#x27;, &#x27;TTDK2GA44&#x27;, &#x27;TTDK2GA38&#x27;, &#x27;TTDK0SA48&#x27;, &#x27;TTDK0KA40&#x27;, &#x27;TTDK0GA48&#x27;, &#x27;TTDK0GA46K&#x27;, &#x27;TTDK0GA40&#x27;, &#x27;TTD46SA38V&#x27;, &#x27;TTD46KA38V&#x27;, &#x27;TTD43SA38&#x27;, &#x27;TTD43SA25&#x27;, &#x27;TTD43GA38&#x27;, &#x27;TTD42SA35&#x27;, &#x27;TTD42KA35&#x27;, &#x27;TTD42GA35&#x27;, &#x27;TREO6SA30&#x27;, &#x27;TREO3SA25&#x27;, &#x27;TREO3KA25&#x27;, &#x27;TREO2SA38&#x27;, &#x27;TREO2KA45&#x27;, &#x27;TREK8SA48&#x27;, &#x27;TREK8SA47E&#x27;, &#x27;TREK8SA43E&#x27;, &#x27;TREK8KA47E&#x27;, &#x27;TREK8KA43E&#x27;, &#x27;TREK6SA38&#x27;, &#x27;TREK6KA38&#x27;, &#x27;TREK3SA46&#x27;, &#x27;TREK3SA38&#x27;, &#x27;TREK3SA25&#x27;, &#x27;TREK2SA44&#x27;, &#x27;TREK2SA38&#x27;, &#x27;TREK2KA38&#x27;, &#x27;TREK1SA24&#x27;, &#x27;TREK0SA40&#x27;, &#x27;TREK0KA48&#x27;, &#x27;EGK3SA25&#x27;, &#x27;EGK3SA15&#x27;, &#x27;EGK2SA44&#x27;, &#x27;EGK2SA38&#x27;, &#x27;TTXP8SA52E&#x27;, &#x27;TTJPKSA45E&#x27;, &#x27;TTFP8SA39E&#x27;, &#x27;TTDY3SA25&#x27;, &#x27;OKEY8BP48&#x27;, &#x27;TTXYUGA44E&#x27;, &#x27;TTXYHGA48&#x27;, &#x27;TTXY9SA40E&#x27;, &#x27;TTXY9GA40E&#x27;, &#x27;TTXY8SA49V&#x27;, &#x27;TTXY8SA48&#x27;, &#x27;TTXY8SA46E&#x27;, &#x27;TTXY8SA43E&#x27;, &#x27;TTXY8SA38&#x27;, &#x27;TTXY8SA37E&#x27;, &#x27;TTXY8GA48&#x27;, &#x27;TTXY8GA47E&#x27;, &#x27;TTXY8GA46E&#x27;, &#x27;TTXY8GA43E&#x27;, &#x27;TTXY8GA40E&#x27;, &#x27;TTXY6SA38V&#x27;, &#x27;TTXY6GA38V&#x27;, &#x27;TTXY0SA48&#x27;, &#x27;TTXY0SA40&#x27;, &#x27;TTXY0GA48&#x27;, &#x27;TTXPHSA48&#x27;, &#x27;TTXPHGA48&#x27;, &#x27;TTXP9SA40E&#x27;, &#x27;TTXP9GA40E&#x27;, &#x27;TTXP9GA31E&#x27;, &#x27;TTXP8SA48E&#x27;, &#x27;TTXP8SA48&#x27;, &#x27;TTXP8SA46E&#x27;, &#x27;TTXP8SA40&#x27;, &#x27;TTXP8SA39E&#x27;, &#x27;TTXP8SA35E&#x27;, &#x27;TTXP8SA35&#x27;, &#x27;TTXP8GA52E&#x27;, &#x27;TTXP8GA48E&#x27;, &#x27;TTXP8GA48&#x27;, &#x27;TTXP8GA46E&#x27;, &#x27;TTXP8GA40&#x27;, &#x27;TTXP8GA39E&#x27;, &#x27;TTXP8GA35&#x27;, &#x27;TTXP0SA48&#x27;, &#x27;TTXP0SA40E&#x27;, &#x27;TTXP0SA40&#x27;, &#x27;TTXP0GA48&#x27;, &#x27;TTXP0GA40E&#x27;, &#x27;TTXP0GA40&#x27;, &#x27;TTIY8BP48&#x27;, &#x27;TTIY8BP38&#x27;, &#x27;TTIY5SA41&#x27;, &#x27;TTIY0SA40&#x27;, &#x27;TTIY0BP48&#x27;, &#x27;TTHY8SA51E&#x27;, &#x27;TTHPQSA43&#x27;, &#x27;TTHPHSA48&#x27;, &#x27;TTHPHSA37&#x27;, &#x27;TTHPCSA40&#x27;, &#x27;TTHP9SA45&#x27;, &#x27;TTHP8SA45&#x27;, &#x27;TTHP0SA48&#x27;, &#x27;TTHP0SA35&#x27;, &#x27;TTGY8SA485E&#x27;, &#x27;TTGY8SA40&#x27;, &#x27;TTFY8SA46E&#x27;, &#x27;TTFY8SA43E&#x27;, &#x27;TTFY8SA42E&#x27;, &#x27;TTFY8SA37E&#x27;, &#x27;TTFP8SA46E&#x27;, &#x27;TTDYUSA43&#x27;, &#x27;TTDYUGA43&#x27;, &#x27;TTDYHSA48&#x27;, &#x27;TTDYHGA48&#x27;, &#x27;TTDY8SA48V&#x27;, &#x27;TTDY8SA48&#x27;, &#x27;TTDY8SA46A&#x27;, &#x27;TTDY8SA45V&#x27;, &#x27;TTDY8SA38&#x27;, &#x27;TTDY8KA48V&#x27;, &#x27;TTDY8KA48&#x27;, &#x27;TTDY8KA45V&#x27;, &#x27;TTDY8GA48V&#x27;, &#x27;TTDY8GA48&#x27;, &#x27;TTDY8GA46A&#x27;, &#x27;TTDY8GA45V&#x27;, &#x27;TTDY8GA43A&#x27;, &#x27;TTDY3GA25&#x27;, &#x27;TTDY2SA45&#x27;, &#x27;TTDY2SA38&#x27;, &#x27;TTDY2GA38&#x27;, &#x27;TTDY0SA48&#x27;, &#x27;TTDY0SA40&#x27;, &#x27;TTDY0KA40&#x27;, &#x27;TTDY0GA48&#x27;, &#x27;TTDY0GA40&#x27;, &#x27;TTDPHSA48&#x27;, &#x27;TTDPHSA30&#x27;, &#x27;TTDPHKA48&#x27;, &#x27;TTDPHGA48&#x27;, &#x27;TTDPHGA30&#x27;, &#x27;TTDP9SA43&#x27;, &#x27;TTDP9SA35&#x27;, &#x27;TTDP9KA43&#x27;, &#x27;TTDP9KA35&#x27;, &#x27;TTDP9GA43&#x27;, &#x27;TTDP9GA35&#x27;, &#x27;TTDP8SA45V&#x27;, &#x27;TTDP8SA40&#x27;, &#x27;TTDP8SA38A&#x27;, &#x27;TTDP8SA35&#x27;, &#x27;TTDP8KA46A&#x27;, &#x27;TTDP8KA35&#x27;, &#x27;TTDP8GA46A&#x27;, &#x27;TTDP8GA45V&#x27;, &#x27;TTDP8GA40&#x27;, &#x27;TTDP8GA35&#x27;, &#x27;TTDP0SA48&#x27;, &#x27;TTDP0KA48&#x27;, &#x27;TTDP0GA48&#x27;, &#x27;TTBP9SA42&#x27;, &#x27;TTBP9SA40E&#x27;, &#x27;TTBP9SA35&#x27;, &#x27;TTBP9KA35&#x27;, &#x27;TTBP9GA40E&#x27;, &#x27;TTBP9GA31E&#x27;, &#x27;TREYUSA43&#x27;, &#x27;TREYHSA48&#x27;, &#x27;TREYASA41&#x27;, &#x27;TREY9SA41B&#x27;, &#x27;TREY9KA41B&#x27;, &#x27;TREY8SA45&#x27;, &#x27;TREY8SA38A&#x27;, &#x27;TREY8SA38&#x27;, &#x27;TREY8KA45&#x27;, &#x27;TREY6SA38&#x27;, &#x27;TREY3SA25&#x27;, &#x27;TREY2SA38&#x27;, &#x27;TREY0SA48&#x27;, &#x27;TREY0KA48&#x27;, &#x27;TREPHSA48&#x27;, &#x27;TREPHSA30&#x27;, &#x27;TREP9SA43B&#x27;, &#x27;TREP9SA35B&#x27;, &#x27;TREP9SA20&#x27;, &#x27;TREP9KA35&#x27;, &#x27;TREP8SA40&#x27;, &#x27;TREP8SA38A&#x27;, &#x27;TREP8KA45&#x27;, &#x27;TREP8KA40&#x27;, &#x27;TREP5SA25&#x27;, &#x27;TREP0SA40&#x27;, &#x27;OKEY2BP45&#x27;, &#x27;OKEY0BP40&#x27;, &#x27;OKEP0KA40&#x27;, &#x27;EGY2SA45&#x27;, &#x27;EGY2SA38&#x27;, &#x27;EGPHSA48&#x27;, &#x27;EGP8SA45A&#x27;, &#x27;EGP8SA40V&#x27;, &#x27;TTBG8SA57E&#x27;, &#x27;AANG9HA20&#x27;, &#x27;TTXS9SA43E&#x27;, &#x27;TTXS9SA34E&#x27;, &#x27;TTXS9SA30E&#x27;, &#x27;TTXS9GA43E&#x27;, &#x27;TTXS9GA34E&#x27;, &#x27;TTXS9GA30E&#x27;, &#x27;TTXS8GA35&#x27;, &#x27;TTXG8SA53&#x27;, &#x27;TTJQKBP30&#x27;, &#x27;TTJQDBP35&#x27;, &#x27;TTJGDBP35&#x27;, &#x27;TTHGHSA45&#x27;, &#x27;TTHGCBP38&#x27;, &#x27;TTHG0BP40&#x27;, &#x27;TTGS8SA48E&#x27;, &#x27;TTGS8SA35&#x27;, &#x27;TTGS8SA30&#x27;, &#x27;TTGS8BP48E&#x27;, &#x27;TTGS8BP35&#x27;, &#x27;TTEGCSA45&#x27;, &#x27;TTEG9SA40&#x27;, &#x27;TTEG0SA30&#x27;, &#x27;TTEG0KA40&#x27;, &#x27;TTBS9SA30E&#x27;, &#x27;TTBS9KA30E&#x27;, &#x27;TTBS9GA30E&#x27;, &#x27;TRES9SA30&#x27;, &#x27;TRES9KA30&#x27;, &#x27;TRE9K8KA35&#x27;, &#x27;OREGHFL45&#x27;, &#x27;OREG9ZL35&#x27;, &#x27;OREG9KA42&#x27;, &#x27;OREG8ZL48&#x27;, &#x27;OREG8KA48&#x27;, &#x27;OREG8KA35&#x27;, &#x27;OREG8FL48&#x27;, &#x27;OREG0KA48&#x27;, &#x27;OREG0FL34&#x27;, &#x27;ORE9K8ZL45&#x27;, &#x27;OKEG9BP35&#x27;, &#x27;OKEG8KA48&#x27;, &#x27;OKEG8BP48&#x27;, &#x27;OKEG3BP25&#x27;, &#x27;OKEG0KA48&#x27;, &#x27;OKEG0BP40&#x27;, &#x27;OKE9KHKA45&#x27;, &#x27;OKE9K8BP35&#x27;, &#x27;OKE9K0KA40&#x27;, &#x27;ASTG9GA35&#x27;, &#x27;ASTG8GA48&#x27;, &#x27;ASTG8GA35&#x27;, &#x27;ASRG8GA50&#x27;, &#x27;ASRG8BP40&#x27;, &#x27;ASRG0GA40&#x27;, &#x27;ASRG0GA34&#x27;, &#x27;AREG8KP48&#x27;, &#x27;ARAG8HA48&#x27;, &#x27;ARAG8FP48&#x27;, &#x27;ARAG8FP40&#x27;, &#x27;ARAG0FP48&#x27;, &#x27;ARA9K8HA45&#x27;, &#x27;ARA0K8FP35&#x27;, &#x27;ACRGHNL45&#x27;, &#x27;ACRG8NL52&#x27;, &#x27;ACRG0NL48&#x27;, &#x27;ACRG0NL34&#x27;, &#x27;ACR9K0NL40&#x27;, &#x27;TTH0M0BP30&#x27;, &#x27;ASR0MHGA40&#x27;, &#x27;ASR0M8GA50&#x27;, &#x27;ASR0M8GA40&#x27;, &#x27;ARE9M8KP20&#x27;, &#x27;ACR1M8NL35&#x27;, &#x27;ACR0MHNL40&#x27;, &#x27;ACR0M0NL40&#x27; &#x29;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>64</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi OZR</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr &#x24;&#x7b;inner_ozr&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; --and PARTNUMBER &#x3d; &#x27;W0193520053&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>64</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi agg_PNS</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>SELECT DISTINCT&#xd;&#xa;linky_articoli_pns.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_pns.WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;linky_articoli_pns.FINISHING,&#xd;&#xa;linky_articoli_pns.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_pns.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_pns.EANCODE,&#xd;&#xa;linky_articoli_pns.IMMAGINE as IMMAGINE&#xd;&#xa;, case when linky_articoli_pns.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_pns &#xd;&#xa;&#x24;&#x7b;inner_pns&#x7d;&#xd;&#xa;WHERE 1&#x3d;1 --and &#x24;&#x7b;where-pns&#x7d;&#xd;&#xa;and replace&#x28;linky_articoli_pns.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_pns.PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_pns.OUT_PROD&#x3d;0&#xd;&#xa;-- and PARTNUMBER &#x3d; &#x27;NEVA70173515415I&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>32</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi all</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MAK&#x27; as MARCA,&#xd;&#xa;linky_articoli_mak.FINISHING,&#xd;&#xa;linky_articoli_mak.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_mak.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_mak.EANCODE,&#xd;&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when linky_articoli_mak.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_mak &#x24;&#x7b;inner_mak&#x7d;&#xd;&#xa;WHERE &#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_mak&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_mak.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_mak.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_mak.OUT_PROD&#x3d;0&#xd;&#xa;&#xd;&#xa;--and linky_articoli_mak.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_mak.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_mak.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_mak.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;union all &#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MOMO&#x27; as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo &#x24;&#x7b;inner_momo&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_momo&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_momo.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_momo.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;&#xd;&#xa;--and  linky_articoli_momo.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;union all &#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr &#x24;&#x7b;inner_ozr&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_ozr&#x7d;&#xd;&#xa;replace&#x28;replace&#x28;linky_articoli_ozr.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ozr.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0&#xd;&#xa;--and linky_articoli_ozr.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_ozr.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_ozr.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_ozr.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;union all&#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;upper&#x28;WHEELMODEL&#x29; as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;upper&#x28;FINISHING&#x29; as finishing,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ALCAR&#xd;&#xa;&#x24;&#x7b;inner_alcar&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_alcar&#x7d;&#xd;&#xa;replace&#x28;replace&#x28;linky_articoli_ALCAR.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ALCAR.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;--and linky_articoli_alcar.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_alcar.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_alcar.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_alcar.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;union all&#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;linky_articoli_pns.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_pns.WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;linky_articoli_pns.FINISHING,&#xd;&#xa;linky_articoli_pns.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_pns.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_pns.EANCODE,&#xd;&#xa;linky_articoli_pns.IMMAGINE as IMMAGINE&#xd;&#xa;, case when linky_articoli_pns.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_pns &#xd;&#xa;&#x24;&#x7b;inner_pns&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_pns&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_pns.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_pns.PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_pns.OUT_PROD&#x3d;0&#xd;&#xa;--and linky_articoli_pns.PARTNUMBER&#x3d;&#x27;F7060FFSI40FF&#x27;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Cerchi all MOMO</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>CONNECTOR</connection>
+    <sql>&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MOMO&#x27; as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo &#x24;&#x7b;inner_momo&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d; and &#xd;&#xa;--&#x24;&#x7b;where_momo&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_momo.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_momo.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;&#xd;&#xa;--and  linky_articoli_momo.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;--or linky_articoli_momo.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>64</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Convert INTERASSE</name>
+    <type>ValueMapper</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <field_to_use>interasse_ok</field_to_use>
+    <target_field/>
+    <non_match_default/>
+    <fields>
+      <field>
+        <source_value>114</source_value>
+        <target_value>114.3</target_value>
+      </field>
+      <field>
+        <source_value>114.</source_value>
+        <target_value>114.3</target_value>
+      </field>
+      <field>
+        <source_value>098</source_value>
+        <target_value>98</target_value>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>544</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Convert_CANALE</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>CANALE_OK</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.50</replace_string>
+        <replace_by_string>.5</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -660,6 +995,45 @@
     </step>
 
   <step>
+    <name>PESO</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PESO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>13</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
     <name>Replace in string</name>
     <type>ReplaceString</type>
     <description/>
@@ -682,6 +1056,17 @@
         <whole_word>no</whole_word>
         <case_sensitive>no</case_sensitive>
       </field>
+      <field>
+        <in_stream_name>INTERASSE</in_stream_name>
+        <out_stream_name/>
+        <use_regex>no</use_regex>
+        <replace_string>.00</replace_string>
+        <replace_by_string/>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -691,7 +1076,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>880</xloc>
+      <xloc>944</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -709,31 +1094,18 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>SKU</name>
-        <rename/>
       </field>      <field>        <name>MODELLO</name>
-        <rename/>
       </field>      <field>        <name>MARCA</name>
-        <rename/>
       </field>      <field>        <name>FINISHING</name>
-        <rename/>
       </field>      <field>        <name>RAGGIO</name>
-        <rename/>
       </field>      <field>        <name>CANALE</name>
-        <rename/>
       </field>      <field>        <name>NUMEROFORI</name>
-        <rename/>
       </field>      <field>        <name>OFFSET</name>
-        <rename/>
       </field>      <field>        <name>INTERASSE</name>
-        <rename/>
       </field>      <field>        <name>cb</name>
-        <rename/>
       </field>      <field>        <name>EANCODE</name>
-        <rename/>
       </field>      <field>        <name>IMMAGINE</name>
-        <rename/>
       </field>      <field>        <name>TIPOLOGIA</name>
-        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>cb</name>
         <rename>cb</rename>
@@ -789,6 +1161,7 @@
       </field>      <field>        <name>IMMAGINE</name>
       </field>      <field>        <name>TIPOLOGIA</name>
       </field>      <field>        <name>cb_ok</name>
+      </field>      <field>        <name>PESO</name>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>cb_ok</name>
         <rename>CB</rename>
@@ -813,7 +1186,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>720</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -908,7 +1281,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>832</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
     </GUI>
@@ -941,6 +1314,232 @@
     <GUI>
       <xloc>256</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>cerchi trovaprezzi</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>&#x7c;</separator>
+    <enclosure>&#x22;</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;MMAC_STARTUP&#x7d;pneus&#x24;&#x7b;file.separator&#x7d;trovaprezzi&#x24;&#x7b;file.separator&#x7d;dati_web&#x24;&#x7b;file.separator&#x7d;cerchi</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>SKU</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>MODELLO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>MARCA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>FINISHING</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>RAGGIO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CANALE_OK</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>NUMEROFORI</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>OFFSET</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>INTERASSE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CB</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>EANCODE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>IMMAGINE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>TIPOLOGIA</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>PESO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1040</xloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1144,6 +1743,18 @@
         <length>-1</length>
         <precision>-1</precision>
       </field>
+      <field>
+        <name>PESO</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
     <cluster_schema/>
     <remotesteps>
@@ -1153,14 +1764,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>976</xloc>
-      <yloc>272</yloc>
+      <xloc>1040</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Cerchi - Agg ALCAR</name>
+    <name>Cerchi agg_PNS test</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1171,7 +1782,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR</connection>
-    <sql>&#xd;&#xa;SELECT DISTINCT&#xa;PARTNUMBER as SKU,&#xa;upper&#x28;WHEELMODEL&#x29; as MODELLO,&#xa;brand as MARCA,&#xa;upper&#x28;FINISHING&#x29; as finishing,&#xa;RAGGIO,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xa;NUMEROFORI,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xa;EANCODE,&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xa;FROM&#xa;linky_articoli_ALCAR&#xd;&#xa;-- &#x24;&#x7b;inner_alcar&#x7d;&#xa;WHERE&#xa;-- &#x24;&#x7b;where&#x7d;&#xa;-- replace&#x28;replace&#x28;linky_articoli_ALCAR.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ALCAR.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;PARTNUMBER IN &#x28; &#x27;TTSM2SA38E&#x27;, &#x27;TTSM2SA32E&#x27;, &#x27;TTSM2BP38E&#x27;, &#x27;TREK0SA48&#x27;, &#x27;TREO2SA45&#x27;, &#x27;TTXK8SA43E&#x27;, &#x27;TTXK8GA48&#x27;, &#x27;TTXK8GA43E&#x27;, &#x27;TTXK8GA40&#x27;, &#x27;TTXK6SA38E&#x27;, &#x27;TTXK6GA38E&#x27;, &#x27;TTXK5SA38E&#x27;, &#x27;TTXK5GA38E&#x27;, &#x27;TTXK3SA46&#x27;, &#x27;TTXK3SA38&#x27;, &#x27;TTXK3SA25&#x27;, &#x27;TTXK3SA23E&#x27;, &#x27;TTXK3GA46&#x27;, &#x27;TTXK3GA25&#x27;, &#x27;TTXK3GA23E&#x27;, &#x27;TTXK3GA15&#x27;, &#x27;TTXK2SA40E&#x27;, &#x27;TTXK2SA38&#x27;, &#x27;TTXK2GA45&#x27;, &#x27;TTXK2GA40E&#x27;, &#x27;TTXK2GA38&#x27;, &#x27;TTXK1SA35E&#x27;, &#x27;TTXK0SA46E&#x27;, &#x27;TTXK0GA46E&#x27;, &#x27;TTXK0GA40&#x27;, &#x27;TTIK8SA43V&#x27;, &#x27;TTIK8SA40&#x27;, &#x27;TTIK8BP47&#x27;, &#x27;TTIK8BP40&#x27;, &#x27;TTIK5SA39&#x27;, &#x27;TTDKASA39&#x27;, &#x27;TTDK8SA47V&#x27;, &#x27;TTDK8SA43V&#x27;, &#x27;TTDK8KA47V&#x27;, &#x27;TTDK8KA43V&#x27;, &#x27;TTDK8GA47V&#x27;, &#x27;TTDK8GA43V&#x27;, &#x27;TTDK6SA43V&#x27;, &#x27;TTDK6SA38V&#x27;, &#x27;TTDK6KA38V&#x27;, &#x27;TTDK6GA38V&#x27;, &#x27;TTDK5SA39&#x27;, &#x27;TTDK3SA46&#x27;, &#x27;TTDK3SA38&#x27;, &#x27;TTDK3SA25&#x27;, &#x27;TTDK3GA38&#x27;, &#x27;TTDK3GA25&#x27;, &#x27;TTDK2SA44&#x27;, &#x27;TTDK2SA38&#x27;, &#x27;TTDK2KA44&#x27;, &#x27;TTDK2KA38&#x27;, &#x27;TTDK2GA44&#x27;, &#x27;TTDK2GA38&#x27;, &#x27;TTDK0SA48&#x27;, &#x27;TTDK0KA40&#x27;, &#x27;TTDK0GA48&#x27;, &#x27;TTDK0GA46K&#x27;, &#x27;TTDK0GA40&#x27;, &#x27;TTD46SA38V&#x27;, &#x27;TTD46KA38V&#x27;, &#x27;TTD43SA38&#x27;, &#x27;TTD43SA25&#x27;, &#x27;TTD43GA38&#x27;, &#x27;TTD42SA35&#x27;, &#x27;TTD42KA35&#x27;, &#x27;TTD42GA35&#x27;, &#x27;TREO6SA30&#x27;, &#x27;TREO3SA25&#x27;, &#x27;TREO3KA25&#x27;, &#x27;TREO2SA38&#x27;, &#x27;TREO2KA45&#x27;, &#x27;TREK8SA48&#x27;, &#x27;TREK8SA47E&#x27;, &#x27;TREK8SA43E&#x27;, &#x27;TREK8KA47E&#x27;, &#x27;TREK8KA43E&#x27;, &#x27;TREK6SA38&#x27;, &#x27;TREK6KA38&#x27;, &#x27;TREK3SA46&#x27;, &#x27;TREK3SA38&#x27;, &#x27;TREK3SA25&#x27;, &#x27;TREK2SA44&#x27;, &#x27;TREK2SA38&#x27;, &#x27;TREK2KA38&#x27;, &#x27;TREK1SA24&#x27;, &#x27;TREK0SA40&#x27;, &#x27;TREK0KA48&#x27;, &#x27;EGK3SA25&#x27;, &#x27;EGK3SA15&#x27;, &#x27;EGK2SA44&#x27;, &#x27;EGK2SA38&#x27;, &#x27;TTXP8SA52E&#x27;, &#x27;TTJPKSA45E&#x27;, &#x27;TTFP8SA39E&#x27;, &#x27;TTDY3SA25&#x27;, &#x27;OKEY8BP48&#x27;, &#x27;TTXYUGA44E&#x27;, &#x27;TTXYHGA48&#x27;, &#x27;TTXY9SA40E&#x27;, &#x27;TTXY9GA40E&#x27;, &#x27;TTXY8SA49V&#x27;, &#x27;TTXY8SA48&#x27;, &#x27;TTXY8SA46E&#x27;, &#x27;TTXY8SA43E&#x27;, &#x27;TTXY8SA38&#x27;, &#x27;TTXY8SA37E&#x27;, &#x27;TTXY8GA48&#x27;, &#x27;TTXY8GA47E&#x27;, &#x27;TTXY8GA46E&#x27;, &#x27;TTXY8GA43E&#x27;, &#x27;TTXY8GA40E&#x27;, &#x27;TTXY6SA38V&#x27;, &#x27;TTXY6GA38V&#x27;, &#x27;TTXY0SA48&#x27;, &#x27;TTXY0SA40&#x27;, &#x27;TTXY0GA48&#x27;, &#x27;TTXPHSA48&#x27;, &#x27;TTXPHGA48&#x27;, &#x27;TTXP9SA40E&#x27;, &#x27;TTXP9GA40E&#x27;, &#x27;TTXP9GA31E&#x27;, &#x27;TTXP8SA48E&#x27;, &#x27;TTXP8SA48&#x27;, &#x27;TTXP8SA46E&#x27;, &#x27;TTXP8SA40&#x27;, &#x27;TTXP8SA39E&#x27;, &#x27;TTXP8SA35E&#x27;, &#x27;TTXP8SA35&#x27;, &#x27;TTXP8GA52E&#x27;, &#x27;TTXP8GA48E&#x27;, &#x27;TTXP8GA48&#x27;, &#x27;TTXP8GA46E&#x27;, &#x27;TTXP8GA40&#x27;, &#x27;TTXP8GA39E&#x27;, &#x27;TTXP8GA35&#x27;, &#x27;TTXP0SA48&#x27;, &#x27;TTXP0SA40E&#x27;, &#x27;TTXP0SA40&#x27;, &#x27;TTXP0GA48&#x27;, &#x27;TTXP0GA40E&#x27;, &#x27;TTXP0GA40&#x27;, &#x27;TTIY8BP48&#x27;, &#x27;TTIY8BP38&#x27;, &#x27;TTIY5SA41&#x27;, &#x27;TTIY0SA40&#x27;, &#x27;TTIY0BP48&#x27;, &#x27;TTHY8SA51E&#x27;, &#x27;TTHPQSA43&#x27;, &#x27;TTHPHSA48&#x27;, &#x27;TTHPHSA37&#x27;, &#x27;TTHPCSA40&#x27;, &#x27;TTHP9SA45&#x27;, &#x27;TTHP8SA45&#x27;, &#x27;TTHP0SA48&#x27;, &#x27;TTHP0SA35&#x27;, &#x27;TTGY8SA485E&#x27;, &#x27;TTGY8SA40&#x27;, &#x27;TTFY8SA46E&#x27;, &#x27;TTFY8SA43E&#x27;, &#x27;TTFY8SA42E&#x27;, &#x27;TTFY8SA37E&#x27;, &#x27;TTFP8SA46E&#x27;, &#x27;TTDYUSA43&#x27;, &#x27;TTDYUGA43&#x27;, &#x27;TTDYHSA48&#x27;, &#x27;TTDYHGA48&#x27;, &#x27;TTDY8SA48V&#x27;, &#x27;TTDY8SA48&#x27;, &#x27;TTDY8SA46A&#x27;, &#x27;TTDY8SA45V&#x27;, &#x27;TTDY8SA38&#x27;, &#x27;TTDY8KA48V&#x27;, &#x27;TTDY8KA48&#x27;, &#x27;TTDY8KA45V&#x27;, &#x27;TTDY8GA48V&#x27;, &#x27;TTDY8GA48&#x27;, &#x27;TTDY8GA46A&#x27;, &#x27;TTDY8GA45V&#x27;, &#x27;TTDY8GA43A&#x27;, &#x27;TTDY3GA25&#x27;, &#x27;TTDY2SA45&#x27;, &#x27;TTDY2SA38&#x27;, &#x27;TTDY2GA38&#x27;, &#x27;TTDY0SA48&#x27;, &#x27;TTDY0SA40&#x27;, &#x27;TTDY0KA40&#x27;, &#x27;TTDY0GA48&#x27;, &#x27;TTDY0GA40&#x27;, &#x27;TTDPHSA48&#x27;, &#x27;TTDPHSA30&#x27;, &#x27;TTDPHKA48&#x27;, &#x27;TTDPHGA48&#x27;, &#x27;TTDPHGA30&#x27;, &#x27;TTDP9SA43&#x27;, &#x27;TTDP9SA35&#x27;, &#x27;TTDP9KA43&#x27;, &#x27;TTDP9KA35&#x27;, &#x27;TTDP9GA43&#x27;, &#x27;TTDP9GA35&#x27;, &#x27;TTDP8SA45V&#x27;, &#x27;TTDP8SA40&#x27;, &#x27;TTDP8SA38A&#x27;, &#x27;TTDP8SA35&#x27;, &#x27;TTDP8KA46A&#x27;, &#x27;TTDP8KA35&#x27;, &#x27;TTDP8GA46A&#x27;, &#x27;TTDP8GA45V&#x27;, &#x27;TTDP8GA40&#x27;, &#x27;TTDP8GA35&#x27;, &#x27;TTDP0SA48&#x27;, &#x27;TTDP0KA48&#x27;, &#x27;TTDP0GA48&#x27;, &#x27;TTBP9SA42&#x27;, &#x27;TTBP9SA40E&#x27;, &#x27;TTBP9SA35&#x27;, &#x27;TTBP9KA35&#x27;, &#x27;TTBP9GA40E&#x27;, &#x27;TTBP9GA31E&#x27;, &#x27;TREYUSA43&#x27;, &#x27;TREYHSA48&#x27;, &#x27;TREYASA41&#x27;, &#x27;TREY9SA41B&#x27;, &#x27;TREY9KA41B&#x27;, &#x27;TREY8SA45&#x27;, &#x27;TREY8SA38A&#x27;, &#x27;TREY8SA38&#x27;, &#x27;TREY8KA45&#x27;, &#x27;TREY6SA38&#x27;, &#x27;TREY3SA25&#x27;, &#x27;TREY2SA38&#x27;, &#x27;TREY0SA48&#x27;, &#x27;TREY0KA48&#x27;, &#x27;TREPHSA48&#x27;, &#x27;TREPHSA30&#x27;, &#x27;TREP9SA43B&#x27;, &#x27;TREP9SA35B&#x27;, &#x27;TREP9SA20&#x27;, &#x27;TREP9KA35&#x27;, &#x27;TREP8SA40&#x27;, &#x27;TREP8SA38A&#x27;, &#x27;TREP8KA45&#x27;, &#x27;TREP8KA40&#x27;, &#x27;TREP5SA25&#x27;, &#x27;TREP0SA40&#x27;, &#x27;OKEY2BP45&#x27;, &#x27;OKEY0BP40&#x27;, &#x27;OKEP0KA40&#x27;, &#x27;EGY2SA45&#x27;, &#x27;EGY2SA38&#x27;, &#x27;EGPHSA48&#x27;, &#x27;EGP8SA45A&#x27;, &#x27;EGP8SA40V&#x27;, &#x27;TTBG8SA57E&#x27;, &#x27;AANG9HA20&#x27;, &#x27;TTXS9SA43E&#x27;, &#x27;TTXS9SA34E&#x27;, &#x27;TTXS9SA30E&#x27;, &#x27;TTXS9GA43E&#x27;, &#x27;TTXS9GA34E&#x27;, &#x27;TTXS9GA30E&#x27;, &#x27;TTXS8GA35&#x27;, &#x27;TTXG8SA53&#x27;, &#x27;TTJQKBP30&#x27;, &#x27;TTJQDBP35&#x27;, &#x27;TTJGDBP35&#x27;, &#x27;TTHGHSA45&#x27;, &#x27;TTHGCBP38&#x27;, &#x27;TTHG0BP40&#x27;, &#x27;TTGS8SA48E&#x27;, &#x27;TTGS8SA35&#x27;, &#x27;TTGS8SA30&#x27;, &#x27;TTGS8BP48E&#x27;, &#x27;TTGS8BP35&#x27;, &#x27;TTEGCSA45&#x27;, &#x27;TTEG9SA40&#x27;, &#x27;TTEG0SA30&#x27;, &#x27;TTEG0KA40&#x27;, &#x27;TTBS9SA30E&#x27;, &#x27;TTBS9KA30E&#x27;, &#x27;TTBS9GA30E&#x27;, &#x27;TRES9SA30&#x27;, &#x27;TRES9KA30&#x27;, &#x27;TRE9K8KA35&#x27;, &#x27;OREGHFL45&#x27;, &#x27;OREG9ZL35&#x27;, &#x27;OREG9KA42&#x27;, &#x27;OREG8ZL48&#x27;, &#x27;OREG8KA48&#x27;, &#x27;OREG8KA35&#x27;, &#x27;OREG8FL48&#x27;, &#x27;OREG0KA48&#x27;, &#x27;OREG0FL34&#x27;, &#x27;ORE9K8ZL45&#x27;, &#x27;OKEG9BP35&#x27;, &#x27;OKEG8KA48&#x27;, &#x27;OKEG8BP48&#x27;, &#x27;OKEG3BP25&#x27;, &#x27;OKEG0KA48&#x27;, &#x27;OKEG0BP40&#x27;, &#x27;OKE9KHKA45&#x27;, &#x27;OKE9K8BP35&#x27;, &#x27;OKE9K0KA40&#x27;, &#x27;ASTG9GA35&#x27;, &#x27;ASTG8GA48&#x27;, &#x27;ASTG8GA35&#x27;, &#x27;ASRG8GA50&#x27;, &#x27;ASRG8BP40&#x27;, &#x27;ASRG0GA40&#x27;, &#x27;ASRG0GA34&#x27;, &#x27;AREG8KP48&#x27;, &#x27;ARAG8HA48&#x27;, &#x27;ARAG8FP48&#x27;, &#x27;ARAG8FP40&#x27;, &#x27;ARAG0FP48&#x27;, &#x27;ARA9K8HA45&#x27;, &#x27;ARA0K8FP35&#x27;, &#x27;ACRGHNL45&#x27;, &#x27;ACRG8NL52&#x27;, &#x27;ACRG0NL48&#x27;, &#x27;ACRG0NL34&#x27;, &#x27;ACR9K0NL40&#x27;, &#x27;TTH0M0BP30&#x27;, &#x27;ASR0MHGA40&#x27;, &#x27;ASR0M8GA50&#x27;, &#x27;ASR0M8GA40&#x27;, &#x27;ARE9M8KP20&#x27;, &#x27;ACR1M8NL35&#x27;, &#x27;ACR0MHNL40&#x27;, &#x27;ACR0M0NL40&#x27; &#x29;&#xa;</sql>
+    <sql>SELECT DISTINCT&#xd;&#xa;linky_articoli_pns.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_pns.WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;linky_articoli_pns.FINISHING,&#xd;&#xa;linky_articoli_pns.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_pns.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_pns.EANCODE,&#xd;&#xa;linky_articoli_pns.IMMAGINE as IMMAGINE&#xd;&#xa;, case when linky_articoli_pns.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_pns &#xd;&#xa;left join linky.dbo.linky_magento_report on linky_articoli_pns.PARTNUMBER &#x3d; linky_magento_report.ipcode &#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;-- linky_magento_report.last_update is null&#xd;&#xa; and &#xd;&#xa;--&#x24;&#x7b;where_pns&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_pns.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_pns.PREZZOPUBBLICO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_pns.OUT_PROD&#x3d;0&#xd;&#xa;and linky_articoli_pns.PARTNUMBER&#x3d;&#x27;IMOL90184416240I&#x27;&#xd;&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1185,46 +1796,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>144</yloc>
+      <xloc>192</xloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Cerchi 2</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>CONNECTOR</connection>
-    <sql>&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;linky_articoli_mak.PARTNUMBER as SKU,&#xd;&#xa;linky_articoli_mak.WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MAK&#x27; as MARCA,&#xd;&#xa;linky_articoli_mak.FINISHING,&#xd;&#xa;linky_articoli_mak.RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,00&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;linky_articoli_mak.NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;linky_articoli_mak.EANCODE,&#xd;&#xa;concat&#x28;linky_articoli_mak.IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when linky_articoli_mak.WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM linky_articoli_mak &#x24;&#x7b;inner_mak&#x7d;&#xd;&#xa;WHERE &#x24;&#x7b;where&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_mak.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_mak.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; and linky_articoli_mak.OUT_PROD&#x3d;0&#xd;&#xa;and linky_articoli_mak.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;or linky_articoli_mak.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;or linky_articoli_mak.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;or linky_articoli_mak.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;union all &#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;&#x27;MOMO&#x27; as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_momo &#x24;&#x7b;inner_momo&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d;&#xd;&#xa;replace&#x28;linky_articoli_momo.GIACENZA,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_momo.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;and  linky_articoli_momo.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;or linky_articoli_momo.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;or linky_articoli_momo.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;or linky_articoli_momo.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;union all &#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;WHEELMODEL as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;FINISHING,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.0&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ozr &#x24;&#x7b;inner_ozr&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d;&#xd;&#xa;replace&#x28;replace&#x28;linky_articoli_ozr.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ozr.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27;  and OUT_PROD&#x3d;0&#xd;&#xa;and linky_articoli_ozr.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;or linky_articoli_ozr.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;or linky_articoli_ozr.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;or linky_articoli_ozr.canale LIKE &#x27;11.&#x25;&#x27;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;union all&#xd;&#xa;&#xd;&#xa;SELECT DISTINCT&#xd;&#xa;PARTNUMBER as SKU,&#xd;&#xa;upper&#x28;WHEELMODEL&#x29; as MODELLO,&#xd;&#xa;brand as MARCA,&#xd;&#xa;upper&#x28;FINISHING&#x29; as finishing,&#xd;&#xa;RAGGIO,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;canale,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.00&#x27;,&#x27;&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as CANALE,&#xd;&#xa;NUMEROFORI,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;offset,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;J&#x27;,&#x27;&#x27;&#x29; as OFFSET,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;replace&#x28;replace&#x28;interasse,&#x27;,0&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;,&#x27;.50&#x27;,&#x27;.5&#x27;&#x29;,&#x27;.30&#x27;,&#x27;.3&#x27;&#x29;,&#x27;.70&#x27;,&#x27;.7&#x27;&#x29; as INTERASSE,&#xd;&#xa;replace&#x28;replace&#x28;replace&#x28;cb,&#x27;C.R. &#x27;,&#x27;&#x27;&#x29;,&#x27;&#xd8;&#x27;,&#x27;&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29; as cb,&#xd;&#xa;EANCODE,&#xd;&#xa;concat&#x28;IMMAGINE,&#x27;.jpg&#x27;&#x29; as IMMAGINE&#xd;&#xa;, case when WHEELMODEL &#x3d; &#x27;ACCIAIO&#x27; then &#x27;ACCIAIO&#x27; else &#x27;LEGA&#x27; end as TIPOLOGIA&#xd;&#xa;FROM&#xd;&#xa;linky_articoli_ALCAR&#xd;&#xa;&#x24;&#x7b;inner_alcar&#x7d;&#xd;&#xa;WHERE&#xd;&#xa;&#x24;&#x7b;where&#x7d;&#xd;&#xa;replace&#x28;replace&#x28;linky_articoli_ALCAR.GIACENZA,&#x27;&#x3e; 12&#x27;,&#x27;20&#x27;&#x29;,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;0 and replace&#x28;linky_articoli_ALCAR.PREZZO,&#x27;,&#x27;,&#x27;.&#x27;&#x29;&#x3e;&#x27;0&#x27; &#xd;&#xa;and linky_articoli_alcar.canale LIKE &#x27;5.&#x25;&#x27;&#xd;&#xa;or linky_articoli_alcar.canale LIKE &#x27;9.&#x25;&#x27;&#xd;&#xa;or linky_articoli_alcar.canale LIKE &#x27;10.&#x25;&#x27;&#xd;&#xa;or linky_articoli_alcar.canale LIKE &#x27;11.&#x25;&#x27;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>64</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Convert INTERASSE</name>
+    <name>Value Mapper</name>
     <type>ValueMapper</type>
     <description/>
     <distribute>Y</distribute>
@@ -1234,17 +1813,89 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <field_to_use>interasse_ok</field_to_use>
+    <field_to_use>CANALE_OK</field_to_use>
     <target_field/>
     <non_match_default/>
     <fields>
       <field>
-        <source_value>114</source_value>
-        <target_value>114.3</target_value>
+        <source_value>1</source_value>
+        <target_value>1.0</target_value>
       </field>
       <field>
-        <source_value>114.</source_value>
-        <target_value>114.3</target_value>
+        <source_value>2</source_value>
+        <target_value>2.0</target_value>
+      </field>
+      <field>
+        <source_value>3</source_value>
+        <target_value>3.0</target_value>
+      </field>
+      <field>
+        <source_value>4</source_value>
+        <target_value>4.0</target_value>
+      </field>
+      <field>
+        <source_value>5</source_value>
+        <target_value>5.0</target_value>
+      </field>
+      <field>
+        <source_value>6</source_value>
+        <target_value>6.0</target_value>
+      </field>
+      <field>
+        <source_value>7</source_value>
+        <target_value>7.0</target_value>
+      </field>
+      <field>
+        <source_value>8</source_value>
+        <target_value>8.0</target_value>
+      </field>
+      <field>
+        <source_value>9</source_value>
+        <target_value>9.0</target_value>
+      </field>
+      <field>
+        <source_value>10</source_value>
+        <target_value>10.0</target_value>
+      </field>
+      <field>
+        <source_value>11</source_value>
+        <target_value>11.0</target_value>
+      </field>
+      <field>
+        <source_value>12</source_value>
+        <target_value>12.0</target_value>
+      </field>
+      <field>
+        <source_value>13</source_value>
+        <target_value>13.0</target_value>
+      </field>
+      <field>
+        <source_value>14</source_value>
+        <target_value>14.0</target_value>
+      </field>
+      <field>
+        <source_value>15</source_value>
+        <target_value>15.0</target_value>
+      </field>
+      <field>
+        <source_value>16</source_value>
+        <target_value>16.0</target_value>
+      </field>
+      <field>
+        <source_value>17</source_value>
+        <target_value>17.0</target_value>
+      </field>
+      <field>
+        <source_value>18</source_value>
+        <target_value>18.0</target_value>
+      </field>
+      <field>
+        <source_value>19</source_value>
+        <target_value>19.0</target_value>
+      </field>
+      <field>
+        <source_value>20</source_value>
+        <target_value>20.0</target_value>
       </field>
     </fields>
     <cluster_schema/>
@@ -1255,46 +1906,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-    </GUI>
-    </step>
-
-  <step>
-    <name>Convert_CANALE</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>CANALE_OK</in_stream_name>
-        <out_stream_name/>
-        <use_regex>no</use_regex>
-        <replace_string>.50</replace_string>
-        <replace_by_string>.5</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>976</xloc>
-      <yloc>160</yloc>
+      <xloc>1040</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

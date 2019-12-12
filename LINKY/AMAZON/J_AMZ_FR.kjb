@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2014&#x2f;07&#x2f;18 15&#x3a;40&#x3a;00.593</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;24 15&#x3a;28&#x3a;36.577</modified_date>
+  <modified_date>2018&#x2f;01&#x2f;02 11&#x3a;22&#x3a;38.551</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -339,8 +339,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>562</xloc>
-      <yloc>226</yloc>
+      <xloc>560</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>t_exp_amazon_fr</name>
@@ -375,8 +375,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>760</xloc>
-      <yloc>123</yloc>
+      <xloc>752</xloc>
+      <yloc>118</yloc>
     </entry>
     <entry>
       <name>AddItem_FR</name>
@@ -398,8 +398,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>761</xloc>
-      <yloc>226</yloc>
+      <xloc>752</xloc>
+      <yloc>256</yloc>
     </entry>
     <entry>
       <name>SQL</name>

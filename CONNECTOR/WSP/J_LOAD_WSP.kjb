@@ -8,7 +8,7 @@
   <created_user/>
   <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;09.302</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;11&#x2f;30 12&#x3a;03&#x3a;04.847</modified_date>
+  <modified_date>2018&#x2f;02&#x2f;08 11&#x3a;29&#x3a;14.134</modified_date>
     <parameters>
     </parameters>
   <connection>
@@ -398,7 +398,7 @@
       <name>CAt EBAY</name>
       <description/>
       <type>SQL</type>
-      <sql>update linky_articoli_WSP set categoria&#x3d;&#x27;IT-179679,DE-9888, NL-28648, FR-179679, UK-28648, ES-179679,US-43953,AU-43953,CH-179679,IE-179679&#x27;</sql>
+      <sql>update linky_articoli_WSP set categoria&#x3d;&#x27;IT-179679,DE-179679, NL-179679, FR-179679, UK-179679, ES-179679,AU-43953,CH-179679,IE-179679&#x27;</sql>
       <useVariableSubstitution>F</useVariableSubstitution>
       <sqlfromfile>F</sqlfromfile>
       <sqlfilename/>
@@ -414,7 +414,7 @@
       <name>HTTP NEW</name>
       <description/>
       <type>HTTP</type>
-      <url>http&#x3a;&#x2f;&#x2f;aiace.swic.eu&#x2f;webserver&#x2f;linkcsv&#x2f;CLAO&#x2f;ITCLAOwebitf.csv</url>
+      <url>http&#x3a;&#x2f;&#x2f;aiace.swic.eu&#x2f;webserver&#x2f;linkcsv&#x2f;CLAM&#x2f;ITCLAMwebitf.csv</url>
       <targetfilename>C&#x3a;&#x5c;LINKY&#x5c;pneus&#x5c;connector&#x5c;wsp&#x5c;wspnew.csv</targetfilename>
       <file_appended>N</file_appended>
       <date_time_added>N</date_time_added>

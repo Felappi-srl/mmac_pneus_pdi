@@ -429,7 +429,7 @@
     <created_user/>
     <created_date>2016&#x2f;11&#x2f;03 08&#x3a;50&#x3a;08.542</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;11&#x2f;30 12&#x3a;02&#x3a;40.829</modified_date>
+    <modified_date>2018&#x2f;04&#x2f;26 08&#x3a;30&#x3a;27.295</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -509,18 +509,33 @@
     </hop>
     <hop>
       <from>Today</from>
-      <to>Modified Java Script Value</to>
+      <to>Stock</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Modified Java Script Value</from>
+      <from>Stock</from>
+      <to>diametro e prezzo</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>diametro e prezzo</from>
       <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Select values 2</from>
+      <to>Add constants</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
       <to>Insert &#x2f; Update</to>
       <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Insert &#x2f; Update</to>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -624,8 +639,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>864</xloc>
-      <yloc>64</yloc>
+      <xloc>752</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -731,7 +746,7 @@
       </value>
       <value>
         <name>GIACENZA</name>
-        <rename>stock_ok</rename>
+        <rename>stock_disatt</rename>
         <update>Y</update>
       </value>
       <value>
@@ -783,14 +798,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
+      <xloc>80</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
 
   <step>
-    <name>Modified Java Script Value</name>
+    <name>Stock</name>
     <type>ScriptValueMod</type>
     <description/>
     <distribute>Y</distribute>
@@ -819,7 +834,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
+      <xloc>496</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1066,6 +1081,7 @@
       </field>      <field>        <name>description</name>
       </field>      <field>        <name>widht</name>
       </field>      <field>        <name>diameter</name>
+        <rename>tmp_diameter</rename>
       </field>      <field>        <name>approval</name>
       </field>      <field>        <name>cb</name>
       </field>      <field>        <name>et</name>
@@ -1079,6 +1095,7 @@
       </field>      <field>        <name>finishing</name>
       </field>      <field>        <name>sd</name>
       </field>      <field>        <name>prezzo</name>
+        <rename>tmp_prezzo</rename>
       </field>      <field>        <name>ean</name>
       </field>      <field>        <name>prezzo2</name>
       </field>      <field>        <name>costo</name>
@@ -1138,7 +1155,7 @@
     <name>Select values 2</name>
     <type>SelectValues</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -1193,7 +1210,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>768</xloc>
+      <xloc>304</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1432,8 +1449,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>960</xloc>
-      <yloc>64</yloc>
+      <xloc>624</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1502,8 +1519,56 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
+      <xloc>352</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>diametro e prezzo</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>&#xd;&#xa;var diameter&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;tmp_diameter.indexOf&#x28;&#x27;.0&#x27;&#x29; &#x3e; 0&#x29;&#x7b;&#xd;&#xa;	&#xd;&#xa;	diameter &#x3d; tmp_diameter.substr&#x28;&#x27;0&#x27;,tmp_diameter.indexOf&#x28;&#x27;.0&#x27;&#x29;&#x29;&#xd;&#xa;&#xd;&#xa;	&#x7d;else&#x7b;&#xd;&#xa;		diameter&#x3d;tmp_diameter&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;var prezzo&#x3b;&#xd;&#xa;var aumento&#x3b;&#xd;&#xa;&#xd;&#xa;aumento &#x3d; 1.05&#x3b;&#xd;&#xa;&#xd;&#xa;prezzo &#x3d; tmp_prezzo &#x2a; aumento&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>diameter</name>
+        <rename>diameter</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>prezzo</name>
+        <rename>prezzo</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>      <field>        <name>aumento</name>
+        <rename>aumento</rename>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
     </step>
@@ -1953,6 +2018,45 @@
     <GUI>
       <xloc>48</xloc>
       <yloc>64</yloc>
+      <draw>Y</draw>
+    </GUI>
+    </step>
+
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>stock_disatt</name>
+        <type>Number</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>0</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
     </step>

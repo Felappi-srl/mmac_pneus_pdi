@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;43.730</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;12&#x2f;28 15&#x3a;21&#x3a;49.224</modified_date>
+    <modified_date>2018&#x2f;06&#x2f;05 16&#x3a;13&#x3a;51.476</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -486,7 +486,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT distinct&#xd;&#xa; var.codicevar as product_sku&#xd;&#xa;,&#x27;Germany&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;, linky_calc_endprice_2016&#x28;partner,&#x27;DE&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico,0&#x29;  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, &#x27;CERCHI&#x27; as category_path&#xd;&#xa;FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice&#x3d;var.codice&#xd;&#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;DE&#x27; &#x3d;rep.SITEID&#xd;&#xa;where&#xd;&#xa;--  var.isece&#x3d;1 and &#xd;&#xa;product_in_stock &#x3e; 3  &#xd;&#xa;and var.siteid&#x3d;&#x27;DE&#x27;  &#xd;&#xa;and &#x28;out_prod&#x3c;&#x3e;&#x27;1&#x27; OR out_prod IS NULL&#x29;&#xd;&#xa;and e.partner&#x3d;&#x27;ALCAR&#x27;&#xd;&#xa;-- and e.codice&#x3d;&#x27;F1021NNIB19WSX&#x27;&#xd;&#xa;and var.auto is not null&#xd;&#xa;</sql>
+    <sql>SELECT distinct&#xa; var.codicevar as product_sku&#xa;,&#x27;Germany&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;, linky_calc_endprice_2016&#x28;partner,&#x27;DE&#x27;,&#x27;CERCHI&#x27;,&#x27;&#x27;,prezzopubblico,0&#x29;  as product_price&#xa;, product_in_stock as product_in_stock&#xa;, &#x27;CERCHI&#x27; as category_path&#xa;FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice&#x3d;var.codice&#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;DE&#x27; &#x3d;rep.SITEID&#xa;where&#xa;--  var.isece&#x3d;1 and &#xa;product_in_stock &#x3e; 3  &#xa;and var.siteid&#x3d;&#x27;DE&#x27;  &#xa;and &#x28;out_prod&#x3c;&#x3e;&#x27;1&#x27; OR out_prod IS NULL&#x29;&#xa;-- and e.partner&#x3d;&#x27;ALCAR&#x27;&#xa;-- and e.codice&#x3d;&#x27;F1021NNIB19WSX&#x27;&#xa;and var.auto is not null&#xa;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -518,7 +518,7 @@
       <schema_name/>
     </partitioning>
     <connection>CONNECTOR_2017</connection>
-    <sql>SELECT distinct&#xd;&#xa; var.codicevar as product_sku&#xd;&#xa;,&#x27;Germany&#x27; as siteid&#xd;&#xa;,&#x27;IT&#x27; as country&#xd;&#xa;, 0  as product_price&#xd;&#xa;, product_in_stock as product_in_stock&#xd;&#xa;, &#x27;CERCHI&#x27; as category_path&#xd;&#xa;,var.isece&#xd;&#xa;FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice&#x3d;var.codice&#xd;&#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;DE&#x27; &#x3d;rep.SITEID&#xd;&#xa;where&#xd;&#xa; e.product_in_stock &#x3c; 4 &#xd;&#xa; and var.siteid&#x3d;&#x27;DE&#x27;  &#xd;&#xa;and e.partner&#x3d;&#x27;ALCAR&#x27;</sql>
+    <sql>SELECT distinct&#xa; var.codicevar as product_sku&#xa;,&#x27;Germany&#x27; as siteid&#xa;,&#x27;IT&#x27; as country&#xa;FROM ebay_cerchi e inner join ebay_cerchi_app var on e.codice&#x3d;var.codice&#xa;inner join linky_ebay_report rep on var.codicevar&#x3d;rep.SKU and &#x27;DE&#x27; &#x3d;rep.SITEID&#xa;where&#xa; e.product_in_stock &#x3c; 4 &#xa; and var.siteid&#x3d;&#x27;DE&#x27;  &#xa;-- and e.partner&#x3d;&#x27;ALCAR&#x27;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -724,31 +724,7 @@
         <precision>-1</precision>
       </field>
       <field>
-        <name>product_price</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>15</length>
-        <precision>2</precision>
-      </field>
-      <field>
-        <name>product_in_stock</name>
-        <type>BigNumber</type>
-        <format>&#x23;.&#x23;</format>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>both</trim_type>
-        <length>5</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>category_path</name>
+        <name>country</name>
         <type>String</type>
         <format/>
         <currency/>

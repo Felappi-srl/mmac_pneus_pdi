@@ -429,7 +429,7 @@
     <created_user>admin</created_user>
     <created_date>2014&#x2f;07&#x2f;18 15&#x3a;39&#x3a;20.220</created_date>
     <modified_user>admin</modified_user>
-    <modified_date>2017&#x2f;05&#x2f;22 13&#x3a;48&#x3a;19.156</modified_date>
+    <modified_date>2018&#x2f;01&#x2f;16 16&#x3a;54&#x3a;37.150</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -496,7 +496,7 @@
       <schema/>
       <table>linky_tyre24</table>
       <key>
-        <name>codice</name>
+        <name>Codice</name>
         <field>IPCODE</field>
         <condition>&#x3d;</condition>
         <name2/>
@@ -504,7 +504,7 @@
       <value>
         <name>DESCRIZIONE</name>
         <rename>descrizione</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>PREZZOSCONTATO</name>
@@ -564,12 +564,12 @@
       <value>
         <name>CODICEVEL</name>
         <rename>codca5</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>VEL</name>
         <rename>desca5</rename>
-        <update>N</update>
+        <update>Y</update>
       </value>
       <value>
         <name>ICARICO</name>
@@ -1290,69 +1290,37 @@
       <schema_name/>
     </partitioning>
     <fields>      <field>        <name>Marchio</name>
-        <rename/>
       </field>      <field>        <name>Codice</name>
-        <rename/>
       </field>      <field>        <name>Nome</name>
-        <rename/>
       </field>      <field>        <name>short_desc</name>
-        <rename/>
       </field>      <field>        <name>descrizione</name>
-        <rename/>
       </field>      <field>        <name>category_path</name>
-        <rename/>
       </field>      <field>        <name>full_category_path</name>
-        <rename/>
       </field>      <field>        <name>PARTNER</name>
-        <rename/>
       </field>      <field>        <name>prezzo</name>
-        <rename/>
       </field>      <field>        <name>prezzolistino</name>
-        <rename/>
       </field>      <field>        <name>currency</name>
-        <rename/>
       </field>      <field>        <name>product_full_image</name>
-        <rename/>
       </field>      <field>        <name>product_thumb_image</name>
-        <rename/>
       </field>      <field>        <name>product_publish</name>
-        <rename/>
       </field>      <field>        <name>iva</name>
-        <rename/>
       </field>      <field>        <name>product_in_stock</name>
-        <rename/>
       </field>      <field>        <name>product_available</name>
-        <rename/>
       </field>      <field>        <name>product_special</name>
-        <rename/>
       </field>      <field>        <name>codca1</name>
-        <rename/>
       </field>      <field>        <name>desca1</name>
-        <rename/>
       </field>      <field>        <name>codca2</name>
-        <rename/>
       </field>      <field>        <name>desca2</name>
-        <rename/>
       </field>      <field>        <name>codca3</name>
-        <rename/>
       </field>      <field>        <name>desca3</name>
-        <rename/>
       </field>      <field>        <name>codca4</name>
-        <rename/>
       </field>      <field>        <name>desca4</name>
-        <rename/>
       </field>      <field>        <name>codca5</name>
-        <rename/>
       </field>      <field>        <name>desca5</name>
-        <rename/>
       </field>      <field>        <name>codca6</name>
-        <rename/>
       </field>      <field>        <name>desca6</name>
-        <rename/>
       </field>      <field>        <name>SETTORE</name>
-        <rename/>
       </field>      <field>        <name>EANCODE</name>
-        <rename/>
       </field>        <select_unspecified>N</select_unspecified>
       <meta>        <name>prezzo</name>
         <rename>prezzo</rename>

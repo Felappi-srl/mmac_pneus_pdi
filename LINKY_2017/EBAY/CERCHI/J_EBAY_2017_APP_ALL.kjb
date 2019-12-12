@@ -8,7 +8,7 @@
   <created_user>admin</created_user>
   <created_date>2012&#x2f;07&#x2f;27 16&#x3a;26&#x3a;47.630</created_date>
   <modified_user>admin</modified_user>
-  <modified_date>2017&#x2f;12&#x2f;28 15&#x3a;02&#x3a;40.320</modified_date>
+  <modified_date>2018&#x2f;05&#x2f;12 09&#x3a;11&#x3a;07.721</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -314,7 +314,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>112</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Set variables</name>
@@ -404,7 +404,7 @@
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
       <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destination>lufelappi&#x40;libero.it</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>
@@ -444,7 +444,7 @@
       <type>MAIL</type>
       <server>smtp.easyname.eu</server>
       <port/>
-      <destination>alesconti&#x40;gmail.com lufelappi&#x40;libero.it</destination>
+      <destination>lufelappi&#x40;libero.it</destination>
       <destinationCc/>
       <destinationBCc/>
       <replyto>conti&#x40;mmac.pro</replyto>
@@ -476,7 +476,7 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>256</xloc>
-      <yloc>240</yloc>
+      <yloc>288</yloc>
     </entry>
     <entry>
       <name>Ebay APP IT</name>
@@ -606,7 +606,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>848</xloc>
+      <xloc>928</xloc>
       <yloc>144</yloc>
     </entry>
     <entry>
@@ -674,7 +674,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>464</xloc>
+      <xloc>480</xloc>
       <yloc>32</yloc>
     </entry>
     <entry>
@@ -698,6 +698,29 @@
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>512</xloc>
+      <yloc>288</yloc>
+    </entry>
+    <entry>
+      <name>Ebay APP UK</name>
+      <description/>
+      <type>SHELL</type>
+      <filename/>
+      <work_directory/>
+      <arg_from_previous>N</arg_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <set_append_logfile>N</set_append_logfile>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <insertScript>Y</insertScript>
+      <script>c&#x3a;&#x5c;linky&#x5c;pneus&#x5c;sd_ebay_pneuss_job.exe linky_action&#x3d;ADD newapp ebay_mak_uk  batch</script>
+      <loglevel>Basic</loglevel>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>416</xloc>
       <yloc>288</yloc>
     </entry>
   </entries>
@@ -761,7 +784,7 @@
       <to>t_ebay_2017_expfile_appktype_fr</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -770,7 +793,7 @@
       <to>t_ebay_2017_expfile_appktype_uk</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
     </hop>
@@ -789,8 +812,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>J_EBAY_2017_APP_ALCAR</from>
@@ -807,8 +830,8 @@
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
     </hop>
     <hop>
       <from>Mail Error</from>
@@ -830,11 +853,29 @@
     </hop>
     <hop>
       <from>Ebay APP DE</from>
-      <to>Mail OK</to>
+      <to>Ebay APP UK</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Ebay APP UK</from>
+      <to>Mail OK</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_ebay_2017_expfile_appktype_de</from>
+      <to>t_ebay_2017_expfile_appktype_uk</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
       <unconditional>Y</unconditional>
     </hop>
   </hops>
